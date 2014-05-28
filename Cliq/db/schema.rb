@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140528014143) do
+ActiveRecord::Schema.define(version: 20140528041845) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -115,6 +115,11 @@ ActiveRecord::Schema.define(version: 20140528014143) do
     t.text     "bio"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "address"
+    t.string   "sex"
+    t.string   "sexual_preference", default: "hetero"
   end
 
 end

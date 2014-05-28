@@ -10,8 +10,10 @@ class User < ActiveRecord::Base
 	has_many :authorizations
 
 	validates :name, :presence => true
+	attr_accessible :name, :email, :school, :bio, :profile_pic_url, :fb_token, :activation, :address, :sex, :sexual_preference, :latitude, :longitude, 
 
-	attr_accessible :name, :email, :school, :bio, :profile_pic_url, :fb_token, :activation
+	geocoded_by :address
+	after_validation :geocode      
 
 	def self.create_with_facebook auth_hash
 		profile = auth_hash['info']
