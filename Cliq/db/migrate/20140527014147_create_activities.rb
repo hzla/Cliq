@@ -1,10 +1,14 @@
-class CreateActivities < ActiveRecord::Migration
+class CreateActivities < ActiveRecord::Migration 
   def change
     create_table :activities do |t|
     	t.string :name
-    	t.string :category
+    	t.integer :category_id
 
     	t.timestamps
     end
+
+    add_index :activities, :category_id, :name => 'category_id_ix'
   end
+
+
 end

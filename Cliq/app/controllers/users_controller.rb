@@ -1,0 +1,23 @@
+class UsersController < ApplicationController
+	before_filter :get_user
+
+	def show
+	end
+
+	def activate
+		if params[:code] == @user.activation
+			session[:user_id] = @user.id
+			@user.activate
+			@message = "You have been activated"
+		else
+			@message = "Activation Failed"
+		end
+	end
+
+private
+	
+	def get_user
+		@user = params[:user_id] ? User.find(params[:user_id]) : User.find(params[:id])
+	end
+
+end
