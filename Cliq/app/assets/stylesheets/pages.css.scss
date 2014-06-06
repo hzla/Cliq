@@ -1,0 +1,76 @@
+$logo-font: "kari-pro",sans-serif;
+$generic-font: "proxima-nova",sans-serif;
+
+body {
+	background-image: image_url("landing.png");
+}
+.container {
+	width: 1280px;
+	height: 720px;
+	float: left;
+	position: relative;
+}
+
+#main-info {
+	float: left;
+}
+
+.landing-logo {
+	font-family: $logo-font;
+	font-style: italic;
+	font-weight: 400;
+	font-size: 60px;
+	color: white;
+}
+
+.landing-desc {
+	font-family: $generic-font;
+	width: 300px;
+	color: white;
+}
+
+.sign-up-box {
+	background-color: white;
+	border-radius: 5px;
+	width: 400px;
+	float: left; 
+}
+
+.fb-sign-up-btn {
+	background-color: #3B5998; 
+	float: left;
+	color: white;
+	border-radius: 5px;
+	margin-left: 5px;
+	height: 100px;
+	font-family: $generic-font;
+}
+
+.fb-logo {
+	background-color: white;
+	height: 90px;
+	width: 90px;
+	float: left;
+	margin-left: 5px;
+	margin-top: 5px;
+	.fb-letter {
+		width: 90px;
+		height: 90px;
+	}
+}
+
+.sign-up-info {
+	float: left;
+	clear: left;
+	font-family: $generic-font;
+}
+
+#bottom-nav {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color: lightblue;
+	height: 100px;
+}
+
+
