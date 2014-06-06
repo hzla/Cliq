@@ -3,16 +3,18 @@ $generic-font: "proxima-nova",sans-serif;
 
 body {
 	background-image: image_url("landing.png");
+	background-repeat:no-repeat;
 }
 .container {
 	width: 1280px;
-	height: 720px;
+	height: 690px;
 	float: left;
 	position: relative;
 }
 
 #main-info {
 	float: left;
+	margin-left: 65px;
 }
 
 .landing-logo {
@@ -21,18 +23,32 @@ body {
 	font-weight: 400;
 	font-size: 60px;
 	color: white;
+	margin-top: 50px;
+	margin-bottom: 40px;
 }
 
 .landing-desc {
 	font-family: $generic-font;
-	width: 300px;
+	width: 450px;
 	color: white;
+	font-size: 40px;
+	font-weight: 500;
+}
+
+.landing-desc.main {
+	margin-top: -25px;
+}
+
+
+.landing-desc.sub {
+	font-size: 20px;
 }
 
 .sign-up-box {
 	background-color: white;
 	border-radius: 5px;
-	width: 400px;
+	width: 375px;
+	height: 150px;
 	float: left; 
 }
 
@@ -41,36 +57,92 @@ body {
 	float: left;
 	color: white;
 	border-radius: 5px;
-	margin-left: 5px;
-	height: 100px;
+	margin-left: 10px;
+	margin-top: 10px;
+	height: 65px;
+	width: 355px;
 	font-family: $generic-font;
+	.sign-up-text {
+		float: right;
+		margin-right: 12%;
+		margin-top: 6%;
+		font-size: 18px;
+		font-weight: 400
+	}
 }
 
 .fb-logo {
 	background-color: white;
-	height: 90px;
-	width: 90px;
+	height: 45px;
+	width: 45px;
 	float: left;
-	margin-left: 5px;
-	margin-top: 5px;
+	margin-left: 10px;
+	margin-top: 10px;
 	.fb-letter {
-		width: 90px;
-		height: 90px;
+		width: 45px;
+		height: 45px;
 	}
+}
+
+.login {
+	color: #939393;
+	font-size: 18px;
+	margin-bottom: -4px;
+}
+
+
+.dark-gray {
+	color: #414141;
+}
+
+.light-gray {
+	color: #BEBEBE;
+}
+
+.gray {
+	color: #939393;
 }
 
 .sign-up-info {
 	float: left;
 	clear: left;
 	font-family: $generic-font;
+	margin-left: 10px;
+	width: 100%;
+	text-align: center;
+}
+
+.conditions {
+	font-size: 13px;
 }
 
 #bottom-nav {
 	position: absolute;
-	bottom: 0;
+	bottom: 15px;
+	left: -8px;
 	width: 100%;
-	background-color: lightblue;
-	height: 100px;
+	background-color: #34495E;
+	height: 50px;
+	font-size: 20px;
+	font-weight: 400;
+	font-family: $generic-font;
+	opacity: .9;
+
 }
+
+#how-it-works {
+	float: right;
+	margin-top: 13px;
+}
+
+#faq {
+	float: right;
+	margin-left: 65px;
+	margin-right: 65px;
+	margin-top: 13px;
+}
+
+
+
 
 
