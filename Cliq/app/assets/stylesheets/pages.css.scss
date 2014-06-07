@@ -1,15 +1,14 @@
-$logo-font: "kari-pro",sans-serif;
-$generic-font: "proxima-nova",sans-serif;
+@import 'variables';
 
-body {
+.container {
 	background-image: image_url("landing.png");
 	background-repeat:no-repeat;
-}
-.container {
 	width: 1280px;
 	height: 690px;
 	float: left;
 	position: relative;
+	left: -8px;
+	top: -8px;
 }
 
 #main-info {
@@ -38,7 +37,6 @@ body {
 .landing-desc.main {
 	margin-top: -25px;
 }
-
 
 .landing-desc.sub {
 	font-size: 20px;
@@ -85,22 +83,8 @@ body {
 }
 
 .login {
-	color: #939393;
 	font-size: 18px;
 	margin-bottom: -4px;
-}
-
-
-.dark-gray {
-	color: #414141;
-}
-
-.light-gray {
-	color: #BEBEBE;
-}
-
-.gray {
-	color: #939393;
 }
 
 .sign-up-info {
@@ -121,7 +105,7 @@ body {
 	bottom: 15px;
 	left: -8px;
 	width: 100%;
-	background-color: #34495E;
+	background-color: $nav-color;
 	height: 50px;
 	font-size: 20px;
 	font-weight: 400;

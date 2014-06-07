@@ -1,0 +1,17 @@
+<div class="side-nav ">
+	<div class="logo <%= 'active' if active == :critiq %>">
+		Cliq
+	</div>
+	<div class="profile <%= 'active' if active == :profile %>">
+		<%= image_tag "Profile.svg", :class => "nav-icon" %>
+	</div>
+	<div class="notifications <%= 'active' if active == :notifications %>">
+		<%= image_tag "Notifications.svg", :class => "nav-icon" %>
+	</div>
+	<div class="messages <%= 'active' if active == :messages %>">
+		<%= image_tag "Messages.svg", :class => "nav-icon" %>
+	</div>
+	<div class="events <%= 'active' if active == :events %>" >
+		<%= image_tag "Events.svg", :class => "nav-icon" %>
+	</div> 
+</div>

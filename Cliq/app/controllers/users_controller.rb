@@ -14,10 +14,14 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def search
+
+	end
+
 private
 	
 	def get_user
-		@user = params[:user_id] ? User.find(params[:user_id]) : User.find(params[:id])
+		@user = params[:user_id] ? User.find(params[:user_id]) : User.find(params[:id]) if params[:id]
 	end
 
 end

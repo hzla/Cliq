@@ -1,0 +1,57 @@
+@import 'variables';
+
+body {
+	margin: 0;
+}
+
+.head-1 {
+	font-weight: 600;
+	font-size: 36pt;
+}
+
+.head-2 {
+	font-weight: 600;
+	font-size: 28pt;
+}
+
+.head-3 {
+	font-weight: 600;
+	font-size: 22pt;
+}
+
+.head-4 {
+	font-weight: 600;
+	font-size: 20pt;
+}
+
+.dark-gray {
+	color: $dark-gray;
+}
+
+.light-gray {
+	color: $light-gray;
+}
+
+.gray {
+	color: $gray;
+}
+
+.green {
+	color: $green;
+}
+
+.black {
+	color: black;
+}
+
+.blue {
+	color: $blue;
+}
+
+.white {
+	color: white;
+}
+
+.active {
+	background-color: $active-nav-color;
+}

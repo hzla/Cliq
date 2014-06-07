@@ -5,4 +5,5 @@ class Category < ActiveRecord::Base
 	has_ancestry
 
 	attr_accessible :name, :description, :parent_id
+
 end

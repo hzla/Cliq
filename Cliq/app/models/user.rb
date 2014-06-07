@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
 	has_many :authorizations
 
 	validates :name, :presence => true
-	attr_accessible :name, :email, :school, :bio, :profile_pic_url, :fb_token, :activation, :address, :sex, :sexual_preference, :latitude, :longitude 
+	attr_accessible :name, :email, :school, :bio, :profile_pic_url, :fb_token, :activation, :address, :sex, :sexual_preference, :latitude, :longitude, :active 
 
 	geocoded_by :address
 	after_validation :geocode      
@@ -40,20 +40,33 @@ class User < ActiveRecord::Base
 		code.join
 	end
 	#maps cat/act to users_ids, parse and count user_ids
-	def search_similar interest_type 
-		users = interest_type.map {|act_cat| [act_cat, act_cat.users.map(&:id).flatten]}
+	def search_similar interest_type #accepts a list of interests/categories
+		users = interest_type.map {|act_cat| [act_cat, act_cat.users.flatten]}
 		similar_users = {}
 		users.each do |entry|
-			act = entry[0]
-			user_ids = entry[1]
-			user_ids.each do |id|
-				similar_users[id] ? similar_users[id] << act : similar_users[id] = [act]
+			act_cat = entry[0]
+			users = entry[1]
+			users.each do |user|
+				similar_users[user] ? similar_users[user] << act_cat : similar_users[user] = [act_cat]
 			end
 		end
-		similar_users
+		similar_users.to_a.sort_by {|user| user[1].length}.reverse
 	end
 
+	def attendings
+		excursions.where(attended: true).length 
+	end
 
+	def total_meetings
+		total = events.map {|evt| evt.users.length}.inject(:+)
+		total ? total : 0
+	end
 
+	def category_activities
+		categories.map do |cat|
+			acts = cat.activities.select {|act| act.users.include? self }
+			[cat, acts] 
+		end
+	end
 
 end
