@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
 	has_many :excursions
 	has_many :connections
 	has_many :authorizations
+	has_many :messages
 
 	validates :name, :presence => true
 	attr_accessible :name, :email, :school, :bio, :profile_pic_url, :fb_token, :activation, :address, :sex, :sexual_preference, :latitude, :longitude, :active 

@@ -1,10 +1,14 @@
 <div class="side-nav ">
-	<div class="logo <%= 'active' if active == :critiq %>">
-		Cliq
-	</div>
-	<div class="profile <%= 'active' if active == :profile %>">
-		<%= image_tag "Profile.svg", :class => "nav-icon" %>
-	</div>
+	<%= link_to search_path do %>
+		<div class="logo <%= 'active' if active == :critiq %>">
+			Cliq
+		</div>
+	<% end %>
+	<%= link_to user_path current_user do  %>
+		<div class="profile <%= 'active' if active == :profile %>">
+			<%= image_tag "Profile.svg", :class => "nav-icon" %>
+		</div>
+	<% end %>
 	<div class="notifications <%= 'active' if active == :notifications %>">
 		<%= image_tag "Notifications.svg", :class => "nav-icon" %>
 	</div>
@@ -14,4 +18,7 @@
 	<div class="events <%= 'active' if active == :events %>" >
 		<%= image_tag "Events.svg", :class => "nav-icon" %>
 	</div> 
+	<div class="settings <%= 'active' if active == :settings %>" >
+		<%= image_tag "Settings.svg", :class => "nav-icon" %>
+	</div>
 </div>
