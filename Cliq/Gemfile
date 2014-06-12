@@ -2,9 +2,7 @@ source 'https://rubygems.org'
 
 
 gem 'less-rails'
-gem 'twitter-bootstrap-rails'
 gem 'therubyracer'
-gem 'bootstrap-sass', '2.1'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'paperclip', '~> 3.0'
 gem 'nokogiri'

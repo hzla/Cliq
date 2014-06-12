@@ -2,14 +2,14 @@ class SessionsController < ApplicationController
 	include SessionsHelper
 
 	def create
-	  redirect_to user_path current_user and return if current_user
+	  redirect_to search_path and return if current_user
 	  auth_hash = request.env['omniauth.auth']
 	  auth = Authorization.find_by_uid auth_hash['uid']
 	  #redirect to user page if they've already authorized
 	  if auth
 	    session[:user_id] = auth.user.id
 	    current_user.update_attributes active: true;
-	    redirect_to user_path auth.user and return
+	    redirect_to search_path and return
 	  else #create new user if not authorized
 	    user = User.create_with_facebook auth_hash
 	    session[:user_id] = user.id 

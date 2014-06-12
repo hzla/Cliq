@@ -1,0 +1,27 @@
+<div id="message-history">
+	<% @conversation.ordered_messages.each do |message| %>
+		<%= render partial: 'messages/show', locals: {message: message} %>
+	<% end %>
+</div>
+
+<%= form_for [@conversation, @message], remote: true do |f| %>
+	<%= f.text_area :body, id: 'chat-box' %>
+<% end %>
+<%= image_tag @user.profile_pic_url, id: "chat-box-pic" %>
+
+	<div id="message-actions">
+			<div class="action-button white message-invite">
+				<%= image_tag "Events.svg", :class => "action-icon" %>
+				<div class="result-action">INVITE</div>
+			</div>
+			<div class="action-button white message-reply">
+				<div class="result-action reply">REPLY</div>
+			</div>
+	</div>
+
+	<script>
+		$('.messages .counter').text(<%= current_user.message_count %>)
+		<% if current_user.message_count < 1 %>
+			$('.messages .counter').addClass("hidden")
+		<% end %>
+	</script>

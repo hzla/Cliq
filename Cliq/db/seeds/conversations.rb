@@ -1,9 +1,9 @@
-users = [User.last]
+users = User.all
 
 users.each do |user|
 	p user.id
-	12.times do 
-		other_user = User.all.sample
+	6.times do 
+		other_user = users.sample
 		conversation = Conversation.create name: other_user.id
 
 		3.times do 

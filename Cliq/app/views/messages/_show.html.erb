@@ -1,0 +1,17 @@
+<div class="message-block">
+	<% if message.user == current_user %>
+		<div class="date sent head-6 light-gray">
+			<%= message.date %>
+		</div>
+		<div class="message sent head-5">
+			<%= message.body %>
+		</div>
+	<% else %>
+		<div class="message received head-5">
+			<%= message.body %>
+		</div>
+		<div class="date recieved head-6 light-gray">
+			<%= message.date %>
+		</div>
+	<% end %>
+</div>

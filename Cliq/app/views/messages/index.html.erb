@@ -1,74 +1,34 @@
 <%= render partial: "users/side_nav", locals: {active: :messages} %>
 
-<div id="messages-header">
-	<div id="messages-header-actions">
-		<div class="head-4 green" id="new-message">New Message</div>
-		<div class="head-4 white" id="message-sort-by">Sort by</div>
-		<div class="head-4 dark-gray" id="message-sort">Most Recent</div>
-		<div class="head-5 light-gray" id="search-messages">Search Messages</div>
-	</div>
-</div>
 
-<div id="conversations">
-	<% @user.conversations.each do |convo| %>
-		<% user = convo.get_other_user @user %>
 
-		<div class="conversation">
-				<%= image_tag @user.profile_pic_url, :class => "convo-pic" %>
-			<div class="convo-details">
-				<div class="convo-name head-5"><%= user.name %></div>
-				<div class="convo-date head- 5"><%= convo.date %></div>
-				<div class="convo-school head-6 light-gray"><%= user.school %><%= "Random School" if !user.school %></div>
-				<div class="convo-last-message head-6 gray"><%= convo.last_message %></div>
-			</div>
+	<div id="messages-header">
+		<div id="messages-header-actions">
+			<div class="head-4 green" id="new-message">New Message</div>
+			<div class="head-4 white" id="message-sort-by">Sort by</div>
+			<div class="head-4 dark-gray" id="message-sort">Most Recent</div>
+			<div class="head-5 light-gray" id="search-messages">Search Messages</div>
 		</div>
-	<% end %>
-</div>
+	</div>
 
-<div id="messages">
-	<div id="message-history">
-		<% @user.conversations.first.messages.each do |message| %>
-			<div class="message-block">
-				<% if message.user == @user %>
-					<div class="date sent head-6 light-gray">
-						<%= message.date %>
+	<div id="conversations">
+		<% current_user.ordered_conversations.each do |convo| %>
+			<%= link_to conversation_path(convo), :class => "convo-link", remote: true do %>
+				<% user = convo.get_other_user current_user %>
+
+				<div class="conversation" id="<%= user.id %>">
+						<%= image_tag current_user.profile_pic_url, :class => "convo-pic" %>
+					<div class="convo-details">
+						<div class="convo-name head-5"><%= user.name %></div>
+						<div class="convo-date head- 5"><%= convo.date %></div>
+						<div class="convo-school head-6 light-gray"><%= user.school %><%= "Random School" if !user.school %></div>
+						<div class="convo-last-message head-6 gray"><%= convo.last_message %></div>
 					</div>
-					<div class="message sent head-5">
-						<%= message.body %>
-					</div>
-				<% else %>
-					<div class="message received head-5">
-						<%= message.body %>
-					</div>
-					<div class="date recieved head-6 light-gray">
-						<%= message.date %>
-					</div>
-				<% end %>
-			</div>
+				</div>
+			<% end %>
 		<% end %>
 	</div>
 
-		<textarea rows="6" cols="50" id="chat-box">
-		</textarea>
-	<%= image_tag @user.profile_pic_url, id: "chat-box-pic" %>
-
-	<div id="message-actions">
-			<div class="action-button white message-invite">
-				<%= image_tag "Events.svg", :class => "action-icon" %>
-				<div class="result-action">INVITE</div>
-			</div>
-			<div class="action-button white message-reply">
-				<div class="result-action reply">REPLY</div>
-			</div>
+	<div id="messages">
+		<%= render partial: 'chat_history', locals: {conversation: @conversation } %>
 	</div>
-
-
-
-
-
-
-
-
-
-
-</div>

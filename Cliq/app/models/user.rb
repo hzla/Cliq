@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 	has_many :messages
 
 	validates :name, :presence => true
-	attr_accessible :name, :email, :school, :bio, :profile_pic_url, :fb_token, :activation, :address, :sex, :sexual_preference, :latitude, :longitude, :active 
+	attr_accessible :name, :email, :school, :bio, :profile_pic_url, :fb_token, :activation, :address, :sex, :sexual_preference, :latitude, :longitude, :active, :message_count, :invite_count, :event_count 
 
 	geocoded_by :address
 	after_validation :geocode      
@@ -69,5 +69,11 @@ class User < ActiveRecord::Base
 			[cat, acts] 
 		end
 	end
+
+	def ordered_conversations
+		conversations.order(:updated_at).reverse
+	end
+
+
 
 end

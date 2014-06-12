@@ -1,80 +1,86 @@
 <%= render partial: "side_nav", locals: {active: :critiq} %>
 
-<div id="search-container">
-	<div id="query">
-		<div id="query-1" class="head-3 white">I want to hang out in</div>
-		<div id="query-location" class="head-3 dark-gray search-term">Boston, MA</div>
-		<div id="query-2" class="head-3 white">with people interested in</div>
-		<div id="query-interests" class="head-3 dark-gray">
-			<div class="query-interest search-term">Biking</div>
-			<div class="query-interest search-term">Skydiving</div>
-			<div class="query-interest search-term">Math</div>
-			<div class="query-interest search-term">Video Games</div>
-			<div id="add">+Add</div>
-			<div id="search-query" class="green">Search</div>
+<div class="content-container">
+	<div id="search-container">
+		<div id="query">
+			<div id="query-1" class="head-3 white">I want to hang out in</div>
+			<div id="query-location" class="head-3 dark-gray search-term">Boston, MA</div>
+			<div id="query-2" class="head-3 white">with people interested in</div>
+			<div id="query-interests" class="head-3 dark-gray">
+				<div class="query-interest search-term">Biking</div>
+				<div class="query-interest search-term">Skydiving</div>
+				<div class="query-interest search-term">Math</div>
+				<div class="query-interest search-term">Video Games</div>
+				<div id="add">+Add</div>
+				<div id="search-query" class="green">Search</div>
+			</div>
 		</div>
+
 	</div>
 
-</div>
+	<div id="results-container">
+		<div id="results-header">
+			<div id="found" class="head-2">Here's who we found:</div>
+			<div id="sort-term" class="head-3 light-gray">Distance</div>
+			<div id="sort-by" class="head-3 light-gray">Sort by:</div>
+		</div>
+		
 
-<div id="results-container">
-	<div id="results-header">
-		<div id="found" class="head-2">Here's who we found:</div>
-		<div id="sort-term" class="head-3 light-gray">Distance</div>
-		<div id="sort-by" class="head-3 light-gray">Sort by:</div>
-	</div>
-	
-
-	<div id="results">
-		<% current_user.search_similar(current_user.activities).each do |entry| %>
-			<div class="result">
-				<%= image_tag entry[0].profile_pic_url, :class => "profile-pic-card" %>
-				
-				<div class="card-header">
-					<div class="card-name dark-gray"><%= entry[0].name %></div>
-					<div class="card-school light-gray"><%= entry[0].school %></div>
-					<% if entry[0].active %>
-						<div class="card-active green">Active</div>
-					<% else %>
-						<div class="card-active gray">Offline</div>
-					<% end %>
-				</div>
-
-				<div class="similarities">
-					<div class="mutual">
-						<div class="sim-label">Mutual Interests</div>
-						<div class="sim blue"><%= entry[1].length %> Total</div>
-					</div>
-
-					<div class="similar">
-						<div class="sim-label">Similar Interests</div>
-						<div class="sim blue"><%= entry[1].length %> Total</div>
-					</div>
-
-					<div class="suggestions">
-						<div class="sim-label">Some stuff you both like:</div>
-						<% entry[1][0..4].each do |suggestion| %>
-							<div class="suggestion white"><%= suggestion.name %></div>
+		<div id="results">
+			<% current_user.search_similar(current_user.activities).each do |entry| %>
+				<div class="result">
+					<%= image_tag entry[0].profile_pic_url, :class => "profile-pic-card" %>
+					
+					<div class="card-header">
+						<div class="card-name dark-gray"><%= entry[0].name %></div>
+						<div class="card-school light-gray"><%= entry[0].school %></div>
+						<% if entry[0].active %>
+							<div class="card-active green">Active</div>
+						<% else %>
+							<div class="card-active gray">Offline</div>
 						<% end %>
 					</div>
 
-					<div class="result-actions">
-						<div class="action-button invite white">
-							<%= image_tag "Events.svg", :class => "action-icon" %>
-							<div class="result-action">INVITE</div>
+					<div class="similarities">
+						<div class="mutual">
+							<div class="sim-label">Mutual Interests</div>
+							<div class="sim blue"><%= entry[1].length %> Total</div>
 						</div>
-						<div class="action-button chat white">
-							<%= image_tag "Messages.svg", :class => "action-icon" %>
-							<div class="result-action">CHAT</div>
+
+						<div class="similar">
+							<div class="sim-label">Similar Interests</div>
+							<div class="sim blue"><%= entry[1].length %> Total</div>
+						</div>
+
+						<div class="suggestions">
+							<div class="sim-label">Some stuff you both like:</div>
+							<% entry[1][0..4].each do |suggestion| %>
+								<div class="suggestion white"><%= suggestion.name %></div>
+							<% end %>
+						</div>
+
+						<div class="result-actions">
+							<div class="action-button invite white">
+								<%= image_tag "Events.svg", :class => "action-icon" %>
+								<div class="result-action">INVITE</div>
+							</div>
+							<div class="action-button chat white">
+								<%= image_tag "Messages.svg", :class => "action-icon" %>
+								<div class="result-action">CHAT</div>
+							</div>
 						</div>
 					</div>
-				
 				</div>
-			</div>
-
-
-		<% end %>
+			<% end %>
+		</div>
 	</div>
-
-
 </div>
+
+<script>
+<%= render partial: 'subscribe.js.erb' %>
+</script>
+
+
+
+
+
