@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140606230748) do
+ActiveRecord::Schema.define(version: 20140611232733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -95,6 +95,7 @@ ActiveRecord::Schema.define(version: 20140606230748) do
     t.integer  "conversation_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "seen",            default: false
   end
 
   add_index "messages", ["user_id"], name: "msg_user_id_ix", using: :btree
@@ -122,6 +123,9 @@ ActiveRecord::Schema.define(version: 20140606230748) do
     t.string   "sex"
     t.string   "sexual_preference", default: "hetero"
     t.boolean  "active"
+    t.integer  "message_count",     default: 0
+    t.integer  "event_count",       default: 0
+    t.integer  "invite_count",      default: 0
   end
 
 end

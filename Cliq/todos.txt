@@ -1,0 +1,14 @@
+TODOS
+	
+	Create Functionality on Chat page
+		ajax
+		faye
+
+	Autocomplete on Search page
+		ajax
+		jquery-autocomplete
+
+	Events
+
+	Make search page dynamic
+		ajax

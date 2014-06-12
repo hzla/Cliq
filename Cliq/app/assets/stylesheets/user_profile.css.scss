@@ -11,42 +11,6 @@
 	font-family: $generic-font;
 }
 
-.side-nav {
-	width: 62px;
-	height: 100%;
-	background-color: $nav-color;
-	position: fixed;
-	left: 0;
-	text-align: center;
-	top: 0;
-}
-
-.logo {	
-	font-family: $logo-font;
-	font-style: italic;
-	font-weight: 400;
-	font-size: 20px;
-	color: white;
-	margin-bottom: 10px;
-	padding-top: 15px;
-	padding-bottom: 15px;
-}
-
-.nav-icon {
-	width: 25px;
-	height: 25px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	margin-bottom: 5px;
-	margin-top: 5px;
-}
-
-.settings {
-	bottom: 0;
-	position: absolute;
-	margin-left: 18px;
-}
-
 .profile-pic {
 	width: 200px;
 	height: 200px;

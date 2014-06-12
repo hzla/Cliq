@@ -5,7 +5,13 @@ Cliq::Application.routes.draw do
   get '/users/:id/activate/:code', to: 'users#activate'
   get '/search', to: 'users#search', as: 'search'
 
+
+
   resources :messages, only: [:index]
+
+  resources :conversations do 
+    resources :messages, only: [:create]
+  end
 
 
   resources :partners

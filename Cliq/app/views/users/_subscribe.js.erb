@@ -1,0 +1,17 @@
+<% if current_user %>
+	
+
+	$(function() {
+	  var faye = new Faye.Client('http://localhost:9292/faye');
+	 
+	  faye.unsubscribe("<%= user_path current_user %>" + "/messages")
+	  faye.subscribe("<%= user_path current_user %>" + "/messages", function(data) {
+	    console.log("this tried to do something")
+	    eval(data);
+	  });
+	  faye.unsubscribe("<%= user_path current_user %>"+"/events")
+	  faye.subscribe("<%= user_path current_user %>"+"/events", function(data) {
+	    eval(data);
+	  });
+	});
+<% end %>
