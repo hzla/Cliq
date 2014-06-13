@@ -1,6 +1,7 @@
 Animations = 
 	init: ->
 		$('.nav-filler').mouseover @extendSideNav
+		$('#messages-container').click @revertSideNav
 		$('.content-container').click @revertSideNav
 
 	extendSideNav: ->

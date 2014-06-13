@@ -1,20 +1,13 @@
 Messages = 
 	init: ->
-		$('#message-history')[0].scrollTop = $('#message-history')[0].scrollHeight if $('#message-history').length >= 1
+		$('#message-history')[0].scrollTop = $('#message-history')[0].scrollHeight + 100 if $('#message-history').length >= 1
 		$('body')	.on 'click', '.result-action.reply', @submitMessage
-		$('body').on 'ajax:success', '#new_message', @appendMessage
 		$('body').on 'ajax:success', '.convo-link', @appendConversation
+		$('#chat-box').keypress @submitMessageOnEnter
 		@selectFirstConversation()
 
 	submitMessage: ->
 		$('#new_message').submit()
-
-	appendMessage: (event, data, xhr, status) ->
-		# messages = $('#message-history')
-		# messages.append data
-		# $('#new_message')[0].reset()
-		# $('#message-history')[0].scrollTop = $('#message-history')[0].scrollHeight
-		console.log data
 
 	appendConversation: (event, data, xhr, status) ->
 		$('.conversation').removeClass 'current'
@@ -22,9 +15,13 @@ Messages =
 		$('#messages').html(data)
 		$('#message-history')[0].scrollTop = $('#message-history')[0].scrollHeight
 
-
 	selectFirstConversation: ->
 		$($('.conversation')[0]).addClass('current')
+
+	submitMessageOnEnter: (e) ->
+		if (e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)
+			$('#new_message').submit()
+
 
 
 
@@ -32,6 +29,7 @@ ready = ->
 	Messages.init()
 $(document).ready ready
 $(document).on 'page:load', ready
+
 
 
 

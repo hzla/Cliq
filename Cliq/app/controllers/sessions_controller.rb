@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
 	include SessionsHelper
+	skip_before_action :require_login
+
 
 	def create
 	  redirect_to search_path and return if current_user

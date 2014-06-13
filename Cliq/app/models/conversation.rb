@@ -35,6 +35,7 @@ class Conversation < ActiveRecord::Base
 		unseen = messages.where seen: false, user_id: other_user.id
 		new_count = user.message_count - unseen.length
 		user.update_attributes message_count: new_count
+		user.update_attributes message_count: 0 if user.message_count < 0
 		unseen.update_all seen: true		
 	end
 

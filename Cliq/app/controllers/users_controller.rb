@@ -2,6 +2,10 @@ class UsersController < ApplicationController
 	before_filter :get_user
 
 	def show
+		respond_to do |format|
+  		format.html 
+  		format.json { render :json => @user }
+		end
 	end
 
 	def activate

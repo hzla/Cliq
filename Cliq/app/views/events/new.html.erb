@@ -1,0 +1,28 @@
+<div class="event-modal">
+	<div class="event-form-header">
+			<div class="header-profile">
+				<div class="head-3 dark-gray" id="sending">Sending invite to</div>
+				<%= image_tag User.last.profile_pic_url, :class => "event-profile-pic" %>
+				<div class="head-4 dark-gray" id="sending-name"><%= @user.name %></div>
+			</div>
+	</div>
+
+	<%= form_for [@user, @event], :class => 'event-form' do |f| %>
+		<div class="form-row first">
+			<div class="event-form-label head-3 dark-gray">What:</div> <%= f.text_field :title, :class => "form-input" %>
+		</div>
+		<div class="form-row">
+			<div class="event-form-label head-3 dark-gray">Where:</div> <%= f.text_field :location, :class => "form-input" %>
+		</div>
+		<div class="form-row">
+			<div class="event-form-label head-3 dark-gray">When:</div> <%= f.text_field :start_time, :class => "form-input" %> 
+		</div>
+		<div class="form-row">
+			
+			<div class="event-form-label head-3 dark-gray">How many?</div> <div id="quantity-select"> <%= f.select :quantity, (2..50), :class => 'small-form-input' %></div>
+		</div>
+		<div class="form-row submit">	
+			<%= f.submit "Send Invite", id: "send-invite" %>
+		</div>
+	<% end %>
+</div>
