@@ -1,0 +1,158 @@
+@import 'variables';
+
+.event-modal {
+	float: left;
+	border: 1px solid black;
+	width: 530px;
+	height: 550px;
+	font-family: $generic-font;
+	background-color: $super-light-gray;
+}
+
+.event-form-header {
+	float: left;
+	width: 100%;
+	text-align: center;
+	margin-top: 30px;
+	margin-left: 55px;
+}
+
+.header-profile {
+	float: left;
+}
+
+#sending {
+	float: left;
+}
+
+.event-profile-pic {
+	height: 34px;
+	width: 34px;
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#sending-name {
+	float: left;
+}
+
+
+.form-row {
+	clear: left;
+	float: left;
+	margin-top: 5px;
+	width: 108%;
+	margin-left: 55px;
+}
+
+.form-row.first {
+	margin-top: 30px;
+}
+
+.event-form-label {
+	float: left;
+}
+
+.form-input {
+	width: 310px;
+	height: 32px;
+	float: right;
+	margin-right: 150px;
+	border: 1px solid $light-gray;
+	font-size: 16px;
+}
+
+#or {
+	width: 100%;
+	float: left;
+	text-align: center;
+	height: 20px;
+	margin-left: 55px;
+	margin-bottom: 10px;
+}
+
+#event_quantity {
+	width: 100px;
+	padding: 10px;
+	background: white;
+	font-size: 20px;
+	margin-top: 5px;
+	margin-left: 20px;
+}
+
+.form-row.optional {
+	margin-top: 0px;
+}
+
+.form-row.submit {
+	margin-left: 0px;
+	text-align: center;
+	margin-top: 20px;
+}
+
+
+.upload {
+	position: relative;
+}
+
+#upload-button {
+	width: 165px;
+	height: 34px;
+	color: white;
+	background-color: $gray;
+	text-align: center;
+	border-radius: 3px;
+	float: right;
+	margin-right: 150px;
+	position: absolute;
+	left: 313px;
+}
+
+.btn-text {
+	margin-top: 7px;
+}
+
+#imgInp {
+	float: right;
+	position: absolute;
+	left: 313px;
+	z-index: 2;
+	width: 165px;
+	height: 34px;
+	opacity: 0;
+}
+
+#preview {
+	width: 100px;
+	height: 100px;
+	float:	right;
+	margin-right: 150px;
+}
+
+#send-invite {
+	background-color: $green;
+	color: white;
+	width: 180px;
+	height: 44px;
+	border-radius: 3px;
+	font-size: 15px;
+	border: none;
+	box-shadow: none;
+	margin-left: 200px;
+}
+
+#invite-submit {
+	background: none;
+	border: none;
+	color: white;
+	font-size: 18px;
+	margin-top: 10px;
+}
+
+.invite-icon {
+	height: 20px;
+	width: 20px;
+	margin-bottom: -4px;
+}
+

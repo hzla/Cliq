@@ -1,14 +1,33 @@
 TODOS
 	
-	Create Functionality on Chat page
-		ajax
-		faye
+	Autocomplete on the search page
+	Chatting on the search page
+	Events page
+	Events modal
+	Events notifications
 
-	Autocomplete on Search page
-		ajax
-		jquery-autocomplete
 
-	Events
+Schedule
 
-	Make search page dynamic
-		ajax
+
+Friday
+	Add auto fill to events modal
+	Add amazon cloud support to modal
+	Events Page
+	
+	Events notifications
+
+Saturday
+	Chatting on the search page
+	
+
+Sunday
+	Autocomplete on the search page 
+	Finish Up whatever is left
+
+
+
+
+
+
+

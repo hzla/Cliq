@@ -1,6 +1,6 @@
 <%= render partial: "users/side_nav", locals: {active: :messages} %>
 
-
+<div id="messages-container" %>
 
 	<div id="messages-header">
 		<div id="messages-header-actions">
@@ -32,3 +32,4 @@
 	<div id="messages">
 		<%= render partial: 'chat_history', locals: {conversation: @conversation } %>
 	</div>
+</div>

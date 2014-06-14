@@ -6,6 +6,7 @@
 
 <%= form_for [conversation, @message], remote: true do |f| %>
 	<%= f.text_area :body, id: 'chat-box' %>
+	<%= f.submit :class => :hidden %>
 <% end %>
 <%= image_tag current_user.profile_pic_url, id: "chat-box-pic" %>
 

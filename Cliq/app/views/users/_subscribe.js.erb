@@ -1,17 +1,51 @@
 <% if current_user %>
-	
-
 	$(function() {
 	  var faye = new Faye.Client('http://localhost:9292/faye');
 	 
 	  faye.unsubscribe("<%= user_path current_user %>" + "/messages")
 	  faye.subscribe("<%= user_path current_user %>" + "/messages", function(data) {
-	    console.log("this tried to do something")
-	    eval(data);
+	    var message = $.parseJSON(data)
+	    var sendingUser = String(message.user_id)
+	    var messageShort = message.body.substring(0,30)
+  		if (messageShort.length == 30) { messageShort += '...' }
+  		//get notification count for the recieving user
+  		$.ajax({
+  			url: '/users/' + sendingUser + '.json'
+  		}).done(function(data){
+  			var user = $.parseJSON(data)
+  			newCount = user.message_count
+  		})
+	    // if the user is currently talking the person who sent him the message
+	    if ($('.conversation.current').attr('id') == sendingUser ) {
+	    	$.ajax({
+	    		//request the message partial
+	    		url: '/messages/' + message.id
+	    	}).done(function(data){
+	    		//and add the message
+	    		$('#message-history').append(data)
+	    		//and add a message preview in the conversation bar
+	    		$('#' + sendingUser + " .convo-details .convo-last-message").text(messageShort)
+	    		// and scroll to the bottom of the chat history
+	    		$('#message-history')[0].scrollTop = $('#message-history')[0].scrollHeight + 100
+	    	})	    	
+	    } else if ($('.messages.active.side-icon').length > 0) { // if the user is on the message page but talking to someone else
+	    	//add preview
+	    	$('#' + sendingUser + " .convo-details .convo-last-message").text(messageShort)
+	    	//show notifications counter and increment
+	    	$('.messages .counter').removeClass('hidden')
+	    	$('.messages .counter').text(newCount)
+	    } else { //if user is anywhere else on the site
+	    	//show notifications counter and increment
+	    	$('.messages .counter').removeClass('hidden')
+	    	$('.messages .counter').text(nextCount)
+	    }
 	  });
+
 	  faye.unsubscribe("<%= user_path current_user %>"+"/events")
 	  faye.subscribe("<%= user_path current_user %>"+"/events", function(data) {
-	    eval(data);
+	    //to be implemented
 	  });
 	});
 <% end %>
+
+

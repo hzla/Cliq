@@ -1,0 +1,83 @@
+<div class="event-modal">
+	<div class="event-form-header">
+			<div class="header-profile">
+				<div class="head-3 dark-gray" id="sending">Sending invite to</div>
+				<%= image_tag User.last.profile_pic_url, :class => "event-profile-pic" %>
+				<div class="head-4 dark-gray" id="sending-name"><%= @user.name %></div>
+			</div>
+	</div>
+
+	<%= form_for [@user, @event], :class => 'event-form', multipart: true do |f| %>
+		
+		<div class="form-row first">
+			<div class="event-form-label head-3 dark-gray">What:</div> 
+			<%= f.text_field :title, :class => "form-input", placeholder: 'ex. Potluck of the Ages' %>
+		</div>
+		
+		<div class="form-row">
+			<div class="event-form-label head-3 dark-gray">Where:</div> 
+			<%= f.text_field :location, :class => "form-input", placeholder: '34 Sharefood Rd. Tampa California' %>
+		</div>
+		
+		<div id="or" class="head-4 dark-gray">
+			or
+		</div>
+		
+		<div class="form-row">
+			 <%= f.text_field :location, :class => "form-input", placeholder: 'Pick a place near your school' %>
+		</div>
+		
+		<div class="form-row">
+			<div class="event-form-label head-3 dark-gray">When:</div> 
+			<%= f.text_field :start_time, :class => "form-input", placeholder: 'Click to select from calendar' %> 
+		</div>
+		
+		<div class="form-row">
+			<div class="event-form-label head-3 dark-gray">How many?</div> 
+			<div id="quantity-select"> 
+				<%= f.select :quantity, (2..50), :class => 'small-form-input' %>
+			</div>
+		</div>
+		
+		<div class="form-row">
+			<div class="event-form-label head-3 dark-gray">Upload Image:</div>
+			  <%= f.file_field :image, :class => 'form-input-upload', id: "imgInp" %> 
+			  <div id="upload-button"><div class="btn-text">Browse Files...</div></div>
+		</div>
+
+		<div class="form-row optional">
+			<div class="event-form-label head-3 dark-gray">(Optional)</div>
+			<img id="preview" src="#" alt="preview" class="hidden" /> 
+		</div>
+
+
+		
+
+		<div class="form-row submit">	
+			<div id="send-invite">
+				<%= image_tag "Events.svg", :class => "invite-icon" %>
+				<%= f.submit "SEND INVITE", id: "invite-submit" %>
+		</div>
+		</div>
+	<% end %>
+</div>
+
+
+<script>
+	function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        
+        reader.onload = function (e) {
+            $('#preview').show()
+            $('#preview').attr('src', e.target.result);
+        }
+        
+        reader.readAsDataURL(input.files[0]);
+    }
+  }
+    
+  $("#imgInp").change(function(){
+      readURL(this);
+  });
+</script>
