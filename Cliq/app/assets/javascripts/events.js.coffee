@@ -4,6 +4,12 @@ Events =
     	dateFormat: 'yy-mm-dd'
     	timeFormat: 'hh:mm:tt'
 
+    $('#upload-button').click @browseFiles
+
+  browseFiles: ->
+  	$('#event_image').click()
+
+
 
 
 

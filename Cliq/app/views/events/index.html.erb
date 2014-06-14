@@ -1,0 +1,26 @@
+<%= render partial: "users/side_nav", locals: {active: :events} %>
+
+
+
+<div id="events-header">
+	<div id="events-header-actions">
+		<div class="head-4 green" id="event-status">Status: Active</div>
+		<div class="head-4 white selected" id="event-upcoming">Upcoming</div>
+		<div class="head-4 white" id="event-past">Past</div>
+	</div>
+</div>
+
+<div id="events-container">
+
+	<div id="invites">
+		<div id="invite-header" class="head-4 dark-gray">Invites</div>
+
+		<% @invitations.each do |invite| %>
+			<div class="invite"></div>
+		<% end %>
+	</div>
+
+
+	<div id="upcoming">
+	</div>
+<div>

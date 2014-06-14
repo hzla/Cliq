@@ -1,81 +1,66 @@
 @import 'variables';
 
-.event-modal {
-	float: left;
-	border: 1px solid black;
-	width: 530px;
-	height: 345px;
-	font-family: $generic-font;
-}
-
-.event-form-header {
-	float: left;
+#events-header {
+	height: 64px;
 	width: 100%;
-	text-align: center;
-	margin-top: 10px;
-	margin-left: 55px;
+	background-image: image_url("search_blue.png");
+	float: left;
+	font-family: $generic-font;
+	margin-left: 62px;
 }
 
-.header-profile {
+#events-container {
+	background-color: $super-light-gray;
 	float: left;
 }
 
-#sending {
+#events-header-actions {
 	float: left;
+	margin-top: 15px;
+	margin-left: 27%;
 }
 
-.event-profile-pic {
-	height: 34px;
-	width: 34px;
+#event-status {
 	float: left;
-	margin-left: 10px;
-	margin-right: 10px;
+	background-color: white;
+	padding-left: 30px;
+	padding-right: 30px;
+	margin-right: 20px;
+	border-radius: 50px;
 }
 
-#sending-name {
+.selected {
+	background-color: $dark-gray;
+	border-radius: 50px;
+}
+
+#event-upcoming {
 	float: left;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-right: 20px;
 }
 
-
-.form-row {
-	clear: left;
+#event-past {
 	float: left;
-	margin-top: 5px;
-	width: 108%;
-	margin-left: 55px;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
-.form-row.first {
-	margin-top: 30px;
-}
-
-.event-form-label {
+#invites {
+	width: 345px;
+	border: 1px solid black;
 	float: left;
+	margin-left: 62px;
+	font-family: $generic-font
 }
 
-.form-input {
-	width: 310px;
-	height: 32px;
-	float: right;
-	margin-right: 150px;
-	border: 1px solid $light-gray;
+#invite-header {
+	margin-left: 70px;
 }
 
-#event_quantity {
-	width: 100px;
-	padding: 10px;
-	background: white;
-	font-size: 20px;
-	margin-top: 5px;
-	margin-left: 20px;
-}
-
-.form-row.submit {
-	margin-left: 0px;
-	text-align: center;
-}
-
-#send-invite {
-
+.invite {
+	height: 378px;
+	width: 224px;
 }
 

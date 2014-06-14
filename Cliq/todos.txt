@@ -10,19 +10,19 @@ TODOS
 Schedule
 
 
-Thursday
-	Events Modal (in..progress)
-
-
 Friday
+	Add auto fill to events modal
+	Add amazon cloud support to modal
 	Events Page
-	Chatting on the search page
+	
 	Events notifications
 
 Saturday
-	Autocomplete on the search page
+	Chatting on the search page
+	
 
-Sunday 
+Sunday
+	Autocomplete on the search page 
 	Finish Up whatever is left
 
 

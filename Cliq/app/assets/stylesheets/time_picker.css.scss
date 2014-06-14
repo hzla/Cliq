@@ -39,3 +39,7 @@
 .ui-widget .ui-widget {
 	right: 60px;
 }
+
+.ui-datepicker-current-day .ui-state-default {
+	background-color: $blue;
+}
