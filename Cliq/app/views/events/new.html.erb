@@ -24,7 +24,29 @@
 		</div>
 		
 		<div class="form-row">
-			 <%= f.text_field :location, :class => "form-input", placeholder: 'Pick a place near your school' %>
+			 <%= f.select :partner_id, options_for_select([["Pick a place near your school", 0, {:class => "light-gray"}]] + @partners), :class => "form-input" %>
+		</div>
+
+		<div class="form-row hidden">
+			<div id="hour-labels">
+				<div class="day head-6 gray">Mon</div>
+				<div class="day head-6 gray">Tues</div>
+				<div class="day head-6 gray">Wed</div>
+				<div class="day head-6 gray">Thurs</div>
+				<div class="day head-6 gray">Fri</div>
+				<div class="day head-6 gray">Sat</div>
+				<div class="day head-6 gray">Sun</div>
+			</div>
+
+			<div id="hours">
+				<div id="mon" class="hour head-6 gray"></div>
+				<div id="tues" class="hour head-6 gray"></div>
+				<div id="wed" class="hour head-6 gray"></div>
+				<div id="thurs" class="hour head-6 gray"></div>
+				<div id="fri" class="hour head-6 gray"></div>
+				<div id="sat" class="hour head-6 gray"></div>
+				<div id="sun" class="hour head-6 gray"></div>
+			</div>
 		</div>
 		
 		<div class="form-row">
@@ -47,7 +69,7 @@
 
 		<div class="form-row optional">
 			<div class="event-form-label head-3 dark-gray">(Optional)</div>
-			<img id="preview" src="#" alt="preview" class="hidden" /> 
+			
 		</div>
 
 
@@ -57,7 +79,8 @@
 			<div id="send-invite">
 				<%= image_tag "Events.svg", :class => "invite-icon" %>
 				<%= f.submit "SEND INVITE", id: "invite-submit" %>
-		</div>
+			</div>
+			<img id="preview" src="#" alt="preview" class="hidden" /> 
 		</div>
 	<% end %>
 </div>
