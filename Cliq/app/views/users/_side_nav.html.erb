@@ -9,19 +9,7 @@
 			<%= image_tag "Profile.svg", :class => "nav-icon" %>
 		</div>
 	<% end %>
-	<div class="notifications <%= 'active' if active == :notifications %> side-icon">
-		<%= image_tag "Notifications.svg", :class => "nav-icon" %>
-		<% if current_user.invite_count > 0 %>
-			<div class="counter">
-				<%= current_user.invite_count%>
-			</div>
-		<% else %>
-			<div class="counter hidden">
-				<%= current_user.invite_count %>
-			</div>
-		<% end %>
-	</div>
-		<%= link_to messages_path do %>
+	<%= link_to messages_path do %>
 		<div class="messages <%= 'active' if active == :messages %> side-icon">
 			<%= image_tag "Messages.svg", :class => "nav-icon" %>
 			<% if current_user.message_count > 0 %>
@@ -35,18 +23,20 @@
 			<% end %>
 		</div>
 	<% end %>
-	<div class="events <%= 'active' if active == :events %> side-icon" >
-		<%= image_tag "Events.svg", :class => "nav-icon" %>
-			<% if current_user.event_count > 0 %>
-				<div class="counter">
-					<%= current_user.event_count%>
-				</div>
-			<% else %>
-				<div class="counter hidden">
-					<%= current_user.event_count %>
-				</div>
-			<% end %>
-	</div>
+	<%= link_to events_path do %>
+		<div class="events <%= 'active' if active == :events %> side-icon" >
+			<%= image_tag "Events.svg", :class => "nav-icon" %>
+				<% if current_user.event_count > 0 %>
+					<div class="counter">
+						<%= current_user.event_count%>
+					</div>
+				<% else %>
+					<div class="counter hidden">
+						<%= current_user.event_count %>
+					</div>
+				<% end %>
+		</div>
+	<% end %>
 	<div class="nav-filler">
 	</div> 
 	<div class="settings <%= 'active' if active == :settings %>" >
@@ -66,19 +56,6 @@
 			<div class="icon-label">Profile</div>
 		</div>
 	<% end %>
-	<div class="extended notifications <%= 'active' if active == :notifications %> side-icon">
-		<%= image_tag "Notifications.svg", :class => "nav-icon" %> 
-		<div class="icon-label">Invites</div>
-		<% if current_user.invite_count > 0 %>
-			<div class="counter">
-				<%= current_user.invite_count%>
-			</div>
-		<% else %>
-			<div class="counter hidden">
-				<%= current_user.invite_count %>
-			</div>
-		<% end %>
-	</div>
 		<%= link_to messages_path do %>
 		<div class="extended messages <%= 'active' if active == :messages %> side-icon">
 			<%= image_tag "Messages.svg", :class => "nav-icon" %>
@@ -94,20 +71,21 @@
 			<% end %>
 		</div>
 	<% end %>
-	<div class="extended events <%= 'active' if active == :events %> side-icon" >
-		<%= image_tag "Events.svg", :class => "nav-icon" %>
-		<% if current_user.event_count > 0 %>
-				<div class="counter">
-					<%= current_user.event_count%>
-				</div>
-			<% else %>
-				<div class="counter hidden">
-					<%= current_user.event_count %>
-				</div>
-			<% end %>
-		<div class="icon-label">Events</div>
-
-	</div> 
+	<%= link_to events_path do %>
+		<div class="extended events <%= 'active' if active == :events %> side-icon" >
+			<%= image_tag "Events.svg", :class => "nav-icon" %>
+			<% if current_user.event_count > 0 %>
+					<div class="counter">
+						<%= current_user.event_count%>
+					</div>
+				<% else %>
+					<div class="counter hidden">
+						<%= current_user.event_count %>
+					</div>
+				<% end %>
+			<div class="icon-label">Events</div>
+		</div> 
+	<% end %>
 	<div class="extended settings <%= 'active' if active == :settings %>" id="extended-settings" >
 		<%= image_tag "Settings.svg", :class => "nav-icon" %>
 		<div class="icon-label">User Settings</div>

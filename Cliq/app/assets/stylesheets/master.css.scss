@@ -20,7 +20,7 @@ body {
 }
 
 .head-4 {
-	font-weight: 400;
+	font-weight: 600;
 	font-size: 20pt;
 }
 
@@ -62,8 +62,17 @@ body {
 	color: white;
 }
 
+.red {
+	color: red;
+}
+
 .active {
 	background-color: $active-nav-color;
+}
+
+.content-container {
+	float: left;
+	width: 100%;
 }
 
 .side-nav {
