@@ -17,7 +17,7 @@ class EventsController < ApplicationController
 		event = Event.new params[:event]
 		invited_user = User.find params[:user_id]
 		event.users << [invited_user, current_user] if event.save
-		excursion = Excursion.where(event_id: params[:id], user_id: current_user.id)[0]
+		excursion = Excursion.where(event_id: event.id, user_id: current_user.id)[0]
 		excursion.update_attributes created: true
 		redirect_to search_path
 	end
