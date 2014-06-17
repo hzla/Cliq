@@ -13,9 +13,10 @@ class Event < ActiveRecord::Base
 
 	def time
 		if start_time - Time.now < 24.hours
-			created_at.strftime "Today at %I:%M%p"
+			# created_at.strftime "Today at %I:%M%p"
+			start_time.strftime("%m/%d/%g at %I:%M%p")
 		else
-			created_at.strftime("%m/%d/%g at %I:%M%p") 
+			start_time.strftime("%m/%d/%g at %I:%M%p") 
 		end
 	end
 

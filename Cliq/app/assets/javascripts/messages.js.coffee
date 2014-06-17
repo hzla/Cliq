@@ -3,7 +3,7 @@ Messages =
 		$('#message-history')[0].scrollTop = $('#message-history')[0].scrollHeight + 100 if $('#message-history').length >= 1
 		$('body')	.on 'click', '.result-action.reply', @submitMessage
 		$('body').on 'ajax:success', '.convo-link', @appendConversation
-		$('#chat-box').keypress @submitMessageOnEnter
+		$('body').on 'keypress', '#chat-box', @submitMessageOnEnter
 		@selectFirstConversation()
 
 	submitMessage: ->

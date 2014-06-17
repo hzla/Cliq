@@ -1,25 +1,52 @@
 class EventsController < ApplicationController
 	include SessionsHelper
+	include ApplicationHelper
 
 	def index
-		@invitations = current_user.excursions.where(accepted: false).where(passed: false).map(&:event).sort_by(&:start_time)
-		@events = Event.all.order(:start_time)
+		excursions = current_user.excursions.where(accepted: false).where(passed: false)
+		@invitations = excursions.map(&:event).compact.select { |event| event.start_time > Time.now }.sort_by(&:start_time)
+		@events = Event.where("start_time > ?", Time.now).order(:start_time)
+		excursions.update_all seen: true
+		current_user.update_attributes event_count: 0
 	end
 
+	def upcoming
+		@events = Event.where("start_time > ?", Time.now).order(:start_time)
+		render partial: 'events', locals: {events: @events}
+	end
+
+	def past
+		@events = current_user.excursions.where(accepted: true).map(&:event).select { |event| event.start_time < Time.now }.sort_by(&:start_time).reverse
+		render partial: 'events', locals: {events: @events}
+	end
+
+	def going
+		@events = current_user.excursions.where(accepted: true).map(&:event).select { |event| event.start_time > Time.now }.sort_by(&:start_time)
+		render partial: 'events', locals: {events: @events}
+	end
 
 	def new
 		@event = Event.new
 		@user = User.find params[:user_id] 
 		@partners = Partner.local_options
+		render layout: false
 	end
 
 	def create
 		event = Event.new params[:event]
 		invited_user = User.find params[:user_id]
+		invited_user.event_count += 1
+		invited_user.save
 		event.users << [invited_user, current_user] if event.save
 		excursion = Excursion.where(event_id: event.id, user_id: current_user.id)[0]
 		excursion.update_attributes created: true
+		broadcast user_path(invited_user)+ "/events", event.to_json
 		redirect_to search_path
+	end
+
+	def show
+		event = Event.find params[:id]
+		render partial: 'invite_card', locals: {invite: event}
 	end
 
 	def accept
@@ -33,8 +60,5 @@ class EventsController < ApplicationController
 		excursion.update_attributes passed: true
 		render :nothing => true, :status => 200, :content_type => 'text/html'
 	end
-
-
-
 
 end

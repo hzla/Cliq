@@ -16,6 +16,10 @@
 	width: 100%;
 }
 
+#events {
+	float: left;
+}
+
 #events-header-actions {
 	float: left;
 	margin-top: 15px;
@@ -40,13 +44,20 @@
 	float: left;
 	padding-left: 15px;
 	padding-right: 15px;
-	margin-right: 20px;
 }
 
 #event-past {
 	float: left;
 	padding-left: 15px;
 	padding-right: 15px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#event-going {
+	float: left;
+	padding-left: 15px;
+	padding-right: 15px; 
 }
 
 #invites {
@@ -54,6 +65,10 @@
 	float: left;
 	margin-left: 62px;
 	font-family: $generic-font
+}
+
+#invites-collection {
+	float: left;
 }
 
 #invites-header {
@@ -106,6 +121,10 @@
 	margin-left: 1px;
 	margin-top: -3px;
 	font-size: 10pt;
+}
+
+.invite-location {
+	font-size: 12pt;
 }
 
 .invite-pic {
