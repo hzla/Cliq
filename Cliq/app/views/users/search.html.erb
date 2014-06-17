@@ -62,11 +62,15 @@
 						<div class="result-actions">
 							<div class="action-button invite-btn white">
 								<%= image_tag "Events.svg", :class => "action-icon" %>
-								<div class="result-action">INVITE</div>
+								<%= link_to new_user_event_path(entry[0]), :class => "white invite-user", remote: true do %>
+									<div class="result-action">INVITE</div>
+								<% end %>
 							</div>
 							<div class="action-button chat white">
 								<%= image_tag "Messages.svg", :class => "action-icon" %>
-								<div class="result-action">CHAT</div>
+								<%= link_to user_chat_path(entry[0]), :class => "white chat-user", remote: true do %>
+									<div class="result-action">CHAT</div>
+								<% end %>
 							</div>
 						</div>
 					</div>
@@ -74,6 +78,10 @@
 			<% end %>
 		</div>
 	</div>
+</div>
+
+<div id="invite-modal-container" class="modal">
+
 </div>
 
 <script>

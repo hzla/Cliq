@@ -7,7 +7,7 @@
 			</div>
 	</div>
 
-	<%= form_for [@user, @event], :class => 'event-form', multipart: true do |f| %>
+	<%= form_for [@user, @event], :class => 'event-form', multipart: true, remote: true do |f| %>
 		
 		<div class="form-row first">
 			<div class="event-form-label head-3 dark-gray">What:</div> 
@@ -80,13 +80,17 @@
 				<%= image_tag "Events.svg", :class => "invite-icon" %>
 				<%= f.submit "SEND INVITE", id: "invite-submit" %>
 			</div>
-			<img id="preview" src="#" alt="preview" class="hidden" /> 
+			<img id="preview" src="#" alt="preview failed to load" class="hidden" /> 
 		</div>
 	<% end %>
 </div>
 
 
 <script>
+	$('#event_start_time').datetimepicker({
+		dateFormat: 'yy-mm-dd',
+    timeFormat: 'hh:mm:tt'
+	})
 	function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();

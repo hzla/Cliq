@@ -16,18 +16,21 @@ class Conversation < ActiveRecord::Base
 
 	def date
 		time = messages.order(:created_at).pluck(:created_at).last
+		time = Time.now - 1.year if !time
 		if (Time.now - 1.day) < time
 			time = time - 7.hours
 			time.strftime("%I:%M%p")
 		else
-			time - 6.hours
+			time.strftime("%m/%d/%g")
 		end
 	end
 
 	def last_message 
+		return "no message yet" if messages.empty?
 		message = messages.order(:created_at).pluck(:body).last[0..29]
 		message += "..." if message.length == 30
 		message
+
 	end
 
 	def update_notifications user

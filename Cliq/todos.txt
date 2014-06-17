@@ -1,26 +1,26 @@
 TODOS
-	
 	Events page
 	Events modal
 	Events notifications
 	Autocomplete on the search page
 	Chatting on the search page
 	
-
-
 Schedule
 
-Saturday
-	Add auto fill to events modal
-	Add amazon cloud support to modal
-	Events Page
-	Events notifications
-	Chatting on the search page
-	
-
 Sunday
+	Event Messaging
+	Chatting on the search page
 	Autocomplete on the search page 
-	Finish Up whatever is left
+
+Monday
+	Initial Likes
+
+
+DO LATERS
+	Add amazon cloud support to modal for event pictures
+	make button hover over effects
+	edge cases for new user
+	validations
 
 
 

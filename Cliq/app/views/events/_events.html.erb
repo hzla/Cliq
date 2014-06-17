@@ -1,0 +1,36 @@
+<% events.each do |event| %>
+				<div class="upcoming-event">
+					
+					<div class="upcoming-event-picture">
+						<%= image_tag "avengers.jpg", :class => "event-picture" %>
+					</div>
+					
+					<div class="upcoming-event-info">
+						
+						<div class="upcoming-event-title invite-row">
+							<%= event.title %>
+						</div>
+
+						<div class="white upcoming-event-time invite-row">
+							<%= event.time %>
+						</div>
+
+						<div class="gray upcoming-event-location invite-row">
+							<%= event.location %>
+						</div>
+
+						<div class="upcoming-event-others invite-row">
+							<% event.users.take(2).each do |user| %>
+								<%= image_tag User.last.profile_pic_url, :class => "attendee" %>
+								<div class="attendee-name"><%= user.name %></div>
+							<% end %>
+						</div>
+
+						<div class="upcoming-event-quantity invite-row">
+							<% if event.attendees.length < 0 %>
+								and <%= event.attendees.length %> others
+							<% end %>
+						</div>
+					</div>
+				</div>
+			<% end %>

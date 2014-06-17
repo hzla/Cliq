@@ -4,17 +4,14 @@
 	 
 	  faye.unsubscribe("<%= user_path current_user %>" + "/messages")
 	  faye.subscribe("<%= user_path current_user %>" + "/messages", function(data) {
+	    console.log(data)
 	    var message = $.parseJSON(data)
+	    console.log("got there")
 	    var sendingUser = String(message.user_id)
 	    var messageShort = message.body.substring(0,30)
   		if (messageShort.length == 30) { messageShort += '...' }
   		//get notification count for the recieving user
-  		$.ajax({
-  			url: '/users/' + sendingUser + '.json'
-  		}).done(function(data){
-  			var user = $.parseJSON(data)
-  			newCount = user.message_count
-  		})
+  		
 	    // if the user is currently talking the person who sent him the message
 	    if ($('.conversation.current').attr('id') == sendingUser ) {
 	    	$.ajax({
@@ -32,18 +29,56 @@
 	    	//add preview
 	    	$('#' + sendingUser + " .convo-details .convo-last-message").text(messageShort)
 	    	//show notifications counter and increment
-	    	$('.messages .counter').removeClass('hidden')
-	    	$('.messages .counter').text(newCount)
+	    	$.ajax({
+  				url: '/users/' + <%= current_user.id %> + '.json'
+  			}).done(function(data){
+  				var user = data
+  				var newCount = user.message_count
+  				$('.messages .counter').removeClass('hidden')
+	    		$('.messages .counter').text(newCount)
+  			})
+	    	
 	    } else { //if user is anywhere else on the site
 	    	//show notifications counter and increment
-	    	$('.messages .counter').removeClass('hidden')
-	    	$('.messages .counter').text(nextCount)
+	    	$.ajax({
+  				url: '/users/' + <%= current_user.id %> + '.json'
+  			}).done(function(data){
+  				var user = data
+  				console.log(data)
+  				var newCount = user.message_count
+  				$('.messages .counter').removeClass('hidden')
+	    		$('.messages .counter').text(newCount)
+  			})
 	    }
 	  });
 
 	  faye.unsubscribe("<%= user_path current_user %>"+"/events")
 	  faye.subscribe("<%= user_path current_user %>"+"/events", function(data) {
-	    //to be implemented
+	  	var event = $.parseJSON(data)
+	    $.ajax({
+  			url: '/users/' + <%= current_user.id %> + '.json'
+  		}).done(function(data){
+  			var user = data
+  			newCount = user.event_count
+  			$('.events .counter').removeClass('hidden')
+	    	$('.events .counter').text(newCount)
+  		})
+  		
+
+	    if ($('.events.active.side-icon').length > 0) { //if user is on events page
+	    	$.ajax({
+	    		//request the message partial
+	    		url: '/events/' + event.id
+	    	}).done(function(data){
+	    		$('#invites-collection').prepend(data)
+	    		var invite = $($('.invite')[0])
+	    		invite.css('height', '0px')
+	    		invite.css('opacity', '0')
+	    		invite.animate({height: "378px"}, 300, function(){
+	    			invite.animate({opacity: "1"}, 300)
+	    		})
+	    	})	    
+	    }
 	  });
 	});
 <% end %>

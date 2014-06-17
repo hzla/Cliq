@@ -5,6 +5,8 @@ Cliq::Application.routes.draw do
     resources :events, only: [:new, :create]
     get '/events/:id/accept', to: 'events#accept', as: 'accept'
     get '/events/:id/pass', to: 'events#pass', as: 'pass'
+    get '/conversations/:id/searched', to: 'conversations#searched_show', as: 'searched_convo'
+    get '/chat', to: 'conversations#chat', as: 'chat'
   end
 
   get '/users/:id/activate/:code', to: 'users#activate'
@@ -13,10 +15,17 @@ Cliq::Application.routes.draw do
 
 
   resources :messages, only: [:index, :show]
-  resources :events, only: [:index]
+  
+  resources :events, only: [:index, :show]
+  get '/events/upcoming', to: 'events#upcoming', as: 'upcoming_events'
+  get '/events/going', to: 'events#going', as: 'going_events'
+  get '/events/past', to: 'events#past', as: 'past_events'
+  
   resources :partners, only: [:show]
 
-  resources :conversations do 
+
+
+  resources :conversations, only: [:show] do 
     resources :messages, only: [:create]
   end
 

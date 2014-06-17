@@ -1,0 +1,46 @@
+<div class="invite">
+	<div class="invite-header"> 
+		<%= image_tag User.last.profile_pic_url, :class => "invite-creator" %>
+		<div class="invitation-creator-info">
+			<div class="head-5 invite-creator-name dark-gray">
+				<%= invite.creator.name %>
+			</div>
+			<div class="head-6 light-gray invitation">
+				invited you to:
+			</div>
+		</div>
+	</div>
+<!-- change user.last to invite.creator later -->
+	<div class="invite-pic">
+		<%= image_tag "avengers.jpg", :class => "event-picture" %>
+	</div>
+
+	<div class="invite-info">
+		<div class="invite-title invite-row">
+			<%= invite.title %>
+		</div>
+
+
+		<div class="head-5 light-gray invite-time invite-row">
+			<%= invite.time %>
+		</div>
+
+		<div class="light-gray invite-location invite-row">
+			<%= invite.location %>
+		</div>
+
+		<div class="head-6 invite-quantity invite-row">
+			with <%= invite.quantity %> others
+		</div>
+
+		<div class="invite-row invite-actions">
+			<%= link_to user_accept_path(current_user, invite), remote: true, :class => "invite-action", confirm: "Accept Invitation from #{invite.creator.name} ?" do %>
+				<div class="accept white">Accept</div>
+			<% end %>
+
+			<%= link_to user_pass_path(current_user, invite), remote: true, :class => "invite-action", confirm: "Decline Invitation from #{invite.creator.name} ?" do %>
+			<div class="pass red">Pass</div>
+			<% end %>
+		</div>
+	</div>
+</div>
