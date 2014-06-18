@@ -89,6 +89,7 @@ body {
 	float: left;
 	clear: left;
 	font-family: $generic-font;
+    font-weight: 300;
 	color: white;
 	width: 100%;
 }
@@ -101,7 +102,7 @@ body {
 
 .icon-label {
 	float: left;
-	margin-top: 14px;
+	margin-top: 20px;
 }
 
 
@@ -139,18 +140,15 @@ a {
 	font-weight: 400;
 	font-size: 20px;
 	color: white;
-	margin-bottom: 10px;
-	padding-top: 15px;
-	padding-bottom: 15px;
+	padding-top: 17px;
+	padding-bottom: 17px;
 }
 
 .nav-icon {
-	width: 25px;
-	height: 25px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	margin-bottom: 5px;
-	margin-top: 5px;
+	width: 24px;
+	height: 24px;
+	padding-top: 19px;
+	padding-bottom: 19px;
 }
 
 .settings {
@@ -169,6 +167,7 @@ a {
 	position: absolute;
 	bottom: 90px;
 	font-family: $generic-font;
+    font-weight: 300;
 	color: white;
 }
 
@@ -193,6 +192,7 @@ a {
 
 .side-icon {
 	position: relative;
+    height: 62px;
 }
 
 .counter {
