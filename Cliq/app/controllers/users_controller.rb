@@ -19,6 +19,15 @@ class UsersController < ApplicationController
 	end
 
 	def search
+		@results = current_user.search_similar(current_user.activities)[1..-1]
+	end
+
+	def search_results
+		location = Location.find params[:location_id]
+		results = current_user.search_similar(Activity.parse_interests params[:ids], location )
+		p results
+
+		render partial: "search_results", locals {results: results}
 	end
 
 private

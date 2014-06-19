@@ -1,3 +1,5 @@
+puts "loading partners"
+
 Partner.create name: "Burger & Beer Joint", type: "food", location: "11662 University Blvd., Orlando FL 32817", mon: "11:30am - 12am", tues: "11:30am - 12am", wed: "11:30am - 12am", thurs: "11:30am - 12am", fri: "11:30am - 2am", sat: "11:30am - 2am", sun: "11:30am - 12am"
 Partner.create name: "Dungeon Lounge", type: "campus-building", location: "12287 University Blvd., Orlando, FL 32817", mon: "8pm - 2am", wed: "8pm - 2am", thurs: "8pm - 2am", fri: "8pm - 2am", sat: "8pm - 2am"
 Partner.create name: "Knight Library", type: "library", location: "11448 University Blvd., Orlando, FL 32817", mon: "4pm - 2am", tues: "4pm - 2am", wed: "4pm - 2am", thurs: "4pm - 2am", fri: "4pm - 2am", sat: "4pm - 2am", sun: "4pm - 2am"

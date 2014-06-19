@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140616221641) do
+ActiveRecord::Schema.define(version: 20140618234319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,12 +89,33 @@ ActiveRecord::Schema.define(version: 20140616221641) do
 
   add_index "excursions", ["user_id", "event_id"], name: "index_excursions_on_user_id_and_event_id", using: :btree
 
+  create_table "interest_suggestions", force: true do |t|
+    t.string  "term"
+    t.integer "popularity"
+    t.string  "interest_id"
+  end
+
   create_table "interests", force: true do |t|
     t.integer "user_id",     null: false
     t.integer "activity_id", null: false
   end
 
   add_index "interests", ["user_id", "activity_id"], name: "index_interests_on_user_id_and_activity_id", using: :btree
+
+  create_table "location_suggestions", force: true do |t|
+    t.string   "term"
+    t.integer  "popularity"
+    t.integer  "location_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "locations", force: true do |t|
+    t.string "name"
+    t.string "address"
+    t.float  "latitude"
+    t.float  "longitude"
+  end
 
   create_table "messages", force: true do |t|
     t.text     "body"
