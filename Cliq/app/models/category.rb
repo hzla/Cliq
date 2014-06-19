@@ -4,6 +4,6 @@ class Category < ActiveRecord::Base
 	has_many :cat_interests
 	has_ancestry
 
-	attr_accessible :name, :description, :parent_id
+	attr_accessible :name, :description, :parent_id, :parent
 
 end
