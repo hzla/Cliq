@@ -23,7 +23,6 @@
 	height: 100%;
 	width: 100%;
 	background-color: $beige;
-	margin-left: 62px;
 	font-family: $generic-font;
 	float: left;
 }
@@ -112,6 +111,7 @@
 	font-weight: 400;
 	float: left;
 	margin-left: 177px;
+    color: $dark-gray;
 }
 
 #sort-by {
@@ -136,7 +136,7 @@
 	margin-right: 38px;
 	background-color: white;
 	margin-bottom: 38px;
-	overflow-y: scroll; 
+	overflow-y: hidden; 
 	overflow-x: hidden;
 }
 
