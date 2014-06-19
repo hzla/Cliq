@@ -9,6 +9,7 @@ Thursday
 Friday
 	Event Messaging
 	Initial Likes
+	Message Sort and Search
 
 
 

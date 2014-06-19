@@ -3,6 +3,18 @@ Cliq::Application.routes.draw do
 
   root to: 'pages#home'
 
+
+
+  resources :locations, only: [:index]
+  resources :messages, only: [:index, :show]
+  
+  get '/events/upcoming', to: 'events#upcoming', as: 'upcoming_events'
+  get '/events/going', to: 'events#going', as: 'going_events'
+  get '/events/past', to: 'events#past', as: 'past_events'
+  resources :events, only: [:index, :show]
+  
+
+
   resources :users do 
     resources :events, only: [:new, :create]
     get '/events/:id/accept', to: 'events#accept', as: 'accept'
@@ -18,12 +30,7 @@ Cliq::Application.routes.draw do
   get '/search', to: 'users#search', as: 'search'
   post '/search', to: 'users#search_results'
 
-  resources :locations, only: [:index]
-  resources :messages, only: [:index, :show]
-  resources :events, only: [:index, :show]
-  get '/events/upcoming', to: 'events#upcoming', as: 'upcoming_events'
-  get '/events/going', to: 'events#going', as: 'going_events'
-  get '/events/past', to: 'events#past', as: 'past_events'
+
   
   resources :partners, only: [:show]
 
