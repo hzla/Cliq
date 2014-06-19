@@ -23,11 +23,13 @@ class UsersController < ApplicationController
 	end
 
 	def search_results
-		location = Location.find params[:location_id]
-		results = current_user.search_similar(Activity.parse_interests params[:ids], location )
-		p results
-
-		render partial: "search_results", locals {results: results}
+		if params[:location_id] != ""
+			location = Location.find params[:location_id]
+		else
+			location = nil
+		end
+		results = current_user.search_similar Activity.parse_interests(params[:ids]), location
+		render partial: "search_results", locals: {results: results}
 	end
 
 private
