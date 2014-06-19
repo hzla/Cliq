@@ -42,7 +42,13 @@ class User < ActiveRecord::Base
 	end
 	#maps cat/act to users_ids, parse and count user_ids
 	def search_similar interest_type, location = nil #accepts a list of interests/categories
-		users = interest_type.map {|act_cat| [act_cat, act_cat.users.flatten]}
+		if !location
+			users = interest_type.map {|act_cat| [act_cat, act_cat.users.flatten]}
+		else
+			users = interest_type.map {|act_cat| [act_cat, act_cat.users.near(location, 50)]}
+			users = users.select {|entry| !entry[1].empty?}
+		end
+
 		similar_users = {}
 		users.each do |entry|
 			act_cat = entry[0]
@@ -52,7 +58,7 @@ class User < ActiveRecord::Base
 			end
 		end
 		if location
-			similar_users.near(location, 50).to_a.sort_by {|user| user[1].length}.reverse
+			similar_users.to_a.sort_by {|user| user[1].length}.reverse
 		else
 			similar_users.to_a.sort_by {|user| user[1].length}.reverse
 		end

@@ -6,6 +6,7 @@ Search =
 		$('body').on 'ajax:success', '.chat-user', @chatUser
 		$('body').on 'click', '.chat-collapse', @collapseChat
 		$('body').on 'click', '.collapsed-chat', @addChat
+		$('body').on 'ajax:success', '#search-form', @displayResults
 
 	inviteUser: (event, data, xhr, status) ->
 		$('#invite-modal-container').html data
@@ -64,6 +65,10 @@ Search =
 				event.preventDefault()
 				$(this).val ui.item.label
 			delay: 0
+
+	displayResults: (event, data, xhr, status) ->
+		$('#results').html(data)
+
 
 
 ready = ->

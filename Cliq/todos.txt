@@ -1,19 +1,15 @@
 TODOS
-	Events page
-	Events modal
-	Events notifications
-	Autocomplete on the search page
-	Chatting on the search page
+	Deploy
 	
 Schedule
 
-Sunday
-	Event Messaging
-	Chatting on the search page
-	Autocomplete on the search page 
+Thursday
+	Deploy
 
-Monday
+Friday
+	Event Messaging
 	Initial Likes
+
 
 
 DO LATERS
