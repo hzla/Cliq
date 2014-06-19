@@ -1,4 +1,6 @@
 Cliq::Application.routes.draw do
+  resources :location_suggestions
+
   root to: 'pages#home'
 
   resources :users do 
@@ -9,13 +11,15 @@ Cliq::Application.routes.draw do
     get '/chat', to: 'conversations#chat', as: 'chat'
   end
 
+  resources :activities, only: [:index]
+
+
   get '/users/:id/activate/:code', to: 'users#activate'
   get '/search', to: 'users#search', as: 'search'
+  post '/search', to: 'users#search_results'
 
-
-
+  resources :locations, only: [:index]
   resources :messages, only: [:index, :show]
-  
   resources :events, only: [:index, :show]
   get '/events/upcoming', to: 'events#upcoming', as: 'upcoming_events'
   get '/events/going', to: 'events#going', as: 'going_events'

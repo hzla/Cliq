@@ -1,5 +1,7 @@
 Search = 
 	init: ->
+		@autocompleteLocations()
+		@autocompleteInterests()
 		$('body').on 'ajax:success', '.invite-user', @inviteUser
 		$('body').on 'ajax:success', '.chat-user', @chatUser
 		$('body').on 'click', '.chat-collapse', @collapseChat
@@ -30,7 +32,6 @@ Search =
 		console.log collapsed
 		collapsed.show().addClass(className + " animated bounceInLeft").show()
 		collapsedCount = $('.collapsed-chat').length - 1
-		
 
 	addChat: ->
 		$(@).addClass 'animated bounceOutLeft'
@@ -38,6 +39,32 @@ Search =
 			$(@).removeClass 'animated bounceInLeft bounceOutLeft'
 			$(@).hide()	
 		$(@).prev().removeClass().addClass 'chat-partial animated bounceInRight'
+
+	autocompleteLocations: ->
+		$('#query-location').autocomplete
+			source: '/locations'
+			select: (event, ui) ->
+				event.preventDefault()
+				$(this).val ui.item.label
+				$('#location_id').val ui.item.value
+			focus: (event, ui) ->
+				event.preventDefault()
+				$(this).val ui.item.label
+
+	autocompleteInterests: ->
+		$('#activity').autocomplete
+			source: '/activities'
+			select: (event, ui) ->
+				event.preventDefault()
+				$(this).val ui.item.label
+				$('#ids').val $('#ids').val() + ui.item.value + " "
+				$('#query-interests').prepend "<div class='query-interest search-term'>#{ui.item.label}</div>"
+				$('#activity').val('')
+			focus: (event, ui) ->
+				event.preventDefault()
+				$(this).val ui.item.label
+			delay: 0
+
 
 ready = ->
 	Search.init()
