@@ -1,6 +1,5 @@
-<%= render partial: "side_nav", locals: {active: :critiq} %>
-
 <div class="content-container">
+    <%= render partial: "side_nav", locals: {active: :critiq} %>
 	<div id="search-container">
 		<div id="query">
 			<%= form_tag search_path, id: "search-form", remote: true do %>

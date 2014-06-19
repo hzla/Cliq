@@ -7,8 +7,6 @@
 	background-image: image_url("search_blue.png");
 	float: left;
 	font-family: $generic-font;
-	margin-left: 62px;
-<<<<<<< HEAD
 	background-size: cover;
 }
 
@@ -17,16 +15,13 @@
 
 #activity {
 	width: 200px;
-=======
     background-size:cover;
->>>>>>> f94ee918aa923f3736d4757bdf746d9d1869fb96
 }
 
 #results-container {
 	height: 100%;
 	width: 100%;
 	background-color: $beige;
-	margin-left: 62px;
 	font-family: $generic-font;
 	float: left;
 }
@@ -115,6 +110,7 @@
 	font-weight: 400;
 	float: left;
 	margin-left: 177px;
+    color: $dark-gray;
 }
 
 #sort-by {
@@ -139,7 +135,7 @@
 	margin-right: 38px;
 	background-color: white;
 	margin-bottom: 38px;
-	overflow-y: scroll; 
+	overflow-y: hidden; 
 	overflow-x: hidden;
 }
 

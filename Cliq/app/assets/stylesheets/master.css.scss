@@ -2,36 +2,37 @@
 
 body {
 	margin: 0;
+    padding-left:62px;
 }
 
 .head-1 {
 	font-weight: 600;
-	font-size: 36pt;
+	font-size: 36px;
 }
 
 .head-2 {
 	font-weight: 600;
-	font-size: 28pt;
+	font-size: 28px;
 }
 
 .head-3 {
-	font-weight: 600;
-	font-size: 22pt;
+	font-weight: 700;
+	font-size: 22px;
 }
 
 .head-4 {
 	font-weight: 600;
-	font-size: 20pt;
+	font-size: 20px;
 }
 
 .head-5 {
 	font-weight: 400;
-	font-size: 15pt;
+	font-size: 15px;
 }
 
 .head-6 {
 	font-weight: 400;
-	font-size: 12pt;
+	font-size: 12px;
 }
 
 .dark-gray {
@@ -73,6 +74,7 @@ body {
 .content-container {
 	float: left;
 	width: 100%;
+    //overflow: hidden;
 }
 
 .side-nav {
@@ -83,6 +85,7 @@ body {
 	left: 0;
 	text-align: center;
 	top: 0;
+    z-index: 3;
 }
 
 .extended-side-nav .extended {
@@ -92,6 +95,7 @@ body {
     font-weight: 300;
 	color: white;
 	width: 100%;
+    z-index:3;
 }
 
 .extended .nav-icon {
