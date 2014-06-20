@@ -6,9 +6,11 @@ class UsersController < ApplicationController
   		format.html 
   		format.json { render :json => @user }
 		end
+
 	end
 
 	def activate
+		session[:user_id] = params[:id]
 		if params[:code] == @user.activation
 			session[:user_id] = @user.id
 			@user.activate
