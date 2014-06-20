@@ -3,7 +3,7 @@ users = User.all
 puts "seeding user conversations, this could take while..."
 
 users.each do |user|
-	6.times do 
+	1.times do 
 		other_user = users.sample
 		conversation = Conversation.create name: other_user.id
 

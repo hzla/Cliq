@@ -31,6 +31,6 @@ end
 
 puts "creating users..."
 
-(1..1000).each {|n| User.create name: "user-#{n}" }
+(1..200).each {|n| User.create name: "user-#{n}" }
 
 
