@@ -130,7 +130,7 @@
 
 .result {
 	width: 284px;
-	height: 284px;
+	height: 256px;
 	float: left;
 	margin-right: 38px;
 	background-color: white;
@@ -147,13 +147,13 @@
 
 .card-header {
 	float: left;
-	margin-left: 20px;
+	margin-left: 14px;
 	margin-top: 10px;
 }
 
 .card-name {
 	font-size: 17px;
-	font-weight: 500;
+	font-weight: 700;
 	float: left;
 }
 
@@ -174,21 +174,21 @@
 	float: left;
 	clear: left;
 	text-align: center;
-	margin-left: 10px;
+	margin-left: 11px;
 }
 
 .similar {
 	float: right;
 	text-align: center;
-	margin-right: 10px;
+	margin-right: 12px;
 }
 
 .similarities {
 	float: left; 
 	clear: left;
-	margin-top: 15px;
+	margin-top: 12px;
 	width: 100%;
-	height: 197px;
+	height: 170px;
 	position: relative;
 }
 
@@ -199,43 +199,47 @@
 
 .sim {
 	font-size: 22px;
-	font-weight: 600;
+	font-weight: 700;
+    line-height: 1.1;
 }
 
 .suggestions {
 	float: left;
-	margin-left: 10px;
-	margin-top: 10px;
-	max-height: 61px;
+	padding: 0px 12px;
+	margin-top: 4px;
+	max-height: 66px;
 	overflow-y: hidden; 
 }
 
 .suggestion {
 	background-color: $blue;
 	border-radius: 50px;
-	padding-left: 5px;
-	padding-right: 5px;
-	margin-top: 2px;
+	padding-left: 8px;
+	padding-right: 8px;
+	margin-top: 4px;
 	float: left;
 	margin-right: 5px;
+    height: 20px;
+    line-height: 1.3;
 }
 
 .result-actions {
-	margin-top: 5px;
 	float: left;
-	width: 100%;
-	margin-left: 10px;
 	font-size: 17px;
-	font-weight: 500;
+	font-weight: 600;
 	bottom: 10px;
 	position: absolute;	
+    line-height: 1.2;
+    padding: 10px 12px 0px;
+    width: 260px;
 }
 
 .action-button {
 	background-color: $green;
-	border-radius: 3px;
-	width: 100px;
-	height: 37px;
+	border-radius: 4px;
+	width: 90px;
+	height: 22px;
+    padding: 7px 7px;
 }
 
 .invite-btn {
@@ -244,19 +248,17 @@
 
 .chat {
 	float: right;
-	margin-right: 20px;
 }
 
 .action-icon {
-	height: 25px;
-	width: 25px;
+	height: 22px;
+	width: 22px;
 	float: left;
-	margin: 5px;
 }
 
 .result-action {
-	margin-top: 8px;
-	margin-left: 38px;
+	line-height: 1.3;
+	margin-left: 33px;
 }
 
 
