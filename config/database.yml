@@ -16,7 +16,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: cliq_production
+  database: cliq
   pool: 5
   username: cliq
   password:
