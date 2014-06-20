@@ -1,0 +1,43 @@
+<%= render partial: "users/side_nav", locals: {active: :events} %>
+
+
+<div class="content-container">
+	<div id="events-header">
+		<div id="events-header-actions">
+			<div class="head-4 green" id="event-status">Status: Active</div>
+			<%= link_to upcoming_events_path, :class => "event-sort", remote: true do %>
+				<div class="head-4 white selected" id="event-upcoming">Upcoming</div>
+			<% end %>
+			
+			<%= link_to past_events_path, :class => "event-sort", remote: true do %>
+				<div class="head-4 white" id="event-past">Past</div>
+			<% end %>
+
+			<%= link_to going_events_path, :class => "event-sort", remote: true do %>
+				<div class="head-4 white" id="event-going">Accepted</div>
+			<% end %>
+
+		</div>
+	</div>
+
+	<div id="events-container">
+
+		<div id="invites">
+			<div id="invites-header" class="head-4 dark-gray">Invites</div>
+
+			<div id="invites-collection">
+				<% @invitations.each do |invite| %>
+					<%= render partial: 'invite_card', locals: {invite: invite} %>
+				<% end %>
+			</div>
+		</div>
+
+
+		<div id="upcoming">
+			<div id="upcoming-header" class="head-4 dark-gray">Upcoming Events:</div>
+			<div id="events">
+				<%= render partial: 'events', locals: {events: @events} %>
+			</div>
+		</div>
+	<div>
+</div>

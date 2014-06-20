@@ -1,0 +1,39 @@
+<%= render partial: "users/side_nav", locals: {active: :messages} %>
+
+<div id="messages-container" %>
+
+	<div id="messages-header">
+		<div id="messages-header-actions">
+			<div class="head-4 green" id="new-message">New Message</div>
+			<div class="head-4 white" id="message-sort-by">Sort by</div>
+			<div class="head-4 dark-gray" id="message-sort">Most Recent</div>
+			<div class="head-5 light-gray" id="search-messages">Search Messages</div>
+		</div>
+	</div>
+
+	<div id="conversations">
+		<% current_user.ordered_conversations.each do |convo| %>
+			<%= link_to conversation_path(convo), :class => "convo-link", remote: true do %>
+				<% user = convo.get_other_user current_user %>
+
+				<div class="conversation" id="<%= user.id %>">
+						<%= image_tag current_user.profile_pic_url, :class => "convo-pic" %>
+					<div class="convo-details">
+						<div class="convo-name head-5"><%= user.name %></div>
+						<div class="convo-date head-5"><%= convo.date %></div>
+						<div class="convo-school head-6 light-gray"><%= user.school %><%= "Random School" if !user.school %></div>
+						<div class="convo-last-message head-6 gray"><%= convo.last_message %></div>
+					</div>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+
+	<div id="messages">
+		<%= render partial: 'chat_history', locals: {conversation: @conversation, other_user: @other_user } %>
+	</div>
+</div>
+
+<div id="invite-modal-container" class="modal">
+
+</div>

@@ -1,0 +1,23 @@
+<div id="message-history">
+	<% conversation.ordered_messages.each do |message| %>
+		<%= render partial: 'show', locals: {message: message} %>
+	<% end %>
+</div>
+
+<%= form_for [conversation, @message], remote: true do |f| %>
+	<%= f.text_area :body, id: 'chat-box' %>
+	<%= f.submit :class => :hidden %>
+<% end %>
+<%= image_tag current_user.profile_pic_url, id: "chat-box-pic" %>
+
+	<div id="message-actions">
+			<div class="action-button white message-invite">
+				<%= image_tag "Events.svg", :class => "action-icon" %>
+				<%= link_to new_user_event_path(other_user), :class => "white invite-user", remote: true do %>
+					<div class="result-action">INVITE</div>
+				<% end %>
+			</div>
+			<div class="action-button white message-reply">
+				<div class="result-action reply">REPLY</div>
+			</div>
+	</div>

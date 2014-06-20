@@ -1,0 +1,180 @@
+@import 'variables';
+
+.user-container {
+	background-image: image_url("profile-background.png");
+	background-size: 100%;
+	background-attachment:fixed;
+	width: 1280px;
+	height: 100%;
+	float: left;
+	position: relative;
+	font-family: $generic-font;
+}
+
+.profile-pic {
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
+	margin-left: 200px;
+	float: left;
+}
+
+.main-profile-info {
+	float: left;
+	width: 100%;
+	margin-top: 75px;
+	.left {
+		float: left;
+	}
+	.right {
+		float: right;
+		margin-right: 100px;
+	}
+}
+
+#name {
+	float: left;
+	margin-left: 50px;
+	margin-top: 20px;
+}
+
+#school {
+	font-weight: 400;
+	margin-left: 50px;
+	float: left;
+	clear: left;
+}
+
+#active {
+	float: left;
+	margin-left: 50px;
+	clear: left;
+}
+
+#event-count {
+	float: left;
+	margin-top: 30px;
+	margin-right: 10px;
+}
+
+#event-label {
+	float: left;
+	margin-top: 33px;
+}
+
+#with {
+	font-size: 15px;
+	clear: left;
+	float: left;
+	margin-left: 35px;
+}
+
+#people-count {
+	float: left;
+	margin-right: 10px;
+	clear: left;
+}
+
+#people-label {
+	float: left;
+	margin-top: 3px;
+}
+
+.profile-actions {
+	clear: right;
+	float: left;
+
+	font-size: 22px;
+	font-weight: 600;
+	margin-left: -100px;
+	margin-top: 15px;
+	.bubble {
+		border-radius: 50px;
+		padding-left: 10px;
+		padding-right: 10px; 
+		background-color: white;
+		margin-right: 20px;
+	};
+	#edit-profile {
+		float: left;
+	};
+	#add-interests {
+		float: left; 
+	};
+}
+
+#interest-count {
+	margin-left: 275px;
+	margin-top: 50px;
+	float: left;
+}
+
+#interest-list {
+	float: left;
+	margin-left: 275px;
+}
+
+.cat-group {
+	float: left;
+}
+
+.category {
+	border-radius: 50px;
+	margin-right: 45px; 
+	background-color: white;
+	margin-top: 28px;
+	float: left;
+	width: 400px;
+	height: 35px;
+	font-size: 24px;
+	font-weight: 600;
+}
+
+.activities {
+	width: 420px;
+	float: left;
+	clear: left;
+	margin-top: 5px;
+}
+
+.activity {
+	border-radius: 13px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-right: 15px;
+	height: 30px;
+	font-weight: 400;
+	float: left;
+	background-color: $blue;
+	margin-top: 5px;
+	font-size: 15px;
+}
+
+.cat-name {
+	margin-left: 10px;
+}
+
+.act-name {
+	margin-top: 3px;
+}
+
+.more {
+	margin-top: 50px;
+	border-radius: 50px;
+	background-color: white;
+	height: 35px;
+	font-size: 24px;
+	font-weight: 600;
+	float: left;
+	clear: both;
+	text-align: center;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-bottom: 50px;
+	margin-left: 38%;
+}
+
+
+
+
+

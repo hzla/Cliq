@@ -1,0 +1,30 @@
+TODOS
+	Deploy
+	
+Schedule
+
+Thursday
+	Deploy
+
+Friday
+	Event Messaging
+	Initial Likes
+	Message Sort and Search
+
+
+
+DO LATERS
+	Add amazon cloud support to modal for event pictures
+	make button hover over effects
+	edge cases for new user
+	validations
+
+
+
+
+
+
+
+
+
+
