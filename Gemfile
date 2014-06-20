@@ -12,6 +12,7 @@ gem 'turbolinks'
 gem 'faye'
 gem 'private_pub'
 gem "thin"
+gem 'faker'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem "pg"
