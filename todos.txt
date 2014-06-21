@@ -1,12 +1,10 @@
 TODOS
-	Deploy
+
 	
 Schedule
 
-Thursday
-	Deploy
 
-Friday
+
 	Event Messaging
 	Initial Likes
 	Message Sort and Search
