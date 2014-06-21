@@ -1,49 +1,52 @@
-<% results.each do |entry| %>
-	<div class="result">
-		<%= image_tag entry[0].profile_pic_url, :class => "profile-pic-card" %>
-		
-		<div class="card-header">
-			<div class="card-name dark-gray"><%= entry[0].name %></div>
-			<div class="card-school light-gray"><%= entry[0].school %></div>
-			<% if entry[0].active %>
-				<div class="card-active green">Active</div>
-			<% else %>
-				<div class="card-active gray">Offline</div>
-			<% end %>
-		</div>
 
-		<div class="similarities">
-			<div class="mutual">
-				<div class="sim-label">Mutual Interests</div>
-				<div class="sim blue"><%= entry[1].length %> Total</div>
-			</div>
-
-			<div class="similar">
-				<div class="sim-label">Similar Interests</div>
-				<div class="sim blue"><%= entry[1].length %> Total</div>
-			</div>
-
-			<div class="suggestions">
-				<div class="sim-label">Some stuff you both like:</div>
-				<% entry[1].shuffle[0..4].each do |suggestion| %>
-					<div class="suggestion white"><%= suggestion.shortened_name %></div>
+<% if results %>
+	<% results.each do |entry| %>
+		<div class="result">
+			<%= image_tag entry[0].profile_pic_url, :class => "profile-pic-card" %>
+			
+			<div class="card-header">
+				<div class="card-name dark-gray"><%= entry[0].name %></div>
+				<div class="card-school light-gray"><%= entry[0].school %></div>
+				<% if entry[0].active %>
+					<div class="card-active green">Active</div>
+				<% else %>
+					<div class="card-active gray">Offline</div>
 				<% end %>
 			</div>
 
-			<div class="result-actions">
-				<div class="action-button invite-btn white">
-					<%= image_tag "Events.svg", :class => "action-icon" %>
-					<%= link_to new_user_event_path(entry[0]), :class => "white invite-user", remote: true do %>
-						<div class="result-action">INVITE</div>
+			<div class="similarities">
+				<div class="mutual">
+					<div class="sim-label">Mutual Interests</div>
+					<div class="sim blue"><%= entry[1].length %> Total</div>
+				</div>
+
+				<div class="similar">
+					<div class="sim-label">Similar Interests</div>
+					<div class="sim blue"><%= entry[1].length %> Total</div>
+				</div>
+
+				<div class="suggestions">
+					<div class="sim-label">Some stuff you both like:</div>
+					<% entry[1].shuffle[0..4].each do |suggestion| %>
+						<div class="suggestion white"><%= suggestion.shortened_name %></div>
 					<% end %>
 				</div>
-				<div class="action-button chat white">
-					<%= image_tag "Messages.svg", :class => "action-icon" %>
-					<%= link_to user_chat_path(entry[0]), :class => "white chat-user", remote: true do %>
-						<div class="result-action">CHAT</div>
-					<% end %>
+
+				<div class="result-actions">
+					<div class="action-button invite-btn white">
+						<%= image_tag "Events.svg", :class => "action-icon" %>
+						<%= link_to new_user_event_path(entry[0]), :class => "white invite-user", remote: true do %>
+							<div class="result-action">INVITE</div>
+						<% end %>
+					</div>
+					<div class="action-button chat white">
+						<%= image_tag "Messages.svg", :class => "action-icon" %>
+						<%= link_to user_chat_path(entry[0]), :class => "white chat-user", remote: true do %>
+							<div class="result-action">CHAT</div>
+						<% end %>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	<% end %>
 <% end %>

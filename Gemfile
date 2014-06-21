@@ -5,12 +5,9 @@ gem 'rails', '4.0.0'
 gem 'less-rails'
 gem 'therubyracer'
 gem 'bcrypt-ruby', '~> 3.0.0'
-gem 'paperclip', '~> 3.0'
 gem 'nokogiri'
 gem 'protected_attributes'
 gem 'turbolinks'
-gem 'faye'
-gem 'private_pub'
 gem "thin"
 gem 'faker'
 
