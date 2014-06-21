@@ -1,21 +1,40 @@
 TODOS
 
+
 	
 Schedule
-
-
-
 	Event Messaging
 	Initial Likes
 	Message Sort and Search
-
-
-
-DO LATERS
 	Add amazon cloud support to modal for event pictures
 	make button hover over effects
-	edge cases for new user
-	validations
+	edge cases for new users
+	validations and sad paths
+	search form bug fixes
+	search location bug fixes
+	empty content views
+	more categories and activities
+
+
+
+Saturday
+	Initial Likes
+
+Sunday
+	Initial Likes
+
+Monday
+	Initial Likes
+	Events Messaging
+	Messages Sort and search
+	Everything else
+
+Tuesday
+	everything else
+
+
+
+	
 
 
 
