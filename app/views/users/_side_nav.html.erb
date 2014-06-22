@@ -1,5 +1,5 @@
 <div class="side-nav">
-	<%= link_to search_path do %>
+	<%= link_to search_path, "data-no-turbolink" => true do %>
 		<div class="logo <%= 'active' if active == :critiq %>">
 			Cliq
 		</div>
@@ -9,7 +9,7 @@
 			<%= image_tag "Profile.svg", :class => "nav-icon" %>
 		</div>
 	<% end %>
-	<%= link_to messages_path do %>
+	<%= link_to messages_path, "data-no-turbolink" => true do %>
 		<div class="messages <%= 'active' if active == :messages %> side-icon">
 			<%= image_tag "Messages.svg", :class => "nav-icon" %>
 			<% if current_user.message_count > 0 %>
@@ -48,7 +48,7 @@
 
 
 <div class="extended-side-nav">
-	<%= link_to search_path do %>
+	<%= link_to search_path, "data-no-turbolink" => true do %>
 		<div class="extended logo <%= 'active' if active == :critiq %>">
 			<div class="icon-label">Cliq</div> 
 		</div>
@@ -59,7 +59,7 @@
 			<div class="icon-label">Profile</div>
 		</div>
 	<% end %>
-		<%= link_to messages_path do %>
+		<%= link_to messages_path, "data-no-turbolink" => true do %>
 		<div class="extended messages <%= 'active' if active == :messages %> side-icon">
 			<%= image_tag "Messages.svg", :class => "nav-icon" %>
 			<div class="icon-label">Messages</div>

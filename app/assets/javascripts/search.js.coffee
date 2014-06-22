@@ -7,6 +7,7 @@ Search =
 		$('body').on 'click', '.chat-collapse', @collapseChat
 		$('body').on 'click', '.collapsed-chat', @addChat
 		$('body').on 'ajax:success', '#search-form', @displayResults
+		@invertButtons()
 
 	inviteUser: (event, data, xhr, status) ->
 		$('#invite-modal-container').html data
@@ -67,7 +68,30 @@ Search =
 			delay: 0
 
 	displayResults: (event, data, xhr, status) ->
-		$('#results').html(data)
+		$('#results').html data
+		$('#found').text "Here's who we found:"
+		$('#found').text "Sorry, we couldn't find anyone." if data.length == 2
+		$('#found').text "Please enter a valid location." if $('#invalid')
+
+	invertButtons: ->
+		$('.inv-btn').mouseenter ->
+			color = $(@).find('.result-action').css 'color'
+			background = $(@).css 'background-color'
+			$(@).css 'height', '-=2px'
+			$(@).css 'background-color', color
+			$(@).find('.result-action').css 'color', background
+			$(@).css 'border', "1px solid #{background}"
+			$(@).find('.action-icon').css 'background-color', background
+			$(@).find('.action-icon').css 'border', "1px solid #{background}"
+		$('.inv-btn').mouseleave ->
+			color = $(@).find('.result-action').css 'color'
+			background = $(@).css 'background-color'
+			$(@).css 'height', '+=2px'
+			$(@).css 'background-color', color
+			$(@).find('.result-action').css 'color', background
+			$(@).css 'border', "none"
+			$(@).find('.action-icon').css 'background-color', 'none'
+			$(@).find('.action-icon').css 'border', 'none'
 
 
 
