@@ -1,19 +1,20 @@
 TODOS
 
+reduce database size for heroku
 
 	
 Schedule
-	Event Messaging
 	Initial Likes
+	more categories and activities
+	new profiles
+	profiles modal
+	Event Messaging
 	Message Sort and Search
 	Add amazon cloud support to modal for event pictures
-	make button hover over effects
-	edge cases for new users
 	validations and sad paths
-	search form bug fixes
-	search location bug fixes
-	empty content views
-	more categories and activities
+
+	close button for chats and other stuff
+
 
 
 
@@ -22,15 +23,20 @@ Saturday
 
 Sunday
 	Initial Likes
+	more categories and activities
+	add amazon cloud support
 
 Monday
 	Initial Likes
 	Events Messaging
 	Messages Sort and search
-	Everything else
+	validations and sad paths
 
 Tuesday
-	everything else
+	new profiles
+	everything you didn't get to
+
+
 
 
 

@@ -10,6 +10,7 @@ gem 'protected_attributes'
 gem 'turbolinks'
 gem "thin"
 gem 'faker'
+gem 'faye'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem "pg"

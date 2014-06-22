@@ -1,30 +1,44 @@
 <% if current_user %>
 	$(function() {
 		Faye.Transport.WebSocket.isUsable = function($, _, c) { c(false) };
-	  var faye = new Faye.Client('http://faye-server-10.herokuapp.com/faye');
+	  var faye = new Faye.Client('http://localhost:9292/faye');
 	  faye.unsubscribe("<%= user_path current_user %>" + "/messages")
-	  faye.subscribe("<%= user_path current_user %>" + "/messages", function(data) {
-	    console.log(data)
+	  if (typeof sub === "undefined") { 
+	  	sub = faye.subscribe("<%= user_path current_user %>" + "/messages", function(data) {
 	    var message = $.parseJSON(data)
-	    console.log("got there")
 	    var sendingUser = String(message.user_id)
 	    var messageShort = message.body.substring(0,30)
   		if (messageShort.length == 30) { messageShort += '...' }
   		//get notification count for the recieving user
-  		
+  		console.log($('.chat-partial #' + sendingUser))
 	    // if the user is currently talking the person who sent him the message
 	    if ($('.conversation.current').attr('id') == sendingUser ) {
-	    	$.ajax({
-	    		//request the message partial
-	    		url: '/messages/' + message.id
-	    	}).done(function(data){
-	    		//and add the message
-	    		$('#message-history').append(data)
-	    		//and add a message preview in the conversation bar
-	    		$('#' + sendingUser + " .convo-details .convo-last-message").text(messageShort)
-	    		// and scroll to the bottom of the chat history
-	    		$('#message-history')[0].scrollTop = $('#message-history')[0].scrollHeight + 100
-	    	})	    	
+	    	if ($('#m-' + message.id).length == 0) {
+		    	$.ajax({
+		    		//request the message partial
+		    		url: '/messages/' + message.id
+		    	}).done(function(data){
+		    		//and add the message
+		    		$('.message-history').append(data)
+		    		//and add a message preview in the conversation bar
+		    		$('#' + sendingUser + " .convo-details .convo-last-message").text(messageShort)
+		    		// and scroll to the bottom of the chat history
+		    		$('.message-history')[0].scrollTop = $('.message-history')[0].scrollHeight + 100
+		    	})
+		    }	    	
+	    } else if ($('.chat-partial #' + sendingUser).length > 0) {
+	    		if ($('#m-' + message.id).length == 0) {
+		    		$.ajax({
+		    		//request the message partial
+		    		url: '/messages/' + message.id
+			    	}).done(function(data){
+			    		//and add the message
+			    		var messageHistory = $('.chat-partial #' + sendingUser).next().children('.message-history')
+			    		messageHistory.append(data)
+			    		// and scroll to the bottom of the chat history
+			    		messageHistory[0].scrollTop = $('.message-history')[0].scrollHeight + 100
+			    	})
+			    }	    	
 	    } else if ($('.messages.active.side-icon').length > 0) { // if the user is on the message page but talking to someone else
 	    	//add preview
 	    	$('#' + sendingUser + " .convo-details .convo-last-message").text(messageShort)
@@ -40,17 +54,18 @@
 	    	
 	    } else { //if user is anywhere else on the site
 	    	//show notifications counter and increment
-	    	$.ajax({
-  				url: '/users/' + <%= current_user.id %> + '.json'
-  			}).done(function(data){
-  				var user = data
-  				console.log(data)
-  				var newCount = user.message_count
-  				$('.messages .counter').removeClass('hidden')
-	    		$('.messages .counter').text(newCount)
-  			})
-	    }
-	  });
+		    	$.ajax({
+	  				url: '/users/' + <%= current_user.id %> + '.json'
+	  			}).done(function(data){
+	  				var user = data
+	  				console.log(data)
+	  				var newCount = user.message_count
+	  				$('.messages .counter').removeClass('hidden')
+		    		$('.messages .counter').text(newCount)
+	  			})
+	    	}
+	  	});
+		}
 
 	  faye.unsubscribe("<%= user_path current_user %>"+"/events")
 	  faye.subscribe("<%= user_path current_user %>"+"/events", function(data) {

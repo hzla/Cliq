@@ -29,6 +29,9 @@
 				<% @invitations.each do |invite| %>
 					<%= render partial: 'invite_card', locals: {invite: invite} %>
 				<% end %>
+				<% if @invitations.empty? %>
+					<div id="empty-invite">No Invites to Show</div>
+				<% end %>
 			</div>
 		</div>
 

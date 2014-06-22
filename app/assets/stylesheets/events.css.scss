@@ -232,3 +232,20 @@
 .attendee-name {
 	float: left;
 }
+
+#empty-invite {
+	float: left;
+	font-size: 19pt;
+	margin-top: 125px;
+}
+
+#empty-events {
+	float: left;
+	font-size: 19pt;
+	margin-top: 125px;
+}
+
+.event-sort > .head-4:hover {
+	border: 1px solid $dark-gray;
+	border-radius: 50px;
+}

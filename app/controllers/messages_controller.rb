@@ -27,6 +27,7 @@ class MessagesController < ApplicationController
 
 	def show
 		@message = Message.find params[:id]
+		@message.conversation.update_notifications current_user
 		render partial: 'show', locals: {message: @message}
 	end
 

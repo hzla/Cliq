@@ -1,5 +1,5 @@
 
-<% if results %>
+<% if results != "invalid" %>
 	<% results.each do |entry| %>
 		<div class="result">
 			<%= image_tag entry[0].profile_pic_url, :class => "profile-pic-card" %>
@@ -33,13 +33,13 @@
 				</div>
 
 				<div class="result-actions">
-					<div class="action-button invite-btn white">
+					<div class="action-button invite-btn white inv-btn">
 						<%= image_tag "Events.svg", :class => "action-icon" %>
 						<%= link_to new_user_event_path(entry[0]), :class => "white invite-user", remote: true do %>
 							<div class="result-action">INVITE</div>
 						<% end %>
 					</div>
-					<div class="action-button chat white">
+					<div class="action-button chat white inv-btn">
 						<%= image_tag "Messages.svg", :class => "action-icon" %>
 						<%= link_to user_chat_path(entry[0]), :class => "white chat-user", remote: true do %>
 							<div class="result-action">CHAT</div>
@@ -49,4 +49,6 @@
 			</div>
 		</div>
 	<% end %>
+<% else %>
+<div class="hidden" id="invalid">invalid</div>
 <% end %>

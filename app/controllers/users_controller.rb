@@ -21,12 +21,21 @@ class UsersController < ApplicationController
 	end
 
 	def search
-		@results = current_user.search_similar(current_user.activities)[1..-1]
+		@results = current_user.search_similar(current_user.activities)[1..50].shuffle[0..20]
+		p session[:user_id]
+		puts "\n" * 10
 	end
 
 	def search_results
-		if params[:location_id] != ""
+		if params[:location_id] != "" && params[:location] != ""
 			location = Location.find params[:location_id]
+		elsif params[:location] != ""
+			cords = Geocoder.coordinates params[:location]
+			if cords
+				location = Location.create name: params[:location], latitude: cords[0], longitude: cords[1]
+			else
+				location = "invalid"
+			end
 		else
 			location = nil
 		end
