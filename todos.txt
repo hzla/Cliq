@@ -4,43 +4,40 @@ reduce database size for heroku
 
 	
 Schedule
-	Initial Likes
-	more categories and activities
-	new profiles
-	profiles modal
-	Event Messaging
-	Message Sort and Search
-	Add amazon cloud support to modal for event pictures
-	validations and sad paths
-
-	close button for chats and other stuff
-
-
-
-
-Saturday
-	Initial Likes
-
-Sunday
-	Initial Likes
-	more categories and activities
-	add amazon cloud support
+	Responsiveness
+	Initial Likes LONG
+	more categories and activities  MEDIUM
+	new profiles MEDIUM
+	profiles modal MEDIUM
+	Event Messaging MEDIUM
+	Message Sort and Search MEDIUM
+	Add amazon cloud support to modal for event pictures MEDIUM
+	validations and sad paths LONG
+	close button for chats and other stuff SHORT
 
 Monday
 	Initial Likes
 	Events Messaging
 	Messages Sort and search
 	validations and sad paths
+	more categories and activities
+	add amazon cloud support
 
 Tuesday
 	new profiles
 	everything you didn't get to
 
+Wednesday
+
+Thursday
+
+Friday
 
 
-
+DO LATERS
 
 	
+
 
 
 
