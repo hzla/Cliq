@@ -134,7 +134,7 @@
 }
 
 .message {
-	width: 375px;
+	width: 370px;
 	padding-left: 15px;
 	padding-top: 5px;
 	padding-bottom: 5px;
@@ -146,7 +146,7 @@
 
 .message.sent {
 	background-color: $green;
-	float: left;
+	float: right;
 	padding-right: 15px;
 }
 
@@ -174,7 +174,7 @@
 
 .message-block {
 	float: left;
-	width: 100%;
+	width: 99%;
 	margin-left: 5px;
 }
 

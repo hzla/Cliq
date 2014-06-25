@@ -83,10 +83,9 @@
 .profile-actions {
 	clear: right;
 	float: left;
-
 	font-size: 22px;
 	font-weight: 600;
-	margin-left: -100px;
+	margin-left: 50px;
 	margin-top: 15px;
 	.bubble {
 		border-radius: 50px;
@@ -99,7 +98,9 @@
 		float: left;
 	};
 	#add-interests {
-		float: left; 
+		float: left;
+		color: $green;
+		text-decoration: none; 
 	};
 }
 

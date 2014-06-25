@@ -70,8 +70,8 @@ Search =
 	displayResults: (event, data, xhr, status) ->
 		$('#results').html data
 		$('#found').text "Here's who we found:"
-		$('#found').text "Sorry, we couldn't find anyone." if data.length == 2
-		$('#found').text "Please enter a valid location." if $('#invalid')
+		$('#found').text "Sorry, we couldn't find anyone." if $('#empty').length > 0
+		$('#found').text "Please enter a valid location." if $('#invalid').length > 0
 
 	invertButtons: ->
 		$('.inv-btn').mouseenter ->

@@ -1,5 +1,8 @@
 
 <% if results != "invalid" %>
+	<% if results.empty? %>
+		<div id='empty'/>
+	<% end %> 
 	<% results.each do |entry| %>
 		<div class="result">
 			<%= image_tag entry[0].profile_pic_url, :class => "profile-pic-card" %>
@@ -49,6 +52,6 @@
 			</div>
 		</div>
 	<% end %>
-<% else %>
+<% else  %>
 <div class="hidden" id="invalid">invalid</div>
 <% end %>
