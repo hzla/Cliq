@@ -12,6 +12,7 @@ close button for chats and other stuff SHORT
 
 
 Tuesday
+	activation
 	new profiles
 	profile other
 	Events Messaging

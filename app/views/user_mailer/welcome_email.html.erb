@@ -9,7 +9,8 @@
       You have successfully signed up!<br>
     </p>
     <p>
-      To activate your account, just follow this link: <a href="<%= @url%>"><%= @url %></a>.
+      To activate your account, just follow this link:<br> 
+      <%= link_to 'activate', @url %>
     </p>
     <p>Thanks for joining and have a great day!</p>
   </body>
