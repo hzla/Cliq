@@ -2,7 +2,7 @@ Animations =
 	init: ->
 		$('.nav-filler').mouseover @extendSideNav
 		$('#messages-container').click @revertSideNav
-		$('.content-container').click @revertSideNav
+		$('.extended-side-nav').mouseleave @revertSideNav
 
 	extendSideNav: ->
 		$('.side-nav').hide()
@@ -13,18 +13,25 @@ Animations =
 		$('.content-container').animate {
 			marginLeft: "148px"
 		}, 200
+		show = () ->
+			$('.icon-label').show()
+			$('.icon-label').addClass('animated bounceInLeft')
+		setTimeout show, 60
+		$('.extended .nav-icon').css 'float', 'left'
+		$('.nav-filler').hide()
 
 	revertSideNav: ->
 		$('.extended-side-nav').animate {
-			width: "0px"
+			width: "62px"
 		}, 200, ->
-			$('.extended-side-nav').hide()
-		
+		$('.icon-label').hide()
+		$('#cliq-logo').show()
+		$('.extended .nav-icon').css 'float', 'none'
 		$('.content-container').animate {
 			marginLeft: "0px"
 		}, 200
-		
-		$('.side-nav').show()
+		$('.nav-filler').show()
+
 
 
 

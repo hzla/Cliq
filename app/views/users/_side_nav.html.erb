@@ -50,7 +50,7 @@
 <div class="extended-side-nav">
 	<%= link_to search_path, "data-no-turbolink" => true do %>
 		<div class="extended logo <%= 'active' if active == :critiq %>">
-			<div class="icon-label">Cliq</div> 
+			<div class="icon-label" id="cliq-logo">Cliq</div> 
 		</div>
 	<% end %>
 	<%= link_to user_path current_user do  %>
@@ -89,6 +89,8 @@
 			<div class="icon-label">Events</div>
 		</div> 
 	<% end %>
+	<div class="nav-filler">
+	</div> 
 	<div class="extended settings <%= 'active' if active == :settings %>" id="extended-settings" >
 		<%= image_tag "Settings.svg", :class => "nav-icon" %>
 		<div class="icon-label">User Settings</div>
@@ -101,6 +103,10 @@
 		<div class="icon-label">About</div>
 		<div class="icon-label light-gray terms">Terms</div>
 		<div class="icon-label light-gray">Privacy</div>
+		<%= link_to logout_path do %>
+			<div class="icon-label" id="logout">Logout</div>
+		<% end %>
+
 	</div>
 </div>
 

@@ -26,8 +26,9 @@
 			</div>
 
 			<div class="profile-actions green">
-				<div class="bubble" id="edit-profile">EDIT PROFILE</div>
-				<div class="bubble" id="add-interests">+ADD INTERESTS</div> 
+				<%= link_to categories_path do %>
+					<div class="bubble" id="add-interests">+ADD INTERESTS</div>
+				<% end %> 
 			</div> 
 		</div>
 

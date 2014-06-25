@@ -2,45 +2,38 @@ TODOS
 
 reduce database size for heroku
 
-	
-Schedule
-	Initial Likes
-	more categories and activities
+
+more categories and activities  MEDIUM
+profiles modal MEDIUM
+Event Messaging MEDIUM
+Add amazon cloud support to modal for event pictures MEDIUM
+validations and sad paths LONG
+close button for chats and other stuff SHORT
+
+
+Tuesday
+	activation
 	new profiles
-	profiles modal
-	Event Messaging
-	Message Sort and Search
-	Add amazon cloud support to modal for event pictures
+	profile other
+	Events Messaging
+
+Wednesday
 	validations and sad paths
-
-	close button for chats and other stuff
-
-
-
-
-Saturday
-	Initial Likes
-
-Sunday
-	Initial Likes
 	more categories and activities
 	add amazon cloud support
 
-Monday
-	Initial Likes
-	Events Messaging
-	Messages Sort and search
-	validations and sad paths
+Thursday
+	profiles modal
 
-Tuesday
-	new profiles
-	everything you didn't get to
+Friday
 
 
-
-
+DO LATERS
+	Responsiveness
+	message sort
 
 	
+
 
 
 

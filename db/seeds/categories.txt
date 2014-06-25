@@ -1,138 +1,139 @@
-Category: Games
-	Category: Shooter
-		Assassin’s Creed
-		Battlefield
-		Bioshock
-		Borderlands
-		Call of Duty
-		Counterstrike
-		Dead Rising
-		Devil May Cry
-		Fallout
-		Far Cry
-		Left 4 Dead
-		Gears of War
-		Grand Theft Auto
-		Halo
-		Hitman
-	Category: Mobile
-	Category: Strategy
-	Category: RPG
-	Category: Racing
-	Category: Misc
-		Max Payne
-		Metal Gear Solid
-		Resident Evil
-		Saints Row
-		Team Fortress
-		Titanfall
-		Angry Birds
-		Candy Crush
-		Flappy Bird
-		Plants vs. Zombies
-		2048
-		Civilization
-		Starcraft II
-		Dota
-		League of Legends
-		Pikmin
-		Portal
-		Elder Scrolls V: Skyrim
-		Final Fantasy
-		World of Warcraft
-		Pokemon
-		Tomb Raider
-		The Legend of Zelda
-		Diablo 3
-		Need for Speed
-		Minecraft
-		Supersmash Brothers
-		The Stanley Parable
-	Category: Board and Card Games
-		Blackjack
-		Monopoly
-		Risk
-		Settlers of Catan
-		Poker
-		Go Fish
-		Uno
-		Clue
-		Connect 4
-		Jenga
-	Category: Party Games
-	Category: Puzzle
-	Category: RPG
-	Category: Strategy
-		Twister
-		Puzzles
-		Rubix Cube
-		Dungeons and Dragons (LOL)
-		Life
-		Battleship
-		Checkers
-		Chess
-		Game of Thrones
-		Mancala
-		
-Category: Sports
-	Archery
-	Badminton
-	Baseball
-	Basketball
-	Bowling
-	Cycling
-	Diving
-	Football
-	Frisbie
-	Golf
-	Gymnastics
-	Handball
-	Hockey
-	Ice skating
-	Lacrosse
-	Mixed martial arts
-	Ping Pong
-	Racing
-	Rowing
-	Rugby
-	Running
-	Shooting
-	Skateboarding
-	Skiing
-	Soccer
-	Squash
-	Swimming
-
-Category: Going Out
-	Travel & Adventuring
-	Martial Arts
-	Tennis
-	Volleyball
-	Wrestling
-	Bars
-	Clubbing
-	Concerts
-	House Parties
-	Eat out
-	Roadtrips
-	Tourism
-	Skydiving
-	Rock Climbing
-	Hiking
-	Camping
-
+Category: Discuss
+Category: Do
+	Category: Concerts, clubs, events
+	Category: Eating Out
+	Category: Games
+		Category: Shooter
+			Assassin’s Creed
+			Battlefield
+			Bioshock
+			Borderlands
+			Call of Duty
+			Counterstrike
+			Dead Rising
+			Devil May Cry
+			Fallout
+			Far Cry
+			Left 4 Dead
+			Gears of War
+			Grand Theft Auto
+			Halo
+			Hitman
+		Category: Mobile
+		Category: Strategy
+		Category: RPG
+		Category: Racing
+		Category: Misc
+			Max Payne
+			Metal Gear Solid
+			Resident Evil
+			Saints Row
+			Team Fortress
+			Titanfall
+			Angry Birds
+			Candy Crush
+			Flappy Bird
+			Plants vs. Zombies
+			2048
+			Civilization
+			Starcraft II
+			Dota
+			League of Legends
+			Pikmin
+			Portal
+			Elder Scrolls V: Skyrim
+			Final Fantasy
+			World of Warcraft
+			Pokemon
+			Tomb Raider
+			The Legend of Zelda
+			Diablo 3
+			Need for Speed
+			Minecraft
+			Supersmash Brothers
+			The Stanley Parable
+		Category: Board and Card Games
+			Blackjack
+			Monopoly
+			Risk
+			Settlers of Catan
+			Poker
+			Go Fish
+			Uno
+			Clue
+			Connect 4
+			Jenga
+		Category: Party Games
+		Category: Puzzle
+		Category: RPG
+		Category: Strategy
+			Twister
+			Puzzles
+			Rubix Cube
+			Dungeons and Dragons (LOL)
+			Life
+			Battleship
+			Checkers
+			Chess
+			Game of Thrones
+			Mancala			
+	Category: Sports
+		Archery
+		Badminton
+		Baseball
+		Basketball
+		Bowling
+		Cycling
+		Diving
+		Football
+		Frisbie
+		Golf
+		Gymnastics
+		Handball
+		Hockey
+		Ice skating
+		Lacrosse
+		Mixed martial arts
+		Ping Pong
+		Racing
+		Rowing
+		Rugby
+		Running
+		Shooting
+		Skateboarding
+		Skiing
+		Soccer
+		Squash
+		Swimming
+	Category: Going Out
+		Travel & Adventuring
+		Martial Arts
+		Tennis
+		Volleyball
+		Wrestling
+		Bars
+		Clubbing
+		Concerts
+		House Parties
+		Eat out
+		Roadtrips
+		Tourism
+		Skydiving
+		Rock Climbing
+		Hiking
+		Camping
 Category: Music 
 	Rock
 	EDM
-	country
-	hip hop
+	Country
+	Hip Hop
 	Rap
 	Metal
 	Indie
 	Pop
 	Classical
-
-Category: TV Shows
+Category: Watch
+	Category: TV Shows
 	Category: Crime
 		Bones
 		CSI
@@ -159,8 +160,7 @@ Category: TV Shows
 		How I Met Your Mother
 		Friends
 		The Office
-
-Category: Movies
+	Category: Movies
 	Category: Action
 		Argo
 		Batman
@@ -354,6 +354,7 @@ Category: Movies
 		Naruto
 		Ouran High School Host Club
 		One Piece
+
 
 
 

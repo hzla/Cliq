@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
 	  #redirect to user page if they've already authorized
 	  if auth
 	    session[:user_id] = auth.user.id
+	    UserMailer.welcome_email(current_user).deliver
 	    current_user.update_attributes active: true;
 	    redirect_to search_path and return
 	  else #create new user if not authorized

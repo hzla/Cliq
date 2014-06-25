@@ -10,6 +10,11 @@
 	background-size: cover;
 }
 
+#search-content {
+	width: 927px;
+	margin: 0 auto;
+}
+
 #search-form {
 }
 
@@ -26,6 +31,12 @@
 	float: left;
 }
 
+#results-content {
+	width: 928px;
+	margin: 0 auto;
+	text-align: center;
+}
+
 #query {
 	margin: 0 auto;
 	width: 100%;
@@ -34,7 +45,6 @@
 
 #query-1 {
 	float: left;
-	margin-left: 17%; 
 }
 
 #query-location {
@@ -51,9 +61,8 @@
 #query-interests {
 	float: left;
 	clear: left;
-	margin-left: 17%;
 	margin-top: 5px;
-	width: 62%;
+	width: 87%;
 }
 
 .query-interest {
@@ -90,14 +99,16 @@
 	padding-left: 15px;
 	padding-right: 15px;
 	border-radius: 50px;
-	margin-right: 9%;
 	border:	none;
 	cursor: pointer;
 }
 
+#query-row-1 {
+	margin: 0 auto;
+}
+
 #results {
-	width: 970px;
-	margin-left: 177px;
+	width: 928px;
 	float: left;
 	margin-top: 25px;
 }
@@ -109,8 +120,7 @@
 #found {
 	font-weight: 400;
 	float: left;
-	margin-left: 177px;
-    color: $dark-gray;
+  color: $dark-gray;
 }
 
 #sort-by {
@@ -120,7 +130,6 @@
 
 #sort-term {
 	float: right;
-	margin-right: 177px;
 	margin-left: 15px;
 	background-color: white;
 	padding-left: 15px;
@@ -137,6 +146,10 @@
 	margin-bottom: 38px;
 	overflow-y: hidden; 
 	overflow-x: hidden;
+}
+
+.result:nth-child(3n) {
+	margin-right: 0px;
 }
 
 .profile-pic-card {
