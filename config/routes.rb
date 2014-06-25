@@ -27,7 +27,7 @@ Cliq::Application.routes.draw do
   end
   
   resources :activities, only: [:index]
-  get '/users/:id/activate/:code', to: 'users#activate'
+  get '/users/:id/activate/:code', to: 'users#activate', as: 'activate'
   get '/search', to: 'users#search', as: 'search'
   post '/search', to: 'users#search_results'
   resources :partners, only: [:show]

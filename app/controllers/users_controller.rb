@@ -21,12 +21,10 @@ class UsersController < ApplicationController
 	end
 
 	def search
-		@results = current_user.search_similar(current_user.activities)[1..50].shuffle[0..20]
+		@results = nil
 	end
 
 	def search_results
-		p params
-		puts "\n" * 100
 		if params[:location_id] != "" && params[:location] != ""
 			location = Location.find params[:location_id]
 		elsif params[:location] != ""

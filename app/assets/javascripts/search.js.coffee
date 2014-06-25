@@ -6,6 +6,7 @@ Search =
 		$('body').on 'ajax:success', '.chat-user', @chatUser
 		$('body').on 'click', '.chat-collapse', @collapseChat
 		$('body').on 'click', '.collapsed-chat', @addChat
+		$('body').on 'click', '.close', @closeChat
 		$('body').on 'ajax:success', '#search-form', @displayResults
 		@invertButtons()
 
@@ -15,22 +16,21 @@ Search =
 		$('#invite-modal-container').addClass "animated bounceInUp"
 
 	chatUser: (event, data, xhr, status) ->
-		$('body').append data
-		$('.chat-partial').last().addClass 'animated bounceInRight'
+		if $('#' + $(@).attr('href').split('/')[2]).length < 1
+			$('body').append data
+			$('.chat-partial').last().addClass 'animated bounceInRight'
 
 	collapseChat: ->
 		$(@).parents('.chat-partial').addClass 'bounceOutRight'
 		collapsed = $(@).parents('.chat-partial').next()
-		collapsedCount = $('.collapsed-chat').length 
+		collapsedCount = $('.collapsed-chat.shown').length + 1
 		className = collapsed[0].className
-		console.log collapsed
 		if !collapsed.hasClass('indented')
-			console.log "reindented"
 			indent = true
 		
 		collapsed.removeClass()
 		if indent == true
-			collapsed.addClass "indented indent-" + collapsedCount
+			collapsed.addClass " shown indented indent-" + collapsedCount
 		console.log collapsed
 		collapsed.show().addClass(className + " animated bounceInLeft").show()
 		collapsedCount = $('.collapsed-chat').length - 1
@@ -38,7 +38,7 @@ Search =
 	addChat: ->
 		$(@).addClass 'animated bounceOutLeft'
 		$(@).one 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', ->
-			$(@).removeClass 'animated bounceInLeft bounceOutLeft'
+			$(@).removeClass 'animated bounceInLeft bounceOutLeft shown'
 			$(@).hide()	
 		$(@).prev().removeClass().addClass 'chat-partial animated bounceInRight'
 
@@ -92,6 +92,10 @@ Search =
 			$(@).css 'border', "none"
 			$(@).find('.action-icon').css 'background-color', 'none'
 			$(@).find('.action-icon').css 'border', 'none'
+
+	closeChat: -> 
+		$(@).parent().parent().prev().remove()
+		$(@).remove()
 
 
 

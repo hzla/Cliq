@@ -10,7 +10,7 @@
     </p>
     <p>
       To activate your account, just follow this link:<br> 
-      <%= link_to 'activate', @url %>
+      <%= link_to 'activate', ('http://localhost:3000' + activate_path(id: @user.id, code: @user.activation)) %>
     </p>
     <p>Thanks for joining and have a great day!</p>
   </body>
