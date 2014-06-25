@@ -8,6 +8,7 @@ Search =
 		$('body').on 'click', '.collapsed-chat', @addChat
 		$('body').on 'click', '.close', @closeChat
 		$('body').on 'ajax:success', '#search-form', @displayResults
+		$('.content-container').click @collapseAllChat
 		@invertButtons()
 
 	inviteUser: (event, data, xhr, status) ->
@@ -16,13 +17,17 @@ Search =
 		$('#invite-modal-container').addClass "animated bounceInUp"
 
 	chatUser: (event, data, xhr, status) ->
+		event.preventDefault()
 		if $('#' + $(@).attr('href').split('/')[2]).length < 1
 			$('body').append data
 			$('.chat-partial').last().addClass 'animated bounceInRight'
 
 	collapseChat: ->
-		$(@).parents('.chat-partial').addClass 'bounceOutRight'
-		collapsed = $(@).parents('.chat-partial').next()
+		Search.collapse $(@).parents('.chat-partial')
+
+	collapse: (chat) ->
+		chat.addClass 'bounceOutRight'
+		collapsed = chat.next()
 		collapsedCount = $('.collapsed-chat.shown').length + 1
 		className = collapsed[0].className
 		if !collapsed.hasClass('indented')
@@ -31,9 +36,13 @@ Search =
 		collapsed.removeClass()
 		if indent == true
 			collapsed.addClass " shown indented indent-" + collapsedCount
-		console.log collapsed
 		collapsed.show().addClass(className + " animated bounceInLeft").show()
 		collapsedCount = $('.collapsed-chat').length - 1
+
+	collapseAllChat: ->
+		$('div.chat-partial').not('.bounceOutRight').each () ->
+			Search.collapse $(@)
+
 
 	addChat: ->
 		$(@).addClass 'animated bounceOutLeft'
@@ -41,6 +50,8 @@ Search =
 			$(@).removeClass 'animated bounceInLeft bounceOutLeft shown'
 			$(@).hide()	
 		$(@).prev().removeClass().addClass 'chat-partial animated bounceInRight'
+		$('.chat-partial').css 'z-index', '2'
+		$(@).prev().css 'z-index', '3'
 
 	autocompleteLocations: ->
 		$('#query-location').autocomplete
