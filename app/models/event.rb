@@ -4,7 +4,11 @@ class Event < ActiveRecord::Base
 	has_many :excursions
 	mount_uploader :image, ImageUploader
 
-	attr_accessible :title, :description, :location, :start_time, :end_time, :image, :attended, :partner_id
+	validates :title, presence: true
+	validates :location, presence: true
+	validates :start_time, presence: true
+
+	attr_accessible :title, :description, :location, :start_time, :end_time, :image, :attended, :partner_id, :quantity
 
 
 	def creator
@@ -13,7 +17,6 @@ class Event < ActiveRecord::Base
 
 	def time
 		if start_time - Time.now < 24.hours
-			# created_at.strftime "Today at %I:%M%p"
 			start_time.strftime("%m/%d/%g at %I:%M%p")
 		else
 			start_time.strftime("%m/%d/%g at %I:%M%p") 

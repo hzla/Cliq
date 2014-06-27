@@ -3,34 +3,30 @@ TODOS
 reduce database size for heroku
 
 
-more categories and activities  MEDIUM
-profiles modal MEDIUM
-Event Messaging MEDIUM
-Add amazon cloud support to modal for event pictures MEDIUM
-validations and sad paths LONG
-close button for chats and other stuff SHORT
-
-
 Tuesday
-	activation
-	new profiles
-	profile other
-	Events Messaging
-
+	
 Wednesday
-	validations and sad paths
-	more categories and activities
-	add amazon cloud support
-
+	
 Thursday
-	profiles modal
+	validations and sad paths 30min
+	faq 30min
+	profile other 30min
 
 Friday
+	collapse-chat-notifications 1hr
+	Events Messaging 30min
+	tiemzones
 
 
 DO LATERS
 	Responsiveness
 	message sort
+	add amazon cloud support
+
+
+Validations
+	bad email sent
+	bad event created
 
 	
 

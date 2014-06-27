@@ -6,7 +6,11 @@ class UsersController < ApplicationController
   		format.html 
   		format.json { render :json => @user }
 		end
+	end
 
+	def send_activation
+		UserMailer.welcome_email(current_user, params[:email]).deliver
+		render nothing: true
 	end
 
 	def activate

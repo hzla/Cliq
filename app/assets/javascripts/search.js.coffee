@@ -9,6 +9,7 @@ Search =
 		$('body').on 'click', '.close', @closeChat
 		$('body').on 'ajax:success', '#search-form', @displayResults
 		$('.content-container').click @collapseAllChat
+		$('.send-activation').on 'submit', @thankUser
 		@invertButtons()
 
 	inviteUser: (event, data, xhr, status) ->
@@ -107,6 +108,10 @@ Search =
 	closeChat: -> 
 		$(@).parent().parent().prev().remove()
 		$(@).remove()
+
+	thankUser: (event, data, xhr, status) ->
+		$(@).hide()
+		$('#thank-you').show().addClass 'animated fadeIn'
 
 
 

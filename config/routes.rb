@@ -2,6 +2,7 @@ Cliq::Application.routes.draw do
   resources :location_suggestions
 
   root to: 'pages#home'
+  get '/faq', to: 'pages#faq', as: 'faq'
 
   resources :categories, only: [:index, :show] do 
     get '/choose', to: 'activities#choose', as: 'choose_activity'
@@ -27,6 +28,7 @@ Cliq::Application.routes.draw do
   end
   
   resources :activities, only: [:index]
+  post '/users/:id/send_activation', to: 'users#send_activation', as: 'send_activation'
   get '/users/:id/activate/:code', to: 'users#activate', as: 'activate'
   get '/search', to: 'users#search', as: 'search'
   post '/search', to: 'users#search_results'
