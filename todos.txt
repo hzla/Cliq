@@ -8,8 +8,6 @@ Tuesday
 Wednesday
 	
 Thursday
-	validations and sad paths 30min
-	faq 30min
 	profile other 30min
 
 Friday
@@ -24,9 +22,6 @@ DO LATERS
 	add amazon cloud support
 
 
-Validations
-	bad email sent
-	bad event created
 
 	
 
