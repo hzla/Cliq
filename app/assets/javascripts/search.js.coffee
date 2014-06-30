@@ -6,7 +6,10 @@ Search =
 		$('body').on 'ajax:success', '.chat-user', @chatUser
 		$('body').on 'click', '.chat-collapse', @collapseChat
 		$('body').on 'click', '.collapsed-chat', @addChat
+		$('body').on 'click', '.close', @closeChat
 		$('body').on 'ajax:success', '#search-form', @displayResults
+		$('.content-container').click @collapseAllChat
+		$('.send-activation').on 'submit', @thankUser
 		@invertButtons()
 
 	inviteUser: (event, data, xhr, status) ->
@@ -15,32 +18,41 @@ Search =
 		$('#invite-modal-container').addClass "animated bounceInUp"
 
 	chatUser: (event, data, xhr, status) ->
-		$('body').append data
-		$('.chat-partial').last().addClass 'animated bounceInRight'
+		event.preventDefault()
+		if $('#' + $(@).attr('href').split('/')[2]).length < 1
+			$('body').append data
+			$('.chat-partial').last().addClass 'animated bounceInRight'
 
 	collapseChat: ->
-		$(@).parents('.chat-partial').addClass 'bounceOutRight'
-		collapsed = $(@).parents('.chat-partial').next()
-		collapsedCount = $('.collapsed-chat').length 
+		Search.collapse $(@).parents('.chat-partial')
+
+	collapse: (chat) ->
+		chat.addClass 'bounceOutRight'
+		collapsed = chat.next()
+		collapsedCount = $('.collapsed-chat.shown').length + 1
 		className = collapsed[0].className
-		console.log collapsed
 		if !collapsed.hasClass('indented')
-			console.log "reindented"
 			indent = true
 		
 		collapsed.removeClass()
 		if indent == true
-			collapsed.addClass "indented indent-" + collapsedCount
-		console.log collapsed
+			collapsed.addClass " shown indented indent-" + collapsedCount
 		collapsed.show().addClass(className + " animated bounceInLeft").show()
 		collapsedCount = $('.collapsed-chat').length - 1
+
+	collapseAllChat: ->
+		$('div.chat-partial').not('.bounceOutRight').each () ->
+			Search.collapse $(@)
+
 
 	addChat: ->
 		$(@).addClass 'animated bounceOutLeft'
 		$(@).one 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', ->
-			$(@).removeClass 'animated bounceInLeft bounceOutLeft'
+			$(@).removeClass 'animated bounceInLeft bounceOutLeft shown'
 			$(@).hide()	
 		$(@).prev().removeClass().addClass 'chat-partial animated bounceInRight'
+		$('.chat-partial').css 'z-index', '2'
+		$(@).prev().css 'z-index', '3'
 
 	autocompleteLocations: ->
 		$('#query-location').autocomplete
@@ -92,6 +104,14 @@ Search =
 			$(@).css 'border', "none"
 			$(@).find('.action-icon').css 'background-color', 'none'
 			$(@).find('.action-icon').css 'border', 'none'
+
+	closeChat: -> 
+		$(@).parent().parent().prev().remove()
+		$(@).remove()
+
+	thankUser: (event, data, xhr, status) ->
+		$(@).hide()
+		$('#thank-you').show().addClass 'animated fadeIn'
 
 
 

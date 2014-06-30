@@ -1,7 +1,7 @@
 <% if current_user %>
 	$(function() {
 		Faye.Transport.WebSocket.isUsable = function($, _, c) { c(false) };
-	  var faye = new Faye.Client('http://localhost:9292/faye');
+	  var faye = new Faye.Client('http://faye-server-10.herokuapp.com/faye');
 	  faye.unsubscribe("<%= user_path current_user %>" + "/messages")
 	  if (typeof sub === "undefined") { 
 	  	sub = faye.subscribe("<%= user_path current_user %>" + "/messages", function(data) {

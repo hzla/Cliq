@@ -41,8 +41,15 @@ Events =
     $('#events').html data
     $('#upcoming-header').text "#{eventType} Events:"
 
-  closeModal: ->
-    $.modal.close()
+  closeModal: (event, data, xhr, status) ->
+    console.log data
+    if data.ok == true
+      $.modal.close()
+    else
+      $('#event_title').css('border', '1px solid red') if data.title
+      $('#event_location').css('border', '1px solid red') if data.location
+      $('#event_start_time').css('border', '1px solid red') if data.start_time
+
 
 
 

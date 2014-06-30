@@ -5,6 +5,8 @@ development:
   :user_name: welcome.cliq@gmail.com
   :password: cliqapp2014
   :enable_starttls_auto: true
+  :default_url_options:
+    :host: localhost:3000
 production:
   :address: smtp.gmail.com
   :port: 587

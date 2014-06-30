@@ -1,9 +1,8 @@
 class UserMailer < ActionMailer::Base
   default from: 'notifications@example.com'
  
-  def welcome_email(user)
+  def welcome_email(user, email)
     @user = user
-    @url  = "#{user_path(user)}/activate/#{user.activation}"
-    mail(to: @user.email, subject: 'Welcome to My Awesome Site')
+    mail(to: email, subject: 'Welcome to Cliq!')
   end
 end

@@ -11,7 +11,7 @@
 						<div id="query-2" class="head-3 white">with people interested in</div>
 					</div>
 					<div id="query-interests" class="head-3 dark-gray">
-						<%= text_field_tag :activity, nil, :class => "query-interest search-term" %>
+						<%= text_field_tag :activity, nil, :class => "query-interest search-term", placeholder: 'Anything' %>
 					</div>
 					<%= submit_tag "Search", :class => "green head-3", id:"search-query" %> 
 					<%= hidden_field_tag "ids" %>
@@ -43,6 +43,30 @@
 <script>
 <%= render partial: 'subscribe.js.erb' %>
 </script>
+
+<% if current_user.activation != 'activated' %>
+	
+	<div id="activation-container">
+		<div id="activation-form" class="dark-gray">
+			<p id="top"><span class="heavy">Cliq is currently only available to students at UCF</span><br>
+			Please enter your UCF email address and click the<br>
+			activation link we send you to start using Cliq.</p>
+				<%= form_tag send_activation_path(current_user), remote: true, class: "send-activation" do %>
+					<%= text_field_tag :email, nil, placeholder: "Enter email address", class: 'email-activation'   %>
+					<%= submit_tag "Send", class: "submit-email" %>
+				<% end %>
+
+				<div class="send-activation hidden" id="thank-you">
+					<p>Thank You! Please check your email.</p>
+				</div>
+
+
+			<p id="bottom"><span class="heavy">Not a USF? Student?</span> You can still enter your email to receive<br>
+			updates when we start expanding to other to schools.</p>
+		</div>
+	</div>
+<% end %>
+
 
 
 
