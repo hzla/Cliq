@@ -28,12 +28,12 @@
 			<div class="similarities">
 				<div class="mutual">
 					<%= image_tag "Mutual.svg", :class => "sim-label svg" %>
-					<div class="sim dark-gray"><%= current_user.similarities_with entry[0] %></div>
+					<div class="sim dark-gray"><%= entry[1].length %></div>
 				</div>
 
 				<div class="similar">
 					<%= image_tag "Similar.svg", :class => "sim-label svg" %>
-					<div class="sim dark-gray"><%= entry[1].length %></div>
+					<div class="sim dark-gray"><%= current_user.similarities_with entry[0] %></div>
 				</div>
 
 				<div class="suggestions">
