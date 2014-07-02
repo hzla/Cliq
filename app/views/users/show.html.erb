@@ -3,35 +3,36 @@
 
 		<%= render partial: 'side_nav', locals: {active: :profile} %>
 
+		<div id="main-profile-container"> 
+			<div class="main-profile-info">
+				<%= image_tag @user.profile_pic_url, :class => "profile-pic" %>
+				
+				<div class="left">
+					<div class="head-1" id="name"><%= @user.name %></div>
+					<div class="head-4" id="school"><%= @user.school %></div>
+					<% if @user.active %>
+						<div class="head-4" id="active">Active</div>
+					<% else %>
+						<div class="head-4" id="active">Offline</div>
+					<% end %>
+				</div>
+				
+				<div class="right">
+					<div class="head-2 " id="event-count"><%= @user.attendings%></div>
+					<div class="head-3 " id="event-label">Events Attended</div>
+					<div class="head-2 " id="people-count"><%= @user.total_meetings%></div>
+					<div class="head-3 " id="people-label">People Met</div>
+					<div class="head-2 " id="interest-sum"><%= @user.activities.length%></div>
+					<div class="head-3 " id="interest-label">Interests Listed</div>
+				</div>
 
-		<div class="main-profile-info">
-			<%= image_tag @user.profile_pic_url, :class => "profile-pic" %>
-			
-			<div class="left">
-				<div class="head-1" id="name"><%= @user.name %></div>
-				<div class="head-4 gray" id="school"><%= @user.school %></div>
-				<% if @user.active %>
-					<div class="head-4 green" id="active">Active</div>
-				<% else %>
-					<div class="head-4 gray" id="active">Offline</div>
-				<% end %>
+				<div class="profile-actions green">
+					<%= link_to choose_cat_path(@category) do %>
+						<div class="bubble red" id="add-interests">+add interests</div>
+					<% end %> 
+				</div> 
 			</div>
-			
-			<div class="right">
-				<div class="head-2 black" id="event-count"><%= @user.attendings%></div>
-				<div class="head-3 gray" id="event-label">Events Attended</div>
-				<div class="head-4 gray" id="with">with</div>
-				<div class="head-2 black" id="people-count"><%= @user.total_meetings%></div>
-				<div class="head-3 gray" id="people-label">People</div>
-			</div>
-
-			<div class="profile-actions green">
-				<%= link_to categories_path do %>
-					<div class="bubble" id="add-interests">+ADD INTERESTS</div>
-				<% end %> 
-			</div> 
 		</div>
-
 		<%= render partial: 'interests', locals: {user: @user} %>
 	</div>
 </div>

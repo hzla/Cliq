@@ -2,10 +2,16 @@ class UsersController < ApplicationController
 	before_filter :get_user
 
 	def show
+		@category = Category.where(name: "Do").first
 		respond_to do |format|
   		format.html 
   		format.json { render :json => @user }
 		end
+	end
+
+	def other
+		user = User.find params[:id]
+		render partial: 'other', locals: {user: user}
 	end
 
 	def send_activation
@@ -41,7 +47,7 @@ class UsersController < ApplicationController
 		else
 			location = nil
 		end
-		results = current_user.search_similar Activity.parse_interests(params[:ids]), location
+		results = current_user.search_similar(Activity.parse_interests(params[:ids]), location)[0..14]
 		render partial: "search_results", locals: {results: results}
 	end
 

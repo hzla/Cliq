@@ -4,7 +4,7 @@
 			<%=  category.question || "What #{category.name} do you play?" %>
 		</div>
 		<%= link_to category_path(category.parent), remote: true, class: 'back-link' do  %>
-			<div id="cat-act-back" class="green head-4">
+			<div id="cat-act-back" class="dark-gray head-4">
 				<span id="back-text"><< Back to categories</span>
 			</div>
 		<% end %>

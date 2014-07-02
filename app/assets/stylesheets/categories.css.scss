@@ -4,7 +4,7 @@
 #categories-header {
 	height: 64px;
 	width: 100%;
-	background-image: image_url("search_blue.png");
+	background: $light-turq;
 	float: left;
 	font-family: $generic-font;
 	text-align: center;
@@ -19,7 +19,7 @@
 	height: 26px;
 	background-color: white;
 	opacity: .5;
-	color: $green;
+	color: $dark-gray;
 	padding-left: 25px;
 	padding-right: 25px;
 	border-radius: 50px;
@@ -91,7 +91,7 @@
 }
 
 .cat-title:hover {
-	color: $green;
+	color: $light-turq;
 }
 
 .cat-select {
@@ -167,7 +167,7 @@
 }
 
 .act:hover {
-	border: 1px solid $blue;
+	border: 1px solid $light-turq;
 	height: 32px; 
 }
 
@@ -215,7 +215,7 @@
 	float: left;
 	clear: left;
 	border-radius: 50px;
-	background-color: $blue;
+	background-color: $light-turq;
 	margin-top: 11px;
 	height: 34px;
 	color: white;

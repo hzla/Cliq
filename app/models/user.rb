@@ -70,15 +70,29 @@ class User < ActiveRecord::Base
 		total ? total : 0
 	end
 
-	def category_activities
+	def category_activities parent
+		categories = parent.descendants
 		categories.map do |cat|
 			acts = cat.activities.select {|act| act.users.include? self }
-			[cat, acts] 
+			if acts	== []		
+				nil
+			else
+				[cat, acts]
+			end
 		end
 	end
 
+	def formatted_cat_acts 
+		formatted = []
+		formatted[0] = category_activities(Category.where(name: "Do").first).compact
+		formatted[1] = category_activities(Category.where(name: "Watch").first).compact
+		formatted[2] = category_activities(Category.where(name: "Music").first).compact
+		formatted[3] = category_activities(Category.where(name: "Discuss").first).compact
+		formatted
+	end
+
 	def ordered_conversations
-		conversations.order(:updated_at).reverse
+		conversations.where(connected: true).order(:updated_at).reverse
 	end
 
 
@@ -93,7 +107,6 @@ class User < ActiveRecord::Base
 		act_ids = activities.map(&:id)
 		user.interests.where('activity_id in (?)', act_ids).length
 	end
-
 
 
 end

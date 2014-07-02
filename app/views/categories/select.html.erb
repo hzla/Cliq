@@ -4,10 +4,18 @@
 	<div id="categories-header">
 		<div id="cat-header-content" class="head-4 dark-gray">
 			What do you
-			<span id="do" class="cat-action doing">Do</span>
-			<span id="listen-to" class="cat-action">Listen to</span>
-			<span id="watch" class="cat-action">Watch</span>
-			<span id="discuss" class="cat-action">Discuss</span>
+			<%= link_to choose_cat_path @categories[1] do %>
+				<span id="do" class="cat-action doing">Do</span>
+			<% end %>
+			<%= link_to choose_cat_path @categories[2] do %>
+				<span id="listen-to" class="cat-action">Listen to</span>
+			<% end %>
+			<%= link_to choose_cat_path @categories[3] do %>
+				<span id="watch" class="cat-action">Watch</span>
+			<% end %>
+			<%= link_to choose_cat_path @categories[0] do %>
+				<span id="discuss" class="cat-action">Discuss</span>
+			<% end %>
 			?
 		</div>
 	</div>

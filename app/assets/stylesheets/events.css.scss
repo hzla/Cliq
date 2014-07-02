@@ -3,7 +3,7 @@
 #events-header {
 	height: 64px;
 	width: 100%;
-	background-image: image_url("search_blue.png");
+	background-color: $light-turq;
 	float: left;
 	font-family: $generic-font;
 	overflow-x: hidden;
@@ -170,7 +170,7 @@
 	padding-left: 15px;
 	padding-right: 15px;
 	border-radius: 50px;
-	background-color: $green;
+	background-color: $light-turq;
 	float: left;
 	margin-right: 15px;
 }
@@ -208,7 +208,7 @@
 	padding-left: 15px;
 	padding-right: 15px;
 	border-radius: 50px;
-	background-color: $green;
+	background-color: $light-turq;
 }
 
 .upcoming-event-picture {

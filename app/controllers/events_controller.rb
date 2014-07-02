@@ -4,7 +4,7 @@ class EventsController < ApplicationController
 
 	def index
 		excursions = current_user.excursions.where(accepted: false).where(passed: false)
-		@invitations = excursions.map(&:event).compact.select { |event| event.start_time > Time.now }.sort_by(&:start_time)
+		@invitations = excursions.where(created: false).map(&:event).compact.select { |event| event.start_time > Time.now }.sort_by(&:start_time)
 		@events = Event.where("start_time > ?", Time.now).order(:start_time)
 		excursions.update_all seen: true
 		current_user.update_attributes event_count: 0

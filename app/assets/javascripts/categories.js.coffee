@@ -8,7 +8,7 @@ Categories =
 
 	highlight: ->
 		$(@).children('.cat-title').css 'color', 'white' 
-		$(@).children('.cat-title').css 'background-color', '#13CD81'
+		$(@).children('.cat-title').css 'background-color', '#18c3bd'
 		$(@).find('.check').toggle()
 
 	showCategories: (event, data, xhr, status) ->

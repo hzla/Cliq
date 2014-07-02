@@ -4,6 +4,8 @@ Cliq::Application.routes.draw do
   root to: 'pages#home'
   get '/faq', to: 'pages#faq', as: 'faq'
 
+  get '/categories/:id/select', to: 'categories#select', as: 'choose_cat'
+
   resources :categories, only: [:index, :show] do 
     get '/choose', to: 'activities#choose', as: 'choose_activity'
   end
@@ -26,6 +28,7 @@ Cliq::Application.routes.draw do
     get '/conversations/:id/searched', to: 'conversations#searched_show', as: 'searched_convo'
     get '/chat', to: 'conversations#chat', as: 'chat'
   end
+  get '/users/:id/other', to: 'users#other', as: 'other_user'
   
   resources :activities, only: [:index]
   post '/users/:id/send_activation', to: 'users#send_activation', as: 'send_activation'

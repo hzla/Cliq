@@ -29,15 +29,15 @@
 		<%= image_tag current_user.profile_pic_url, id: "chat-box-pic" %>
 
 		<div id="message-actions">
-			<div class="action-button white message-invite inv-btn">
-				<%= image_tag "Events.svg", :class => "action-icon" %>
-				<%= link_to new_user_event_path(@other_user), :class => "white invite-user", remote: true do %>
-					<div class="result-action">INVITE</div>
-				<% end %>
-			</div>
-			<div class="action-button white message-reply inv-btn">
-				<div class="result-action reply">REPLY</div>
-			</div>
+				<div class="action-button white message-invite inv-btn mes-action">
+					<%= image_tag "Events.svg", :class => "action-icon svg" %>
+					<%= link_to new_user_event_path(@other_user), :class => "white invite-user", remote: true do %>
+						<div class="result-action">INVITE</div>
+					<% end %>
+				</div>
+				<div class="action-button white message-reply inv-btn mes-action">
+					<div class="result-action reply">REPLY</div>
+				</div>
 		</div>
 	</div>
 </div>
@@ -45,7 +45,7 @@
 <div class="collapsed-chat hidden">
 	<div class="collapsed-name">
 		<- <%= @other_user.name %>
-		<%= image_tag 'close.png', class: 'close' %>
+		<%= image_tag 'XClose.svg', class: 'close' %>
 	</div>
 </div>
 
@@ -55,5 +55,30 @@ $(document).ready(function(){
 	$('.message-history')[0].scrollTop = $('.message-history')[0].scrollHeight
 })
 </script>
+<script>
+  $('img.svg').each(function(){
+    var $img = $(this);
+    var imgID = $img.attr('id');
+    var imgClass = $img.attr('class');
+    var imgURL = $img.attr('src');
 
+    $.get(imgURL, function(data) {
+        // Get the SVG tag, ignore the rest
+        var $svg = $(data).find('svg');
+
+        // Add replaced image's ID to the new SVG
+        if(typeof imgID !== 'undefined') {
+            $svg = $svg.attr('id', imgID);
+        }
+        // Add replaced image's classes to the new SVG
+        if(typeof imgClass !== 'undefined') {
+            $svg = $svg.attr('class', imgClass+' replaced-svg');
+        }
+        // Remove any invalid XML tags as per http://validator.w3.org
+        $svg = $svg.removeAttr('xmlns:a');
+        // Replace image with new SVG
+        $img.replaceWith($svg);
+    }, 'xml');
+  });
+</script>
 

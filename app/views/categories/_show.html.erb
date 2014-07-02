@@ -23,7 +23,7 @@
 								<span class="cat-select"><%= cat.name %></span>
 								<%= image_tag "check.svg.png", :class => "check hidden" %>
 							</div>
-							<%= image_tag "party.jpg", :class => "cat-pic" %>
+							<%= image_tag cat.image_url, :class => "cat-pic" %>
 						</div>
 					<% end %>
 				<% else %>
@@ -33,17 +33,12 @@
 								<span class="cat-select"><%= cat.name %></span>
 								<%= image_tag "check.svg.png", :class => "check hidden" %>
 							</div>
-							<%= image_tag "party.jpg", :class => "cat-pic" %>
+							<%= image_tag cat.image_url, :class => "cat-pic" %>
 						</div>
 					<% end %>
 				<% end %>
 			<% end %>
-			<div class="cat">
-				<div class="cat-title dark-gray create-own head-4">
-					Add your own category
-				</div>
-				<%= image_tag "party.jpg", :class => "cat-pic" %>
-			</div>
+
 		</div>
 	</div>
 </div>

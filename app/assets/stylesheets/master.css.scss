@@ -2,7 +2,8 @@
 
 body {
 	margin: 0;
-    padding-left:62px;
+  padding-left:62px;
+  background-color: $super-light-gray;
 }
 
 .head-1 {
@@ -67,8 +68,12 @@ body {
 	color: red;
 }
 
-.active {
-	background-color: $active-nav-color;
+.logo.active {
+	color: $light-turq;
+}
+
+.active svg path {
+	fill: $light-turq;
 }
 
 .content-container {
@@ -79,182 +84,7 @@ body {
   background-color: $super-light-gray;
 }
 
-.side-nav {
-	width: 62px;
-	height: 100%;
-	background-color: $nav-color;
-	position: fixed;
-	left: 0;
-	text-align: center;
-	top: 0;
-    z-index: 3;
-}
-
-.extended {
-	position: relative;
-}
-
-.extended-side-nav .extended {
-	float: left;
-	clear: left;
-	font-family: $generic-font;
-  font-weight: 300;
-	color: white;
-	width: 100%;
-  z-index:3;
-}
-
-.extended .nav-icon {
-	margin-left: 15px;
-	margin-right: 15px;
-	float: left;
-}
-
-.icon-label {
-	float: left;
-	margin-top: 20px;
-	-webkit-animation-duration: .5s;
-	color: white;
-	opacity: 0;	
-}
-
-.settings .icon-label {
-	width: 100px;
-}
-
-.icon-label.main {
-	top: 0;
-	left: 53px;
-	position: absolute;
-}
-
-.extended-side-nav {
-	width: 62px;
-	height: 100%;
-	background-color: $nav-color;
-	position: fixed;
-	left: 0;
-	text-align: center;
-	top: 0;
-}
-
-a {
-	text-decoration: none;
-}
-
-.extended.logo {
-	font-family: $logo-font;
-	font-style: italic;
-	font-weight: 400;
-	font-size: 20px;
-	color: white;
-	display: block;
-}
-
-.extended.logo .icon-label {
-	margin-left: 15px;
-	margin-top: 0px;
-	opacity: 1;
-}
-
-.logo {	
-	font-family: $logo-font;
-	font-style: italic;
-	font-weight: 400;
-	font-size: 20px;
-	color: white;
-	padding-top: 17px;
-	padding-bottom: 17px;
-}
-
-.nav-icon {
-	width: 24px;
-	height: 24px;
-	padding-top: 19px;
-	padding-bottom: 19px;
-}
-
-.settings {
-	bottom: 0;
-	position: absolute;
-	margin-left: 18px;
-}
-
-#extended-settings {
-	margin-left: 0px;
-}
-
-.extended-options {
-	float: left;
-	position: absolute;
-	bottom: 90px;
-	font-family: $generic-font;
-    font-weight: 300;
-	color: white;
-}
-
-.extended-options .icon-label {
-	margin-left: 56px;
-	float: left;
-	clear: left;
-}
-
-
-.nav-filler {
-	height: 400px;
-	width: 62px;
-	position: fixed;
-	left: 0;
-	top: 238px;
-	opacity: 0;
-	z-index: 100
-}
-
-.hidden {
-	display: none;
-}
-
-.side-icon {
-	position: relative;
-    height: 62px;
-}
-
-.counter {
-	background-color: $red;
-	color: white;
-	font-size: 10px;
-	height: 12.5px;
-	width: 15px;
-	padding-top: 1px;
-	border-radius: 3px;
-	text-align: center;
-	position: absolute;
-	top: 12px;
-	right: 9px;
-}
-
-.extended .counter {
-	right: 163px;
-}
-
-.close-modal {
-	display: none;
-}
-
-::-webkit-scrollbar { 
-    display: none; 
-}
-
-#cliq-logo {
-	display: block;
-	width: 39px;
-	margin-left: 10px;
-}
-
-#logout {
-	color: white;
-	text-decoration: none;
-}
+input:focus {outline: none; }
 
 
 

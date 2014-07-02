@@ -5,14 +5,14 @@
 		</div>
 	<% end %>
 	<%= link_to user_path current_user do  %>
-		<div class="extended profile <%= 'active' if active == :profile %>">
-			<%= image_tag "Profile.svg", :class => "nav-icon" %> 
+		<div class="extended profile side-icon <%= 'active' if active == :profile %>">
+			<%= image_tag "Profile.svg", :class => "nav-icon svg" %> 
 			<div class="icon-label main">Profile</div>
 		</div>
 	<% end %>
 		<%= link_to messages_path, "data-no-turbolink" => true do %>
 		<div class="extended messages <%= 'active' if active == :messages %> side-icon">
-			<%= image_tag "Messages.svg", :class => "nav-icon" %>
+			<%= image_tag "Messages.svg", :class => "nav-icon svg" %>
 			<div class="icon-label main">Messages</div>
 			<% if current_user.message_count > 0 %>
 				<div class="counter">
@@ -27,7 +27,7 @@
 	<% end %>
 	<%= link_to events_path do %>
 		<div class="extended events <%= 'active' if active == :events %> side-icon" >
-			<%= image_tag "Events.svg", :class => "nav-icon" %>
+			<%= image_tag "Events.svg", :class => "nav-icon svg" %>
 			<% if current_user.event_count > 0 %>
 					<div class="counter">
 						<%= current_user.event_count%>
@@ -43,7 +43,7 @@
 	<div class="nav-filler">
 	</div> 
 	<div class="extended settings <%= 'active' if active == :settings %>" id="extended-settings" >
-		<%= image_tag "Settings.svg", :class => "nav-icon" %>
+		<%= image_tag "Settings.svg", :class => "nav-icon svg" %>
 		<div class="icon-label main">User Settings</div>
 	</div>
 

@@ -4,7 +4,7 @@
 	height: 100%;
 	min-height: 125px;
 	width: 100%;
-	background-image: image_url("search_blue.png");
+	background: $light-turq;
 	float: left;
 	font-family: $generic-font;
 	background-size: cover;
@@ -34,7 +34,6 @@
 #results-content {
 	width: 928px;
 	margin: 0 auto;
-	text-align: center;
 }
 
 #query {
@@ -52,10 +51,11 @@
 	margin-left: 15px;
 	margin-right: 15px;
 	border: none;
-	margin-top: 1px;
+	margin-top: -3px;
 	font-weight: 700;
 	font-size: 22px;
 	opacity: 1;
+	height: 34px;
 }
 
 #query-2 {
@@ -67,6 +67,10 @@
 	clear: left;
 	margin-top: 5px;
 	width: 87%;
+}
+
+.search-term.searched {
+	height: 38px;
 }
 
 .query-interest {
@@ -86,7 +90,6 @@
 
 .search-term {
 	background-color: white;
-	opacity: .5;
 	padding-left: 15px;
 	padding-right: 15px;
 	border-radius: 50px;
@@ -110,6 +113,7 @@
 	border-radius: 50px;
 	border:	none;
 	cursor: pointer;
+	height: 34px;
 }
 
 #query-row-1 {
@@ -195,14 +199,14 @@
 .mutual {
 	float: left;
 	clear: left;
-	text-align: center;
 	margin-left: 11px;
+	width: 75px;
 }
 
 .similar {
-	float: right;
-	text-align: center;
-	margin-right: 12px;
+	float: left;
+	margin-left: 33px;
+	width: 75px;
 }
 
 .similarities {
@@ -215,14 +219,26 @@
 }
 
 .sim-label {
-	font-size: 14px;
-	font-weight: 600;
+	height: 35px;
+	width: 35px;
+	float: left;
+}
+
+.sug-label {
+	color: $light-turq;
 }
 
 .sim {
 	font-size: 22px;
 	font-weight: 700;
-    line-height: 1.1;
+  line-height: 1.1;
+  float: left;
+  margin-left: 5px;
+	margin-top: 4px;
+}
+
+.sim-label g path {
+	fill: $red;
 }
 
 .suggestions {
@@ -234,7 +250,7 @@
 }
 
 .suggestion {
-	background-color: $blue;
+	background-color: $orange;
 	border-radius: 50px;
 	padding-left: 8px;
 	padding-right: 8px;
@@ -249,19 +265,20 @@
 	float: left;
 	font-size: 17px;
 	font-weight: 600;
-	bottom: 10px;
+	bottom: -2px;
 	position: absolute;	
-    line-height: 1.2;
-    padding: 10px 12px 0px;
-    width: 260px;
+  line-height: 1.2;
+  padding: 10px 12px 0px;
+  width: 260px;
+  background-color: $light-turq;
 }
 
 .action-button {
-	background-color: $green;
+	color: white;
 	border-radius: 4px;
-	width: 90px;
 	height: 22px;
-    padding: 7px 7px;
+  padding: 7px 7px;
+  width: 114px;
 }
 
 .invite-btn {
@@ -272,15 +289,34 @@
 	float: right;
 }
 
-.action-icon {
-	height: 22px;
-	width: 22px;
+.chat .result-action {
+	float: right;
+	margin-right: 7px;
+}
+
+.invite-user .result-action {
 	float: left;
+	margin-left: 7px;
+}
+
+.chat .action-icon {
+	float: right;
+}
+
+.action-icon {
+	height: 35px;
+	width: 35px;
+	float: left;
+	margin-top: -12px;
+}
+
+.action-icon path {
+	fill: white;
 }
 
 .result-action {
 	line-height: 1.3;
-	margin-left: 33px;
+	margin-top: -5px;
 }
 
 

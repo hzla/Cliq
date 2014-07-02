@@ -3,17 +3,14 @@ TODOS
 reduce database size for heroku
 
 
-Tuesday
-	
-Wednesday
-	
-Thursday
+
 	profile other 30min
 
-Friday
+
 	collapse-chat-notifications 1hr
 	Events Messaging 30min
 	tiemzones
+	messaging highlight
 
 
 DO LATERS

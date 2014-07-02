@@ -3,7 +3,7 @@ class Conversation < ActiveRecord::Base
 	has_many :connections
 	has_many :messages
 
-	attr_accessible :name
+	attr_accessible :name, :connected
 
 	def ordered_messages
 		messages.order :created_at

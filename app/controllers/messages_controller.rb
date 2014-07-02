@@ -18,6 +18,7 @@ class MessagesController < ApplicationController
 		@message.user_id = current_user.id
 		@message.conversation_id = params[:conversation_id]
 		@conversation = Conversation.find(params[:conversation_id])
+		@conversation.update_attributes connected: true
 		@user = @conversation.get_other_user current_user
 		@user.message_count += 1
 		@user.save

@@ -10,7 +10,7 @@ Search =
 		$('body').on 'ajax:success', '#search-form', @displayResults
 		$('.content-container').click @collapseAllChat
 		$('.send-activation').on 'submit', @thankUser
-		@invertButtons()
+		# @invertButtons()
 
 	inviteUser: (event, data, xhr, status) ->
 		$('#invite-modal-container').html data
@@ -72,7 +72,7 @@ Search =
 				event.preventDefault()
 				$(this).val ui.item.label
 				$('#ids').val $('#ids').val() + ui.item.value + " "
-				$('#query-interests').prepend "<div class='query-interest search-term'>#{ui.item.label}</div>"
+				$('#query-interests').prepend "<div class='query-interest search-term searched'>#{ui.item.label}</div>"
 				$('#activity').val('')
 			focus: (event, ui) ->
 				event.preventDefault()
