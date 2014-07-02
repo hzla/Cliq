@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 
 	def other
 		@user = User.find params[:id]
+		render layout: false
 	end
 
 	def send_activation

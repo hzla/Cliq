@@ -2,7 +2,11 @@
 	<div class="event-form-header">
 			<div class="header-profile">
 				<div class="head-3 dark-gray" id="sending">Sending invite to</div>
-				<%= image_tag User.last.profile_pic_url, :class => "event-profile-pic" %>
+				<% if current_user.conversated_with? @user %>
+					<%= image_tag @user.profile_pic_url, :class => "event-profile-pic" %>
+				<% else %>
+					<%= image_tag 'cliq.png', :class => "event-profile-pic" %>
+				<% end %>
 				<div class="head-4 dark-gray" id="sending-name"><%= @user.name %></div>
 			</div>
 	</div>
