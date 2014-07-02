@@ -5,7 +5,9 @@
 	<% end %> 
 	<% results.each do |entry| %>
 		<div class="result">
-			<%= image_tag entry[0].profile_pic_url, :class => "profile-pic-card" %>
+			<%= link_to other_user_path(entry[0]), :class => "other-user", remote: true do %>
+				<%= image_tag entry[0].profile_pic_url, :class => "profile-pic-card" %>
+			<% end %>
 			
 			<div class="card-header">
 				<div class="card-name dark-gray"><%= entry[0].name %></div>

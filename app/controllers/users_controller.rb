@@ -10,8 +10,7 @@ class UsersController < ApplicationController
 	end
 
 	def other
-		user = User.find params[:id]
-		render partial: 'other', locals: {user: user}
+		@user = User.find params[:id]
 	end
 
 	def send_activation

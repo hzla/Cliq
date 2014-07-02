@@ -4,12 +4,14 @@ Search =
 		@autocompleteInterests()
 		$('body').on 'ajax:success', '.invite-user', @inviteUser
 		$('body').on 'ajax:success', '.chat-user', @chatUser
+		$('body').on 'ajax:success', '.other-user', @showUser
 		$('body').on 'click', '.chat-collapse', @collapseChat
 		$('body').on 'click', '.collapsed-chat', @addChat
 		$('body').on 'click', '.close', @closeChat
 		$('body').on 'ajax:success', '#search-form', @displayResults
 		$('.content-container').click @collapseAllChat
 		$('.send-activation').on 'submit', @thankUser
+
 		# @invertButtons()
 
 	inviteUser: (event, data, xhr, status) ->
@@ -22,6 +24,11 @@ Search =
 		if $('#' + $(@).attr('href').split('/')[2]).length < 1
 			$('body').append data
 			$('.chat-partial').last().addClass 'animated bounceInRight'
+
+	showUser: (event, data, xhr, status) ->
+			$('.user-other-container').remove()
+			$('body').append data
+			$('.user-other-container').addClass 'animated bounceInRight'
 
 	collapseChat: ->
 		Search.collapse $(@).parents('.chat-partial')
@@ -43,6 +50,7 @@ Search =
 	collapseAllChat: ->
 		$('div.chat-partial').not('.bounceOutRight').each () ->
 			Search.collapse $(@)
+		$('.user-other-container').hide()
 
 
 	addChat: ->
