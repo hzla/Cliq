@@ -3,7 +3,11 @@
 	<div id="chat-partial-content">
 
 		<div id="chat-header">
-			<%= image_tag @other_user.profile_pic_url || User.last.profile_pic_url, id: "chat-pic" %>
+			<% if current_user.conversated_with? @other_user %>
+					<%= image_tag @other_user.profile_pic_url, id: "chat-pic" %>
+				<% else %>
+					<%= image_tag 'cliq.png', id: "chat-pic" %>
+				<% end %>
 			<div id="chat-info">
 				<div id="chat-name"><%= @other_user.name %></div>
 				<div id="chat-school"><%= @other_user.school || "Some Random School" %></div>

@@ -98,7 +98,10 @@ class User < ActiveRecord::Base
 
 	def conversated_with? user
 		conversations.each do |convo|
-			return convo if convo.users.include? user
+			ids = convo.messages.map(&:user_id)
+			if convo.users.include?(user) && ids.include?(user.id) && ids.include?(user.id) 
+				return true
+			end
 		end
 		false
 	end
