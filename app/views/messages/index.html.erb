@@ -15,7 +15,11 @@
 				<% user = convo.get_other_user current_user %>
 
 				<div class="conversation" id="<%= user.id %>">
-						<%= image_tag user.profile_pic_url || current_user.profile_pic_url, :class => "convo-pic" %>
+						<% if current_user.conversated_with? user %>
+					<%= image_tag user.profile_pic_url, :class => "convo-pic" %>
+				<% else %>
+					<%= image_tag 'cliq.png', :class => "convo-pic" %>
+				<% end %>
 					<div class="convo-details">
 						<div class="convo-name head-5"><%= user.name %></div>
 						<div class="convo-date head-5"><%= convo.date %></div>

@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
 	include SessionsHelper
 	include ApplicationHelper
+	skip_before_filter  :verify_authenticity_token
 
 	def index
 		excursions = current_user.excursions.where(accepted: false).where(passed: false)
@@ -42,10 +43,14 @@ class EventsController < ApplicationController
 			excursion = Excursion.where(event_id: event.id, user_id: current_user.id)[0]
 			excursion.update_attributes created: true
 			broadcast user_path(invited_user)+ "/events", event.to_json
-			render json: {ok: true}
-			return
+			if event.image
+				redirect_to events_path
+			else
+				render json: {ok: true}
+			end
+		else
+			render json: event.errors
 		end
-		render json: event.errors
 	end
 
 	def show

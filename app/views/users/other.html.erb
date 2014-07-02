@@ -2,7 +2,7 @@
 
 	<div id="main-profile-container"> 
 		<div class="main-profile-info other">
-			<% if current_user.conversated_with? @user %>
+				<% if current_user.conversated_with? @user %>
 					<%= image_tag @user.profile_pic_url, :class => "profile-pic" %>
 				<% else %>
 					<%= image_tag 'cliq.png', :class => "profile-pic" %>
