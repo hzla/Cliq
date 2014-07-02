@@ -46,7 +46,7 @@ class UsersController < ApplicationController
 		else
 			location = nil
 		end
-		results = current_user.search_similar(Activity.parse_interests(params[:ids]), location)[0..14]
+		results = current_user.search_similar(Activity.parse_interests(params[:ids]), location)[0..14].select {|x| x[0].id != current_user.id }
 		render partial: "search_results", locals: {results: results}
 	end
 
