@@ -1,10 +1,6 @@
 <div class="invite">
 	<div class="invite-header"> 
-		<% if current_user.conversated_with? invite.creator %>
-					<%= image_tag invite.creator.profile_pic_url, :class => "invite-creator" %>
-				<% else %>
-					<%= image_tag 'cliq.png', :class => "invite-creator" %>
-				<% end %>
+		<%= image_tag User.last.profile_pic_url, :class => "invite-creator" %>
 		<div class="invitation-creator-info">
 			<div class="head-5 invite-creator-name dark-gray">
 				<%= invite.creator.name %>
