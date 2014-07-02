@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Cliq, <%= @user.name %></h1>
+    <p>
+      You have successfully signed up!<br>
+    </p>
+    <p>
+      To activate your account, just follow this link:<br> 
+      <%= link_to 'activate', ('http://localhost:3000' + activate_path(id: @user.id, code: @user.activation)) %>
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>

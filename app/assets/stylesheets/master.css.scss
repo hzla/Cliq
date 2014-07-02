@@ -1,0 +1,90 @@
+@import 'variables';
+
+body {
+	margin: 0;
+  padding-left:62px;
+  background-color: $super-light-gray;
+}
+
+.head-1 {
+	font-weight: 600;
+	font-size: 36px;
+}
+
+.head-2 {
+	font-weight: 600;
+	font-size: 28px;
+}
+
+.head-3 {
+	font-weight: 700;
+	font-size: 22px;
+}
+
+.head-4 {
+	font-weight: 600;
+	font-size: 20px;
+}
+
+.head-5 {
+	font-weight: 400;
+	font-size: 15px;
+}
+
+.head-6 {
+	font-weight: 400;
+	font-size: 12px;
+}
+
+.dark-gray {
+	color: $dark-gray;
+}
+
+.light-gray {
+	color: $light-gray;
+}
+
+.gray {
+	color: $gray;
+}
+
+.green {
+	color: $green;
+}
+
+.black {
+	color: black;
+}
+
+.blue {
+	color: $blue;
+}
+
+.white {
+	color: white;
+}
+
+.red {
+	color: red;
+}
+
+.logo.active {
+	color: $light-turq;
+}
+
+.active svg path {
+	fill: $light-turq;
+}
+
+.content-container {
+	float: left;
+	width: 100%;
+	font-family: $generic-font;
+    //overflow: hidden;
+  background-color: $super-light-gray;
+}
+
+input:focus {outline: none; }
+
+
+

@@ -1,0 +1,73 @@
+<div class="interests">
+
+	<div id="interest-list">
+		
+			<div class="cat-section">
+				<div class="cat-header">
+					Stuff you do for fun:
+				</div>
+				<% user.formatted_cat_acts[0].each do |interest| %>
+					<div class="cat-group">
+						<div class="category dark-gray"><div class="cat-name"><%= interest[0].name[0..13] + 
+						"#{('..' if interest[0].name.length > 14)}" %></div></div>
+						<div class="activities">
+							<% interest[1].each do |activity| %>
+								<div class="activity"><div class="act-name"><%= activity.name %></div></div>
+							<% end %> 
+						</div>
+					</div>
+				<% end %>
+			</div>
+
+			<div class="cat-section">
+				<div class="cat-header">
+					Music:
+				</div>
+				<% user.formatted_cat_acts[2].each do |interest| %>
+					<div class="cat-group">
+						<div class="category dark-gray"><div class="cat-name"><%= interest[0].name[0..13] + 
+						"#{('..' if interest[0].name.length > 14)}" %></div></div>
+						<div class="activities">
+							<% interest[1].each do |activity| %>
+								<div class="activity"><div class="act-name"><%= activity.name %></div></div>
+							<% end %> 
+						</div>
+					</div>
+				<% end %>
+			</div>
+
+			<div class="cat-section">
+				<div class="cat-header">
+					What you watch:
+				</div>
+				<% user.formatted_cat_acts[1].each do |interest| %>
+					<div class="cat-group">
+						<div class="category dark-gray"><div class="cat-name"><%= interest[0].name[0..13] + 
+						"#{('..' if interest[0].name.length > 14)}" %></div></div>
+						<div class="activities">
+							<% interest[1].each do |activity| %>
+								<div class="activity"><div class="act-name"><%= activity.name %></div></div>
+							<% end %> 
+						</div>
+					</div>
+				<% end %>
+			</div>
+
+			<div class="cat-section">
+				<div class="cat-header">
+					What you talk about:
+				</div>
+				<% user.formatted_cat_acts[3].each do |interest| %>
+					<div class="cat-group">
+						<div class="category dark-gray"><div class="cat-name"><%= interest[0].name[0..13] + 
+						"#{('..' if interest[0].name.length > 14)}" %></div></div>
+						<div class="activities">
+							<% interest[1].each do |activity| %>
+								<div class="activity"><div class="act-name"><%= activity.name %></div></div>
+							<% end %> 
+						</div>
+					</div>
+				<% end %>
+			</div>
+	</div>
+</div>

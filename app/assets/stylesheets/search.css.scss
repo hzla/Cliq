@@ -1,0 +1,376 @@
+@import 'variables';
+
+#search-container {
+	height: 100%;
+	min-height: 125px;
+	width: 100%;
+	background: $light-turq;
+	float: left;
+	font-family: $generic-font;
+	background-size: cover;
+}
+
+#search-content {
+	width: 927px;
+	margin: 0 auto;
+}
+
+#search-form {
+}
+
+#activity {
+	width: 200px;
+  background-size: cover;
+}
+
+#results-container {
+	height: 100%;
+	width: 100%;
+	background-color: $beige;
+	font-family: $generic-font;
+	float: left;
+}
+
+#results-content {
+	width: 928px;
+	margin: 0 auto;
+}
+
+#query {
+	margin: 0 auto;
+	width: 100%;
+	margin-top: 20px;
+}
+
+#query-1 {
+	float: left;
+}
+
+#query-location {
+	float: left;
+	margin-left: 15px;
+	margin-right: 15px;
+	border: none;
+	margin-top: -3px;
+	font-weight: 700;
+	font-size: 22px;
+	opacity: 1;
+	height: 34px;
+}
+
+#query-2 {
+	float: left;
+}
+
+#query-interests {
+	float: left;
+	clear: left;
+	margin-top: 5px;
+	width: 87%;
+}
+
+.search-term.searched {
+	height: 38px;
+}
+
+.query-interest {
+	float: left;
+	margin-right: 15px;
+	border: none;
+	height: 34px;
+	color: $dark-gray;
+	margin-bottom: 5px;
+	font-weight: 700;
+	font-size: 22px;
+}
+
+#activity {
+	opacity: 1;
+}
+
+.search-term {
+	background-color: white;
+	padding-left: 15px;
+	padding-right: 15px;
+	border-radius: 50px;
+	font-size: 22pt;
+}
+
+#add {
+	float: left;
+	margin-right: 15px;
+	background-color: $gray;
+	padding-left: 15px;
+	padding-right: 15px;
+	border-radius: 50px;
+}
+
+#search-query {
+	float: right;
+	background-color: white;
+	padding-left: 15px;
+	padding-right: 15px;
+	border-radius: 50px;
+	border:	none;
+	cursor: pointer;
+	height: 34px;
+}
+
+#query-row-1 {
+	margin: 0 auto;
+}
+
+#results {
+	width: 928px;
+	float: left;
+	margin-top: 25px;
+}
+
+#results-header {
+	margin-top: 25px;
+}
+
+#found {
+	font-weight: 400;
+	float: left;
+  color: $dark-gray;
+}
+
+#sort-by {
+	float: right;
+
+}
+
+#sort-term {
+	float: right;
+	margin-left: 15px;
+	background-color: white;
+	padding-left: 15px;
+	padding-right: 15px;
+	border-radius: 50px;
+}
+
+.result {
+	width: 284px;
+	height: 256px;
+	float: left;
+	margin-right: 38px;
+	background-color: white;
+	margin-bottom: 38px;
+	overflow-y: hidden; 
+	overflow-x: hidden;
+}
+
+.result:nth-child(3n) {
+	margin-right: 0px;
+}
+
+.profile-pic-card {
+	height: 72px;
+	width: 72px;
+	float: left;
+}
+
+.card-header {
+	float: left;
+	margin-left: 14px;
+	margin-top: 10px;
+}
+
+.card-name {
+	font-size: 17px;
+	font-weight: 700;
+	float: left;
+}
+
+.card-school {
+	font-size: 14px;
+	font-weight: 400;
+	float: left;
+	clear: left;
+}
+
+.card-active {
+	font-size: 17px;
+	float: left;
+	clear: left;
+}
+
+.mutual {
+	float: left;
+	clear: left;
+	margin-left: 11px;
+	width: 75px;
+}
+
+.similar {
+	float: left;
+	margin-left: 33px;
+	width: 75px;
+}
+
+.similarities {
+	float: left; 
+	clear: left;
+	margin-top: 12px;
+	width: 100%;
+	height: 170px;
+	position: relative;
+}
+
+.sim-label {
+	height: 35px;
+	width: 35px;
+	float: left;
+}
+
+.sug-label {
+	color: $light-turq;
+}
+
+.sim {
+	font-size: 22px;
+	font-weight: 700;
+  line-height: 1.1;
+  float: left;
+  margin-left: 5px;
+	margin-top: 4px;
+}
+
+.sim-label g path {
+	fill: $red;
+}
+
+.suggestions {
+	float: left;
+	padding: 0px 12px;
+	margin-top: 4px;
+	max-height: 66px;
+	overflow-y: hidden; 
+}
+
+.suggestion {
+	background-color: $orange;
+	border-radius: 50px;
+	padding-left: 8px;
+	padding-right: 8px;
+	margin-top: 4px;
+	float: left;
+	margin-right: 5px;
+    height: 20px;
+    line-height: 1.3;
+}
+
+.result-actions {
+	float: left;
+	font-size: 17px;
+	font-weight: 600;
+	bottom: -2px;
+	position: absolute;	
+  line-height: 1.2;
+  padding: 10px 12px 0px;
+  width: 260px;
+  background-color: $light-turq;
+}
+
+.action-button {
+	color: white;
+	border-radius: 4px;
+	height: 22px;
+  padding: 7px 7px;
+  width: 114px;
+}
+
+.invite-btn {
+	float: left;
+}
+
+.chat {
+	float: right;
+}
+
+.chat .result-action {
+	float: right;
+	margin-right: 7px;
+}
+
+.invite-user .result-action {
+	float: left;
+	margin-left: 7px;
+}
+
+.chat .action-icon {
+	float: right;
+}
+
+.action-icon {
+	height: 35px;
+	width: 35px;
+	float: left;
+	margin-top: -12px;
+}
+
+.action-icon path {
+	fill: white;
+}
+
+.result-action {
+	line-height: 1.3;
+	margin-top: -5px;
+}
+
+
+#invite-modal-container {
+	float: left;
+
+}
+
+.ui-autocomplete {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  float: left;
+  display: none;
+  min-width: 160px;
+  _width: 160px;
+  padding: 4px 0;
+  margin: 2px 0 0 0;
+  list-style: none;
+  background-color: white;
+  border-color: #ccc;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-style: solid;
+  border-width: 1px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
+ 
+  .ui-menu-item > a.ui-corner-all {
+    display: block;
+    padding: 3px 15px;
+    clear: both;
+    font-weight: normal;
+    line-height: 18px;
+    color: #555555;
+    white-space: nowrap;
+ 
+    &.ui-state-hover, &.ui-state-active {
+      color: white;
+      text-decoration: none;
+      background: $blue;
+      border-radius: 0px;
+      -webkit-border-radius: 0px;
+      -moz-border-radius: 0px;
+    }
+  }
+}
+
+

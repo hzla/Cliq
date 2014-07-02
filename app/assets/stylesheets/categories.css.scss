@@ -1,0 +1,258 @@
+@import 'variables';
+
+
+#categories-header {
+	height: 64px;
+	width: 100%;
+	background: $light-turq;
+	float: left;
+	font-family: $generic-font;
+	text-align: center;
+}
+
+#cat-header-content {
+	font-weight: 700;
+	margin-top: 20px;
+}
+
+.cat-action {
+	height: 26px;
+	background-color: white;
+	opacity: .5;
+	color: $dark-gray;
+	padding-left: 25px;
+	padding-right: 25px;
+	border-radius: 50px;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+.doing {
+	opacity: 1
+}
+
+#categories-content-container {
+	width: 100%;
+	float: left;
+	text-align: center;
+	background-color: $super-light-gray;
+}
+
+#cat-content {
+	width: 885px;
+	margin: 0 auto;
+}
+
+#cat-question {
+	float: left;
+	margin-top: 27px;
+	font-weight: 700;
+}
+
+#cat-question-details {
+	float: left;
+	clear: left;
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
+#cat-list {
+	float: left;
+	clear: left;
+}
+
+.cat {
+	float: left;
+	margin-bottom: 34px;
+	width: 266px;
+	height: 250px;
+}
+
+.cat-link {
+	float: left;
+	margin-right: 43px;
+
+}
+
+.cat-link:nth-child(3n) {
+	margin-right: 0px;
+}
+
+.cat-title {
+	height: 40px;
+	border-radius: 4px;
+	width: 100%;
+	background-color: white;
+	margin-bottom: 10px;
+	text-align: center;
+	line-height: 44px;
+	cursor: pointer;
+	position: relative;
+}
+
+.cat-title:hover {
+	color: $light-turq;
+}
+
+.cat-select {
+	margin-top: 10px;
+}
+
+.cat-pic {
+	height: 200px;
+	width: 100%;
+	cursor: pointer;
+}
+
+.create-own {
+	background-color: $light-gray
+}
+
+.check {
+	position: absolute;
+	left:	-34px;
+	height: 25px;
+	width: 25px;
+	background-color: $super-light-gray;
+	top: 6px;
+}
+
+#cat-back {
+	background-color: $light-gray;
+	height: 35px;
+	border-radius: 50px;
+	float: right;
+	margin-top: 27px;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: center;
+}
+
+#cat-act-back {
+	background-color: white;
+	border-radius: 50px;
+	float: right;
+	margin-top: 27px;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: center;
+}
+
+#back-text {
+	line-height: 34px;
+}
+
+
+#finished {
+	float: right;
+	margin-top: 32px;
+	margin-right: 10px;
+}
+
+#activities {
+	width: 540px;
+	margin-bottom: 50px;
+	float: left;
+	margin-top: 10px;
+}
+
+.act {
+	width: 320px;
+	float: left;
+	background-color: white;
+	border-radius: 50px;
+	margin-top: 11px;
+	height: 34px;
+	cursor: pointer;
+}
+
+.act:hover {
+	border: 1px solid $light-turq;
+	height: 32px; 
+}
+
+.act-text {
+	float: left;
+	margin-top: 7px;
+	margin-left: 12px;
+}
+
+.act .act-text {
+	color: $dark-gray
+}
+
+.chosen-act .act-text {
+	color: white;
+}
+
+#arrow-container {
+	float: right;
+	height: 100%;
+	margin-left: 20px;
+	position: relative;
+	margin-top: 100px;
+}
+
+#arrow {
+	width: 195px;
+	height: 125px;
+}
+
+#arrow-text {
+	position: absolute;
+	top: 50px;
+	right: 70px;
+}
+
+#chosen-acts {
+	width: 320px;
+	float: right;
+	margin-bottom: 50px;
+}
+
+.chosen-act {
+	width: 320px;
+	float: left;
+	clear: left;
+	border-radius: 50px;
+	background-color: $light-turq;
+	margin-top: 11px;
+	height: 34px;
+	color: white;
+	cursor: pointer;
+}
+
+.chosen-act:hover {
+	border: 1px solid white;
+	height: 32px;
+}
+
+#categories-footer {
+	margin-top: 10px;
+	background-color: $super-light-gray;
+	width: 100%;
+	float: left;
+	margin-bottom: 20px;
+}
+
+#cat-footer-content {
+	margin: 0 auto;
+	width: 796px;
+}
+
+#line-1 {
+	margin-bottom: -20px;
+}
+
+#next-cat {
+	background-color: #bebebe;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 50px;
+	cursor: pointer;
+	width: 62px;
+	margin: 0 auto;
+}
+
+
+

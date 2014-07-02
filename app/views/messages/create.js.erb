@@ -1,0 +1,5 @@
+$(".message-history").append("<%= escape_javascript render partial: 'show', locals: {message: @message } %>");
+$("#<%= @user.id %> .convo-details .convo-last-message").text("<%= @conversation.last_message %>")
+$('.message-history')[0].scrollTop = $('.message-history')[0].scrollHeight
+$('#new_message')[0].reset()
+

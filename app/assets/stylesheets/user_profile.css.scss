@@ -1,0 +1,219 @@
+@import 'variables';
+
+.user-container {
+	background: $super-light-gray;
+	width: 100%;
+	height: 100%;
+	float: left;
+	position: relative;
+	font-family: $generic-font;
+}
+
+.profile-pic {
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
+	float: left;
+}
+
+#main-profile-container {
+	width: 100%;
+	float: left;
+	background-color: $turq;
+	padding-bottom: 40px;
+}
+
+
+.main-profile-info {
+	margin: 0 auto;
+	width: 824px;
+	padding-top: 40px;
+	padding-bottom: 35px;
+	.left {
+		float: left;
+		color: white;
+	}
+	.right {
+		float: right;
+		color: $dark-gray;
+	}
+}
+
+#name {
+	float: left;
+	margin-left: 50px;
+	margin-top: 20px;
+}
+
+#school {
+	font-weight: 400;
+	margin-left: 50px;
+	float: left;
+	clear: left;
+}
+
+#active {
+	float: left;
+	margin-left: 50px;
+	clear: left;
+}
+
+#event-count {
+	float: left;
+	margin-top: 30px;
+	margin-right: 10px;
+}
+
+#event-label {
+	float: left;
+	margin-top: 33px;
+}
+
+#with {
+	font-size: 15px;
+	clear: left;
+	float: left;
+	margin-left: 35px;
+}
+
+#people-count {
+	float: left;
+	margin-right: 10px;
+	clear: left;
+}
+
+#people-label {
+	float: left;
+	margin-top: 3px;
+}
+
+#interest-sum {
+	float: left;
+	margin-right: 10px;
+	clear: left;
+}
+
+#interest-label {
+	float: left;
+	margin-top: 3px;
+}
+
+.profile-actions {
+	clear: right;
+	float: left;
+	font-size: 22px;
+	font-weight: 600;
+	margin-left: 50px;
+	margin-top: 15px;
+	.bubble {
+		border-radius: 50px;
+		padding-left: 10px;
+		padding-right: 10px; 
+		background-color: white;
+		margin-right: 20px;
+	};
+	#edit-profile {
+		float: left;
+	};
+	#add-interests {
+		float: left;
+		color: $red;
+		text-decoration: none; 
+	};
+}
+
+#interest-count {
+	margin-left: 275px;
+	margin-top: 50px;
+	float: left;
+}
+
+.interests {
+	width: 105.5%;
+	float: left;
+}
+
+#interest-list {
+	margin: 0 auto;
+	width: 900px;
+}
+
+.cat-section {
+	float: left;
+	clear: left;
+	margin-bottom: 40px;
+	margin-top:	40px; 
+}
+
+.cat-header {
+	width: 100%;
+	color: $dark-turq;
+	font-weight: 700;
+	font-size: 22pt;
+}
+
+.cat-group {
+	float: right;
+}
+
+.category {
+	border-radius: 50px;
+	margin-right: 76px; 
+	background-color: $orange;
+	margin-top: 28px;
+	float: left;
+	width: 224px;
+	height: 35px;
+	font-size: 24px;
+	font-weight: 600;
+}
+
+
+.activities {
+	width: 224px;
+	float: left;
+	clear: left;
+	margin-top: 5px;
+}
+
+.activity {
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 5px;
+	height: 30px;
+	font-weight: 500;
+	float: left;
+	margin-top: 5px;
+	font-size: 17px;
+	color: $light-turq;
+}
+
+.cat-name {
+	margin-left: 10px;
+	margin-top: 4px;
+}
+
+.act-name {
+	margin-top: 3px;
+}
+
+.more {
+	margin-top: 50px;
+	border-radius: 50px;
+	background-color: white;
+	height: 35px;
+	font-size: 24px;
+	font-weight: 600;
+	float: left;
+	clear: both;
+	text-align: center;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-bottom: 50px;
+	margin-left: 38%;
+}
+
+
+
+
+

@@ -1,0 +1,27 @@
+@import 'variables';
+
+#faq-containter {
+	float: left;
+}
+
+#faq-content {
+	margin: 0 auto;
+	width: 806px;
+	font-family: $generic-font;
+}
+
+#faq-header {
+	margin-top: 66px;
+	margin-bottom: 66px;
+	color: #19d4cd;
+}
+
+.faq-question {
+	margin-bottom: 22px;
+	width: 806px;
+}
+
+.faq-answer {
+	margin-bottom: 44px;
+	width: 806px;
+}

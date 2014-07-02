@@ -1,0 +1,362 @@
+Category: Discuss
+Category: Do
+	Category: Concerts, clubs, events
+	Category: Eating Out
+	Category: Games
+		Category: Shooter
+			Assassin’s Creed
+			Battlefield
+			Bioshock
+			Borderlands
+			Call of Duty
+			Counterstrike
+			Dead Rising
+			Devil May Cry
+			Fallout
+			Far Cry
+			Left 4 Dead
+			Gears of War
+			Grand Theft Auto
+			Halo
+			Hitman
+		Category: Mobile
+		Category: RPG
+		Category: Racing
+		Category: Misc
+			Max Payne
+			Metal Gear Solid
+			Resident Evil
+			Saints Row
+			Team Fortress
+			Titanfall
+			Angry Birds
+			Candy Crush
+			Flappy Bird
+			Plants vs. Zombies
+			2048
+			Civilization
+			Starcraft II
+			Dota
+			League of Legends
+			Pikmin
+			Portal
+			Elder Scrolls V: Skyrim
+			Final Fantasy
+			World of Warcraft
+			Pokemon
+			Tomb Raider
+			The Legend of Zelda
+			Diablo 3
+			Need for Speed
+			Minecraft
+			Supersmash Brothers
+			The Stanley Parable
+		Category: Board and Card Games
+			Blackjack
+			Monopoly
+			Risk
+			Settlers of Catan
+			Poker
+			Go Fish
+			Uno
+			Clue
+			Connect 4
+			Jenga
+		Category: Party Games
+		Category: Puzzle
+		Category: Strategy
+			Twister
+			Puzzles
+			Rubix Cube
+			Dungeons and Dragons (LOL)
+			Life
+			Battleship
+			Checkers
+			Chess
+			Game of Thrones
+			Mancala			
+	Category: Sports
+		Archery
+		Badminton
+		Baseball
+		Basketball
+		Bowling
+		Cycling
+		Diving
+		Football
+		Frisbie
+		Golf
+		Gymnastics
+		Handball
+		Hockey
+		Ice skating
+		Lacrosse
+		Mixed martial arts
+		Ping Pong
+		Racing
+		Rowing
+		Rugby
+		Running
+		Shooting
+		Skateboarding
+		Skiing
+		Soccer
+		Squash
+		Swimming
+	Category: Going Out
+		Travel & Adventuring
+		Martial Arts
+		Tennis
+		Volleyball
+		Wrestling
+		Bars
+		Clubbing
+		Concerts
+		House Parties
+		Eat out
+		Roadtrips
+		Tourism
+		Skydiving
+		Rock Climbing
+		Hiking
+		Camping
+Category: Music 
+	Category: Rock
+	Category: EDM
+	Category: Country
+	Category: Hip Hop
+	Category: Rap
+	Category: Metal
+	Category: Indie
+	Category: Pop
+	Category: Classical
+Category: Watch
+	Category: TV Shows
+		Category: Cartoons
+			Adventure Time
+			American Dad
+			Archer
+			Bravest Warriors
+			Bob’s Burgers
+			Futurama
+			Gravity Falls
+			Regular Show
+			South Park
+			SpongeBob
+		Category: Anime
+			Bleach
+			Code Geass
+			Death Note
+			Full Metal Alchemist
+			Naruto
+			Ouran High School Host Club
+			One Piece
+		Category: Crime
+			Bones
+			CSI
+			NCIS
+		Category: Drama
+			Breaking Bad
+			Game of Thrones
+			House of Cards
+			Mad Men
+			Orange is the New Black
+			Walking Dead
+			Suits
+			Arrow
+			Falling Skies
+			Graceland
+			Scandal
+			Dracula
+		Category: Educational
+			How it’s Made
+			Mythbusters
+		Category: Sit-com
+			Big Bang Theory
+			Parks and Recreation
+			How I Met Your Mother
+			Friends
+			The Office
+	Category: Movies
+		Category: Action
+			Argo
+			Batman
+			Captain America
+			Casino Royale
+			Die Hard
+			Elysium
+			Fast & Furious
+			Fight Club
+			G.I. Joe
+			Godzilla
+			Iron Man
+			Man of Steel
+			Marvel’s The Avengers
+			Olympus has Fallen
+			Pacific Rim
+			Skyfall
+			Spiderman
+			Terminator
+			The Legend of Hercules
+			X-Men
+			Zero Dark Thirty
+			300
+		Category: Adventure
+			Harry Potter
+			Hunger Games
+			Jurassic Park
+			Life of Pi
+			Pirates of the Caribbean
+			The Hobbit
+			The Lord of the Rings
+		Category: Animated
+			Brave
+			Cars
+			Finding Nemo
+			Frozen
+			How to Train Your Dragon
+			Kung Fu Panda
+			Incredibles
+			Madagascar
+			Monsters, Inc.
+			Ratatouille
+			Shrek
+			The LEGO Movie
+			The Lion King
+			Toy Story
+			Up
+			WALL-E
+		Category: Comedy
+			American Pie
+			Anchorman
+			Animal House
+			Austin Powers
+			Borat: Cultural Learnings of America for Make Benefit Glorious 
+			Bruno
+			Grown Ups
+			Monty Python and the Holy Grail
+			Shaun of the Dead
+			South Park: Bigger, Longer and Uncut
+			Talladega Nights: The Ballad of Ricky Bobby
+			The Dictator
+			The Hangover
+			The Internship
+			Zombieland
+			21 Jump Street
+			22 Jump Street
+		Category: Drama
+			American Hustle
+			Captain Phillips
+			Dallas Buyer’s Club
+			Gravity
+			Her
+			Pompeii
+			Schindler’s List
+			The Great Gatsby
+			The Wolf of Wall Street
+			12 Years a Slave
+		Category: Documentaries
+			Blackfish
+		Category: Foreign
+		Category: Horror
+			Nation of Kazakhstan
+			Alien
+			Aliens
+			Alien 3
+			John Carpenter’s The Thing
+			Paranormal Activity
+			Predator
+			Red Dragon
+			Resident Evil
+			Saw
+			Scream
+			Silence of the Lambs
+			Texas Chainsaw Massacre
+			The Blair Witch Project
+			The Cabin in the Woods
+			The Conjuring
+			The Exorcist
+			The Omen
+			The Ring
+			World War Z
+		Category: Musicals
+			A Chorus Line
+			Annie
+			Avenue Q
+			Bride and Prejudice
+			Caroline, or Change
+			Carousel
+			Chicago
+			City of Angels
+			Dancer in the Dark
+			Das Rheingold
+			Dreamgirls
+			Evita
+			Fiddler on the Roof
+			Follies
+			Grease
+			Grey Gardens
+			Guys and Dolls
+			Gypsy
+			Hair
+			Hairspray
+			Hello, Dolly!
+			High School Musical
+			How to Succeed in Business Without Really Trying
+			Little Shop of Horrors
+			Mame
+			Man of La Mancha
+			Moulin Rouge
+			My Fair Lady
+			New York, New York
+			Nine
+			Oklahoma!
+			Phantom of the Opera
+			Ragtime
+			Rent
+			South Pacific
+			Sweeney Todd: The Demon Barber of Fleet Street
+			The Book of Mormon
+			The Sound of Music
+			West Side Story
+			Wicked
+		Category: Romance
+			About Last Night
+			Beautiful Creatures
+			Before Midnight
+			Endless Love
+			I Give It a Year
+			Kill Your Darlings
+			Romeo and Juliet
+			Safe Haven
+			The Fault in Our Stars
+			The Other Woman
+			The Spectacular Now
+			Warm Bodies
+			Winter’s Tale
+			500 Days of Summer
+		Category: Sci-Fi & Fantasy
+			Avatar
+			District 9
+			Divergent
+			Edge of Tomorrow
+			Elysium
+			E.T. the Extra-Terrestrial
+			Hellboy
+			Inception
+			Maleficent
+			Planet of the Apes
+			Prometheus
+			RoboCop
+			Star Trek
+			Star Wars
+			The Matrix
+			Transformers
+		
+
+
+
+
+
+
+

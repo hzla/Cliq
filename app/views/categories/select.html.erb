@@ -1,0 +1,50 @@
+<div class="content-container">
+	<%= render partial: 'users/side_nav', locals: {active: :profile} %>
+
+	<div id="categories-header">
+		<div id="cat-header-content" class="head-4 dark-gray">
+			What do you
+			<%= link_to choose_cat_path @categories[1] do %>
+				<span id="do" class="cat-action doing">Do</span>
+			<% end %>
+			<%= link_to choose_cat_path @categories[2] do %>
+				<span id="listen-to" class="cat-action">Listen to</span>
+			<% end %>
+			<%= link_to choose_cat_path @categories[3] do %>
+				<span id="watch" class="cat-action">Watch</span>
+			<% end %>
+			<%= link_to choose_cat_path @categories[0] do %>
+				<span id="discuss" class="cat-action">Discuss</span>
+			<% end %>
+			?
+		</div>
+	</div>
+
+
+
+		<%= render partial: 'show', locals: {category: @category} %>
+
+	<div id="categories-footer">
+			<% if @likes < 8 %>
+				<div id="cat-footer-content" class="head-4 gray">
+					<div id="cat-footer-text">
+						<p id="line-1">pick <span class="dark-gray" id="like-count"> <%= 8 - @likes %></span> or more options from any combination of categories to move on to the next section!</p>
+						<p id="line-2">
+							you can always come back to edit your choices
+						</p>
+					</div>
+				</div>
+				<div id="next-cat" class="hidden head-3 dark-gray">NEXT</div>
+			<% else %>
+				<div id="cat-footer-content" class="head-4 gray hidden">
+					<div id="cat-footer-text">
+						<p id="line-1">pick <span class="dark-gray" id="like-count"> <%= 8 - @likes %></span> or more options from any combination of categories to move on to the next section!</p>
+						<p id="line-2">
+							you can always come back to edit your choices
+						</p>
+					</div>
+				</div>
+				<div id="next-cat" class="head-3 dark-gray">NEXT</div>
+			<% end %>
+	</div>
+</div>

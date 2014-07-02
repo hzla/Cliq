@@ -1,0 +1,34 @@
+TODOS
+
+reduce database size for heroku
+
+
+
+	profile other 30min
+
+
+	collapse-chat-notifications 1hr
+	Events Messaging 30min
+	tiemzones
+	messaging highlight
+
+
+DO LATERS
+	Responsiveness
+	message sort
+	add amazon cloud support
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+

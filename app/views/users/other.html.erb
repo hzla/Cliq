@@ -1,0 +1,36 @@
+<div class="user-other-container">
+
+	<div id="main-profile-container"> 
+		<div class="main-profile-info other">
+			<%= image_tag @user.profile_pic_url, :class => "profile-pic" %>
+			
+			<div class="left">
+				<div class="head-1" id="name"><%= @user.name %></div>
+				<div class="head-4" id="school"><%= @user.school %></div>
+				<% if @user.active %>
+					<div class="head-4" id="active">Active</div>
+				<% else %>
+					<div class="head-4" id="active">Offline</div>
+				<% end %>
+			</div>
+			
+			<div class="right other">
+					<div id="invite-other">
+					<%= image_tag "Events.svg", :class => "action-icon other svg" %>
+					<%= link_to new_user_event_path(@user), :class => "white other-action invite-user", remote: true do %>
+					INVITE
+					<% end %>
+					</div>
+
+					<div id="chat-other">	
+					<%= image_tag "Messages.svg", :class => "action-icon other svg" %>
+						<%= link_to user_chat_path(@user), :class => "white other-action chat-user", remote: true do %>
+							CHAT
+						<% end %>
+					</div>
+			</div>
+		</div>
+	</div>
+	<%= render partial: 'other_interests', locals: {user: @user} %>
+</div>
+
