@@ -5,12 +5,12 @@
 			<div id="query">
 				<%= form_tag search_path, id: "search-form", remote: true do %>
 					<div id="query-row-1">
-						<div id="query-1" class="head-3 white">I want to hang out in</div>
-						<%= text_field_tag :location, nil, :class => "head-3 dark-gray search-term", id: "query-location", placeholder: "City, State" %>
+						<div id="query-1" class="head-2 white">I want to hang out in</div>
+						<%= text_field_tag :location, nil, :class => "head-2 dark-gray search-term", id: "query-location", placeholder: "City, State" %>
 						<%= hidden_field_tag "location_id" %>
-						<div id="query-2" class="head-3 white">with people interested in</div>
+						<div id="query-2" class="head-2 white">with people interested in</div>
 					</div>
-					<div id="query-interests" class="head-3 dark-gray">
+					<div id="query-interests" class="head-2 dark-gray">
 						<%= text_field_tag :activity, nil, :class => "query-interest search-term", placeholder: 'Anything' %>
 					</div>
 					<%= submit_tag "Search", :class => "red head-3", id:"search-query" %> 
@@ -23,7 +23,7 @@
 	<div id="results-container">
 		<div id="results-content">
 			<div id="results-header">
-				<div id="found" class="head-2">Similar Users:</div>
+				<div id="found" class="head-3">Similar Users:</div>
 				<div id="sort-term" class="head-3 light-gray">Distance</div>
 				<div id="sort-by" class="head-3 light-gray">Sort by:</div>
 			</div>

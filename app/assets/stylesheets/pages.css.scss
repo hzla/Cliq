@@ -105,12 +105,12 @@
 	position: absolute;
 	bottom: 15px;
 	width: 100%;
-	background-color: $nav-color;
+	background-color: rgba(24, 195, 189, 0.7);
 	height: 75px;
 	font-size: 20px;
 	font-weight: 400;
 	font-family: $generic-font;
-	opacity: .9;
+    color: #fff;
 }
 
 #how-it-works {

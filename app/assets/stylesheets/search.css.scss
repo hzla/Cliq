@@ -53,9 +53,11 @@
 	border: none;
 	margin-top: -3px;
 	font-weight: 700;
-	font-size: 22px;
+	font-size: 28px;
 	opacity: 1;
 	height: 34px;
+    width:250px;
+    font-family:proxima nova;
 }
 
 #query-2 {
@@ -86,6 +88,7 @@
 
 #activity {
 	opacity: 1;
+    font-family:proxima nova;
 }
 
 .search-term {
@@ -114,6 +117,8 @@
 	border:	none;
 	cursor: pointer;
 	height: 34px;
+    font-family:proxima nova;
+    margin-top:5px;
 }
 
 #query-row-1 {
@@ -138,6 +143,7 @@
 
 #sort-by {
 	float: right;
+    font-weight:400;
 
 }
 
@@ -148,6 +154,7 @@
 	padding-left: 15px;
 	padding-right: 15px;
 	border-radius: 50px;
+    font-weight:400;
 }
 
 .result {
