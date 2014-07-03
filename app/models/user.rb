@@ -58,7 +58,7 @@ class User < ActiveRecord::Base
 				similar_users[user] ? similar_users[user] << act_cat : similar_users[user] = [act_cat]
 			end
 		end
-		similar_users.to_a.sort_by {|user| user[1].length}.reverse
+		similar_users.to_a.sort_by {|user| user[1].length}.reverse[0..14].select {|x| x[0].id != id }
 	end
 
 	def attendings

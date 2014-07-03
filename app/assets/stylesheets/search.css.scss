@@ -73,6 +73,12 @@
 	height: 38px;
 }
 
+.searched:hover {
+	border: 1px solid $red;
+	height: 36px;
+	cursor: pointer;
+}
+
 .query-interest {
 	float: left;
 	margin-right: 15px;

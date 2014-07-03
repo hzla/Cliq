@@ -1,6 +1,7 @@
 Categories = 
 	init: ->
 		$('body').on 'click', '.cat', @highlight
+		$('body').on 'click', '#next-cat', @goNext
 		$('body').on 'ajax:success', '.cat-link', @showCategories
 		$('body').on 'ajax:success', '.back-link', @showCategories
 		$('body').on 'ajax:success', '.add-act', @addActivity
@@ -10,6 +11,9 @@ Categories =
 		$(@).children('.cat-title').css 'color', 'white' 
 		$(@).children('.cat-title').css 'background-color', '#18c3bd'
 		$(@).find('.check').toggle()
+
+	goNext: ->
+		$('.doing').parent().next()[0].click()
 
 	showCategories: (event, data, xhr, status) ->
 		$('#categories-content-container').remove()

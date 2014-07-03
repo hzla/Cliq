@@ -12,6 +12,7 @@ Search =
 		$('.content-container').click @collapseAllChat
 		$('.results-container').click @collapseAllChat
 		$('.send-activation').on 'submit', @thankUser
+		$('body').on 'click', '.searched', @removeTerm
 
 		# @invertButtons()
 
@@ -73,6 +74,7 @@ Search =
 			focus: (event, ui) ->
 				event.preventDefault()
 				$(this).val ui.item.label
+			minLength: 4
 
 	autocompleteInterests: ->
 		$('#activity').autocomplete
@@ -81,12 +83,21 @@ Search =
 				event.preventDefault()
 				$(this).val ui.item.label
 				$('#ids').val $('#ids').val() + ui.item.value + " "
-				$('#query-interests').prepend "<div class='query-interest search-term searched'>#{ui.item.label}</div>"
+				$('#query-interests').prepend "<div class='query-interest search-term searched' id='#{ui.item.value}'>#{ui.item.label}</div>"
 				$('#activity').val('')
 			focus: (event, ui) ->
 				event.preventDefault()
 				$(this).val ui.item.label
 			delay: 0
+			minLength: 4
+
+	removeTerm: ->
+		id= @.id
+		ids = $('#ids')[0].value
+		new_ids = ids.replace "#{id} ", ""
+		$('#ids').val new_ids
+		$(@).remove()
+
 
 	displayResults: (event, data, xhr, status) ->
 		$('#results').html data
