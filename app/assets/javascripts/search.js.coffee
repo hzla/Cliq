@@ -10,6 +10,7 @@ Search =
 		$('body').on 'click', '.close', @closeChat
 		$('body').on 'ajax:success', '#search-form', @displayResults
 		$('.content-container').click @collapseAllChat
+		$('.results-container').click @collapseAllChat
 		$('.send-activation').on 'submit', @thankUser
 
 		# @invertButtons()
