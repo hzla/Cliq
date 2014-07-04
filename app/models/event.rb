@@ -28,6 +28,6 @@ class Event < ActiveRecord::Base
 	end
 
 	def accepted?
-		excursions.where(accepted: true) == excursions.count
+		excursions.where(accepted: false).empty?
 	end
 end

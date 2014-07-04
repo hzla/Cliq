@@ -9,7 +9,7 @@
 					<%= image_tag 'cliq.png', id: "chat-pic" %>
 				<% end %>
 			<div id="chat-info">
-				<div id="chat-name"><%= @other_user.name %></div>
+				<div id="chat-name"><%= @other_user.first_name %></div>
 				<div id="chat-school"><%= @other_user.school || "Some Random School" %></div>
 				<div id="chat-similarities">
 					<%= current_user.similarities_with @other_user%> Shared Interests
@@ -48,7 +48,7 @@
 
 <div class="collapsed-chat hidden">
 	<div class="collapsed-name">
-		<- <%= @other_user.name %>
+		<- <%= @other_user.first_name %>
 		<%= image_tag 'XClose.svg', class: 'close' %>
 	</div>
 </div>

@@ -3,6 +3,8 @@ class UsersController < ApplicationController
 
 	def show
 		@category = Category.where(name: "Do").first
+		@format = [["Stuff you do for fun:", "Do"],["Music:", "Music"],["What you watch:", "Watch"], ["What you talk about:", "Discuss"]] 
+		@formatted_interests = current_user.formatted_interests
 		respond_to do |format|
   		format.html 
   		format.json { render :json => @user }
@@ -11,6 +13,8 @@ class UsersController < ApplicationController
 
 	def other
 		@user = User.find params[:id]
+		@format = [["Stuff #{@user.first_name} does for fun:", "Do"],["What he listens to:", "Music"],["What he watches:", "Watch"], ["What he likes to talk about:", "Discuss"]] 
+		@formatted_interests = current_user.formatted_interests
 		render layout: false
 	end
 

@@ -9,7 +9,7 @@ class EventsController < ApplicationController
 		@invitations = invite_excursions.where(created: false).map(&:event).compact.select { |event| event.start_time > Time.now }.sort_by(&:start_time)
 		
 		upcoming_excursions = excursions.where accepted: true
-		@events = upcoming_excursions.map(&:event).compact.select { |event| event.start_time > Time.now }.sort_by(&:start_time)
+		@events = upcoming_excursions.map(&:event).compact.select { |event| event.start_time > Time.now }.select {|event| event.accepted? }.sort_by(&:start_time)
 		excursions.update_all seen: true
 		current_user.update_attributes event_count: 0
 	end

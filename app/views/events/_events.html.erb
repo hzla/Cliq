@@ -21,8 +21,10 @@
 
 			<div class="upcoming-event-others invite-row">
 				<% event.users.take(2).each do |user| %>
-					<%= image_tag (user.profile_pic_url || 'cliq.png'), :class => "attendee" %>
-					<div class="attendee-name"><%= user.name %></div>
+					<%= link_to other_user_path(user), :class => "other-user", remote: true do %>
+						<%= image_tag (user.profile_pic_url || 'cliq.png'), :class => "attendee" %>
+						<div class="attendee-name"><%= user.first_name %></div>
+					<% end %>
 				<% end %>
 			</div>
 

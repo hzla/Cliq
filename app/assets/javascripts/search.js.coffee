@@ -74,7 +74,7 @@ Search =
 			focus: (event, ui) ->
 				event.preventDefault()
 				$(this).val ui.item.label
-			minLength: 4
+	
 
 	autocompleteInterests: ->
 		$('#activity').autocomplete
@@ -89,7 +89,19 @@ Search =
 				event.preventDefault()
 				$(this).val ui.item.label
 			delay: 0
-			minLength: 4
+			# open: (event, ui) -> 
+			# 	firstElement = $(@).data("uiAutocomplete").menu.element[0].children[0]
+			# 	inpt = $('#activity')
+			# 	original = inpt.val()
+			# 	firstElementText = $(firstElement).text()
+			# 	if firstElementText.toLowerCase().indexOf(original.toLowerCase()) == 0
+			# 		inpt.val(firstElementText)
+			# 		inpt[0].selectionStart = original.length; 
+			# 		inpt[0].selectionEnd = firstElementText.length
+			minLength: 2
+        
+    
+
 
 	removeTerm: ->
 		id= @.id
@@ -130,8 +142,18 @@ Search =
 		$(@).remove()
 
 	thankUser: (event, data, xhr, status) ->
-		$(@).hide()
-		$('#thank-you').show().addClass 'animated fadeIn'
+		if $('#email').val().match(/.+@.+\..+/i) != null
+			$('#top').html ""
+			$('#top').html "<div id='ty'>Thank you for signing up. Please check your email and<br> refresh the page when you've been activated</div>" 
+			$('#top').css 'right', '60px'
+			$('#ty').addClass 'animated fadeIn'
+		else
+			$('#top').html ""
+			$('#top').html "<div id='ty'>Please enter a valid email to sign up</div>" 
+			$('#top').css 'right', '152px'
+			$('#ty').addClass 'animated fadeIn'
+
+
 
 
 

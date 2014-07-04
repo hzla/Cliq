@@ -9,7 +9,7 @@
 				<% end %>
 			
 			<div class="left">
-				<div class="head-1" id="name"><%= @user.name %></div>
+				<div class="head-1" id="name"><%= @user.first_name %></div>
 				<div class="head-4" id="school"><%= @user.school %></div>
 				<% if @user.active %>
 					<div class="head-4" id="active">Active</div>
@@ -35,6 +35,6 @@
 			</div>
 		</div>
 	</div>
-	<%= render partial: 'other_interests', locals: {user: @user} %>
+	<%= render partial: 'other_interests', locals: {user: @user, format: @format, formatted_interests: @formatted_interests} %>
 </div>
 
