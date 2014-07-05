@@ -22,6 +22,7 @@
 	width: 200px;
   background-size: cover;
   color: $gray;
+  font-family: proxima nova;
 }
 
 #results-container {
@@ -41,6 +42,7 @@
 	margin: 0 auto;
 	width: 100%;
 	margin-top: 20px;
+    font-weight:700;
 }
 
 #query-1 {
@@ -54,9 +56,10 @@
 	border: none;
 	margin-top: -3px;
 	font-weight: 700;
-	font-size: 22px;
 	opacity: 1;
 	height: 34px;
+    font-family: proxima nova;
+    width:250px;
 }
 
 #query-2 {
@@ -121,6 +124,8 @@
 	border:	none;
 	cursor: pointer;
 	height: 34px;
+    margin-top: 5px;
+    font-family: proxima nova;
 }
 
 #query-row-1 {
