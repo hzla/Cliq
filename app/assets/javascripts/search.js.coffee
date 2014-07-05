@@ -13,6 +13,7 @@ Search =
 		$('.results-container').click @collapseAllChat
 		$('.send-activation').on 'submit', @thankUser
 		$('body').on 'click', '.searched', @removeTerm
+		$('body').on 'keypress', '#activity', @selectInterestOnEnter
 
 		# @invertButtons()
 
@@ -81,13 +82,16 @@ Search =
 			source: '/activities'
 			select: (event, ui) ->
 				event.preventDefault()
-				$(this).val ui.item.label
+				$(@).val ui.item.label
 				$('#ids').val $('#ids').val() + ui.item.value + " "
 				$('#query-interests').prepend "<div class='query-interest search-term searched' id='#{ui.item.value}'>#{ui.item.label}</div>"
 				$('#activity').val('')
+				$(@).css 'color', '#939393'
+				$('#search-form').submit()
 			focus: (event, ui) ->
 				event.preventDefault()
-				$(this).val ui.item.label
+				$(@).val ui.item.label
+				$(@).css 'color', '#414141'
 			delay: 0
 			# open: (event, ui) -> 
 			# 	firstElement = $(@).data("uiAutocomplete").menu.element[0].children[0]
@@ -152,6 +156,10 @@ Search =
 			$('#top').html "<div id='ty'>Please enter a valid email to sign up</div>" 
 			$('#top').css 'right', '152px'
 			$('#ty').addClass 'animated fadeIn'
+
+	selectInterestOnEnter: (e) ->
+		if (e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)
+			$('.ui-menu-item:visible').first().click()
 
 
 
