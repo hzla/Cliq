@@ -1,5 +1,9 @@
 module SessionsHelper
 	def current_user
-		session[:user_id] ? User.find(session[:user_id]) : nil
+		if session[:user_id] 
+			User.where('id in (?)', session[:user_id]).first
+		else 
+			nil
+		end
 	end
 end

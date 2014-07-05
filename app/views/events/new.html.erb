@@ -2,12 +2,16 @@
 	<div class="event-form-header">
 			<div class="header-profile">
 				<div class="head-3 dark-gray" id="sending">Sending invite to</div>
-				<%= image_tag User.last.profile_pic_url, :class => "event-profile-pic" %>
-				<div class="head-4 dark-gray" id="sending-name"><%= @user.name %></div>
+				<% if current_user.conversated_with? @user %>
+					<%= image_tag @user.profile_pic_url, :class => "event-profile-pic" %>
+				<% else %>
+					<%= image_tag 'cliq.png', :class => "event-profile-pic" %>
+				<% end %>
+				<div class="head-4 dark-gray" id="sending-name"><%= @user.first_name %></div>
 			</div>
 	</div>
 
-	<%= form_for [@user, @event], :class => 'event-form', multipart: true, remote: true do |f| %>
+	<%= form_for [@user, @event], :class => 'event-form', remote: true do |f| %>
 		
 		<div class="form-row first">
 			<div class="event-form-label head-3 dark-gray">What:</div> 

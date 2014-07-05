@@ -43,6 +43,7 @@ Events =
 
   closeModal: (event, data, xhr, status) ->
     console.log data
+    console.log data.ok
     if data.ok == true
       $.modal.close()
     else

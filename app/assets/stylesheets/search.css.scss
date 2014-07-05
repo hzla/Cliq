@@ -21,6 +21,7 @@
 #activity {
 	width: 200px;
   background-size: cover;
+  color: $gray;
 }
 
 #results-container {
@@ -71,6 +72,12 @@
 
 .search-term.searched {
 	height: 38px;
+}
+
+.searched:hover {
+	border: 1px solid $red;
+	height: 36px;
+	cursor: pointer;
 }
 
 .query-interest {

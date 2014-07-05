@@ -2,7 +2,7 @@
 	<div class="upcoming-event">
 		
 		<div class="upcoming-event-picture">
-			<%= image_tag "avengers.jpg", :class => "event-picture" %>
+			<%= image_tag event.image_url || "cliq.png", :class => "event-picture" %>
 		</div>
 		
 		<div class="upcoming-event-info">
@@ -21,8 +21,10 @@
 
 			<div class="upcoming-event-others invite-row">
 				<% event.users.take(2).each do |user| %>
-					<%= image_tag User.last.profile_pic_url, :class => "attendee" %>
-					<div class="attendee-name"><%= user.name %></div>
+					<%= link_to other_user_path(user), :class => "other-user", remote: true do %>
+						<%= image_tag (user.profile_pic_url || 'cliq.png'), :class => "attendee" %>
+						<div class="attendee-name"><%= user.first_name %></div>
+					<% end %>
 				<% end %>
 			</div>
 

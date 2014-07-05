@@ -21,7 +21,6 @@ Category: Do
 			Hitman
 		Category: Mobile
 		Category: RPG
-		Category: Racing
 		Category: Misc
 			Max Payne
 			Metal Gear Solid

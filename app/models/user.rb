@@ -58,7 +58,7 @@ class User < ActiveRecord::Base
 				similar_users[user] ? similar_users[user] << act_cat : similar_users[user] = [act_cat]
 			end
 		end
-		similar_users.to_a.sort_by {|user| user[1].length}.reverse
+		similar_users.to_a.sort_by {|user| user[1].length}.reverse[0..14].select {|x| x[0].id != id }
 	end
 
 	def attendings
@@ -91,6 +91,29 @@ class User < ActiveRecord::Base
 		formatted
 	end
 
+	def formatted_interests
+		results = {"Do" => [], "Watch" => [], "Music" => [], "Discuss" => []}
+		formatted = {}
+		acts = activities
+		acts.each do |act|
+			if formatted[act.category_id] 
+				formatted[act.category_id] += [act]
+			else
+				formatted[act.category_id] = [act]
+			end
+		end
+		formatted.each do |cat_id, acts|
+			category = Category.find(cat_id)
+			root = category.root
+			if results[root.name]
+				results[root.name] += [{category.name => acts}]
+			else
+				results[root.name] = [{category.name => acts}]
+			end
+		end
+		results
+	end
+
 	def ordered_conversations
 		conversations.where(connected: true).order(:updated_at).reverse
 	end
@@ -98,7 +121,10 @@ class User < ActiveRecord::Base
 
 	def conversated_with? user
 		conversations.each do |convo|
-			return convo if convo.users.include? user
+			ids = convo.messages.map(&:user_id)
+			if convo.users.include?(user) && ids.include?(id) && ids.include?(user.id) 
+				return true
+			end
 		end
 		false
 	end
@@ -106,6 +132,10 @@ class User < ActiveRecord::Base
 	def similarities_with user
 		act_ids = activities.map(&:id)
 		user.interests.where('activity_id in (?)', act_ids).length
+	end
+
+	def first_name 
+		name.split[0]
 	end
 
 

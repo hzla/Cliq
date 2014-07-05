@@ -3,9 +3,13 @@
 	<div id="chat-partial-content">
 
 		<div id="chat-header">
-			<%= image_tag @other_user.profile_pic_url || User.last.profile_pic_url, id: "chat-pic" %>
+			<% if current_user.conversated_with? @other_user %>
+					<%= image_tag @other_user.profile_pic_url, id: "chat-pic" %>
+				<% else %>
+					<%= image_tag 'cliq.png', id: "chat-pic" %>
+				<% end %>
 			<div id="chat-info">
-				<div id="chat-name"><%= @other_user.name %></div>
+				<div id="chat-name"><%= @other_user.first_name %></div>
 				<div id="chat-school"><%= @other_user.school || "Some Random School" %></div>
 				<div id="chat-similarities">
 					<%= current_user.similarities_with @other_user%> Shared Interests
@@ -35,8 +39,8 @@
 						<div class="result-action">INVITE</div>
 					<% end %>
 				</div>
-				<div class="action-button white message-reply inv-btn mes-action">
-					<div class="result-action reply">REPLY</div>
+				<div class="action-button white message-reply inv-btn mes-action reply">
+					<div class="result-action hit-reply">REPLY</div>
 				</div>
 		</div>
 	</div>
@@ -44,7 +48,7 @@
 
 <div class="collapsed-chat hidden">
 	<div class="collapsed-name">
-		<- <%= @other_user.name %>
+		<- <%= @other_user.first_name %>
 		<%= image_tag 'XClose.svg', class: 'close' %>
 	</div>
 </div>

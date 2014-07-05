@@ -15,74 +15,28 @@
 			</div>
 
 
-
-
-			<div class="cat-section other">
-				<div class="cat-header other">
-					Stuff <%= user.name %> does for fun:
-				</div>
-				<% user.formatted_cat_acts[0].each do |interest| %>
-					<div class="cat-group other">
-						<div class="category dark-gray"><div class="cat-name"><%= interest[0].name[0..13] + 
-						"#{('..' if interest[0].name.length > 14)}" %></div></div>
-						<div class="activities">
-							<% interest[1].each do |activity| %>
-								<div class="activity"><div class="act-name"><%= activity.name %></div></div>
-							<% end %> 
-						</div>
+			<% format.each do |cat_type| %>
+				<div class="cat-section other">
+					<div class="cat-header other">
+						<%= cat_type[0] %>
 					</div>
-				<% end %>
-			</div>
-
-			<div class="cat-section other">
-				<div class="cat-header">
-					Music:
+					<% if formatted_interests[cat_type[1]][0] %>
+						<% formatted_interests[cat_type[1]].each do |cat| %>
+							<% cat.each do |cat_name, acts| %>
+								<div class="cat-group other">
+									<div class="category dark-gray"><div class="cat-name"><%= cat_name[0..13] + 
+									"#{('..' if cat_name.length > 14)}" %></div></div>
+									<div class="activities">
+										<% acts.each do |activity| %>
+											<div class="activity"><div class="act-name"><%= activity.name %></div></div>
+										<% end %> 
+									</div>
+								</div>
+							<% end %>
+						<% end %>
+					<% end %>
 				</div>
-				<% user.formatted_cat_acts[2].each do |interest| %>
-					<div class="cat-group other">
-						<div class="category dark-gray"><div class="cat-name"><%= interest[0].name[0..13] + 
-						"#{('..' if interest[0].name.length > 14)}" %></div></div>
-						<div class="activities">
-							<% interest[1].each do |activity| %>
-								<div class="activity"><div class="act-name"><%= activity.name %></div></div>
-							<% end %> 
-						</div>
-					</div>
-				<% end %>
-			</div>
+			<% end %>
 
-			<div class="cat-section other">
-				<div class="cat-header">
-					What he watches:
-				</div>
-				<% user.formatted_cat_acts[1].each do |interest| %>
-					<div class="cat-group other">
-						<div class="category dark-gray"><div class="cat-name"><%= interest[0].name[0..13] + 
-						"#{('..' if interest[0].name.length > 14)}" %></div></div>
-						<div class="activities">
-							<% interest[1].each do |activity| %>
-								<div class="activity"><div class="act-name"><%= activity.name %></div></div>
-							<% end %> 
-						</div>
-					</div>
-				<% end %>
-			</div>
-
-			<div class="cat-section other">
-				<div class="cat-header">
-					What he likes to talk about:
-				</div>
-				<% user.formatted_cat_acts[3].each do |interest| %>
-					<div class="cat-group other">
-						<div class="category dark-gray"><div class="cat-name"><%= interest[0].name[0..13] + 
-						"#{('..' if interest[0].name.length > 14)}" %></div></div>
-						<div class="activities">
-							<% interest[1].each do |activity| %>
-								<div class="activity"><div class="act-name"><%= activity.name %></div></div>
-							<% end %> 
-						</div>
-					</div>
-				<% end %>
-			</div>
 	</div>
 </div>

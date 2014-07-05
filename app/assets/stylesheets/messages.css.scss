@@ -211,11 +211,15 @@
 	background-color: $red;
 }
 
-.result-action.reply {
+.result-action.hit-reply {
 	margin-right: 10px;
 	margin-left: 26px;
 	cursor: pointer; 
 	cursor: hand; 
+}
+
+.reply {
+	cursor: pointer;
 }
 
 .action-button.mes-action {
