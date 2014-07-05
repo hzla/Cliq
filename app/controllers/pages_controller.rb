@@ -3,6 +3,9 @@ class PagesController < ApplicationController
 	skip_before_action :require_login
 
 	def home
+		if current_user
+			redirect_to search_path
+		end
 	end
 
 	def faq

@@ -129,6 +129,13 @@ class User < ActiveRecord::Base
 		false
 	end
 
+	def talked_to? user
+		conversations.each do |convo|
+			return convo if convo.users.include? user
+		end
+		false
+	end
+
 	def similarities_with user
 		act_ids = activities.map(&:id)
 		user.interests.where('activity_id in (?)', act_ids).length
