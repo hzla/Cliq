@@ -4,6 +4,8 @@ Search =
 		@autocompleteInterests()
 		$('body').on 'ajax:success', '.invite-user', @inviteUser
 		$('body').on 'ajax:success', '.chat-user', @chatUser
+		$('body').on 'ajax:beforeSend', '.chat-user', @checkTab
+		$('body').on 'click', '.chat-user', @switchChat
 		$('body').on 'ajax:success', '.other-user', @showUser
 		$('body').on 'click', '.chat-collapse', @collapseChat
 		$('body').on 'click', '.collapsed-chat', @addChat
@@ -24,15 +26,21 @@ Search =
 
 	chatUser: (event, data, xhr, status) ->
 		event.preventDefault()
-		if $('.messages.active').length > 0
-			console.log '#' + $(@).attr('href').split('/')[2]
-			$('.user-other-container').remove()
-			$('#' + $(@).attr('href').split('/')[2]).children('.convo-link').click()
-			return
 
 		if $('#' + $(@).attr('href').split('/')[2]).length < 1
 			$('body').append data
 			$('.chat-partial').last().addClass 'animated bounceInRight'
+
+	checkTab: () ->
+		console.log "checked"
+		return false if $('.messages.active').length > 0
+
+	switchChat: ->
+		if $('.messages.active').length > 0
+			console.log '#' + $(@).attr('href').split('/')[2]
+			$('.user-other-container').remove()
+			$('#' + $(@).attr('href').split('/')[2]).children('.convo-link').click()
+
 
 	showUser: (event, data, xhr, status) ->
 			$('.user-other-container').remove()
