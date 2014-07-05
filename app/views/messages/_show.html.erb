@@ -1,7 +1,7 @@
 <div class="message-block" id="message-<%= message.id %>">
 	<% if message.user == current_user %>
 		<div class="date sent head-6 light-gray">
-			<%= message.date %>
+			<%= message.date current_user %>
 		</div>
 		<div class="message sent head-5">
 			<%= message.body %>
@@ -11,7 +11,7 @@
 			<%= message.body %>
 		</div>
 		<div class="date recieved head-6 light-gray">
-			<%= message.date %>
+			<%= message.date current_user %>
 		</div>
 	<% end %>
 </div>

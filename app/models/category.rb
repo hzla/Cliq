@@ -13,7 +13,7 @@ class Category < ActiveRecord::Base
 	def liked_not_liked_activities user
 		ids = user.interests.map(&:activity_id)
 		return [activities, []] if ids == []
-		[activities.where('id in (?)', ids), activities.where('id not in (?)', ids)]
+		[activities.where('id in (?)', ids).order(:name), activities.where('id not in (?)', ids).order(:name)]
 	end
 
 	def ask

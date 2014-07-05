@@ -14,14 +14,13 @@ class Conversation < ActiveRecord::Base
 		users.where('user_id not in (?)', [user.id])[0]
 	end
 
-	def date
+	def date user
 		time = messages.order(:created_at).pluck(:created_at).last
-		time = Time.now - 1.year if !time
+		tzone = Timezone::Zone.new(:latlon => [user.latitude, user.longitude])
 		if (Time.now - 1.day) < time
-			time = time - 7.hours
-			time.strftime("%I:%M%p")
+			tzone.time(time).strftime("%I:%M%p")
 		else
-			time.strftime("%m/%d/%g")
+			tzone.time(time).strftime("%m/%d/%g")
 		end
 	end
 

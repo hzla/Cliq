@@ -11,6 +11,7 @@ gem 'turbolinks'
 gem "thin"
 gem 'faker'
 gem 'faye'
+gem 'timezone'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem "pg"

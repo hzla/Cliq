@@ -25,7 +25,7 @@
 					<%= link_to conversation_path(convo), :class => "convo-link", remote: true do %>
 						<div class="convo-details">
 							<div class="convo-name head-5"><%= user.first_name %></div>
-							<div class="convo-date head-5"><%= convo.date %></div>
+							<div class="convo-date head-5"><%= convo.date current_user %></div>
 							<div class="convo-school head-6 light-gray"><%= user.school %><%= "Random School" if !user.school %></div>
 							<div class="convo-last-message head-6 gray"><%= convo.last_message %></div>
 						</div>
