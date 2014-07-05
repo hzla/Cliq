@@ -40,6 +40,7 @@ class User < ActiveRecord::Base
 		code = characters.map {|c| characters.sample}
 		code.join
 	end
+	
 	#maps cat/act to users_ids, parse and count user_ids
 	def search_similar interest_type, location = nil #accepts a list of interests/categories
 		return location if location == "invalid"
@@ -49,7 +50,6 @@ class User < ActiveRecord::Base
 			users = interest_type.map {|act_cat| [act_cat, act_cat.users.near(location, 50)]}
 			users = users.select {|entry| !entry[1].empty?}
 		end
-
 		similar_users = {}
 		users.each do |entry|
 			act_cat = entry[0]
@@ -68,27 +68,6 @@ class User < ActiveRecord::Base
 	def total_meetings
 		total = events.map {|evt| evt.users.length}.inject(:+)
 		total ? total : 0
-	end
-
-	def category_activities parent
-		categories = parent.descendants
-		categories.map do |cat|
-			acts = cat.activities.select {|act| act.users.include? self }
-			if acts	== []		
-				nil
-			else
-				[cat, acts]
-			end
-		end
-	end
-
-	def formatted_cat_acts 
-		formatted = []
-		formatted[0] = category_activities(Category.where(name: "Do").first).compact
-		formatted[1] = category_activities(Category.where(name: "Watch").first).compact
-		formatted[2] = category_activities(Category.where(name: "Music").first).compact
-		formatted[3] = category_activities(Category.where(name: "Discuss").first).compact
-		formatted
 	end
 
 	def formatted_interests
@@ -118,8 +97,7 @@ class User < ActiveRecord::Base
 		conversations.where(connected: true).order(:updated_at).reverse
 	end
 
-
-	def conversated_with? user
+	def conversated_with? user #do their conversations have at least one message form each person?
 		conversations.each do |convo|
 			ids = convo.messages.map(&:user_id)
 			if convo.users.include?(user) && ids.include?(id) && ids.include?(user.id) 
@@ -129,7 +107,7 @@ class User < ActiveRecord::Base
 		false
 	end
 
-	def talked_to? user
+	def talked_to? user #do they any conversations at all?
 		conversations.each do |convo|
 			return convo if convo.users.include? user
 		end
@@ -144,6 +122,4 @@ class User < ActiveRecord::Base
 	def first_name 
 		name.split[0]
 	end
-
-
 end

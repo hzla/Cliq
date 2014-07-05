@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
 	def show
 		@category = Category.where(name: "Do").first
-		@format = [["Stuff you do for fun:", "Do"],["Music:", "Music"],["What you watch:", "Watch"], ["What you talk about:", "Discuss"]] 
+		@format = Category.self_format
 		@formatted_interests = current_user.formatted_interests
 		respond_to do |format|
   		format.html 
@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
 	def other
 		@user = User.find params[:id]
-		@format = [["Stuff #{@user.first_name} does for fun:", "Do"],["What he listens to:", "Music"],["What he watches:", "Watch"], ["What he likes to talk about:", "Discuss"]] 
+		@format = Category.other_format @user.first_name
 		@formatted_interests = current_user.formatted_interests
 		render layout: false
 	end
@@ -29,8 +29,10 @@ class UsersController < ApplicationController
 			session[:user_id] = @user.id
 			@user.activate
 			@message = "You have been activated"
+			redirect_to search_path and return
 		else
 			@message = "Activation Failed"
+			redirect_to search_path
 		end
 	end
 
@@ -44,7 +46,6 @@ class UsersController < ApplicationController
 			render partial: "search_results", locals: {results: results}
 			return
 		end
-		puts "\n" * 10
 		if params[:location_id] != "" && params[:location] != ""
 			location = Location.find params[:location_id]
 		elsif params[:location] != ""

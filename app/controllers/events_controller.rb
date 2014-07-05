@@ -10,6 +10,7 @@ class EventsController < ApplicationController
 		
 		upcoming_excursions = excursions.where accepted: true
 		@events = upcoming_excursions.map(&:event).compact.select { |event| event.start_time > Time.now }.select {|event| event.accepted? }.sort_by(&:start_time)
+		
 		excursions.update_all seen: true
 		current_user.update_attributes event_count: 0
 	end
@@ -73,5 +74,4 @@ class EventsController < ApplicationController
 		excursion.update_attributes passed: true
 		render :nothing => true, :status => 200, :content_type => 'text/html'
 	end
-
 end
