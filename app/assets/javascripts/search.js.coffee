@@ -24,10 +24,11 @@ Search =
 
 	chatUser: (event, data, xhr, status) ->
 		event.preventDefault()
-		if $('.messages.active')
+		if $('.messages.active').length > 0
 			console.log '#' + $(@).attr('href').split('/')[2]
 			$('.user-other-container').remove()
 			$('#' + $(@).attr('href').split('/')[2]).children('.convo-link').click()
+			return
 
 		if $('#' + $(@).attr('href').split('/')[2]).length < 1
 			$('body').append data
