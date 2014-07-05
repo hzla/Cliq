@@ -11,7 +11,7 @@ Messages =
 
 	appendConversation: (event, data, xhr, status) ->
 		$('.conversation').removeClass 'current'
-		$(@).children('.conversation').addClass('current')
+		$(@).parent().addClass 'current'
 		$('#messages').html(data)
 		$('.message-history')[0].scrollTop = $('.message-history')[0].scrollHeight
 

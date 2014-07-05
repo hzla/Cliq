@@ -52,9 +52,8 @@ Search =
 
 	collapseAllChat: ->
 		$('div.chat-partial').not('.bounceOutRight').each () ->
-			Search.collapse $(@)
+			Search.collapse $(@) if $('#chat-partial-content')
 		$('.user-other-container').hide()
-
 
 	addChat: ->
 		$(@).addClass 'animated bounceOutLeft'
@@ -76,7 +75,6 @@ Search =
 				event.preventDefault()
 				$(this).val ui.item.label
 	
-
 	autocompleteInterests: ->
 		$('#activity').autocomplete
 			source: '/activities'
@@ -104,9 +102,6 @@ Search =
 			# 		inpt[0].selectionEnd = firstElementText.length
 			minLength: 2
         
-    
-
-
 	removeTerm: ->
 		id= @.id
 		ids = $('#ids')[0].value
