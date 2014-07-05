@@ -26,6 +26,8 @@ contents.each do |line|
 		category = Category.create name: name, parent: parent
 		last_created = category
 		root[tab_count] = category
+	elsif line.include?("q: ")
+		last_created.update_attributes question: line.strip[3..-1]
 	else
 		Activity.create name: line.strip, category_id: last_created.id
 	end
