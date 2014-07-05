@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 	def other
 		@user = User.find params[:id]
 		@format = Category.other_format @user.first_name
-		@formatted_interests = current_user.formatted_interests
+		@formatted_interests = @user.formatted_interests
 		render layout: false
 	end
 
