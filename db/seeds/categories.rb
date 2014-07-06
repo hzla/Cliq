@@ -7,7 +7,7 @@ last_created = nil
 contents.each do |line|
 	if !line.include?("\t") && line.include?("Category")
 		name = line.strip.gsub("Category: ", "")
-		category = Category.create name: name
+		category = Category.where(name: name).first_or_create
 		root[0] = category 
 		parent = category
 		last_created = category
@@ -23,20 +23,25 @@ contents.each do |line|
 		else
 		end
 		name = line.strip.gsub("Category: ", "")
-		category = Category.create name: name, parent: parent
+		category = Category.where(name: name)
+		if category.empty?
+			Category.create name: name, parent: parent
+		else
+			category = category.first
+		end
 		last_created = category
 		root[tab_count] = category
 	elsif line.include?("q: ")
 		last_created.update_attributes question: line.strip[3..-1]
 	else
-		Activity.create name: line.strip, category_id: last_created.id
+		Activity.where(name: line.strip, category_id: last_created.id).first_or_create
 	end
 	p line.strip
 end
 
 
-puts "creating users..."
+# puts "creating users..."
 
-(1..10).each {|n| User.create name: Faker::Name.name }
+# (1..10).each {|n| User.create name: Faker::Name.name }
 
 

@@ -288,6 +288,7 @@ q: What do you like to watch?
 			The Exorcist
 			The Omen
 			The Ring
+			The Conjuring
 			World War Z
 		Category: Musical
 			A Chorus Line
