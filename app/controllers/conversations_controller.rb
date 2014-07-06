@@ -5,7 +5,7 @@ include SessionsHelper
 		@conversation = Conversation.find params[:id]
 		@message = Message.new(user_id: current_user.id, conversation_id: @conversation.id)
 		@user = current_user
-		@conversation.update_notifications current_user
+		# @conversation.update_notifications current_user
 		@other_user = @conversation.get_other_user current_user
 		render layout: false
 	end

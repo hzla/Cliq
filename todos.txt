@@ -12,6 +12,12 @@ DO LATERS
 	message sort
 	add amazon cloud support
 
+TESTING HIT LIST	
+
+	search
+	messaging
+	event creation
+
 
 
 	

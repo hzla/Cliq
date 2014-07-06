@@ -26,7 +26,7 @@
 				<%= render partial: 'messages/show', locals: {message: message} %>
 			<% end %>
 		</div>
-
+	<div class="chat-window-footer">	
 		<%= form_for [@conversation, @message], remote: true do |f| %>
 			<%= f.text_area :body, id: 'chat-box' %>
 		<% end %>
@@ -43,6 +43,7 @@
 					<div class="result-action hit-reply">REPLY</div>
 				</div>
 		</div>
+	</div>
 	</div>
 </div>
 
