@@ -6,7 +6,7 @@ class Conversation < ActiveRecord::Base
 	attr_accessible :name, :connected
 
 	def ordered_messages
-		messages.order :created_at
+		messages.order('created_at DESC').limit(20).reverse 
 	end
 
 

@@ -1,7 +1,7 @@
 Animations = 
 	init: ->
-		$('.nav-filler').mouseover @extendSideNav
-		$('.extended-side-nav').mouseleave @revertSideNav
+		$('.extended-side-nav').hover @extendSideNav, @revertSideNav
+
 
 	extendSideNav: ->
 		$('.extended-side-nav').animate {
