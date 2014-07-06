@@ -23,11 +23,11 @@ contents.each do |line|
 		else
 		end
 		name = line.strip.gsub("Category: ", "")
-		category = Category.where(name: name)
+		category = Category.where(name: name).first
 		if category.empty?
-			Category.create name: name, parent: parent
+			category = Category.create name: name, parent: parent
 		else
-			category = category.first
+			category = category
 		end
 		last_created = category
 		root[tab_count] = category
