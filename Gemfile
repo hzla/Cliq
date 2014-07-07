@@ -13,6 +13,7 @@ gem 'faker'
 gem 'faye'
 gem 'timezone'
 gem 'wikipedia-client'
+gem 'fog'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem "pg"

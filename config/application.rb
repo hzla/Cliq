@@ -9,6 +9,7 @@ Bundler.require(:default, Rails.env)
 
 module Cliq
   class Application < Rails::Application
+    Dotenv.load
     config.action_mailer.default_url_options = { host: 'localhost:3000' }
     
     Timezone::Configure.begin do |c|
