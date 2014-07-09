@@ -6,7 +6,7 @@
   <body>
     <p>Hi <%= @user.first_name%>,</p>
     <p>
-      We just wanted to let you know that you have a <%= link_to 'new message', 'http://final-final-cliq.herokuapp.com/' + messages_path %> from <%= @other_user.first_name %> waiting for you on Cliq. This is an automatically generated email, so please don’t reply to it.
+      We just wanted to let you know that you have a <%= link_to 'new message', 'http://final-final-cliq.herokuapp.com' + messages_path %> from <%= @other_user.first_name %> waiting for you on Cliq. This is an automatically generated email, so please don’t reply to it.
     </p>
     <p>-Cliq</p>
   </body>
