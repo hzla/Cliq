@@ -4,14 +4,10 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1></h1>
+    <p>Hi <%= @user.first_name%>,</p>
     <p>
-      You have a new message from <%= @other_user.first_name %>!<br>
+      We just wanted to let you know that you have a <%= link_to 'new message', 'http://final-final-cliq.herokuapp.com/' + messages_path %> from <%= @other_user.first_name %> waiting for you on Cliq. This is an automatically generated email, so please don’t reply to it.
     </p>
-    <p>
-      To view the message, just follow this link:<br> 
-      <%= link_to 'Cliq-Messages', 'http://final-final-cliq.herokuapp.com/' + messages_path %>
-    </p>
-    <p>Thanks and have a great day!</p>
+    <p>-Cliq</p>
   </body>
 </html>

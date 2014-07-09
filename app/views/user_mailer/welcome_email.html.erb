@@ -4,14 +4,20 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Welcome to Cliq, <%= @user.name %></h1>
+    <h1>Hi, <%= @user.first_name %></h1>
     <p>
-      You have successfully signed up!<br>
+        We’re thrilled to have you as a new user. You’re one step closer to meeting cool people who 
+      love the same awesome things as you. After you’ve clicked the confirmation link, we’ll ask you 
+      to input a few interests in each category. Don’t worry about adding all of them right away. You can always add or remove interests by going to your profile and clicking “add interests.”
     </p>
     <p>
-      To activate your account, just follow this link:<br> 
-      <%= link_to 'activate', ('http://localhost:3000' + activate_path(id: @user.id, code: @user.activation)) %>
+      Click  <%= link_to 'here', ('http://final-final-cliq.herokuapp.com' + activate_path(id: @user.id, code: @user.activation)) %> to activate your account.<br> 
+    </p>
+    <p>
+      This is an automatically generated email, so please don’t reply to it. If you are having trouble activating your account, write to us at support@cliqwith.me so we can help you out.
     </p>
     <p>Thanks for joining and have a great day!</p>
+
+    <p>-Cliq</p>
   </body>
 </html>

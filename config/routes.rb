@@ -2,7 +2,9 @@ Cliq::Application.routes.draw do
   resources :location_suggestions
 
   root to: 'pages#home'
-  get '/faq', to: 'pages#faq', as: 'faq'
+  ['help', 'contact', 'faq', 'about', 'terms', 'privacy'].each do |page|
+    get "/#{page}", to: ("pages#" + "#{page}"), as: page 
+  end
 
   get '/categories/:id/select', to: 'categories#select', as: 'choose_cat'
 
