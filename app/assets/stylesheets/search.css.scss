@@ -22,7 +22,7 @@
 	width: 200px;
   background-size: cover;
   color: $gray;
-  // font-family: proxima nova;
+  font-family: "proxima-nova",sans-serif;
 }
 
 #results-container {
@@ -58,8 +58,8 @@
 	font-weight: 700;
 	opacity: 1;
 	height: 34px;
-    // font-family: proxima nova;
-    width:250px;
+  font-family: "proxima-nova",sans-serif;
+  width:250px;
 }
 
 #query-2 {
@@ -124,8 +124,8 @@
 	border:	none;
 	cursor: pointer;
 	height: 34px;
-    margin-top: 5px;
-    // font-family: proxima nova;
+  margin-top: 5px;
+  font-family: "proxima-nova",sans-serif;
 }
 
 #query-row-1 {

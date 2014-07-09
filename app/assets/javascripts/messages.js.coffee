@@ -9,6 +9,9 @@ Messages =
 
 	submitMessage: ->
 		$('#new_message').submit()
+		$('#chat-box').val ''
+		$('.sending-progress').text('Sending...').show()
+
 
 	prepConversation: ->
 		$('.conversation').removeClass 'current'
@@ -24,7 +27,10 @@ Messages =
 
 	submitMessageOnEnter: (e) ->
 		if (e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)
-			$('#new_message').submit()
+			e.preventDefault()
+			Messages.submitMessage()
+			$('#chat-box').val ''
+			$('#new_message')[0].reset()
 
 
 
