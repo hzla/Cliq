@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 	def other
 		@user = User.find params[:id]
 		@format = Category.other_format @user.first_name
-		@formatted_interests = current_user.formatted_interests
+		@formatted_interests = @user.formatted_interests
 		render layout: false
 	end
 
@@ -40,11 +40,19 @@ class UsersController < ApplicationController
 		@results = nil
 	end
 
+	def main
+		@results = current_user.search_similar current_user.activities
+	end
+
 	def search_results #add support for searching location without ids
-		if params[:ids] == ""
+		if params[:ids] == "" 
 			results = current_user.search_similar current_user.activities
-			render partial: "search_results", locals: {results: results}
-			return
+			if params[:type] == "swipe"
+				render partial: "swipe_results", locals: {results: results}
+				return
+			else
+				render partial: "search_results", locals: {results: results}
+			end
 		end
 		if params[:location_id] != "" && params[:location] != ""
 			location = Location.find params[:location_id]
@@ -59,6 +67,10 @@ class UsersController < ApplicationController
 			location = nil
 		end
 		results = current_user.search_similar(Activity.parse_interests(params[:ids]), location)
+		if params[:type] == "swipe"
+			render partial: "swipe_results", locals: {results: results}
+			return
+		end
 		render partial: "search_results", locals: {results: results}
 	end
 

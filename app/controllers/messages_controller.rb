@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
 		@conversation = current_user.ordered_conversations.first
 		if @conversation 
 			@message = Message.new(user_id: current_user.id, conversation_id: @conversation.id)
-			@conversation.update_notifications current_user
+			# @conversation.update_notifications current_user
 			@other_user = @conversation.get_other_user current_user
 		else
 		end

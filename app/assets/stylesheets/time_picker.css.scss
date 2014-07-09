@@ -1,6 +1,10 @@
 @import 'variables';
 
 
+thead {
+	color: $light-turq 
+}
+
 .ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
 .ui-timepicker-div dl { text-align: left; }
 .ui-timepicker-div dl dt { float: left; clear:left; padding: 0 0 0 5px; }
@@ -19,13 +23,13 @@
 
 .ui-widget-header {
 	background: none;
-	background-color: $green;
+	background-color: $light-turq;
 	color: white;
 }
 
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
 	background: none;
-	background-color: $green;
+	background-color: $light-turq;
 	color: white;
 }
 
@@ -41,5 +45,5 @@
 }
 
 .ui-datepicker-current-day .ui-state-default {
-	background-color: $blue;
+	background-color: $dark-turq;
 }

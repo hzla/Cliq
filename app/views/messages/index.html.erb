@@ -9,9 +9,11 @@
 		</div>
 	</div>
 
-	<div id="conversations">
+	<div class="message-content-container">
+		<div class="message-content">
+			<div id="conversations">
 		<% current_user.ordered_conversations.each do |convo| %>
-			<%= link_to conversation_path(convo), :class => "convo-link", remote: true do %>
+			
 				<% user = convo.get_other_user current_user %>
 
 				<div class="conversation" id="<%= user.id %>">
@@ -22,20 +24,28 @@
 							<%= image_tag 'cliq.png', :class => "convo-pic" %>
 						<% end %>
 					<% end %>
-					<div class="convo-details">
-						<div class="convo-name head-5"><%= user.first_name %></div>
-						<div class="convo-date head-5"><%= convo.date %></div>
-						<div class="convo-school head-6 light-gray"><%= user.school %><%= "Random School" if !user.school %></div>
-						<div class="convo-last-message head-6 gray"><%= convo.last_message %></div>
-					</div>
+					<%= link_to conversation_path(convo), :class => "convo-link", remote: true do %>
+						<div class="convo-details">
+							<div class="convo-name head-5"><%= user.first_name %></div>
+							<div class="convo-date head-5"><%= convo.date current_user %></div>
+							<div class="convo-school head-6 light-gray"><%= user.school %><%= "Random School" if !user.school %></div>
+							<div class="convo-last-message head-6 gray"><%= convo.last_message %></div>
+						</div>
+					<% end %>
 				</div>
-			<% end %>
 		<% end %>
 	</div>
 
 	<div id="messages">
 		<%= render partial: 'chat_history', locals: {conversation: @conversation, other_user: @other_user } %>
 	</div>
+
+
+		</div>
+
+	</div>
+
+	
 </div>
 
 <div id="invite-modal-container" class="modal">

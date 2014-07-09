@@ -1,22 +1,22 @@
 Animations = 
 	init: ->
-		$('.nav-filler').mouseover @extendSideNav
-		$('.extended-side-nav').mouseleave @revertSideNav
+		$('.extended-side-nav').hoverIntent @extendSideNav, @revertSideNav
+
 
 	extendSideNav: ->
-		$('.extended-side-nav').animate {
+		$('.extended-side-nav').stop().animate {
 			width: "210px"
 		}, 200
-		$('.content-container').animate {
+		$('.content-container').stop().animate {
 			marginLeft: "148px"
 		}, 200
 		$('.icon-label').css 'opacity', '1'
 
 	revertSideNav: ->
-		$('.extended-side-nav').animate {
+		$('.extended-side-nav').stop().animate {
 			width: "62px"
 		}, 200, ->
-		$('.content-container').animate {
+		$('.content-container').stop().animate {
 			marginLeft: "0px"
 		}, 200
 		$('.icon-label').css 'opacity', '0'

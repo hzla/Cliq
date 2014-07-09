@@ -4,6 +4,8 @@ Search =
 		@autocompleteInterests()
 		$('body').on 'ajax:success', '.invite-user', @inviteUser
 		$('body').on 'ajax:success', '.chat-user', @chatUser
+		$('body').on 'ajax:beforeSend', '.chat-user', @checkTab
+		$('body').on 'click', '.chat-user', @switchChat
 		$('body').on 'ajax:success', '.other-user', @showUser
 		$('body').on 'click', '.chat-collapse', @collapseChat
 		$('body').on 'click', '.collapsed-chat', @addChat
@@ -24,9 +26,21 @@ Search =
 
 	chatUser: (event, data, xhr, status) ->
 		event.preventDefault()
+
 		if $('#' + $(@).attr('href').split('/')[2]).length < 1
 			$('body').append data
 			$('.chat-partial').last().addClass 'animated bounceInRight'
+
+	checkTab: () ->
+		console.log "checked"
+		return false if $('.messages.active').length > 0
+
+	switchChat: ->
+		if $('.messages.active').length > 0
+			console.log '#' + $(@).attr('href').split('/')[2]
+			$('.user-other-container').remove()
+			$('#' + $(@).attr('href').split('/')[2]).children('.convo-link').click()
+
 
 	showUser: (event, data, xhr, status) ->
 			$('.user-other-container').remove()
@@ -52,9 +66,8 @@ Search =
 
 	collapseAllChat: ->
 		$('div.chat-partial').not('.bounceOutRight').each () ->
-			Search.collapse $(@)
+			Search.collapse $(@) if $('#chat-partial-content')
 		$('.user-other-container').hide()
-
 
 	addChat: ->
 		$(@).addClass 'animated bounceOutLeft'
@@ -76,7 +89,6 @@ Search =
 				event.preventDefault()
 				$(this).val ui.item.label
 	
-
 	autocompleteInterests: ->
 		$('#activity').autocomplete
 			source: '/activities'
@@ -104,9 +116,6 @@ Search =
 			# 		inpt[0].selectionEnd = firstElementText.length
 			minLength: 2
         
-    
-
-
 	removeTerm: ->
 		id= @.id
 		ids = $('#ids')[0].value
@@ -117,6 +126,8 @@ Search =
 
 	displayResults: (event, data, xhr, status) ->
 		$('#results').html data
+		$('.swiped-result').hide()
+		$('.swiped-result').first().show()
 		$('#found').text "Here's who we found:"
 		$('#found').text "Sorry, we couldn't find anyone." if $('#empty').length > 0
 		$('#found').text "Please enter a valid location." if $('#invalid').length > 0

@@ -9,12 +9,8 @@
 				
 				<div class="left">
 					<div class="head-1" id="name"><%= @user.name %></div>
-					<div class="head-4" id="school"><%= @user.school %></div>
-					<% if @user.active %>
-						<div class="head-4" id="active">Active</div>
-					<% else %>
-						<div class="head-4" id="active">Offline</div>
-					<% end %>
+					<div class="head-4" id="active"><%= @user.school %></div>
+
 				</div>
 				
 				<div class="right">

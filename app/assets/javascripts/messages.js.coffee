@@ -2,6 +2,7 @@ Messages =
 	init: ->
 		$('.message-history')[0].scrollTop = $('.message-history')[0].scrollHeight + 100 if $('.message-history').length >= 1
 		$('body')	.on 'click', '.reply', @submitMessage
+		$('body').on 'click', '.convo-link', @prepConversation
 		$('body').on 'ajax:success', '.convo-link', @appendConversation
 		$('body').on 'keypress', '#chat-box', @submitMessageOnEnter
 		@selectFirstConversation()
@@ -9,9 +10,12 @@ Messages =
 	submitMessage: ->
 		$('#new_message').submit()
 
-	appendConversation: (event, data, xhr, status) ->
+	prepConversation: ->
 		$('.conversation').removeClass 'current'
-		$(@).children('.conversation').addClass('current')
+		$(@).parent().addClass 'current'
+		$('#messages').html('loading...')
+
+	appendConversation: (event, data, xhr, status) ->
 		$('#messages').html(data)
 		$('.message-history')[0].scrollTop = $('.message-history')[0].scrollHeight
 

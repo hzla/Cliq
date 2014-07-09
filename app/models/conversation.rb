@@ -6,7 +6,7 @@ class Conversation < ActiveRecord::Base
 	attr_accessible :name, :connected
 
 	def ordered_messages
-		messages.order :created_at
+		messages.order('created_at DESC').limit(20).reverse 
 	end
 
 
@@ -14,14 +14,13 @@ class Conversation < ActiveRecord::Base
 		users.where('user_id not in (?)', [user.id])[0]
 	end
 
-	def date
+	def date user
 		time = messages.order(:created_at).pluck(:created_at).last
-		time = Time.now - 1.year if !time
+		tzone = Timezone::Zone.new(:latlon => [user.latitude, user.longitude])
 		if (Time.now - 1.day) < time
-			time = time - 7.hours
-			time.strftime("%I:%M%p")
+			tzone.time(time).strftime("%I:%M%p")
 		else
-			time.strftime("%m/%d/%g")
+			tzone.time(time).strftime("%m/%d/%g")
 		end
 	end
 
@@ -38,7 +37,6 @@ class Conversation < ActiveRecord::Base
 		unseen = messages.where seen: false, user_id: other_user.id
 		new_count = user.message_count - unseen.length
 		user.update_attributes message_count: new_count
-		user.update_attributes message_count: 0 if user.message_count < 0
 		unseen.update_all seen: true		
 	end
 

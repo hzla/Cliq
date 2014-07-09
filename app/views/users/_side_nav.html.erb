@@ -1,7 +1,13 @@
 <div class="extended-side-nav">
-	<%= link_to search_path, "data-no-turbolink" => true do %>
-		<div class="extended logo <%= 'active' if active == :critiq %>">
+	<%= link_to main_path, "data-no-turbolink" => true do %>
+		<div class="extended logo <%= 'active' if active == :main %>">
 			<div id="cliq-logo">Cliq</div> 
+		</div>
+	<% end %>
+	<%= link_to search_path, "data-no-turbolink" => true do %>
+		<div class="extended search side-icon <%= 'active' if active == :critiq %>">
+			<%= image_tag "Search.svg", :class => "nav-icon svg" %> 
+			<div class="icon-label main">Search</div>
 		</div>
 	<% end %>
 	<%= link_to user_path current_user do  %>
