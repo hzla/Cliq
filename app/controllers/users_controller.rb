@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 	def show
 		@category = Category.where(name: "Do").first
 		@format = Category.self_format
-		@formatted_interests = current_user.formatted_interests
+		@formatted_interests = @user.formatted_interests
 		respond_to do |format|
   		format.html 
   		format.json { render :json => @user }
@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 	end
 
 	def send_activation
+		current_user.update_attributes email: params[:email]
 		UserMailer.welcome_email(current_user, params[:email]).deliver
 		render nothing: true
 	end

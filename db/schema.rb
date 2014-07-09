@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140707234735) do
+ActiveRecord::Schema.define(version: 20140709195845) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,8 +56,9 @@ ActiveRecord::Schema.define(version: 20140707234735) do
   add_index "categories", ["ancestry"], name: "index_categories_on_ancestry", using: :btree
 
   create_table "connections", force: true do |t|
-    t.integer "user_id",         null: false
-    t.integer "conversation_id", null: false
+    t.integer "user_id",                         null: false
+    t.integer "conversation_id",                 null: false
+    t.boolean "emailed",         default: false
   end
 
   add_index "connections", ["user_id", "conversation_id"], name: "index_connections_on_user_id_and_conversation_id", using: :btree

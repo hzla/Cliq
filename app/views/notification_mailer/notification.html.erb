@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1></h1>
+    <p>
+      You have a new message from <%= other_user.first_name %>!<br>
+    </p>
+    <p>
+      To view the message, just follow this link:<br> 
+      <%= link_to messages_path %>
+    </p>
+    <p>Thanks and have a great day!</p>
+  </body>
+</html>

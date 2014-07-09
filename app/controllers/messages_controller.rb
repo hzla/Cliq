@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
 		@conversation = current_user.ordered_conversations.first
 		if @conversation 
 			@message = Message.new(user_id: current_user.id, conversation_id: @conversation.id)
-			# @conversation.update_notifications current_user
+			@conversation.update_notifications current_user
 			@other_user = @conversation.get_other_user current_user
 		else
 		end
@@ -24,6 +24,14 @@ class MessagesController < ApplicationController
 		@user.save
 		@message.save
 		broadcast user_path(@user)+ "/messages", @message.to_json
+		other_connection = Connection.where(conversation_id: params[:conversation_id], user_id: @user.id).first
+		p @user
+		p other_connection
+		puts "\n" * 10
+		if !@user.active && !other_connection.emailed
+			other_connection.update_attributes emailed: true
+			NotificationMailer.notification(@user, current_user).deliver
+		end
 	end
 
 	def show

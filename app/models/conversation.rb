@@ -16,11 +16,11 @@ class Conversation < ActiveRecord::Base
 
 	def date user
 		time = messages.order(:created_at).pluck(:created_at).last
-		tzone = Timezone::Zone.new(:latlon => [user.latitude, user.longitude])
+		# tzone = Timezone::Zone.new(:latlon => [user.latitude, user.longitude])
 		if (Time.now - 1.day) < time
-			tzone.time(time).strftime("%I:%M%p")
+			(time).strftime("%I:%M%p")
 		else
-			tzone.time(time).strftime("%m/%d/%g")
+			(time).strftime("%m/%d/%g")
 		end
 	end
 
@@ -37,7 +37,8 @@ class Conversation < ActiveRecord::Base
 		unseen = messages.where seen: false, user_id: other_user.id
 		new_count = user.message_count - unseen.length
 		user.update_attributes message_count: new_count
-		unseen.update_all seen: true		
+		unseen.update_all seen: true	
+		Connection.where(user_id: user.id, conversation_id: id).first.update_attributes(emailed: false)
 	end
 
 end

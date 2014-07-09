@@ -25,6 +25,7 @@ Messages =
 	submitMessageOnEnter: (e) ->
 		if (e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)
 			$('#new_message').submit()
+			$('#new_message')[0].reset()
 
 
 
