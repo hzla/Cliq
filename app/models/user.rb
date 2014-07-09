@@ -119,7 +119,26 @@ class User < ActiveRecord::Base
 		user.interests.where('activity_id in (?)', act_ids).length
 	end
 
+	def similar_interests user, results
+		result_ids = results.map(&:id)
+		act_ids = activities.map(&:id)
+		acts = user.interests.where('activity_id in (?)', act_ids).where('activity_id not in (?)', result_ids).map(&:activity)
+		(results.shuffle[0..5] + acts)[0..5]
+	end
+
 	def first_name 
 		name.split[0]
+	end
+
+	def prefers
+		if sexual_preference == "homo"
+			sex
+		else
+			if sex == "male"
+				"female"
+			else
+				"male"
+			end
+		end
 	end
 end

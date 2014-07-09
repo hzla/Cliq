@@ -49,7 +49,7 @@ class EventsController < ApplicationController
 			excursion.update_attributes created: true, accepted: true
 			broadcast user_path(invited_user)+ "/events", event.to_json
 			if event.image_url != nil
-				redirect_to events_path and return
+				redirect_to(:back) and return
 			else
 				render json: {ok: true} and return
 			end

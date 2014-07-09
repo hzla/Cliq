@@ -14,6 +14,7 @@ gem 'faye'
 gem 'timezone'
 gem 'wikipedia-client'
 gem 'fog'
+gem 'sidekiq'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem "pg"
@@ -22,7 +23,7 @@ gem 'sass-rails', '~> 4.0.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
-gem 'rmagick'
+gem 'mini_magick'
 gem 'carrierwave'
 gem 'rails4-autocomplete'
 gem 'jquery-rails'

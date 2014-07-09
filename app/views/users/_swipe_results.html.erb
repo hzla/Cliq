@@ -1,0 +1,116 @@
+<% if results != "invalid" && results != nil %>
+	<% if results.empty? %>
+		<div id='empty'/>
+	<% end %> 
+	<% results.shuffle.each do |entry| %>
+		<div class="swiped-result">
+			<div class="swiped-content">
+				<%= link_to other_user_path(entry[0]), :class => "other-user", remote: true do %>
+			
+					<% if current_user.conversated_with? entry[0] %>
+						<%= image_tag entry[0].profile_pic_url, :class => "swiped-profile-pic-card" %>
+					<% else %>
+						<%= image_tag 'cliq.png', :class => "swiped-profile-pic-card" %>
+					<% end %>
+				<% end %>
+				
+				<div class="card-header">
+					<div class="swiped-card-name head-2 dark-gray"><%= entry[0].first_name %></div>
+					<div class="swiped-card-school head-3 light-gray"><%= entry[0].school %></div>
+					<% if entry[0].active %>
+						<div class="card-active green">Active</div>
+					<% else %>
+						<div class="card-active gray">Offline</div>
+					<% end %>
+				</div>
+
+				<div class="swiped-similarities">
+					<div class="swiped-similar">
+						<%= image_tag "Similar.svg", :class => "sim-label svg swiped" %>
+						<div class="swiped-sim dark-gray head-2 heavy"><%= current_user.similarities_with entry[0] %></div>
+					</div>
+
+					<div class="swiped-mutual">
+						<%= image_tag "Mutual.svg", :class => "sim-label svg swiped" %>
+						<div class="swiped-sim dark-gray head-2 heavy"><%= entry[1].length %></div>
+					</div>
+
+					
+				</div>
+				<div class="suggestions-container">
+
+					<div class="swiped-suggestions">
+						<% current_user.similar_interests(entry[0], entry[1]).each do |suggestion| %>
+							<div class="swiped-suggestion dark-gray">
+								<div class="swiped-sug-name"><%= suggestion.name %></div>
+								<%= image_tag (suggestion.activity_pic.url || 'cliq.png'), :class => "swiped-sug-pic" %>
+							</div>
+						<% end %>
+					</div>
+
+					<div class="swiped-actions">
+						<div class="swipe-next">
+							<%= image_tag "Next.svg", :class => "swiped-action-icon svg" %>
+						</div>
+
+						<div class="swipe-info">
+							<%= link_to other_user_path(entry[0]), :class => "other-user", remote: true do %>
+								<%= image_tag "Info.svg", :class => "info-icon svg" %>
+							<% end %>
+						</div>
+
+						<div class="chat white inv-btn swiped">	
+							<%= link_to user_chat_path(entry[0]), :class => "white chat-user", remote: true do %>
+								<%= image_tag "Messages.svg", :class => "swiped-action-icon svg" %>
+							<% end %>
+						</div>	
+
+						<div class="swipe-sex">
+							<% if entry[0].sex == "male" %>
+								<%= image_tag "Dude.svg", :class => "sex-icon svg" %>
+							<% else %>
+								<%= image_tag "Female.svg", :class => "sex-icon svg" %>
+							<% end %>
+							<div class="sex-text">
+								likes
+							</div>
+							<% if entry[0].prefers == "male" %>
+								<%= image_tag "Dude.svg", :class => "sex-icon svg" %>
+							<% else %>
+								<%= image_tag "Female.svg", :class => "sex-icon svg" %>
+							<% end %>
+						</div>					
+					</div>
+				</div>
+			</div>
+		</div>
+	<% end %>
+	<script>
+  $('img.svg').each(function(){
+    var $img = $(this);
+    var imgID = $img.attr('id');
+    var imgClass = $img.attr('class');
+    var imgURL = $img.attr('src');
+
+    $.get(imgURL, function(data) {
+        // Get the SVG tag, ignore the rest
+        var $svg = $(data).find('svg');
+
+        // Add replaced image's ID to the new SVG
+        if(typeof imgID !== 'undefined') {
+            $svg = $svg.attr('id', imgID);
+        }
+        // Add replaced image's classes to the new SVG
+        if(typeof imgClass !== 'undefined') {
+            $svg = $svg.attr('class', imgClass+' replaced-svg');
+        }
+        // Remove any invalid XML tags as per http://validator.w3.org
+        $svg = $svg.removeAttr('xmlns:a');
+        // Replace image with new SVG
+        $img.replaceWith($svg);
+    }, 'xml');
+  });
+</script>
+<% else  %>
+<div class="hidden" id="invalid">invalid</div>
+<% end %>

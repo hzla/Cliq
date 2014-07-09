@@ -1,0 +1,75 @@
+<div class="content-container">
+    <%= render partial: "side_nav", locals: {active: :main} %>
+	<div id="search-container">
+		<div id="search-content">
+			<div id="query">
+				<%= form_tag search_path, id: "search-form", remote: true do %>
+					<div id="query-row-1">
+						<div id="query-1" class="head-2 white">I want to hang out in</div>
+						<%= text_field_tag :location, nil, :class => "head-2 dark-gray search-term", id: "query-location", placeholder: "City, State" %>
+						<%= hidden_field_tag "location_id" %>
+						<%= hidden_field_tag "type", "swipe" %>
+						<div id="query-2" class="head-2 white">with people interested in</div>
+					</div>
+					<div id="query-interests" class="head-2 dark-gray">
+						<%= text_field_tag :activity, nil, :class => "query-interest search-term", placeholder: 'Anything' %>
+					</div>
+					<%= submit_tag "Shuffle", :class => "red head-3", id:"search-query" %> 
+					<%= hidden_field_tag "ids" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+
+	<div id="results-container">
+		<div id="results-content">
+			<div id="results-header">
+			</div>
+			
+
+			<div id="results">
+				<%= render partial: 'swipe_results', locals: {results: @results} %>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="invite-modal-container" class="modal">
+
+</div>
+<div id="other-modal-container" class="modal">
+
+</div>
+
+<script>
+<%= render partial: 'subscribe.js.erb' %>
+</script>
+
+<% if current_user.activation != 'activated' %>
+	
+	<div id="activation-container">
+		<div id="activation-form" class="dark-gray">
+			<p id="top"><span class="heavy">Cliq is currently only available to students at UCF</span><br>
+			Please enter your UCF email address and click the<br>
+			activation link we send you to start using Cliq.</p>
+				<%= form_tag send_activation_path(current_user), remote: true, class: "send-activation" do %>
+					<%= text_field_tag :email, nil, placeholder: "Enter email address", class: 'email-activation'   %>
+					<%= submit_tag "Send", class: "submit-email" %>
+				<% end %>
+
+				<div class="send-activation hidden" id="thank-you">
+					<p>Thank You! Please check your email and refresh the page when you've been activated</p>
+				</div>
+
+
+			<p id="bottom"><span class="heavy">Not a UCF? Student?</span> You can still enter your email to receive<br>
+			updates when we start expanding to other to schools.</p>
+		</div>
+	</div>
+<% end %>
+
+
+
+
+
+

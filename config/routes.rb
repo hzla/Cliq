@@ -34,6 +34,7 @@ Cliq::Application.routes.draw do
   post '/users/:id/send_activation', to: 'users#send_activation', as: 'send_activation'
   get '/users/:id/activate/:code', to: 'users#activate', as: 'activate'
   get '/search', to: 'users#search', as: 'search'
+  get '/main', to: 'users#main', as: 'main'
   post '/search', to: 'users#search_results'
   resources :partners, only: [:show]
   resources :conversations, only: [:show] do 

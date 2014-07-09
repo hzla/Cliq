@@ -8,7 +8,7 @@ class Event < ActiveRecord::Base
 	validates :location, presence: true
 	validates :start_time, presence: true
 
-	attr_accessible :title, :description, :location, :start_time, :end_time, :image, :attended, :partner_id, :quantity
+	attr_accessible :title, :description, :location, :start_time, :end_time, :image, :attended, :partner_id, :quantity, :remote_image_url
 
 
 	def creator

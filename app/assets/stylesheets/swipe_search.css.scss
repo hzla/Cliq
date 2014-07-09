@@ -1,0 +1,160 @@
+@import 'variables';
+
+.swiped-result {
+	width: 805px;
+	height: 718px;
+	margin: 0 auto;
+	background-color: white;
+	margin-bottom: 80px;
+	position: relative;
+	-webkit-animation-duration: .5s;
+}
+
+.swiped-content {
+	width: 656px;
+	margin-left: 75px;
+	margin-top: 37px;
+	float: left;
+}
+
+.swiped-profile-pic-card {
+	width: 83px;
+	height: 83px;
+	border-radius: 100px;
+	float: left;
+}
+
+.swiped-card-name {
+	font-weight: 700;
+}
+
+.swiped-card-school {
+	font-weight: 700;
+}
+
+.swiped-similarities {
+	float: right;
+	width: 200px;
+}
+
+.swiped-similar {
+	float: right;
+}
+
+.swiped.sim-label {
+	height: 65px;
+	width: 65px;
+}
+
+.swiped-sim {
+	float: left;
+	margin-top: 11px;
+	margin-left: 12px;
+}
+
+.suggestions-container {
+	float: left;
+	clear: left;
+	margin-top: 37px;
+}
+
+.swiped-suggestion {
+	float: left;
+	width: 206px;
+	margin-bottom: 19px;
+	margin-right: 19px;
+}
+
+.swiped-suggestion:nth-child(3n) {
+	margin-right: 0px;
+}
+
+.swiped-sug-name {
+	height: 23px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	background-color: $orange;
+	padding-left: 14px;
+	padding-top: 5px;
+}
+
+.swiped-sug-pic {
+	width: 206px;
+	height: 155px;
+}
+
+
+
+
+
+
+
+.swiped-actions {
+	position: absolute;
+	bottom: 37px;
+	right: 75px;
+	width: 654px;
+}
+
+.swiped.chat {
+	background-color: $light-turq;
+	width: 167px;
+	height: 74px;
+	border-radius: 37px;
+	float: right;
+	position: relative;
+}
+
+.swipe-next {
+	position: relative;
+	background-color: $light-turq;
+	width: 167px;
+	height: 74px;
+	color: white;
+	float: right;
+	border-radius: 37px;
+	cursor: pointer;
+}
+
+.swiped-action-icon {
+	margin-left: 50px;
+	margin-top: 5px;
+	height: 65px;
+	width: 65px;
+}
+
+.swiped-action-icon path {
+	fill: white;
+}
+
+.swipe-info {
+	height: 37px;
+	width: 37px;
+	margin-right: 15px;
+	margin-left: 15px;
+	border-radius: 50px;
+	float: right;
+	margin-top: 17px;
+}
+
+.swipe-sex {
+	float: left;
+	background-color: $super-light-gray;
+	border-radius: 100px;
+	width: 167px;
+	height: 74px;
+}
+
+.sex-icon {
+	height: 60px;
+	width: 60px;
+	float: left;
+	margin-top: 7px;
+	margin-left: 4px;
+}
+
+.sex-text {
+	float: left;
+	margin-top: 28px;
+	margin-left: 4px;
+}

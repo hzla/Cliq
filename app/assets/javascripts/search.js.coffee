@@ -126,6 +126,8 @@ Search =
 
 	displayResults: (event, data, xhr, status) ->
 		$('#results').html data
+		$('.swiped-result').hide()
+		$('.swiped-result').first().show()
 		$('#found').text "Here's who we found:"
 		$('#found').text "Sorry, we couldn't find anyone." if $('#empty').length > 0
 		$('#found').text "Please enter a valid location." if $('#invalid').length > 0
