@@ -2,6 +2,7 @@ Swipe =
 	init: ->
 		$('.search-form').on 'submit', @hideResults
 		$('body').on 'click', '.swipe-next', @swipeNext
+		@hideResults()
 	
 	hideResults: ->
 		$('.swiped-result').hide()

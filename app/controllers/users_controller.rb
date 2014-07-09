@@ -41,7 +41,7 @@ class UsersController < ApplicationController
 	end
 
 	def main
-		@results = nil
+		@results = current_user.search_similar current_user.activities
 	end
 
 	def search_results #add support for searching location without ids
