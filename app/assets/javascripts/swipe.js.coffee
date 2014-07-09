@@ -14,8 +14,12 @@ Swipe =
 		current.addClass('animated slideOutRight')
 		current.bind 'oanimationend animationend webkitAnimationEnd', ->
 			current.hide()
-			next.show()
-			next.addClass ('animated slideInLeft')
+			if next.attr('class') == 'swiped-result'
+				console.log "this"
+				next.show()
+				next.addClass ('animated slideInLeft')
+			else
+				$('#no-one').show()
 
 
 
