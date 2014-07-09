@@ -1,17 +1,23 @@
 class EventsController < ApplicationController
 	include SessionsHelper
 	include ApplicationHelper
+	skip_before_filter  :verify_authenticity_token
 
 	def index
-		excursions = current_user.excursions.where(accepted: false).where(passed: false)
-		@invitations = excursions.where(created: false).map(&:event).compact.select { |event| event.start_time > Time.now }.sort_by(&:start_time)
-		@events = Event.where("start_time > ?", Time.now).order(:start_time)
+		excursions = current_user.excursions 
+		invite_excursions = excursions.where(accepted: false).where(passed: false)
+		@invitations = invite_excursions.where(created: false).map(&:event).compact.select { |event| event.start_time > Time.now }.sort_by(&:start_time)
+		
+		upcoming_excursions = excursions.where accepted: true
+		@events = upcoming_excursions.map(&:event).compact.select { |event| event.start_time > Time.now }.select {|event| event.accepted? }.sort_by(&:start_time)
+		
 		excursions.update_all seen: true
 		current_user.update_attributes event_count: 0
 	end
 
 	def upcoming
-		@events = Event.where("start_time > ?", Time.now).order(:start_time)
+		excursions = current_user.excursions.where(accepted: true)
+		@events = excursions.map(&:event).compact.select { |event| event.start_time > Time.now }.sort_by(&:start_time)
 		render partial: 'events', locals: {events: @events}
 	end
 
@@ -40,12 +46,16 @@ class EventsController < ApplicationController
 			invited_user.save
 			event.users << [invited_user, current_user]
 			excursion = Excursion.where(event_id: event.id, user_id: current_user.id)[0]
-			excursion.update_attributes created: true
+			excursion.update_attributes created: true, accepted: true
 			broadcast user_path(invited_user)+ "/events", event.to_json
-			render json: {ok: true}
-			return
+			if event.image_url != nil
+				redirect_to(:back) and return
+			else
+				render json: {ok: true} and return
+			end
+		else
+			render json: event.errors
 		end
-		render json: event.errors
 	end
 
 	def show
@@ -64,5 +74,4 @@ class EventsController < ApplicationController
 		excursion.update_attributes passed: true
 		render :nothing => true, :status => 200, :content_type => 'text/html'
 	end
-
 end

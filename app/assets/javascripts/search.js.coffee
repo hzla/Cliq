@@ -4,12 +4,19 @@ Search =
 		@autocompleteInterests()
 		$('body').on 'ajax:success', '.invite-user', @inviteUser
 		$('body').on 'ajax:success', '.chat-user', @chatUser
+		$('body').on 'ajax:beforeSend', '.chat-user', @checkTab
+		$('body').on 'click', '.chat-user', @switchChat
+		$('body').on 'ajax:success', '.other-user', @showUser
 		$('body').on 'click', '.chat-collapse', @collapseChat
 		$('body').on 'click', '.collapsed-chat', @addChat
 		$('body').on 'click', '.close', @closeChat
 		$('body').on 'ajax:success', '#search-form', @displayResults
 		$('.content-container').click @collapseAllChat
+		$('.results-container').click @collapseAllChat
 		$('.send-activation').on 'submit', @thankUser
+		$('body').on 'click', '.searched', @removeTerm
+		$('body').on 'keypress', '#activity', @selectInterestOnEnter
+
 		# @invertButtons()
 
 	inviteUser: (event, data, xhr, status) ->
@@ -19,9 +26,26 @@ Search =
 
 	chatUser: (event, data, xhr, status) ->
 		event.preventDefault()
+
 		if $('#' + $(@).attr('href').split('/')[2]).length < 1
 			$('body').append data
 			$('.chat-partial').last().addClass 'animated bounceInRight'
+
+	checkTab: () ->
+		console.log "checked"
+		return false if $('.messages.active').length > 0
+
+	switchChat: ->
+		if $('.messages.active').length > 0
+			console.log '#' + $(@).attr('href').split('/')[2]
+			$('.user-other-container').remove()
+			$('#' + $(@).attr('href').split('/')[2]).children('.convo-link').click()
+
+
+	showUser: (event, data, xhr, status) ->
+			$('.user-other-container').remove()
+			$('body').append data
+			$('.user-other-container').addClass 'animated bounceInRight'
 
 	collapseChat: ->
 		Search.collapse $(@).parents('.chat-partial')
@@ -42,8 +66,8 @@ Search =
 
 	collapseAllChat: ->
 		$('div.chat-partial').not('.bounceOutRight').each () ->
-			Search.collapse $(@)
-
+			Search.collapse $(@) if $('#chat-partial-content')
+		$('.user-other-container').hide()
 
 	addChat: ->
 		$(@).addClass 'animated bounceOutLeft'
@@ -64,23 +88,46 @@ Search =
 			focus: (event, ui) ->
 				event.preventDefault()
 				$(this).val ui.item.label
-
+	
 	autocompleteInterests: ->
 		$('#activity').autocomplete
 			source: '/activities'
 			select: (event, ui) ->
 				event.preventDefault()
-				$(this).val ui.item.label
+				$(@).val ui.item.label
 				$('#ids').val $('#ids').val() + ui.item.value + " "
-				$('#query-interests').prepend "<div class='query-interest search-term searched'>#{ui.item.label}</div>"
+				$('#query-interests').prepend "<div class='query-interest search-term searched' id='#{ui.item.value}'>#{ui.item.label}</div>"
 				$('#activity').val('')
+				$(@).css 'color', '#939393'
+				$('#search-form').submit()
 			focus: (event, ui) ->
 				event.preventDefault()
-				$(this).val ui.item.label
+				$(@).val ui.item.label
+				$(@).css 'color', '#414141'
 			delay: 0
+			# open: (event, ui) -> 
+			# 	firstElement = $(@).data("uiAutocomplete").menu.element[0].children[0]
+			# 	inpt = $('#activity')
+			# 	original = inpt.val()
+			# 	firstElementText = $(firstElement).text()
+			# 	if firstElementText.toLowerCase().indexOf(original.toLowerCase()) == 0
+			# 		inpt.val(firstElementText)
+			# 		inpt[0].selectionStart = original.length; 
+			# 		inpt[0].selectionEnd = firstElementText.length
+			minLength: 2
+        
+	removeTerm: ->
+		id= @.id
+		ids = $('#ids')[0].value
+		new_ids = ids.replace "#{id} ", ""
+		$('#ids').val new_ids
+		$(@).remove()
+
 
 	displayResults: (event, data, xhr, status) ->
 		$('#results').html data
+		$('.swiped-result').hide()
+		$('.swiped-result').first().show()
 		$('#found').text "Here's who we found:"
 		$('#found').text "Sorry, we couldn't find anyone." if $('#empty').length > 0
 		$('#found').text "Please enter a valid location." if $('#invalid').length > 0
@@ -110,8 +157,22 @@ Search =
 		$(@).remove()
 
 	thankUser: (event, data, xhr, status) ->
-		$(@).hide()
-		$('#thank-you').show().addClass 'animated fadeIn'
+		if $('#email').val().match(/.+@.+\..+/i) != null
+			$('#top').html ""
+			$('#top').html "<div id='ty'>Thank you for signing up. Please check your email and<br> refresh the page when you've been activated</div>" 
+			$('#top').css 'right', '60px'
+			$('#ty').addClass 'animated fadeIn'
+		else
+			$('#top').html ""
+			$('#top').html "<div id='ty'>Please enter a valid email to sign up</div>" 
+			$('#top').css 'right', '152px'
+			$('#ty').addClass 'animated fadeIn'
+
+	selectInterestOnEnter: (e) ->
+		if (e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)
+			$('.ui-menu-item:visible').first().click()
+
+
 
 
 

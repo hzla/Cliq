@@ -5,7 +5,13 @@ class Message < ActiveRecord::Base
 	attr_accessible :body, :user_id, :conversation_id, :seen
 
 
-	def date
-		(created_at - 7.hours).strftime("%m/%d %I:%M%p")
+	def date user
+		# if user.latitude
+		# 	# tzone = Timezone::Zone.new(:latlon => [user.latitude, user.longitude])
+		# 	# tzone.time(created_at).strftime("%m/%d %I:%M%p")
+		# else
+		# 	time(created_at).strftime("%m/%d %I:%M%p")
+		# end
+		(created_at).strftime("%m/%d %I:%M%p")
 	end
 end

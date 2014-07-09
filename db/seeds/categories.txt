@@ -1,8 +1,13 @@
 Category: Discuss
+q: What do you like to discuss?
 Category: Do
+q: What do you do for fun?
 	Category: Concerts, clubs, events
+	q: What kinds of events do you like to attend?
 	Category: Eating Out
+	q: What kinds of meals do you enjoy?
 	Category: Games
+	q: What kinds of games do you play?
 		Category: Shooter
 			Assassin’s Creed
 			Battlefield
@@ -21,7 +26,6 @@ Category: Do
 			Hitman
 		Category: Mobile
 		Category: RPG
-		Category: Racing
 		Category: Misc
 			Max Payne
 			Metal Gear Solid
@@ -62,7 +66,7 @@ Category: Do
 			Clue
 			Connect 4
 			Jenga
-		Category: Party Games
+		Category: Party
 		Category: Puzzle
 		Category: Strategy
 			Twister
@@ -76,6 +80,7 @@ Category: Do
 			Game of Thrones
 			Mancala			
 	Category: Sports
+	q: What sports do you play?
 		Archery
 		Badminton
 		Baseball
@@ -104,6 +109,7 @@ Category: Do
 		Squash
 		Swimming
 	Category: Going Out
+	q: What outdoorsy things do you like to do?
 		Travel & Adventuring
 		Martial Arts
 		Tennis
@@ -121,6 +127,7 @@ Category: Do
 		Hiking
 		Camping
 Category: Music 
+q: What kind of music do you listen to?
 	Category: Rock
 	Category: EDM
 	Category: Country
@@ -131,7 +138,9 @@ Category: Music
 	Category: Pop
 	Category: Classical
 Category: Watch
+q: What do you like to watch?
 	Category: TV Shows
+		q: What TV Shows do you watch?
 		Category: Cartoons
 			Adventure Time
 			American Dad
@@ -178,6 +187,7 @@ Category: Watch
 			Friends
 			The Office
 	Category: Movies
+	q: What movies do you watch?
 		Category: Action
 			Argo
 			Batman
@@ -278,8 +288,9 @@ Category: Watch
 			The Exorcist
 			The Omen
 			The Ring
+			The Conjuring
 			World War Z
-		Category: Musicals
+		Category: Musical
 			A Chorus Line
 			Annie
 			Avenue Q

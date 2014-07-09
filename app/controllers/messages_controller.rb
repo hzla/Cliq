@@ -24,6 +24,11 @@ class MessagesController < ApplicationController
 		@user.save
 		@message.save
 		broadcast user_path(@user)+ "/messages", @message.to_json
+		other_connection = Connection.where(conversation_id: params[:conversation_id], user_id: @user.id).first
+		if !@user.active && !other_connection.emailed
+			other_connection.update_attributes emailed: true
+			NotificationMailer.notification(@user, current_user).deliver
+		end
 	end
 
 	def show

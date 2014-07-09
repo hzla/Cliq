@@ -1,7 +1,7 @@
 <div id="categories-content-container">
 	<div id="cat-content">
 		<div id="cat-question" class="head-4 dark-gray">
-			<%=  category.question || "What #{category.name} do you play?" %>
+			<%=  category.ask %>
 		</div>
 		<%= link_to category_path(category.parent), remote: true, class: 'back-link' do  %>
 			<div id="cat-act-back" class="dark-gray head-4">
@@ -30,20 +30,5 @@
 				<%= render partial: 'interests/chosen_act', locals: {act: act, interest: Interest.where(activity_id: act.id, user_id: current_user.id).first} %>
 			<% end %>
 		</div>
-
-
-	
-
-
-
-
-
-
 	</div>
-
-
-
-
-
-
 </div>

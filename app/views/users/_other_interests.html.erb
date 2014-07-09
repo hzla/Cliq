@@ -1,0 +1,42 @@
+<div class="interests other">
+
+	<div id="other-interest-list">
+				
+			<div id="other-sim">
+				<div class="mutual">
+					<%= image_tag "Mutual.svg", :class => "sim-label svg" %>
+					<div class="sim dark-gray"><%= current_user.similarities_with @user %></div>
+				</div>
+
+				<div class="similar">
+					<%= image_tag "Similar.svg", :class => "sim-label svg" %>
+					<div class="sim dark-gray"><%= current_user.similarities_with @user %></div>
+				</div>
+			</div>
+
+
+			<% format.each do |cat_type| %>
+				<div class="cat-section other">
+					<div class="cat-header other">
+						<%= cat_type[0] %>
+					</div>
+					<% if formatted_interests[cat_type[1]][0] %>
+						<% formatted_interests[cat_type[1]].each do |cat| %>
+							<% cat.each do |cat_name, acts| %>
+								<div class="cat-group other">
+									<div class="category dark-gray"><div class="cat-name"><%= cat_name[0..13] + 
+									"#{('..' if cat_name.length > 14)}" %></div></div>
+									<div class="activities">
+										<% acts.each do |activity| %>
+											<div class="activity"><div class="act-name"><%= activity.name %></div></div>
+										<% end %> 
+									</div>
+								</div>
+							<% end %>
+						<% end %>
+					<% end %>
+				</div>
+			<% end %>
+
+	</div>
+</div>

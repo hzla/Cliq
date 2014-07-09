@@ -4,12 +4,8 @@ class CategoriesController < ApplicationController
 
 	def select
 		@category = Category.find params[:id]
-		if current_user.interests.empty?
-			@likes = 0
-		else
-			@likes = @category.user_likes current_user 
-		end
-		@categories = Category.where(ancestry: nil).order :name
+		@likes = current_user.interests.empty? ? 0 : @category.user_likes(current_user) 
+		@categories = Category.main
 	end
 
 	def show

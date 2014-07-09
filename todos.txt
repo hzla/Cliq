@@ -1,11 +1,5 @@
 TODOS
 
-reduce database size for heroku
-
-
-
-	profile other 30min
-
 
 	collapse-chat-notifications 1hr
 	Events Messaging 30min
@@ -17,6 +11,12 @@ DO LATERS
 	Responsiveness
 	message sort
 	add amazon cloud support
+
+TESTING HIT LIST	
+
+	search
+	messaging
+	event creation
 
 
 

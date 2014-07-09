@@ -10,10 +10,31 @@ class Category < ActiveRecord::Base
 		user.interests.map(&:activity).map(&:category).map(&:root).map(&:id).count id
 	end
 
-	def liked_activities user
+	def liked_not_liked_activities user
 		ids = user.interests.map(&:activity_id)
-		return [activities, []] if ids == []
-		[activities.where('id not in (?)', ids), activities.where('id in (?)', ids)]
+		return [[], activities] if ids == []
+		[activities.where('id in (?)', ids).order(:name), activities.where('id not in (?)', ids).order(:name)]
 	end
+
+	def ask
+	 	if depth < 2
+	 		question
+	 	else
+	 		inherited_question = parent.question.gsub parent.name.downcase, "#{name} #{parent.name.downcase}"
+	 	end
+	end
+
+	def self.main
+		where(ancestry: nil).order :name
+	end
+
+	def self.self_format
+		[["Stuff you do for fun:", "Do"],["Music:", "Music"],["What you watch:", "Watch"], ["What you talk about:", "Discuss"]] 
+	end
+
+	def self.other_format name
+		[["Stuff #{name} does for fun:", "Do"],["What he listens to:", "Music"],["What he watches:", "Watch"], ["What he likes to talk about:", "Discuss"]] 
+	end
+
 
 end

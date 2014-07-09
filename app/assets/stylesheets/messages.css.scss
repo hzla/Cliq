@@ -2,6 +2,16 @@
 
 #messages-container {
 	float: left;
+	width: 100%
+}
+
+.message-content-container {
+	width: 100%
+}
+
+.message-content {
+	margin: 0 auto;
+	width: 965px;
 }
 
 #messages-header {
@@ -15,9 +25,9 @@
 
 
 #messages-header-actions {
-	margin-top: 15px;
-	width: 100%;
-	margin-left: 145px;
+	width: 965px;
+	margin: 0 auto;
+	margin-top: 17px;
 }
 
 #new-message {
@@ -54,7 +64,7 @@
 
 #conversations {
 	float: left;
-	margin: 50px 0px 75px 145px;
+	margin: 50px 0px 75px 0px;
 	height: 450px;
 	width: 385px;
 	overflow-y: scroll; 
@@ -211,11 +221,15 @@
 	background-color: $red;
 }
 
-.result-action.reply {
+.result-action.hit-reply {
 	margin-right: 10px;
 	margin-left: 26px;
 	cursor: pointer; 
 	cursor: hand; 
+}
+
+.reply {
+	cursor: pointer;
 }
 
 .action-button.mes-action {
@@ -241,5 +255,11 @@
 
 .conversation:hover {
 	background-color: $light-gray;
+}
+
+.sending-progress {
+	float: left;
+	margin-top: 7px;
+	margin-left: 80px;
 }
 

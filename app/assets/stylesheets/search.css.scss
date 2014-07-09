@@ -21,6 +21,8 @@
 #activity {
 	width: 200px;
   background-size: cover;
+  color: $gray;
+  font-family: "proxima-nova",sans-serif;
 }
 
 #results-container {
@@ -40,6 +42,7 @@
 	margin: 0 auto;
 	width: 100%;
 	margin-top: 20px;
+    font-weight:700;
 }
 
 #query-1 {
@@ -56,8 +59,9 @@
 	font-size: 28px;
 	opacity: 1;
 	height: 34px;
-    width:250px;
-    font-family:proxima nova;
+  font-family: "proxima-nova",sans-serif;
+  width:250px;
+
 }
 
 #query-2 {
@@ -73,6 +77,12 @@
 
 .search-term.searched {
 	height: 38px;
+}
+
+.searched:hover {
+	border: 1px solid $red;
+	height: 36px;
+	cursor: pointer;
 }
 
 .query-interest {
@@ -117,8 +127,9 @@
 	border:	none;
 	cursor: pointer;
 	height: 34px;
-    font-family:proxima nova;
-    margin-top:5px;
+  margin-top: 5px;
+  font-family: "proxima-nova",sans-serif;
+
 }
 
 #query-row-1 {

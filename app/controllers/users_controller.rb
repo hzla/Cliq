@@ -3,6 +3,8 @@ class UsersController < ApplicationController
 
 	def show
 		@category = Category.where(name: "Do").first
+		@format = Category.self_format
+		@formatted_interests = @user.formatted_interests
 		respond_to do |format|
   		format.html 
   		format.json { render :json => @user }
@@ -10,11 +12,14 @@ class UsersController < ApplicationController
 	end
 
 	def other
-		user = User.find params[:id]
-		render partial: 'other', locals: {user: user}
+		@user = User.find params[:id]
+		@format = Category.other_format @user.first_name
+		@formatted_interests = @user.formatted_interests
+		render layout: false
 	end
 
 	def send_activation
+		current_user.update_attributes email: params[:email]
 		UserMailer.welcome_email(current_user, params[:email]).deliver
 		render nothing: true
 	end
@@ -25,8 +30,10 @@ class UsersController < ApplicationController
 			session[:user_id] = @user.id
 			@user.activate
 			@message = "You have been activated"
+			redirect_to search_path and return
 		else
 			@message = "Activation Failed"
+			redirect_to search_path
 		end
 	end
 
@@ -34,7 +41,20 @@ class UsersController < ApplicationController
 		@results = nil
 	end
 
-	def search_results
+	def main
+		@results = current_user.search_similar current_user.activities
+	end
+
+	def search_results #add support for searching location without ids
+		if params[:ids] == "" 
+			results = current_user.search_similar current_user.activities
+			if params[:type] == "swipe"
+				render partial: "swipe_results", locals: {results: results}
+				return
+			else
+				render partial: "search_results", locals: {results: results}
+			end
+		end
 		if params[:location_id] != "" && params[:location] != ""
 			location = Location.find params[:location_id]
 		elsif params[:location] != ""
@@ -47,7 +67,11 @@ class UsersController < ApplicationController
 		else
 			location = nil
 		end
-		results = current_user.search_similar(Activity.parse_interests(params[:ids]), location)[0..14]
+		results = current_user.search_similar(Activity.parse_interests(params[:ids]), location)
+		if params[:type] == "swipe"
+			render partial: "swipe_results", locals: {results: results}
+			return
+		end
 		render partial: "search_results", locals: {results: results}
 	end
 

@@ -1,7 +1,7 @@
 <div id="categories-content-container">
 	<div id="cat-content">
 		<div id="cat-question" class="head-2 dark-gray">
-			<%= category.question %>
+			<%= category.ask %>
 		</div>
 		<% if category.parent %>
 			<%= link_to category_path(category.parent), remote: true, class: 'back-link' do  %>

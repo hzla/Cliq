@@ -2,7 +2,9 @@ Cliq::Application.routes.draw do
   resources :location_suggestions
 
   root to: 'pages#home'
-  get '/faq', to: 'pages#faq', as: 'faq'
+  ['help', 'contact', 'faq', 'about', 'terms', 'privacy'].each do |page|
+    get "/#{page}", to: ("pages#" + "#{page}"), as: page 
+  end
 
   get '/categories/:id/select', to: 'categories#select', as: 'choose_cat'
 
@@ -34,6 +36,7 @@ Cliq::Application.routes.draw do
   post '/users/:id/send_activation', to: 'users#send_activation', as: 'send_activation'
   get '/users/:id/activate/:code', to: 'users#activate', as: 'activate'
   get '/search', to: 'users#search', as: 'search'
+  get '/main', to: 'users#main', as: 'main'
   post '/search', to: 'users#search_results'
   resources :partners, only: [:show]
   resources :conversations, only: [:show] do 

@@ -1,0 +1,7008 @@
+@charset "UTF-8";/*!
+ * jQuery UI CSS Framework 1.10.4
+ * http://jqueryui.com
+ *
+ * Copyright 2014 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/category/theming/
+ */
+
+/* Layout helpers
+----------------------------------*/
+
+.ui-helper-hidden {
+	display: none;
+}
+.ui-helper-hidden-accessible {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+.ui-helper-reset {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	line-height: 1.3;
+	text-decoration: none;
+	font-size: 100%;
+	list-style: none;
+}
+.ui-helper-clearfix:before,
+.ui-helper-clearfix:after {
+	content: "";
+	display: table;
+	border-collapse: collapse;
+}
+.ui-helper-clearfix:after {
+	clear: both;
+}
+.ui-helper-clearfix {
+	min-height: 0; /* support: IE7 */
+}
+.ui-helper-zfix {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	opacity: 0;
+	filter:Alpha(Opacity=0);
+}
+
+.ui-front {
+	z-index: 100;
+}
+
+
+/* Interaction Cues
+----------------------------------*/
+.ui-state-disabled {
+	cursor: default !important;
+}
+
+
+/* Icons
+----------------------------------*/
+
+/* states and images */
+.ui-icon {
+	display: block;
+	text-indent: -99999px;
+	overflow: hidden;
+	background-repeat: no-repeat;
+}
+
+
+/* Misc visuals
+----------------------------------*/
+
+/* Overlays */
+.ui-widget-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+/*!
+ * jQuery UI CSS Framework 1.10.4
+ * http://jqueryui.com
+ *
+ * Copyright 2014 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/category/theming/
+ *
+ * To view and modify this theme, visit http://jqueryui.com/themeroller/
+ */
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+ */
+
+/*
+
+ */
+
+
+/* Component containers
+----------------------------------*/
+
+.ui-widget {
+	font-family: Verdana,Arial,sans-serif/*{ffDefault}*/;
+	font-size: 1.1em/*{fsDefault}*/;
+}
+.ui-widget .ui-widget {
+	font-size: 1em;
+}
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button {
+	font-family: Verdana,Arial,sans-serif/*{ffDefault}*/;
+	font-size: 1em;
+}
+.ui-widget-content {
+	border: 1px solid #aaaaaa/*{borderColorContent}*/;
+	background: #ffffff/*{bgColorContent}*/ url(/assets/jquery-ui/ui-bg_flat_75_ffffff_40x100.png)/*{bgImgUrlContent}*/ 50%/*{bgContentXPos}*/ 50%/*{bgContentYPos}*/ repeat-x/*{bgContentRepeat}*/;
+	color: #222222/*{fcContent}*/;
+}
+.ui-widget-content a {
+	color: #222222/*{fcContent}*/;
+}
+.ui-widget-header {
+	border: 1px solid #aaaaaa/*{borderColorHeader}*/;
+	background: #cccccc/*{bgColorHeader}*/ url(/assets/jquery-ui/ui-bg_highlight-soft_75_cccccc_1x100.png)/*{bgImgUrlHeader}*/ 50%/*{bgHeaderXPos}*/ 50%/*{bgHeaderYPos}*/ repeat-x/*{bgHeaderRepeat}*/;
+	color: #222222/*{fcHeader}*/;
+	font-weight: bold;
+}
+.ui-widget-header a {
+	color: #222222/*{fcHeader}*/;
+}
+
+/* Interaction states
+----------------------------------*/
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+	border: 1px solid #d3d3d3/*{borderColorDefault}*/;
+	background: #e6e6e6/*{bgColorDefault}*/ url(/assets/jquery-ui/ui-bg_glass_75_e6e6e6_1x400.png)/*{bgImgUrlDefault}*/ 50%/*{bgDefaultXPos}*/ 50%/*{bgDefaultYPos}*/ repeat-x/*{bgDefaultRepeat}*/;
+	font-weight: normal/*{fwDefault}*/;
+	color: #555555/*{fcDefault}*/;
+}
+.ui-state-default a,
+.ui-state-default a:link,
+.ui-state-default a:visited {
+	color: #555555/*{fcDefault}*/;
+	text-decoration: none;
+}
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus {
+	border: 1px solid #999999/*{borderColorHover}*/;
+	background: #dadada/*{bgColorHover}*/ url(/assets/jquery-ui/ui-bg_glass_75_dadada_1x400.png)/*{bgImgUrlHover}*/ 50%/*{bgHoverXPos}*/ 50%/*{bgHoverYPos}*/ repeat-x/*{bgHoverRepeat}*/;
+	font-weight: normal/*{fwDefault}*/;
+	color: #212121/*{fcHover}*/;
+}
+.ui-state-hover a,
+.ui-state-hover a:hover,
+.ui-state-hover a:link,
+.ui-state-hover a:visited,
+.ui-state-focus a,
+.ui-state-focus a:hover,
+.ui-state-focus a:link,
+.ui-state-focus a:visited {
+	color: #212121/*{fcHover}*/;
+	text-decoration: none;
+}
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+	border: 1px solid #aaaaaa/*{borderColorActive}*/;
+	background: #ffffff/*{bgColorActive}*/ url(/assets/jquery-ui/ui-bg_glass_65_ffffff_1x400.png)/*{bgImgUrlActive}*/ 50%/*{bgActiveXPos}*/ 50%/*{bgActiveYPos}*/ repeat-x/*{bgActiveRepeat}*/;
+	font-weight: normal/*{fwDefault}*/;
+	color: #212121/*{fcActive}*/;
+}
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited {
+	color: #212121/*{fcActive}*/;
+	text-decoration: none;
+}
+
+/* Interaction Cues
+----------------------------------*/
+.ui-state-highlight,
+.ui-widget-content .ui-state-highlight,
+.ui-widget-header .ui-state-highlight {
+	border: 1px solid #fcefa1/*{borderColorHighlight}*/;
+	background: #fbf9ee/*{bgColorHighlight}*/ url(/assets/jquery-ui/ui-bg_glass_55_fbf9ee_1x400.png)/*{bgImgUrlHighlight}*/ 50%/*{bgHighlightXPos}*/ 50%/*{bgHighlightYPos}*/ repeat-x/*{bgHighlightRepeat}*/;
+	color: #363636/*{fcHighlight}*/;
+}
+.ui-state-highlight a,
+.ui-widget-content .ui-state-highlight a,
+.ui-widget-header .ui-state-highlight a {
+	color: #363636/*{fcHighlight}*/;
+}
+.ui-state-error,
+.ui-widget-content .ui-state-error,
+.ui-widget-header .ui-state-error {
+	border: 1px solid #cd0a0a/*{borderColorError}*/;
+	background: #fef1ec/*{bgColorError}*/ url(/assets/jquery-ui/ui-bg_glass_95_fef1ec_1x400.png)/*{bgImgUrlError}*/ 50%/*{bgErrorXPos}*/ 50%/*{bgErrorYPos}*/ repeat-x/*{bgErrorRepeat}*/;
+	color: #cd0a0a/*{fcError}*/;
+}
+.ui-state-error a,
+.ui-widget-content .ui-state-error a,
+.ui-widget-header .ui-state-error a {
+	color: #cd0a0a/*{fcError}*/;
+}
+.ui-state-error-text,
+.ui-widget-content .ui-state-error-text,
+.ui-widget-header .ui-state-error-text {
+	color: #cd0a0a/*{fcError}*/;
+}
+.ui-priority-primary,
+.ui-widget-content .ui-priority-primary,
+.ui-widget-header .ui-priority-primary {
+	font-weight: bold;
+}
+.ui-priority-secondary,
+.ui-widget-content .ui-priority-secondary,
+.ui-widget-header .ui-priority-secondary {
+	opacity: .7;
+	filter:Alpha(Opacity=70);
+	font-weight: normal;
+}
+.ui-state-disabled,
+.ui-widget-content .ui-state-disabled,
+.ui-widget-header .ui-state-disabled {
+	opacity: .35;
+	filter:Alpha(Opacity=35);
+	background-image: none;
+}
+.ui-state-disabled .ui-icon {
+	filter:Alpha(Opacity=35); /* For IE8 - See #6059 */
+}
+
+/* Icons
+----------------------------------*/
+
+/* states and images */
+.ui-icon {
+	width: 16px;
+	height: 16px;
+}
+.ui-icon,
+.ui-widget-content .ui-icon {
+	background-image: url(/assets/jquery-ui/ui-icons_222222_256x240.png)/*{iconsContent}*/;
+}
+.ui-widget-header .ui-icon {
+	background-image: url(/assets/jquery-ui/ui-icons_222222_256x240.png)/*{iconsHeader}*/;
+}
+.ui-state-default .ui-icon {
+	background-image: url(/assets/jquery-ui/ui-icons_888888_256x240.png)/*{iconsDefault}*/;
+}
+.ui-state-hover .ui-icon,
+.ui-state-focus .ui-icon {
+	background-image: url(/assets/jquery-ui/ui-icons_454545_256x240.png)/*{iconsHover}*/;
+}
+.ui-state-active .ui-icon {
+	background-image: url(/assets/jquery-ui/ui-icons_454545_256x240.png)/*{iconsActive}*/;
+}
+.ui-state-highlight .ui-icon {
+	background-image: url(/assets/jquery-ui/ui-icons_2e83ff_256x240.png)/*{iconsHighlight}*/;
+}
+.ui-state-error .ui-icon,
+.ui-state-error-text .ui-icon {
+	background-image: url(/assets/jquery-ui/ui-icons_cd0a0a_256x240.png)/*{iconsError}*/;
+}
+
+/* positioning */
+.ui-icon-blank { background-position: 16px 16px; }
+.ui-icon-carat-1-n { background-position: 0 0; }
+.ui-icon-carat-1-ne { background-position: -16px 0; }
+.ui-icon-carat-1-e { background-position: -32px 0; }
+.ui-icon-carat-1-se { background-position: -48px 0; }
+.ui-icon-carat-1-s { background-position: -64px 0; }
+.ui-icon-carat-1-sw { background-position: -80px 0; }
+.ui-icon-carat-1-w { background-position: -96px 0; }
+.ui-icon-carat-1-nw { background-position: -112px 0; }
+.ui-icon-carat-2-n-s { background-position: -128px 0; }
+.ui-icon-carat-2-e-w { background-position: -144px 0; }
+.ui-icon-triangle-1-n { background-position: 0 -16px; }
+.ui-icon-triangle-1-ne { background-position: -16px -16px; }
+.ui-icon-triangle-1-e { background-position: -32px -16px; }
+.ui-icon-triangle-1-se { background-position: -48px -16px; }
+.ui-icon-triangle-1-s { background-position: -64px -16px; }
+.ui-icon-triangle-1-sw { background-position: -80px -16px; }
+.ui-icon-triangle-1-w { background-position: -96px -16px; }
+.ui-icon-triangle-1-nw { background-position: -112px -16px; }
+.ui-icon-triangle-2-n-s { background-position: -128px -16px; }
+.ui-icon-triangle-2-e-w { background-position: -144px -16px; }
+.ui-icon-arrow-1-n { background-position: 0 -32px; }
+.ui-icon-arrow-1-ne { background-position: -16px -32px; }
+.ui-icon-arrow-1-e { background-position: -32px -32px; }
+.ui-icon-arrow-1-se { background-position: -48px -32px; }
+.ui-icon-arrow-1-s { background-position: -64px -32px; }
+.ui-icon-arrow-1-sw { background-position: -80px -32px; }
+.ui-icon-arrow-1-w { background-position: -96px -32px; }
+.ui-icon-arrow-1-nw { background-position: -112px -32px; }
+.ui-icon-arrow-2-n-s { background-position: -128px -32px; }
+.ui-icon-arrow-2-ne-sw { background-position: -144px -32px; }
+.ui-icon-arrow-2-e-w { background-position: -160px -32px; }
+.ui-icon-arrow-2-se-nw { background-position: -176px -32px; }
+.ui-icon-arrowstop-1-n { background-position: -192px -32px; }
+.ui-icon-arrowstop-1-e { background-position: -208px -32px; }
+.ui-icon-arrowstop-1-s { background-position: -224px -32px; }
+.ui-icon-arrowstop-1-w { background-position: -240px -32px; }
+.ui-icon-arrowthick-1-n { background-position: 0 -48px; }
+.ui-icon-arrowthick-1-ne { background-position: -16px -48px; }
+.ui-icon-arrowthick-1-e { background-position: -32px -48px; }
+.ui-icon-arrowthick-1-se { background-position: -48px -48px; }
+.ui-icon-arrowthick-1-s { background-position: -64px -48px; }
+.ui-icon-arrowthick-1-sw { background-position: -80px -48px; }
+.ui-icon-arrowthick-1-w { background-position: -96px -48px; }
+.ui-icon-arrowthick-1-nw { background-position: -112px -48px; }
+.ui-icon-arrowthick-2-n-s { background-position: -128px -48px; }
+.ui-icon-arrowthick-2-ne-sw { background-position: -144px -48px; }
+.ui-icon-arrowthick-2-e-w { background-position: -160px -48px; }
+.ui-icon-arrowthick-2-se-nw { background-position: -176px -48px; }
+.ui-icon-arrowthickstop-1-n { background-position: -192px -48px; }
+.ui-icon-arrowthickstop-1-e { background-position: -208px -48px; }
+.ui-icon-arrowthickstop-1-s { background-position: -224px -48px; }
+.ui-icon-arrowthickstop-1-w { background-position: -240px -48px; }
+.ui-icon-arrowreturnthick-1-w { background-position: 0 -64px; }
+.ui-icon-arrowreturnthick-1-n { background-position: -16px -64px; }
+.ui-icon-arrowreturnthick-1-e { background-position: -32px -64px; }
+.ui-icon-arrowreturnthick-1-s { background-position: -48px -64px; }
+.ui-icon-arrowreturn-1-w { background-position: -64px -64px; }
+.ui-icon-arrowreturn-1-n { background-position: -80px -64px; }
+.ui-icon-arrowreturn-1-e { background-position: -96px -64px; }
+.ui-icon-arrowreturn-1-s { background-position: -112px -64px; }
+.ui-icon-arrowrefresh-1-w { background-position: -128px -64px; }
+.ui-icon-arrowrefresh-1-n { background-position: -144px -64px; }
+.ui-icon-arrowrefresh-1-e { background-position: -160px -64px; }
+.ui-icon-arrowrefresh-1-s { background-position: -176px -64px; }
+.ui-icon-arrow-4 { background-position: 0 -80px; }
+.ui-icon-arrow-4-diag { background-position: -16px -80px; }
+.ui-icon-extlink { background-position: -32px -80px; }
+.ui-icon-newwin { background-position: -48px -80px; }
+.ui-icon-refresh { background-position: -64px -80px; }
+.ui-icon-shuffle { background-position: -80px -80px; }
+.ui-icon-transfer-e-w { background-position: -96px -80px; }
+.ui-icon-transferthick-e-w { background-position: -112px -80px; }
+.ui-icon-folder-collapsed { background-position: 0 -96px; }
+.ui-icon-folder-open { background-position: -16px -96px; }
+.ui-icon-document { background-position: -32px -96px; }
+.ui-icon-document-b { background-position: -48px -96px; }
+.ui-icon-note { background-position: -64px -96px; }
+.ui-icon-mail-closed { background-position: -80px -96px; }
+.ui-icon-mail-open { background-position: -96px -96px; }
+.ui-icon-suitcase { background-position: -112px -96px; }
+.ui-icon-comment { background-position: -128px -96px; }
+.ui-icon-person { background-position: -144px -96px; }
+.ui-icon-print { background-position: -160px -96px; }
+.ui-icon-trash { background-position: -176px -96px; }
+.ui-icon-locked { background-position: -192px -96px; }
+.ui-icon-unlocked { background-position: -208px -96px; }
+.ui-icon-bookmark { background-position: -224px -96px; }
+.ui-icon-tag { background-position: -240px -96px; }
+.ui-icon-home { background-position: 0 -112px; }
+.ui-icon-flag { background-position: -16px -112px; }
+.ui-icon-calendar { background-position: -32px -112px; }
+.ui-icon-cart { background-position: -48px -112px; }
+.ui-icon-pencil { background-position: -64px -112px; }
+.ui-icon-clock { background-position: -80px -112px; }
+.ui-icon-disk { background-position: -96px -112px; }
+.ui-icon-calculator { background-position: -112px -112px; }
+.ui-icon-zoomin { background-position: -128px -112px; }
+.ui-icon-zoomout { background-position: -144px -112px; }
+.ui-icon-search { background-position: -160px -112px; }
+.ui-icon-wrench { background-position: -176px -112px; }
+.ui-icon-gear { background-position: -192px -112px; }
+.ui-icon-heart { background-position: -208px -112px; }
+.ui-icon-star { background-position: -224px -112px; }
+.ui-icon-link { background-position: -240px -112px; }
+.ui-icon-cancel { background-position: 0 -128px; }
+.ui-icon-plus { background-position: -16px -128px; }
+.ui-icon-plusthick { background-position: -32px -128px; }
+.ui-icon-minus { background-position: -48px -128px; }
+.ui-icon-minusthick { background-position: -64px -128px; }
+.ui-icon-close { background-position: -80px -128px; }
+.ui-icon-closethick { background-position: -96px -128px; }
+.ui-icon-key { background-position: -112px -128px; }
+.ui-icon-lightbulb { background-position: -128px -128px; }
+.ui-icon-scissors { background-position: -144px -128px; }
+.ui-icon-clipboard { background-position: -160px -128px; }
+.ui-icon-copy { background-position: -176px -128px; }
+.ui-icon-contact { background-position: -192px -128px; }
+.ui-icon-image { background-position: -208px -128px; }
+.ui-icon-video { background-position: -224px -128px; }
+.ui-icon-script { background-position: -240px -128px; }
+.ui-icon-alert { background-position: 0 -144px; }
+.ui-icon-info { background-position: -16px -144px; }
+.ui-icon-notice { background-position: -32px -144px; }
+.ui-icon-help { background-position: -48px -144px; }
+.ui-icon-check { background-position: -64px -144px; }
+.ui-icon-bullet { background-position: -80px -144px; }
+.ui-icon-radio-on { background-position: -96px -144px; }
+.ui-icon-radio-off { background-position: -112px -144px; }
+.ui-icon-pin-w { background-position: -128px -144px; }
+.ui-icon-pin-s { background-position: -144px -144px; }
+.ui-icon-play { background-position: 0 -160px; }
+.ui-icon-pause { background-position: -16px -160px; }
+.ui-icon-seek-next { background-position: -32px -160px; }
+.ui-icon-seek-prev { background-position: -48px -160px; }
+.ui-icon-seek-end { background-position: -64px -160px; }
+.ui-icon-seek-start { background-position: -80px -160px; }
+/* ui-icon-seek-first is deprecated, use ui-icon-seek-start instead */
+.ui-icon-seek-first { background-position: -80px -160px; }
+.ui-icon-stop { background-position: -96px -160px; }
+.ui-icon-eject { background-position: -112px -160px; }
+.ui-icon-volume-off { background-position: -128px -160px; }
+.ui-icon-volume-on { background-position: -144px -160px; }
+.ui-icon-power { background-position: 0 -176px; }
+.ui-icon-signal-diag { background-position: -16px -176px; }
+.ui-icon-signal { background-position: -32px -176px; }
+.ui-icon-battery-0 { background-position: -48px -176px; }
+.ui-icon-battery-1 { background-position: -64px -176px; }
+.ui-icon-battery-2 { background-position: -80px -176px; }
+.ui-icon-battery-3 { background-position: -96px -176px; }
+.ui-icon-circle-plus { background-position: 0 -192px; }
+.ui-icon-circle-minus { background-position: -16px -192px; }
+.ui-icon-circle-close { background-position: -32px -192px; }
+.ui-icon-circle-triangle-e { background-position: -48px -192px; }
+.ui-icon-circle-triangle-s { background-position: -64px -192px; }
+.ui-icon-circle-triangle-w { background-position: -80px -192px; }
+.ui-icon-circle-triangle-n { background-position: -96px -192px; }
+.ui-icon-circle-arrow-e { background-position: -112px -192px; }
+.ui-icon-circle-arrow-s { background-position: -128px -192px; }
+.ui-icon-circle-arrow-w { background-position: -144px -192px; }
+.ui-icon-circle-arrow-n { background-position: -160px -192px; }
+.ui-icon-circle-zoomin { background-position: -176px -192px; }
+.ui-icon-circle-zoomout { background-position: -192px -192px; }
+.ui-icon-circle-check { background-position: -208px -192px; }
+.ui-icon-circlesmall-plus { background-position: 0 -208px; }
+.ui-icon-circlesmall-minus { background-position: -16px -208px; }
+.ui-icon-circlesmall-close { background-position: -32px -208px; }
+.ui-icon-squaresmall-plus { background-position: -48px -208px; }
+.ui-icon-squaresmall-minus { background-position: -64px -208px; }
+.ui-icon-squaresmall-close { background-position: -80px -208px; }
+.ui-icon-grip-dotted-vertical { background-position: 0 -224px; }
+.ui-icon-grip-dotted-horizontal { background-position: -16px -224px; }
+.ui-icon-grip-solid-vertical { background-position: -32px -224px; }
+.ui-icon-grip-solid-horizontal { background-position: -48px -224px; }
+.ui-icon-gripsmall-diagonal-se { background-position: -64px -224px; }
+.ui-icon-grip-diagonal-se { background-position: -80px -224px; }
+
+
+/* Misc visuals
+----------------------------------*/
+
+/* Corner radius */
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-left,
+.ui-corner-tl {
+	border-top-left-radius: 4px/*{cornerRadius}*/;
+}
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-right,
+.ui-corner-tr {
+	border-top-right-radius: 4px/*{cornerRadius}*/;
+}
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-left,
+.ui-corner-bl {
+	border-bottom-left-radius: 4px/*{cornerRadius}*/;
+}
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-right,
+.ui-corner-br {
+	border-bottom-right-radius: 4px/*{cornerRadius}*/;
+}
+
+/* Overlays */
+.ui-widget-overlay {
+	background: #aaaaaa/*{bgColorOverlay}*/ url(/assets/jquery-ui/ui-bg_flat_0_aaaaaa_40x100.png)/*{bgImgUrlOverlay}*/ 50%/*{bgOverlayXPos}*/ 50%/*{bgOverlayYPos}*/ repeat-x/*{bgOverlayRepeat}*/;
+	opacity: .3/*{opacityOverlay}*/;
+	filter: Alpha(Opacity=30)/*{opacityFilterOverlay}*/;
+}
+.ui-widget-shadow {
+	margin: -8px/*{offsetTopShadow}*/ 0 0 -8px/*{offsetLeftShadow}*/;
+	padding: 8px/*{thicknessShadow}*/;
+	background: #aaaaaa/*{bgColorShadow}*/ url(/assets/jquery-ui/ui-bg_flat_0_aaaaaa_40x100.png)/*{bgImgUrlShadow}*/ 50%/*{bgShadowXPos}*/ 50%/*{bgShadowYPos}*/ repeat-x/*{bgShadowRepeat}*/;
+	opacity: .3/*{opacityShadow}*/;
+	filter: Alpha(Opacity=30)/*{opacityFilterShadow}*/;
+	border-radius: 8px/*{cornerRadiusShadow}*/;
+}
+/*!
+ * jQuery UI Datepicker 1.10.4
+ * http://jqueryui.com
+ *
+ * Copyright 2014 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/datepicker/#theming
+ */
+/*
+
+
+ */
+
+.ui-datepicker {
+	width: 17em;
+	padding: .2em .2em 0;
+	display: none;
+}
+.ui-datepicker .ui-datepicker-header {
+	position: relative;
+	padding: .2em 0;
+}
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+	position: absolute;
+	top: 2px;
+	width: 1.8em;
+	height: 1.8em;
+}
+.ui-datepicker .ui-datepicker-prev-hover,
+.ui-datepicker .ui-datepicker-next-hover {
+	top: 1px;
+}
+.ui-datepicker .ui-datepicker-prev {
+	left: 2px;
+}
+.ui-datepicker .ui-datepicker-next {
+	right: 2px;
+}
+.ui-datepicker .ui-datepicker-prev-hover {
+	left: 1px;
+}
+.ui-datepicker .ui-datepicker-next-hover {
+	right: 1px;
+}
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+	display: block;
+	position: absolute;
+	left: 50%;
+	margin-left: -8px;
+	top: 50%;
+	margin-top: -8px;
+}
+.ui-datepicker .ui-datepicker-title {
+	margin: 0 2.3em;
+	line-height: 1.8em;
+	text-align: center;
+}
+.ui-datepicker .ui-datepicker-title select {
+	font-size: 1em;
+	margin: 1px 0;
+}
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+	width: 49%;
+}
+.ui-datepicker table {
+	width: 100%;
+	font-size: .9em;
+	border-collapse: collapse;
+	margin: 0 0 .4em;
+}
+.ui-datepicker th {
+	padding: .7em .3em;
+	text-align: center;
+	font-weight: bold;
+	border: 0;
+}
+.ui-datepicker td {
+	border: 0;
+	padding: 1px;
+}
+.ui-datepicker td span,
+.ui-datepicker td a {
+	display: block;
+	padding: .2em;
+	text-align: right;
+	text-decoration: none;
+}
+.ui-datepicker .ui-datepicker-buttonpane {
+	background-image: none;
+	margin: .7em 0 0 0;
+	padding: 0 .2em;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 0;
+}
+.ui-datepicker .ui-datepicker-buttonpane button {
+	float: right;
+	margin: .5em .2em .4em;
+	cursor: pointer;
+	padding: .2em .6em .3em .6em;
+	width: auto;
+	overflow: visible;
+}
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
+	float: left;
+}
+
+/* with multiple calendars */
+.ui-datepicker.ui-datepicker-multi {
+	width: auto;
+}
+.ui-datepicker-multi .ui-datepicker-group {
+	float: left;
+}
+.ui-datepicker-multi .ui-datepicker-group table {
+	width: 95%;
+	margin: 0 auto .4em;
+}
+.ui-datepicker-multi-2 .ui-datepicker-group {
+	width: 50%;
+}
+.ui-datepicker-multi-3 .ui-datepicker-group {
+	width: 33.3%;
+}
+.ui-datepicker-multi-4 .ui-datepicker-group {
+	width: 25%;
+}
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header {
+	border-left-width: 0;
+}
+.ui-datepicker-multi .ui-datepicker-buttonpane {
+	clear: left;
+}
+.ui-datepicker-row-break {
+	clear: both;
+	width: 100%;
+	font-size: 0;
+}
+
+/* RTL support */
+.ui-datepicker-rtl {
+	direction: rtl;
+}
+.ui-datepicker-rtl .ui-datepicker-prev {
+	right: 2px;
+	left: auto;
+}
+.ui-datepicker-rtl .ui-datepicker-next {
+	left: 2px;
+	right: auto;
+}
+.ui-datepicker-rtl .ui-datepicker-prev:hover {
+	right: 1px;
+	left: auto;
+}
+.ui-datepicker-rtl .ui-datepicker-next:hover {
+	left: 1px;
+	right: auto;
+}
+.ui-datepicker-rtl .ui-datepicker-buttonpane {
+	clear: right;
+}
+.ui-datepicker-rtl .ui-datepicker-buttonpane button {
+	float: left;
+}
+.ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current,
+.ui-datepicker-rtl .ui-datepicker-group {
+	float: right;
+}
+.ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header {
+	border-right-width: 0;
+	border-left-width: 1px;
+}
+/*!
+ * jQuery UI Slider 1.10.4
+ * http://jqueryui.com
+ *
+ * Copyright 2014 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/slider/#theming
+ */
+/*
+
+
+ */
+
+.ui-slider {
+	position: relative;
+	text-align: left;
+}
+.ui-slider .ui-slider-handle {
+	position: absolute;
+	z-index: 2;
+	width: 1.2em;
+	height: 1.2em;
+	cursor: default;
+}
+.ui-slider .ui-slider-range {
+	position: absolute;
+	z-index: 1;
+	font-size: .7em;
+	display: block;
+	border: 0;
+	background-position: 0 0;
+}
+
+/* For IE8 - See #6727 */
+.ui-slider.ui-state-disabled .ui-slider-handle,
+.ui-slider.ui-state-disabled .ui-slider-range {
+	filter: inherit;
+}
+
+.ui-slider-horizontal {
+	height: .8em;
+}
+.ui-slider-horizontal .ui-slider-handle {
+	top: -.3em;
+	margin-left: -.6em;
+}
+.ui-slider-horizontal .ui-slider-range {
+	top: 0;
+	height: 100%;
+}
+.ui-slider-horizontal .ui-slider-range-min {
+	left: 0;
+}
+.ui-slider-horizontal .ui-slider-range-max {
+	right: 0;
+}
+
+.ui-slider-vertical {
+	width: .8em;
+	height: 100px;
+}
+.ui-slider-vertical .ui-slider-handle {
+	left: -.3em;
+	margin-left: 0;
+	margin-bottom: -.6em;
+}
+.ui-slider-vertical .ui-slider-range {
+	left: 0;
+	width: 100%;
+}
+.ui-slider-vertical .ui-slider-range-min {
+	bottom: 0;
+}
+.ui-slider-vertical .ui-slider-range-max {
+	top: 0;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+
+
+ */
+
+/* line 3, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/activation.css.scss */
+#activation-container {
+  height: 800px;
+  background-color: black;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 4;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  font-family: "proxima-nova", sans-serif;
+}
+
+/* line 15, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/activation.css.scss */
+#activation-form {
+  margin: 0 auto;
+  width: 636px;
+  height: 330px;
+  background-color: white;
+  margin-top: 125px;
+  background: white;
+  z-index: 5;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 400;
+  position: relative;
+}
+
+/* line 30, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/activation.css.scss */
+.heavy {
+  font-weight: 700;
+}
+
+/* line 34, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/activation.css.scss */
+#thank-you {
+  right: 140px;
+}
+
+/* line 38, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/activation.css.scss */
+#top {
+  margin-top: 50px;
+  position: absolute;
+  top: 50px;
+  margin: 0 auto;
+  right: 72px;
+}
+
+/* line 46, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/activation.css.scss */
+#bottom {
+  margin-top: 0px;
+  position: absolute;
+  bottom: 50px;
+  margin: 0 auto;
+  right: 19px;
+}
+
+/* line 54, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/activation.css.scss */
+.send-activation {
+  position: absolute;
+  bottom: 130px;
+  right: 110px;
+}
+
+/* line 60, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/activation.css.scss */
+.email-activation {
+  background-color: #f1f1f1;
+  width: 300px;
+  border-radius: 50px;
+  height: 34px;
+  border: none;
+  font-weight: 700;
+  font-size: 22px;
+  padding-left: 20px;
+}
+
+/* line 71, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/activation.css.scss */
+.submit-email {
+  background-color: #f1f1f1;
+  width: 100px;
+  border-radius: 50px;
+  height: 34px;
+  border: none;
+  font-weight: 700;
+  font-size: 22px;
+  color: #414141;
+  cursor: pointer;
+}
+
+
+/*!
+Animate.css - http://daneden.me/animate
+Licensed under the MIT license - http://opensource.org/licenses/MIT
+
+Copyright (c) 2013 Daniel Eden
+*/
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+
+  60% {
+    -webkit-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+
+.bounce {
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+}
+
+@-webkit-keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+@keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+.flash {
+  -webkit-animation-name: flash;
+  animation-name: flash;
+}
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
+
+@-webkit-keyframes rubberBand {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  30% {
+    -webkit-transform: scaleX(1.25) scaleY(0.75);
+    transform: scaleX(1.25) scaleY(0.75);
+  }
+
+  40% {
+    -webkit-transform: scaleX(0.75) scaleY(1.25);
+    transform: scaleX(0.75) scaleY(1.25);
+  }
+
+  60% {
+    -webkit-transform: scaleX(1.15) scaleY(0.85);
+    transform: scaleX(1.15) scaleY(0.85);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes rubberBand {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  30% {
+    -webkit-transform: scaleX(1.25) scaleY(0.75);
+    -ms-transform: scaleX(1.25) scaleY(0.75);
+    transform: scaleX(1.25) scaleY(0.75);
+  }
+
+  40% {
+    -webkit-transform: scaleX(0.75) scaleY(1.25);
+    -ms-transform: scaleX(0.75) scaleY(1.25);
+    transform: scaleX(0.75) scaleY(1.25);
+  }
+
+  60% {
+    -webkit-transform: scaleX(1.15) scaleY(0.85);
+    -ms-transform: scaleX(1.15) scaleY(0.85);
+    transform: scaleX(1.15) scaleY(0.85);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.rubberBand {
+  -webkit-animation-name: rubberBand;
+  animation-name: rubberBand;
+}
+
+@-webkit-keyframes shake {
+  0%, 100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translateX(-10px);
+    -ms-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+}
+
+.shake {
+  -webkit-animation-name: shake;
+  animation-name: shake;
+}
+
+@-webkit-keyframes swing {
+  20% {
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+
+  40% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+
+  60% {
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+
+  80% {
+    -webkit-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes swing {
+  20% {
+    -webkit-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+
+  40% {
+    -webkit-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+
+  60% {
+    -webkit-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+
+  80% {
+    -webkit-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+.swing {
+  -webkit-transform-origin: top center;
+  -ms-transform-origin: top center;
+  transform-origin: top center;
+  -webkit-animation-name: swing;
+  animation-name: swing;
+}
+
+@-webkit-keyframes tada {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg);
+    transform: scale(0.9) rotate(-3deg);
+  }
+
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg);
+    transform: scale(1.1) rotate(3deg);
+  }
+
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg);
+    transform: scale(1.1) rotate(-3deg);
+  }
+
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes tada {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg);
+    -ms-transform: scale(0.9) rotate(-3deg);
+    transform: scale(0.9) rotate(-3deg);
+  }
+
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg);
+    -ms-transform: scale(1.1) rotate(3deg);
+    transform: scale(1.1) rotate(3deg);
+  }
+
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg);
+    -ms-transform: scale(1.1) rotate(-3deg);
+    transform: scale(1.1) rotate(-3deg);
+  }
+
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+    -ms-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+  }
+}
+
+.tada {
+  -webkit-animation-name: tada;
+  animation-name: tada;
+}
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+
+@-webkit-keyframes wobble {
+  0% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+
+  15% {
+    -webkit-transform: translateX(-25%) rotate(-5deg);
+    transform: translateX(-25%) rotate(-5deg);
+  }
+
+  30% {
+    -webkit-transform: translateX(20%) rotate(3deg);
+    transform: translateX(20%) rotate(3deg);
+  }
+
+  45% {
+    -webkit-transform: translateX(-15%) rotate(-3deg);
+    transform: translateX(-15%) rotate(-3deg);
+  }
+
+  60% {
+    -webkit-transform: translateX(10%) rotate(2deg);
+    transform: translateX(10%) rotate(2deg);
+  }
+
+  75% {
+    -webkit-transform: translateX(-5%) rotate(-1deg);
+    transform: translateX(-5%) rotate(-1deg);
+  }
+
+  100% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+
+@keyframes wobble {
+  0% {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+
+  15% {
+    -webkit-transform: translateX(-25%) rotate(-5deg);
+    -ms-transform: translateX(-25%) rotate(-5deg);
+    transform: translateX(-25%) rotate(-5deg);
+  }
+
+  30% {
+    -webkit-transform: translateX(20%) rotate(3deg);
+    -ms-transform: translateX(20%) rotate(3deg);
+    transform: translateX(20%) rotate(3deg);
+  }
+
+  45% {
+    -webkit-transform: translateX(-15%) rotate(-3deg);
+    -ms-transform: translateX(-15%) rotate(-3deg);
+    transform: translateX(-15%) rotate(-3deg);
+  }
+
+  60% {
+    -webkit-transform: translateX(10%) rotate(2deg);
+    -ms-transform: translateX(10%) rotate(2deg);
+    transform: translateX(10%) rotate(2deg);
+  }
+
+  75% {
+    -webkit-transform: translateX(-5%) rotate(-1deg);
+    -ms-transform: translateX(-5%) rotate(-1deg);
+    transform: translateX(-5%) rotate(-1deg);
+  }
+
+  100% {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+
+.wobble {
+  -webkit-animation-name: wobble;
+  animation-name: wobble;
+}
+
+@-webkit-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.3);
+    transform: scale(.3);
+  }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+
+  70% {
+    -webkit-transform: scale(.9);
+    transform: scale(.9);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.3);
+    -ms-transform: scale(.3);
+    transform: scale(.3);
+  }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+
+  70% {
+    -webkit-transform: scale(.9);
+    -ms-transform: scale(.9);
+    transform: scale(.9);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.bounceIn {
+  -webkit-animation-name: bounceIn;
+  animation-name: bounceIn;
+}
+
+@-webkit-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(30px);
+    transform: translateY(30px);
+  }
+
+  80% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    transform: translateY(30px);
+  }
+
+  80% {
+    -webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.bounceInDown {
+  -webkit-animation-name: bounceInDown;
+  animation-name: bounceInDown;
+}
+
+@-webkit-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(30px);
+    transform: translateX(30px);
+  }
+
+  80% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(30px);
+    -ms-transform: translateX(30px);
+    transform: translateX(30px);
+  }
+
+  80% {
+    -webkit-transform: translateX(-10px);
+    -ms-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.bounceInLeft {
+  -webkit-animation-name: bounceInLeft;
+  animation-name: bounceInLeft;
+}
+
+@-webkit-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-30px);
+    transform: translateX(-30px);
+  }
+
+  80% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-30px);
+    -ms-transform: translateX(-30px);
+    transform: translateX(-30px);
+  }
+
+  80% {
+    -webkit-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.bounceInRight {
+  -webkit-animation-name: bounceInRight;
+  animation-name: bounceInRight;
+}
+
+@-webkit-keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+
+  80% {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+
+  80% {
+    -webkit-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.bounceInUp {
+  -webkit-animation-name: bounceInUp;
+  animation-name: bounceInUp;
+}
+
+@-webkit-keyframes bounceOut {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  25% {
+    -webkit-transform: scale(.95);
+    transform: scale(.95);
+  }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.3);
+    transform: scale(.3);
+  }
+}
+
+@keyframes bounceOut {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  25% {
+    -webkit-transform: scale(.95);
+    -ms-transform: scale(.95);
+    transform: scale(.95);
+  }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.3);
+    -ms-transform: scale(.3);
+    transform: scale(.3);
+  }
+}
+
+.bounceOut {
+  -webkit-animation-name: bounceOut;
+  animation-name: bounceOut;
+}
+
+@-webkit-keyframes bounceOutDown {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+}
+
+@keyframes bounceOutDown {
+  0% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+}
+
+.bounceOutDown {
+  -webkit-animation-name: bounceOutDown;
+  animation-name: bounceOutDown;
+}
+
+@-webkit-keyframes bounceOutLeft {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+
+@keyframes bounceOutLeft {
+  0% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+
+.bounceOutLeft {
+  -webkit-animation-name: bounceOutLeft;
+  animation-name: bounceOutLeft;
+}
+
+@-webkit-keyframes bounceOutRight {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+
+@keyframes bounceOutRight {
+  0% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+
+.bounceOutRight {
+  -webkit-animation-name: bounceOutRight;
+  animation-name: bounceOutRight;
+}
+
+@-webkit-keyframes bounceOutUp {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+
+@keyframes bounceOutUp {
+  0% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+
+.bounceOutUp {
+  -webkit-animation-name: bounceOutUp;
+  animation-name: bounceOutUp;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
+@-webkit-keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.fadeInDownBig {
+  -webkit-animation-name: fadeInDownBig;
+  animation-name: fadeInDownBig;
+}
+
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+}
+
+@-webkit-keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.fadeInLeftBig {
+  -webkit-animation-name: fadeInLeftBig;
+  animation-name: fadeInLeftBig;
+}
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+
+@-webkit-keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.fadeInRightBig {
+  -webkit-animation-name: fadeInRightBig;
+  animation-name: fadeInRightBig;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+@-webkit-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.fadeInUpBig {
+  -webkit-animation-name: fadeInUpBig;
+  animation-name: fadeInUpBig;
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
+
+@-webkit-keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+
+.fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+}
+
+@-webkit-keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+}
+
+@keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+}
+
+.fadeOutDownBig {
+  -webkit-animation-name: fadeOutDownBig;
+  animation-name: fadeOutDownBig;
+}
+
+@-webkit-keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+}
+
+@keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+}
+
+.fadeOutLeft {
+  -webkit-animation-name: fadeOutLeft;
+  animation-name: fadeOutLeft;
+}
+
+@-webkit-keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+
+@keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+
+.fadeOutLeftBig {
+  -webkit-animation-name: fadeOutLeftBig;
+  animation-name: fadeOutLeftBig;
+}
+
+@-webkit-keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+}
+
+@keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+}
+
+.fadeOutRight {
+  -webkit-animation-name: fadeOutRight;
+  animation-name: fadeOutRight;
+}
+
+@-webkit-keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+
+@keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+
+.fadeOutRightBig {
+  -webkit-animation-name: fadeOutRightBig;
+  animation-name: fadeOutRightBig;
+}
+
+@-webkit-keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+}
+
+.fadeOutUp {
+  -webkit-animation-name: fadeOutUp;
+  animation-name: fadeOutUp;
+}
+
+@-webkit-keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+
+@keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+
+.fadeOutUpBig {
+  -webkit-animation-name: fadeOutUpBig;
+  animation-name: fadeOutUpBig;
+}
+
+@-webkit-keyframes flip {
+  0% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(-360deg) scale(1);
+    transform: perspective(400px) translateZ(0) rotateY(-360deg) scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(-190deg) scale(1);
+    transform: perspective(400px) translateZ(150px) rotateY(-190deg) scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  50% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(-170deg) scale(1);
+    transform: perspective(400px) translateZ(150px) rotateY(-170deg) scale(1);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(0deg) scale(.95);
+    transform: perspective(400px) translateZ(0) rotateY(0deg) scale(.95);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  100% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(0deg) scale(1);
+    transform: perspective(400px) translateZ(0) rotateY(0deg) scale(1);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+}
+
+@keyframes flip {
+  0% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(-360deg) scale(1);
+    -ms-transform: perspective(400px) translateZ(0) rotateY(-360deg) scale(1);
+    transform: perspective(400px) translateZ(0) rotateY(-360deg) scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(-190deg) scale(1);
+    -ms-transform: perspective(400px) translateZ(150px) rotateY(-190deg) scale(1);
+    transform: perspective(400px) translateZ(150px) rotateY(-190deg) scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  50% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(-170deg) scale(1);
+    -ms-transform: perspective(400px) translateZ(150px) rotateY(-170deg) scale(1);
+    transform: perspective(400px) translateZ(150px) rotateY(-170deg) scale(1);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(0deg) scale(.95);
+    -ms-transform: perspective(400px) translateZ(0) rotateY(0deg) scale(.95);
+    transform: perspective(400px) translateZ(0) rotateY(0deg) scale(.95);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  100% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(0deg) scale(1);
+    -ms-transform: perspective(400px) translateZ(0) rotateY(0deg) scale(1);
+    transform: perspective(400px) translateZ(0) rotateY(0deg) scale(1);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+}
+
+.animated.flip {
+  -webkit-backface-visibility: visible;
+  -ms-backface-visibility: visible;
+  backface-visibility: visible;
+  -webkit-animation-name: flip;
+  animation-name: flip;
+}
+
+@-webkit-keyframes flipInX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotateX(-10deg);
+    transform: perspective(400px) rotateX(-10deg);
+  }
+
+  70% {
+    -webkit-transform: perspective(400px) rotateX(10deg);
+    transform: perspective(400px) rotateX(10deg);
+  }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes flipInX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    -ms-transform: perspective(400px) rotateX(90deg);
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotateX(-10deg);
+    -ms-transform: perspective(400px) rotateX(-10deg);
+    transform: perspective(400px) rotateX(-10deg);
+  }
+
+  70% {
+    -webkit-transform: perspective(400px) rotateX(10deg);
+    -ms-transform: perspective(400px) rotateX(10deg);
+    transform: perspective(400px) rotateX(10deg);
+  }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    -ms-transform: perspective(400px) rotateX(0deg);
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+.flipInX {
+  -webkit-backface-visibility: visible !important;
+  -ms-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipInX;
+  animation-name: flipInX;
+}
+
+@-webkit-keyframes flipInY {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotateY(-10deg);
+    transform: perspective(400px) rotateY(-10deg);
+  }
+
+  70% {
+    -webkit-transform: perspective(400px) rotateY(10deg);
+    transform: perspective(400px) rotateY(10deg);
+  }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes flipInY {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    -ms-transform: perspective(400px) rotateY(90deg);
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotateY(-10deg);
+    -ms-transform: perspective(400px) rotateY(-10deg);
+    transform: perspective(400px) rotateY(-10deg);
+  }
+
+  70% {
+    -webkit-transform: perspective(400px) rotateY(10deg);
+    -ms-transform: perspective(400px) rotateY(10deg);
+    transform: perspective(400px) rotateY(10deg);
+  }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    -ms-transform: perspective(400px) rotateY(0deg);
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+.flipInY {
+  -webkit-backface-visibility: visible !important;
+  -ms-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipInY;
+  animation-name: flipInY;
+}
+
+@-webkit-keyframes flipOutX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes flipOutX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    -ms-transform: perspective(400px) rotateX(0deg);
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    -ms-transform: perspective(400px) rotateX(90deg);
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+}
+
+.flipOutX {
+  -webkit-animation-name: flipOutX;
+  animation-name: flipOutX;
+  -webkit-backface-visibility: visible !important;
+  -ms-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+}
+
+@-webkit-keyframes flipOutY {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes flipOutY {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    -ms-transform: perspective(400px) rotateY(0deg);
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    -ms-transform: perspective(400px) rotateY(90deg);
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+}
+
+.flipOutY {
+  -webkit-backface-visibility: visible !important;
+  -ms-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipOutY;
+  animation-name: flipOutY;
+}
+
+@-webkit-keyframes lightSpeedIn {
+  0% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0;
+  }
+
+  60% {
+    -webkit-transform: translateX(-20%) skewX(30deg);
+    transform: translateX(-20%) skewX(30deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: translateX(0%) skewX(-15deg);
+    transform: translateX(0%) skewX(-15deg);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes lightSpeedIn {
+  0% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    -ms-transform: translateX(100%) skewX(-30deg);
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0;
+  }
+
+  60% {
+    -webkit-transform: translateX(-20%) skewX(30deg);
+    -ms-transform: translateX(-20%) skewX(30deg);
+    transform: translateX(-20%) skewX(30deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: translateX(0%) skewX(-15deg);
+    -ms-transform: translateX(0%) skewX(-15deg);
+    transform: translateX(0%) skewX(-15deg);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    -ms-transform: translateX(0%) skewX(0deg);
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1;
+  }
+}
+
+.lightSpeedIn {
+  -webkit-animation-name: lightSpeedIn;
+  animation-name: lightSpeedIn;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+}
+
+@-webkit-keyframes lightSpeedOut {
+  0% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0;
+  }
+}
+
+@keyframes lightSpeedOut {
+  0% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    -ms-transform: translateX(0%) skewX(0deg);
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    -ms-transform: translateX(100%) skewX(-30deg);
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0;
+  }
+}
+
+.lightSpeedOut {
+  -webkit-animation-name: lightSpeedOut;
+  animation-name: lightSpeedOut;
+  -webkit-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+}
+
+@-webkit-keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(-200deg);
+    transform: rotate(-200deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(-200deg);
+    -ms-transform: rotate(-200deg);
+    transform: rotate(-200deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+.rotateIn {
+  -webkit-animation-name: rotateIn;
+  animation-name: rotateIn;
+}
+
+@-webkit-keyframes rotateInDownLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateInDownLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+.rotateInDownLeft {
+  -webkit-animation-name: rotateInDownLeft;
+  animation-name: rotateInDownLeft;
+}
+
+@-webkit-keyframes rotateInDownRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateInDownRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+.rotateInDownRight {
+  -webkit-animation-name: rotateInDownRight;
+  animation-name: rotateInDownRight;
+}
+
+@-webkit-keyframes rotateInUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateInUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+.rotateInUpLeft {
+  -webkit-animation-name: rotateInUpLeft;
+  animation-name: rotateInUpLeft;
+}
+
+@-webkit-keyframes rotateInUpRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateInUpRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+.rotateInUpRight {
+  -webkit-animation-name: rotateInUpRight;
+  animation-name: rotateInUpRight;
+}
+
+@-webkit-keyframes rotateOut {
+  0% {
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(200deg);
+    transform: rotate(200deg);
+    opacity: 0;
+  }
+}
+
+@keyframes rotateOut {
+  0% {
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(200deg);
+    -ms-transform: rotate(200deg);
+    transform: rotate(200deg);
+    opacity: 0;
+  }
+}
+
+.rotateOut {
+  -webkit-animation-name: rotateOut;
+  animation-name: rotateOut;
+}
+
+@-webkit-keyframes rotateOutDownLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes rotateOutDownLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+}
+
+.rotateOutDownLeft {
+  -webkit-animation-name: rotateOutDownLeft;
+  animation-name: rotateOutDownLeft;
+}
+
+@-webkit-keyframes rotateOutDownRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes rotateOutDownRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+}
+
+.rotateOutDownRight {
+  -webkit-animation-name: rotateOutDownRight;
+  animation-name: rotateOutDownRight;
+}
+
+@-webkit-keyframes rotateOutUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes rotateOutUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+}
+
+.rotateOutUpLeft {
+  -webkit-animation-name: rotateOutUpLeft;
+  animation-name: rotateOutUpLeft;
+}
+
+@-webkit-keyframes rotateOutUpRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes rotateOutUpRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+}
+
+.rotateOutUpRight {
+  -webkit-animation-name: rotateOutUpRight;
+  animation-name: rotateOutUpRight;
+}
+
+@-webkit-keyframes slideInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.slideInDown {
+  -webkit-animation-name: slideInDown;
+  animation-name: slideInDown;
+}
+
+@-webkit-keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft;
+}
+
+@-webkit-keyframes slideInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.slideInRight {
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight;
+}
+
+@-webkit-keyframes slideOutLeft {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+
+@keyframes slideOutLeft {
+  0% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+
+.slideOutLeft {
+  -webkit-animation-name: slideOutLeft;
+  animation-name: slideOutLeft;
+}
+
+@-webkit-keyframes slideOutRight {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+
+@keyframes slideOutRight {
+  0% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+
+.slideOutRight {
+  -webkit-animation-name: slideOutRight;
+  animation-name: slideOutRight;
+}
+
+@-webkit-keyframes slideOutUp {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+
+@keyframes slideOutUp {
+  0% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+
+.slideOutUp {
+  -webkit-animation-name: slideOutUp;
+  animation-name: slideOutUp;
+}
+
+@-webkit-keyframes slideInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.slideInUp {
+  -webkit-animation-name: slideInUp;
+  animation-name: slideInUp;
+}
+
+@-webkit-keyframes slideOutDown {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+}
+
+@keyframes slideOutDown {
+  0% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+}
+
+.slideOutDown {
+  -webkit-animation-name: slideOutDown;
+  animation-name: slideOutDown;
+}
+
+@-webkit-keyframes hinge {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  20%, 60% {
+    -webkit-transform: rotate(80deg);
+    transform: rotate(80deg);
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  40% {
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg);
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  80% {
+    -webkit-transform: rotate(60deg) translateY(0);
+    transform: rotate(60deg) translateY(0);
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateY(700px);
+    transform: translateY(700px);
+    opacity: 0;
+  }
+}
+
+@keyframes hinge {
+  0% {
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  20%, 60% {
+    -webkit-transform: rotate(80deg);
+    -ms-transform: rotate(80deg);
+    transform: rotate(80deg);
+    -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  40% {
+    -webkit-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    transform: rotate(60deg);
+    -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  80% {
+    -webkit-transform: rotate(60deg) translateY(0);
+    -ms-transform: rotate(60deg) translateY(0);
+    transform: rotate(60deg) translateY(0);
+    -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateY(700px);
+    -ms-transform: translateY(700px);
+    transform: translateY(700px);
+    opacity: 0;
+  }
+}
+
+.hinge {
+  -webkit-animation-name: hinge;
+  animation-name: hinge;
+}
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+
+@-webkit-keyframes rollIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%) rotate(-120deg);
+    transform: translateX(-100%) rotate(-120deg);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg);
+    transform: translateX(0px) rotate(0deg);
+  }
+}
+
+@keyframes rollIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%) rotate(-120deg);
+    -ms-transform: translateX(-100%) rotate(-120deg);
+    transform: translateX(-100%) rotate(-120deg);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg);
+    -ms-transform: translateX(0px) rotate(0deg);
+    transform: translateX(0px) rotate(0deg);
+  }
+}
+
+.rollIn {
+  -webkit-animation-name: rollIn;
+  animation-name: rollIn;
+}
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+
+@-webkit-keyframes rollOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg);
+    transform: translateX(0px) rotate(0deg);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(100%) rotate(120deg);
+    transform: translateX(100%) rotate(120deg);
+  }
+}
+
+@keyframes rollOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg);
+    -ms-transform: translateX(0px) rotate(0deg);
+    transform: translateX(0px) rotate(0deg);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(100%) rotate(120deg);
+    -ms-transform: translateX(100%) rotate(120deg);
+    transform: translateX(100%) rotate(120deg);
+  }
+}
+
+.rollOut {
+  -webkit-animation-name: rollOut;
+  animation-name: rollOut;
+}
+
+@-webkit-keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.3);
+    transform: scale(.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.3);
+    -ms-transform: scale(.3);
+    transform: scale(.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
+
+@-webkit-keyframes zoomInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateY(-2000px);
+    transform: scale(.1) translateY(-2000px);
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateY(60px);
+    transform: scale(.475) translateY(60px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes zoomInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateY(-2000px);
+    -ms-transform: scale(.1) translateY(-2000px);
+    transform: scale(.1) translateY(-2000px);
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateY(60px);
+    -ms-transform: scale(.475) translateY(60px);
+    transform: scale(.475) translateY(60px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+.zoomInDown {
+  -webkit-animation-name: zoomInDown;
+  animation-name: zoomInDown;
+}
+
+@-webkit-keyframes zoomInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateX(-2000px);
+    transform: scale(.1) translateX(-2000px);
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateX(48px);
+    transform: scale(.475) translateX(48px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes zoomInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateX(-2000px);
+    -ms-transform: scale(.1) translateX(-2000px);
+    transform: scale(.1) translateX(-2000px);
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateX(48px);
+    -ms-transform: scale(.475) translateX(48px);
+    transform: scale(.475) translateX(48px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+.zoomInLeft {
+  -webkit-animation-name: zoomInLeft;
+  animation-name: zoomInLeft;
+}
+
+@-webkit-keyframes zoomInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateX(2000px);
+    transform: scale(.1) translateX(2000px);
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateX(-48px);
+    transform: scale(.475) translateX(-48px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes zoomInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateX(2000px);
+    -ms-transform: scale(.1) translateX(2000px);
+    transform: scale(.1) translateX(2000px);
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateX(-48px);
+    -ms-transform: scale(.475) translateX(-48px);
+    transform: scale(.475) translateX(-48px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+.zoomInRight {
+  -webkit-animation-name: zoomInRight;
+  animation-name: zoomInRight;
+}
+
+@-webkit-keyframes zoomInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateY(2000px);
+    transform: scale(.1) translateY(2000px);
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateY(-60px);
+    transform: scale(.475) translateY(-60px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes zoomInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateY(2000px);
+    -ms-transform: scale(.1) translateY(2000px);
+    transform: scale(.1) translateY(2000px);
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateY(-60px);
+    -ms-transform: scale(.475) translateY(-60px);
+    transform: scale(.475) translateY(-60px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+.zoomInUp {
+  -webkit-animation-name: zoomInUp;
+  animation-name: zoomInUp;
+}
+
+@-webkit-keyframes zoomOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale(.3);
+    transform: scale(.3);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale(.3);
+    -ms-transform: scale(.3);
+    transform: scale(.3);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.zoomOut {
+  -webkit-animation-name: zoomOut;
+  animation-name: zoomOut;
+}
+
+@-webkit-keyframes zoomOutDown {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateY(-60px);
+    transform: scale(.475) translateY(-60px);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateY(2000px);
+    transform: scale(.1) translateY(2000px);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+  }
+}
+
+@keyframes zoomOutDown {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateY(-60px);
+    -ms-transform: scale(.475) translateY(-60px);
+    transform: scale(.475) translateY(-60px);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateY(2000px);
+    -ms-transform: scale(.1) translateY(2000px);
+    transform: scale(.1) translateY(2000px);
+    -webkit-transform-origin: center bottom;
+    -ms-transform-origin: center bottom;
+    transform-origin: center bottom;
+  }
+}
+
+.zoomOutDown {
+  -webkit-animation-name: zoomOutDown;
+  animation-name: zoomOutDown;
+}
+
+@-webkit-keyframes zoomOutLeft {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateX(42px);
+    transform: scale(.475) translateX(42px);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateX(-2000px);
+    transform: scale(.1) translateX(-2000px);
+    -webkit-transform-origin: left center;
+    transform-origin: left center;
+  }
+}
+
+@keyframes zoomOutLeft {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateX(42px);
+    -ms-transform: scale(.475) translateX(42px);
+    transform: scale(.475) translateX(42px);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateX(-2000px);
+    -ms-transform: scale(.1) translateX(-2000px);
+    transform: scale(.1) translateX(-2000px);
+    -webkit-transform-origin: left center;
+    -ms-transform-origin: left center;
+    transform-origin: left center;
+  }
+}
+
+.zoomOutLeft {
+  -webkit-animation-name: zoomOutLeft;
+  animation-name: zoomOutLeft;
+}
+
+@-webkit-keyframes zoomOutRight {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateX(-42px);
+    transform: scale(.475) translateX(-42px);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateX(2000px);
+    transform: scale(.1) translateX(2000px);
+    -webkit-transform-origin: right center;
+    transform-origin: right center;
+  }
+}
+
+@keyframes zoomOutRight {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateX(-42px);
+    -ms-transform: scale(.475) translateX(-42px);
+    transform: scale(.475) translateX(-42px);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateX(2000px);
+    -ms-transform: scale(.1) translateX(2000px);
+    transform: scale(.1) translateX(2000px);
+    -webkit-transform-origin: right center;
+    -ms-transform-origin: right center;
+    transform-origin: right center;
+  }
+}
+
+.zoomOutRight {
+  -webkit-animation-name: zoomOutRight;
+  animation-name: zoomOutRight;
+}
+
+@-webkit-keyframes zoomOutUp {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateY(60px);
+    transform: scale(.475) translateY(60px);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateY(-2000px);
+    transform: scale(.1) translateY(-2000px);
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+  }
+}
+
+@keyframes zoomOutUp {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateY(60px);
+    -ms-transform: scale(.475) translateY(60px);
+    transform: scale(.475) translateY(60px);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateY(-2000px);
+    -ms-transform: scale(.1) translateY(-2000px);
+    transform: scale(.1) translateY(-2000px);
+    -webkit-transform-origin: center top;
+    -ms-transform-origin: center top;
+    transform-origin: center top;
+  }
+}
+
+.zoomOutUp {
+  -webkit-animation-name: zoomOutUp;
+  animation-name: zoomOutUp;
+}
+/* line 4, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+#categories-header {
+  height: 64px;
+  width: 100%;
+  background: #18c3bd;
+  float: left;
+  font-family: "proxima-nova", sans-serif;
+  text-align: center;
+}
+
+/* line 13, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+#cat-header-content {
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+/* line 18, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+.cat-action {
+  height: 26px;
+  background-color: white;
+  opacity: .5;
+  color: #414141;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-radius: 50px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+/* line 30, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+.doing {
+  opacity: 1;
+}
+
+/* line 34, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+#categories-content-container {
+  width: 100%;
+  float: left;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+/* line 41, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+#cat-content {
+  width: 885px;
+  margin: 0 auto;
+}
+
+/* line 46, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+#cat-question {
+  float: left;
+  margin-top: 27px;
+  font-weight: 700;
+}
+
+/* line 52, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+#cat-question-details {
+  float: left;
+  clear: left;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+/* line 59, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+#cat-list {
+  float: left;
+  clear: left;
+}
+
+/* line 64, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+.cat {
+  float: left;
+  margin-bottom: 34px;
+  width: 266px;
+  height: 250px;
+}
+
+/* line 71, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+.cat-link {
+  float: left;
+  margin-right: 43px;
+}
+
+/* line 77, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+.cat-link:nth-child(3n) {
+  margin-right: 0px;
+}
+
+/* line 81, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+.cat-title {
+  height: 40px;
+  border-radius: 4px;
+  width: 100%;
+  background-color: white;
+  margin-bottom: 10px;
+  text-align: center;
+  line-height: 44px;
+  cursor: pointer;
+  position: relative;
+}
+
+/* line 93, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+.cat-title:hover {
+  color: #18c3bd;
+}
+
+/* line 97, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+.cat-select {
+  margin-top: 10px;
+}
+
+/* line 101, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+.cat-pic {
+  height: 200px;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* line 107, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+.create-own {
+  background-color: #bebebe;
+}
+
+/* line 111, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+.check {
+  position: absolute;
+  left: -34px;
+  height: 25px;
+  width: 25px;
+  background-color: #f1f1f1;
+  top: 6px;
+}
+
+/* line 120, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+#cat-back {
+  background-color: #bebebe;
+  height: 35px;
+  border-radius: 50px;
+  float: right;
+  margin-top: 27px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+/* line 131, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+#cat-act-back {
+  background-color: white;
+  border-radius: 50px;
+  float: right;
+  margin-top: 27px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+/* line 141, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+#back-text {
+  line-height: 34px;
+}
+
+/* line 146, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+#finished {
+  float: right;
+  margin-top: 32px;
+  margin-right: 10px;
+}
+
+/* line 152, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+#activities {
+  width: 540px;
+  margin-bottom: 50px;
+  float: left;
+  margin-top: 10px;
+}
+
+/* line 159, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+.act {
+  width: 320px;
+  float: left;
+  background-color: white;
+  border-radius: 50px;
+  margin-top: 11px;
+  height: 34px;
+  cursor: pointer;
+}
+
+/* line 169, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+.act:hover {
+  border: 1px solid #18c3bd;
+  height: 32px;
+}
+
+/* line 174, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+.act-text {
+  float: left;
+  margin-top: 7px;
+  margin-left: 12px;
+}
+
+/* line 180, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+.act .act-text {
+  color: #414141;
+}
+
+/* line 184, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+.chosen-act .act-text {
+  color: white;
+}
+
+/* line 188, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+#arrow-container {
+  float: right;
+  height: 100%;
+  margin-left: 20px;
+  position: relative;
+  margin-top: 100px;
+}
+
+/* line 196, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+#arrow {
+  width: 195px;
+  height: 125px;
+}
+
+/* line 201, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+#arrow-text {
+  position: absolute;
+  top: 50px;
+  right: 70px;
+}
+
+/* line 207, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+#chosen-acts {
+  width: 320px;
+  float: right;
+  margin-bottom: 50px;
+}
+
+/* line 213, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+.chosen-act {
+  width: 320px;
+  float: left;
+  clear: left;
+  border-radius: 50px;
+  background-color: #18c3bd;
+  margin-top: 11px;
+  height: 34px;
+  color: white;
+  cursor: pointer;
+}
+
+/* line 225, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+.chosen-act:hover {
+  border: 1px solid white;
+  height: 32px;
+}
+
+/* line 230, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+#categories-footer {
+  margin-top: 10px;
+  background-color: #f1f1f1;
+  width: 100%;
+  float: left;
+  margin-bottom: 20px;
+}
+
+/* line 238, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+#cat-footer-content {
+  margin: 0 auto;
+  width: 796px;
+}
+
+/* line 243, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+#line-1 {
+  margin-bottom: -20px;
+}
+
+/* line 247, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/categories.css.scss */
+#next-cat {
+  background-color: #bebebe;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 62px;
+  margin: 0 auto;
+}
+/* line 3, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/chat.css.scss */
+.chat-partial {
+  float: left;
+  width: 630px;
+  position: fixed;
+  right: 0;
+  height: 100%;
+  font-family: "proxima-nova", sans-serif;
+  background: white;
+  -webkit-box-shadow: -14px 3px 28px -3px #888;
+}
+
+/* line 15, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/chat.css.scss */
+#chat-partial-content {
+  float: left;
+  margin-left: 64px;
+}
+
+/* line 20, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/chat.css.scss */
+#chat-header {
+  float: left;
+  width: 100%;
+  height: 72px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+/* line 28, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/chat.css.scss */
+#chat-info {
+  float: left;
+  width: 425px;
+}
+
+/* line 33, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/chat.css.scss */
+#chat-pic {
+  float: left;
+  height: 72px;
+  width: 72px;
+  margin-right: 15px;
+}
+
+/* line 40, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/chat.css.scss */
+#chat-name {
+  float: left;
+  font-size: 16pt;
+  font-weight: 600;
+  color: #414141;
+}
+
+/* line 47, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/chat.css.scss */
+#chat-school {
+  clear: left;
+  float: left;
+  color: #939393;
+}
+
+/* line 53, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/chat.css.scss */
+#chat-similarities {
+  font-size: 16pt;
+  float: right;
+  color: #1ca7ff;
+  font-weight: 600;
+  margin-top: -25px;
+}
+
+/* line 61, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/chat.css.scss */
+.chat-collapse {
+  float: right;
+  clear: right;
+  cursor: pointer;
+}
+
+/* line 67, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/chat.css.scss */
+.collapsed-chat {
+  height: 30px;
+  width: 150px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  position: fixed;
+  background-color: #18c3bd;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  left: 67px;
+  text-align: center;
+  z-index: 2;
+}
+
+/* line 82, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/chat.css.scss */
+.collapsed-name {
+  font-family: "proxima-nova", sans-serif;
+  margin-top: 5px;
+  font-size: 15pt;
+  cursor: pointer;
+}
+
+/* line 89, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/chat.css.scss */
+.indent-2 {
+  margin-left: 155px;
+}
+
+/* line 93, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/chat.css.scss */
+.indent-3 {
+  margin-left: 310px;
+}
+
+/* line 97, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/chat.css.scss */
+.indent-4 {
+  margin-left: 465px;
+}
+
+/* line 101, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/chat.css.scss */
+.indent-5 {
+  margin-left: 620px;
+}
+
+/* line 105, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/chat.css.scss */
+.indent-6 {
+  margin-left: 775px;
+}
+
+/* line 109, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/chat.css.scss */
+.indent-7 {
+  margin-left: 930px;
+}
+
+/* line 113, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/chat.css.scss */
+.indent-8 {
+  margin-left: 1085px;
+}
+
+/* line 117, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/chat.css.scss */
+.close {
+  width: 20px;
+  height: 20px;
+}
+
+/* line 122, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/chat.css.scss */
+.chat-window-footer {
+  float: left;
+  position: absolute;
+  bottom: 10px;
+}
+/* line 3, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+#events-header {
+  height: 64px;
+  width: 100%;
+  background-color: #18c3bd;
+  float: left;
+  font-family: "proxima-nova", sans-serif;
+  overflow-x: hidden;
+}
+
+/* line 12, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+#events-container {
+  background-color: #f1f1f1;
+  float: left;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* line 19, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+#events {
+  float: left;
+}
+
+/* line 23, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+#events-header-actions {
+  float: left;
+  margin-top: 15px;
+  margin-left: 35%;
+}
+
+/* line 29, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+#event-status {
+  float: left;
+  background-color: white;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-right: 20px;
+  border-radius: 50px;
+}
+
+/* line 38, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+.selected {
+  background-color: #414141;
+  border-radius: 50px;
+}
+
+/* line 43, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+#event-upcoming {
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* line 49, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+#event-past {
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* line 57, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+#event-going {
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* line 63, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+#invites {
+  width: 383px;
+  float: left;
+  margin-left: 62px;
+  font-family: "proxima-nova", sans-serif;
+}
+
+/* line 70, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+#invites-collection {
+  float: left;
+}
+
+/* line 74, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+#invites-header {
+  margin-left: 70px;
+  margin-top: 20px;
+}
+
+/* line 79, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+#upcoming-header {
+  margin-top: 20px;
+}
+
+/* line 84, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+.invite {
+  height: 378px;
+  width: 224px;
+  background-color: white;
+  margin-left: 70px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* line 93, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+.invite-header {
+  height: 50px;
+  width: 100%;
+}
+
+/* line 98, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+.invite-creator {
+  height: 30px;
+  width: 30px;
+  border-radius: 50px;
+  float: left;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+/* line 107, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+.invitation-creator-info {
+  float: left;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+/* line 113, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+.invite-creator-name {
+  font-weight: 600;
+  float: left;
+}
+
+/* line 118, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+.invitation {
+  float: left;
+  clear: left;
+  margin-left: 1px;
+  margin-top: -3px;
+  font-size: 10pt;
+}
+
+/* line 126, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+.invite-location {
+  font-size: 12pt;
+}
+
+/* line 130, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+.invite-pic {
+  height: 168px;
+}
+
+/* line 134, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+.event-picture {
+  width: 100%;
+  height: 168px;
+}
+
+/* line 139, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+.invite-info {
+  height: 160px;
+  position: relative;
+}
+
+/* line 144, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+.invite-row {
+  clear: left;
+  float: left;
+  margin-left: 20px;
+}
+
+/* line 150, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+.invite-title {
+  font-size: 15pt;
+  font-weight: 800;
+}
+
+/* line 155, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+.invite-time {
+  font-weight: 600;
+}
+
+/* line 159, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+.invite-actions {
+  bottom: 7px;
+  position: absolute;
+  margin-left: 47px;
+}
+
+/* line 165, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+.invite-action {
+  float: left;
+}
+
+/* line 169, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+.accept {
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 50px;
+  background-color: #18c3bd;
+  float: left;
+  margin-right: 15px;
+}
+
+/* line 178, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+.pass {
+  float: left;
+}
+
+/* line 182, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+#upcoming {
+  float: left;
+  width: 771px;
+  min-height: 900px;
+  font-family: "proxima-nova", sans-serif;
+}
+
+/* line 189, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+.upcoming-event-info .invite-row {
+  margin-top: 5px;
+}
+
+/* line 193, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+.upcoming-event {
+  width: 224px;
+  height: 378px;
+  float: left;
+  margin-right: 33px;
+  background-color: white;
+  margin-top: 20px;
+}
+
+/* line 202, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+.upcoming-event-title {
+  font-size: 15pt;
+  font-weight: 800;
+}
+
+/* line 207, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+.upcoming-event-time {
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 50px;
+  background-color: #18c3bd;
+}
+
+/* line 214, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+.upcoming-event-picture {
+  height: 168px;
+}
+
+/* line 218, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+.upcoming-event-info {
+  height: 210px;
+}
+
+/* line 222, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+.attendee {
+  width: 30px;
+  height: 30px;
+  float: left;
+  border-radius: 50px;
+  margin-right: 5px;
+  clear: left;
+  margin-bottom: 5px;
+}
+
+/* line 232, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+.attendee-name {
+  float: left;
+}
+
+/* line 236, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+#empty-invite {
+  float: left;
+  font-size: 19pt;
+  margin-top: 125px;
+}
+
+/* line 242, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+#empty-events {
+  float: left;
+  font-size: 19pt;
+  margin-top: 125px;
+}
+
+/* line 248, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events.css.scss */
+.event-sort > .head-4:hover {
+  border: 1px solid #414141;
+  border-radius: 50px;
+}
+/* line 3, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events_modal.css.scss */
+.event-modal {
+  float: left;
+  border: 1px solid black;
+  width: 530px;
+  height: 550px;
+  font-family: "proxima-nova", sans-serif;
+  background-color: #f1f1f1;
+}
+
+/* line 12, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events_modal.css.scss */
+.event-form-header {
+  float: left;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  margin-left: 55px;
+}
+
+/* line 20, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events_modal.css.scss */
+.header-profile {
+  float: left;
+}
+
+/* line 24, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events_modal.css.scss */
+#sending {
+  float: left;
+}
+
+/* line 28, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events_modal.css.scss */
+.event-profile-pic {
+  height: 34px;
+  width: 34px;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* line 36, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events_modal.css.scss */
+#sending-name {
+  float: left;
+}
+
+/* line 41, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events_modal.css.scss */
+.form-row {
+  clear: left;
+  float: left;
+  margin-top: 5px;
+  width: 108%;
+  margin-left: 55px;
+}
+
+/* line 49, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events_modal.css.scss */
+.form-row.first {
+  margin-top: 30px;
+}
+
+/* line 53, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events_modal.css.scss */
+.event-form-label {
+  float: left;
+}
+
+/* line 57, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events_modal.css.scss */
+.form-input {
+  width: 310px;
+  height: 32px;
+  float: right;
+  margin-right: 150px;
+  border: 1px solid #bebebe;
+  font-size: 16px;
+}
+
+/* line 66, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events_modal.css.scss */
+#or {
+  width: 100%;
+  float: left;
+  text-align: center;
+  height: 20px;
+  margin-left: 55px;
+  margin-bottom: 3px;
+  margin-top: -3px;
+}
+
+/* line 76, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events_modal.css.scss */
+#event_quantity {
+  width: 100px;
+  padding: 10px;
+  background: white;
+  font-size: 20px;
+  margin-top: 5px;
+  margin-left: 20px;
+}
+
+/* line 85, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events_modal.css.scss */
+.form-row.optional {
+  margin-top: 0px;
+}
+
+/* line 89, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events_modal.css.scss */
+.form-row.submit {
+  margin-left: 0px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* line 96, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events_modal.css.scss */
+.upload {
+  position: relative;
+}
+
+/* line 100, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events_modal.css.scss */
+#upload-button {
+  width: 165px;
+  height: 34px;
+  color: white;
+  background-color: #939393;
+  text-align: center;
+  border-radius: 3px;
+  float: right;
+  margin-right: 150px;
+  position: absolute;
+  left: 313px;
+}
+
+/* line 113, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events_modal.css.scss */
+.btn-text {
+  margin-top: 7px;
+}
+
+/* line 117, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events_modal.css.scss */
+#imgInp {
+  float: right;
+  position: absolute;
+  left: 313px;
+  z-index: 2;
+  width: 165px;
+  height: 34px;
+  opacity: 0;
+}
+
+/* line 127, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events_modal.css.scss */
+#preview {
+  width: 80px;
+  height: 80px;
+  float: right;
+  margin-top: -33px;
+  margin-right: 95px;
+}
+
+/* line 135, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events_modal.css.scss */
+#send-invite {
+  background-color: #18c3bd;
+  color: white;
+  width: 160px;
+  height: 44px;
+  border-radius: 3px;
+  font-size: 15px;
+  border: none;
+  box-shadow: none;
+  float: left;
+  margin-left: 200px;
+}
+
+/* line 148, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events_modal.css.scss */
+#invite-submit {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* line 157, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events_modal.css.scss */
+.invite-icon {
+  height: 20px;
+  width: 20px;
+  margin-bottom: -4px;
+}
+
+/* line 163, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events_modal.css.scss */
+#event_partner_id {
+  float: right;
+  margin-right: 150px;
+  width: 314px;
+  background: white;
+  height: 34px;
+  font-size: 12pt;
+}
+
+/* line 172, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events_modal.css.scss */
+#hour-labels {
+  float: left;
+  margin-left: 108px;
+}
+
+/* line 177, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events_modal.css.scss */
+#hours {
+  float: left;
+  margin-left: 25px;
+}
+
+/* line 182, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events_modal.css.scss */
+.hour {
+  height: 20px;
+}
+
+/* line 186, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/events_modal.css.scss */
+.day {
+  height: 20px;
+}
+/* line 3, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/faq.css.scss */
+#faq-containter {
+  float: left;
+}
+
+/* line 7, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/faq.css.scss */
+#faq-content {
+  margin: 0 auto;
+  width: 806px;
+  font-family: "proxima-nova", sans-serif;
+}
+
+/* line 13, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/faq.css.scss */
+#faq-header {
+  margin-top: 66px;
+  margin-bottom: 66px;
+  color: #19d4cd;
+}
+
+/* line 19, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/faq.css.scss */
+.faq-question {
+  margin-bottom: 22px;
+  width: 806px;
+}
+
+/* line 24, /Users/kendog/Desktop/cliq/Cliq/app/assets/stylesheets/faq.css.scss */
+.faq-answer {
+  margin-bottom: 44px;
+  width: 806px;
+}
+/* line 3, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/master.css.scss */
+body {
+  margin: 0;
+  padding-left: 62px;
+  background-color: #f1f1f1;
+}
+
+/* line 9, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/master.css.scss */
+a {
+  color: #414141;
+}
+
+/* line 13, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/master.css.scss */
+.head-1 {
+  font-weight: 600;
+  font-size: 36px;
+}
+
+/* line 18, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/master.css.scss */
+.head-2 {
+  font-weight: 700;
+  font-size: 28px;
+}
+
+/* line 23, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/master.css.scss */
+.head-3 {
+  font-weight: 700;
+  font-size: 22px;
+}
+
+/* line 28, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/master.css.scss */
+.head-4 {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+/* line 33, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/master.css.scss */
+.head-5 {
+  font-weight: 400;
+  font-size: 15px;
+}
+
+/* line 38, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/master.css.scss */
+.head-6 {
+  font-weight: 400;
+  font-size: 12px;
+}
+
+/* line 43, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/master.css.scss */
+.heavy {
+  font-weight: 700;
+}
+
+/* line 47, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/master.css.scss */
+.dark-gray {
+  color: #414141;
+}
+
+/* line 51, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/master.css.scss */
+.light-gray {
+  color: #bebebe;
+}
+
+/* line 55, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/master.css.scss */
+.gray {
+  color: #939393;
+}
+
+/* line 59, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/master.css.scss */
+.green {
+  color: #13cd81;
+}
+
+/* line 63, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/master.css.scss */
+.black {
+  color: black;
+}
+
+/* line 67, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/master.css.scss */
+.blue {
+  color: #1ca7ff;
+}
+
+/* line 71, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/master.css.scss */
+.white {
+  color: white;
+}
+
+/* line 75, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/master.css.scss */
+.red {
+  color: red;
+}
+
+/* line 79, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/master.css.scss */
+.logo.active {
+  color: #18c3bd;
+}
+
+/* line 83, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/master.css.scss */
+.active svg path {
+  fill: #18c3bd;
+}
+
+/* line 87, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/master.css.scss */
+.content-container {
+  float: left;
+  width: 100%;
+  font-family: "proxima-nova", sans-serif;
+  min-height: 800px;
+  background-color: #f1f1f1;
+}
+
+/* line 95, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/master.css.scss */
+input:focus {
+  outline: none;
+}
+/* line 3, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+#messages-container {
+  float: left;
+}
+
+/* line 7, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+#messages-header {
+  height: 64px;
+  width: 100%;
+  background-color: #18c3bd;
+  float: left;
+  font-family: "proxima-nova", sans-serif;
+}
+
+/* line 17, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+#messages-header-actions {
+  margin-top: 15px;
+  width: 100%;
+  margin-left: 145px;
+}
+
+/* line 23, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+#new-message {
+  float: left;
+  padding-left: 35px;
+  padding-right: 35px;
+  border-radius: 50px;
+  background-color: white;
+  margin-right: 30px;
+  margin-left: 20%;
+}
+
+/* line 33, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+#message-sort-by {
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 38, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+#message-sort {
+  padding-left: 35px;
+  padding-right: 35px;
+  border-radius: 50px;
+  background-color: #313131;
+  color: #bebebe;
+  float: left;
+  margin-right: 30px;
+}
+
+/* line 48, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+#search-messages {
+  float: left;
+  background-color: white;
+  padding: 5px 80px 5px 15px;
+  border-radius: 50px;
+}
+
+/* line 55, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+#conversations {
+  float: left;
+  margin: 50px 0px 75px 145px;
+  height: 450px;
+  width: 385px;
+  overflow-y: scroll;
+}
+
+/* line 63, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+.conversation.current {
+  background-color: #ffa320;
+  color: white;
+  float: left;
+}
+/* line 67, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+.conversation.current .convo-school {
+  color: white;
+}
+/* line 70, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+.conversation.current .convo-last-message {
+  color: white;
+}
+
+/* line 76, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+.convo-link {
+  color: #414141;
+}
+
+/* line 80, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+#messages {
+  width: 530px;
+  height: 450px;
+  float: left;
+  margin: 50px 0px 75px 50px;
+}
+
+/* line 87, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+.convo {
+  height: 75px;
+  width: 367px;
+}
+
+/* line 92, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+.convo-pic {
+  float: left;
+  width: 65px;
+  height: 65px;
+  margin: 5px 0px 0px 5px;
+}
+
+/* line 99, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+.convo-details {
+  float: left;
+  width: 300px;
+  height: 75px;
+  margin-left: 5px;
+  font-family: "proxima-nova", sans-serif;
+}
+
+/* line 107, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+.convo-name {
+  float: left;
+  font-weight: 600;
+}
+
+/* line 112, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+.convo-date {
+  float: right;
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+/* line 118, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+.convo-school {
+  float: left;
+  clear: left;
+}
+
+/* line 123, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+.convo-last-message {
+  float: left;
+  font-weight: 600;
+  clear: left;
+}
+
+/* line 129, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+.message-history {
+  height: 350px;
+  width: 515px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/* line 136, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+.message {
+  width: 370px;
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 10px;
+  margin-top: 9px;
+  color: white;
+  font-family: "proxima-nova", sans-serif;
+}
+
+/* line 147, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+.message.sent {
+  background-color: #ffa320;
+  float: right;
+  padding-right: 15px;
+}
+
+/* line 153, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+.message.received {
+  background-color: #18c3bd;
+  float: left;
+  margin-right: 5px;
+}
+
+/* line 159, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+.date {
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+/* line 164, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+.date.sent {
+  float: left;
+  margin-right: 5px;
+  padding-right: 13px;
+}
+
+/* line 170, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+.date.recieved {
+  float: left;
+  margin-left: 10px;
+}
+
+/* line 175, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+.message-block {
+  float: left;
+  width: 99%;
+  margin-left: 5px;
+}
+
+/* line 181, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+#chat-box {
+  float: left;
+  height: 65px;
+  width: 440px;
+  border: 1px solid #939393;
+  margin-top: 10px;
+}
+
+/* line 189, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+#chat-box-pic {
+  float: left;
+  height: 70px;
+  width: 70px;
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+/* line 197, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+#message-actions {
+  width: 522px;
+  float: left;
+  font-family: "proxima-nova", sans-serif;
+  margin-top: 5px;
+}
+
+/* line 204, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+.message-reply {
+  float: right;
+  background-color: #ff5959;
+}
+
+/* line 209, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+.message-invite {
+  float: left;
+  background-color: #ff5959;
+}
+
+/* line 214, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+.result-action.hit-reply {
+  margin-right: 10px;
+  margin-left: 26px;
+  cursor: pointer;
+  cursor: hand;
+}
+
+/* line 221, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+.reply {
+  cursor: pointer;
+}
+
+/* line 225, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+.action-button.mes-action {
+  padding: 10px 7px;
+}
+
+/* line 229, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+.mes-action .action-icon {
+  margin-top: -7px;
+}
+
+/* line 233, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+.mes-action .result-action {
+  margin-top: 0px;
+  font-size: 20px;
+}
+
+/* line 238, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+.conversation {
+  float: left;
+}
+
+/* line 242, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+.conversation.current:hover {
+  background-color: #ffa320;
+}
+
+/* line 246, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/messages.css.scss */
+.conversation:hover {
+  background-color: #bebebe;
+}
+/* line 4, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/pages.css.scss */
+.container {
+  background-image: url(/assets/landing.png);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  float: left;
+  position: fixed;
+  background-size: cover;
+}
+
+/* line 14, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/pages.css.scss */
+#main-info {
+  float: left;
+  margin-left: 80px;
+}
+
+/* line 19, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/pages.css.scss */
+.landing-logo {
+  font-family: "kari-pro", sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 60px;
+  color: white;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+/* line 29, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/pages.css.scss */
+.landing-desc {
+  font-family: "proxima-nova", sans-serif;
+  width: 450px;
+  color: white;
+  font-size: 40px;
+  font-weight: 500;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* line 38, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/pages.css.scss */
+.landing-desc.main {
+  margin-top: -25px;
+}
+
+/* line 42, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/pages.css.scss */
+.landing-desc.sub {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+/* line 47, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/pages.css.scss */
+.sign-up-box {
+  background-color: white;
+  border-radius: 5px;
+  width: 375px;
+  height: 150px;
+  float: left;
+}
+
+/* line 55, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/pages.css.scss */
+.fb-sign-up-btn {
+  background-color: #3B5998;
+  float: left;
+  color: white;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-top: 10px;
+  height: 65px;
+  width: 355px;
+  font-family: "proxima-nova", sans-serif;
+}
+/* line 65, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/pages.css.scss */
+.fb-sign-up-btn .sign-up-text {
+  float: right;
+  margin-right: 12%;
+  margin-top: 6%;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* line 74, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/pages.css.scss */
+.fb-logo {
+  background-color: white;
+  height: 45px;
+  width: 45px;
+  float: left;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+/* line 81, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/pages.css.scss */
+.fb-logo .fb-letter {
+  width: 45px;
+  height: 45px;
+}
+
+/* line 87, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/pages.css.scss */
+.login {
+  font-size: 18px;
+  margin-bottom: -4px;
+}
+
+/* line 92, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/pages.css.scss */
+.sign-up-info {
+  float: left;
+  clear: left;
+  font-family: "proxima-nova", sans-serif;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 100, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/pages.css.scss */
+.conditions {
+  font-size: 13px;
+}
+
+/* line 104, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/pages.css.scss */
+#bottom-nav {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  background-color: rgba(24, 195, 189, 0.8);
+  height: 75px;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "proxima-nova", sans-serif;
+  opacity: .9;
+  color: white;
+}
+
+/* line 117, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/pages.css.scss */
+#how-it-works {
+  float: right;
+  margin-top: 25px;
+}
+
+/* line 122, /Users/kendog/Desktop/cliq/cliq/app/assets/stylesheets/pages.css.scss */
+#faq {
+  float: right;
+  margin-left: 65px;
+  margin-right: 65px;
+  margin-top: 25px;
+}
+/* line 3, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+#search-container {
+  height: 100%;
+  min-height: 125px;
+  width: 100%;
+  background: #18c3bd;
+  float: left;
+  font-family: "proxima-nova", sans-serif;
+  background-size: cover;
+}
+
+/* line 13, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+#search-content {
+  width: 927px;
+  margin: 0 auto;
+}
+
+/* line 21, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+#activity {
+  width: 200px;
+  background-size: cover;
+  color: #939393;
+}
+
+/* line 28, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+#results-container {
+  height: 100%;
+  width: 100%;
+  background-color: #f1f1f1;
+  font-family: "proxima-nova", sans-serif;
+  float: left;
+}
+
+/* line 36, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+#results-content {
+  width: 928px;
+  margin: 0 auto;
+}
+
+/* line 41, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+#query {
+  margin: 0 auto;
+  width: 100%;
+  margin-top: 20px;
+  font-weight: 700;
+}
+
+/* line 48, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+#query-1 {
+  float: left;
+}
+
+/* line 52, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+#query-location {
+  float: left;
+  margin-left: 15px;
+  margin-right: 15px;
+  border: none;
+  margin-top: -3px;
+  font-weight: 700;
+  opacity: 1;
+  height: 34px;
+  width: 250px;
+}
+
+/* line 65, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+#query-2 {
+  float: left;
+}
+
+/* line 69, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+#query-interests {
+  float: left;
+  clear: left;
+  margin-top: 5px;
+  width: 87%;
+}
+
+/* line 76, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.search-term.searched {
+  height: 38px;
+}
+
+/* line 80, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.searched:hover {
+  border: 1px solid #ff5959;
+  height: 36px;
+  cursor: pointer;
+}
+
+/* line 86, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.query-interest {
+  float: left;
+  margin-right: 15px;
+  border: none;
+  height: 34px;
+  color: #414141;
+  margin-bottom: 5px;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+/* line 97, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+#activity {
+  opacity: 1;
+}
+
+/* line 101, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.search-term {
+  background-color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 50px;
+  font-size: 22pt;
+}
+
+/* line 109, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+#add {
+  float: left;
+  margin-right: 15px;
+  background-color: #939393;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 50px;
+}
+
+/* line 118, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+#search-query {
+  float: right;
+  background-color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  height: 34px;
+  margin-top: 5px;
+}
+
+/* line 131, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+#query-row-1 {
+  margin: 0 auto;
+}
+
+/* line 135, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+#results {
+  width: 928px;
+  float: left;
+  margin-top: 25px;
+}
+
+/* line 141, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+#results-header {
+  margin-top: 25px;
+}
+
+/* line 145, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+#found {
+  font-weight: 400;
+  float: left;
+  color: #414141;
+}
+
+/* line 151, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+#sort-by {
+  float: right;
+}
+
+/* line 156, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+#sort-term {
+  float: right;
+  margin-left: 15px;
+  background-color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 50px;
+}
+
+/* line 165, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.result {
+  width: 284px;
+  height: 256px;
+  float: left;
+  margin-right: 38px;
+  background-color: white;
+  margin-bottom: 38px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+/* line 176, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.result:nth-child(3n) {
+  margin-right: 0px;
+}
+
+/* line 180, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.profile-pic-card {
+  height: 72px;
+  width: 72px;
+  float: left;
+}
+
+/* line 186, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.card-header {
+  float: left;
+  margin-left: 14px;
+  margin-top: 10px;
+}
+
+/* line 192, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.card-name {
+  font-size: 17px;
+  font-weight: 700;
+  float: left;
+}
+
+/* line 198, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.card-school {
+  font-size: 14px;
+  font-weight: 400;
+  float: left;
+  clear: left;
+}
+
+/* line 205, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.card-active {
+  font-size: 17px;
+  float: left;
+  clear: left;
+}
+
+/* line 211, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.mutual {
+  float: left;
+  clear: left;
+  margin-left: 11px;
+  width: 75px;
+}
+
+/* line 218, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.similar {
+  float: left;
+  margin-left: 33px;
+  width: 75px;
+}
+
+/* line 224, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.similarities {
+  float: left;
+  clear: left;
+  margin-top: 12px;
+  width: 100%;
+  height: 170px;
+  position: relative;
+}
+
+/* line 233, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.sim-label {
+  height: 35px;
+  width: 35px;
+  float: left;
+}
+
+/* line 239, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.sug-label {
+  color: #18c3bd;
+}
+
+/* line 243, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.sim {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.1;
+  float: left;
+  margin-left: 5px;
+  margin-top: 4px;
+}
+
+/* line 252, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.sim-label g path {
+  fill: #ff5959;
+}
+
+/* line 256, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.suggestions {
+  float: left;
+  padding: 0px 12px;
+  margin-top: 4px;
+  max-height: 66px;
+  overflow-y: hidden;
+}
+
+/* line 264, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.suggestion {
+  background-color: #ffa320;
+  border-radius: 50px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-top: 4px;
+  float: left;
+  margin-right: 5px;
+  height: 20px;
+  line-height: 1.3;
+}
+
+/* line 276, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.result-actions {
+  float: left;
+  font-size: 17px;
+  font-weight: 600;
+  bottom: -2px;
+  position: absolute;
+  line-height: 1.2;
+  padding: 10px 12px 0px;
+  width: 260px;
+  background-color: #18c3bd;
+}
+
+/* line 288, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.action-button {
+  color: white;
+  border-radius: 4px;
+  height: 22px;
+  padding: 7px 7px;
+  width: 114px;
+}
+
+/* line 296, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.invite-btn {
+  float: left;
+}
+
+/* line 300, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.chat {
+  float: right;
+}
+
+/* line 304, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.chat .result-action {
+  float: right;
+  margin-right: 7px;
+}
+
+/* line 309, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.invite-user .result-action {
+  float: left;
+  margin-left: 7px;
+}
+
+/* line 314, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.chat .action-icon {
+  float: right;
+}
+
+/* line 318, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.action-icon {
+  height: 35px;
+  width: 35px;
+  float: left;
+  margin-top: -12px;
+}
+
+/* line 325, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.action-icon path {
+  fill: white;
+}
+
+/* line 329, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.result-action {
+  line-height: 1.3;
+  margin-top: -5px;
+}
+
+/* line 335, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+#invite-modal-container {
+  float: left;
+}
+
+/* line 340, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.ui-autocomplete {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  float: left;
+  display: none;
+  min-width: 160px;
+  _width: 160px;
+  padding: 4px 0;
+  margin: 2px 0 0 0;
+  list-style: none;
+  background-color: white;
+  border-color: #ccc;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-style: solid;
+  border-width: 1px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
+}
+/* line 368, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.ui-autocomplete .ui-menu-item > a.ui-corner-all {
+  display: block;
+  padding: 3px 15px;
+  clear: both;
+  font-weight: normal;
+  line-height: 18px;
+  color: #555555;
+  white-space: nowrap;
+}
+/* line 377, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/search.css.scss */
+.ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-hover, .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-active {
+  color: white;
+  text-decoration: none;
+  background: #1ca7ff;
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+}
+/* line 4, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/side_nav.css.scss */
+.side-nav {
+  width: 62px;
+  height: 100%;
+  background-color: #414141;
+  position: fixed;
+  left: 0;
+  text-align: center;
+  top: 0;
+  z-index: 3;
+}
+
+/* line 15, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/side_nav.css.scss */
+.extended {
+  position: relative;
+}
+
+/* line 19, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/side_nav.css.scss */
+.extended-side-nav .extended {
+  float: left;
+  clear: left;
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 300;
+  width: 100%;
+  z-index: 3;
+}
+
+/* line 29, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/side_nav.css.scss */
+.side-icon:hover {
+  background-color: #313131;
+}
+
+/* line 33, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/side_nav.css.scss */
+.extended .nav-icon {
+  float: left;
+}
+
+/* line 37, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/side_nav.css.scss */
+.icon-label {
+  float: left;
+  margin-top: 20px;
+  -webkit-animation-duration: .5s;
+  color: white;
+  opacity: 0;
+}
+
+/* line 45, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/side_nav.css.scss */
+.settings .icon-label {
+  width: 100px;
+}
+
+/* line 49, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/side_nav.css.scss */
+.icon-label.main {
+  top: 0;
+  left: 53px;
+  position: absolute;
+}
+
+/* line 55, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/side_nav.css.scss */
+.extended-side-nav {
+  width: 62px;
+  height: 100%;
+  background-color: #414141;
+  position: fixed;
+  left: 0;
+  text-align: center;
+  top: 0;
+}
+
+/* line 65, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/side_nav.css.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 69, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/side_nav.css.scss */
+.extended.logo {
+  font-family: "kari-pro", sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 20px;
+  display: block;
+}
+
+/* line 77, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/side_nav.css.scss */
+.extended.logo .icon-label {
+  margin-left: 15px;
+  margin-top: 0px;
+  opacity: 1;
+}
+
+/* line 83, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/side_nav.css.scss */
+.logo {
+  font-family: "kari-pro", sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 20px;
+  color: white;
+  padding-top: 17px;
+  padding-bottom: 17px;
+}
+
+/* line 93, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/side_nav.css.scss */
+.nav-icon {
+  width: 28px;
+  height: 28px;
+  margin: 17px;
+}
+
+/* line 100, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/side_nav.css.scss */
+.settings {
+  bottom: 0;
+  position: absolute;
+  margin-left: 18px;
+}
+
+/* line 106, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/side_nav.css.scss */
+#extended-settings {
+  margin-left: 0px;
+}
+
+/* line 110, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/side_nav.css.scss */
+.extended:hover {
+  background-color: #313131;
+}
+
+/* line 114, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/side_nav.css.scss */
+.extended-options {
+  float: left;
+  position: absolute;
+  bottom: 90px;
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 300;
+  color: white;
+  width: 62px;
+}
+
+/* line 124, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/side_nav.css.scss */
+.extended-options .icon-label {
+  margin-left: 56px;
+  float: left;
+  clear: left;
+}
+
+/* line 131, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/side_nav.css.scss */
+.nav-filler {
+  height: 400px;
+  width: 62px;
+  position: fixed;
+  left: 0;
+  top: 238px;
+  opacity: 0;
+  z-index: 100;
+}
+
+/* line 141, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/side_nav.css.scss */
+.hidden {
+  display: none;
+}
+
+/* line 145, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/side_nav.css.scss */
+.side-icon {
+  position: relative;
+  height: 62px;
+}
+
+/* line 150, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/side_nav.css.scss */
+.counter {
+  background-color: #ff5959;
+  color: white;
+  font-size: 10px;
+  height: 12.5px;
+  width: 15px;
+  padding-top: 1px;
+  border-radius: 3px;
+  text-align: center;
+  position: absolute;
+  top: 12px;
+  left: 35px;
+  border-radius: 10px;
+}
+
+/* line 165, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/side_nav.css.scss */
+.close-modal {
+  display: none;
+}
+
+/* line 169, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/side_nav.css.scss */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* line 173, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/side_nav.css.scss */
+#cliq-logo {
+  display: block;
+  width: 39px;
+  margin-left: 10px;
+}
+
+/* line 179, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/side_nav.css.scss */
+#logout {
+  color: white;
+  text-decoration: none;
+}
+
+/* line 184, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/side_nav.css.scss */
+.nav-icon path {
+  fill: #f1f1f1;
+}
+/* line 3, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/swipe_search.css.scss */
+.swiped-result {
+  width: 805px;
+  height: 718px;
+  margin: 0 auto;
+  background-color: white;
+  margin-bottom: 80px;
+  position: relative;
+  -webkit-animation-duration: .5s;
+}
+
+/* line 13, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/swipe_search.css.scss */
+.swiped-content {
+  width: 656px;
+  margin-left: 75px;
+  margin-top: 37px;
+  float: left;
+}
+
+/* line 20, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/swipe_search.css.scss */
+.swiped-profile-pic-card {
+  width: 83px;
+  height: 83px;
+  border-radius: 100px;
+  float: left;
+}
+
+/* line 27, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/swipe_search.css.scss */
+.swiped-card-name {
+  font-weight: 700;
+}
+
+/* line 31, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/swipe_search.css.scss */
+.swiped-card-school {
+  font-weight: 700;
+}
+
+/* line 35, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/swipe_search.css.scss */
+.swiped-similarities {
+  float: right;
+  width: 200px;
+}
+
+/* line 40, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/swipe_search.css.scss */
+.swiped-similar {
+  float: right;
+}
+
+/* line 44, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/swipe_search.css.scss */
+.swiped.sim-label {
+  height: 65px;
+  width: 65px;
+}
+
+/* line 49, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/swipe_search.css.scss */
+.swiped-sim {
+  float: left;
+  margin-top: 11px;
+  margin-left: 12px;
+}
+
+/* line 55, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/swipe_search.css.scss */
+.suggestions-container {
+  float: left;
+  clear: left;
+  margin-top: 37px;
+}
+
+/* line 61, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/swipe_search.css.scss */
+.swiped-suggestion {
+  float: left;
+  width: 206px;
+  margin-bottom: 19px;
+  margin-right: 19px;
+}
+
+/* line 68, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/swipe_search.css.scss */
+.swiped-suggestion:nth-child(3n) {
+  margin-right: 0px;
+}
+
+/* line 72, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/swipe_search.css.scss */
+.swiped-sug-name {
+  height: 23px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #ffa320;
+  padding-left: 14px;
+  padding-top: 5px;
+}
+
+/* line 81, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/swipe_search.css.scss */
+.swiped-sug-pic {
+  width: 206px;
+  height: 155px;
+}
+
+/* line 92, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/swipe_search.css.scss */
+.swiped-actions {
+  position: absolute;
+  bottom: 37px;
+  right: 75px;
+  width: 654px;
+}
+
+/* line 99, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/swipe_search.css.scss */
+.swiped.chat {
+  background-color: #18c3bd;
+  width: 167px;
+  height: 74px;
+  border-radius: 37px;
+  float: right;
+  position: relative;
+}
+
+/* line 108, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/swipe_search.css.scss */
+.swipe-next {
+  position: relative;
+  background-color: #18c3bd;
+  width: 167px;
+  height: 74px;
+  color: white;
+  float: right;
+  border-radius: 37px;
+  cursor: pointer;
+}
+
+/* line 119, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/swipe_search.css.scss */
+.swiped-action-icon {
+  margin-left: 50px;
+  margin-top: 5px;
+  height: 65px;
+  width: 65px;
+}
+
+/* line 126, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/swipe_search.css.scss */
+.swiped-action-icon path {
+  fill: white;
+}
+
+/* line 130, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/swipe_search.css.scss */
+.swipe-info {
+  height: 37px;
+  width: 37px;
+  margin-right: 15px;
+  margin-left: 15px;
+  border-radius: 50px;
+  float: right;
+  margin-top: 17px;
+}
+
+/* line 140, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/swipe_search.css.scss */
+.swipe-sex {
+  float: left;
+  background-color: #f1f1f1;
+  border-radius: 100px;
+  width: 167px;
+  height: 74px;
+}
+
+/* line 148, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/swipe_search.css.scss */
+.sex-icon {
+  height: 60px;
+  width: 60px;
+  float: left;
+  margin-top: 7px;
+  margin-left: 4px;
+}
+
+/* line 156, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/swipe_search.css.scss */
+.sex-text {
+  float: left;
+  margin-top: 28px;
+  margin-left: 4px;
+}
+/* line 4, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/time_picker.css.scss */
+thead {
+  color: #18c3bd;
+}
+
+/* line 8, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/time_picker.css.scss */
+.ui-timepicker-div .ui-widget-header {
+  margin-bottom: 8px;
+}
+
+/* line 9, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/time_picker.css.scss */
+.ui-timepicker-div dl {
+  text-align: left;
+}
+
+/* line 10, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/time_picker.css.scss */
+.ui-timepicker-div dl dt {
+  float: left;
+  clear: left;
+  padding: 0 0 0 5px;
+}
+
+/* line 11, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/time_picker.css.scss */
+.ui-timepicker-div td {
+  font-size: 90%;
+}
+
+/* line 12, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/time_picker.css.scss */
+.ui-tpicker-grid-label {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 14, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/time_picker.css.scss */
+.ui-timepicker-rtl {
+  direction: rtl;
+}
+
+/* line 15, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/time_picker.css.scss */
+.ui-timepicker-rtl dl {
+  text-align: right;
+  padding: 0 5px 0 0;
+}
+
+/* line 16, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/time_picker.css.scss */
+.ui-timepicker-rtl dl dt {
+  float: right;
+  clear: right;
+}
+
+/* line 17, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/time_picker.css.scss */
+.ui-timepicker-rtl dl dd {
+  margin: 0 45% 10px 10px;
+}
+
+/* line 19, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/time_picker.css.scss */
+#ui-datepicker-div {
+  font-family: "proxima-nova", sans-serif;
+  color: white;
+}
+
+/* line 24, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/time_picker.css.scss */
+.ui-widget-header {
+  background: none;
+  background-color: #18c3bd;
+  color: white;
+}
+
+/* line 30, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/time_picker.css.scss */
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  background: none;
+  background-color: #18c3bd;
+  color: white;
+}
+
+/* line 36, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/time_picker.css.scss */
+.ui-timepicker-div dl dd {
+  color: #414141;
+  right: 60px;
+  margin-left: 120px;
+  margin-top: 10px;
+}
+
+/* line 43, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/time_picker.css.scss */
+.ui-widget .ui-widget {
+  right: 60px;
+}
+
+/* line 47, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/time_picker.css.scss */
+.ui-datepicker-current-day .ui-state-default {
+  background-color: #0d6865;
+}
+/*
+Uploadify
+Copyright (c) 2012 Reactive Apps, Ronnie Garcia
+Released under the MIT License <http://www.opensource.org/licenses/mit-license.php> 
+*/
+
+
+.uploadify {
+	position: relative;
+	margin-bottom: 1em;
+}
+.uploadify-button {
+	background-color: #505050;
+	background-image: linear-gradient(bottom, #505050 0%, #707070 100%);
+	background-image: -o-linear-gradient(bottom, #505050 0%, #707070 100%);
+	background-image: -moz-linear-gradient(bottom, #505050 0%, #707070 100%);
+	background-image: -webkit-linear-gradient(bottom, #505050 0%, #707070 100%);
+	background-image: -ms-linear-gradient(bottom, #505050 0%, #707070 100%);
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0, #505050),
+		color-stop(1, #707070)
+	);
+	background-position: center top;
+	background-repeat: no-repeat;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	border: 2px solid #808080;
+	color: #FFF;
+	font: bold 12px Arial, Helvetica, sans-serif;
+	text-align: center;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+	width: 100%;
+}
+.uploadify:hover .uploadify-button {
+	background-color: #606060;
+	background-image: linear-gradient(top, #606060 0%, #808080 100%);
+	background-image: -o-linear-gradient(top, #606060 0%, #808080 100%);
+	background-image: -moz-linear-gradient(top, #606060 0%, #808080 100%);
+	background-image: -webkit-linear-gradient(top, #606060 0%, #808080 100%);
+	background-image: -ms-linear-gradient(top, #606060 0%, #808080 100%);
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0, #606060),
+		color-stop(1, #808080)
+	);
+	background-position: center bottom;
+}
+.uploadify-button.disabled {
+	background-color: #D0D0D0;
+	color: #808080;
+}
+.uploadify-queue {
+	margin-bottom: 1em;
+}
+.uploadify-queue-item {
+	background-color: #F5F5F5;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	font: 11px Verdana, Geneva, sans-serif;
+	margin-top: 5px;
+	max-width: 350px;
+	padding: 10px;
+}
+.uploadify-error {
+	background-color: #FDE5DD !important;
+}
+.uploadify-queue-item .cancel a {
+	background: url('../img/uploadify-cancel.png') 0 0 no-repeat;
+	float: right;
+	height:	16px;
+	text-indent: -9999px;
+	width: 16px;
+}
+.uploadify-queue-item.completed {
+	background-color: #E5E5E5;
+}
+.uploadify-progress {
+	background-color: #E5E5E5;
+	margin-top: 10px;
+	width: 100%;
+}
+.uploadify-progress-bar {
+	background-color: #0099FF;
+	height: 3px;
+	width: 1px;
+}
+/* line 1, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_other.css.scss */
+.user-other-container {
+  background: #f1f1f1;
+  width: 900px;
+  height: 100%;
+  position: fixed;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-family: "proxima-nova", sans-serif;
+  right: 0;
+  -webkit-box-shadow: -14px 3px 28px -3px #888;
+}
+
+/* line 14, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_other.css.scss */
+.main-profile-info.other {
+  width: 745px;
+}
+
+/* line 18, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_other.css.scss */
+#invite-other {
+  float: left;
+  clear: left;
+  margin-top: 35px;
+}
+
+/* line 24, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_other.css.scss */
+.action-icon.other {
+  margin-top: -4px;
+}
+
+/* line 28, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_other.css.scss */
+.other-action {
+  margin-left: 13px;
+}
+
+/* line 32, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_other.css.scss */
+#chat-other {
+  float: left;
+  clear: left;
+  margin-top: 24px;
+}
+
+/* line 38, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_other.css.scss */
+.right.other {
+  font-size: 22px;
+}
+
+/* line 44, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_other.css.scss */
+.interests.other {
+  width: 102.5%;
+}
+
+/* line 48, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_other.css.scss */
+.cat-section.other {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* line 53, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_other.css.scss */
+.other .category {
+  margin-right: 38px;
+}
+
+/* line 57, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_other.css.scss */
+#other-interest-list {
+  margin: 0 auto;
+  width: 745px;
+}
+
+/* line 62, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_other.css.scss */
+.interests.other {
+  float: left;
+}
+
+/* line 66, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_other.css.scss */
+.cat-group.other {
+  width: 248px;
+}
+
+/* line 70, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_other.css.scss */
+#other-sim {
+  float: right;
+  margin-top: 20px;
+}
+/* line 3, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+.user-container {
+  background: #f1f1f1;
+  width: 100%;
+  height: 100%;
+  float: left;
+  position: relative;
+  font-family: "proxima-nova", sans-serif;
+}
+
+/* line 12, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  float: left;
+}
+
+/* line 19, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+#main-profile-container {
+  width: 100%;
+  float: left;
+  background-color: #14a29d;
+  padding-bottom: 40px;
+}
+
+/* line 27, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+.main-profile-info {
+  margin: 0 auto;
+  width: 824px;
+  padding-top: 40px;
+  padding-bottom: 35px;
+}
+/* line 32, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+.main-profile-info .left {
+  float: left;
+  color: white;
+}
+/* line 36, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+.main-profile-info .right {
+  float: right;
+  color: #414141;
+}
+
+/* line 42, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+#name {
+  float: left;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+/* line 48, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+#school {
+  font-weight: 400;
+  margin-left: 50px;
+  float: left;
+  clear: left;
+}
+
+/* line 55, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+#active {
+  float: left;
+  margin-left: 50px;
+  clear: left;
+}
+
+/* line 61, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+#event-count {
+  float: left;
+  margin-top: 30px;
+  margin-right: 10px;
+}
+
+/* line 67, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+#event-label {
+  float: left;
+  margin-top: 33px;
+}
+
+/* line 72, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+#with {
+  font-size: 15px;
+  clear: left;
+  float: left;
+  margin-left: 35px;
+}
+
+/* line 79, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+#people-count {
+  float: left;
+  margin-right: 10px;
+  clear: left;
+}
+
+/* line 85, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+#people-label {
+  float: left;
+  margin-top: 3px;
+}
+
+/* line 90, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+#interest-sum {
+  float: left;
+  margin-right: 10px;
+  clear: left;
+}
+
+/* line 96, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+#interest-label {
+  float: left;
+  margin-top: 3px;
+}
+
+/* line 101, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+.profile-actions {
+  clear: right;
+  float: left;
+  font-size: 22px;
+  font-weight: 600;
+  margin-left: 50px;
+  margin-top: 15px;
+}
+/* line 108, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+.profile-actions .bubble {
+  border-radius: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: white;
+  margin-right: 20px;
+}
+/* line 115, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+.profile-actions #edit-profile {
+  float: left;
+}
+/* line 118, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+.profile-actions #add-interests {
+  float: left;
+  color: #ff5959;
+  text-decoration: none;
+}
+
+/* line 125, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+#interest-count {
+  margin-left: 275px;
+  margin-top: 50px;
+  float: left;
+}
+
+/* line 131, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+.interests {
+  width: 105.5%;
+  float: left;
+}
+
+/* line 136, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+#interest-list {
+  margin: 0 auto;
+  width: 900px;
+}
+
+/* line 141, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+.cat-section {
+  float: left;
+  clear: left;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+/* line 148, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+.cat-header {
+  width: 100%;
+  color: #0d6865;
+  font-weight: 700;
+  font-size: 22pt;
+}
+
+/* line 155, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+.cat-group {
+  float: left;
+}
+
+/* line 159, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+.category {
+  border-radius: 50px;
+  margin-right: 76px;
+  background-color: #ffa320;
+  margin-top: 28px;
+  float: left;
+  width: 224px;
+  height: 35px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* line 172, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+.activities {
+  width: 224px;
+  float: left;
+  clear: left;
+  margin-top: 5px;
+}
+
+/* line 179, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+.activity {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-right: 5px;
+  height: 30px;
+  font-weight: 500;
+  float: left;
+  margin-top: 5px;
+  font-size: 17px;
+  color: #18c3bd;
+}
+
+/* line 191, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+.cat-name {
+  margin-left: 10px;
+  margin-top: 4px;
+}
+
+/* line 196, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+.act-name {
+  margin-top: 3px;
+}
+
+/* line 200, /Users/andylee/Desktop/cliq/Cliq/app/assets/stylesheets/user_profile.css.scss */
+.more {
+  margin-top: 50px;
+  border-radius: 50px;
+  background-color: white;
+  height: 35px;
+  font-size: 24px;
+  font-weight: 600;
+  float: left;
+  clear: both;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 50px;
+  margin-left: 38%;
+}
