@@ -17,7 +17,7 @@ class EventsController < ApplicationController
 
 	def upcoming
 		excursions = current_user.excursions.where(accepted: true)
-		@events = excursions.map(&:event).compact.select { |event| event.start_time > Time.now }.sort_by(&:start_time)
+		@events = excursions.map(&:event).compact.select { |event| event.start_time > Time.now }.select {|event| event.accepted? }.sort_by(&:start_time)
 		render partial: 'events', locals: {events: @events}
 	end
 
