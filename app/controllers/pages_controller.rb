@@ -4,7 +4,7 @@ class PagesController < ApplicationController
 
 	def home
 		if current_user
-			redirect_to search_path
+			redirect_to main_path
 		end
 	end
 
