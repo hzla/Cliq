@@ -41,60 +41,60 @@ q: What do you do for fun?
 	q: What kinds of places do you like to go to?
 		Amusement Parks
 		Bars
-		Beach
+		Beaches
 		Cafes
 		Clubs
 		Historical sites
 		House Parties
-		Mall
-		Movie theater
-		Museum
-		Opera
+		Malls
+		Movie theaters
+		Museums
+		Operas
 		Other Countries
 		Parks
 		Race tracks
 		Restaurants
 		Sports stadiums
-		Theater
+		Theatres
 	Category: Eating Out
 	q: What kinds of meals do you enjoy?
-		American
-		Austrian
-		Brazilian
-		British
-		Bulgarian
-		Chinese
-		Coffee shops
-		Comfort
-		Czech
-		Danish
-		Filipino
-		French
-		Fusion
-		German
-		Greek
-		Hungarian
-		Indian
-		Indonesian
-		Irish
-		Italian
-		Japanese
-		Korean
-		Mediterranean
-		Mexican
-		Mongolian
-		Polish
-		Portuguese
-		Puerto Rican
-		Russian
-		Soul
-		Spanish
-		Taiwanese
-		Thai
-		Turkish
-		Vegan
-		Vegetarian
-		Vietnamese
+		American Food
+		Austrian Food
+		Brazilian Food
+		British Food
+		Bulgarian Food
+		Chinese Food
+		Coffee shops Food
+		Comfort Food
+		Czech Food
+		Danish Food
+		Filipino Food
+		French Food
+		Fusion Food
+		German Food
+		Greek Food
+		Hungarian Food
+		Indian Food
+		Indonesian Food
+		Irish Food
+		Italian Food
+		Japanese Food
+		Korean Food
+		Mediterranean Food
+		Mexican Food
+		Mongolian Food
+		Polish Food
+		Portuguese Food
+		Puerto Rican Food
+		Russian Food
+		Soul Food
+		Spanish Food
+		Taiwanese Food
+		Thai Food
+		Turkish Food
+		Vegan Food
+		Vegetarian Food
+		Vietnamese Food
 	Category: Games
 	q: What kinds of games do you play?
 		Category: Action, Adventure, and Fighting
