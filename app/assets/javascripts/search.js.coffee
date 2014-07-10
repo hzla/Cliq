@@ -154,7 +154,7 @@ Search =
 
 	closeChat: -> 
 		$(@).parent().parent().prev().remove()
-		$(@).remove()
+		$(@).parent().parent().remove()
 
 	thankUser: (event, data, xhr, status) ->
 		if $('#email').val().match(/.+@.+\..+/i) != null
