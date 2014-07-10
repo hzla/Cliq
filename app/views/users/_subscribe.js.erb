@@ -42,6 +42,9 @@
 	    } else if ($('.messages.active.side-icon').length > 0) { // if the user is on the message page but talking to someone else
 	    	//add preview
 	    	$('#' + sendingUser + " .convo-details .convo-last-message").text(messageShort)
+	    	$('#' + sendingUser + " .convo-details .convo-last-message").removeClass('gray').css('color', '#18c3bd')
+	    	console.log($('#' + sendingUser + " .convo-details .convo-last-message"))
+	    	console.log("tried")
 	    	//show notifications counter and increment
 	    	$.ajax({
   				url: '/users/' + <%= current_user.id %> + '.json'

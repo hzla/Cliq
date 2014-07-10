@@ -17,11 +17,8 @@ class Conversation < ActiveRecord::Base
 	def date user
 		time = messages.order(:created_at).pluck(:created_at).last
 		# tzone = Timezone::Zone.new(:latlon => [user.latitude, user.longitude])
-		p messages
-        puts "\n" * 10
-        
-        if (Time.now - 1.day) < time
-			(time).strftime("%I:%M%p")
+     if (Time.now - 1.day) < time
+			(time).strftime("%I:%M %p")
 		else
 			(time).strftime("%m/%d/%g")
 		end
