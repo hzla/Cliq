@@ -4,7 +4,7 @@
 	float: left;
 	border: 1px solid black;
 	width: 530px;
-	height: 550px;
+	height: 480px;
 	font-family: $generic-font;
 	background-color: $super-light-gray;
 }
@@ -61,6 +61,7 @@
 	margin-right: 150px;
 	border: 1px solid $light-gray;
 	font-size: 16px;
+    padding-left: 12px;
 }
 
 #or {
@@ -159,7 +160,20 @@
 	box-shadow: none;
 	float: left;
 	margin-left: 200px;
+<<<<<<< HEAD
+}
+
+#invite-submit {
+	background: none;
+	border: none;
+	color: white;
+	font-size: 18px;
+    font-weight: 600;
+	margin-top: 10px;
+=======
+>>>>>>> 82b17aa0b041070bf42f23853039b4f4bb341135
 	cursor: pointer;
+    font-family: "proxima nova","open-sans";
 }
 
 .invite-icon {
