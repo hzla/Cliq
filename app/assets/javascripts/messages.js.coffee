@@ -5,6 +5,7 @@ Messages =
 		$('body').on 'click', '.convo-link', @prepConversation
 		$('body').on 'ajax:success', '.convo-link', @appendConversation
 		$('body').on 'keypress', '#chat-box', @submitMessageOnEnter
+		$('#messages-container').parent().parent().css 'background', 'white'
 		@selectFirstConversation()
 
 	submitMessage: ->
@@ -21,6 +22,8 @@ Messages =
 	appendConversation: (event, data, xhr, status) ->
 		$('#messages').html(data)
 		$('.message-history')[0].scrollTop = $('.message-history')[0].scrollHeight
+		$('.convo-link').find('.convo-last-message').css 'color', '#bebebe'
+		$(@).find('.convo-last-message').css 'color', 'white'
 
 	selectFirstConversation: ->
 		$($('.conversation')[0]).addClass('current')

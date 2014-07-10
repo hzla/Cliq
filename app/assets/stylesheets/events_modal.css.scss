@@ -134,7 +134,23 @@
 }
 
 #send-invite {
-	background-color: $light-turq;
+	position: relative;
+}
+
+#send-invite .invite-icon {
+	position: absolute;
+	left: 206px;
+	top: 22px;
+	cursor: pointer;
+}
+#invite-submit {
+	background: none;
+	border: none;
+	color: white;
+	font-size: 18px;
+	margin-top: 10px;
+	cursor: pointer;
+	background-color: #18c3bd;
 	color: white;
 	width: 160px;
 	height: 44px;
@@ -144,6 +160,7 @@
 	box-shadow: none;
 	float: left;
 	margin-left: 200px;
+<<<<<<< HEAD
 }
 
 #invite-submit {
@@ -153,6 +170,8 @@
 	font-size: 18px;
     font-weight: 600;
 	margin-top: 10px;
+=======
+>>>>>>> 82b17aa0b041070bf42f23853039b4f4bb341135
 	cursor: pointer;
     font-family: "proxima nova","open-sans";
 }

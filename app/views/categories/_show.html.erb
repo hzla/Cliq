@@ -20,7 +20,7 @@
 					<%= link_to category_path(cat), remote: true, class: 'cat-link' do %>
 						<div class="cat">
 							<div class="cat-title dark-gray head-4">
-								<span class="cat-select"><%= cat.name %></span>
+								<span class="cat-select"><%= cat.name[0..19] + "#{'...' if cat.name.length > 20}" %></span>
 								<%= image_tag "check.svg.png", :class => "check hidden" %>
 							</div>
 							<%= image_tag cat.image_url, :class => "cat-pic" %>

@@ -6,7 +6,7 @@
 				<%= form_tag search_path, id: "search-form", remote: true do %>
 					<div id="query-row-1">
 						<div id="query-1" class="head-2 white">I want to hang out in</div>
-						<%= text_field_tag :location, nil, :class => "head-2 dark-gray search-term", id: "query-location", placeholder: "City, State" %>
+						<%= text_field_tag :location, nil, :class => "head-2 dark-gray search-term", id: "query-location", placeholder: "Orlando, Florida" %>
 						<%= hidden_field_tag "location_id" %>
 						<div id="query-2" class="head-2 white">with people interested in</div>
 					</div>
@@ -23,15 +23,7 @@
 	<div id="results-container">
 		<div id="results-content">
 			<div id="results-header">
-<<<<<<< HEAD
-				<div id="found" class="head-3">Similar Users:</div>
-				<div id="sort-term" class="head-3 light-gray">Distance</div>
-				<div id="sort-by" class="head-3 light-gray">Sort by:</div>
-=======
 				<div id="found" class="head-3">Here's who we found:</div>
-				<div id="sort-term" class="head-3 light-gray hidden">Distance</div>
-				<div id="sort-by" class="head-3 light-gray hidden">Sort by:</div>
->>>>>>> 2dd27f5e088e18111b23e687f846a49877a94efe
 			</div>
 			
 

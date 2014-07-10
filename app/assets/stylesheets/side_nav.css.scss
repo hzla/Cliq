@@ -85,7 +85,7 @@ a {
 	font-style: italic;
 	font-weight: 400;
 	font-size: 20px;
-	color: white;
+	color: #d3d3d3;
 	padding-top: 17px;
 	padding-bottom: 17px;
 }
@@ -116,7 +116,7 @@ a {
 	position: absolute;
 	bottom: 90px;
 	font-family: $generic-font;
-    font-weight: 300;
+  font-weight: 300;
 	color: white;
 	width: 62px;
 }
@@ -126,7 +126,7 @@ a {
 	padding-left: 62px;
 	float: left;
 	clear: left;
-	margin-top: 10px;
+	margin-top: 0px;
 	padding-bottom: 5px;
 	padding-top: 5px;
 	text-align: left;
@@ -141,7 +141,7 @@ a {
 	width: 62px;
 	position: fixed;
 	left: 0;
-	top: 238px;
+	top: 312px;
 	opacity: 0;
 	z-index: 100
 }
@@ -190,5 +190,5 @@ a {
 }
 
 .nav-icon path {
-	fill: $super-light-gray;
+	fill: #d3d3d3;
 }
