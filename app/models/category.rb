@@ -41,6 +41,9 @@ class Category < ActiveRecord::Base
 			word[0].upcase + word[1..-1]
 		end	
 		url_name = url_name.join("_") + ".jpg"
+		if parent.name == "TV Shows"
+			url_name = "TV" + url_name
+		end
 		'https://s3.amazonaws.com/CliqBucket/Categories/' + url_name
 	end
 
