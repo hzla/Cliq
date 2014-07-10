@@ -5,6 +5,11 @@ Events =
     $('body').on 'change', '#event_partner_id', @addPartnerInfo
     $('body').on 'ajax:success', '.event-sort', @sortEvents
     $('body').on 'ajax:success', '#new_event', @closeModal 
+    $('body').on 'click', '#send-invite .invite-icon', @send
+
+  send: ->
+    console.log "tried"
+    $('#new_event').submit()
 
 	browseFiles: ->
   	$('#event_image').click()
