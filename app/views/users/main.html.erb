@@ -6,7 +6,7 @@
 				<%= form_tag search_path, id: "search-form", remote: true do %>
 					<div id="query-row-1">
 						<div id="query-1" class="head-2 white">I want to hang out in</div>
-						<%= text_field_tag :location, nil, :class => "head-2 dark-gray search-term", id: "query-location", placeholder: "City, State" %>
+						<%= text_field_tag :location, nil, :class => "head-2 dark-gray search-term", id: "query-location", placeholder: "Orlando, Florida" %>
 						<%= hidden_field_tag "location_id" %>
 						<%= hidden_field_tag "type", "swipe" %>
 						<div id="query-2" class="head-2 white">with people interested in</div>

@@ -1,38 +1,40 @@
 Category: Discuss
 q: What do you like to discuss?
-	Anthropology
-	Architecture
-	Art
-	Beer
-	Biology
-	Books
-	Computers
-	Cooking
-	Culture
-	Current Events
-	Dance
-	Domestic Politics
-	Economics
-	Education
-	Engineering
-	Finance
-	Food
-	Geopolitics
-	History
-	Justice
-	Marketing
-	Medicine
-	Music
-	Philosophy
-	Physics
-	Psychology
-	Science
-	Sociology
-	Space
-	Sports
-	Technology
-	Travel
-	Wine
+	Category: Academic
+		Anthropology
+		Architecture
+		Biology
+		Computers
+		Economics
+		Education
+		Engineering
+		Finance
+		Geopolitics
+		History
+		Medicine
+		Music
+		Philosophy
+		Physics
+		Psychology
+		Science
+		Sociology
+		Space
+		Technology
+	Category: Misc Topics
+		Art
+		Beer
+		Cooking
+		Books
+		Culture
+		Current Events
+		Dance
+		Domestic Politics
+		Food
+		Justice
+		Marketing
+		Sports
+		Travel
+		Wine
 Category: Do
 q: What do you do for fun?
 	Category: Visit Places
