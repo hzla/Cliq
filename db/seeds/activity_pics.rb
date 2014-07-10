@@ -1,5 +1,5 @@
 require 'wikipedia'
-acts = Activity.all
+acts = Activity.where activty_pic: nil
 acts.each do |act|
 	act.remove_activity_pic!
 	act.save

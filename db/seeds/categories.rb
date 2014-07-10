@@ -33,6 +33,7 @@ contents.each do |line|
 			end
 		end
 		if category.empty? #if its a new category
+			p name
 			category = Category.create name: name, parent: parent
 		else
 			if category.length > 1 #if its a duplicate
@@ -53,7 +54,6 @@ end
 
 
  # puts "creating users..."
-
  # (1..10).each {|n| User.create name: Faker::Name.name }
 
 
