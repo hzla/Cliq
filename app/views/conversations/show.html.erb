@@ -4,7 +4,7 @@
 	<% end %>
 </div>
 
-<div class="chat-window-footer">
+
 	<%= form_for [@conversation, @message], remote: true do |f| %>
 		<%= f.text_area :body, id: 'chat-box' %>
 	<% end %>
@@ -24,7 +24,7 @@
 			<div class="result-action reply">REPLY</div>
 		</div>
 	</div>
-</div>
+
 	<script>
 		$('.messages .counter').text(<%= current_user.message_count %>)
 		<% if current_user.message_count < 1 %>
