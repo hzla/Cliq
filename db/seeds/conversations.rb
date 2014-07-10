@@ -7,7 +7,7 @@ users.each do |user|
 		other_user = users.sample
 		conversation = Conversation.create name: other_user.id
 
-		3.times do 
+		2.times do 
 			Message.create user_id: user.id, conversation_id: conversation.id, body: Faker::Lorem.paragraph
 			Message.create user_id: other_user.id, conversation_id: conversation.id, body: Faker::Lorem.paragraph
 		end
