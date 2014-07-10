@@ -11,6 +11,7 @@ Animations =
 			marginLeft: "148px"
 		}, 200
 		$('.icon-label').css 'opacity', '1'
+		$('.extended-options').show()
 
 	revertSideNav: ->
 		$('.extended-side-nav').stop().animate {
@@ -20,6 +21,7 @@ Animations =
 			marginLeft: "0px"
 		}, 200
 		$('.icon-label').css 'opacity', '0'
+		$('.extended-options').hide()
 
 
 
