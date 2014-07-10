@@ -19,7 +19,8 @@ class User < ActiveRecord::Base
 	def self.create_with_facebook auth_hash
 		profile = auth_hash['info']
 		fb_token = auth_hash.credentials.token
-		user = User.new name: profile['name'], profile_pic_url: profile['image'], fb_token: fb_token
+		gender =  auth_hash['extra']['raw_info']['gender']
+		user = User.new name: profile['name'], profile_pic_url: profile['image'], fb_token: fb_token, sex: gender
     user.activation = user.generate_code
     user.authorizations.build :uid => auth_hash["uid"]
     user if user.save

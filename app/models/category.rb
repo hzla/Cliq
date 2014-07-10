@@ -36,5 +36,13 @@ class Category < ActiveRecord::Base
 		[["Stuff #{name} does for fun:", "Do"],["What he listens to:", "Music"],["What he watches:", "Watch"], ["What he likes to talk about:", "Discuss"]] 
 	end
 
+	def image_url
+		url_name = name.split.map do |word|
+			word[0].upcase + word[1..-1]
+		end	
+		url_name = url_name.join("_") + ".jpg"
+		'https://s3.amazonaws.com/CliqBucket/Categories/' + url_name
+	end
+
 
 end
