@@ -81,7 +81,7 @@
 
 		<div class="form-row submit">	
 			<div id="send-invite">
-				<%= image_tag "Events.svg", :class => "invite-icon" %>
+				<%= image_tag "Events.svg", :class => "invite-icon svg" %>
 				<%= f.submit "SEND INVITE", id: "invite-submit" %>
 			</div>
 			<img id="preview" src="#" alt="preview failed to load" class="hidden" /> 
@@ -113,7 +113,7 @@
   });
 </script>
 <script>
-  $('img.svg').each(function(){
+  $('.svg').each(function(){
     var $img = $(this);
     var imgID = $img.attr('id');
     var imgClass = $img.attr('class');

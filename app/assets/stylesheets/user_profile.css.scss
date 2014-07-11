@@ -7,6 +7,7 @@
 	float: left;
 	position: relative;
 	font-family: $generic-font;
+	overflow-x: hidden; 
 }
 
 .profile-pic {
@@ -133,6 +134,7 @@
 .interests {
 	width: 105.5%;
 	float: left;
+	background: white;
 }
 
 #interest-list {

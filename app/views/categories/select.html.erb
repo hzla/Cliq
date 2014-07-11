@@ -19,9 +19,6 @@
 		</div>
 	</div>
 
-	<% p doing? "Do" %>
-
-
 
 		<%= render partial: 'show', locals: {category: @category} %>
 
@@ -35,17 +32,13 @@
 						</p>
 					</div>
 				</div>
-				<div id="next-cat" class="hidden head-3 dark-gray">NEXT</div>
-			<% else %>
-				<div id="cat-footer-content" class="head-4 gray hidden">
-					<div id="cat-footer-text">
-						<p id="line-1">pick <span class="dark-gray" id="like-count"> <%= 8 - @likes %></span> or more options from any combination of categories to move on to the next section!</p>
-						<p id="line-2">
-							you can always come back to edit your choices
-						</p>
-					</div>
+				<div id="next-cat" class="head-3 dark-gray">
+					<%= @category.name != "Discuss" ? "NEXT" : "FINISH" %>
 				</div>
-				<div id="next-cat" class="head-3 dark-gray">NEXT</div>
+			<% else %>
+				<div id="next-cat" class="head-3 dark-gray">
+					<%= @category.name != "Discuss" ? "NEXT" : "FINISH" %>
+				</div>
 			<% end %>
 	</div>
 </div>

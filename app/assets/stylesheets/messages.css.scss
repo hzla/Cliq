@@ -3,7 +3,8 @@
 #messages-container {
 	float: left;
 	width: 100%;
-    background-color: #fff;
+  background-color: #fff;
+  position: static;
 }
 
 .message-content-container {
@@ -274,5 +275,12 @@
 	float: left;
 	margin-top: 7px;
 	margin-left: 80px;
+}
+
+.message-form {
+	width: 560px;
+	height: 140px;
+	position: absolute;
+	bottom: 0px;
 }
 
