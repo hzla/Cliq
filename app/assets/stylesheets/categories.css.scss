@@ -186,6 +186,44 @@
 	color: white;
 }
 
+#suggestion-container {
+	float: right;
+	height: 250px;
+	width: 195px;
+	position: absolute;
+	bottom: -270px;
+}
+
+#submit-act {
+	margin-top: 15px;
+	width: 100px;
+	height: 25px;
+	border: none;
+	color: white;
+	background-color: $light-turq;
+	border-radius: 50px;
+	cursor: pointer;
+}
+
+#submit-act:hover {
+	border: 1px solid $light-turq;
+	color: $light-turq;
+	background-color: white;
+}
+
+#thank-suggestion {
+	margin-top: 10px;
+	display: none;
+}
+
+.act-name-input {
+	margin-top: 10px;
+	height: 30px;
+	width: 200px;
+	border-radius: 100px;
+	border: none;
+}
+
 #arrow-container {
 	float: right;
 	height: 100%;

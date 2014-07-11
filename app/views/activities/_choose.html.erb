@@ -18,6 +18,17 @@
 				<div id="arrow-text" class="gray head-4">
 					Click to Add
 				</div>
+			<div id="suggestion-container">
+				<div id="suggest-text" class="head-4 dark-gray">
+					Don't see you something you like? Suggest we add it!
+				</div>
+				<%= form_for act, remote: true do |f| %>
+					<%= f.text_field :name, :class => "act-name-input" %>
+					<%= f.hidden_field :category_id, value: category.id %>
+					<%= f.hidden_field :suggested_by, value: current_user.id %>
+					<%= f.submit "Suggest", id: "submit-act" %>
+				<% end %>
+			</div>
 			</div>
 			<% not_liked.each do |act| %>
 				

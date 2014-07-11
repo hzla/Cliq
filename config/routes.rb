@@ -12,6 +12,7 @@ Cliq::Application.routes.draw do
     get '/choose', to: 'activities#choose', as: 'choose_activity'
   end
 
+
   resources :interests, only: [:create, :destroy] 
   
   resources :locations, only: [:index]
@@ -32,7 +33,7 @@ Cliq::Application.routes.draw do
   end
   get '/users/:id/other', to: 'users#other', as: 'other_user'
   
-  resources :activities, only: [:index]
+  resources :activities, only: [:index, :create]
   post '/users/:id/send_activation', to: 'users#send_activation', as: 'send_activation'
   get '/users/:id/activate/:code', to: 'users#activate', as: 'activate'
   get '/search', to: 'users#search', as: 'search'

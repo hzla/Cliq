@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140709195845) do
+ActiveRecord::Schema.define(version: 20140711215149) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20140709195845) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "activity_pic"
+    t.integer  "suggested_by"
   end
 
   add_index "activities", ["category_id"], name: "category_id_ix", using: :btree

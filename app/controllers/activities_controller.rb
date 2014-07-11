@@ -11,7 +11,13 @@ class ActivitiesController < ApplicationController
 		p acts
 		liked = acts[0]
 		not_liked = acts[1]
-		render partial: 'choose', locals: {category: category, activities: activities, not_liked: not_liked, liked: liked}
+		act = Activity.new
+		render partial: 'choose', locals: {category: category, activities: activities, not_liked: not_liked, liked: liked, act: act}
+	end
+
+	def create
+		Activity.create params[:activity]
+		render nothing: true
 	end
 
 end
