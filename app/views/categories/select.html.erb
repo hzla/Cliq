@@ -34,7 +34,7 @@
 				</div>
 				<div id="next-cat" class="head-3 dark-gray">
 					<% if @category.name != "Discuss" %> 
-						"NEXT" 
+						NEXT 
 					<% else %>
 						 <%= link_to "FINISH", user_path(current_user) %>
 					<% end %>
@@ -42,7 +42,7 @@
 			<% else %>
 				<div id="next-cat" class="head-3 dark-gray">
 					<% if @category.name != "Discuss" %> 
-						"NEXT" 
+						NEXT 
 					<% else %>
 						 <%= link_to "FINISH", user_path(current_user) %>
 					<% end %>
