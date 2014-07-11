@@ -10,8 +10,9 @@ Messages =
 
 	submitMessage: ->
 		$('#new_message').submit()
+		$('.sending-progress').text('Sending...').show() if $('#chat-box').val().replace(/^\s+|\s+$/g, "") != ""
 		$('#chat-box').val ''
-		$('.sending-progress').text('Sending...').show()
+		
 
 
 	prepConversation: ->
