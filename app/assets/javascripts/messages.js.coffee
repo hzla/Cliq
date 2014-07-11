@@ -14,7 +14,6 @@ Messages =
 		$('#chat-box').val ''
 		
 
-
 	prepConversation: ->
 		$('.conversation').removeClass 'current'
 		$(@).parent().addClass 'current'
@@ -23,7 +22,8 @@ Messages =
 	appendConversation: (event, data, xhr, status) ->
 		$('#messages').html(data)
 		$('.message-history')[0].scrollTop = $('.message-history')[0].scrollHeight
-		$('.convo-link').find('.convo-last-message').css 'color', '#bebebe'
+		$('.convo-link').find('.convo-last-message').each ->
+			$(@).css 'color', '#bebebe' if $(@).css('color') != "rgb(24, 195, 189)"
 		$(@).find('.convo-last-message').css 'color', 'white'
 
 	selectFirstConversation: ->
