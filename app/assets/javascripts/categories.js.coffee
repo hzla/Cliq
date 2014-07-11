@@ -47,6 +47,7 @@ Categories =
 		$('#thank-suggestion').remove()
 		$('#suggestion-container').append "<div id='thank-suggestion'>Thank you, your suggestion will be looked over and added if appropriate.</div>"
 		$('#thank-suggestion').show().addClass('animated fadeIn')
+		console.log "tried"
 
 
 
