@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
 	def other
 		@user = User.find params[:id]
-		@format = Category.other_format @user.first_name
+		@format = Category.other_format @user.first_name, @user.sex
 		@formatted_interests = @user.formatted_interests
 		render layout: false
 	end
@@ -53,6 +53,7 @@ class UsersController < ApplicationController
 				return
 			else
 				render partial: "search_results", locals: {results: results}
+				return
 			end
 		end
 		if params[:location_id] != "" && params[:location] != ""

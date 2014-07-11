@@ -32,8 +32,9 @@ class Category < ActiveRecord::Base
 		[["Stuff you do for fun:", "Do"],["Music:", "Music"],["What you watch:", "Watch"], ["What you talk about:", "Discuss"]] 
 	end
 
-	def self.other_format name
-		[["Stuff #{name} does for fun:", "Do"],["What he listens to:", "Music"],["What he watches:", "Watch"], ["What he likes to talk about:", "Discuss"]] 
+	def self.other_format name, sex
+		pronoun = sex == "male" ? "he" : "she"
+		[["Stuff #{name} does for fun:", "Do"],["What #{pronoun} listens to:", "Music"],["What #{pronoun} watches:", "Watch"], ["What #{pronoun} likes to talk about:", "Discuss"]] 
 	end
 
 	def image_url
