@@ -16,6 +16,7 @@ class Conversation < ActiveRecord::Base
 
 	def date user
 		time = messages.order(:created_at).pluck(:created_at).last
+		return "no message yet" if !time
 		# tzone = Timezone::Zone.new(:latlon => [user.latitude, user.longitude])
      if (Time.now - 1.day) < time
 			(time).strftime("%I:%M %p")
