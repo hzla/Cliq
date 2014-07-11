@@ -33,11 +33,19 @@
 					</div>
 				</div>
 				<div id="next-cat" class="head-3 dark-gray">
-					<%= @category.name != "Discuss" ? "NEXT" : "FINISH" %>
+					<% if @category.name != "Discuss" %> 
+						"NEXT" 
+					<% else %>
+						 <%= link_to "FINISH", user_path(current_user) %>
+					<% end %>
 				</div>
 			<% else %>
 				<div id="next-cat" class="head-3 dark-gray">
-					<%= @category.name != "Discuss" ? "NEXT" : "FINISH" %>
+					<% if @category.name != "Discuss" %> 
+						"NEXT" 
+					<% else %>
+						 <%= link_to "FINISH", user_path(current_user) %>
+					<% end %>
 				</div>
 			<% end %>
 	</div>

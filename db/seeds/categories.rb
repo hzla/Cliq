@@ -50,7 +50,6 @@ contents.each do |line|
 		Activity.where(name: line.strip, category_id: last_created.id).first_or_create
 	end
 	p line.strip
-	p repeats
 end
 
 

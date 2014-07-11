@@ -623,7 +623,7 @@ q: What do you like to watch?
 			Zombieland
 			21 Jump Street
 			22 Jump Street
-		Category: Drama
+		Category: Dramatic
 			American Hustle
 			Captain Phillips
 			Dallas Buyer’s Club
