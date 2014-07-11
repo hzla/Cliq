@@ -12,6 +12,6 @@ class Message < ActiveRecord::Base
 		# else
 		# 	time(created_at).strftime("%m/%d %I:%M%p")
 		# end
-		(created_at + 4.hours).strftime("%m/%d %I:%M%p")
+		(created_at - 4.hours).strftime("%m/%d %I:%M%p")
 	end
 end
