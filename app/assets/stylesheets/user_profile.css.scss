@@ -133,6 +133,7 @@
 .interests {
 	width: 105.5%;
 	float: left;
+    background-color: #fff;
 }
 
 #interest-list {
@@ -151,7 +152,7 @@
 	width: 100%;
 	color: $dark-turq;
 	font-weight: 700;
-	font-size: 22pt;
+	font-size: 22px;
 }
 
 .cat-group {
@@ -162,12 +163,13 @@
 	border-radius: 50px;
 	margin-right: 76px; 
 	background-color: $orange;
-	margin-top: 28px;
+	margin-top: 20px;
 	float: left;
 	width: 224px;
-	height: 35px;
-	font-size: 24px;
-	font-weight: 600;
+	height: 26px;
+	font-size: 20px;
+	font-weight: 500;
+    color: $dark-orange;
 }
 
 
@@ -179,20 +181,21 @@
 }
 
 .activity {
-	padding-left: 5px;
-	padding-right: 5px;
+	padding-left: 6px;
+	padding-right: 6px;
 	margin-right: 5px;
-	height: 30px;
+	height: 20px;
 	font-weight: 500;
 	float: left;
 	margin-top: 5px;
-	font-size: 17px;
-	color: $light-turq;
+	font-size: 16px;
+	color: $turq;
 }
 
 .cat-name {
-	margin-left: 10px;
-	margin-top: 4px;
+	text-align: center;
+    line-height: 1.4;
+
 }
 
 .act-name {
