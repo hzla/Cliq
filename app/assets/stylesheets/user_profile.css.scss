@@ -199,6 +199,7 @@
 
 .act-name {
 	margin-top: 3px;
+	position: relative;
 }
 
 .more {
@@ -217,7 +218,58 @@
 	margin-left: 38%;
 }
 
+.dot {
+	position: absolute 
+}
 
+#top-welcome {
+	margin-top: 50px;
+	position: absolute;
+	top: 50px;
+	margin: 0 auto;
+	color: #414141;
+	font-weight: 400;
+	left: 50px;
+	width: 480px;
+}
 
+#welcome-form {
+	margin: 0 auto;
+	width: 565px;
+	height: 260px;
+	background-color: white;
+	margin-top: 125px;
+	background: white;
+	z-index: 5;
+	border-radius: 5px;
+	text-align: left;
+	font-size: 22px;
+	font-weight: 400;
+	position: relative;
+}
+
+#bottom-welcome {
+	margin-top: 0px;
+position: absolute;
+bottom: 85px;
+margin: 0 auto;
+
+left: 50px;
+width: 480px;
+}
+
+#got-it {
+	color: white;
+	background-color: #18c3bd;
+	width: 150px;
+	height: 27px;
+	position: absolute;
+	bottom: 28px;
+	left: 158px;
+	border-radius: 100px;
+	text-align: center;
+	padding: 5px 44px;
+	cursor: pointer;
+}
 
 

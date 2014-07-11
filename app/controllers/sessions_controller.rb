@@ -10,17 +10,13 @@ class SessionsController < ApplicationController
 	  #redirect to user page if they've already authorized
 	  if auth
 	    session[:user_id] = auth.user.id
-	    current_user.update_attributes active: true;
+	    current_user.update_attributes active: true
 	    redirect_to main_path and return
 	  else #create new user if not authorized
 	    user = User.create_with_facebook auth_hash
-	    
-	    p auth_hash
-
-
 	    session[:user_id] = user.id 
-	    current_user.update_attributes active: true;
-	    redirect_to user_path user 
+	    current_user.update_attributes active: true
+	    redirect_to user_path(user,{:welcome => true})
 	  end
 	end
 

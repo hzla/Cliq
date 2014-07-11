@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 	before_filter :get_user
 
 	def show
+		@welcome = params["welcome"]
 		@category = Category.where(name: "Do").first
 		@format = Category.self_format
 		@formatted_interests = @user.formatted_interests
