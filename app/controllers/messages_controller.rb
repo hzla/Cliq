@@ -20,9 +20,8 @@ class MessagesController < ApplicationController
 		@conversation = Conversation.find(params[:conversation_id])
 		@conversation.update_attributes connected: true
 		@user = @conversation.get_other_user current_user
-		@user.message_count += 1
+		@user.message_count += 1 if @message.save
 		@user.save
-		@message.save
 		broadcast user_path(@user)+ "/messages", @message.to_json
 		other_connection = Connection.where(conversation_id: params[:conversation_id], user_id: @user.id).first
 		if !@user.active && !other_connection.emailed
