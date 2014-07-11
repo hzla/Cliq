@@ -26,7 +26,8 @@ Search =
 
 	chatUser: (event, data, xhr, status) ->
 		event.preventDefault()
-
+		$('.content-container').css 'background', 'white'
+		$('.content-container').css 'opacity', '.3'
 		if $('#' + $(@).attr('href').split('/')[2]).length < 1
 			$('body').append data
 			$('.chat-partial').last().addClass 'animated bounceInRight'
@@ -40,15 +41,20 @@ Search =
 			console.log '#' + $(@).attr('href').split('/')[2]
 			$('.user-other-container').remove()
 			$('#' + $(@).attr('href').split('/')[2]).children('.convo-link').click()
+			$('.content-container').css 'opacity', ''
+			$('.content-container').css 'background', '#f1f1f1'
 
 
 	showUser: (event, data, xhr, status) ->
 			$('.user-other-container').remove()
 			$('body').append data
 			$('.user-other-container').addClass 'animated bounceInRight'
+			$('.content-container').css 'background', 'white'
+			$('.content-container').css 'opacity', '.3'
 
 	collapseChat: ->
 		Search.collapse $(@).parents('.chat-partial')
+
 
 	collapse: (chat) ->
 		chat.addClass 'bounceOutRight'
@@ -63,11 +69,15 @@ Search =
 			collapsed.addClass " shown indented indent-" + collapsedCount
 		collapsed.show().addClass(className + " animated bounceInLeft").show()
 		collapsedCount = $('.collapsed-chat').length - 1
+		$('.content-container').css 'opacity', ''
+		$('.content-container').css 'background', '#f1f1f1'
 
 	collapseAllChat: ->
 		$('div.chat-partial').not('.bounceOutRight').each () ->
 			Search.collapse $(@) if $('#chat-partial-content')
 		$('.user-other-container').hide()
+		$('.content-container').css 'opacity', ''
+		$('.content-container').css 'background', '#f1f1f1'
 
 	addChat: ->
 		$(@).addClass 'animated bounceOutLeft'
@@ -77,6 +87,10 @@ Search =
 		$(@).prev().removeClass().addClass 'chat-partial animated bounceInRight'
 		$('.chat-partial').css 'z-index', '2'
 		$(@).prev().css 'z-index', '3'
+		console.log "happened"
+		if $('.chat-partial').length > 0
+			$('.content-container').css 'background', 'white'
+			$('.content-container').css 'opacity', '.3'
 
 	autocompleteLocations: ->
 		$('#query-location').autocomplete
@@ -155,6 +169,8 @@ Search =
 	closeChat: -> 
 		$(@).parent().parent().prev().remove()
 		$(@).parent().parent().remove()
+		$('.content-container').css 'opacity', ''
+		$('.content-container').css 'background', '#f1f1f1'
 
 	thankUser: (event, data, xhr, status) ->
 		if $('#email').val().match(/.+@.+\..+/i) != null

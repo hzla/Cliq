@@ -1,9 +1,15 @@
 @import 'variables';
 
+html {
+	height: 100%;
+}
+
 body {
 	margin: 0;
   padding-left:62px;
   background-color: $super-light-gray;
+  position: relative;
+  height: 100%;
 }
 
 a {
@@ -90,6 +96,15 @@ a {
 	font-family: $generic-font;
  // min-height: 800px;
   background-color: $super-light-gray;
+}
+
+.screen {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background: #fff;
+	opacity: .3;
+	bottom: 0
 }
 
 input:focus {outline: none; }
