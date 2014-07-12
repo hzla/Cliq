@@ -21,10 +21,11 @@ Users =
 
 	closeFeedback: ->
 		@.reset()
-		$('#feedback-message').text('Thank you for your feedback.')
+
 
 	showSending: ->
-		$('#feedback-message').text('Sending...')
+		@.reset()
+		$('#feedback-message').text('Thank you for your feedback.')
 
 
 
