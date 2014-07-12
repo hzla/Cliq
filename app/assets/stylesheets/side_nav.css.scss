@@ -1,15 +1,7 @@
 @import 'variables';
 
 
-.side-nav {
-	width: 62px;
-	height: 100%;
-	background-color: $dark-gray;
-	position: fixed;
-	left: 0;
-	text-align: center;
-	top: 0;
-  z-index: 3;
+.extended-side-nav {
 }
 
 .extended {
@@ -21,7 +13,6 @@
 	clear: left;
 	font-family: $generic-font;
   font-weight: 300;
-  color: #d3d3d3;
 	width: 100%;
   z-index:3;
 }
@@ -38,8 +29,8 @@
 	float: left;
 	margin-top: 20px;
 	-webkit-animation-duration: .5s;
-	color: white;
 	opacity: 0;	
+	color: $super-light-gray;
 }
 
 .settings .icon-label {

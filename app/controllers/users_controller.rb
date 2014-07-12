@@ -39,7 +39,7 @@ class UsersController < ApplicationController
 	end
 
 	def search
-		@results = nil
+		@results = current_user.search_similar current_user.activities
 	end
 
 	def main
@@ -78,7 +78,6 @@ class UsersController < ApplicationController
 	end
 
 	def feedback
-		p params
 		content = params[:content]
 		FeedbackMailer.feedback(content, current_user).deliver
 		render nothing: true
