@@ -11,6 +11,7 @@ Users =
 
 	openFeedback: -> 
 		$(@).hide()
+		console.log "show"
 		$('#feedback').show().addClass 'animated fadeInUp'
 		$('#feedback-message').hide().show().text 'Have any suggestions for Cliq? Feel free to send us some feedback!'
 
