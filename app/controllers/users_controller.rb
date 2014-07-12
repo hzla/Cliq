@@ -77,6 +77,13 @@ class UsersController < ApplicationController
 		render partial: "search_results", locals: {results: results}
 	end
 
+	def feedback
+		p params
+		content = params[:content]
+		FeedbackMailer.feedback(content, current_user).deliver
+		render nothing: true
+	end
+
 private
 	
 	def get_user

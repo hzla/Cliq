@@ -96,6 +96,7 @@ a {
 	font-family: $generic-font;
  // min-height: 800px;
   background-color: $super-light-gray;
+  height: 100%;
 }
 
 .screen {
@@ -109,6 +110,71 @@ a {
 
 input:focus {outline: none; }
 textarea:focus {outline: none; }
+
+#send-feedback {
+	font-size: 20px;
+	position: fixed;
+	bottom: 0px;
+	right: 15px;
+	font-family: $generic-font;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	padding: 5px;
+	color: $dark-gray;
+	cursor: pointer;
+}
+
+#send-feedback:hover {
+	background-color: $gray;
+	color: white;
+}
+
+#feedback {
+	position: fixed;
+	height: 276px;
+	width: 300px;
+	bottom: 0;
+	right: 15px;
+	font-family: $generic-font;
+	color: $dark-gray;
+	text-align: center;
+	background: $light-gray;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	display: none;
+}
+
+#fb-content {
+	border: none;
+	height: 150px;
+	width: 270px;
+	margin-top: 20px;
+	font-size: 18px;
+}
+
+#send-fb {
+	border: none;
+	background-color: $light-turq;
+	color: white;
+	width: 100px;
+	height: 30px;
+	margin-top: 10px;
+	border-radius: 15px;
+	cursor: pointer;
+}
+
+#send-fb:hover {
+	border: 1px solid $light-turq;
+	background: white;
+	color: $light-turq
+}
+
+#feedback-message {
+	width: 270px;
+	margin-left: 15px;
+	margin-top: 10px;
+	height: 33px;
+}
 
 
 
