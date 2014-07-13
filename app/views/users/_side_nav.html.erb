@@ -46,12 +46,12 @@
 			<div class="icon-label main">Events</div>
 		</div> 
 	<% end %>
-	<div class="nav-filler">
-	</div> 
-	<div class="extended settings <%= 'active' if active == :settings %>" id="extended-settings" >
-		<%= image_tag "Settings.svg", :class => "nav-icon svg" %>
-		<div class="icon-label main">User Settings</div>
-	</div>
+	<%= link_to settings_path current_user do%>
+		<div class="extended settings <%= 'active' if active == :settings %>" id="extended-settings" >
+			<%= image_tag "Settings.svg", :class => "nav-icon svg" %>
+			<div class="icon-label main">User Settings</div>
+		</div>
+	<% end %>
 
 	<div class="extended-options hidden">
 		<%= link_to help_path do %>

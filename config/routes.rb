@@ -32,6 +32,8 @@ Cliq::Application.routes.draw do
     get '/chat', to: 'conversations#chat', as: 'chat'
   end
   get '/users/:id/other', to: 'users#other', as: 'other_user'
+  get '/users/:id/settings', to: 'users#settings', as: "settings"
+
   
   resources :activities, only: [:index, :create]
   post '/users/:id/send_activation', to: 'users#send_activation', as: 'send_activation'

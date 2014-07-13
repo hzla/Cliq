@@ -1,0 +1,113 @@
+@import 'variables';
+
+.settings-input {
+	background: $super-light-gray;
+	color: $dark-gray;
+	margin-bottom: 32px;
+	border: none;
+	border-radius: 100px;
+	width: 350px;
+	height: 40px;
+	padding-left: 20px;
+}
+
+.notification-setting {
+	margin-top: 10px;
+	position: relative;
+	input {
+		position: absolute;
+		left: 0;
+		height: 20px;
+		width: 20px;
+	}
+	label {
+		margin-left: 30px;
+	}
+}
+
+#save-settings {
+	margin-top: 50px;
+	width: 100px;
+	height: 30px;
+	border: none;
+	color: white;
+	background: $light-turq;
+	border-radius: 100px;
+	cursor: pointer;
+	float: left;
+}
+
+#save-settings:hover {
+	background: white;
+	border: 1px solid $light-turq;
+	color: $light-turq;
+}
+
+#delete-account {
+	margin-top: 140px;
+	cursor: pointer;
+	width: 100px;
+	border-radius: 100px;
+	width: 170px;
+	padding-left: 13px;
+	margin-left: -13px;
+}
+
+#delete-account:hover {
+	background: red;
+	color: white;
+}
+
+#settings-success {
+	margin-top: 52px;
+	font-size: 20px;
+	margin-left: 120px;
+}
+
+#delete-modal {
+	float: left;
+	border: 1px solid black;
+	width: 600px;
+	height: 130px;
+	font-family: $generic-font;
+	background: white;
+	display: none;
+	text-align: center;
+}
+
+#delete-text {
+	width: 600px;
+	margin-top: 20px;
+}
+
+#cancel-delete {
+	float: left;
+	background-color: $light-gray;
+	width: 150px;
+	border-radius: 100px;
+	height: 28px;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+#confirm-delete {
+	float: left;
+	background-color: $red;
+	width: 150px;
+	border-radius: 100px;
+	height: 28px;
+	margin-left: 50px;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+#confirm-delete:hover {
+	color: $red;
+	border: 1px solid $red;
+	background-color: white;
+}
+#delete-actions {
+	width: 362px;
+	margin: 0 auto;
+}
+

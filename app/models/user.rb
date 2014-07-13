@@ -3,17 +3,17 @@ class User < ActiveRecord::Base
 	has_many :activities, through: :interests
 	has_many :events, through: :excursions
 	has_many :conversations, through: :connections
-	has_many :cat_interests
-	has_many :interests 
-	has_many :excursions
-	has_many :connections
-	has_many :authorizations
-	has_many :messages
+	has_many :cat_interests, dependent: :destroy 
+	has_many :interests, dependent: :destroy 
+	has_many :excursions, dependent: :destroy 
+	has_many :connections, dependent: :destroy 
+	has_many :authorizations, dependent: :destroy 
+	has_many :messages, dependent: :destroy 
 
 	validates :name, :presence => true
-	attr_accessible :name, :email, :school, :bio, :profile_pic_url, :fb_token, :activation, :address, :sex, :sexual_preference, :latitude, :longitude, :active, :message_count, :invite_count, :event_count 
+	attr_accessible :name, :email, :school, :bio, :profile_pic_url, :fb_token, :activation, :address, :sex, :sexual_preference, :latitude, :longitude, :active, :message_count, :invite_count, :event_count,:notify_messages, :notify_news, :notify_events  
 
-	geocoded_by :school
+	geocoded_by :address
 	after_validation :geocode      
 
 	def self.create_with_facebook auth_hash
@@ -141,5 +141,9 @@ class User < ActiveRecord::Base
 				"male"
 			end
 		end
+	end
+
+	def current_loc
+		address ? address : school
 	end
 end

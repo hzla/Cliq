@@ -83,6 +83,40 @@ class UsersController < ApplicationController
 		render nothing: true
 	end
 
+	def settings
+	end
+
+	def update
+		old_address = current_user.address
+		if old_address != params[:user][:address]
+			new_address = Geocoder.search(params[:user][:address])[0]
+		else
+			new_address = "same"
+		end
+	
+		p new_address 
+		puts "$$$$$$$$$$$$$$$$$$$$"
+		if new_address != nil && new_address != "same"
+			print "success"
+			cords = new_address.coordinates
+			current_user.update_attributes latitude: cords[0], longitude: cords[1]
+			current_user.update_attributes address: new_address.data["address_components"][0]["long_name"]
+			render nothing: true
+			return
+		elsif new_address == "same"
+			current_user.update_attributes params[:user]
+			render nothing: true
+			return
+		else
+			render json: {error: true}
+		end
+	end
+
+	def destroy
+		current_user.destroy
+		redirect_to root_path
+	end
+
 private
 	
 	def get_user

@@ -1,7 +1,7 @@
 class Conversation < ActiveRecord::Base
 	has_many :users, through: :connections
-	has_many :connections
-	has_many :messages
+	has_many :connections, dependent: :destroy 
+	has_many :messages, dependent: :destroy 
 
 	attr_accessible :name, :connected
 

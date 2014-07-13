@@ -1,0 +1,63 @@
+ <%= render partial: "side_nav", locals: {active: :settings} %>
+
+ <div id="faq-container">
+
+	<div id="faq-content">
+		
+		<%= form_for current_user, remote: true do |f| %>
+
+			<div id="faq-header" class="head-2">
+				User Settings
+			</div>
+
+
+
+			<div id="faq-questions">
+				<div class="faq-question head-3 dark-gray">
+					Change my location:
+				</div>
+
+				<%= f.text_field :address, :class => "settings-input head-4", value: current_user.current_loc %>
+
+				<div class="faq-question head-3 dark-gray">
+					Change email:
+				</div>
+
+				<%= f.text_field :email, :class => "settings-input head-4", value: current_user.email %>
+
+
+				<div class="faq-question head-3 dark-gray">
+					Send me notifications for:
+				</div>
+
+				<div class="notification-setting head-4">
+					<%= f.check_box :notify_messages, value: true, checked: current_user.notify_messages, :class => "email-settings" %>
+					<%= f.label :notify_messages, "New Messages" %>
+				</div>
+				<div class="notification-setting  head-4">
+				<%= f.check_box :notify_events, value: true, checked: current_user.notify_events, :class => "email-settings" %>
+				<%= f.label :notify_events, "Event Invites" %>
+				</div>
+				<div class="notification-setting  head-4">
+				<%= f.check_box :notify_news, value: true, checked: current_user.notify_news, :class => "email-settings" %>
+				<%= label :notify_news, "Cliq News & Updates" %>
+				</div>
+
+				<%= f.submit "Save", id: "save-settings" %>
+			</div>
+
+			<% end %>
+
+			<div class="faq-question head-3 gray" id="delete-account">
+				Delete Account
+			</div>
+	</div>
+</div>
+
+<div id="delete-modal" class="modal">
+	<div id="delete-text" class="head-3 dark-gray">Are you sure you want to delete your account?</div>
+	<div id="delete-actions">
+		<div id="cancel-delete" class="head-3 dark-gray">Cancel</div>
+		<%= link_to "Delete", user_path(current_user), method: :delete, id: "confirm-delete", :class => "head-3 white" %>
+	</div>
+</div>

@@ -1,6 +1,6 @@
 class Activity < ActiveRecord::Base
 	has_many :users, through: :interests
-	has_many :interests
+	has_many :interests, dependent: :destroy 
 	mount_uploader :activity_pic, ActivityPicUploader
 	belongs_to :category
 

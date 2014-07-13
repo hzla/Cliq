@@ -1,7 +1,7 @@
 class Event < ActiveRecord::Base
 	belongs_to :partner
 	has_many :users, through: :excursions
-	has_many :excursions
+	has_many :excursions, dependent: :destroy 
 	mount_uploader :image, ImageUploader
 
 	validates :title, presence: true
