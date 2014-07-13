@@ -84,6 +84,7 @@ class UsersController < ApplicationController
 	end
 
 	def settings
+		redirect_to settings_path(current_user) if current_user.id != params[:id].to_i
 	end
 
 	def update
