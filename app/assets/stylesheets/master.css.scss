@@ -95,7 +95,7 @@ a {
 	font-family: $generic-font;
  // min-height: 800px;
   background-color: $super-light-gray;
-  height: 100%;
+  position: relative;
 }
 
 .screen {
@@ -173,6 +173,10 @@ textarea:focus {outline: none; }
 	margin-left: 15px;
 	margin-top: 10px;
 	height: 33px;
+}
+
+.background-gray {
+	background: $super-light-gray;
 }
 
 

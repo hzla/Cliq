@@ -1,5 +1,5 @@
 <%= link_to interests_path(act_id: act.id), remote: true, method: :post, class: 'add-act' do %>
-	<div class="act" class="head-4">
+	<div class="act" class="head-4" id="A-<%= act.id %>">
 		<div class="act-text"><%= act.name %></div>
 	</div>
 <% end %>

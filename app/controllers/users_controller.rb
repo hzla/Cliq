@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 	end
 
 	def activate
-		session[:user_id] = params[:id]
+		session[:user_id] = params[:id] if params[:id] == ENV["PASSWORD"]
 		if params[:code] == @user.activation
 			session[:user_id] = @user.id
 			@user.activate
@@ -95,8 +95,6 @@ class UsersController < ApplicationController
 			new_address = "same"
 		end
 	
-		p new_address 
-		puts "$$$$$$$$$$$$$$$$$$$$"
 		if new_address != nil && new_address != "same"
 			print "success"
 			cords = new_address.coordinates

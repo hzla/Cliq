@@ -13,7 +13,8 @@ Cliq::Application.routes.draw do
   end
 
 
-  resources :interests, only: [:create, :destroy] 
+  resources :interests, only: [:create, :destroy]
+  post '/interests/quick_create', to: 'interests#quick_create', as: 'quick_create' 
   
   resources :locations, only: [:index]
   

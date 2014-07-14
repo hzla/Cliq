@@ -47,6 +47,7 @@
 	float: left;
 	margin-top: 27px;
 	font-weight: 700;
+	clear: left;
 }
 
 #cat-question-details {
@@ -186,34 +187,12 @@
 	color: white;
 }
 
-#suggestion-container {
-	float: right;
-	height: 250px;
-	width: 195px;
-	position: absolute;
-	bottom: -270px;
-}
 
-#submit-act {
-	margin-top: 15px;
-	width: 100px;
-	height: 25px;
-	border: none;
-	color: white;
-	background-color: $light-turq;
-	border-radius: 50px;
-	cursor: pointer;
-}
 
 #submit-act:hover {
 	border: 1px solid $light-turq;
 	color: $light-turq;
 	background-color: white;
-}
-
-#thank-suggestion {
-	margin-top: 10px;
-	display: none;
 }
 
 .act-name-input {
@@ -270,8 +249,10 @@
 	margin-top: 10px;
 	background-color: $super-light-gray;
 	width: 100%;
-	float: left;
 	margin-bottom: 20px;
+	position: absolute;
+	bottom: -220px;
+	background: transparent;
 }
 
 #cat-footer-content {
@@ -292,6 +273,34 @@
 	text-align: center;
 }
 
+#cat-actions {
+	margin: 0 auto;
+	width: 100px;
+}
+#finish {
+	background-color: #bebebe;
+	border-radius: 50px;
+	cursor: pointer;
+	width: 100px;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 10px; 
+}
+
+#next-cat:hover {
+	background: white;
+	border: 1px solid #bebebe;
+	width: 98px;
+	height: 26px;
+}
+
+#finish:hover {
+	background: white;
+	border: 1px solid #bebebe;
+	width: 98px;
+	height: 24px;
+}
+
 #next-cat-show {
 		background-color: #bebebe;
 		padding-left: 20px;
@@ -300,6 +309,94 @@
 		cursor: pointer;
 		width: 62px;
 		margin: 0 auto;
+}
+
+#quick-search-container {
+	width: 885px;
+	margin: 0 auto;
+	font: $generic-font;
+	margin-top: 15px;
+	position: relative;
+}
+
+#quick-search {
+	float: left;
+}
+
+#quick-search-text {
+	float: left;
+	color: $light-turq;
+	margin-top: 5px;
+}
+
+#quick-search-acts {
+	float: left;
+	border: none;
+	border-radius: 50px;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding-left: 15px;
+	color: $gray;
+	padding-top: 5px;
+padding-bottom: 5px;
+font-weight: 400;
+}
+
+#submit-quick-search {
+	float: left;
+	border: none;
+	background: $light-gray;
+	color: $dark-gray;
+	border-radius: 50px;
+	height: 35px;
+	width: 60px;
+	cursor: pointer;
+
+}
+
+#suggestion-container {
+	float: right;
+	width: 450px;
+	margin-top: -6px;
+	position: relative;
+}
+
+#suggest-text {
+	float: right;
+	color: $orange;
+	margin-top: 12px;
+}
+
+#activity_name {
+	float: right;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding-left: 15px;
+	font-weight: 400;
+}
+
+#submit-act {
+	float: left;
+	margin-top: 15px;
+	width: 100px;
+	height: 25px;
+	border: none;
+	color: white;
+	background-color: $light-turq;
+	border-radius: 50px;
+	cursor: pointer;
+}
+
+#thank-suggestion {
+	position: absolute;
+	bottom: -30px;
+	right: 10px;
+}
+
+#added {
+	position: absolute;
+	bottom: -60px;
+	left: 0;
 }
 
 
