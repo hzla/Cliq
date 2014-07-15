@@ -19,9 +19,9 @@ class Conversation < ActiveRecord::Base
 		return "no message yet" if !time
 		# tzone = Timezone::Zone.new(:latlon => [user.latitude, user.longitude])
      if (Time.now - 1.day) < time
-			(time - 4.hours).strftime("%I:%M %p")
+			(time + user.timezone.hours).strftime("%I:%M %p")
 		else
-			(time - 4.hours).strftime("%m/%d/%g")
+			(time + user.timezeon.hours).strftime("%m/%d/%g")
 		end
 	end
 

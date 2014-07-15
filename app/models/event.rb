@@ -16,7 +16,6 @@ class Event < ActiveRecord::Base
 	end
 
 	def time user
-		# tzone = Timezone::Zone.new(:latlon => [user.latitude, user.longitude])
 		# if start_time - Time.now < 24.hours
 		# 	tzone.time(start_time).strftime("%m/%d/%g at %I:%M%p")
 		# else

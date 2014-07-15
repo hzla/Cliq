@@ -11,16 +11,17 @@ class User < ActiveRecord::Base
 	has_many :messages, dependent: :destroy 
 
 	validates :name, :presence => true
-	attr_accessible :name, :email, :school, :bio, :profile_pic_url, :fb_token, :activation, :address, :sex, :sexual_preference, :latitude, :longitude, :active, :message_count, :invite_count, :event_count,:notify_messages, :notify_news, :notify_events  
+	attr_accessible :name, :email, :school, :bio, :profile_pic_url, :fb_token, :activation, :address, :sex, :sexual_preference, :latitude, :longitude, :active, :message_count, :invite_count, :event_count,:notify_messages, :notify_news, :notify_events, :timezone  
 
 	geocoded_by :address
 	after_validation :geocode      
 
 	def self.create_with_facebook auth_hash
+		timezone = auth_hash.extra.raw_info.timezone
 		profile = auth_hash['info']
 		fb_token = auth_hash.credentials.token
 		gender =  auth_hash['extra']['raw_info']['gender']
-		user = User.new name: profile['name'], profile_pic_url: profile['image'], fb_token: fb_token, sex: gender, email: profile['email']
+		user = User.new name: profile['name'], profile_pic_url: profile['image'], fb_token: fb_token, sex: gender, email: profile['email'], timezone: timezone
     user.activation = user.generate_code
     user.authorizations.build :uid => auth_hash["uid"]
     user if user.save
