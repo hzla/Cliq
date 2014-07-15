@@ -16,6 +16,8 @@ Search =
 		$('.send-activation').on 'submit', @thankUser
 		$('body').on 'click', '.searched', @removeTerm
 		$('body').on 'keypress', '#activity', @selectInterestOnEnter
+		$('body').on 'click', '#cliq-invite', @inviteFriends
+		$('body').on 'submit', '#friend-invite', @sendCliqInvite
 
 		# @invertButtons()
 
@@ -143,7 +145,8 @@ Search =
 		$('.swiped-result').hide()
 		$('.swiped-result').first().show()
 		$('#found').text "Here's who we found:"
-		$('#found').text "Sorry, we couldn't find anyone." if $('#empty').length > 0
+		if $('#empty').length > 0
+			$('#no-one-around').show()
 		$('#found').text "Please enter a valid location." if $('#invalid').length > 0
 
 	invertButtons: ->
@@ -188,6 +191,17 @@ Search =
 		if (e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)
 			$('.ui-menu-item:visible').first().click()
 
+	inviteFriends: ->
+		$('#pre-invite').hide()
+		$('#post-invite').show()
+		$('#no-one-around').css 'height', '570px'
+
+	sendCliqInvite: ->
+		@.reset()
+		$('#sent-invite').show().addClass 'animated fadeIn'
+		setTimeout ->
+			$('#sent-invite').hide()
+		, 1000
 
 
 

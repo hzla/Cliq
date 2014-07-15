@@ -48,7 +48,11 @@ class UsersController < ApplicationController
 
 	def search_results #add support for searching location without ids
 		if params[:ids] == "" 
-			results = current_user.search_similar current_user.activities
+			if !params[:location_id]
+				results = current_user.search_similar current_user.activities
+			else
+				results = current_user.search_similar current_user.activities, Location.find(params[:location_id])
+			end
 			if params[:type] == "swipe"
 				render partial: "swipe_results", locals: {results: results}
 				return
@@ -114,6 +118,12 @@ class UsersController < ApplicationController
 	def destroy
 		current_user.destroy
 		redirect_to root_path
+	end
+
+	def invite_friends
+		p params
+		UserMailer.invite_email(current_user, params[:email]).deliver
+		render nothing: true
 	end
 
 private

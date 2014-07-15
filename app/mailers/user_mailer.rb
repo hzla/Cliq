@@ -5,4 +5,9 @@ class UserMailer < ActionMailer::Base
     @user = user
     mail(to: email, subject: 'Welcome to Cliq!')
   end
+
+  def invite_email(user, email)
+  	@user = user
+  	mail(to: email, subject: "#{@user.first_name} invited you to join Cliq!")
+  end
 end

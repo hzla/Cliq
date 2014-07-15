@@ -16,7 +16,6 @@ class InterestsController < ApplicationController
 	end
 
 	def quick_create
-		p params
 		if params[:act_id][0] == "A"
 			act_id = params[:act_id][2..-1].to_i 
 			act = Activity.find act_id
