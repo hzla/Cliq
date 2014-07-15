@@ -21,7 +21,7 @@ class Conversation < ActiveRecord::Base
      if (Time.now - 1.day) < time
 			(time + user.timezone.hours).strftime("%I:%M %p")
 		else
-			(time + user.timezeon.hours).strftime("%m/%d/%g")
+			(time + user.timezone.hours).strftime("%m/%d/%g")
 		end
 	end
 
