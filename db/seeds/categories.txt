@@ -1543,7 +1543,7 @@ q: What do you like to watch?
 			Kung Fu Panda
 			Madagascar
 			Megamind
-			Monter Inc.
+			Monsters Inc.
 			Ratatouille
 			Shrek
 			Snow White and the Seven Dwarves
