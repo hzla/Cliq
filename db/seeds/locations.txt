@@ -1,3 +1,4 @@
+Orlando, FL
 New York City, NY
 Los Angeles, CA
 Chicago, IL
@@ -79,7 +80,6 @@ Jersey City, NJ
 Scottsdale, AZ
 Norfolk, VA
 Madison, WI
-Orlando, FL
 Birmingham, AL
 Baton Rouge, LA
 Durham, NC
