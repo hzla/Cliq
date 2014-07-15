@@ -10,16 +10,74 @@ q: What do you like to discuss?
 		Engineering
 		Finance
 		Geopolitics
-		History
+		History, World
 		Medicine
 		Music
 		Philosophy
 		Physics
 		Psychology
-		Science
+		Geology
 		Sociology
 		Space
 		Technology
+		Logic
+		Ethics
+		Mythology
+		Judaism
+		Religion
+		Islam
+		Buddhism
+		Archaeology
+		Numismatics
+		Genealogy
+		Biography
+		History, American
+		History, Eastern European
+		History, Ancient
+		History, British
+		East Asian Studies
+		Geography
+		Oceangraphy
+		Environmenta Sciences
+		Statistics
+		Finance
+		Public Finance
+		Commerce
+		Political Theory
+		Political Science
+		Law
+		Music Theory
+		History, Music
+		Architecture
+		Visual Arts
+		Design
+		Linguistics
+		Literature, French
+		Literature, English
+		Literature, American
+		Literature, German
+		Creative Writing
+		Mathematics
+		Astronomy
+		Chemistry
+		Natural History
+		Botany
+		Zoology
+		Physiology
+		Microbiology
+		Organic Chemistry
+		Dentistry
+		Nursing
+		Agriculture
+		Aquaculture
+		Marine Biology
+		Engineering, Civil
+		Engineering, Mechanical
+		Engineering, Electrical
+		Engineering, Computer
+		Engineering, Software
+		Military Science
+		Naval Science
 	Category: Misc Topics
 		Art
 		Beer
