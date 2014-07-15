@@ -26,7 +26,7 @@ class MessagesController < ApplicationController
 		other_connection = Connection.where(conversation_id: params[:conversation_id], user_id: @user.id).first
 		if @user.notify_messages && !@user.active && !other_connection.emailed
 			other_connection.update_attributes emailed: true
-			NotificationMailer.notification(@user, current_user).deliver
+			NotificationMailer.notification(@user, current_user).deliver if @user.email
 		end
 	end
 
