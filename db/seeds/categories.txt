@@ -376,10 +376,455 @@ q: What do you do for fun?
 Category: Music 
 q: What kind of music do you listen to?
 	Category: Rock
-	Category: EDM
+		AC/DC
+		Aerosmith
+		Al Green
+		Aretha Franklin
+		B.B. King
+		Bill Haley & His Comets
+		Billy Joel
+		Black Sabbath
+		Bo Diddley
+		Bob Dylan
+		Bob Marley
+		Bob Seger & The Silver Bullet Band
+		Bruce Springsteen
+		Buddy Holly
+		Chicago
+		Chuck Berry
+		Cream
+		Creedence Clearwater Revival
+		Crosby, Stills, & Nash (& Young)
+		Curtis Mayfield & The Impressions
+		David Bowie
+		Deep Purple
+		Earth, Wind, & Fire
+		Elton John
+		Elvis Costello
+		Elvis Presley
+		Eric Clapton
+		Fats Domino
+		Fleetwood Mac
+		Frank Zappa
+		George Clinton & Parliament/Funkadelic
+		Guns N' Roses
+		James Brown
+		Janis Joplin
+		Jefferson Airplane
+		Jerry Lee Lewis
+		Jimi Hendrix
+		Johnny Cash
+		Joni Mitchell
+		King Crimson
+		Led Zeppelin
+		Little Richard
+		Madonna
+		Marvin Gaye
+		Metallica
+		Michael Jackson
+		N.W.A
+		Neil Young
+		Nirvana
+		Otis Redding
+		Patti Smith
+		Pearl Jam
+		Pink Floyd
+		Prince
+		Public Enemy
+		Queen
+		R.E.M.
+		Radiohead
+		Ray Charles
+		Rick Nelson
+		Rolling Stones
+		Roy Orbison
+		Run-D.M.C.
+		Rush
+		Sam Cooke
+		Santana
+		Simon & Garfunkel
+		Sly & The Family Stone
+		Smokey Robinson & The Miracles
+		Stevie Wonder
+		Talking Heads
+		The Allman Brothers Band
+		The Band
+		The Beach Boys
+		The Beatles
+		The Bee Gees
+		The Byrds
+		The Clash
+		The Doors
+		The Drifters
+		The Eagles
+		The Everly Brothers
+		The Four Tops
+		The Grateful Dead
+		The Isley Brothers
+		The Kinks
+		The Moody Blues
+		The Police
+		The Ramones
+		The Sex Pistols
+		The Supremes
+		The Temptations
+		The Velvet Underground
+		The Who
+		The Yardbirds
+		The Yummy Fur
+		Tom Petty & The Heartbreakers
+		U2
+		Van Halen
+		Van Morrison
+		Yes
+		Cranberries
+		Creed
+		Tool
+		Weezer
+	Category: Electronic
+		Daft Punk
+		Madeon
+		Hardwell
+		Skrillex
+		Deadmau5
+		The Prodigy
+		Aphex Twin
+		Zedd
+		Porter Robinson
+		Overwerk
+		Nero
+		Kraftwerk
+		Seven Lions
+		Project 46
+		Glitch Mob
+		Kill the Noise
+		Pendulum
+		Knife Party
+		Avicii
+		David Guetta
+		Bassnectar
+		Calvin Harris
+		Pretty Lights
+		Benny Benassi
+		Afrojack
+		KOAN Sound
+		Armin Van Buuren
+		Kaskade
+		Swedish House Mafia
+		Aleksander Vinter
+		Rusko
+		Zomboy
+		LCD Soundsystem
+		Basshunter
+		Netsky
+		M83
+		Alvin Risk
+		Tangerine Dream
+		Dog Blood
+		Boys Noize
+		Krewella
+		Phantogram
+		Bare Noize
+		3lau
+		Excision
+		Pegboard Nerds
+		Destructo
+		Tiësto
+		Carbon Based Lifeforms
+		Moby
+		Owl City
+		Mika
+		Bob Sinclair
+		Parov Stelar
+		Haze
+		Jump Smokers
+		Chainsmokers
+		The Chemical Brothers
+		Dada Life
+		Duck Sauce
+		Dash Berlin
+		Savant
+		Steve Aoki
+		Martin Garrix
+		Modest Mouse
+		I.Y.F.F.E.
+		Au5
+		Auratic
+		Razihel
+		Rameses B
+		Mitis
+		Fractal
+		Televisor
+		Milky Chance
+		Ninth Parallel
+		Popeska
+		Electric Joyride
+		Lets Be Friends
+		Soulero
+		Wolfgang Gartner
+		Vicetone
 	Category: Country
-	Category: Hip Hop
-	Category: Rap
+		Aaron Lewis
+		Aaron Watson
+		Alabama
+		Alan Jackson
+		Alison Krauss & Union Station
+		Alison Krauss + Union Station
+		Andy Gibson
+		Anne Murray
+		Ashley Monroe
+		Ashton Shepherd
+		Barbara Mandrell
+		Bellamy Brothers
+		Big & Rich
+		Big Kenny
+		Bill Anderson
+		Bill Monroe
+		Billy Craig
+		Billy Currington
+		Blackberry Smoke
+		Blaine Larson
+		Blake Shelton
+		Bob Wills
+		Bobby Bare
+		Bomshel
+		Brad Paisley
+		Brantley Gilbert
+		Brett Eldredge
+		Brooks & Dunn
+		Buck Owens
+		Bucky Covington
+		Caitlin & Will
+		Carl Smith
+		Carrie Underwood
+		Carter Family
+		Casey James
+		Charley Pride
+		Charlie Rich
+		Chet Atkins
+		Chris Cagle
+		Chris Young
+		Chuck Wicks
+		Clay Walker
+		Clint Black
+		Cole Swindell
+		Colt Ford
+		Conway Twitty
+		Corey Smith
+		Craig Campbell
+		Craig Morgan
+		Cross Canadian Ragweed
+		Crossin Dixon
+		Crystal Gayle
+		Danielle Peck
+		Danny Gokey
+		Darius Rucker
+		Darryl Worley
+		Dave Dudley
+		David Nail
+		Dean Brody
+		Diamond Rio
+		Dierks Bentley
+		Dolly Parton
+		Don Gibson
+		Don Williams
+		Dottie West
+		Dustin Lynch
+		Dwight Yoakam
+		Earl Thomas Conley
+		Easton Corbin
+		Eddy Arnold
+		Edens Edge
+		Eli Young Band
+		Elvis Presley
+		Emily West
+		Emmylou Harris
+		Eric Church
+		Eric Paslay
+		Ernest Tubb
+		Faith Hill
+		Faron Young
+		Flatt & Scruggs
+		Florida Georgia Line
+		Frankie Ballard
+		Garth Brooks
+		Gary Allan
+		Gene Autry
+		Gene Watson
+		George Jones
+		George Morgan
+		George Strait
+		Glen Campbell
+		Gloriana
+		Gretchen Wilson
+		Hank Snow
+		Hank Thompson
+		Hank Williams
+		Hank Williams III
+		Hank Williams Jr.
+		Hank Williams, Jr.
+		Heidi Newfield
+		Hunter Hayes
+		Jack Ingram
+		Jake Owen
+		James Otto
+		James Wesley
+		Jamey Johnson
+		Jana Kramer
+		Jaron and the Long Road to Love
+		Jason Aldean
+		Jason Michael Carroll
+		JB and the Moonshine Band
+		Jean Shepard
+		Jerrod Niemann
+		Jessica Harp
+		Jessie James
+		Jewel
+		Jim Reeves
+		Jimmie Rodgers
+		Jimmy Wayne
+		Jo Dee Messina
+		Joe Nichols
+		Joey + Rory
+		John Conlee
+		John Denver
+		Johnny Cash
+		Johnny Horton
+		Johnny Paycheck
+		Jon Pardi
+		Josh Abbott Band
+		Josh Gracin
+		Josh Kelley
+		Josh Thompson
+		Josh Turner
+		JT Hodges
+		Julianne Hough
+		Justin Moore
+		Kacey Musgraves
+		Keith Anderson
+		Keith Urban
+		Keith Whitley
+		Kellie Pickler
+		Kelly Clarkson
+		Kenny Chesney
+		Kenny Rogers
+		Kevin Fowler
+		Kid Rock
+		Kip Moore
+		Kitty Wells
+		Kix Brooks
+		Kristin Chenoweth
+		Lady Antebellum
+		Laura Bell Bundy
+		Lauren Alaina
+		LeAnn Rimes
+		Lee Ann Womack
+		Lee Brice
+		Lefty Frizzell
+		Little Big Town
+		LoCash Cowboys
+		Lonestar
+		Loretta Lynn
+		Louvin Brothers
+		Love and Theft
+		Luke Bryan
+		Lyle Lovett
+		Lynn Anderson
+		Mark Chesnutt
+		Mark Wills
+		Martina McBride
+		Marty Robbins
+		Marty Stuart
+		Matt Kennon
+		Matt Mason
+		Mel Tillis
+		Merle Haggard
+		Michelle Branch
+		Miranda Lambert
+		Miss Willie Brown
+		Montgomery Gentry
+		Pat Green
+		Patsy Cline
+		Patsy Montana
+		Patty Loveless
+		Phil Vassar
+		Pistol Annies
+		Porter Wagoner
+		Randy Houser
+		Randy Montana
+		Randy Travis
+		Rascall Flatts
+		Ray Price
+		Reba McEntire
+		Reckless Kelly
+		Red Foley
+		Ricky Skaggs
+		Rodney Atkins
+		Rodney Crowell
+		Roger Miller
+		Ronnie Dunn
+		Ronnie Milsap
+		Rosanne Cash
+		Rose Falcon
+		Roy Acuff
+		Roy Clark
+		Roy Rogers
+		Sara Evans
+		Sarah Buxton
+		Sarah Darling
+		Scotty McCreery
+		Shania Twain
+		Sheryl Crow
+		Shooter Jennings
+		Skylar Laine
+		Sonny James
+		Statler Brothers
+		Steel Magnolia
+		Steve Azar
+		Steve Earl
+		Steve Holy
+		Steve Wariner
+		Sugarland
+		Sunny Sweeney
+		T.G. Sheppard
+		Tammy Wynette
+		Tanya Tucker
+		Taylor Swift
+		Tennessee Ernie Ford
+		Terri Clark
+		The Band Perry
+		The Dirt Daubers
+		The Dixie Chicks
+		The Farm
+		The Henningsens
+		The JaneDear Girls
+		The Judds
+		The Lacs
+		The Lost Trailers
+		The Oak Ridge Boys
+		The Stanley Brothers
+		Thomas Rhett
+		Thompson Square
+		Tim McGraw
+		Toby Keith
+		Tom T. Hall
+		Trace Adkins
+		Tracy Lawrence
+		Trailer Choir
+		Trent Tomlinson
+		Troy Olsen
+		Tyler Farr
+		Uncle Kracker
+		Vern Gosdin
+		Vince Gill
+		Walker Hayes
+		Waylon Jennings
+		Webb Pierce
+		Whitney Duncan
+		Willie Nelson
+		Wynonna
+		Zac Brown Band
+	Category: Rap and Hip Hop
 		ASAP Ferg
 		ASAP Rocky
 		Big Sean
@@ -398,8 +843,352 @@ q: What kind of music do you listen to?
 		2 Chainz
 		50 Cent
 	Category: Metal
+		Accept
+		Alice in Chains
+		Annihilator
+		Anthrax
+		At the Gates
+		Atheist
+		Bathory
+		Black Sabbath
+		Blind Guardian
+		Budgie
+		Burzum
+		Candlemass
+		Cannibal Corpse
+		Carcass
+		Celtic Frost
+		Children of Bodom
+		Cradle of Filth
+		Danzig
+		Darkthrone
+		Death
+		Deicide
+		Diamond Head
+		Dimmu Borgir
+		Dio
+		Dokken
+		Dream Theater
+		DRI
+		Edge of Sanity
+		Emperor
+		Entombed
+		Exodus
+		Faith No More
+		Fates Warning
+		Fear Factory
+		Gamma Ray
+		HammerFall
+		Helloween
+		Iced Earth
+		Immortal
+		In Flames
+		Iron Maiden
+		Judas Priest
+		King Diamond
+		Korn
+		Kreator
+		Lamb of God
+		Machine Head
+		Manowar
+		Mastodon
+		Mayhem
+		Megadeth
+		Mercyful Fate
+		Meshuggah
+		Metal Church
+		Metallica
+		Ministry
+		Morbid Angel
+		Mötley Crüe
+		Motörhead
+		My Dying Bride
+		Napalm Death
+		Neurosis
+		Nevermore
+		Opeth
+		Overkill
+		Ozzy Osbourne
+		Pantera
+		Pentagram
+		Possessed
+		Queensrcyhe
+		Rage Against the Machine
+		Rainbow
+		Raven
+		Savatage
+		Saxon
+		Scorpions
+		Sepultura
+		Skid Row
+		Slayer
+		Slipknot
+		Sodom
+		Soundgarden
+		St. Vitus
+		Stratovarius
+		Suffocation
+		Suicidal Tendencies
+		Symphony X
+		System of a Down
+		Terrorizer
+		Testament
+		The Yummy Fur
+		Therion
+		Tool
+		Trouble
+		Twisted Sister
+		Type O Negative
+		Venom
+		Voivod
+		W.A.S.P.
+		White Zombie
+		Yngwie J. Malmsteen
 	Category: Indie
+		...And You Will Know Us by the Trail of Dead
+		Acid House Kings
+		American Music Club
+		Andrew Bird
+		Animal Collective
+		Another Sunny Day
+		Arcade Fire
+		Archers of Loaf
+		Architecture in Helsinki
+		Arctic Monkeys
+		Ariel Pink
+		Art Brut
+		Badly Drawn Boy
+		Band of Horses
+		Beach House
+		Beat Happening
+		Beirut
+		Belle & Sebastian
+		Bettie Serveert
+		Beulah
+		Blitzen Trapper
+		Bloc Party
+		Blonde Redhead
+		Bombay Bicycle Club
+		Bright Eyes
+		Broken Social Scene
+		Built to Spill
+		Camera Obscura
+		Cansei de Ser Sexxy (CSS)
+		Cat Power
+		Chavez
+		Clap Your Hands Say Yeah
+		Clinic
+		Codeine
+		Death Cab for Cutie
+		Death from Above 1979
+		Deerhoof
+		Deerhunter
+		Dinosaur Jr.
+		Dirty Projectors
+		Don Caballero
+		Editors
+		Eleventh Dream Day
+		Elf Power
+		Elliott Smith
+		Eric's Trip
+		Feist
+		Felt
+		Fleet Foxes
+		Foals
+		Foster the People
+		Franz Ferdinand
+		Frightened Rabbit
+		Galaxie 500
+		Gotye
+		Grandaddy
+		Grizzly Bear
+		Guided By Voices
+		Guillemots
+		Half Man Half Biscuit
+		Heavenly
+		Helium
+		Hot Hot Heat
+		Ida
+		Interpol
+		Iron & Wine
+		Japandroids
+		Jay Reatard
+		Jens Lekman
+		Joanna Newsom
+		June of 44
+		Kaiser Chiefs
+		Kenickie
+		Klaxons
+		LCD Soundsystem
+		Les Savy Fav
+		Liars
+		Lifter Puller
+		Liz Phair
+		Los Campesinos!
+		Low
+		M. Ward
+		Mates of State
+		Maximo Park
+		mclusky
+		Menomena
+		Mercury Rev
+		Metric
+		MGMT
+		Minus the Bear
+		Modest Mouse
+		Morrissey
+		Mystery Jets
+		Neutral Milk Hotel
+		No Age
+		Okkervil River
+		Olivia Tremor Control
+		Orange Juice
+		Oxford Collapse
+		Patrick Wolf
+		Pavement
+		Peter Bjorn & John
+		Phoenix
+		Pinback
+		Pixies
+		Polvo
+		Portugal. The Man
+		Pretty Girls Make Graves
+		Quasi
+		Ra Ra Riot
+		Red House Painters
+		Rilo Kiley
+		Rosebuds
+		Rouge Wave
+		Royal Trux
+		Sebadoh
+		Shout Out Louds
+		Silversun Pickups
+		Sleater-Kinney
+		Slint
+		Smog
+		Son, Ambulance
+		Spoon
+		St. Vincent
+		Stars
+		Sufjan Stevens
+		Sunset Rubdown
+		Superchunk
+		Talulah Gosh
+		Tapes N' Tapes
+		Ted Leo and the Pharmacists
+		Tegan and Sara
+		Television Personalities
+		The Airborne Toxic Event
+		The Antlers
+		The Apples in Stereo
+		The Boy Least Likely To
+		The Cardigans
+		The Dears
+		The Decemberists
+		The Dismemberment Plan
+		The Essex Green
+		The Faint
+		The Field Mice
+		The Folk Implosion
+		The Futureheads
+		The Go-Betweens
+		The Go! Team
+		The Helio Sequence
+		The Hold Steady
+		The Horrors
+		The Housemartins
+		The Kooks
+		The Ladybug Transistor
+		The Libertines
+		The Long Blondes
+		The Magnetic Fields
+		The Microphones/Mount Eerie
+		The Mountain Goats
+		The National
+		The New Pornographers
+		The Notwist
+		The Pastels
+		The Postal Service
+		The Rapture
+		The Rural Alberta Advantage
+		The Sea and Cake
+		The Shins
+		The Shop Assistants
+		The Silver Jews
+		The Smiths
+		The Stills
+		The Strokes
+		The Submarines
+		The Thermals
+		The Trash Can Sinatras
+		The Twilight Sad
+		The Vaselines
+		The Walkmen
+		The Wedding Present
+		The Wrens
+		The xx
+		The Yummy Fur
+		Thinking Fellers Union Local 282
+		Tiger Trap
+		Tilly And The Wall
+		Tokyo Police Club
+		TV on the Radio
+		Unrest
+		Vampire Weekend
+		VHS or Beta
+		We Are Scientists
+		Why?
+		Wilco
+		Will Oldham (Bonnie 'Prince' Billy/Palace)
+		Wolf Parade
+		Xiu Xiu
+		Yeah Yeah Yeahs
+		Yo La Tengo
+		You Say Party! We Say Die!
 	Category: Pop
+		Bruno Mars
+		Taylor Swift
+		Nicki Minaj
+		Shakira
+		Rihanna
+		Katy Perry
+		One Direction
+		Lana Del Ray
+		Lady Gaga
+		Celine Dion
+		Will.i.am
+		*NSYNC
+		Robin Thicke
+		Christina Aguilera
+		PSY
+		Adele
+		Mariah Carey
+		Eric Claption
+		U2
+		Madonna
+		The Black Eyed Peas
+		LMFAO
+		Lily Allen
+		Blue October
+		James Blunt
+		P!Nk
+		Sheryl Crow
+		Ellie Goulding
+		Cher
+		Avril Lavigne
+		Colbie Caillat
+		M.I.A.
+		Aaron Carter
+		Ke$Ha
+		The Pussycat Dolls
+		Train
+		Hilary Duff
+		Muse
+		Hannah Montana
+		Miley Cyrus
+		Nelly Furtado
+		Pitbull
+		Flo Rida
 	Category: Classical
 		Bach
 		Barber
@@ -431,6 +1220,106 @@ q: What kind of music do you listen to?
 		von Bingen
 		von Weber
 		Wagner
+		Aaron Copland
+		Alban Berg
+		Alexander Borodin
+		Alexander Glazunov
+		Alexander Nikolayevich Scriabin
+		Anton Bruckner
+		Anton Webern
+		Antonin Dvorak
+		Antonio Vivaldi
+		Archangelo Corell
+		Arnold Schoenberg
+		Bedrick Smetana
+		Béla Bartók
+		Benjamin Britten
+		Camille Saint-Saëns
+		Carl Maria von Weber
+		Carl Nielsen
+		Carl Philipp Emanuel Bach
+		César Franck
+		Charles Gounod
+		Charles Ives
+		Christoph Willibald Gluck
+		Claude Debussy
+		Claudio Monteverdi
+		Darius Milhaud
+		Dietrich Buxtehude
+		Dmitri Shostakovich
+		Domenico Scarlatti
+		Don Carlo Gesualdo
+		Edvard Grieg
+		Edward Elgar
+		Erik Satie
+		Felix Mendelssohn
+		Francis Poulenc
+		Francois Couperin
+		Franz Liszt
+		Franz Schubert
+		Frederic Chopin
+		Gabriel Fauré
+		Gaetano Donizetti
+		Georg Philipp Telemann
+		George Frideric Handel
+		George Gershwin
+		Georges Bizet
+		Giacomo Meyerbeer
+		Giacomo Puccini
+		Gioacchino Rossini
+		Giovanni Battista Pergolesi
+		Giovanni Gabrieli
+		Giovanni Pierluigi da Palestrina
+		Giuseppe Verdi
+		Guillaume de Machaut
+		Guillaume Dufay
+		Gustav Holst
+		Gustav Mahler
+		Hector Berlioz
+		Heinrich Schütz
+		Henry Purcell
+		Hildegard von Bingen
+		Hugo Wolf
+		Igor Stravinsky
+		Jean Sibelius
+		Jean-Baptiste Lully
+		Jean-Philippe Rameau
+		Johann Sebastian Bach
+		Johann Strauss II
+		Johannes Brahms
+		John Cage
+		John Dowland
+		Joseph Haydn
+		Josquin Des Prez
+		Jules Massenet
+		Léonin
+		Leos Janácek
+		Ludwig Van Beethoven
+		Manuel de Falla
+		Maurice Ravel
+		Mikhail Glinka
+		Modest Mussorgsky
+		Nikolai Rimsky-Korsakov
+		Olivier Messiaen
+		Orlando Gibbons
+		Ottorino Respighi
+		Paul Hindemith
+		Pérotin
+		Peter Ilyich Tchaikovsky
+		Ralph Vaughan Williams
+		Richard Strauss
+		Richard Wagner
+		Robert Schumann
+		Roland de Lassus
+		Samuel Barber
+		Serge Prokofiev
+		Sergei Rachmaninoff
+		Thomas Tallis
+		Tomás Luis de Victoria
+		Vincenzo Bellini
+		William Byrd
+		William Walton
+		Wolfgang Amadeus Mozart
 Category: Watch
 q: What do you like to watch?
 	Category: TV Shows

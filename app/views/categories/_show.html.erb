@@ -5,7 +5,7 @@
 			<div id="quick-search-text" class="head-4">Quick Search</div>
 			<%= text_field_tag :activities, nil, id: "quick-search-acts", :class => "head-4", placeholder: "Type an Interest" %>
 			<%= hidden_field_tag :act_id %>
-			<%= submit_tag "Add", id: "submit-quick-search", :class => "head-4" %>
+			<%= submit_tag "Add", id: "submit-quick-search", :class => "head-4 hidden" %>
 		<% end %>
 
 		<div id="suggestion-container">
