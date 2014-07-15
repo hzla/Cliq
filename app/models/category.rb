@@ -48,6 +48,14 @@ class Category < ActiveRecord::Base
 		'https://s3.amazonaws.com/CliqBucket/Categories/' + url_name
 	end
 
+	def full_name
+		if depth > 1
+			name + " " + parent.name
+		else
+			name
+		end
+	end
+
 	def short_name
 		short = name[0..19]
 		short += "..." if short.length == 20

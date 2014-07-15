@@ -87,9 +87,9 @@ class User < ActiveRecord::Base
 			category = Category.find(cat_id)
 			root = category.root
 			if results[root.name]
-				results[root.name] += [{category.name => acts}]
+				results[root.name] += [{category.full_name => acts}]
 			else
-				results[root.name] = [{category.name => acts}]
+				results[root.name] = [{category.full_name => acts}]
 			end
 		end
 		results
@@ -146,5 +146,28 @@ class User < ActiveRecord::Base
 
 	def current_loc
 		address ? address : school
+	end
+
+	def self.geocode_all
+		users = User.where(latitude: nil).where('profile_pic_url is not null')
+		failures = []
+		users.each do |user|
+			if user.address
+				address = Geocoder.search(user.address)[0]
+				if address != nil
+					cords = address.coordinates
+					user.update_attributes latitude: cords[0], longitude: cords[1]
+				end
+			elsif user.school
+				address = Geocoder.search(user.school)[0]
+				if address != nil
+					cords = address.coordinates
+					user.update_attributes latitude: cords[0], longitude: cords[1]
+				end
+			else
+				failures << user
+			end
+		end
+		p failures
 	end
 end
