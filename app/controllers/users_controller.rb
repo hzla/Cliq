@@ -2,6 +2,10 @@ class UsersController < ApplicationController
 	before_filter :get_user
 
 	def show
+		if params[:id].to_i != current_user.id
+			redirect_to user_path current_user 
+			return
+		end
 		@welcome = params["welcome"]
 		@category = Category.where(name: "Do").first
 		@format = Category.self_format
@@ -26,7 +30,7 @@ class UsersController < ApplicationController
 	end
 
 	def activate
-		session[:user_id] = params[:id] if params[:id] == ENV["PASSWORD"]
+		session[:user_id] = params[:id] if params[:code] == ENV["PASSWORD"]
 		if params[:code] == @user.activation
 			session[:user_id] = @user.id
 			@user.activate
