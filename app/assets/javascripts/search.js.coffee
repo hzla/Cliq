@@ -106,31 +106,43 @@ Search =
 				$(this).val ui.item.label
 	
 	autocompleteInterests: ->
-		$('#activity').autocomplete
-			source: '/activities'
-			select: (event, ui) ->
-				event.preventDefault()
-				$(@).val ui.item.label
-				$('#ids').val $('#ids').val() + ui.item.value + " "
-				$('#query-interests').prepend "<div class='query-interest search-term searched' id='#{ui.item.value}'>#{ui.item.label}</div>"
-				$('#activity').val('')
-				$(@).css 'color', '#939393'
-				$('#search-form').submit()
-			focus: (event, ui) ->
-				event.preventDefault()
-				$(@).val ui.item.label
-				$(@).css 'color', '#414141'
-			delay: 0
-			# open: (event, ui) -> 
-			# 	firstElement = $(@).data("uiAutocomplete").menu.element[0].children[0]
-			# 	inpt = $('#activity')
-			# 	original = inpt.val()
-			# 	firstElementText = $(firstElement).text()
-			# 	if firstElementText.toLowerCase().indexOf(original.toLowerCase()) == 0
-			# 		inpt.val(firstElementText)
-			# 		inpt[0].selectionStart = original.length; 
-			# 		inpt[0].selectionEnd = firstElementText.length
-			minLength: 2
+		if $('#activity').length > 0
+			$('#activity').autocomplete(
+				source: '/activities'
+				select: (event, ui) ->
+					event.preventDefault()
+					$(@).val ui.item.label
+					$('#ids').val $('#ids').val() + ui.item.value + " "
+					$('#query-interests').prepend "<div class='query-interest search-term searched' id='#{ui.item.value}'>#{ui.item.label}</div>"
+					$('#activity').val('')
+					$(@).css 'color', '#939393'
+					$('#search-form').submit()
+				focus: (event, ui) ->
+					event.preventDefault()
+					$(@).val ui.item.label
+					$(@).css 'color', '#414141'
+					$('.ui-state-focus').removeClass('ui-state-focus').addClass 'new-focus'
+				delay: 0
+				open: (event, ui) -> 
+					$('.ui-menu-item').each ->
+			
+					# 	$(@).append("<img src='/assets/#{@.value}.svg' class='ac-image'>")
+					$('.ui-autocomplete').css 'width', '+=50px'
+
+					# firstElement = $(@).data("uiAutocomplete").menu.element[0].children[0]
+					# inpt = $('#activity')
+					# original = inpt.val()
+					# firstElementText = $(firstElement).text()
+					# if firstElementText.toLowerCase().indexOf(original.toLowerCase()) == 0
+					# 	inpt.val(firstElementText)
+					# 	inpt[0].selectionStart = original.length; 
+					# 	inpt[0].selectionEnd = firstElementText.length
+				minLength: 2
+				response: (event, ui) ->
+			).data("uiAutocomplete")._renderItem = (ul, item) ->
+				return $("<li />").data("item.autocomplete", item).append("<a><img class='ac-image' src='/assets/#{item.type}.svg'/>#{item.label}</a>").appendTo(ul)
+	 
+
         
 	removeTerm: ->
 		id= @.id

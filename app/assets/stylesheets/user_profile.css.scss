@@ -44,7 +44,7 @@
 	float: left;
 	margin-left: 50px;
 	margin-top: 20px;
-    font-weight:700;
+  font-weight:700;
 }
 
 #school {
@@ -202,6 +202,19 @@
 .act-name {
 	margin-top: 3px;
 	position: relative;
+	cursor: pointer;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+.act-name.shared {
+	color: $orange
+}
+
+.act-name.different:hover {
+	background: $light-turq;
+	color: white;
+	border-radius: 10px;
 }
 
 .more {

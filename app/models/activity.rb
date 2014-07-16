@@ -24,4 +24,8 @@ class Activity < ActiveRecord::Base
 			p "#{act.name} was suggested_by #{user} for the category #{category} on #{act.created_at.strftime("%m/%d/%g at %I:%M%p")}"  
 		end
 	end
+
+	def shared_between? user, other_user
+		users.include?(user) && users.include?(other_user)
+	end
 end

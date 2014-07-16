@@ -2,6 +2,11 @@
 
 	<div id="other-interest-list">
 				
+			<div class="other-instructions">
+				Click <%= @user.first_name %>'s interests to add them to your own!<br>
+				<span class='orange'>Orange interests are shared.</span> 
+			</div>
+
 			<div id="other-sim">
 				<div class="mutual">
 					<%= image_tag "Mutual.svg", :class => "sim-label svg" %>
@@ -28,7 +33,13 @@
 									"#{('..' if cat_name.length > 14)}" %></div></div>
 									<div class="activities">
 										<% acts.each do |activity| %>
-											<div class="activity"><div class="act-name"><%= activity.shortened_name %> •</div></div>
+											<%= link_to interests_path(act_id: activity.id, nothing: true), remote: true, method: :post, class: 'add-other-act' do %>
+												<div class="activity">
+													<div class="act-name other <%= activity.shared_between?(current_user, @user) ? 'shared' : 'different' %> ">
+														<%= activity.shortened_name %> •
+													</div>
+												</div>
+											<% end %>
 										<% end %> 
 									</div>
 								</div>

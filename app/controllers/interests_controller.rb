@@ -5,6 +5,7 @@ class InterestsController < ApplicationController
 		act = Activity.find(params[:act_id])
 		interest = Interest.find_or_create_by activity_id: params[:act_id], user_id: current_user.id
 		CatInterest.find_or_create_by(user_id: current_user.id, category_id: act.category.id)
+		render nothing: true and return if params[:nothing] == true
 		render partial: 'chosen_act', locals: {act: act, interest: interest}
 	end
 

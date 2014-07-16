@@ -9,6 +9,9 @@ Users =
 		$('.edit_user').on 'ajax:success', @showSettingsStatus
 		$('#delete-account').on 'click', @showDeleteModal
 		$('#cancel-delete').on 'click', @cancelDelete
+		$('body').on 'mouseenter', '.act-name.other', @showPlus
+		$('body').on 'mouseleave', '.act-name.other', @showDot
+		$('body').on 'ajax:success', '.add-other-act', @addAct
 
 	closeWelcome: ->
 		$('#activation-container').remove()
@@ -50,6 +53,18 @@ Users =
 
 	cancelDelete: -> 
 		$.modal.close()
+
+	showPlus: ->
+		if !$(@).hasClass('shared')
+			newText = $(@).text().replace('•', '+')
+			$(@).text newText
+	showDot: ->
+		newText = $(@).text().replace('+', '•')
+		$(@).text newText
+
+	addAct: ->
+		console.log @
+		$(@).find('.act-name').addClass('orange shared').removeClass('different')
 
 
 

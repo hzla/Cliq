@@ -104,7 +104,6 @@ class UsersController < ApplicationController
 		end
 	
 		if new_address != nil && new_address != "same"
-			print "success"
 			cords = new_address.coordinates
 			current_user.update_attributes latitude: cords[0], longitude: cords[1]
 			current_user.update_attributes address: new_address.data["address_components"][0]["long_name"]
