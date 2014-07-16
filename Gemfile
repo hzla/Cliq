@@ -15,6 +15,7 @@ gem 'timezone'
 gem 'wikipedia-client'
 gem 'fog'
 gem 'sidekiq'
+gem 'rails_admin'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem "pg"

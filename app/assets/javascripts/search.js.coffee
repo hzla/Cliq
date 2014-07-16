@@ -25,6 +25,7 @@ Search =
 		$('#invite-modal-container').html data
 		$('#invite-modal-container').modal()
 		$('#invite-modal-container').addClass "animated bounceInUp"
+		$('.content-container').css 'opacity', ''
 
 	chatUser: (event, data, xhr, status) ->
 		event.preventDefault()
@@ -51,7 +52,6 @@ Search =
 			$('.user-other-container').remove()
 			$('body').append data
 			$('.user-other-container').addClass 'animated bounceInRight'
-			$('.content-container').css 'background', 'white'
 			$('.content-container').css 'opacity', '.3'
 
 	collapseChat: ->

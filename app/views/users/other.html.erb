@@ -20,14 +20,18 @@
 			
 			<div class="right other">
 					<div id="invite-other">
+					<%= link_to new_user_event_path(@user), :class=> "invite-user", remote: true do %>
 					<%= image_tag "Events.svg", :class => "action-icon other svg" %>
+					<% end %>
 					<%= link_to new_user_event_path(@user), :class => "white other-action invite-user", remote: true do %>
 					INVITE
 					<% end %>
 					</div>
 
 					<div id="chat-other">	
+					<%= link_to user_chat_path(@user), :class => "chat-user", remote: true do %>
 					<%= image_tag "Messages.svg", :class => "action-icon other svg" %>
+					<% end %>
 						<%= link_to user_chat_path(@user), :class => "white other-action chat-user", remote: true do %>
 							CHAT
 						<% end %>

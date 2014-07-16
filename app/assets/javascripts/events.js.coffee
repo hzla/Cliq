@@ -6,6 +6,7 @@ Events =
     $('body').on 'ajax:success', '.event-sort', @sortEvents
     $('body').on 'ajax:success', '#new_event', @closeModal 
     $('body').on 'click', '#send-invite .invite-icon', @send
+    $('body').on $.modal.BEFORE_CLOSE, '#invite-modal-container', @restoreOpacity
 
   send: ->
     console.log "tried"
@@ -22,6 +23,10 @@ Events =
         height: "0px"
       }, 200, ->
         invite.hide()
+
+  restoreOpacity: (event, modal) ->
+    if $('.user-other-container').length > 0 || $('.chat-partial:visible').length > 0
+      $('.content-container').css 'opacity', '.3'
 
   addPartnerInfo: ->
     partnerId = $('#event_partner_id')[0].value
