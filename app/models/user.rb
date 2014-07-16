@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 	has_many :messages, dependent: :destroy 
 
 	validates :name, :presence => true
-	attr_accessible :name, :email, :school, :bio, :profile_pic_url, :fb_token, :activation, :address, :sex, :sexual_preference, :latitude, :longitude, :active, :message_count, :invite_count, :event_count,:notify_messages, :notify_news, :notify_events, :timezone  
+	attr_accessible :name, :email, :school, :bio, :profile_pic_url, :fb_token, :activation, :address, :sex, :sexual_preference, :latitude, :longitude, :active, :message_count, :invite_count, :event_count,:notify_messages, :notify_news, :notify_events, :timezone, :role  
 
 	geocoded_by :address
 	after_validation :geocode      
@@ -169,5 +169,9 @@ class User < ActiveRecord::Base
 			end
 		end
 		p failures
+	end
+
+	def admin?
+		role == "admin"
 	end
 end

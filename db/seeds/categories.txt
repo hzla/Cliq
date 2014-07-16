@@ -358,6 +358,7 @@ q: What do you do for fun?
 		Archery
 		Backpacking
 		Badminton
+		Basketball
 		Billiards
 		Birdwatching
 		Boating

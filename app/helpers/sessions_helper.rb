@@ -6,4 +6,8 @@ module SessionsHelper
 			nil
 		end
 	end
+
+	def current_admin
+		current_user && current_user.role == "admin"
+	end
 end

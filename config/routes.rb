@@ -1,4 +1,5 @@
 Cliq::Application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :location_suggestions
 
   root to: 'pages#home'
