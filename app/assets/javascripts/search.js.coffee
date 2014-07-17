@@ -142,6 +142,8 @@ Search =
 				response: (event, ui) ->
 			).data("uiAutocomplete")._renderItem = (ul, item) ->
 				icon = $("##{item.type}").clone()
+				console.log item
+				console.log icon
 				a = $("<li />").data("item.autocomplete", item).append("<a class='item-label'>#{item.label}</a>").appendTo(ul).prepend icon	 
 				return a
 
