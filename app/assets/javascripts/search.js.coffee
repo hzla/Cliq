@@ -124,6 +124,7 @@ Search =
 					$('.ui-state-focus').removeClass('ui-state-focus').addClass 'new-focus'
 				delay: 0
 				open: (event, ui) -> 
+					$('.ui-autocomplete').find('.ac-image').removeClass 'hidden'
 					$('.ui-menu-item').each ->
 			
 					# 	$(@).append("<img src='/assets/#{@.value}.svg' class='ac-image'>")
@@ -140,8 +141,9 @@ Search =
 				minLength: 2
 				response: (event, ui) ->
 			).data("uiAutocomplete")._renderItem = (ul, item) ->
-				return $("<li />").data("item.autocomplete", item).append("<a><img class='ac-image' src='/assets/#{item.type}.svg'/>#{item.label}</a>").appendTo(ul)
-	 
+				icon = $("##{item.type}").clone()
+				a = $("<li />").data("item.autocomplete", item).append("<a class='item-label'>#{item.label}</a>").appendTo(ul).prepend icon	 
+				return a
 
         
 	removeTerm: ->

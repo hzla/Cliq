@@ -37,6 +37,7 @@
 					Send me notifications for:
 				</div>
 
+
 				<div class="notification-setting head-4">
 					<%= f.check_box :notify_messages, value: true, checked: current_user.notify_messages, :class => "email-settings" %>
 					<%= f.label :notify_messages, "New Messages" %>
@@ -48,6 +49,14 @@
 				<div class="notification-setting  head-4">
 				<%= f.check_box :notify_news, value: true, checked: current_user.notify_news, :class => "email-settings" %>
 				<%= label :notify_news, "Cliq News & Updates" %>
+				</div>
+
+				<div class="lgbtq-container head-3">
+					I am: <%= f.check_box :lbgtq, value: true, checked: current_user.lbgtq %>
+					<%= label :lbgtq, "LGBTQ" %>
+					<p id="lbgtq-text">
+						(Your anonymous "Cliq" replacement picture will change to inlude a rainbow background if you decide to indicate that you are LGBTQ. Don't worry, checkints this box is <span class="heavy-gray">optional</span>.) 
+					</p>
 				</div>
 
 				<%= f.submit "Save", id: "save-settings" %>

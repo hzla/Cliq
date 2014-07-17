@@ -10,7 +10,7 @@
 					<% if current_user.conversated_with? entry[0] %>
 						<%= image_tag entry[0].profile_pic_url, :class => "swiped-profile-pic-card" %>
 					<% else %>
-						<%= image_tag 'cliq.png', :class => "swiped-profile-pic-card" %>
+						<%= image_tag entry[0].obscured_pic , :class => "swiped-profile-pic-card" %>
 					<% end %>
 				<% end %>
 				
@@ -61,22 +61,6 @@
 								<%= image_tag "Messages.svg", :class => "swiped-action-icon svg" %>
 							<% end %>
 						</div>	
-
-						<div class="swipe-sex">
-							<% if entry[0].sex == "male" %>
-								<%= image_tag "Dude.svg", :class => "sex-icon svg" %>
-							<% else %>
-								<%= image_tag "Female.svg", :class => "sex-icon svg" %>
-							<% end %>
-							<div class="sex-text">
-								likes
-							</div>
-							<% if entry[0].prefers == "male" %>
-								<%= image_tag "Dude.svg", :class => "sex-icon svg" %>
-							<% else %>
-								<%= image_tag "Female.svg", :class => "sex-icon svg" %>
-							<% end %>
-						</div>					
 					</div>
 				</div>
 			</div>

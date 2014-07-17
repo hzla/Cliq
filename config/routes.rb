@@ -3,7 +3,7 @@ Cliq::Application.routes.draw do
   resources :location_suggestions
 
   root to: 'pages#home'
-  ['help', 'contact', 'faq', 'about', 'terms', 'privacy'].each do |page|
+  ['help', 'contact', 'faq', 'about', 'terms'].each do |page|
     get "/#{page}", to: ("pages#" + "#{page}"), as: page 
   end
 
