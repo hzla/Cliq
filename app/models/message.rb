@@ -12,6 +12,7 @@ class Message < ActiveRecord::Base
 		# else
 		# 	time(created_at).strftime("%m/%d %I:%M%p")
 		# end
+		p self
 		(created_at + user.timezone.hours).strftime("%m/%d %I:%M%p")
 	end
 end

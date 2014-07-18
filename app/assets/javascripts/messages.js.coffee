@@ -9,9 +9,9 @@ Messages =
 		@selectFirstConversation()
 
 	submitMessage: ->
-		$('#new_message').submit()
+		$(@).parent().parent().prev().prev().submit()
 		$('.sending-progress').text('Sending...').show() if $('#chat-box').val().replace(/^\s+|\s+$/g, "") != ""
-		$('#chat-box').val ''
+		$('.chat-box').val ''
 		
 
 	prepConversation: ->
@@ -32,9 +32,12 @@ Messages =
 	submitMessageOnEnter: (e) ->
 		if (e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)
 			e.preventDefault()
-			Messages.submitMessage()
-			$('#chat-box').val ''
-			$('#new_message')[0].reset()
+			form = $(@).parent()
+			console.log form
+			form.submit()
+			$('.sending-progress').text('Sending...').show() if $(@).val().replace(/^\s+|\s+$/g, "") != ""			
+			$(@).val ''
+
 
 
 

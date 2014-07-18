@@ -124,7 +124,6 @@ class UsersController < ApplicationController
 	end
 
 	def invite_friends
-		p params
 		UserMailer.invite_email(current_user, params[:email]).deliver
 		render nothing: true
 	end

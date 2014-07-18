@@ -12,10 +12,6 @@ module Cliq
     Dotenv.load
     config.action_mailer.default_url_options = { host: 'localhost:3000' }
     
-    Timezone::Configure.begin do |c|
-        c.username = 'hzla'
-    end
-
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

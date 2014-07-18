@@ -4,7 +4,7 @@ class Activity < ActiveRecord::Base
 	mount_uploader :activity_pic, ActivityPicUploader
 	belongs_to :category
 
-	attr_accessible :name, :category_id, :activity_pic, :remote_activity_pic_url, :suggested_by
+	attr_accessible :name, :category_id, :activity_pic, :remote_activity_pic_url, :suggested_by, :has_pic
 
 	def shortened_name
 		name.length > 25 ? name[0..24] + "..." : name  

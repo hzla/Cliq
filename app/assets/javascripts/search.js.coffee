@@ -33,10 +33,13 @@ Search =
 		$('.content-container').css 'opacity', '.3'
 		if $('#' + $(@).attr('href').split('/')[2]).length < 1
 			$('body').append data
-			$('.chat-partial').last().addClass 'animated bounceInRight'
+			$('.chat-partial').removeClass('current-thread')
+			$('.chat-partial').last().addClass 'animated bounceInRight current-thread'
 
 	checkTab: () ->
-		console.log "checked"
+		id = $(@).attr('href').split('/')[2]
+		if $("#u-#{id}")
+			$("#u-#{id}").click()
 		return false if $('.messages.active').length > 0
 
 	switchChat: ->
@@ -47,7 +50,6 @@ Search =
 			$('.content-container').css 'opacity', ''
 			$('.content-container').css 'background', '#f1f1f1'
 
-
 	showUser: (event, data, xhr, status) ->
 			$('.user-other-container').remove()
 			$('body').append data
@@ -56,7 +58,6 @@ Search =
 
 	collapseChat: ->
 		Search.collapse $(@).parents('.chat-partial')
-
 
 	collapse: (chat) ->
 		chat.addClass 'bounceOutRight'
@@ -89,7 +90,8 @@ Search =
 		$(@).prev().removeClass().addClass 'chat-partial animated bounceInRight'
 		$('.chat-partial').css 'z-index', '2'
 		$(@).prev().css 'z-index', '3'
-		console.log "happened"
+		$('.chat-partial').removeClass 'current-thread'
+		$(@).prev().addClass 'current-thread'
 		if $('.chat-partial').length > 0
 			$('.content-container').css 'background', 'white'
 			$('.content-container').css 'opacity', '.3'

@@ -28,7 +28,7 @@
 		</div>
 	<div class="chat-window-footer">	
 		<%= form_for [@conversation, @message], remote: true do |f| %>
-			<%= f.text_area :body, id: 'chat-box' %>
+			<%= f.text_area :body, id: 'chat-box', :class => "chat-box" %>
 		<% end %>
 		<%= image_tag current_user.profile_pic_url, id: "chat-box-pic" %>
 
@@ -53,7 +53,7 @@
 	</div>
 </div>
 
-<div class="collapsed-chat hidden">
+<div class="collapsed-chat hidden" id="u-<%= @other_user.id %>">
 	<div class="collapsed-name">
 		<- <%= @other_user.first_name %>
 		<%= image_tag 'XClose.svg', class: 'close' %>

@@ -11,7 +11,6 @@ gem 'turbolinks'
 gem "thin"
 gem 'faker'
 gem 'faye'
-gem 'timezone'
 gem 'wikipedia-client'
 gem 'fog'
 gem 'sidekiq'
@@ -35,7 +34,6 @@ gem 'delayed_job_active_record'
 gem 'omniauth-facebook'
 gem 'koala'
 gem 'dotenv'
-
 gem 'will_paginate'
 
 # These gems allow us to apply css to html emails
@@ -52,6 +50,9 @@ group :development, :test do
 	gem 'factory_girl_rails'
   gem 'guard-rspec'
   gem 'guard-livereload'
+  gem "google_custom_search_api"
+  gem 'searchbing'
+  gem 'yboss'
 end
 
 group :test do 
