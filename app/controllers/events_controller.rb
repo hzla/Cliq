@@ -48,6 +48,9 @@ class EventsController < ApplicationController
 			excursion = Excursion.where(event_id: event.id, user_id: current_user.id)[0]
 			excursion.update_attributes created: true, accepted: true
 			broadcast user_path(invited_user)+ "/events", event.to_json
+			if invited_user.notify_events && !invited_user.active 
+				NotificationMailer.event_notification(invited_user, current_user, event).deliver if invited_user.email
+			end
 			if event.image_url != nil
 				redirect_to(:back) and return
 			else

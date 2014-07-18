@@ -13,7 +13,7 @@
 		<div class="message-content">
 			<div id="conversations">
 		<% current_user.ordered_conversations.each do |convo| %>
-			
+
 				<% user = convo.get_other_user current_user %>
 
 				<div class="conversation" id="<%= user.id %>">

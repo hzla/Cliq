@@ -119,6 +119,9 @@ class UsersController < ApplicationController
 	end
 
 	def destroy
+		current_user.messages.map(&:conversation).uniq.each do |convo|
+			convo.destroy
+		end
 		current_user.destroy
 		redirect_to root_path
 	end
