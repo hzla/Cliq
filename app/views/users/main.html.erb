@@ -5,13 +5,13 @@
 			<div id="query">
 				<%= form_tag search_path, id: "search-form", remote: true do %>
 					<div id="query-row-1">
-						<div id="query-1" class="head-2 white">I want to hang out in</div>
-						<%= text_field_tag :location, nil, :class => "head-2 dark-gray search-term", id: "query-location", value: "Orlando, Florida" %>
+						<div id="query-1" class="white">I want to hang out in</div>
+						<%= text_field_tag :location, nil, :class => "dark-gray search-term", id: "query-location", value: "Orlando, Florida" %>
 						<%= hidden_field_tag "location_id" %>
 						<%= hidden_field_tag "type", "swipe" %>
-						<div id="query-2" class="head-2 white">with people interested in</div>
+						<div id="query-2" class="white">with people interested in</div>
 					</div>
-					<div id="query-interests" class="head-2 dark-gray">
+					<div id="query-interests" class="dark-gray">
 						<%= text_field_tag :activity, nil, :class => "query-interest search-term", placeholder: 'Anything' %>
 					</div>
 					<%= submit_tag "Shuffle", :class => "red head-3", id:"search-query" %> 
@@ -22,7 +22,7 @@
 	</div>
 
 	<div id="results-container">
-		<div id="results-content">
+		<div id="swiped-content">
 			<div id="results-header">
 			</div>
 			

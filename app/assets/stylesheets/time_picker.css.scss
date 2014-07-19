@@ -5,9 +5,11 @@ thead {
 	color: $light-turq 
 }
 
+
+
 .ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
 .ui-timepicker-div dl { text-align: left; }
-.ui-timepicker-div dl dt { float: left; clear:left; padding: 0 0 0 5px; }
+.ui-timepicker-div dl dt { float: left; clear:left; padding: 0 0 0 5px; color: $light-turq; }
 .ui-timepicker-div td { font-size: 90%; }
 .ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
 
@@ -41,9 +43,26 @@ thead {
 }
 
 .ui-widget .ui-widget {
-	right: 60px;
+	right: 45px;
 }
 
 .ui-datepicker-current-day .ui-state-default {
 	background-color: $dark-turq;
+}
+
+.ui_tpicker_hour_slider {
+	background-color: $dark-turq;
+}
+
+.ui_tpicker_minute_slider {
+	background-color: $dark-turq;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+	top: -0.9em;
+	margin-left: -.6em;
+}
+
+.ui-slider-handle:focus {
+	outline: none;
 }

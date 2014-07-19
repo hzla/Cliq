@@ -3,8 +3,7 @@
 #events-header {
 	height: 64px;
 	width: 100%;
-	background-color: $light-turq;
-	float: left;
+	float: right;
 	font-family: $generic-font;
 	overflow-x: hidden;
 }
@@ -16,14 +15,30 @@
 	width: 100%;
 }
 
+#invite-container {
+	width: 40%;
+	height: 100%;
+	position: fixed;
+	background: $turq;
+	top: 0;
+	overflow-y: scroll;
+}
+
+#other-events-container {
+	width: 60%;
+	height: 100%;
+	float: right;
+}
+
 #events {
 	float: left;
+	margin-top: 30px;
 }
 
 #events-header-actions {
-	float: left;
-	margin-top: 15px;
-	margin-left: 35%;
+	width: 85%;
+	margin: 0 auto;
+	margin-top: 50px;
 }
 
 #event-status {
@@ -35,19 +50,20 @@
 	border-radius: 50px;
 }
 
-.selected {
+.dark-gray.selected {
 	background-color: $dark-gray;
 	border-radius: 50px;
+	color: white;
 }
 
 #event-upcoming {
-	float: left;
+	float: right;
 	padding-left: 15px;
 	padding-right: 15px;
 }
 
 #event-past {
-	float: left;
+	float: right;
 	padding-left: 15px;
 	padding-right: 15px;
 	margin-left: 10px;
@@ -55,15 +71,14 @@
 }
 
 #event-going {
-	float: left;
+	float: right;
 	padding-left: 15px;
 	padding-right: 15px; 
 }
 
 #invites {
 	width: 383px;
-	float: left;
-	margin-left: 62px;
+	margin: 0 auto;
 	font-family: $generic-font
 }
 
@@ -73,11 +88,14 @@
 
 #invites-header {
 	margin-left: 70px;
-	margin-top: 20px;
+	margin-top: 50px;
+	margin-bottom: 30px;
+	font-size: 30px;
 }
 
 #upcoming-header {
-	margin-top: 20px;
+	float: left;
+	font-size: 30px;
 
 }
 
@@ -119,8 +137,7 @@
 	float: left;
 	clear: left;
 	margin-left: 1px;
-	margin-top: -3px;
-	font-size: 10pt;
+	margin-top: 0px;
 }
 
 .invite-location {
@@ -180,8 +197,8 @@
 }
 
 #upcoming {
-	float: left;
-	width: 771px;
+	margin: 0 auto;
+	width: 85%;
 	min-height: 900px;
 	font-family: $generic-font;
 }
@@ -194,9 +211,13 @@
 	width: 224px;
 	height: 378px;
 	float: left;
-	margin-right: 33px;
+	margin-right: 13px;
 	background-color: white;
 	margin-top: 20px;
+}
+
+.upcoming-event:nth-child(3n) {
+	margin-right: 0px;
 }
 
 .upcoming-event-title {

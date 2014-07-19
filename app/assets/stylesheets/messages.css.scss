@@ -12,8 +12,17 @@
 }
 
 .message-content {
-	margin: 0 auto;
-	width: 965px;
+	width: 40%;
+	height: 100%;
+	position: fixed;
+	background: $light-turq;
+}
+
+#thread-container {
+	width: 60%;
+	height: 100%;
+	position: fixed;
+	right: 0;
 }
 
 #messages-header {
@@ -65,11 +74,15 @@
 }
 
 #conversations {
-	float: left;
-	margin: 50px 0px 75px 0px;
-	height: 450px;
+	margin: 0 auto;
+	height: 80%;
 	width: 385px;
-	overflow-y: scroll; 
+	overflow-y: scroll;
+	margin-top: 62px; 
+}
+
+.conversation {
+	background: white;
 }
 
 .conversation.current {
@@ -90,10 +103,10 @@
 }
 
 #messages {
-	width: 530px;
-	height: 450px;
-	float: left;
-	margin: 50px 0px 75px 50px;
+	width: 80%;
+	height: 100%;
+	margin: 0 auto;
+	margin-top: 62px;
 }
 
 .convo {
@@ -144,14 +157,14 @@
 }
 
 .message-history {
-	height: 350px;
-	width: 515px;
+	height: 70%;
+	width: 100%;
 	overflow-y: scroll;
 	overflow-x: hidden; 
 }
 
 .message {
-	width: 370px;
+	width: 80%;
     padding: 10px 15px 10px 15px;
 	border-radius: 10px;
 	margin-top: 9px;
@@ -193,13 +206,12 @@
 .message-block {
 	float: left;
 	width: 99%;
-	margin-left: 5px;
 }
 
 #chat-box {
 	float: left;
 	height: 64px;
-	width: 435px;
+	width: 70%;
 	border: 1px solid $light-gray;
 	margin-top: 10px;
   margin-right: 5px;
@@ -217,7 +229,7 @@
 }
 
 #message-actions {
-	width: 522px;
+	width: 70%;
 	float: left;
 	font-family: $generic-font;
 	margin-top: 5px;
@@ -281,7 +293,7 @@
 }
 
 .message-form {
-	width: 560px;
+	width: 100%;
 	height: 140px;
 	position: absolute;
 	bottom: 0px;

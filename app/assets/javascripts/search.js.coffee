@@ -159,6 +159,7 @@ Search =
 
 
 	displayResults: (event, data, xhr, status) ->
+		$('#search-results').html data
 		$('#results').html data
 		$('.swiped-result').hide()
 		$('.swiped-result').first().show()

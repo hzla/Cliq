@@ -25,7 +25,7 @@ Events =
         invite.hide()
 
   restoreOpacity: (event, modal) ->
-    if $('.user-other-container').length > 0 || $('.chat-partial:visible').length > 0
+    if $('.user-other-container:visible').length > 0 || $('.chat-partial:visible').length > 0
       $('.content-container').css 'opacity', '.3'
 
   addPartnerInfo: ->

@@ -21,7 +21,7 @@
 		</div>
 
 
-		<div class="message-history">
+		<div class="message-history chat">
 			<% @conversation.ordered_messages.each do |message| %>
 				<%= render partial: 'messages/show', locals: {message: message} %>
 			<% end %>

@@ -11,6 +11,15 @@
 	-webkit-box-shadow: -1px 3px 28px -0px rgba(136, 136, 136, 0.2);
 }
 
+.message-history.chat {
+	height: 400px;
+	width: 92%;
+	float: left;
+}
+
+.message-history.chat .message {
+	width: 72%;
+}
 
 #chat-partial-content {
 	float: left;
@@ -70,7 +79,7 @@
 	border-top-left-radius: 5px; 
 	border-top-right-radius: 5px; 
 	position: fixed;
-	background-color: $light-turq;
+	background-color: $orange;
 	color: white;
 	position: fixed;
 	bottom: 0;
@@ -123,5 +132,6 @@
 	float: left;
 	position: absolute;
 	bottom: 10px;
+	width: 100%;
 }
 

@@ -6,7 +6,6 @@ html {
 
 body {
 	margin: 0;
-  padding-left:62px;
   position: relative;
   height: 100%;
 }
@@ -94,7 +93,11 @@ a {
 }
 
 .active svg path {
-	fill: $light-turq;
+	fill: black;
+}
+
+.active #cliq-logo {
+	color: black;
 }
 
 .content-container {

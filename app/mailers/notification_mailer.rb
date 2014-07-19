@@ -1,5 +1,5 @@
 class NotificationMailer < ActionMailer::Base
-  default from: "notifications@cliqwith.me"
+  default from: "Notifications@cliqwith.me"
 
   def notification user, other_user
     @user = user

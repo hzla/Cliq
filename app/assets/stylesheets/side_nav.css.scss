@@ -2,6 +2,7 @@
 
 
 .extended-side-nav {
+	z-index: 2;
 }
 
 .extended {
@@ -15,22 +16,32 @@
   font-weight: 300;
 	width: 100%;
   z-index:3;
+
+}
+
+.extended-side-nav .extended:hover {
+	background: rgba(255,255,255,0.85);
+	border-radius: 50px;
+	
+	color: $turq;
 }
 
 .side-icon:hover {
-	background-color: $darkest-gray;
+	background: rgba(255,255,255,0.85);
 }
 
 .extended .nav-icon {
 	float: left;
+	opacity: 1
 }
 
 .icon-label {
 	float: left;
 	margin-top: 20px;
-	-webkit-animation-duration: .5s;
+	-webkit-animation-duration:1s;
 	opacity: 0;	
-	color: $super-light-gray;
+	color: $turq;
+
 }
 
 .settings .icon-label {
@@ -46,12 +57,16 @@
 .extended-side-nav {
 	width: 62px;
 	height: 100%;
-	background-color: $dark-gray;
 	position: fixed;
 	left: 0;
 	text-align: center;
 	top: 0;
 }
+
+// .extended-side-nav:hover {
+// 	background-color: white;
+// 	opacity:1
+// }
 
 a {
 	text-decoration: none;
@@ -63,6 +78,7 @@ a {
 	font-weight: 400;
 	font-size: 20px;
 	display: block;
+	height: 25px;
 }
 
 .extended.logo .icon-label {
@@ -84,9 +100,10 @@ a {
 .nav-icon {
 	width: 26px;
 	height: 26px;
-    margin: 18px;
-
+  margin: 18px;
 }
+
+
 
 .settings {
 	bottom: 0;
@@ -96,10 +113,12 @@ a {
 
 #extended-settings {
 	margin-left: 0px;
+	position: absolute;
+	bottom: 0;
 }
 
 .extended:hover {
-	background-color: $darkest-gray;
+	background-color: rgba(255,255,255,0.85);
 }
 
 .extended-options {
@@ -108,8 +127,10 @@ a {
 	bottom: 90px;
 	font-family: $generic-font;
   font-weight: 300;
-	color: white;
+	color: $dark-turq;
 	width: 62px;
+	background-color: rgba(255,255,255,0.85);
+	border-radius: 10px;
 }
 
 .extended-options .icon-label {
@@ -124,7 +145,7 @@ a {
 }
 
 .extended-options .icon-label:hover {
-	background-color: $darkest-gray;
+	background-color: rgba(255,255,255,0.85)
 }
 
 .nav-filler {
@@ -150,7 +171,7 @@ a {
 	background-color: $red;
 	color: white;
 	font-size: 10px;
-	height: 12.5px;
+	height: 11px;
 	width: 15px;
 	padding-top: 1px;
 	border-radius: 3px;
@@ -173,15 +194,16 @@ a {
 	display: block;
 	width: 39px;
 	margin-left: 10px;
+	color: $dark-turq;
 }
 
 #logout {
-	color: white;
+	color: $red;
 	text-decoration: none;
 }
 
 .nav-icon path {
-	fill: #d3d3d3;
+	fill: $dark-turq;
 }
 
 #shuffle {

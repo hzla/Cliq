@@ -1,12 +1,14 @@
 development:
-  :address: smtp.gmail.com
+  :address: smtp.mandrillapp.com
   :port: 587
   :authentication: plain
-  :user_name: welcome.cliq@gmail.com
-  :password: cliqapp2014
+  :user_name: welcome@cliqwith.me
+  :password: MXvL4JDPdBfI1MswLwL8og
   :enable_starttls_auto: true
   :default_url_options:
     :host: localhost:3000
+  :authentication: plain
+  :domain: cliqwith.me
 production:
   :address: smtp.gmail.com
   :port: 587
@@ -14,3 +16,4 @@ production:
   :user_name: welcome.cliq@gmail.com
   :password: cliqapp2014
   :enable_starttls_auto: true
+

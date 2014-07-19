@@ -2,45 +2,40 @@
 <div class="content-container">
 <div id="messages-container" %>
 
-	<div id="messages-header">
-		<div id="messages-header-actions">
-			<div class="head-4 white" id="message-sort-by">Sort by</div>
-			<div class="head-4 dark-gray" id="message-sort">Most Recent</div>
-		</div>
-	</div>
+
 
 	<div class="message-content-container">
 		<div class="message-content">
 			<div id="conversations">
-		<% current_user.ordered_conversations.each do |convo| %>
+				<% current_user.ordered_conversations.each do |convo| %>
 
-				<% user = convo.get_other_user current_user %>
+					<% user = convo.get_other_user current_user %>
 
-				<div class="conversation" id="<%= user.id %>">
-					<%= link_to other_user_path(user), :class => "other-user", remote: true do %>
-						<% if current_user.conversated_with? user %>
-							<%= image_tag user.profile_pic_url, :class => "convo-pic" %>
-						<% else %>
-							<%= image_tag 'cliq.png', :class => "convo-pic" %>
+					<div class="conversation" id="<%= user.id %>">
+						<%= link_to other_user_path(user), :class => "other-user", remote: true do %>
+							<% if current_user.conversated_with? user %>
+								<%= image_tag user.profile_pic_url, :class => "convo-pic" %>
+							<% else %>
+								<%= image_tag 'cliq.png', :class => "convo-pic" %>
+							<% end %>
 						<% end %>
-					<% end %>
-					<%= link_to conversation_path(convo), :class => "convo-link", remote: true do %>
-						<div class="convo-details">
-							<div class="convo-name head-5"><%= user.first_name %></div>
-							<div class="convo-date head-5"><%= convo.date current_user %></div>
-							<div class="convo-school head-6 light-gray"><%= user.school %><%= "Random School" if !user.school %></div>
-							<div class="convo-last-message head-5 gray"><%= convo.last_message %></div>
-						</div>
-					<% end %>
-				</div>
-		<% end %>
-	</div>
+						<%= link_to conversation_path(convo), :class => "convo-link", remote: true do %>
+							<div class="convo-details">
+								<div class="convo-name head-5"><%= user.first_name %></div>
+								<div class="convo-date head-5"><%= convo.date current_user %></div>
+								<div class="convo-school head-6 light-gray"><%= user.school %><%= "Random School" if !user.school %></div>
+								<div class="convo-last-message head-5 gray"><%= convo.last_message %></div>
+							</div>
+						<% end %>
+					</div>
+				<% end %>
+			</div>
+		</div>
 
-	<div id="messages">
+		<div id="thread-container">
+			<div id="messages">
 		<%= render partial: 'chat_history', locals: {conversation: @conversation, other_user: @other_user } %>
-	</div>
-
-
+			</div>
 		</div>
 
 	</div>

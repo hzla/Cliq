@@ -2,19 +2,31 @@
 
 #search-container {
 	min-height: 125px;
-	width: 100%;
+	height: 100%;
 	background: $light-turq;
 	float: left;
-	font-family: $generic-font;
+	font-family: "proxima-nova", sans-serif;
 	background-size: cover;
+	position: fixed;
+	width: 40%;
 }
 
 #search-content {
-	width: 927px;
-	margin: 0 auto;
+	float: left;
+	position: relative;
+}
+
+#results-content {
+	float: left;
+	margin-bottom: 38px;
 }
 
 #search-form {
+	float: left;
+	margin-left: 80px;
+	margin-top: 160px;
+	font-weight: 400;
+	font-size: 27px;
 }
 
 #activity {
@@ -26,22 +38,19 @@
 
 #results-container {
 	height: 100%;
-	width: 100%;
-	background-color: $beige;
-	font-family: $generic-font;
-	float: left;
+	width: 60%;
+	background-color: #f1f1f1;
+	font-family: "proxima-nova", sans-serif;
+	float: right;
 }
 
 #results-content {
-	width: 928px;
-	margin: 0 auto;
 }
 
 #query {
 	margin: 0 auto;
 	width: 100%;
-	margin-top: 20px;
-    font-weight:700;
+  font-weight:700;
 }
 
 #query-1 {
@@ -50,28 +59,29 @@
 
 #query-location {
 	float: left;
-	margin-left: 15px;
-	margin-right: 15px;
 	border: none;
-	margin-top: -3px;
+	margin-top: 9px;
+	margin-bottom: 27px;
 	font-weight: 700;
-	font-size: 28px;
 	opacity: 1;
 	height: 34px;
   font-family: "proxima-nova",sans-serif;
   width:250px;
+  clear: left;
 
 }
 
 #query-2 {
 	float: left;
+	clear: left;
+	margin-bottom: 9px;
 }
 
 #query-interests {
 	float: left;
 	clear: left;
-	margin-top: 5px;
-	width: 87%;
+	margin-top: 6px;
+	width: 85%;
 }
 
 .search-term.searched {
@@ -125,9 +135,12 @@
 	border-radius: 50px;
 	border:	none;
 	cursor: pointer;
-	height: 34px;
+	height: 62px;
+	width: 142px;
   margin-top: 5px;
   font-family: "proxima-nova",sans-serif;
+  position: absolute; 
+  bottom: -100px;
 
 }
 
@@ -136,13 +149,19 @@
 }
 
 #results {
-	width: 928px;
+	width: 100%;
 	float: left;
-	margin-top: 25px;
+	background: white;
 }
 
+#search-results {
+	width: 72%;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
 #results-header {
-	margin-top: 25px;
+	float: left;
+	width: 100%;
 }
 
 #found {
@@ -173,12 +192,12 @@
 	float: left;
 	margin-right: 38px;
 	background-color: white;
-	margin-bottom: 38px;
+	margin-top: 38px;
 	overflow-y: hidden; 
 	overflow-x: hidden;
 }
 
-.result:nth-child(3n) {
+.result:nth-child(2n) {
 	margin-right: 0px;
 }
 
@@ -346,7 +365,6 @@
 
 
 #no-one-around {
-	background: white;
 	height: 400px;
 	margin-bottom: 50px;
 }
@@ -400,7 +418,7 @@
 	float: left;
 	border: none;
 	width: 250px;
-	background: $super-light-gray;
+	background: $super-light-turq;
 	height: 40px;
 	border-radius: 50px;
 	padding-left: 15px;
