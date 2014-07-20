@@ -1,4 +1,4 @@
-development:
+production:
   :address: smtp.mandrillapp.com
   :port: 587
   :authentication: plain
@@ -9,7 +9,7 @@ development:
     :host: localhost:3000
   :authentication: plain
   :domain: cliqwith.me
-production:
+development:
   :address: smtp.gmail.com
   :port: 587
   :authentication: plain
