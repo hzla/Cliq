@@ -18,6 +18,7 @@ Search =
 		$('body').on 'keypress', '#activity', @selectInterestOnEnter
 		$('body').on 'click', '#cliq-invite', @inviteFriends
 		$('body').on 'submit', '#friend-invite', @sendCliqInvite
+		$('body').on 'keydown', '#query-location' , @deleteLocID
 
 		# @invertButtons()
 
@@ -163,7 +164,6 @@ Search =
 		$('#results').html data
 		$('.swiped-result').hide()
 		$('.swiped-result').first().show()
-		$('#found').text "Here's who we found:"
 		if $('#empty').length > 0
 			$('#no-one-around').show()
 		$('#found').text "Please enter a valid location." if $('#invalid').length > 0
@@ -222,7 +222,10 @@ Search =
 			$('#sent-invite').hide()
 		, 1000
 
-
+	deleteLocID: ->
+		key = event.keyCode || event.charCode
+		if  key == 8 || key == 46 
+			$('#location_id').val ''
 
 
 ready = ->

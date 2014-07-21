@@ -1,3 +1,6 @@
+@import 'variables';
+
+
 .user-other-container {
 	background: #f1f1f1;
 	width: 900px;
@@ -10,9 +13,68 @@
 	-webkit-box-shadow: -1px 3px 28px -0px rgba(136, 136, 136, 0.2);
 }
 
-
 .main-profile-info.other {
 	width: 745px;
+}
+
+.interest-sort {
+	margin-top: 10px;
+	font-size: 22px;
+}
+
+.int-type {
+	margin-right: 10px;
+	margin-left: 10px;
+	border-radius: 20px;
+	padding-left: 5px;
+	padding-right: 5px;
+	cursor: pointer;
+}
+
+
+.all-ints {
+	color: $gray;
+}
+
+.all-ints:hover {
+	border: 1px solid $gray;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+.all-ints.selected {
+	background-color: $gray;
+	color: white
+}
+
+.shared-ints {
+	color: $light-turq;
+}
+
+.shared-ints:hover {
+	border: 1px solid $light-turq;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+.shared-ints.selected {
+	color: white;
+	background: $light-turq;
+}
+
+.different-ints {
+	color: $orange;
+}
+
+.different-ints:hover {
+	border: 1px solid $orange;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+.different-ints.selected {
+	background: $orange;
+	color: white;
 }
 
 .other-instructions {

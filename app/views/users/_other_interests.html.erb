@@ -4,7 +4,11 @@
 				
 			<div class="other-instructions">
 				Click <%= @user.first_name %>'s interests to add them to your own!<br>
-				<span class='orange'>Orange interests are shared.</span> 
+				<span class='light-turq'>Turqoise interests are shared.</span>
+				<div class="interest-sort">
+					Show: <span class="all-ints int-type selected">All </span> <span class="shared-ints int-type">Shared </span> <span class="different-ints int-type">Different </span>
+				</div>
+
 			</div>
 
 			<div id="other-sim">
@@ -13,10 +17,10 @@
 					<div class="sim dark-gray"><%= current_user.similarities_with @user %></div>
 				</div>
 
-				<div class="similar">
+			<!-- 	<div class="similar">
 					<%= image_tag "Similar.svg", :class => "sim-label svg" %>
 					<div class="sim dark-gray"><%= current_user.similarities_with @user %></div>
-				</div>
+				</div> -->
 			</div>
 
 

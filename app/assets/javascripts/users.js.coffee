@@ -12,6 +12,9 @@ Users =
 		$('body').on 'mouseenter', '.act-name.other', @showPlus
 		$('body').on 'mouseleave', '.act-name.other', @showDot
 		$('body').on 'ajax:success', '.add-other-act', @addAct
+		$('body').on 'click', '.shared-ints', @showShared
+		$('body').on 'click', '.different-ints', @showDifferent
+		$('body').on 'click', '.all-ints', @showAll
 
 	closeWelcome: ->
 		$('#activation-container').remove()
@@ -65,6 +68,23 @@ Users =
 	addAct: ->
 		console.log @
 		$(@).find('.act-name').addClass('orange shared').removeClass('different')
+
+	showShared: ->
+		$('.int-type').removeClass 'selected'
+		$(@).addClass 'selected'
+		$('.act-name.different').hide()
+		$('.act-name.shared').show()
+
+	showDifferent: ->
+		$('.int-type').removeClass 'selected'
+		$(@).addClass 'selected'
+		$('.act-name.different').show()
+		$('.act-name.shared').hide()
+
+	showAll: ->
+		$('.int-type').removeClass 'selected'
+		$(@).addClass 'selected'
+		$('.act-name').show()
 
 
 

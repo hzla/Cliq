@@ -205,14 +205,15 @@
 	cursor: pointer;
 	padding-left: 2px;
 	padding-right: 2px;
+	color: $orange;
 }
 
 .act-name.shared {
-	color: $orange
+	color: $light-turq;
 }
 
 .act-name.different:hover {
-	background: $light-turq;
+	background: $orange;
 	color: white;
 	border-radius: 10px;
 }

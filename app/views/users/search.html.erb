@@ -6,7 +6,7 @@
 				<%= form_tag search_path, id: "search-form", remote: true do %>
 					<div id="query-row-1">
 						<div id="query-1" class="white">I want to hang out in</div>
-						<%= text_field_tag :location, nil, :class => " dark-gray search-term", id: "query-location", value: "Orlando, Florida" %>
+						<%= text_field_tag :location, nil, :class => " dark-gray search-term", id: "query-location", value: current_user.address, placeholder: "City, State" %>
 						<%= hidden_field_tag "location_id" %>
 						<div id="query-2" class=" white">with people interested in</div>
 					</div>
@@ -26,6 +26,14 @@
 	<%= image_tag 'Discuss.svg', :class => "ac-image hidden", id: "Discuss" %>
 
 	<div id="results-container">
+		<% if @user_empty %>
+			<div class="no-int-container">
+				<div class="no-ints">
+					It looks like you don't have any interests yet.<br>
+					Click <%= link_to "here", choose_cat_path(@category), id: "choose-cats" %> to add some!
+				</div>
+			</div>
+		<% end %>
 		<div id="results-content">
 			<div id="results-header">
 				<div id="found" class="head-3"></div>
@@ -33,7 +41,9 @@
 			
 
 			<div id="search-results">
-				<%= render partial: 'search_results', locals: {results: @results} %>
+				<% if !@user_empty %>
+					<%= render partial: 'search_results', locals: {results: @results} %>
+				<% end %>
 			</div>
 		</div>
 	</div>

@@ -43,19 +43,35 @@ class UsersController < ApplicationController
 	end
 
 	def search
-		@results = current_user.search_similar current_user.activities
+		@results = current_user.search_similar current_user.activities, current_user.address 
+		@category = Category.where(name: "Do").first
+		@user_empty = current_user.interests.empty?
 	end
 
 	def main
 		@results = current_user.search_similar current_user.activities
+		@category = Category.where(name: "Do").first
+		@user_empty = current_user.interests.empty?
 	end
 
 	def search_results #add support for searching location without ids
 		if params[:ids] == "" 
-			if !params[:location_id]
+			if params[:location_id] == "" && params[:location] == ""
 				results = current_user.search_similar current_user.activities
 			else
-				results = current_user.search_similar current_user.activities, Location.find(params[:location_id])
+				if params[:location_id] != "" && params[:location] != ""
+					location = Location.find params[:location_id]
+				elsif params[:location] != ""
+					cords = Geocoder.coordinates params[:location]
+					if cords
+						location = Location.create name: params[:location], latitude: cords[0], longitude: cords[1]
+					else
+						location = "invalid"
+					end
+				else
+					location = nil
+				end
+				results = current_user.search_similar current_user.activities, location
 			end
 			if params[:type] == "swipe"
 				render partial: "swipe_results", locals: {results: results}
