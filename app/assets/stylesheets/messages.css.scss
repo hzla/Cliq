@@ -83,6 +83,7 @@
 
 .conversation {
 	background: white;
+	position: relative;
 }
 
 .conversation.current {
@@ -300,11 +301,10 @@
 }
 
 .convo-block {
-	float: right;
 	font-weight: 600;
-	margin-right: 15px;
-
-	clear: right
+	position: absolute;
+	right: 15px;
+	top: 30px;
 }
 
 .block {
