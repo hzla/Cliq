@@ -147,6 +147,14 @@ class UsersController < ApplicationController
 		render nothing: true
 	end
 
+	def block
+		id = params[:id]
+		current_list = current_user.blacklist
+		current_list += ",#{id}"
+		current_user.update_attributes blacklist: current_list
+		render nothing: true 
+	end
+
 private
 	
 	def get_user

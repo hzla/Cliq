@@ -6,6 +6,7 @@ Messages =
 		$('body').on 'ajax:success', '.convo-link', @appendConversation
 		$('body').on 'keypress', '#chat-box', @submitMessageOnEnter
 		$('#messages-container').parent().parent().css 'background', 'white'
+		$('body').on 'ajax:success', '.block', @blockUser
 		@selectFirstConversation()
 
 	submitMessage: ->
@@ -37,6 +38,10 @@ Messages =
 			form.submit()
 			$('.sending-progress').text('Sending...').show() if $(@).val().replace(/^\s+|\s+$/g, "") != ""			
 			$(@).val ''
+
+	blockUser: ->
+		$(@).parents('.conversation').remove()
+		$('#messages').html ''
 
 
 

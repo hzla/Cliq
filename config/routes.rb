@@ -33,6 +33,7 @@ Cliq::Application.routes.draw do
     get '/conversations/:id/searched', to: 'conversations#searched_show', as: 'searched_convo'
     get '/chat', to: 'conversations#chat', as: 'chat'
   end
+  get '/users/:id/block', to: 'users#block', as: 'block_user'
   get '/users/:id/other', to: 'users#other', as: 'other_user'
   get '/users/:id/settings', to: 'users#settings', as: "settings"
   post '/users/invite_friends', to: 'users#invite_friends', as: "invite_friends"

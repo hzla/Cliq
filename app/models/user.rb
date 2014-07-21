@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 	has_many :messages, dependent: :destroy 
 
 	validates :name, :presence => true
-	attr_accessible :name, :email, :school, :bio, :profile_pic_url, :fb_token, :activation, :address, :sex, :sexual_preference, :latitude, :longitude, :active, :message_count, :invite_count, :event_count,:notify_messages, :notify_news, :notify_events, :timezone, :lbgtq 
+	attr_accessible :name, :email, :school, :bio, :profile_pic_url, :fb_token, :activation, :address, :sex, :sexual_preference, :latitude, :longitude, :active, :message_count, :invite_count, :event_count,:notify_messages, :notify_news, :notify_events, :timezone, :lbgtq, :blacklist 
 
 	geocoded_by :address
 	after_validation :geocode      
@@ -96,9 +96,19 @@ class User < ActiveRecord::Base
 	end
 
 	def ordered_conversations
-		conversations.where(connected: true).order(:updated_at).reverse
+		convos = conversations.where(connected: true).order(:updated_at).reverse
+		blacklist_ids = blacklist.split(",").map(&:to_i)[1..-1]
+		convos = convos.select do |convo|
+			user_ids = convo.users.map(&:id)
+			user_ids.delete id
+			other_id = user_ids[0]
+			!blacklist_ids.include? other_id
+		end
 	end
 
+	def blocked_by? user
+		user.blacklist.split(",").include? id.to_s
+	end
 	def conversated_with? user #do their conversations have at least one message form each person?
 		conversations.each do |convo|
 			ids = convo.messages.map(&:user_id)

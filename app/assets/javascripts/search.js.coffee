@@ -11,6 +11,7 @@ Search =
 		$('body').on 'click', '.collapsed-chat', @addChat
 		$('body').on 'click', '.close', @closeChat
 		$('body').on 'ajax:success', '#search-form', @displayResults
+		$('body').on 'submit', '#search-form', @displaySearching
 		$('.content-container').click @collapseAllChat
 		$('.results-container').click @collapseAllChat
 		$('.send-activation').on 'submit', @thankUser
@@ -167,6 +168,9 @@ Search =
 		if $('#empty').length > 0
 			$('#no-one-around').show()
 		$('#found').text "Please enter a valid location." if $('#invalid').length > 0
+
+	displaySearching: ->
+		$('#search-results').html "<div id='searching'>SEARCHING...</div>"
 
 	invertButtons: ->
 		$('.inv-btn').mouseenter ->

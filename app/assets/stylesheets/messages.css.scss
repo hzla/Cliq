@@ -299,3 +299,20 @@
 	bottom: 0px;
 }
 
+.convo-block {
+	float: right;
+	font-weight: 600;
+	margin-right: 15px;
+
+	clear: right
+}
+
+.block {
+	color: $gray;
+}
+
+.block:hover {
+	color: $red;
+}
+
+

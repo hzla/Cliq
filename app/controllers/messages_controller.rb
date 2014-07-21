@@ -20,15 +20,20 @@ class MessagesController < ApplicationController
 		@conversation = Conversation.find(params[:conversation_id])
 		@conversation.update_attributes connected: true
 		@user = @conversation.get_other_user current_user
-		@user.message_count += 1 if @message.save
-		@user.save
-		broadcast user_path(@user)+ "/messages", @message.to_json
-		other_connection = Connection.where(conversation_id: params[:conversation_id], user_id: @user.id).first
-		if @user.notify_messages && !@user.active && !other_connection.emailed
-			other_connection.update_attributes emailed: true
-			MessageMailerWorker.perform_async @user.id, current_user.id
-			#NotificationMailer.notification(@user, current_user).deliver if @user.email
+
+		if @message.save && !current_user.blocked_by?(@user)
+			@user.message_count += 1 
+			@user.save
+			broadcast user_path(@user)+ "/messages", @message.to_json
+			other_connection = Connection.where(conversation_id: params[:conversation_id], user_id: @user.id).first
+			if @user.notify_messages && !@user.active && !other_connection.emailed
+				other_connection.update_attributes emailed: true
+				MessageMailerWorker.perform_async @user.id, current_user.id
+				#NotificationMailer.notification(@user, current_user).deliver if @user.email
+			end
 		end
+		
+		
 	end
 
 	def show

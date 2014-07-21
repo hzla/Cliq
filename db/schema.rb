@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140717235837) do
+ActiveRecord::Schema.define(version: 20140721210709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -178,6 +178,7 @@ ActiveRecord::Schema.define(version: 20140717235837) do
     t.integer  "timezone"
     t.string   "role",              default: "normal"
     t.boolean  "lbgtq",             default: false
+    t.text     "blacklist",         default: "0"
   end
 
 end
