@@ -4,6 +4,7 @@ Animations =
 		$('.side-icon').hoverIntent @showLabel, @hideLabel
 
 
+
 	extendSideNav: ->
 		# $('.extended-side-nav').stop().animate {
 		# 	width: "210px"
@@ -29,7 +30,7 @@ Animations =
 		}, 200
 
 
-	showLabel: ->
+	showLabel:  (e) ->
 		$(@).find('.icon-label').css 'opacity', '1'
 		$(@).stop().animate {
 			width: "210px"
