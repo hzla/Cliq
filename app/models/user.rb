@@ -60,7 +60,7 @@ class User < ActiveRecord::Base
 				similar_users[user] ? similar_users[user] << act_cat : similar_users[user] = [act_cat]
 			end
 		end
-		similar_users.to_a.sort_by {|user| user[1].length}.reverse[0..14].select {|x| x[0].id != id }
+		a = similar_users.to_a.sort_by {|user| user[1].length}.reverse[0..14].select {|x| x[0].id != id }
 	end
 
 	def attendings
@@ -135,7 +135,7 @@ class User < ActiveRecord::Base
 		result_ids = results.map(&:id)
 		act_ids = activities.map(&:id)
 		acts = user.interests.where('activity_id in (?)', act_ids).where('activity_id not in (?)', result_ids).map(&:activity)
-		(results.shuffle[0..5] + acts)[0..5]
+		(results.shuffle + acts)
 	end
 
 	def first_name 

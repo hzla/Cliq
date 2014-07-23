@@ -18,7 +18,7 @@
 
 #results-content {
 	float: left;
-	margin-bottom: 38px;
+	height: 100%;
 }
 
 #search-form {
@@ -39,9 +39,15 @@
 #results-container {
 	height: 100%;
 	width: 60%;
-	background-color: #f1f1f1;
+	background-color: white;
 	font-family: "proxima-nova", sans-serif;
 	float: right;
+	overflow-y: hidden;
+}
+
+#results-container.background-gray {
+	background: $super-light-gray;
+	overflow-y: scroll;
 }
 
 #results-content {
@@ -162,6 +168,8 @@
 	width: 100%;
 	float: left;
 	background: white;
+	height: 100%;
+	margin-top: 30px;
 }
 
 #search-results {

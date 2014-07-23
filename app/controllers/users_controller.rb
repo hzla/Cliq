@@ -43,13 +43,13 @@ class UsersController < ApplicationController
 	end
 
 	def search
-		@results = current_user.search_similar current_user.activities, current_user.address 
+		@results = current_user.search_similar current_user.activities.shuffle[0..19], current_user.address 
 		@category = Category.where(name: "Do").first
 		@user_empty = current_user.interests.empty?
 	end
 
 	def main
-		@results = current_user.search_similar current_user.activities
+		@results = current_user.search_similar current_user.activities.shuffle[0..19]
 		@category = Category.where(name: "Do").first
 		@user_empty = current_user.interests.empty?
 	end
@@ -57,7 +57,7 @@ class UsersController < ApplicationController
 	def search_results #add support for searching location without ids
 		if params[:ids] == "" 
 			if params[:location_id] == "" && params[:location] == ""
-				results = current_user.search_similar current_user.activities
+				results = current_user.search_similar current_user.activities.shuffle[0..19]
 			else
 				if params[:location_id] != "" && params[:location] != ""
 					location = Location.find params[:location_id]

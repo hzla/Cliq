@@ -46,21 +46,23 @@
 					</div>
 
 					<div class="swiped-actions">
-						<div class="swipe-next">
-							<%= image_tag "Next.svg", :class => "swiped-action-icon svg" %>
-						</div>
+						<div class="swipe-action-content">
+							<div class="swipe-next">
+								<%= image_tag "Next.svg", :class => "swiped-action-icon svg" %>
+							</div>
 
-						<div class="swipe-info">
-							<%= link_to other_user_path(entry[0]), :class => "other-user", remote: true do %>
-								<%= image_tag "Info.svg", :class => "info-icon svg" %>
-							<% end %>
-						</div>
+							<div class="swipe-info">
+								<%= link_to other_user_path(entry[0]), :class => "other-user", remote: true do %>
+									<%= image_tag "Info.svg", :class => "info-icon svg" %>
+								<% end %>
+							</div>
 
-						<div class="chat white inv-btn swiped">	
-							<%= link_to user_chat_path(entry[0]), :class => "white chat-user", remote: true do %>
-								<%= image_tag "Messages.svg", :class => "swiped-action-icon svg" %>
-							<% end %>
-						</div>	
+							<div class="chat white inv-btn swiped">	
+								<%= link_to user_chat_path(entry[0]), :class => "white chat-user", remote: true do %>
+									<%= image_tag "Messages.svg", :class => "swiped-action-icon svg" %>
+								<% end %>
+							</div>	
+						</div>
 					</div>
 				</div>
 			</div>
@@ -91,6 +93,15 @@
         $img.replaceWith($svg);
     }, 'xml');
   });
+</script>
+<script>
+	var height = ($(window).height() - 278) + "px"
+	console.log(height)
+	$('.suggestions-container').css('height', height)
+	$(window).resize(function(){
+		var newHeight = ($(window).height() - 278) + "px"
+		$('.suggestions-container').css('height', newHeight)
+	})
 </script>
 <div class="hidden" id='no-one'>There seems to be no one else.</div>
 <% else  %>
