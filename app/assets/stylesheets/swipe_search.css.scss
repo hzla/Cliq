@@ -26,8 +26,16 @@
 	float: left;
 }
 
+
+
 .swiped-card-name {
 	font-weight: 700;
+}
+
+.swiped-school {
+	font-size: 28px;
+	margin-top: 10px;
+	color: $gray;
 }
 
 .swiped-card-school {
@@ -94,6 +102,48 @@
 	width: 100%;
 	height: calc(100% - 31px);
 }
+
+.swiped-suggestion.headers {
+	position: relative;
+}
+
+.swiped-count {
+	position: absolute;
+	top: 20%;
+	width: 100%;
+	color: white;
+	font-size: 9vw;
+	text-align: center;
+	font-weight: 800;
+}
+
+.swiped-sug-pic.headers {
+	height: 100%;
+}
+
+.mutual-suggestion {
+	background: $red;
+}
+
+.swiped-sug-pic.mutual {
+	background: $red;
+	margin: 0px;
+	height: 80%;
+	margin-top: 7%;
+}
+.swiped-sug-pic.sim {
+	background: $orange;
+	margin: 0px;
+}
+
+.swiped-sug-pic path {
+	fill: rgba(255,255,255,.3)
+}
+
+.swiped-sug-pic g path {
+	fill: rgba(255,255,255,.3)
+}
+
 
 
 .swiped-actions {
