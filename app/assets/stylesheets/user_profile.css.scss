@@ -24,7 +24,6 @@
     height: 248px;
 }
 
-
 .main-profile-info {
 	margin: 0 auto;
 	width: 824px;
@@ -39,6 +38,40 @@
 		color: $dark-gray;
 	}
 }
+
+#profile-container {
+	height: 100%;
+	position:	fixed;
+	left: 0;
+	background-color: $light-turq;
+	width: 40%;
+	color: white;
+	text-align: center;
+}
+
+.profile-info {
+	width: 100%;
+	height: 100%;
+	#school-self {
+		font-weight: 300;
+	}
+}
+
+.profile-info * {
+	float: none;
+}
+
+.profile-info .profile-pic {
+	margin-top: 40px;
+	margin-bottom: 30px;
+}
+
+.account-stats {
+	color: $dark-turq;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
 
 #name {
 	float: left;
@@ -101,11 +134,8 @@
 }
 
 .profile-actions {
-	clear: right;
-	float: left;
 	font-size: 22px;
 	font-weight: 700;
-	margin-left: 50px;
 	.bubble {
 		border-radius: 50px;
 		padding-left: 15px;
@@ -119,10 +149,26 @@
 		float: left;
 	};
 	#add-interests {
-		float: left;
 		color: $red;
-		text-decoration: none; 
+		text-decoration: none;
+		margin: 0 auto; 
+		width: 200px;
+		cursor: pointer;
 	};
+	#add-interests:hover {
+		background: $red;
+		color: white;
+	}
+	#quick-add {
+		width: 200px;
+		margin: 0 auto;
+		margin-top: 15px;
+		cursor: pointer;
+	}
+	#quick-add:hover {
+		background: $orange;
+		color: white;
+	}
 }
 
 #interest-count {
@@ -131,9 +177,11 @@
 	float: left;
 }
 
-.interests {
-	width: 105.5%;
-	float: left;
+.interests-self {
+	width: 60%;
+	height: 100%;
+	position: absolute;
+	right: 0;
 	background: white;
 }
 

@@ -43,7 +43,7 @@ class UsersController < ApplicationController
 	end
 
 	def search
-		@results = current_user.search_similar current_user.activities.shuffle[0..19], current_user.address 
+		@results = current_user.search_similar current_user.activities.shuffle[0..19] 
 		@category = Category.where(name: "Do").first
 		@user_empty = current_user.interests.empty?
 	end

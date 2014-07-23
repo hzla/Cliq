@@ -3,29 +3,27 @@
 
 		<%= render partial: 'side_nav', locals: {active: :profile} %>
 
-		<div id="main-profile-container"> 
-			<div class="main-profile-info">
+		<div id="profile-container"> 
+			<div class="profile-info">
 				<%= image_tag @user.profile_pic_url, :class => "profile-pic" %>
 				
-				<div class="left">
-					<div class="head-1" id="name"><%= @user.name %></div>
-					<div class="head-4" id="active"><%= @user.school %></div>
 
-				</div>
-				
-				<div class="right">
-					<div class="head-2 " id="event-count"><%= @user.attendings%></div>
-					<div class="head-3 " id="event-label">Events Attended</div>
-					<div class="head-2 " id="people-count"><%= 0 %></div>
-					<div class="head-3 " id="people-label">People Met</div>
-					<div class="head-2 " id="interest-sum"><%= @user.activities.length%></div>
-					<div class="head-3 " id="interest-label">Interests Listed</div>
-				</div>
+					<div class="head-1" id="name-self"><%= @user.name %></div>
+					<div class="head-4" id="school-self"><%= @user.school || "Not Listed" %></div>
+					
+					
+					<div class="account-stats">
+						<div class="head-4 stat" ><%= @user.attendings%> Events Attended</div>
+						<div class="head-4 stat"><%= @user.conversations.where(connected: true).count %> People Met</div>
+						<div class="head-4 stat"><%= @user.activities.length%> terests Listed</div>
+					</div>
+
 
 				<div class="profile-actions green">
 					<%= link_to choose_cat_path(@category) do %>
 						<div class="bubble red" id="add-interests">+add interests</div>
 					<% end %> 
+					<div class="bubble orange" id="quick-add">Quick Add</div>
 				</div> 
 			</div>
 		</div>
