@@ -2,8 +2,14 @@ Animations =
 	init: ->
 		$('.extended-side-nav').hoverIntent @extendSideNav, @revertSideNav
 		$('.side-icon').hoverIntent @showLabel, @hideLabel
+		$('.extended-options').mouseleave @hideOptions
+		$('.content-container').click @hideOptions
 
-
+	hideOptions: ->
+		$('.extended-options').hide().find('.icon-label').css 'opacity', '0'
+		$('.extended-options').stop().animate {
+			width: "62px"
+		}, 200
 
 	extendSideNav: ->
 		# $('.extended-side-nav').stop().animate {
@@ -24,10 +30,7 @@ Animations =
 		# # }, 200
 		# $('.icon-label').css 'opacity', '0'
 		# $('.extended-options').hide()
-		$('.extended-options').hide().find('.icon-label').css 'opacity', '0'
-		$('.extended-options').stop().animate {
-			width: "62px"
-		}, 200
+		
 
 
 	showLabel:  (e) ->
@@ -35,10 +38,11 @@ Animations =
 		$(@).stop().animate {
 			width: "210px"
 		}, 200
-		$('.extended-options').show().find('.icon-label').css 'opacity', '1'
-		$('.extended-options').stop().animate {
-			width: "210px"
-		}, 200
+		if $(e.currentTarget).attr('id') == "extended-settings"
+			$('.extended-options').show().find('.icon-label').css 'opacity', '1'
+			$('.extended-options').stop().animate {
+				width: "210px"
+			}, 200
 
 	hideLabel: ->
 		$(@).find('.icon-label').css 'opacity', '0'	
