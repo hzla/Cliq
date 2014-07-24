@@ -103,6 +103,7 @@ Users =
 	prepQuickAdd: ->
 		$(@).hide()
 		$('#quick-search').show()
+		$('#new_activity').css 'margin-top', '195px'
 
 
 

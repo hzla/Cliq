@@ -17,7 +17,9 @@ class Category < ActiveRecord::Base
 	end
 
 	def ask
-	 	if depth < 2
+	 	if parent && parent.name == "Music"
+	 		inherited_question = parent.question.gsub parent.name.downcase, "#{name} #{parent.name.downcase}"
+	 	elsif depth < 2 
 	 		question
 	 	else
 	 		inherited_question = parent.question.gsub parent.name.downcase, "#{name} #{parent.name.downcase}"
@@ -55,6 +57,10 @@ class Category < ActiveRecord::Base
 		else
 			name
 		end
+	end
+
+	def selected user
+		!user.cat_interests.where(category_id: id).empty?
 	end
 
 	def short_name

@@ -117,7 +117,10 @@ Search =
 					event.preventDefault()
 					$(@).val ui.item.label
 					$('#ids').val $('#ids').val() + ui.item.value + " "
-					$('#query-interests').prepend "<div class='query-interest search-term searched' id='#{ui.item.value}'>#{ui.item.label}</div>"
+					label = ui.item.label.slice(0,25)
+					if label.length > 24
+						label += "..."
+					$('#query-interests').prepend "<div class='query-interest search-term searched' id='#{ui.item.value}'>#{label}</div>"
 					$('#activity').val('')
 					$(@).css 'color', '#939393'
 					$('#search-form').submit()

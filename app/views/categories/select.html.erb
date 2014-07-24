@@ -3,28 +3,50 @@
 
 
 	<div id="categories-header">
-		<div id="cat-header-content" class="head-4 dark-gray">
-			What do you
-			<%= link_to choose_cat_path @categories[1] do %>
-				<span id="do" class="cat-action <%= doing? 'Do' %> ">Do</span>
-			<% end %>
-			<%= link_to choose_cat_path @categories[2] do %>
-				<span id="listen-to" class="cat-action <%= doing? 'Music' %>">Listen to</span>
-			<% end %>
-			<%= link_to choose_cat_path @categories[3] do %>
-				<span id="watch" class="cat-action <%= doing? 'Watch' %>">Watch</span>
-			<% end %>
-			<%= link_to choose_cat_path @categories[0] do %>
-				<span id="discuss" class="cat-action <%= doing? 'Discuss' %>">Discuss</span>
-			<% end %>
-			?
+		
+		<div id="cat-header-profile">
+			<%= image_tag current_user.profile_pic_url, :class => "cat-profile-pic" %>
+			<div class="cat-profile-name head-2 white"><%= current_user.name %></div><br>
+			<div class="cat-profile-school white"><%= current_user.school %></div>
 		</div>
-	</div>
+
+		<div id="cat-header-content" class="head-4 dark-gray">
+			<div class="header-pre">What do you</div>
+			<div class="header-row">
+				<%= link_to choose_cat_path @categories[1] do %>
+					<div id="do" class="cat-action <%= doing? 'Do' %> ">Do</div>
+				<% end %>
+				<%= link_to choose_cat_path @categories[2] do %>
+					<div id="listen-to" class="cat-action <%= doing? 'Music' %>">Listen to</div>
+				<% end %>
+			</div>
+			<div class="header-row">
+				<%= link_to choose_cat_path @categories[3] do %>
+					<div id="watch" class="cat-action <%= doing? 'Watch' %>">Watch</div>
+				<% end %>
+				<%= link_to choose_cat_path @categories[0] do %>
+					<div id="discuss" class="cat-action <%= doing? 'Discuss' %>">Discuss</div>
+				<% end %>
+			</div>
+
+			<div class="bubble orange cat-page" id="quick-add"><span id="add-text">Quick Add</span></div>
+			<%= form_tag quick_create_path, id: "quick-search", class: "hidden cat-page", remote: true do %>
+				<%= text_field_tag :activities, nil, id: "self-search", :class => "head-4 quick-search-acts cat-page", placeholder: "Type to Add" %>
+				<div class="hidden interest-info"></div>
+				<%= hidden_field_tag :act_id %>
+				<%= submit_tag "Add", id: "submit-quick-search", :class => "head-4 hidden" %>
+			<% end %>
+
+				<%= form_for @act, remote: true do |f| %>
+					<%= f.text_field :name, :class => "act-name-input head-4 hidden", placeholder: "Suggest an Interest!" %>
+					<div id="suggest-text" class="head-4">Interest not listed?</div>
+					<%= f.hidden_field :category_id, value: @category.id %>
+					<%= f.hidden_field :suggested_by, value: current_user.id %>
+					<%= f.submit "Suggest", id: "submit-act", :class => "head-4 hidden" %>
+				<% end %>
 
 
-		<%= render partial: 'show', locals: {category: @category, act: @act} %>
-
-	<div id="categories-footer">
+			<div id="categories-footer">
 			<% if @interests < 8 %>
 				<div id="cat-footer-content" class="head-4 gray">
 					<div id="cat-footer-text">
@@ -35,29 +57,37 @@
 					</div>
 				</div>
 				<div id="cat-actions">
-					<div id="next-cat" class="head-3 dark-gray hidden gray-hover">
+					<div id="next-cat" class="head-3 hidden">
 						<% if @category.name != "Discuss" %> 
 							NEXT 
 						<% end %>
 					</div>
-					<div id="finish" class="head-3 dark-gray hidden gray-hover">
+					<div id="finish" class="head-3 hidden">
 						<%= link_to "FINISH", user_path(current_user) %>
 					</div>
 				</div>
 			<% else %>
 				<div id="cat-actions">
-					<div id="next-cat" class="head-3 dark-gray gray-hover">
+					<div id="next-cat" class="head-3">
 						<% if @category.name != "Discuss" %> 
 							NEXT 
 						<% end %>
 					</div>
-					<div id="finish" class="head-3 dark-gray gray-hover">
+					<div id="finish" class="head-3">
 						<%= link_to "FINISH", user_path(current_user) %>
 					</div>
 				</div>
 			<% end %>
 	</div>
-</div>
+
+			
+		</div>
+	</div>
+
+
+		<%= render partial: 'show', locals: {category: @category, act: @act} %>
+
+	</div>
 <script>
 $('body').addClass('background-gray')
 </script>

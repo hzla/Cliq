@@ -9,20 +9,27 @@ Categories =
 		$('body').on 'ajax:success', '.remove-act', @removeActivity
 		$('body').on 'ajax:success', '#new_activity', @suggestActivity
 		$('body').on 'ajax:success', '#quick-search', @quickAdd 
+		$('body').on 'click', '#suggest-text', @prepSuggest
+
+	prepSuggest: ->
+		$(@).hide()
+		$('#activity_name').show()
+		$('#new_activity').css 'margin-top', '40px'
+		$('#new_activity').css 'margin-top', '205px' if $('#quick-search:visible').length > 0
 
 	highlight: ->
 		$(@).children('.cat-title').css 'color', 'white' 
-		$(@).children('.cat-title').css 'background-color', '#18c3bd'
-		$(@).find('.check').toggle()
+		$(@).children('.cat-title').css 'background-color', '#ffa320'
 
 	goNext: ->
+		console.log $('.doing').parents('.header-row').next().children()[0].click()
 		$('.doing').parent().next()[0].click()
 
 	showCategories: (event, data, xhr, status) ->
 		$('#categories-content-container').remove()
 		$('.content-container').append data
-		$('#categories-footer').before $('#categories-content-container')[0]
-		$($('#categories-content-container')[1]).remove()
+		# $('#categories-footer').before $('#categories-content-container')[0]
+		# $($('#categories-content-container')[1]).remove()
 		$('#categories-content-container').addClass 'animated fadeIn'
 		Categories.autocompleteQS()
 
@@ -72,6 +79,7 @@ Categories =
 				$(@).val ui.item.label
 				$(@).css 'color', '#414141'
 				$('.interest-info').text ui.item.id
+				$('.ui-state-focus').removeClass('ui-state-focus').addClass 'new-focus'
 			delay: 0
 			# open: (event, ui) -> 
 			# 	firstElement = $(@).data("uiAutocomplete").menu.element[0].children[0]

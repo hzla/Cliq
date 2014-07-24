@@ -1,24 +1,5 @@
 <div id="categories-content-container">
 	
-	<div id="quick-search-container">
-		<%= form_tag quick_create_path, id: "quick-search", remote: true do %>
-			<div id="quick-search-text" class="head-4">Quick Search</div>
-			<%= text_field_tag :activities, nil, id: "quick-search-acts", :class => "head-4 quick-search-acts", placeholder: "Type an Interest" %>
-			<%= hidden_field_tag :act_id %>
-			<%= submit_tag "Add", id: "submit-quick-search", :class => "head-4 hidden" %>
-		<% end %>
-
-		<div id="suggestion-container">
-			<%= form_for act, remote: true do |f| %>
-				<%= f.text_field :name, :class => "act-name-input head-4", placeholder: "Suggest one!" %>
-				<div id="suggest-text" class="head-4">Interest not listed?</div>
-				<%= f.hidden_field :category_id, value: category.id %>
-				<%= f.hidden_field :suggested_by, value: current_user.id %>
-				<%= f.submit "Suggest", id: "submit-act", :class => "head-4 hidden" %>
-			<% end %>
-		</div>
-	</div>
-
 
 	<div id="cat-content">
 		<div id="cat-question" class="head-2 dark-gray">
@@ -27,7 +8,7 @@
 		<% if category.parent %>
 			<%= link_to category_path(category.parent), remote: true, class: 'back-link' do  %>
 				<div id="cat-back" class="gray head-3">
-					<span id="back-text"><< Back</span>
+					<span id="back-text"><< Back to <%= category.parent.name %></span>
 				</div>
 			<% end %>
 		<% end %>
@@ -40,9 +21,8 @@
 				<% if !cat.children.empty? %>
 					<%= link_to category_path(cat), remote: true, class: 'cat-link' do %>
 						<div class="cat">
-							<div class="cat-title dark-gray head-4">
+							<div class="cat-title dark-gray head-4 <%= "prev-selected" if cat.selected current_user %>">
 								<span class="cat-select"><%= cat.short_name %></span>
-								<%= image_tag "check.svg.png", :class => "check hidden" %>
 							</div>
 							<%= image_tag cat.image_url, :class => "cat-pic" %>
 						</div>
@@ -50,7 +30,7 @@
 				<% else %>
 					<%= link_to category_choose_activity_path(cat), remote: true, class: 'cat-link' do %>
 						<div class="cat">
-							<div class="cat-title dark-gray head-4">
+							<div class="cat-title dark-gray head-4 <%= "prev-selected" if cat.selected current_user %>">
 								<span class="cat-select"><%= cat.short_name %></span>
 								<%= image_tag "check.svg.png", :class => "check hidden" %>
 							</div>
@@ -63,3 +43,7 @@
 		</div>
 	</div>
 </div>
+
+<script>
+	$('#activity_category_id').val('<%= category.id %>')
+</script>

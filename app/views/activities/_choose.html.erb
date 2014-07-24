@@ -1,30 +1,13 @@
-<div id="categories-content-container">
-		<div id="quick-search-container">
-		<%= form_tag quick_create_path, id: "quick-search", remote: true do %>
-			<div id="quick-search-text" class="head-4">Quick Search</div>
-			<%= text_field_tag :activities, nil, id: "quick-search-acts", :class => "head-4", placeholder: "Type an Interest" %>
-			<%= hidden_field_tag :act_id %>
-			<%= submit_tag "Add", id: "submit-quick-search", :class => "head-4" %>
-		<% end %>
+<div id="categories-content-container" >
+		
 
-		<div id="suggestion-container">
-			<%= form_for act, remote: true do |f| %>
-				<%= f.text_field :name, :class => "act-name-input head-4", placeholder: "Suggest one!" %>
-				<div id="suggest-text" class="head-4">Interest not listed?</div>
-				<%= f.hidden_field :category_id, value: category.id %>
-				<%= f.hidden_field :suggested_by, value: current_user.id %>
-				<%= f.submit "Suggest", id: "submit-act", :class => "head-4 hidden" %>
-			<% end %>
-		</div>
-	</div>
-
-	<div id="cat-content">
-		<div id="cat-question" class="head-4 dark-gray">
-			<%=  category.ask %>
+	<div id="cat-content" class="activity-content">
+		<div id="cat-question" class="head-4 dark-gray act-page">
+			<%= category.ask %>
 		</div>
 		<%= link_to category_path(category.parent), remote: true, class: 'back-link' do  %>
 			<div id="cat-act-back" class="dark-gray head-4">
-				<span id="back-text"><< Back to categories</span>
+				<span id="back-text"><< Back to <%= category.parent.name %></span>
 			</div>
 		<% end %>
 		<div id="finished" class="head-4 gray">
@@ -32,13 +15,6 @@
 		</div>
 
 		<div id="activities">
-			<div id="arrow-container">
-				<%= image_tag "arrow.png", id: "arrow" %>
-				<div id="arrow-text" class="gray head-4">
-					Click to Add
-				</div>
-			
-			</div>
 			<% not_liked.each do |act| %>
 				
 				<%= render partial: 'interests/act', locals: {act: act} %>
@@ -52,3 +28,7 @@
 		</div>
 	</div>
 </div>
+
+<script>
+	$('#activity_category_id').val('<%= category.id %>')
+</script>
