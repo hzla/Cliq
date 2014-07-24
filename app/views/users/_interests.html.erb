@@ -2,17 +2,19 @@
 
 	<div id="interest-list">
 		<% format.each do |cat_type| %>
-			<div class="cat-section">
+			<div class="cat-section" id="c-<%= cat_type[2]%>" >
 				<div class="cat-header">
 					<%= cat_type[0] %>
 				</div>
 				<% if formatted_interests[cat_type[1]][0] %>
+					<% p formatted_interests[cat_type[1]]; puts "\n" * 10 %>
 					<% formatted_interests[cat_type[1]].each do |cat| %>
 						<% cat.each do |cat_name, acts| %>
-							<div class="cat-group">
+							<% p cat_name; puts "\n" * 30 %>
+							<div class="cat-group-self">
 								<div class="category dark-gray"><div class="cat-name"><%= cat_name[0..13] + 
 								"#{('..' if cat_name.length > 14)}" %></div></div>
-								<div class="activities">
+								<div class="activities" id="c-<%= acts.first.category.id %>">
 									<% acts.each do |activity| %>
 										<div class="activity"><div class="act-name"><%= activity.shortened_name %> •</div></div>
 									<% end %> 

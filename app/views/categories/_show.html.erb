@@ -3,7 +3,7 @@
 	<div id="quick-search-container">
 		<%= form_tag quick_create_path, id: "quick-search", remote: true do %>
 			<div id="quick-search-text" class="head-4">Quick Search</div>
-			<%= text_field_tag :activities, nil, id: "quick-search-acts", :class => "head-4", placeholder: "Type an Interest" %>
+			<%= text_field_tag :activities, nil, id: "quick-search-acts", :class => "head-4 quick-search-acts", placeholder: "Type an Interest" %>
 			<%= hidden_field_tag :act_id %>
 			<%= submit_tag "Add", id: "submit-quick-search", :class => "head-4 hidden" %>
 		<% end %>

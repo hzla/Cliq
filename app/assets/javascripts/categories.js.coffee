@@ -58,17 +58,20 @@ Categories =
 
 
 	autocompleteQS: ->
-		$('#quick-search-acts').autocomplete
+		$('.quick-search-acts').autocomplete
 			source: '/activities'
 			select: (event, ui) ->
 				event.preventDefault()
 				$(@).val ui.item.label
 				$('#act_id').val ui.item.value
 				$(@).css 'color', '#414141'
+				console.log ui.item
+				$('.interest-info').text ui.item.id + "@" + ui.item.root_id + "@" + ui.item.cat_name
 			focus: (event, ui) ->
 				event.preventDefault()
 				$(@).val ui.item.label
 				$(@).css 'color', '#414141'
+				$('.interest-info').text ui.item.id
 			delay: 0
 			# open: (event, ui) -> 
 			# 	firstElement = $(@).data("uiAutocomplete").menu.element[0].children[0]
@@ -84,7 +87,6 @@ Categories =
 	quickAdd: ->
 		id = "#" + $('#act_id').val()
 		$(id).click()
-		console.log id
 		@.reset()
 		$('#added').remove
 		$('#quick-search-container').append "<div id='added' class='head-4 gray'>Added</div>"

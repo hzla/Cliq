@@ -29,7 +29,8 @@ class Category < ActiveRecord::Base
 	end
 
 	def self.self_format
-		[["Stuff you do for fun:", "Do"],["Music:", "Music"],["What you watch:", "Watch"], ["What you talk about:", "Discuss"]] 
+		cats = Category.where(ancestry: nil).order(:name)
+		[["Stuff you do for fun:", "Do", cats[1].id],["Music:", "Music", cats[2].id],["What you watch:", "Watch", cats[3].id], ["What you talk about:", "Discuss", cats[0].id]] 
 	end
 
 	def self.other_format name, sex

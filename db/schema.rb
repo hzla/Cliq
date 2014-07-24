@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140721210709) do
+ActiveRecord::Schema.define(version: 20140724011329) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -103,6 +103,9 @@ ActiveRecord::Schema.define(version: 20140721210709) do
     t.integer "popularity"
     t.string  "interest_id"
     t.string  "cat_type"
+    t.integer "cat_id"
+    t.integer "root_id"
+    t.string  "cat_name"
   end
 
   create_table "interests", force: true do |t|

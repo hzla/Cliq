@@ -24,6 +24,12 @@
 						<div class="bubble red" id="add-interests">+add interests</div>
 					<% end %> 
 					<div class="bubble orange" id="quick-add">Quick Add</div>
+					<%= form_tag quick_create_path, id: "quick-search", class: "hidden", remote: true do %>
+						<%= text_field_tag :activities, nil, id: "self-search", :class => "head-4 quick-search-acts", placeholder: "Type an Interest" %>
+						<div class="hidden interest-info"></div>
+						<%= hidden_field_tag :act_id %>
+						<%= submit_tag "Add", id: "submit-quick-search", :class => "head-4 hidden" %>
+					<% end %>
 				</div> 
 			</div>
 		</div>

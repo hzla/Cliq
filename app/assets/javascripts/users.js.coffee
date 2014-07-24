@@ -15,6 +15,20 @@ Users =
 		$('body').on 'click', '.shared-ints', @showShared
 		$('body').on 'click', '.different-ints', @showDifferent
 		$('body').on 'click', '.all-ints', @showAll
+		$('#quick-add').on 'click', @prepQuickAdd
+		$('#quick-search').submit @addInterest
+
+	addInterest: ->
+		id = "#c-" + $('.interest-info').text().split("@")[0]
+		if $(id).length > 0
+			$(id).append "<div class='activity'><div class='act-name'>#{$('#self-search').val()} •</div></div>"
+		else
+			root_id = "#c-" + $('.interest-info').text().split("@")[1]
+			console.log root_id
+
+			catName = $('.interest-info').text().split("@")[2]
+			$(root_id).append "<div class='cat-group-self'><div class='category dark-gray'><div class='cat-name'>#{catName}</div>
+			</div><div class='activities' id='#{id}'><div class='act-name'>#{$('#self-search').val()} •</div></div></div>"
 
 	closeWelcome: ->
 		$('#activation-container').remove()
@@ -85,6 +99,10 @@ Users =
 		$('.int-type').removeClass 'selected'
 		$(@).addClass 'selected'
 		$('.act-name').show()
+
+	prepQuickAdd: ->
+		$(@).hide()
+		$('#quick-search').show()
 
 
 
