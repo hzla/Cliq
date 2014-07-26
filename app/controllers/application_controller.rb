@@ -34,6 +34,11 @@ class ApplicationController < ActionController::Base
       flash[:error] = "You must be logged in to access this section"
       redirect_to root_path and return
     end
+    if current_user
+      current_user.update_attributes updated_at: Time.now, active: true
+      LogoutWorker.perform_in(7.seconds, current_user.id)
+      puts "did this" * 100
+    end
   end
 
 end
