@@ -36,8 +36,6 @@ class ApplicationController < ActionController::Base
     end
     if current_user
       current_user.update_attributes updated_at: Time.now, active: true
-      LogoutWorker.perform_in(7.seconds, current_user.id)
-      puts "did this" * 100
     end
   end
 
