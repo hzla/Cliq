@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
 		profile = auth_hash['info']
 		fb_token = auth_hash.credentials.token
 		gender =  auth_hash['extra']['raw_info']['gender']
-		user = User.new name: profile['name'], profile_pic_url: profile['image'], fb_token: fb_token, sex: gender, email: profile['email'], timezone: timezone
+		user = User.new name: profile['name'], profile_pic_url: profile['image'], fb_token: fb_token, sex: gender, email: profile['email'], timezone: timezone, address: profile['location']
     user.activation = user.generate_code
     user.authorizations.build :uid => auth_hash["uid"]
     user if user.save
