@@ -55,11 +55,11 @@
 					I am: <%= f.check_box :lbgtq, value: true, checked: current_user.lbgtq %>
 					<%= label "lbgtq",nil, "LGBTQ" %>
 					<p id="lbgtq-text">
-						(Your anonymous "Cliq" replacement picture will change to inlude a rainbow background if you decide to indicate that you are LGBTQ. Don't worry, checkints this box is <span class="heavy-gray">optional</span>.) 
+						(Clicking this option will add a subtle rainbow frame around your hidden profile picture placeholder. Don't worry, checking this box is entirely <span class="heavy-gray">optional</span>.) 
 					</p>
 				</div>
 
-				<%= f.submit "Save", id: "save-settings" %>
+				<%= f.submit "Save Settings", id: "save-settings" %>
 			</div>
 
 			<% end %>

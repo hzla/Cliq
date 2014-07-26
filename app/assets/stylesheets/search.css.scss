@@ -23,10 +23,10 @@
 
 #search-form {
 	float: left;
-	margin-left: 80px;
+	margin-left: 100px;
 	margin-top: 160px;
 	font-weight: 400;
-	font-size: 27px;
+	font-size: 28px;
 }
 
 #activity {
@@ -70,7 +70,7 @@
 	margin-bottom: 27px;
 	font-weight: 700;
 	opacity: 1;
-	height: 34px;
+	height: 38px;
   font-family: "proxima-nova",sans-serif;
   width: 370px;
   clear: left;
@@ -91,22 +91,24 @@
 }
 
 .search-term.searched {
-	height: 38px;
+	height: 40px;
+    line-height: 1.4;
 }
 
 .searched:hover {
 	border: 1px solid $red;
-	height: 36px;
+	height: 38px;
 	cursor: pointer;
+    line-height: 1.4;
 }
 
 .query-interest {
 	float: left;
-	margin-right: 15px;
+	margin-right: 6px;
 	border: none;
-	height: 34px;
+	height: 38px;
 	color: $dark-gray;
-	margin-bottom: 5px;
+	margin-bottom: 6px;
 	font-weight: 700;
 	font-size: 22px;
 }
@@ -143,6 +145,7 @@
 	cursor: pointer;
 	height: 62px;
 	width: 142px;
+    color: $red;
   margin-top: 5px;
   font-family: "proxima-nova",sans-serif;
   position: absolute; 
@@ -289,6 +292,8 @@
   float: left;
   margin-left: 5px;
 	margin-top: 4px;
+    
+    border-radius: 8px;
 }
 
 .sim-label g path {

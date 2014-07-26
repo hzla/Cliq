@@ -9,6 +9,7 @@
 	width: 350px;
 	height: 40px;
 	padding-left: 20px;
+    font-family: "proxima nova", "open sans";
 }
 
 .notification-setting {
@@ -26,15 +27,18 @@
 }
 
 #save-settings {
-	margin-top: 50px;
-	width: 100px;
-	height: 30px;
+	margin-top: 10px;
+	width: 250px;
+	height: 40px;
 	border: none;
 	color: white;
 	background: $light-turq;
 	border-radius: 100px;
 	cursor: pointer;
 	float: left;
+    font-size: 28px;
+    font-family: "proxima nova";
+    font-weight: 600;
 }
 
 #save-settings:hover {
@@ -51,10 +55,11 @@
 	width: 170px;
 	padding-left: 13px;
 	margin-left: -13px;
+    font-weight: 400;
 }
 
 #delete-account:hover {
-	background: red;
+	background: $red;
 	color: white;
 }
 
@@ -115,6 +120,7 @@
 
 .lgbtq-container {
 	margin-top: 32px;
+    color: $dark-gray;
 }
 
 #user_lbgtq {
