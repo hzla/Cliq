@@ -74,10 +74,10 @@
 }
 
 .collapsed-chat {
-	height: 30px;
+	height: auto;
 	width: 150px;
-	border-top-left-radius: 5px; 
-	border-top-right-radius: 5px; 
+	border-top-left-radius: 10px; 
+	border-top-right-radius: 10px; 
 	position: fixed;
 	background-color: $orange;
 	color: white;
@@ -86,13 +86,15 @@
 	left: 67px;
 	text-align: center;
 	z-index: 2;
+    padding: 8px;
 }
 
 .collapsed-name {
 	font-family: $generic-font;
-	margin-top: 5px;
-	font-size: 15pt;
+	font-size: 15px;
 	cursor: pointer;
+    float: left;
+    
 }
 
 .indent-2 {
@@ -124,8 +126,10 @@
 }
 
 .close {
-	width: 20px;
-	height: 20px;
+	width: 16px;
+	height: 16px;
+    float: right;
+    
 }
 
 .chat-window-footer {

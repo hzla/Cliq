@@ -255,9 +255,6 @@
 }
 
 .activity {
-	padding-left: 6px;
-	padding-right: 6px;
-	margin-right: 5px;
 	// height: 20px;
 	font-weight: 500;
 	float: left;
@@ -276,8 +273,8 @@
 	margin-top: 3px;
 	position: relative;
 	cursor: pointer;
-	padding-left: 2px;
-	padding-right: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
 	color: $orange;
 }
 

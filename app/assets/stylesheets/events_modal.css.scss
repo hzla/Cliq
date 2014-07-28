@@ -6,7 +6,7 @@
 	width: 530px;
 	height: 550px;
 	font-family: $generic-font;
-	background-color: $super-light-gray;
+	background-color: #fff;
 }
 
 .event-form-header {
@@ -44,6 +44,7 @@
 	margin-top: 5px;
 	width: 108%;
 	margin-left: 55px;
+    font-weight: 400;
 }
 
 .form-row.first {
@@ -55,12 +56,13 @@
 }
 
 .form-input {
-	width: 310px;
+	width: 300px;
 	height: 32px;
 	float: right;
 	margin-right: 150px;
 	border: 1px solid $light-gray;
 	font-size: 16px;
+    padding-left: 10px;
 }
 
 #or {
@@ -138,8 +140,8 @@
 
 #send-invite .invite-icon {
 	position: absolute;
-	left: 206px;
-	top: 22px;
+	left: 208px;
+	top: 6px;
 	cursor: pointer;
 }
 #invite-submit {
@@ -147,24 +149,25 @@
 	border: none;
 	color: white;
 	font-size: 18px;
-	margin-top: 10px;
 	cursor: pointer;
 	background-color: #18c3bd;
 	color: white;
 	width: 160px;
 	height: 44px;
 	border-radius: 3px;
-	font-size: 15px;
+	font-size: 17px;
 	border: none;
 	box-shadow: none;
 	float: left;
 	margin-left: 200px;
 	cursor: pointer;
+    font-family: $generic-font;
+    padding-left: 36px;
 }
 
 .invite-icon {
-	height: 20px;
-	width: 20px;
+	height: 30px;
+	width: 30px;
 	margin-bottom: -4px;
 }
 
