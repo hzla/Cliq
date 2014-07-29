@@ -88,17 +88,26 @@ Users =
 		$(@).addClass 'selected'
 		$('.act-name.different').hide()
 		$('.act-name.shared').show()
+		$('.cat-group').show()
+		$('.cat-group').children('.activities').each ->
+			if $(@).find('.act-name:visible').length < 1
+				$(@).parent().hide()
 
 	showDifferent: ->
 		$('.int-type').removeClass 'selected'
 		$(@).addClass 'selected'
 		$('.act-name.different').show()
 		$('.act-name.shared').hide()
+		$('.cat-group').show()
+		$('.cat-group').children('.activities').each ->
+			if $(@).find('.act-name:visible').length < 1
+				$(@).parent().hide()
 
 	showAll: ->
 		$('.int-type').removeClass 'selected'
 		$(@).addClass 'selected'
 		$('.act-name').show()
+		$('.cat-group').show()
 
 	prepQuickAdd: ->
 		$(@).hide()

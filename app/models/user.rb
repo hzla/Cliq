@@ -50,21 +50,24 @@ class User < ActiveRecord::Base
 	#maps cat/act to users_ids, parse and count user_ids
 	def search_similar interest_type, location = nil #accepts a list of interests/categories
 		return location if location == "invalid"
+		
+		interests = Interest.includes(:activity).where('activity_id in (?)', interest_type.map(&:id)).map do |interest|
+				[interest.user_id, interest.activity]
+		end.group_by {|int| int[0] }
+		interests = interests.each do |k,v|
+			interests[k] = interests[k].map {|act| act[1]}
+		end #search interests for matching activites and group by users	
+
 		if !location
-			users = interest_type.map {|act_cat| [act_cat, act_cat.users.flatten]}
+			users = User.find interests.keys 
 		else
-			users = interest_type.map {|act_cat| [act_cat, act_cat.users.near(location, 50)]}
-			users = users.select {|entry| !entry[1].empty?}
-		end
-		similar_users = {}
-		users.each do |entry|
-			act_cat = entry[0]
-			users = entry[1]
-			users.each do |user|
-				similar_users[user] ? similar_users[user] << act_cat : similar_users[user] = [act_cat]
-			end
-		end
-		a = similar_users.to_a.sort_by {|user| user[1].length}.reverse[0..14].select {|x| x[0].id != id }
+			users = User.where('id in (?)', interests.keys).near(location, 50)
+		end #map user_ids to users
+
+		users = users.map {|user| [user, interests[user.id]]}
+		blist = "#{blacklist},#{id}".split(',').map(&:to_i)
+		a = users.to_a.sort_by {|user| user[1].length}.reverse[0..14].select {|x| !blist.include?(x[0].id)  }
+		#sort results
 	end
 
 	def attendings
@@ -100,7 +103,8 @@ class User < ActiveRecord::Base
 	end
 
 	def ordered_conversations
-		convos = conversations.where(connected: true).order(:updated_at).reverse
+		
+		convos = conversations.where(initiated: true).order(:updated_at).reverse
 		blacklist_ids = blacklist.split(",").map(&:to_i)[1..-1]
 		convos = convos.select do |convo|
 			user_ids = convo.users.map(&:id)
@@ -113,10 +117,11 @@ class User < ActiveRecord::Base
 	def blocked_by? user
 		user.blacklist.split(",").include? id.to_s
 	end
-	def conversated_with? user #do their conversations have at least one message form each person?
+
+	def conversated_with? user #do their conversations have at least one message from each person?
 		conversations.each do |convo|
-			ids = convo.messages.map(&:user_id)
-			if convo.users.include?(user) && ids.include?(id) && ids.include?(user.id) 
+			ids = convo.name.split("-").map(&:to_i)
+			if convo.connected && ids.include?(id) && ids.include?(user.id) 
 				return true
 			end
 		end

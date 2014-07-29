@@ -1,6 +1,8 @@
 <% if results != "invalid" && results != nil %>
 	<% if results.empty? %>
-		<div id='empty'/>
+		<div id='empty'>
+			<%= render partial: "no_one", locals: {} %>
+		</div>
 	<% end %> 
 	<% results.shuffle.each do |entry| %>
 		<div class="swiped-result">
@@ -108,3 +110,6 @@
 <% else  %>
 <div class="hidden" id="invalid">invalid</div>
 <% end %>
+<div id='empty'>
+	<%= render partial: "no_one", locals: {} %>
+</div>

@@ -43,13 +43,13 @@ class UsersController < ApplicationController
 	end
 
 	def search
-		@results = current_user.search_similar current_user.activities.shuffle[0..19] 
+		@results = current_user.search_similar current_user.activities
 		@category = Category.where(name: "Do").first
 		@user_empty = current_user.interests.empty?
 	end
 
 	def main
-		@results = current_user.search_similar current_user.activities.shuffle[0..19]
+		@results = current_user.search_similar current_user.activities
 		@category = Category.where(name: "Do").first
 		@user_empty = current_user.interests.empty?
 	end
@@ -57,16 +57,22 @@ class UsersController < ApplicationController
 	def search_results #add support for searching location without ids
 		if params[:ids] == "" 
 			if params[:location_id] == "" && params[:location] == ""
-				results = current_user.search_similar current_user.activities.shuffle[0..19]
+				results = current_user.search_similar current_user.activities
 			else
 				if params[:location_id] != "" && params[:location] != ""
 					location = Location.find params[:location_id]
 				elsif params[:location] != ""
-					cords = Geocoder.coordinates params[:location]
-					if cords
-						location = Location.create name: params[:location], latitude: cords[0], longitude: cords[1]
+					stored_location = Location.where(name: params[:location]).first
+					if stored_location
+						location = stored_location
 					else
-						location = "invalid"
+						cords = Geocoder.coordinates params[:location]
+						if cords
+							location = Location.create name: params[:location], latitude: cords[0], longitude: cords[1]
+							LocationSuggestion.create term: location.name, location_id: location.id
+						else
+							location = "invalid"
+						end
 					end
 				else
 					location = nil
@@ -81,6 +87,8 @@ class UsersController < ApplicationController
 				return
 			end
 		end
+
+
 		if params[:location_id] != "" && params[:location] != ""
 			location = Location.find params[:location_id]
 		elsif params[:location] != ""
@@ -152,6 +160,12 @@ class UsersController < ApplicationController
 		current_list = current_user.blacklist
 		current_list += ",#{id}"
 		current_user.update_attributes blacklist: current_list
+
+		other_user = User.find params[:id]
+		other_list = other_user.blacklist
+		other_list += ",#{current_user.id}"
+		other_user.update_attributes blacklist: other_list
+
 		render nothing: true 
 	end
 

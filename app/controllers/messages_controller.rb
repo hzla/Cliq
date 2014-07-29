@@ -17,16 +17,18 @@ class MessagesController < ApplicationController
 		@message = Message.new params[:message]
 		@message.user_id = current_user.id
 		@message.conversation_id = params[:conversation_id]
+		p params
+		puts "\n" * 10
 		@conversation = Conversation.find(params[:conversation_id])
-		@conversation.update_attributes connected: true
 		@user = @conversation.get_other_user current_user
-
 		if @message.save && !current_user.blocked_by?(@user)
+			@conversation.update_attributes initiated: true
+			@conversation.update_attributes connected: true if (@conversation.connected == false) && @conversation.messages.map(&:user_id).include?(@user.id)
 			@user.message_count += 1 
 			@user.save
 			broadcast user_path(@user)+ "/messages", @message.to_json
 			other_connection = Connection.where(conversation_id: params[:conversation_id], user_id: @user.id).first
-			if @user.notify_messages && !@user.using && !other_connection.emailed
+			if @user.notify_messages && (!@user.active || !@user.using) && !other_connection.emailed
 				other_connection.update_attributes emailed: true
 				MessageMailerWorker.perform_async @user.id, current_user.id
 				#NotificationMailer.notification(@user, current_user).deliver if @user.email

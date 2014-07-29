@@ -7,7 +7,14 @@ Messages =
 		$('body').on 'keypress', '#chat-box', @submitMessageOnEnter
 		$('#messages-container').parent().parent().css 'background', 'white'
 		$('body').on 'ajax:success', '.block', @blockUser
+		$('.conversation').hover @showBlock, @hideBlock
 		@selectFirstConversation()
+
+	showBlock: ->
+		$(@).find('.convo-block').show()
+
+	hideBlock: ->
+		$(@).find('.convo-block').hide()
 
 	submitMessage: ->
 		$(@).parent().parent().prev().prev().submit()

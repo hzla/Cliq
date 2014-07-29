@@ -27,7 +27,7 @@
 								<div class="convo-last-message head-5 gray"><%= convo.last_message %></div>
 							</div>
 						<% end %>
-						<div class="convo-block head-5"><a class="block" data-confirm="Are you sure you want to block <%= user.first_name %>?" data-remote="true" href="<%= block_user_path user %>>">Block</a></div>
+						<div class="convo-block head-5"><a class="block" data-confirm="This user will no longer be able to send you messages or invites. Are you sure you want to block <%= user.first_name %>?" data-remote="true" href="<%= block_user_path user %>">Block</a></div>
 					</div>
 				<% end %>
 			</div>
