@@ -24,7 +24,7 @@
 
 				<div class="swiped-similarities">
 					<div class="swiped-school">
-						<%= entry[0].school || "Not Listed" %>
+						<%= entry[0].school %>
 					</div>
 					
 				</div>
@@ -99,7 +99,6 @@
 </script>
 <script>
 	var height = ($(window).height() - 278) + "px"
-	console.log(height)
 	$('.suggestions-container').css('height', height)
 	$(window).resize(function(){
 		var newHeight = ($(window).height() - 278) + "px"

@@ -16,7 +16,7 @@ include SessionsHelper
 		@message = Message.new
 		potential_convo = current_user.talked_to?(@other_user)
 		if !potential_convo
-			@conversation = Conversation.create
+			@conversation = Conversation.create name: "#{current_user.id}-#{@other_user.id}"
 			@conversation.users << [current_user, @other_user]
 			@conversation.save
 		else
