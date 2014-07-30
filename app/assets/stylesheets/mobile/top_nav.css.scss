@@ -1,0 +1,42 @@
+@import '../variables';
+
+.top-nav {
+	height: 100px;
+	width: 100%;
+	text-align: center;
+	position: fixed;
+	top: 0;
+	z-index: 100;
+	background-color: white;
+}
+
+.menu-icon {
+	height: 80px;
+	width: 80px;
+	margin-top: 10px;
+}
+
+.menu-title {
+	font-family: $logo-font;
+	font-style: italic;
+	color: $light-turq;
+	font-weight: 400;
+	font-size: 70px;
+	line-height: 100px;
+}
+
+
+.menu-icon.left {
+	float: left;
+	margin-left: 10px;
+}
+
+.menu-icon.right {
+	float: right;
+	margin-right: 10px;
+}
+
+.content-container.mobile {
+	margin-top: 100px;
+	height: calc(100% + 100px)
+}

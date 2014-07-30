@@ -1,0 +1,90 @@
+
+	<div id="search-container">
+		<div id="search-content">
+			<div id="query">
+				<%= form_tag search_path, id: "search-form", remote: true do %>
+					<div id="query-row-1">
+						<div id="query-1" class="white">I want to hang out in</div>
+						<%= text_field_tag :location, nil, :class => "dark-gray search-term", id: "query-location", value: current_user.address %>
+						<%= hidden_field_tag "location_id" %>
+						<%= hidden_field_tag "type", "swipe" %>
+						<div id="query-2" class="white">with people interested in</div>
+					</div>
+					<div id="query-interests" class="dark-gray">
+						<%= text_field_tag :activity, nil, :class => "query-interest search-term", placeholder: 'Anything' %>
+					</div>
+					<%= submit_tag "Shuffle", :class => "red head-3", id:"search-query" %> 
+					<%= hidden_field_tag "ids" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+
+	<div id="results-container">
+			<% if @user_empty %>
+			<div class="no-int-container">
+				<div class="no-ints">
+					It looks like you don't have any interests yet.<br>
+					Click <%= link_to "here", choose_cat_path(@category), id: "choose-cats" %> to add some!
+				</div>
+			</div>
+		<% end %>
+		<div id="swiped-content">
+			<div id="results-header">
+			</div>
+			
+
+			<div id="results">
+				<% if !@user_empty %>
+					<%= render partial: 'swipe_results', locals: {results: @results} %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+
+
+<div id="invite-modal-container" class="modal">
+
+</div>
+<div id="other-modal-container" class="modal">
+
+</div>
+
+<script>
+<%= render partial: 'subscribe.js.erb' %>
+</script>
+
+<% if 1 == 2 %>
+	
+	<div id="activation-container">
+		<div id="activation-form" class="dark-gray">
+			<p id="top"><span class="heavy">Cliq is currently only available to students at UCF</span><br>
+			Please enter your UCF email address and click the<br>
+			activation link we send you to start using Cliq.</p>
+				<%= form_tag send_activation_path(current_user), remote: true, class: "send-activation" do %>
+					<%= text_field_tag :email, nil, placeholder: "Enter email address", class: 'email-activation'   %>
+					<%= submit_tag "Send", class: "submit-email" %>
+				<% end %>
+
+				<div class="send-activation hidden" id="thank-you">
+					<p>Thank You! Please check your email and refresh the page when you've been activated</p>
+				</div>
+
+
+			<p id="bottom"><span class="heavy">Not a UCF? Student?</span> You can still enter your email to receive<br>
+			updates when we start expanding to other to schools.</p>
+		</div>
+	</div>
+<% end %>
+	<%= image_tag 'Do.svg', :class => "ac-image hidden", id: "Do" %>
+	<%= image_tag 'Watch.svg', :class => "ac-image hidden", id: "Watch" %>
+	<%= image_tag 'Music.svg', :class => "ac-image hidden", id: "Music" %>
+	<%= image_tag 'Discuss.svg', :class => "ac-image hidden", id: "Discuss" %>
+<script>
+$('body').addClass('background-gray')
+</script>
+
+
+
+
+

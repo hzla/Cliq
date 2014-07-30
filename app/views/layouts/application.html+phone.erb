@@ -12,10 +12,10 @@
 </head>
 <body>
 <% if current_user %>
-   <%= render partial: "users/side_nav", locals: {active: :none} %>
+   <%= render partial: "users/top_nav", locals: {active: :none} %>
 
 <% end %>
-<div class="content-container">
+<div class="content-container mobile">
 <%= yield %>
 </div>
 

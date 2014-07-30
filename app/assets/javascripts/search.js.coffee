@@ -2,6 +2,7 @@ Search =
 	init: ->
 		@autocompleteLocations()
 		@autocompleteInterests()
+		$('.tab').on 'ajax:success', @autoCompleteAll
 		$('body').on 'ajax:success', '.invite-user', @inviteUser
 		$('body').on 'ajax:success', '.chat-user', @chatUser
 		$('body').on 'ajax:beforeSend', '.chat-user', @checkTab
@@ -20,6 +21,11 @@ Search =
 		$('body').on 'click', '#cliq-invite', @inviteFriends
 		$('body').on 'submit', '#friend-invite', @sendCliqInvite
 		$('body').on 'keydown', '#query-location' , @deleteLocID
+
+	autoCompleteAll: ->
+		Search.autocompleteLocations()
+		Search.autocompleteInterests()
+
 
 		# @invertButtons()
 
