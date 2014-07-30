@@ -25,6 +25,19 @@ class Activity < ActiveRecord::Base
 		end
 	end
 
+	def add
+		if suggested_by
+			user = User.find suggested_by
+			user.activities << self
+			user.save
+			update_attributes suggested_by: nil
+		end
+	end
+
+	def self.add_all
+		where('suggested_by is not null').each(&:add)
+	end
+
 	def shared_between? user, other_user
 		users.include?(user) && users.include?(other_user)
 	end

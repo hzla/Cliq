@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 ruby "2.0.0"
-gem 'rails', '4.0.0'
+gem 'rails', '4.1.0'
 
 gem 'less-rails'
 gem 'therubyracer'
@@ -35,6 +35,7 @@ gem 'omniauth-facebook'
 gem 'koala'
 gem 'dotenv'
 gem 'will_paginate'
+gem 'browser'
 
 # These gems allow us to apply css to html emails
 gem 'premailer-rails'

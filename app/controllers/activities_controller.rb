@@ -5,14 +5,16 @@ class ActivitiesController < ApplicationController
 	end
 
 	def choose
+		if !request
 		category = Category.find params[:category_id]
 		activities = category.activities
 		acts = category.liked_not_liked_activities current_user
-		p acts
 		liked = acts[0]
 		not_liked = acts[1]
 		act = Activity.new
-		render partial: 'choose', locals: {category: category, activities: activities, not_liked: not_liked, liked: liked, act: act}
+		respond_to do |format|
+  		format.html { render :layout => !request.xhr?, partial: 'choose', locals: {category: category, activities: activities, not_liked: not_liked, liked: liked, act: act} }
+		end
 	end
 
 	def create

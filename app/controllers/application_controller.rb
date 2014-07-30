@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
   
+  before_action :set_device_type
   before_action :require_login
   before_filter :cors_preflight_check
   after_filter :cors_set_access_control_headers
@@ -37,6 +38,10 @@ class ApplicationController < ActionController::Base
     if current_user
       current_user.update_attributes updated_at: Time.now, active: true
     end
+  end
+
+  def set_device_type
+    request.variant = :phone if browser.mobile?
   end
 
 end

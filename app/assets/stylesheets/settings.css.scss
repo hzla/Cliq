@@ -1,7 +1,7 @@
 @import 'variables';
 
 .settings-input {
-	background: $super-light-gray;
+	background: white;
 	color: $dark-gray;
 	margin-bottom: 32px;
 	border: none;
@@ -9,7 +9,7 @@
 	width: 350px;
 	height: 40px;
 	padding-left: 20px;
-    font-family: "proxima nova", "open sans";
+  font-family: $generic-font;
 }
 
 .notification-setting {
@@ -36,9 +36,9 @@
 	border-radius: 100px;
 	cursor: pointer;
 	float: left;
-    font-size: 28px;
-    font-family: "proxima nova";
-    font-weight: 600;
+  font-size: 28px;
+  font-family: $generic-font;
+  font-weight: 600;
 }
 
 #save-settings:hover {
@@ -55,7 +55,8 @@
 	width: 170px;
 	padding-left: 13px;
 	margin-left: -13px;
-    font-weight: 400;
+  font-weight: 400;
+  margin-bottom: 0px;
 }
 
 #delete-account:hover {

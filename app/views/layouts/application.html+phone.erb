@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cliq</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "http://faye-server-10.herokuapp.com/faye.js" %>
+  <%= favicon_link_tag 'cliq-fav.ico' %>
+  <script type="text/javascript" src="//use.typekit.net/mdx8vro.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% if current_user %>
+   <%= render partial: "users/side_nav", locals: {active: :none} %>
+
+<% end %>
+<div class="content-container">
+<%= yield %>
+</div>
+
+<script>
+<%= render partial: 'users/subscribe.js.erb' %>
+</script>
+
+
+</body>
+</html>
