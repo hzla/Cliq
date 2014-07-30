@@ -48,14 +48,14 @@
 					<div class="action-button invite-btn white inv-btn">
 						
 						<%= link_to new_user_event_path(entry[0]), :class => "white invite-user", remote: true do %>
-							<%= image_tag "Events.svg", :class => "action-icon svg" %>
+							<%= image_tag "events-white.svg", :class => "action-icon" %>
 							<div class="result-action">INVITE</div>
 						<% end %>
 					</div>
 					<div class="action-button chat white inv-btn">
 						
 						<%= link_to user_chat_path(entry[0]), :class => "white chat-user", remote: true do %>
-							<%= image_tag "Messages.svg", :class => "action-icon svg" %>
+							<%= image_tag "messages-white.svg", :class => "action-icon" %>
 							<div class="result-action">CHAT</div>
 						<% end %>
 						
@@ -64,32 +64,6 @@
 			</div>
 		</div>
 	<% end %>
-	<script>
-  $('img.svg').each(function(){
-    var $img = $(this);
-    var imgID = $img.attr('id');
-    var imgClass = $img.attr('class');
-    var imgURL = $img.attr('src');
-
-    $.get(imgURL, function(data) {
-        // Get the SVG tag, ignore the rest
-        var $svg = $(data).find('svg');
-
-        // Add replaced image's ID to the new SVG
-        if(typeof imgID !== 'undefined') {
-            $svg = $svg.attr('id', imgID);
-        }
-        // Add replaced image's classes to the new SVG
-        if(typeof imgClass !== 'undefined') {
-            $svg = $svg.attr('class', imgClass+' replaced-svg');
-        }
-        // Remove any invalid XML tags as per http://validator.w3.org
-        $svg = $svg.removeAttr('xmlns:a');
-        // Replace image with new SVG
-        $img.replaceWith($svg);
-    }, 'xml');
-  });
-</script>
 <% else  %>
 <div class="hidden" id="invalid">invalid</div>
 <%= render partial: 'no_one' %>

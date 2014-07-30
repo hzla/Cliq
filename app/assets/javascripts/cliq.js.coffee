@@ -1,24 +1,38 @@
 Cliq = 
 	init: ->
+		Cliq.nextState = true
 		$('.tab').on 'ajax:success', @search
 		$('.tab').on 'click', @pushState
+		$(window).bind 'popstate', @popState
+		$(window).bind 'pushstate', @popState
+		@hightlightTab()
 
-		$(window).bind 'popstate', @popstate
-		$(window).bind 'pushstate', @popstate
-
+	hightlightTab: ->
+		url = location.href.split('/')
+		tab = url[url.length - 1]
+		$("##{tab}").children('.side-icon').addClass('active')
+		if url[url.length - 2] == "users"
+			$('#profile').children('.side-icon').addClass('active')
 
 	popState: -> 
-    $.getScript location.href
+    url = location.href.split('/')
+    tab = url[url.length - 1]
+    $("##{tab}").click()
+    if url[url.length - 2] == "users"
+    	$('#profile').click()
+    Cliq.nextState = false
+
 
 		
 
 	search: (event, data, xhr, status) ->
-		
 		$('.content-container').html data
 		$('.content-container').css 'background', ''
 		$('.content-container').css 'opacity', ''
 		$.getScript(location.href)
-		history.pushState(null, document.title, @.href)
+		history.pushState(null, document.title, @.href) if Cliq.nextState
+		Cliq.nextState = true
+
 		# $('.content-container').children().addClass 'animated fadeIn'
 		# $(@).children().removeClass 'fadeIn'
 

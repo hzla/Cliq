@@ -32,11 +32,11 @@
 
 					<div class="swiped-suggestions">
 						<div class="swiped-suggestion dark-gray mutual-suggestion headers">
-							<%= image_tag ('Mutual.svg'), :class => "swiped-sug-pic headers mutual svg" %>
+							<%= image_tag ('Mutual.svg'), :class => "swiped-sug-pic headers mutual" %>
 							<div class="swiped-count"><%= current_user.similarities_with entry[0] %></div>
 						</div>
 						<div class="swiped-suggestion dark-gray headers">
-							<%= image_tag ('Similar.svg'), :class => "swiped-sug-pic headers sim svg" %>
+							<%= image_tag ('Similar.svg'), :class => "swiped-sug-pic headers sim" %>
 							<div class="swiped-count"><%= entry[1].length %></div>
 						</div>
 
@@ -56,13 +56,13 @@
 
 							<div class="swipe-info">
 								<%= link_to other_user_path(entry[0]), :class => "other-user", remote: true do %>
-									<%= image_tag "Info.svg", :class => "info-icon svg" %>
+									<%= image_tag "Info.svg", :class => "info-icon" %>
 								<% end %>
 							</div>
 
 							<div class="chat white inv-btn swiped">	
 								<%= link_to user_chat_path(entry[0]), :class => "white chat-user", remote: true do %>
-									<%= image_tag "Messages.svg", :class => "swiped-action-icon svg" %>
+									<%= image_tag "messages-white.svg", :class => "swiped-action-icon" %>
 								<% end %>
 							</div>	
 						</div>
