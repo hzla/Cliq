@@ -5,7 +5,6 @@ class ActivitiesController < ApplicationController
 	end
 
 	def choose
-		if !request
 		category = Category.find params[:category_id]
 		activities = category.activities
 		acts = category.liked_not_liked_activities current_user
