@@ -1,0 +1,97 @@
+@import '../variables';
+
+#search-container.mobile {
+	width: 100%;
+	height: 100%;
+	background: white;
+}
+
+#search-content.mobile {
+	height: 100%;
+	width: 100%;
+}
+
+.search-top {
+	background-image: image_url("jump_side.png");
+	height: 20%;
+	text-align: center;
+}
+
+.search-bottom {
+	text-align: center;
+}
+
+#query.mobile {
+	height: 100%;
+}
+
+#search-form.mobile {
+	height: 100%;
+	width: 100%;
+	float: none;
+	margin-left: 0px;
+	margin-top: 0px;
+}
+
+#query-1.mobile {
+	float: none;
+	font-size: 60px;
+	padding-top: 30px;
+}
+
+#query-location.mobile {
+	float: none;
+	height: 80px;
+	font-size: 60px;
+	width: 70%;
+	text-align: center;
+}
+
+#activity.query-interest.search-term.mobile {
+	background-color: $super-light-gray;
+	height: 60px;
+	font-size: 50px;
+	margin-left: 20px;
+	float: none;
+	text-align: center;
+	margin-top: 20px;
+}
+
+#query-2.mobile {
+	float: none;
+	font-size: 50px;
+}
+
+#search-query.mobile {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 15%;
+	color: white;
+	background-color: $red;
+	border-radius: 0px;
+	left: 0;
+	font-size: 80px;
+}
+
+#query-interests.mobile {
+	float: none;
+	margin: 0 auto;
+}
+
+.mobile .searched {
+	background-color: $super-light-gray;
+	height: 60px;
+	font-size: 50px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+
+////////////////////////////////////////////////
+
+
+#results-container.mobile {
+	width: 100%;
+	
+}
