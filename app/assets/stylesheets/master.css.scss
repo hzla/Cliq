@@ -195,5 +195,24 @@ textarea:focus {outline: none; }
 	background: $super-light-gray;
 }
 
+.side-background {
+	position: fixed;
+	left: 0;
+	width: 40%;
+	background-image: image_url("jump_side.png");
+	height: 100%;
+	z-index: 3;
+}
+
+#loading {
+	font-size: 100px;
+	position: fixed;
+	margin: 0 auto;
+	top: 50%;
+	z-index: 1000;
+	width: 100%;
+	text-align: center;
+}
+
 
 

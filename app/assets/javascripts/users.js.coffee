@@ -86,8 +86,8 @@ Users =
 	showShared: ->
 		$('.int-type').removeClass 'selected'
 		$(@).addClass 'selected'
-		$('.act-name.different').hide()
-		$('.act-name.shared').show()
+		$('.act-name.different').parent().hide()
+		$('.act-name.shared').parent().show()
 		$('.cat-group').show()
 		$('.cat-group').children('.activities').each ->
 			if $(@).find('.act-name:visible').length < 1
@@ -96,8 +96,8 @@ Users =
 	showDifferent: ->
 		$('.int-type').removeClass 'selected'
 		$(@).addClass 'selected'
-		$('.act-name.different').show()
-		$('.act-name.shared').hide()
+		$('.act-name.different').parent().show()
+		$('.act-name.shared').parent().hide()
 		$('.cat-group').show()
 		$('.cat-group').children('.activities').each ->
 			if $(@).find('.act-name:visible').length < 1
@@ -106,7 +106,7 @@ Users =
 	showAll: ->
 		$('.int-type').removeClass 'selected'
 		$(@).addClass 'selected'
-		$('.act-name').show()
+		$('.activity').show()
 		$('.cat-group').show()
 
 	prepQuickAdd: ->

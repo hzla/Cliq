@@ -1,9 +1,4 @@
-<%= render partial: "users/side_nav", locals: {active: :messages} %>
-<div class="content-container">
-<div id="messages-container" %>
-
-
-
+<div id="messages-container">
 	<div class="message-content-container">
 		<div class="message-content">
 			<div id="conversations">
@@ -14,7 +9,7 @@
 					<div class="conversation" id="<%= user.id %>">
 						<%= link_to other_user_path(user), :class => "other-user", remote: true do %>
 							<% if current_user.conversated_with? user %>
-								<%= image_tag user.profile_pic_url, :class => "convo-pic" %>
+								<%= image_tag user.profile_pic_url || 'cliq.png', :class => "convo-pic" %>
 							<% else %>
 								<%= image_tag 'cliq.png', :class => "convo-pic" %>
 							<% end %>
@@ -32,19 +27,14 @@
 				<% end %>
 			</div>
 		</div>
-
 		<div id="thread-container">
 			<div id="messages">
-		<%= render partial: 'chat_history', locals: {conversation: @conversation, other_user: @other_user } %>
+		<%= render partial: 'chat_history', locals: {conversation: @conversation, other_user: @other_user} %>
 			</div>
 		</div>
-
 	</div>
-
-	
-</div>
-
-<div id="invite-modal-container" class="modal">
-
-</div>
+	<div id="invite-modal-container" class="modal"></div>
+	<script>
+		$($('.conversation')[0]).addClass('current')
+	</script>
 </div>

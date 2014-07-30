@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
 	end
 
 	def using
-		Time.now - 5.hours < updated_at 
+		Time.now - 15.minutes < updated_at 
 	end
 
 	def activate
@@ -103,7 +103,6 @@ class User < ActiveRecord::Base
 	end
 
 	def ordered_conversations
-		
 		convos = conversations.where(initiated: true).order(:updated_at).reverse
 		blacklist_ids = blacklist.split(",").map(&:to_i)[1..-1]
 		convos = convos.select do |convo|

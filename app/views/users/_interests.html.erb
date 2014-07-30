@@ -7,10 +7,8 @@
 					<%= cat_type[0] %>
 				</div>
 				<% if formatted_interests[cat_type[1]][0] %>
-					<% p formatted_interests[cat_type[1]]; puts "\n" * 10 %>
 					<% formatted_interests[cat_type[1]].each do |cat| %>
 						<% cat.each do |cat_name, acts| %>
-							<% p cat_name; puts "\n" * 30 %>
 							<div class="cat-group-self">
 								<div class="category dark-gray"><div class="cat-name"><%= cat_name[0..13] + 
 								"#{('..' if cat_name.length > 14)}" %></div></div>

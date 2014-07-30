@@ -22,16 +22,14 @@ Categories =
 		$(@).children('.cat-title').css 'background-color', '#ffa320'
 
 	goNext: ->
-		console.log $('.doing').parents('.header-row').next().children()[0].click()
 		$('.doing').parent().next()[0].click()
 
 	showCategories: (event, data, xhr, status) ->
 		$('#categories-content-container').remove()
 		$('.content-container').append data
-		# $('#categories-footer').before $('#categories-content-container')[0]
-		# $($('#categories-content-container')[1]).remove()
 		$('#categories-content-container').addClass 'animated fadeIn'
-		Categories.autocompleteQS()
+		history.pushState(null, document.title, @.href)
+
 
 
 	addActivity: (event, data, xhr, status) ->

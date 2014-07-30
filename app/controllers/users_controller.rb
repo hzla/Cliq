@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 		@format = Category.self_format
 		@formatted_interests = @user.formatted_interests
 		respond_to do |format|
-  		format.html 
+  		format.html { render :layout => !request.xhr? }
   		format.json { render :json => @user }
 		end
 	end
@@ -43,15 +43,27 @@ class UsersController < ApplicationController
 	end
 
 	def search
-		@results = current_user.search_similar current_user.activities
+		loc = Location.where(name: current_user.address).first 
+		loc = loc ? loc : current_user.address 
+		@results = current_user.search_similar current_user.activities, loc
 		@category = Category.where(name: "Do").first
 		@user_empty = current_user.interests.empty?
+		respond_to do |format|
+        format.html { render :layout => !request.xhr? }
+        # other formats
+    end
 	end
 
 	def main
-		@results = current_user.search_similar current_user.activities
+		loc = Location.where(name: current_user.address).first 
+		loc = loc ? loc : current_user.address 
+		@results = current_user.search_similar current_user.activities, loc
 		@category = Category.where(name: "Do").first
 		@user_empty = current_user.interests.empty?
+		respond_to do |format|
+        format.html { render :layout => !request.xhr? }
+        # other formats
+    end
 	end
 
 	def search_results #add support for searching location without ids
@@ -117,6 +129,10 @@ class UsersController < ApplicationController
 
 	def settings
 		redirect_to settings_path(current_user) if current_user.id != params[:id].to_i
+		respond_to do |format|
+        format.html { render :layout => !request.xhr? }
+        # other formats
+    end
 	end
 
 	def update

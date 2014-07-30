@@ -11,7 +11,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if current_user %>
+   <%= render partial: "users/side_nav", locals: {active: :none} %>
+   <div class="side-background">
+   </div>
+<% end %>
+<div class="content-container">
 <%= yield %>
+</div>
+
+<div id="search-cache">
+</div>
+<div id="main-cache">
+</div>
+
+
+
 <script>
 <%= render partial: 'users/subscribe.js.erb' %>
 </script>

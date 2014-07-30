@@ -1,12 +1,11 @@
-<div class="content-container">
-    <%= render partial: "side_nav", locals: {active: :main} %>
+
 	<div id="search-container">
 		<div id="search-content">
 			<div id="query">
 				<%= form_tag search_path, id: "search-form", remote: true do %>
 					<div id="query-row-1">
 						<div id="query-1" class="white">I want to hang out in</div>
-						<%= text_field_tag :location, nil, :class => "dark-gray search-term", id: "query-location", value: "Orlando, Florida" %>
+						<%= text_field_tag :location, nil, :class => "dark-gray search-term", id: "query-location", value: current_user.address %>
 						<%= hidden_field_tag "location_id" %>
 						<%= hidden_field_tag "type", "swipe" %>
 						<div id="query-2" class="white">with people interested in</div>
@@ -42,7 +41,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+
 
 <div id="invite-modal-container" class="modal">
 

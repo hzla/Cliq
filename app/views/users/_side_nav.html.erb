@@ -1,6 +1,6 @@
 <div class="extended-side-nav">
 	
-		<%= link_to root_path do %>
+		<%= link_to root_path, remote: true, :class => 'tab' do %>
 			<div class="extended logo side-icon <%= 'active' if active == :main %>">
 				<div id="cliq-logo">Cliq</div> 
 				<% if current_user %>
@@ -9,19 +9,19 @@
 			</div>
 		<% end %>
 		<% if current_user %>
-		<%= link_to search_path do %>
+		<%= link_to search_path, remote: true, :class => 'tab' do %>
 			<div class="extended search side-icon <%= 'active' if active == :critiq %>">
 				<%= image_tag "Search.svg", :class => "nav-icon svg" %> 
 				<div class="icon-label main">Search</div>
 			</div>
 		<% end %>
-		<%= link_to user_path current_user do  %>
+		<%= link_to user_path(current_user), remote: true, :class => 'tab' do  %>
 			<div class="extended profile side-icon <%= 'active' if active == :profile %>">
 				<%= image_tag "Profile.svg", :class => "nav-icon svg" %> 
 				<div class="icon-label main">Profile</div>
 			</div>
 		<% end %>
-			<%= link_to messages_path, "data-no-turbolink" => true do %>
+			<%= link_to messages_path, "data-no-turbolink" => true, remote: true, :class => 'tab' do %>
 			<div class="extended messages <%= 'active' if active == :messages %> side-icon">
 				<%= image_tag "Messages.svg", :class => "nav-icon svg" %>
 				<div class="icon-label main">Messages</div>
@@ -36,7 +36,7 @@
 				<% end %>
 			</div>
 		<% end %>
-		<%= link_to events_path do %>
+		<%= link_to events_path, remote: true, :class => 'tab' do %>
 			<div class="extended events <%= 'active' if active == :events %> side-icon" >
 				<%= image_tag "Events.svg", :class => "nav-icon svg" %>
 				<% if current_user.event_count > 0 %>
@@ -51,7 +51,7 @@
 				<div class="icon-label main">Events</div>
 			</div> 
 		<% end %>
-		<%= link_to settings_path current_user do%>
+		<%= link_to settings_path(current_user), remote: true, :class => 'tab' do%>
 			<div class="extended settings side-icon <%= 'active' if active == :settings %>" id="extended-settings" >
 				<%= image_tag "Settings.svg", :class => "nav-icon svg" %>
 				<div class="icon-label main">User Settings</div>

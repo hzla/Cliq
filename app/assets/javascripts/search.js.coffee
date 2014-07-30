@@ -165,9 +165,10 @@ Search =
 
 	displayResults: (event, data, xhr, status) ->
 		$('#search-results').html data
+		$('.result').addClass 'animated fadeIn'
 		$('#results').html data
 		$('.swiped-result').hide()
-		$('.swiped-result').first().show()
+		$('.swiped-result').first().show().addClass 'animated fadeIn'
 		if $('#empty').length > 0
 			$('#no-one-around').show()
 		$('#found').text "Please enter a valid location." if $('#invalid').length > 0

@@ -13,6 +13,10 @@ class EventsController < ApplicationController
 		
 		excursions.update_all seen: true
 		current_user.update_attributes event_count: 0
+		respond_to do |format|
+        format.html { render :layout => !request.xhr? }
+        # other formats
+    end
 	end
 
 	def upcoming
