@@ -32,11 +32,11 @@
 
 					<div class="swiped-suggestions">
 						<div class="swiped-suggestion dark-gray mutual-suggestion headers">
-							<%= image_tag ('Mutual.svg'), :class => "swiped-sug-pic headers mutual" %>
+							<%= image_tag ('Mutual.svg'), :class => "swiped-sug-pic headers mutual svg" %>
 							<div class="swiped-count"><%= current_user.similarities_with entry[0] %></div>
 						</div>
 						<div class="swiped-suggestion dark-gray headers">
-							<%= image_tag ('Similar.svg'), :class => "swiped-sug-pic headers sim" %>
+							<%= image_tag ('Similar.svg'), :class => "swiped-sug-pic headers sim svg" %>
 							<div class="swiped-count"><%= entry[1].length %></div>
 						</div>
 
