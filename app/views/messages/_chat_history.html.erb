@@ -6,14 +6,11 @@
 		<% end %>
 	</div>
 	<div class="message-form">
-		<% puts @message; puts "\n" * 10 %>
 		<%= form_for [conversation, new_message], remote: true do |f| %>
 			<%= f.text_area :body, id: 'chat-box' %>
 			<%= f.submit :class => :hidden %>
 		<% end %>
 		<%= image_tag current_user.profile_pic_url, id: "chat-box-pic" %>
-
-
 			<div id="message-actions">
 						<%= link_to new_user_event_path(other_user), :class => "white invite-user", remote: true do %>
 					<div class="action-button white message-invite inv-btn mes-action">
