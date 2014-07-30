@@ -4,7 +4,6 @@ Cliq =
 		$('.tab').on 'ajax:success', @search
 		$('.tab').on 'click', @pushState
 		$(window).bind 'popstate', @popState
-		$(window).bind 'pushstate', @popState
 		@hightlightTab()
 
 	hightlightTab: ->
@@ -21,6 +20,7 @@ Cliq =
     if url[url.length - 2] == "users"
     	$('#profile').click()
     Cliq.nextState = false
+    $('.back-link').click()
 
 
 		

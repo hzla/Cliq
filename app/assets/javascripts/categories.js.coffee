@@ -28,6 +28,16 @@ Categories =
 		$('#categories-content-container').remove()
 		$('.content-container').append data
 		$('#categories-content-container').addClass 'animated fadeIn'
+		url = @.href.split('/')
+		if url[url.length - 1] != 'choose'
+			url.push 'select'
+			url = url.join('/')
+		else
+			console.log url
+			url[url.length - 1] = "select"
+			url = url.join('/')
+		
+		history.pushState(null, document.title, url)
 		
 	addActivity: (event, data, xhr, status) ->
 		$(@).remove()

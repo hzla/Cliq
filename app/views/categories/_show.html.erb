@@ -1,49 +1,53 @@
-<div id="categories-content-container">
-	
-
-	<div id="cat-content">
-		<div id="cat-question" class="head-2 dark-gray">
-			<%= category.ask %>
-		</div>
-		<% if category.parent %>
-			<%= link_to category_path(category.parent), remote: true, class: 'back-link' do  %>
-				<div id="cat-back" class="gray head-3">
-					<span id="back-text"><< Back to <%= category.parent.name %></span>
-				</div>
-			<% end %>
-		<% end %>
-		<div id="cat-question-details" class="head-4 gray">
-			(Click a panel to add some details. You can choose more than one.)
-		</div>
-
-		<div id="cat-list">
-			<% category.children.each do |cat| %>
-				<% if !cat.children.empty? %>
-					<%= link_to category_path(cat), remote: true, class: 'cat-link' do %>
-						<div class="cat">
-							<div class="cat-title dark-gray head-4 <%= "prev-selected" if cat.selected current_user %>">
-								<span class="cat-select"><%= cat.short_name %></span>
-							</div>
-							<%= image_tag cat.image_url, :class => "cat-pic" %>
-						</div>
-					<% end %>
-				<% else %>
-					<%= link_to category_choose_activity_path(cat), remote: true, class: 'cat-link' do %>
-						<div class="cat">
-							<div class="cat-title dark-gray head-4 <%= "prev-selected" if cat.selected current_user %>">
-								<span class="cat-select"><%= cat.short_name %></span>
-								<%= image_tag "check.svg.png", :class => "check hidden" %>
-							</div>
-							<%= image_tag cat.image_url, :class => "cat-pic" %>
-						</div>
-					<% end %>
+<% if category.activities.empty? %>
+<% p category.activities; puts "\n" * 10 %>
+	<div id="categories-content-container">
+		<div id="cat-content">
+			<div id="cat-question" class="head-2 dark-gray">
+				<%= category.ask %>
+			</div>
+			<% if category.parent %>
+				<%= link_to category_path(category.parent), remote: true, class: 'back-link' do  %>
+					<div id="cat-back" class="gray head-3">
+						<span id="back-text"><< Back to <%= category.parent.name %></span>
+					</div>
 				<% end %>
 			<% end %>
+			<div id="cat-question-details" class="head-4 gray">
+				(Click a panel to add some details. You can choose more than one.)
+			</div>
 
+			<div id="cat-list">
+				<% category.children.each do |cat| %>
+					<% if !cat.children.empty? %>
+						<%= link_to category_path(cat), remote: true, class: 'cat-link' do %>
+							<div class="cat">
+								<div class="cat-title dark-gray head-4 <%= "prev-selected" if cat.selected current_user %>">
+									<span class="cat-select"><%= cat.short_name %></span>
+								</div>
+								<%= image_tag cat.image_url, :class => "cat-pic" %>
+							</div>
+						<% end %>
+					<% else %>
+						<%= link_to category_choose_activity_path(cat), remote: true, class: 'cat-link' do %>
+							<div class="cat">
+								<div class="cat-title dark-gray head-4 <%= "prev-selected" if cat.selected current_user %>">
+									<span class="cat-select"><%= cat.short_name %></span>
+								</div>
+								<%= image_tag cat.image_url, :class => "cat-pic" %>
+							</div>
+						<% end %>
+					<% end %>
+				<% end %>
+
+			</div>
 		</div>
 	</div>
-</div>
 
-<script>
-	$('#activity_category_id').val('<%= category.id %>')
-</script>
+	<script>
+		$('#activity_category_id').val('<%= category.id %>')
+	</script>
+<% else %>
+	<%= render partial: 'activities/choose', locals: {category: category, activities: activities, liked: liked, not_liked: not_liked} %>
+	<% puts "\n" * 100 %>
+
+<% end %>

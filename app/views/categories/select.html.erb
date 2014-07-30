@@ -85,8 +85,8 @@
 	</div>
 
 
-		<%= render partial: 'show', locals: {category: @category, act: @act} %>
-
+		<%= render partial: 'show', locals: {category: @category, act: @act, liked: @liked, not_liked: @not_liked, activities: @activities } %>
+<% p "did this" * 100 %>
 
 <script>
 $('body').addClass('background-gray')
