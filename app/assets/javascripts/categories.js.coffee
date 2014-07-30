@@ -28,10 +28,7 @@ Categories =
 		$('#categories-content-container').remove()
 		$('.content-container').append data
 		$('#categories-content-container').addClass 'animated fadeIn'
-		history.pushState(null, document.title, @.href)
-
-
-
+		
 	addActivity: (event, data, xhr, status) ->
 		$(@).remove()
 		$('#chosen-acts').append data
@@ -105,14 +102,6 @@ Categories =
 			$('#cat-footer-content').hide()
 			$('#next-cat').show()
 			$('#finish').show()
-
-
-
-
-
-
-
-
 
 ready = ->
 	Categories.init()

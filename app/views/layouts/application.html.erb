@@ -13,8 +13,7 @@
 <body>
 <% if current_user %>
    <%= render partial: "users/side_nav", locals: {active: :none} %>
-   <div class="side-background">
-   </div>
+
 <% end %>
 <div class="content-container">
 <%= yield %>

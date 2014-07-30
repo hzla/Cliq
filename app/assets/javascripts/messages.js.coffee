@@ -8,7 +8,7 @@ Messages =
 		$('#messages-container').parent().parent().css 'background', 'white'
 		$('body').on 'ajax:success', '.block', @blockUser
 		$('.conversation').hover @showBlock, @hideBlock
-		@selectFirstConversation()
+
 
 	showBlock: ->
 		$(@).find('.convo-block').show()
@@ -33,9 +33,6 @@ Messages =
 		$('.convo-link').find('.convo-last-message').each ->
 			$(@).css 'color', '#bebebe' if $(@).css('color') != "rgb(24, 195, 189)"
 		$(@).find('.convo-last-message').css 'color', 'white'
-
-	selectFirstConversation: ->
-		$($('.conversation')[0]).addClass('current')
 
 	submitMessageOnEnter: (e) ->
 		if (e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)

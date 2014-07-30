@@ -5,10 +5,10 @@
 	position: fixed;
 	height: 100%;
 	width: 40%;
-	z-index: 4;
 	left: 0;
 	font-family: $generic-font;
 	text-align: center;
+	background-image: image_url("jump_side.png");
 }
 
 #cat-header-content {

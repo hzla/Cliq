@@ -31,8 +31,9 @@ Search =
 
 	chatUser: (event, data, xhr, status) ->
 		event.preventDefault()
-		$('.content-container').css 'background', 'white'
-		$('.content-container').css 'opacity', '.3'
+		if $('.user-other-container').length < 1
+			$('.content-container').css 'background', 'white'
+			$('.content-container').css 'opacity', '.3'
 		if $('#' + $(@).attr('href').split('/')[2]).length < 1
 			$('body').append data
 			$('.chat-partial').removeClass('current-thread')
@@ -45,7 +46,7 @@ Search =
 		return false if $('.messages.active').length > 0
 
 	switchChat: ->
-		if $('.messages.active').length > 0
+		if $('.conversation').length > 0
 			console.log '#' + $(@).attr('href').split('/')[2]
 			$('.user-other-container').remove()
 			$('#' + $(@).attr('href').split('/')[2]).children('.convo-link').click()
@@ -56,7 +57,7 @@ Search =
 			$('.user-other-container').remove()
 			$('body').append data
 			$('.user-other-container').addClass 'animated bounceInRight'
-			$('.content-container').css 'opacity', '.3'
+			# $('.content-container').css 'opacity', '.3'
 
 	collapseChat: ->
 		Search.collapse $(@).parents('.chat-partial')
