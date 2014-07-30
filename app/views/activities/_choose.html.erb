@@ -5,10 +5,12 @@
 		<div id="cat-question" class="head-4 dark-gray act-page">
 			<%= category.ask %>
 		</div>
+		<% if category.parent %>
 		<%= link_to category_path(category.parent), remote: true, class: 'back-link' do  %>
 			<div id="cat-act-back" class="dark-gray head-4">
 				<span id="back-text"><< Back to <%= category.parent.name %></span>
 			</div>
+		<% end %>
 		<% end %>
 		<div id="finished" class="head-4 gray">
 			Finished?

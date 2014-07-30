@@ -1,11 +1,11 @@
-<% if category.activities.empty? %>
-<% p category.activities; puts "\n" * 10 %>
+<% if category.activities.where(suggested_by: nil).empty? %>
 	<div id="categories-content-container">
 		<div id="cat-content">
 			<div id="cat-question" class="head-2 dark-gray">
 				<%= category.ask %>
 			</div>
 			<% if category.parent %>
+				<% p category.parent; puts "\n" * 10 %>
 				<%= link_to category_path(category.parent), remote: true, class: 'back-link' do  %>
 					<div id="cat-back" class="gray head-3">
 						<span id="back-text"><< Back to <%= category.parent.name %></span>

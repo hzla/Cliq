@@ -48,7 +48,7 @@ Events =
     eventType = $(@).children().text()
     $('.event-sort').children().removeClass 'selected'
     $(@).children().addClass 'selected'
-    $('#events').html data
+    $('events-box').html data
     $('#upcoming-header').text "#{eventType} Events:"
 
   closeModal: (event, data, xhr, status) ->
