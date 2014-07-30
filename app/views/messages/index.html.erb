@@ -1,3 +1,5 @@
+<% if current_user.ordered_conversations.length > 0 %>
+<% puts @message; puts "\n" * 10 %>
 <div id="messages-container">
 	<div class="message-content-container">
 		<div class="message-content">
@@ -29,7 +31,7 @@
 		</div>
 		<div id="thread-container">
 			<div id="messages-box">
-		<%= render partial: 'chat_history', locals: {conversation: @conversation, other_user: @other_user} %>
+		<%= render partial: 'chat_history', locals: {conversation: @conversation, other_user: @other_user, new_message: @message} %>
 			</div>
 		</div>
 	</div>
@@ -38,3 +40,4 @@
 		$($('.conversation')[0]).addClass('current')
 	</script>
 </div>
+<% end %>

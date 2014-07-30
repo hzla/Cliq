@@ -6,7 +6,8 @@
 		<% end %>
 	</div>
 	<div class="message-form">
-		<%= form_for [conversation, @message], remote: true do |f| %>
+		<% puts @message; puts "\n" * 10 %>
+		<%= form_for [conversation, new_message], remote: true do |f| %>
 			<%= f.text_area :body, id: 'chat-box' %>
 			<%= f.submit :class => :hidden %>
 		<% end %>

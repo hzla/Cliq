@@ -11,6 +11,8 @@ class MessagesController < ApplicationController
 			@other_user = @conversation.get_other_user current_user
 		else
 		end
+		puts "\n" * 20
+		puts @message
 		respond_to do |format|
         format.html { render :layout => !request.xhr? }
         # other formats
