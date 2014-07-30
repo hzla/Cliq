@@ -5,7 +5,7 @@ Swipe =
 		@hideResults()
 	
 	hideResults: ->
-		$('.swiped-result').hide()
+		console.log "showed"
 		$('.swiped-result').first().show()
 
 	swipeNext: ->
@@ -14,6 +14,8 @@ Swipe =
 		current.addClass('animated slideOutRight')
 		current.bind 'oanimationend animationend webkitAnimationEnd', ->
 			current.hide()
+			console.log current
+			console.log next
 			if next.attr('class') == 'swiped-result'
 				next.show()
 				next.addClass ('animated slideInLeft')
