@@ -25,10 +25,10 @@ Messages =
 	prepConversation: ->
 		$('.conversation').removeClass 'current'
 		$(@).parent().addClass 'current'
-		$('#messages').html('loading...')
+		$('#messages-box').html('loading...')
 
 	appendConversation: (event, data, xhr, status) ->
-		$('#messages').html(data)
+		$('#messages-box').html(data)
 		$('.message-history')[0].scrollTop = $('.message-history')[0].scrollHeight
 		$('.convo-link').find('.convo-last-message').each ->
 			$(@).css 'color', '#bebebe' if $(@).css('color') != "rgb(24, 195, 189)"
@@ -45,7 +45,7 @@ Messages =
 
 	blockUser: ->
 		$(@).parents('.conversation').remove()
-		$('#messages').html ''
+		$('#messages-box').html ''
 
 
 
