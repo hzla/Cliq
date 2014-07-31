@@ -7,9 +7,19 @@ MobileSearch =
 	swipeUpToResults: ->
 		$('#search-container').addClass('animated fadeOutDownBig')
 		$('#results-container').show().removeClass().addClass('mobile animated fadeInDownBig')
-		$("#results-container").swipe 
+		$(".swiped-actions").swipe 
   		swipe: (event, direction, distance, duration, fingerCount) ->
-    		MobileSearch.swipeDownToSearch()
+    		MobileSearch.swipeDownToSearch() if direction == "up"
+    		console.log distance
+    	threshold: 100 
+
+		if $('#empty:visible').length > 0
+			console.log "triying"
+			$("#results-container").swipe 
+				swipe: (event, direction, distance, duration, fingerCount) ->
+					MobileSearch.swipeDownToSearch() if direction == "up"
+					console.log "adfasdf"
+				threshold: 500
 
 	swipeDownToSearch: ->
 		console.log "tried"
