@@ -19,6 +19,7 @@
 	height: 400px;
 	width: 92%;
 	float: left;
+	height: calc(100% - 250px);
 }
 
 .message-history.chat .message {
@@ -28,6 +29,7 @@
 #chat-partial-content {
 	float: left;
 	margin-left: 64px;
+	height: 100%;
 }
 
 #chat-header {
