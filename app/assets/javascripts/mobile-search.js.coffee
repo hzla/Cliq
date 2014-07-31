@@ -10,7 +10,7 @@ MobileSearch =
 		$('#results').html data
 		$('.swiped-result').hide()
 		$('.swiped-result').first().show().addClass 'animated fadeIn'
-		if $('#empty').length > 0
+		if $('#empty:visible').length > 0
 			$('#no-one-around').show()
 			$("#results").swipe 
 				swipe: (event, direction, distance, duration, fingerCount) ->
