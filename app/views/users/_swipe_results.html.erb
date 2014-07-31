@@ -15,6 +15,10 @@
 						<%= image_tag entry[0].obscured_pic , :class => "swiped-profile-pic-card" %>
 					<% end %>
 				<% end %>
+
+				<div class="search-button">
+					<%= image_tag "mobile-search.svg", :class => "search-icon" %>
+				</div>
 				
 				<div class="card-header">
 					<%= link_to other_user_path(entry[0]), :class => "other-user", remote: true do %>
@@ -26,8 +30,9 @@
 					<div class="swiped-school">
 						<%= entry[0].school %>
 					</div>
-					
 				</div>
+
+
 				<div class="suggestions-container">
 
 					<div class="swiped-suggestions">
@@ -51,7 +56,7 @@
 					<div class="swiped-actions">
 						<div class="swipe-action-content">
 							<div class="swipe-next">
-								<%= image_tag "Next.svg", :class => "swiped-action-icon svg" %>
+								<%= image_tag "Next.svg", :class => "swiped-action-icon svg next-icon" %>
 							</div>
 
 							<div class="swipe-info">
@@ -62,7 +67,7 @@
 
 							<div class="chat white inv-btn swiped">	
 								<%= link_to user_chat_path(entry[0]), :class => "white chat-user", remote: true do %>
-									<%= image_tag "messages-white.svg", :class => "swiped-action-icon" %>
+									<%= image_tag "messages-white.svg", :class => "swiped-action-icon chat-icon" %>
 								<% end %>
 							</div>	
 						</div>
@@ -99,7 +104,9 @@
 </script>
 <script>
 	var height = ($(window).height() - 278) + "px"
+	var mobileHeight = ($(window).height() - 478) + "px"
 	$('.suggestions-container').css('height', height)
+	$('.mobile .suggestions-container').css('height', mobileHeight)
 	$(window).resize(function(){
 		var newHeight = ($(window).height() - 278) + "px"
 		$('.suggestions-container').css('height', newHeight)

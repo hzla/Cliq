@@ -13,7 +13,9 @@
 <body>
 <% if current_user %>
    <%= render partial: "users/top_nav", locals: {active: :none} %>
-
+   <script>
+   		$('.content-container').css('margin-top' , '100px')
+   </script>
 <% end %>
 <div class="content-container mobile">
 <%= yield %>
@@ -22,6 +24,12 @@
 <script>
 <%= render partial: 'users/subscribe.js.erb' %>
 </script>
+
+<% if current_user %>
+   <script>
+   		$('.content-container').css('margin-top' , '100px')
+   </script>
+<% end %>
 
 
 </body>

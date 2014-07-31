@@ -130,7 +130,7 @@ Search =
 					$('#query-interests').prepend "<div class='query-interest search-term searched' id='#{ui.item.value}'>#{label}</div>"
 					$('#activity').val('')
 					$(@).css 'color', '#939393'
-					$('#search-form').submit()
+					$('#search-form').submit() if $('.mobile').length < 1
 				focus: (event, ui) ->
 					event.preventDefault()
 					$(@).val ui.item.label
