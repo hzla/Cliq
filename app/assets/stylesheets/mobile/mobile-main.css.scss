@@ -13,7 +13,7 @@
 
 .search-top {
 	background-image: image_url("jump_side.png");
-	height: 20%;
+	height: 220px;
 	text-align: center;
 }
 
@@ -101,13 +101,25 @@ input, textarea {
 	width: 100%;
 }
 
+.mobile .suggestion-container {
+	overflow-y: none;
+}
+
 .mobile .swiped-suggestions {
 	width: 100%;
 	margin-left: 0px;
+	overflow-y: scroll;
 }
 
 .mobile .swiped-similarities {
 	float: none;
+	width: 100%;
+	text-align: center;
+}
+
+.mobile .swiped-school {
+	float: none;
+	width: 100%;
 }
 
 .mobile .swiped-count {
@@ -120,7 +132,7 @@ input, textarea {
 }
 
 .mobile .swiped-actions {
-	top: calc(100% - 388px);
+	top: calc(100% - 425px);
 	left: 0;
 	width: 100%;
 }

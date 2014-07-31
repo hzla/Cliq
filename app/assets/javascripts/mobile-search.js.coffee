@@ -3,6 +3,12 @@ MobileSearch =
 		$('body').on 'ajax:success', '#search-form.mobile', @swipeUpToResults
 		$('body').on 'click', '.search-icon', @swipeDownToSearch
 		$('body').on 'swipeup', '#results-container', @swipeDownToSearch
+		$('body').on 'swipe-up', @alertShit
+
+	alertShit: ->
+		alert("you swiped up")
+		console.log('hi')
+
 
 	swipeUpToResults: ->
 		$('#search-container').addClass('animated fadeOutDownBig')
