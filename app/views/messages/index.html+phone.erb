@@ -1,0 +1,38 @@
+<% if current_user.ordered_conversations.length > 0 %>
+<div id="messages-container" class="mobile">
+	<div class="message-content-container">
+		<div class="message-content">
+			<div id="conversations">
+				<% current_user.ordered_conversations.each do |convo| %>
+
+					<% user = convo.get_other_user current_user %>
+
+					<div class="conversation" id="<%= user.id %>">
+						<%= link_to other_user_path(user), :class => "other-user", remote: true do %>
+							<% if current_user.conversated_with? user %>
+								<%= image_tag user.profile_pic_url || 'cliq.png', :class => "convo-pic" %>
+							<% else %>
+								<%= image_tag 'cliq.png', :class => "convo-pic" %>
+							<% end %>
+						<% end %>
+						<%= link_to conversation_path(convo, phone: true), :class => "convo-link", remote: true do %>
+							<div class="convo-details">
+								<div class="convo-name head-5"><%= user.first_name %></div>
+								<div class="convo-last-message head-5 gray"><%= convo.last_message %></div>
+							</div>
+						<% end %>
+					</div>
+				<% end %>
+			</div>
+		</div>
+		<div id="thread-container" class="hidden">
+			<div id="messages-box">
+				<%= render partial: 'chat_history', locals: {conversation: @conversation, other_user: @other_user, new_message: @message} %>
+			</div>
+			</div>
+			</div>
+		</div>
+	</div>
+	<div id="invite-modal-container" class="modal"></div>
+</div>
+<% end %>

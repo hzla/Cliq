@@ -7,6 +7,10 @@ include SessionsHelper
 		@user = current_user
 		# @conversation.update_notifications current_user
 		@other_user = @conversation.get_other_user current_user
+		if params[:phone] == "true"
+			render 'mobile_show', layout: false
+			return
+		end
 		render layout: false
 	end
 

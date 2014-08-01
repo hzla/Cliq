@@ -28,11 +28,13 @@ Messages =
 		$('#messages-box').html('loading...')
 
 	appendConversation: (event, data, xhr, status) ->
-		$('#messages-box').html(data)
-		$('.message-history')[0].scrollTop = $('.message-history')[0].scrollHeight
-		$('.convo-link').find('.convo-last-message').each ->
-			$(@).css 'color', '#bebebe' if $(@).css('color') != "rgb(24, 195, 189)"
-		$(@).find('.convo-last-message').css 'color', 'white'
+		if $('.mobile').length < 1
+			console.log "stupid"
+			$('#messages-box').html(data)
+			$('.message-history')[0].scrollTop = $('.message-history')[0].scrollHeight
+			$('.convo-link').find('.convo-last-message').each ->
+				$(@).css 'color', '#bebebe' if $(@).css('color') != "rgb(24, 195, 189)"
+			$(@).find('.convo-last-message').css 'color', 'white'
 
 	submitMessageOnEnter: (e) ->
 		if (e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)

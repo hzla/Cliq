@@ -1,0 +1,23 @@
+<div class="message-history mobile">
+	<% @conversation.ordered_messages.each do |message| %>
+		<%= render partial: 'messages/show', locals: {message: message} %>
+	<% end %>
+</div>
+
+	<div class="message-form">
+		<%= form_for [@conversation, @message], remote: true do |f| %>
+			<%= f.text_area :body, id: 'chat-box' %>
+		<% end %>
+		<div id="message-actions">
+			<div class="action-button dark-gray message-reply inv-btn mes-action">
+				<div class="result-action reply">Send</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$('.messages .counter').text(<%= current_user.message_count %>)
+		<% if current_user.message_count < 1 %>
+			$('.messages .counter').addClass("hidden")
+		<% end %>
+	</script>
