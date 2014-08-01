@@ -1,0 +1,63 @@
+
+	<div id="search-container" class="mobile big-search">
+		<div id="search-content" class="mobile">
+			<div id="query" class="mobile">
+			
+
+				<%= form_tag search_path, id: "search-form", :class => "mobile big-search", remote: true do %>
+					<div class="search-top">
+						<div id="query-row-1">
+							<div id="query-1" class="mobile white">I want to hang out in</div>
+							<%= text_field_tag :location, nil, :class => "mobile dark-gray search-term", id: "query-location", value: current_user.address %>
+							<%= hidden_field_tag "location_id" %>
+						</div>
+					</div>
+					<div class="search-bottom">
+						<div id="query-2" class="mobile white">with people interested in</div>
+					
+						<div id="query-interests" class="mobile dark-gray">
+							<%= text_field_tag :activity, nil, :class => "query-interest search-term mobile", placeholder: 'Type here' %>
+						</div>
+						<%= hidden_field_tag "ids" %>
+						<%= hidden_field_tag "type", "mobile_search" %>
+						<%= submit_tag "", :class => "head-3 mobile hidden ", id:"search-query" %>
+						<%= image_tag "mobile-search.svg", :class => "quick-search-button" %>
+					</div>
+				<% end %>
+				<div class="hidden enable-auto-search"></div>
+			</div>
+		</div>
+	</div>
+
+		<div id="results-container" class="mobile big-search">
+				<% if @user_empty %>
+				<div class="mobile no-int-container">
+					<div class="mobile no-ints">
+						It looks like you don't have any interests yet.<br>
+						Click <%= link_to "here", choose_cat_path(@category), id: "choose-cats" %> to add some!
+					</div>
+				</div>
+			<% end %>
+			
+				<div id="results-header" class="mobile">
+				</div>
+				
+
+				<div id="results" class="mobile">
+					<% if !@user_empty %>
+						<%= render partial: 'mobile_search_results', locals: {results: @results} %>
+					<% end %>
+				</div>
+		</div>
+</div>
+
+<script>
+<%= render partial: 'subscribe.js.erb' %>
+</script>
+
+
+
+
+
+
+
