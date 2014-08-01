@@ -44,7 +44,7 @@
 	float: none;
 	height: 80px;
 	font-size: 60px;
-	width: 90%;
+	width: calc(100% - 70px);
 	text-align: center;
 }
 
@@ -104,7 +104,8 @@ input, textarea {
 
 .mobild .swiped-content {
 	border: 1px solid white;
-	margin-top: -1px;
+	margin-bottom: -1px;
+
 }
 
 .mobile .suggestion-container {
@@ -206,6 +207,8 @@ input, textarea {
 	width: 0;
 	margin-left: 27%;
 	text-align: center;
+	border: 1px solid white;
+	margin-bottom: -1px;
 }
 
 .mobile .swiped-card-name {
@@ -221,4 +224,26 @@ input, textarea {
 	float: right;
 }
 
+.mobile .swiped-result {
+	border: 1px solid white;
+	margin-bottom: -10px;
+}
+
+.mobile .swiped-sug-name {
+	height: 35px;
+	font-size: 30px;
+	line-height: 30px;
+	border-top-left-radius:	30px;
+	border-top-right-radius: 30px; 
+}
+
+.mobile .swiped-sug-pic {
+	height: calc(100% - 41px);
+	border-bottom-left-radius:	30px;
+	border-bottom-right-radius: 30px; 
+}
+
+.mobile .swiped-suggestion {
+	border-radius: 30px;
+}
 
