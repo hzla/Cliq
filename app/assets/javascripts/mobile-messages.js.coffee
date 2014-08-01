@@ -30,6 +30,7 @@ MobileMessages =
   		swipe: (event, direction, distance, duration, fingerCount) ->
     		MobileMessages.swipeToMessages() if direction == "right"
     	threshold: 500 
+    	allowPageScroll: "vertical"
 
 	obscureDate: ->
 		dates = $('.date')
