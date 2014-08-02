@@ -124,3 +124,21 @@
 	}
 }
 
+
+///////////////////////////////////////
+
+.mobile.chat-partial {
+	width: 100%;
+}
+
+.mobile {
+	#chat-partial-content {
+		margin-left: 0px;
+	}
+	.message-history {
+		height: calc(100% - 250px);
+		margin-top: 100px;
+	}
+}
+
+

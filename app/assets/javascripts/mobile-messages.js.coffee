@@ -5,6 +5,15 @@ MobileMessages =
 		$('body').on 'ajax:success', '#new_message', @obscureDate
 		$('body')	.on 'click', '.mobile .reply', @submitMessage
 
+		$('body').on 'click', '.content-container', @removeChat
+		$('body').on 'click', '.results-container', @removeChat
+
+	removeChat: ->
+		$('.chat-partial').remove()
+		$('.content-container').css 'opacity', ''
+		$('.content-container').css 'background', '#f1f1f1'
+
+
 	submitMessage: ->
 		$('#new_message').submit()
 		$('#new_message')[0].reset()
@@ -60,7 +69,8 @@ MobileMessages =
 				cTotalTime = cHours + cMins
 				difference = cTotalTime - totalTime
 				if difference < 30 && difference > -1
-					$(@).hide()  
+					$(@).hide() 
+
 
 
 

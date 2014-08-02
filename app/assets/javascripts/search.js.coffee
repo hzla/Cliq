@@ -8,13 +8,13 @@ Search =
 		$('body').on 'ajax:beforeSend', '.chat-user', @checkTab
 		$('body').on 'click', '.chat-user', @switchChat
 		$('body').on 'ajax:success', '.other-user', @showUser
-		$('body').on 'click', '.chat-collapse', @collapseChat
+		$('body').on 'click', '.chat-collapse', @collapseChat if $('.mobile').length < 1
 		$('body').on 'click', '.collapsed-chat', @addChat
 		$('body').on 'click', '.close', @closeChat
 		$('body').on 'ajax:success', '#search-form', @displayResults
 		$('body').on 'submit', '#search-form', @displaySearching
-		$('.content-container').click @collapseAllChat
-		$('.results-container').click @collapseAllChat
+		$('.content-container').click @collapseAllChat if $('.mobile').length < 1
+		$('.results-container').click @collapseAllChat if $('.mobile').length < 1
 		$('.send-activation').on 'submit', @thankUser
 		$('body').on 'click', '.searched', @removeTerm
 		$('body').on 'keypress', '#activity', @selectInterestOnEnter
@@ -43,7 +43,21 @@ Search =
 		if $('#' + $(@).attr('href').split('/')[2]).length < 1
 			$('body').append data
 			$('.chat-partial').removeClass('current-thread')
-			$('.chat-partial').last().addClass 'animated bounceInRight current-thread'
+			$('.chat-partial').last().addClass 'animated bounceInRight current-thread mobile'
+		
+		name = $('.swiped-card-name:visible').text()
+		$('.menu-title').text name
+		$(".chat-partial").swipe 
+			swipe: (event, direction, distance, duration, fingerCount) ->
+				if direction == "right"
+					$('.chat-partial').addClass 'animated fadeOutRightBig'
+					$('.chat-partial').one 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', ->
+						$('.chat-partial').remove()
+						$('.content-container').css 'opacity', ''
+						$('.content-container').css 'background', '#f1f1f1'
+						$('.menu-title').text 'Cliq'
+			threshold: 400 
+			allowPageScroll: "vertical"
 
 	checkTab: () ->
 		id = $(@).attr('href').split('/')[2]
