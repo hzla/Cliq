@@ -196,6 +196,18 @@ input, textarea {
 	margin-top: 5%;
 }
 
+.mobile #post-invite {
+	font-size: 30px;
+}
+
+.mobile #enter-email {
+	font-size: 40px;
+}
+
+.mobile #what-send {
+	font-size: 40px;
+}
+
 .mobile .swiped-profile-pic-card {
 	width: 150px;
 	height: 150px;
@@ -242,6 +254,15 @@ input, textarea {
 	border-bottom-left-radius:	30px;
 	border-bottom-right-radius: 30px; 
 }
+
+.mobile .headers .swiped-sug-pic {
+	border-radius:	30px;
+}
+
+.mobile .headers .swiped-sug-pic.mutual {
+	width: 100%;
+}
+
 
 .mobile .swiped-suggestion {
 	border-radius: 30px;
