@@ -83,6 +83,7 @@
 	.message {
 		font-size: 45px;
 		border-radius: 25px;
+		max-width: 90%;
 	}
 	.message-form {
 		background: $super-light-gray;
@@ -111,7 +112,7 @@
 	#chat-box {
 		height: 55px;
 		padding-top: 20px;
-		width: 70%;
+		width: 68%;
 		margin-left: 4%;
 		padding-left: 5%;
 		padding-right: 5%;

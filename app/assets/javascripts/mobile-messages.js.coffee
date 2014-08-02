@@ -8,6 +8,8 @@ MobileMessages =
 	submitMessage: ->
 		$('#new_message').submit()
 		$('#new_message')[0].reset()
+		$('.message-history')[0].scrollTop = 0
+		$('.message-history')[0].scrollTop = $('.message-history')[0].scrollHeight 
 
 	clickConvoLink: ->
 		$(@).find('.convo-link').click()
