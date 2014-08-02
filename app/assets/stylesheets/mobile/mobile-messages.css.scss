@@ -89,9 +89,10 @@
 	}
 	#message-actions {
 		height: 50%;
-		width: 15%;
+		width: 12%;
 		margin-top: 20px;
 		float: right;
+		margin-right: 3%;
 	}
 	.action-button.mes-action {
 		background: none;
@@ -99,12 +100,17 @@
 			color: $dark-gray;
 			font-size: 50px;
 			font-weight: 400;
+			line-height: 100px;
+			width: 300px;
+			height: 200px;
+			margin-top: -25px;
+			padding-top: 5px;
 		}
 	}
 
 	#chat-box {
-		height: 90px;
-		padding-top: 10px;
+		height: 55px;
+		padding-top: 20px;
 		width: 70%;
 		margin-left: 4%;
 		padding-left: 5%;
@@ -112,6 +118,8 @@
 		font-size: 45px;
 		border-radius: 100px;
 		line-height: 45px;
+		padding-bottom: 10px;
+		margin-top: 24px; 
 	}
 }
 

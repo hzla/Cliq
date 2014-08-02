@@ -3,6 +3,11 @@ MobileMessages =
 		$('body').on 'click', '.convo-link', @swipeToConvo
 		$('body').on 'ajax:success', '.convo-link', @appendConvo
 		$('body').on 'ajax:success', '#new_message', @obscureDate
+		$('body')	.on 'click', '.mobile .reply', @submitMessage
+
+	submitMessage: ->
+		$('#new_message').submit()
+		$('#new_message')[0].reset()
 
 	clickConvoLink: ->
 		$(@).find('.convo-link').click()

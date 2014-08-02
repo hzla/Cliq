@@ -17,9 +17,10 @@ Messages =
 		$(@).find('.convo-block').hide()
 
 	submitMessage: ->
-		$(@).parent().parent().prev().prev().submit()
-		$('.sending-progress').text('Sending...').show() if $('#chat-box').val().replace(/^\s+|\s+$/g, "") != ""
-		$('.chat-box').val ''
+		if $('.mobile').length < 1
+			$(@).parent().parent().prev().prev().submit()
+			$('.sending-progress').text('Sending...').show() if $('#chat-box').val().replace(/^\s+|\s+$/g, "") != ""
+			$('.chat-box').val ''
 		
 
 	prepConversation: ->
@@ -35,6 +36,7 @@ Messages =
 			$('.convo-link').find('.convo-last-message').each ->
 				$(@).css 'color', '#bebebe' if $(@).css('color') != "rgb(24, 195, 189)"
 			$(@).find('.convo-last-message').css 'color', 'white'
+
 
 	submitMessageOnEnter: (e) ->
 		if (e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)
