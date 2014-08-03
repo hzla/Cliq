@@ -78,6 +78,17 @@ Search =
 			$('body').append data
 			$('.user-other-container').addClass 'animated bounceInRight'
 			# $('.content-container').css 'opacity', '.3'
+			$('.user-other-container').swipe	
+				swipe: (event, direction, distance, duration, fingerCount) ->
+					if direction == "right"
+						$('.user-other-container').addClass 'animated fadeOutRightBig'
+						$('.user-other-container').one 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', ->
+							$('.chat-partial').remove()
+							$('.content-container').css 'opacity', ''
+							$('.content-container').css 'background', '#f1f1f1'
+							$('.menu-title').text 'Cliq'
+					threshold: 400 
+					allowPageScroll: "vertical"
 
 	collapseChat: ->
 		Search.collapse $(@).parents('.chat-partial')

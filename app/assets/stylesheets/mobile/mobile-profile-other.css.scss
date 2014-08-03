@@ -14,4 +14,31 @@
 	.cat-header {
 		font-size: 55px;
 	}
+	#name {
+		font-size: 100px;
+	}
+	#chat-other {
+		float: right;
+		font-size: 30px;
+		color: white;
+	}
+	.right.other {
+		font-size: 30px;
+		color: white;
+	}
+	.other-instructions {
+		font-size: 30px;
+	}
+	.int-type.selected {
+		padding-left: 12px;
+		padding-right: 12px;
+	}
+	.cat-name {
+		font-size: 45px;
+		line-height: 1.2;
+	}
+	.category {
+		height: 50px;
+	}
+
 }

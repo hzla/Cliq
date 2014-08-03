@@ -1,0 +1,56 @@
+<div class="interests other">
+
+	<div id="other-interest-list">
+				
+			<div class="other-instructions">
+				Tap <span class="orange">orange</span> interests to add to your own!<br>
+				<div class="interest-sort">
+					Show: <span class="all-ints int-type selected">All </span> <span class="shared-ints int-type">Shared </span> <span class="different-ints int-type">Different </span>
+				</div>
+
+			</div>
+
+			<div id="other-sim">
+				<div class="mutual">
+					<%= image_tag "Mutual.svg", :class => "sim-label svg" %>
+					<div class="sim dark-gray"><%= current_user.similarities_with @user %></div>
+				</div>
+
+			<!-- 	<div class="similar">
+					<%= image_tag "Similar.svg", :class => "sim-label svg" %>
+					<div class="sim dark-gray"><%= current_user.similarities_with @user %></div>
+				</div> -->
+			</div>
+
+
+			<% format.each do |cat_type| %>
+				<div class="cat-section other">
+					<div class="cat-header other">
+						<%= cat_type[0] %>
+					</div>
+					<% if formatted_interests[cat_type[1]][0] %>
+						<% formatted_interests[cat_type[1]].each do |cat| %>
+							<% cat.each do |cat_name, acts| %>
+								<div class="cat-group other">
+									<div class="category dark-gray"><div class="cat-name"><%= cat_name[0..13] + 
+									"#{('..' if cat_name.length > 14)}" %></div></div>
+									<div class="activities">
+										<% acts.each do |activity| %>
+											<%= link_to interests_path(act_id: activity.id, nothing: true), remote: true, method: :post, class: 'add-other-act' do %>
+												<div class="activity">
+													<div class="act-name other <%= activity.shared_between?(current_user, @user) ? 'shared' : 'different' %> ">
+														<%= activity.shortened_name %> •
+													</div>
+												</div>
+											<% end %>
+										<% end %> 
+									</div>
+								</div>
+							<% end %>
+						<% end %>
+					<% end %>
+				</div>
+			<% end %>
+
+	</div>
+</div>
