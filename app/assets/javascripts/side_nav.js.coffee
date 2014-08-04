@@ -62,6 +62,6 @@ Animations =
 
 
 ready = ->
-	Animations.init()
+	Animations.init() if $('.mobile').length < 1
 $(document).ready ready
 $(document).on 'page:load', ready

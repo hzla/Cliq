@@ -13,9 +13,9 @@
 }
 
 .menu-icon {
-	height: 80px;
-	width: 80px;
-	margin-top: 10px;
+	height: 100px;
+	width: 100px;
+	margin-top: 0px;
 }
 
 .menu-title {
@@ -40,4 +40,51 @@
 
 .content-container.mobile {
 	height: calc(100% - 100px)
+}
+
+
+////////////////////////////
+
+
+.top-nav-content {
+	background: white;
+	height: 100%;
+	width: 90%;
+	left: 0;
+	position: absolute;
+	z-index: 100;
+}
+
+.top-nav-content .icon-label {
+	opacity: 1;
+	color: $light-turq;
+}
+
+.mobile {
+	.mob-nav {
+		height: 100px;
+		border-bottom: 1px solid $super-light-gray;
+		padding-bottom: 10px;
+		.svg path {
+			fill: $light-turq;
+		}
+		.nav-icon {
+			height: 80px;
+			width: 80px;
+		}
+		.icon-label.main {
+			width: 80%;
+			font-size: 45px;
+			font-family: $generic-font;
+			left: 125px;
+			top: 10px;
+		}
+	}
+	.settings.side-icon {
+		margin-left: 0px;
+		position: absolute;
+		.icon-label.main {
+			width: 500px;
+		}
+	}
 }
