@@ -43,7 +43,8 @@ Search =
 		if $('#' + $(@).attr('href').split('/')[2]).length < 1
 			$('body').append data
 			$('.chat-partial').removeClass('current-thread')
-			$('.chat-partial').last().addClass 'animated bounceInRight current-thread mobile'
+			$('.chat-partial').last().addClass 'animated bounceInRight current-thread'
+			$('.chat-partial').addClass('mobile') if $('.mobile').length > 0
 		
 		name = $('.swiped-card-name:visible').text()
 		$('.menu-title').text name
