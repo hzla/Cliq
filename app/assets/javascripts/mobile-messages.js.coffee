@@ -1,12 +1,12 @@
 MobileMessages = 
 	init: ->
-		$('body').on 'click', '.convo-link', @swipeToConvo
-		$('body').on 'ajax:success', '.convo-link', @appendConvo
-		$('body').on 'ajax:success', '#new_message', @obscureDate
+		$('body').on 'click', '.mobile .convo-link', @swipeToConvo
+		$('body').on 'ajax:success', '.mobile .convo-link', @appendConvo
+		$('body').on 'ajax:success', '.mobile #new_message', @obscureDate
 		$('body')	.on 'click', '.mobile .reply', @submitMessage
 
-		$('body').on 'click', '.content-container', @removeChat
-		$('body').on 'click', '.results-container', @removeChat
+		$('body').on 'click', '.mobile .content-container', @removeChat
+		$('body').on 'click', '.mobile .results-container', @removeChat
 
 	removeChat: ->
 		$('.chat-partial').remove()

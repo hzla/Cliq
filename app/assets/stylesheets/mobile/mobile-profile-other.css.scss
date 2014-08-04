@@ -20,6 +20,7 @@
 		height: calc(100% - 300px) ;
 		-webkit-overflow-scrolling: touch;
 		width: 100%;
+		-webkit-transform: translateZ(0px);
 	}
 	.cat-group.other {
 		width: 48%;
