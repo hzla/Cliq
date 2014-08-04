@@ -16,9 +16,10 @@
 		float: left;
 	}
 	.interests.other {
-		overflow-y: scroll;
+		overflow: scroll;
 		height: calc(100% - 300px) ;
-		-webkit-overflow-scrolling: touch
+		-webkit-overflow-scrolling: touch;
+		width: 100%;
 	}
 	.cat-group.other {
 		width: 48%;
