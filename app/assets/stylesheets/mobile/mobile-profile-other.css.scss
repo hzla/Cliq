@@ -1,4 +1,13 @@
 .mobile {
+	.user-other-container {
+		width: 100%;
+	}
+	#other-interest-list {
+		width: 90%;
+	}
+	.main-profile-info.other {
+		width: 90%;
+	}
 	#main-profile-container {
 		margin-top: 100px;
 	}
@@ -16,6 +25,10 @@
 	}
 	#name {
 		font-size: 100px;
+		margin-top: 0px;
+	}
+	#school {
+		font-size: 30px;
 	}
 	#chat-other {
 		float: right;

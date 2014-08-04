@@ -14,19 +14,25 @@ MobileSearch =
 		$('#results').html data
 		$('.swiped-result').hide()
 		$('.swiped-result').first().show().addClass 'animated fadeIn'
+		$('#search-container').addClass('animated fadeOutDownBig')
+		$('#results-container').show().removeClass().addClass('mobile animated fadeInDownBig')
+		
 		if $('#empty:visible').length > 0
+			console.log "no one"
 			$('#no-one-around').show()
 			$("#results").swipe 
 				swipe: (event, direction, distance, duration, fingerCount) ->
+					console.log distance
 					MobileSearch.swipeDownToSearch() if direction == "up"
-				threshold: 500
-		$('#found').text "Please enter a valid location." if $('#invalid').length > 0
-		$('#search-container').addClass('animated fadeOutDownBig')
-		$('#results-container').show().removeClass().addClass('mobile animated fadeInDownBig')
-		$(".swiped-actions").swipe 
-  		swipe: (event, direction, distance, duration, fingerCount) ->
-    		MobileSearch.swipeDownToSearch() if direction == "up"
-    	threshold: 50 
+				threshold: 400
+		else
+			$(".swiped-actions").swipe 
+	  		swipe: (event, direction, distance, duration, fingerCount) ->
+	    		MobileSearch.swipeDownToSearch() if direction == "up"
+	    	threshold: 50 
+		
+		
+	
 
 	swipeDownToSearch: ->
 		$('#results-container').addClass('animated fadeOutUpBig')

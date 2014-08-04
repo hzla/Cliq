@@ -10,20 +10,7 @@
 			
 			<div class="left">
 				<div class="head-1" id="name"><%= @user.first_name %></div>
-			</div>
-
-				<div class="right other">
-					<div id="invite-other">
-					<%= @user.school %>
-					</div>
-
-					<div id="chat-other">	
-						<% if @user.active %>
-							<div class="head-4" id="active">Active</div>
-						<% else %>
-							<div class="head-4" id="active">Offline</div>
-						<% end %>
-					</div>
+				<div id="school"><%= @user.school %></div>
 			</div>
 		</div>
 	</div>

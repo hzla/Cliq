@@ -1,5 +1,10 @@
 @import '../variables';
 
+
+body.mobile div {
+   -webkit-overflow-scrolling: touch;    
+}
+
 .mobile.container {
 	background-image: image_url("mobile-background.jpg");
 }
