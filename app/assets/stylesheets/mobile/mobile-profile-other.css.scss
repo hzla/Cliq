@@ -7,9 +7,18 @@
 	}
 	.main-profile-info.other {
 		width: 90%;
+		padding-top: 20px;
+
 	}
 	#main-profile-container {
 		margin-top: 100px;
+		height: 200px;
+		float: left;
+	}
+	.interests.other {
+		overflow-y: scroll;
+		height: calc(100% - 300px) ;
+		-webkit-overflow-scrolling: touch
 	}
 	.cat-group.other {
 		width: 48%;
@@ -25,7 +34,7 @@
 	}
 	#name {
 		font-size: 100px;
-		margin-top: 0px;
+		margin-top: 5px;
 	}
 	#school {
 		font-size: 30px;
