@@ -1,6 +1,9 @@
 MobileUsers = 
 	init: ->
-		
+		$('body').on 'hover', '.mobile .act-name.other', @clickAct
+
+	clickAct: ->
+		$(@).click()
 		
 
 

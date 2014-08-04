@@ -9,8 +9,8 @@ Users =
 		$('.edit_user').on 'ajax:success', @showSettingsStatus
 		$('#delete-account').on 'click', @showDeleteModal
 		$('#cancel-delete').on 'click', @cancelDelete
-		$('body').on 'mouseenter', '.act-name.other', @showPlus
-		$('body').on 'mouseleave', '.act-name.other', @showDot
+		$('body').on 'mouseenter', '.act-name.other', @showPlus if $('.mobile').length < 1
+		$('body').on 'mouseleave', '.act-name.other', @showDot if $('.mobile').length < 1
 		$('body').on 'ajax:success', '.add-other-act', @addAct
 		$('body').on 'click', '.shared-ints', @showShared
 		$('body').on 'click', '.different-ints', @showDifferent
