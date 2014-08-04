@@ -1,7 +1,7 @@
 @import 'variables';
 
 .user-container {
-	background: $super-light-gray;
+	background: #fff;
 	width: 100%;
 	height: 100%;
 	float: left;
@@ -47,6 +47,7 @@
 	color: white;
 	text-align: center;
 	background-image: image_url("jump_side.png");
+    background-size: cover;
 }
 
 .profile-info {
@@ -67,9 +68,10 @@
 }
 
 .account-stats {
-	color: $dark-turq;
+	color: #fff;
 	margin-top: 20px;
 	margin-bottom: 20px;
+
 }
 
 #self-search {
@@ -82,6 +84,7 @@
 	padding-right: 15px;
 	border-radius: 50px;
 	height: 36px;
+    font-family: "proxima nova";
 }
 
 
@@ -252,9 +255,6 @@
 }
 
 .activity {
-	padding-left: 6px;
-	padding-right: 6px;
-	margin-right: 5px;
 	// height: 20px;
 	font-weight: 500;
 	float: left;
@@ -273,8 +273,8 @@
 	margin-top: 3px;
 	position: relative;
 	cursor: pointer;
-	padding-left: 2px;
-	padding-right: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
 	color: $orange;
 }
 

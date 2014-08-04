@@ -22,6 +22,7 @@
 	top: 0;
 	overflow-y: scroll;
 	background-image: image_url("jump_side.png");
+  background-size: cover;
 }
 
 #other-events-container {
@@ -268,6 +269,7 @@
 }
 
 .event-sort > .head-4:hover {
-	border: 1px solid $dark-gray;
+	background-color: #fff;
 	border-radius: 50px;
+    color: $dark-gray;
 }
