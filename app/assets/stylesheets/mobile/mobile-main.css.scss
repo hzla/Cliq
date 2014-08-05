@@ -46,6 +46,7 @@
 	font-size: 60px;
 	width: calc(100% - 70px);
 	text-align: center;
+	border-radius: 50px;
 }
 
 #activity.query-interest.search-term.mobile {
@@ -56,6 +57,7 @@
 	float: none;
 	text-align: center;
 	margin-top: 20px;
+	border-radius: 50px;
 }
 
 #query-2.mobile {
@@ -88,7 +90,7 @@
 	margin-bottom: 20px;
 }
 
-.search-container input, textarea {
+#search-container input, textarea {
   -webkit-appearance: none;
   -webkit-border-radius: 0;
   -webkit-border-radius: 0px;
