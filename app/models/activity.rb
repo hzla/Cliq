@@ -11,7 +11,7 @@ class Activity < ActiveRecord::Base
 	end
 
 	def super_short_name 
-		name.length > 16 ? name[0..14] + "..." : name  
+		name.length > 14 ? name[0..12] + "..." : name  
 	end
 
 	def self.parse_interests ids

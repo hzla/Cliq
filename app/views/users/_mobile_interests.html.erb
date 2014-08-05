@@ -2,15 +2,18 @@
 		<div class="cat-collection">
 			<% @unformatted_interests.each do |cat_acts| %>
 					<div class="scroll-cat">
-						<div class="scroll-cat-name"><%= cat_acts.first[0] %></div>
+						<div class="scroll-cat-name"><%= cat_acts.first[1].first.category.mobile_name %></div>
 						<%= image_tag cat_acts.first[1].first.category.image_url, :class => "scroll-cat-pic" %>
 						<div class="overlay hidden"></div>
 					</div>
 					<div class="scroll-acts hidden">
 						<% cat_acts.first[1].first.category.activities.each do |act| %>
-							<div class="scroll-act <%= 'chosen' if cat_acts.first[1].include?(act) %>">
-								<div class="scroll-act-name"><%= act.super_short_name %></div>
-							</div>
+							
+								<div class="scroll-act <%= 'chosen' if cat_acts.first[1].include?(act) %>">
+									<%= link_to interests_path(act_id: act.id, nothing: true), remote: true, method: :post, class: 'add-other-act' do %>
+										<div class="scroll-act-name"><%= act.super_short_name %></div>
+									<% end %>
+								</div>
 						<% end %>
 					</div>
 			<% end %>

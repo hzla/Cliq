@@ -1,13 +1,16 @@
 @import '../variables';
 
 .mobile {
+	.user-container {
+	}
 	#profile-container {
 		background-image: none;
 		width: 100%;
 		height: 66px;
 		float: left;
-		border-top: 1px solid $light-gray;
 		position: static;
+		border-top: 1px solid $super-light-gray;
+		margin-top: 1px;
 	}
 	.profile-info {
 		margin: 0 auto;
@@ -104,6 +107,9 @@
 		border-radius: 5px;
 		position: relative;
 	}
+	.scroll-act-name {
+		color: white;
+	}
 	.overlay {
 		background-color: rgba(255,137,32,.3);
 		color: white;
@@ -119,8 +125,7 @@
 		margin: 0 auto;
 		position: absolute;
 		color: white;
-		top: -75px;
-		white-space: pre-wrap;
+		top: -35px;
 		text-align: center;
 		left: 5px;
 	}
@@ -139,11 +144,21 @@
 	}
 	#self-search {
 		height: 33px;
-		width: 40%;
+		width: 35%;
 		margin-top: 4px;
 		float: right;
 		font-family: $generic-font;
 		margin-right: 10px;
+		font-weight: 400;
+		font-size: 20px;
+	}
+	#activity_name {
+		width: 35%;
+		float: left;
+		margin-left: 10px;
+		margin-top: 4px;
+		height: 33px;
+		padding-right: 15px;
 	}
 }
 

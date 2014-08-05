@@ -69,5 +69,15 @@ class Category < ActiveRecord::Base
 		short
 	end
 
+	def mobile_name 
+		if full_name.length > 12 
+			name = full_name[0..11]
+			name[5..7] = "..."
+			name[0..7] + full_name[-5..-1]
+		else
+			full_name
+		end
+	end
+
 
 end

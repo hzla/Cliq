@@ -6,6 +6,25 @@ MobileUsers =
 		$('body').on 'submit', '.edit_user', @showSaving
 		$('body').on 'click', '.scroll-cat-pic', @showScrollActs
 		$('body').on 'click', '.scroll-cat-name', @showScrollActs
+		$('body').on 'ajax:success', '.mobile .add-other-act', @addChosen
+		$('body').on 'focus', '.profile-actions input', @tellEnter
+		$('body').on 'focusout', '.profile-actions input', @revert
+		$('body').on 'submit', '.profile-actions form', @focusOut
+
+	tellEnter: ->
+		MobileUsers.old = $(@).attr("placeholder")
+		$(@).attr("placeholder", "submit with 'return' key")
+		$(@).css("width", "calc(90% - 20px)")
+		$('.profile-actions').find('form').hide()
+		$(@).parents('form').show()
+
+	revert: ->
+		$(@).attr("placeholder", MobileUsers.old)
+		$(@).css("width", "35%")
+		$('.profile-actions').find('form').show()
+
+	focusOut: ->
+		$(@).find('input').trigger 'focusout'
 
 	clickAct: ->
 		$(@).click()
@@ -31,7 +50,10 @@ MobileUsers =
 		$('.cat-collection').scrollLeft (index * 125) + 20
 		$('.all-scroll-acts').html acts
 		$('.all-scroll-acts').prepend $('.all-scroll-acts .chosen')
-		$(@).next().show()
+		$(@).parent().find('.overlay').show()
+
+	addChosen: -> 
+		$(@).parent().addClass('chosen')
 			
 
 
