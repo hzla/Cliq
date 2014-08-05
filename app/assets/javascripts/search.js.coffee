@@ -21,6 +21,7 @@ Search =
 		$('body').on 'click', '#cliq-invite', @inviteFriends
 		$('body').on 'submit', '#friend-invite', @sendCliqInvite
 		$('body').on 'keydown', '#query-location' , @deleteLocID
+		
 
 	autoCompleteAll: ->
 		Search.autocompleteLocations()

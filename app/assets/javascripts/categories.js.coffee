@@ -10,6 +10,7 @@ Categories =
 		$('body').on 'ajax:success', '#new_activity', @suggestActivity
 		$('body').on 'ajax:success', '#quick-search', @quickAdd 
 		$('body').on 'click', '#suggest-text', @prepSuggest
+		$('body').on 'ajax:success', '.top-nav-content a', @autocompleteQS
 
 	prepSuggest: ->
 		$(@).hide()
@@ -86,15 +87,15 @@ Categories =
 				$('.interest-info').text ui.item.id
 				$('.ui-state-focus').removeClass('ui-state-focus').addClass 'new-focus'
 			delay: 0
-			# open: (event, ui) -> 
-			# 	firstElement = $(@).data("uiAutocomplete").menu.element[0].children[0]
-			# 	inpt = $('#activity')
-			# 	original = inpt.val()
-			# 	firstElementText = $(firstElement).text()
-			# 	if firstElementText.toLowerCase().indexOf(original.toLowerCase()) == 0
-			# 		inpt.val(firstElementText)
-			# 		inpt[0].selectionStart = original.length; 
-			# 		inpt[0].selectionEnd = firstElementText.length
+			open: (event, ui) -> 
+				$input = $(event.target)
+				$results = $input.autocomplete("widget")
+				top = $results.position().top
+				height = $results.height()
+				inputHeight = $input.height()
+				newTop = top - height - inputHeight
+				newTop -= 15
+				$results.css("top", newTop + "px")
 			minLength: 2
 
 	quickAdd: ->
