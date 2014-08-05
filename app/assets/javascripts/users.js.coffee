@@ -1,14 +1,14 @@
 Users = 
 	init: ->
-		$('#got-it').on 'click', @closeWelcome
+		$('body').on 'click', '#got-it', @closeWelcome
 		$('#send-feedback').on 'click', @openFeedback
 		$('.content-container').on 'click', @hideFeedback
 		$('#faq-container').on 'click', @hideFeedback
 		$('#feedback-form').on 'ajax:success', @closeFeedback
 		$('#feedback-form').on 'submit', @showSending
-		$('.edit_user').on 'ajax:success', @showSettingsStatus
-		$('#delete-account').on 'click', @showDeleteModal
-		$('#cancel-delete').on 'click', @cancelDelete
+		$('body').on 'ajax:success', 'edit_user', @showSettingsStatus
+		$('body').on 'click', '#delete-account', @showDeleteModal
+		$('body').on 'click', '#cancel-delete', @cancelDelete
 		$('body').on 'mouseenter', '.act-name.other', @showPlus if $('.mobile').length < 1
 		$('body').on 'mouseleave', '.act-name.other', @showDot if $('.mobile').length < 1
 		$('body').on 'ajax:success', '.add-other-act', @addAct
@@ -52,13 +52,11 @@ Users =
 		$('#feedback-message').text('Thank you for your feedback.')
 
 	showSettingsStatus: (event, data, xhr, status) ->
-		console.log data
 		if data.error 
 			console.log "Error"
 			$('#user_address').css 'border', '2px solid #ff5959'
 		else
-			console.log "did this"
-			$('#faq-questions').append "<div id='settings-success'>Successfully updated.</div>"
+			$('#faq-questions').append "<div id='settings-success'>Successfully updated.</div>" if $('.mobile').length < 1
 			$('#settings-success').show().addClass 'animated fadeIn'
 			$('#user_address').css 'border', 'none'
 			setTimeout ->

@@ -39,18 +39,18 @@
 						Send Notifications
 					</div>
 
-
+					<div class="notification-setting  head-4">
+					<%= f.check_box :notify_news, value: true, checked: current_user.notify_news, :class => "email-settings hidden-box" %>
+					<%= label :notify_news, "Cliq News & Updates", :class => "settings-label" %>
+					</div>
 					<div class="notification-setting head-4">
-						<%= f.check_box :notify_messages, value: true, checked: current_user.notify_messages, :class => "email-settings" %>
-						<%= f.label :notify_messages, "New Messages" %>
+						<%= f.check_box :notify_messages, value: true, checked: current_user.notify_messages, :class => "email-settings hidden-box" %>
+						<%= label :notify_messages, "New Messages", :class => "settings-label" %>
 					</div>
+					
 					<div class="notification-setting  head-4">
-					<%= f.check_box :notify_events, value: true, checked: current_user.notify_events, :class => "email-settings" %>
-					<%= f.label :notify_events, "Event Invites" %>
-					</div>
-					<div class="notification-setting  head-4">
-					<%= f.check_box :notify_news, value: true, checked: current_user.notify_news, :class => "email-settings" %>
-					<%= label :notify_news, "Cliq News & Updates" %>
+					<%= f.check_box :notify_events, value: true, checked: current_user.notify_events, :class => "email-settings hidden-box" %>
+					<%= label :notify_events, "Event Invites", :class => "settings-label" %>
 					</div>
 
 				</div>
@@ -58,8 +58,8 @@
 
 					<div class="lgbtq-container head-3">
 						<div class="faq-question">I am:</div> 
-						<%= f.check_box :lbgtq, value: true, checked: current_user.lbgtq %>
-						<%= label "lbgtq",nil, "LGBTQ" %>
+						<%= f.check_box :lbgtq, value: true, checked: current_user.lbgtq, :class => "hidden-box" %>
+						<%= label "lbgtq",nil, "LGBTQ", :class => "settings-label" %>
 						<p id="lbgtq-text">
 							(Your anonymous profile icon will change to include a rainbow border.) 
 						</p>
@@ -88,4 +88,11 @@
 <script>
 	marginTop = $('.content-container').height() - 1030 + "px"
 	$('#save-settings').css('margin-top', marginTop)
+
+	$('.hidden-box').each(function(){
+		if ($(this).attr("checked") == "checked") {
+			$(this).next().addClass("enabled");
+		}
+	})
+
 </script>
