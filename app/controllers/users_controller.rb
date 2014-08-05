@@ -23,6 +23,7 @@ class UsersController < ApplicationController
 		@user = User.find params[:id]
 		@format = Category.other_format @user.first_name, @user.sex
 		@formatted_interests = @user.formatted_interests
+		@unformatted_interests = @user.unformatted_interests @formatted_interests
 		render layout: false
 	end
 

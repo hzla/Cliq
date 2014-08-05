@@ -80,7 +80,7 @@ Search =
 			$('body').append data
 			$('.user-other-container').addClass 'animated bounceInRight'
 			$('.content-container').css 'opacity', '.3'
-			$('#main-profile-container').swipe	
+			$('#profile-container').swipe	
 				swipe: (event, direction, distance, duration, fingerCount) ->
 					if direction == "right"
 						$('.user-other-container').addClass 'animated fadeOutRightBig'

@@ -89,7 +89,7 @@
 	.all-scroll-acts {
 		width: calc(100% - 20px);
 		margin: 0 auto;
-		height: 250px;
+		max-height: 250px;
 		overflow-y: scroll;
 	}
 	.scroll-cat {
@@ -164,3 +164,20 @@
 	}
 }
 
+.mobile .user-other-container {
+	#profile-container {
+		height: 170px;
+	}
+	.profile-info {
+		margin-top: 44px;
+		height: 70px;
+
+	}
+	.interests-self {
+		height: calc(100% - 100px);
+		margin-top: 0px;
+	}
+	.account-stats {
+		height: 60px;
+	}
+}

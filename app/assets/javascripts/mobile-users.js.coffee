@@ -7,13 +7,13 @@ MobileUsers =
 		$('body').on 'click', '.scroll-cat-pic', @showScrollActs
 		$('body').on 'click', '.scroll-cat-name', @showScrollActs
 		$('body').on 'ajax:success', '.mobile .add-other-act', @addChosen
-		$('body').on 'focus', '.profile-actions input', @tellEnter
-		$('body').on 'focusout', '.profile-actions input', @revert
-		$('body').on 'submit', '.profile-actions form', @focusOut
+		$('body').on 'focus', '.mobile .profile-actions input', @tellEnter
+		$('body').on 'focusout', '.mobile .profile-actions input', @revert
+		$('body').on 'submit', '.mobile .profile-actions form', @focusOut
 
 	tellEnter: ->
 		MobileUsers.old = $(@).attr("placeholder")
-		$(@).attr("placeholder", "submit with 'return' key")
+		$(@).attr("placeholder", "submit with 'search/go' key")
 		$(@).css("width", "calc(90% - 20px)")
 		$('.profile-actions').find('form').hide()
 		$(@).parents('form').show()
@@ -54,6 +54,7 @@ MobileUsers =
 
 	addChosen: -> 
 		$(@).parent().addClass('chosen')
+		$(@).parent().css 'background', '#14a29d' if $('.user-other-container:visible')
 			
 
 

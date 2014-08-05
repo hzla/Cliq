@@ -1,44 +1,27 @@
-<div class="user-other-container">
+<div class="user-other-container mobile">
 
-	<div id="main-profile-container"> 
-		<div class="main-profile-info other">
-				<% if current_user.conversated_with? @user %>
-					<%= image_tag @user.profile_pic_url, :class => "profile-pic" %>
-				<% else %>
-					<%= image_tag 'cliq.png', :class => "profile-pic" %>
-				<% end %>
-			
-			<div class="left">
-				<div class="head-1" id="name"><%= @user.first_name %></div>
-				<div id="school"><%= @user.school %></div>
-			</div>
-		</div>
-	</div>
-	<%= render partial: 'mobile_other_interests', locals: {user: @user, format: @format, formatted_interests: @formatted_interests} %>
+    
+    <div class="user-container">
+        <div id="profile-container"> 
+            <div class="profile-info">
+                <%= image_tag @user.profile_pic_url, :class => "profile-pic" %>
+                    <div id="name-self"><%= @user.name %></div>
+                    <div id="school-self"><%= @user.school %></div>
+            </div>
+
+            <div class="account-stats">
+                <div class="stat"><span class="number"><%= @user.activities.length%><br></span> Interests</div>
+                <div class="stat" ><span class="number"><%= @user.attendings%><br></span> Events Attended</div>
+                <div class="stat"><span class="number"><%= @user.conversations.where(connected: true).count %><br></span> People
+                 Met</div>                      
+            </div>
+        </div>
+        <%= render partial: 'mobile_interests', locals: {unformatted_interests: @unformatted_interests} %>
+    </div>
+    
+
+
+
+
+
 </div>
-<script>
-  $('img.svg').each(function(){
-    var $img = $(this);
-    var imgID = $img.attr('id');
-    var imgClass = $img.attr('class');
-    var imgURL = $img.attr('src');
-
-    $.get(imgURL, function(data) {
-        // Get the SVG tag, ignore the rest
-        var $svg = $(data).find('svg');
-
-        // Add replaced image's ID to the new SVG
-        if(typeof imgID !== 'undefined') {
-            $svg = $svg.attr('id', imgID);
-        }
-        // Add replaced image's classes to the new SVG
-        if(typeof imgClass !== 'undefined') {
-            $svg = $svg.attr('class', imgClass+' replaced-svg');
-        }
-        // Remove any invalid XML tags as per http://validator.w3.org
-        $svg = $svg.removeAttr('xmlns:a');
-        // Replace image with new SVG
-        $img.replaceWith($svg);
-    }, 'xml');
-  });
-</script>
