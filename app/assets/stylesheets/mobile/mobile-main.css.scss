@@ -12,9 +12,10 @@
 }
 
 .search-top {
-	background-image: image_url("jump_side.png");
-	height: 80px;
+	background: image_url("mobile-background2.jpg") no-repeat center;
+	height: 88px;
 	text-align: center;
+    background-size: cover;
 }
 
 .search-bottom {
@@ -36,22 +37,23 @@
 
 #query-1.mobile {
 	float: none;
-	font-size: 20px;
+	font-size: 17px;
 	padding-top: 10px;
+    margin-bottom: 0px;
 }
 
 #query-location.mobile {
 	float: none;
-	height: 27px;
-	font-size: 20px;
+	height: 31px;
+	font-size: 17px;
 	width: calc(100% - 50px);
 	text-align: center;
-	border-radius: 17px;
+	border-radius: 16px;
 }
 
 #activity.query-interest.search-term.mobile {
 	background-color: $super-light-gray;
-	height: 20px;
+	height: 31px;
 	font-size: 17px;
 	margin-left: 7px;
 	float: none;
@@ -59,23 +61,27 @@
 	margin-top: 7px;
 	border-radius: 17px;
 	width: 50%;
+    font-weight: 300;
 }
 
 #query-2.mobile {
 	float: none;
 	font-size: 17px;
+    margin-top: 8px;
+    margin-bottom: 2px;
 }
 
 #search-query.mobile {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
-	height: 15%;
+	height: 64px;
 	color: white;
 	background-color: $red;
 	border-radius: 0px;
 	left: 0;
-	font-size: 27px;
+	font-size: 17px;
+    font-weight: 300;
 }
 
 #query-interests.mobile {
