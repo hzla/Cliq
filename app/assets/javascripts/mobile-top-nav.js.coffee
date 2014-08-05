@@ -2,6 +2,7 @@ TopNav =
 	init: ->
 		$('body').on 'click', '.menu-icon.left', @openNav
 		$('body').on 'ajax:success', '.top-nav-content a', @closeNav
+		$('.content-container').click @closeNav
 
 	openNav: ->
 		$('.top-nav-content').show().addClass 'animated fadeInLeftBig'
@@ -12,10 +13,14 @@ TopNav =
 		$('.top-nav-content').swipe	
 				swipe: (event, direction, distance, duration, fingerCount) ->
 					if direction == "left"
-						$('.top-nav-content').removeClass('animated fadeInLeftBig').addClass 'animated fadeOutLeftBig'
-						$('.top-nav-content').one 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', ->
-							TopNav.closeNav()
-					threshold: 400 
+						TopNav.closeNav()
+					threshold: 100 
+		$('.tab').swipe	
+				swipe: (event, direction, distance, duration, fingerCount) ->
+					console.log distance
+					if direction == "left"
+						TopNav.closeNav()
+					threshold: 100 
 
 	closeNav: ->
 		$('.top-nav-content').hide()

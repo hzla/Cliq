@@ -1,7 +1,11 @@
 Animations = 
 	init: ->
 		$('.extended-side-nav').hoverIntent @extendSideNav, @revertSideNav
-		$('.side-icon').hoverIntent @showLabel, @hideLabel
+		$('.side-icon').hoverIntent 
+			over: @showLabel 
+			out: @hideLabel
+			sensitivity: 10000
+			interval: 1 
 		$('.extended-options').mouseleave @hideOptions
 		$('.content-container').click @hideOptions
 

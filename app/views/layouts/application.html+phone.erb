@@ -6,6 +6,7 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "http://faye-server-10.herokuapp.com/faye.js" %>
   <%= favicon_link_tag 'cliq-fav.ico' %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script type="text/javascript" src="//use.typekit.net/mdx8vro.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <%= csrf_meta_tags %>
@@ -14,7 +15,7 @@
 <% if current_user %>
    <%= render partial: "users/top_nav", locals: {active: :none} %>
    <script>
-   		$('.content-container').css('margin-top' , '100px')
+   		$('.content-container').css('margin-top' , '44px')
    </script>
 <% end %>
 <div class="content-container mobile">
@@ -27,7 +28,7 @@
 
 <% if current_user %>
    <script>
-   		$('.content-container').css('margin-top' , '100px')
+   		$('.content-container').css('margin-top' , '44px')
    </script>
 <% end %>
 

@@ -3,7 +3,7 @@ class InterestSuggestion < ActiveRecord::Base
 
 	def self.interests_for prefix
 		prefix = prefix.downcase
-		ints = where("lower(term) like (?)", "%#{prefix}%").limit(10).order(:term).pluck(:term, :interest_id, :cat_type, :cat_id, :root_id, :cat_name)
+		ints = where("lower(term) like (?)", "%#{prefix}%").limit(5).order(:term).pluck(:term, :interest_id, :cat_type, :cat_id, :root_id, :cat_name)
 		parse_ints ints
 	end
 

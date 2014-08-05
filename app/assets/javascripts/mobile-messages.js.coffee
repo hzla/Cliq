@@ -45,7 +45,7 @@ MobileMessages =
 		$("#messages-box").swipe 
   		swipe: (event, direction, distance, duration, fingerCount) ->
     		MobileMessages.swipeToMessages() if direction == "right"
-    	threshold: 500 
+    	threshold: 150 
     	allowPageScroll: "vertical"
 
 	obscureDate: ->

@@ -10,6 +10,10 @@ class Activity < ActiveRecord::Base
 		name.length > 25 ? name[0..24] + "..." : name  
 	end
 
+	def super_short_name 
+		name.length > 16 ? name[0..14] + "..." : name  
+	end
+
 	def self.parse_interests ids
 		activities = find ids.split(" ").select {|id| id[0] == "A" }.map {|id| id.split(/[^\d]/).join }
 		categories = Category.find ids.split(" ").select {|id| id[0] == "C" }.map {|id| id.split(/[^\d]/).join }

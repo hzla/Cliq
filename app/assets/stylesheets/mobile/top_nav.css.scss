@@ -1,7 +1,7 @@
 @import '../variables';
 
 .top-nav {
-	height: 100px;
+	height: 44px;
 	width: 100%;
 	text-align: center;
 	position: fixed;
@@ -13,8 +13,8 @@
 }
 
 .menu-icon {
-	height: 100px;
-	width: 100px;
+	height: 44px;
+	width: 44px;
 	margin-top: 0px;
 }
 
@@ -23,8 +23,8 @@
 	font-style: italic;
 	color: $light-turq;
 	font-weight: 400;
-	font-size: 70px;
-	line-height: 100px;
+	font-size: 25px;
+	line-height: 44px;
 }
 
 
@@ -39,7 +39,7 @@
 }
 
 .content-container.mobile {
-	height: calc(100% - 100px)
+	height: calc(100% - 44px)
 }
 
 
@@ -49,7 +49,7 @@
 .top-nav-content {
 	background: white;
 	height: 100%;
-	width: 90%;
+	width: 80%;
 	left: 0;
 	position: absolute;
 	z-index: 100;
@@ -62,29 +62,29 @@
 
 .mobile {
 	.mob-nav {
-		height: 100px;
+		height: 44px;
 		border-bottom: 1px solid $super-light-gray;
 		padding-bottom: 10px;
 		.svg path {
 			fill: $light-turq;
 		}
 		.nav-icon {
-			height: 80px;
-			width: 80px;
+			height: 27px;
+			width: 27px;
 		}
 		.icon-label.main {
 			width: 80%;
-			font-size: 45px;
+			font-size: 15px;
 			font-family: $generic-font;
-			left: 125px;
-			top: 10px;
+			left: 55px;
+			top: 4px;
 		}
 	}
 	.settings.side-icon {
 		margin-left: 0px;
 		position: absolute;
 		.icon-label.main {
-			width: 500px;
+			width: 170px;
 		}
 	}
 }

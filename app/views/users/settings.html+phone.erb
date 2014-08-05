@@ -41,7 +41,7 @@
 
 					<div class="notification-setting  head-4">
 					<%= f.check_box :notify_news, value: true, checked: current_user.notify_news, :class => "email-settings hidden-box" %>
-					<%= label :notify_news, "Cliq News & Updates", :class => "settings-label" %>
+					<%= label :notify_news, "Cliq News & Updates", :class => "settings-label first" %>
 					</div>
 					<div class="notification-setting head-4">
 						<%= f.check_box :notify_messages, value: true, checked: current_user.notify_messages, :class => "email-settings hidden-box" %>
@@ -86,7 +86,7 @@
 </div>
 
 <script>
-	marginTop = $('.content-container').height() - 1030 + "px"
+	marginTop = $('.content-container').height() - 328 + "px"
 	$('#save-settings').css('margin-top', marginTop)
 
 	$('.hidden-box').each(function(){

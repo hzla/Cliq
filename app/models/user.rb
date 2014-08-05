@@ -102,6 +102,10 @@ class User < ActiveRecord::Base
 		results
 	end
 
+	def unformatted_interests formatted
+		formatted["Do"] + formatted["Watch"] + formatted["Music"] + formatted["Discuss"]
+	end
+
 	def ordered_conversations
 		convos = conversations.where(initiated: true).order(:updated_at).reverse
 		blacklist_ids = blacklist.split(",").map(&:to_i)[1..-1]

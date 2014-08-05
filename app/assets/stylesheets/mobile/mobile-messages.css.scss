@@ -6,10 +6,19 @@
 	overflow-x: hidden;
 }
 
+.mobile {
+	.message-form {
+		height: 44px;
+	}
+	.message-action .action-button {
+
+	}
+}
+
 .top-nav .menu-title .top-pic {
 	float: none;
-	width: 90px;
-	height: 90px;
+	width: 30px;
+	height: 30px;
 	border-radius: 100px;
 }
 
@@ -27,25 +36,25 @@
 	.conversation {
 		width: 100%;
 		border: 1px solid $super-light-gray;
-		height: 192px;
+		height: 64px;
 	}
 	.convo-pic {
 		height: 80%;
-		width: 156px;
-		border-radius: 100px;
-		margin-top: 19px;
-		margin-left: 19px;
+		width: 50px;
+		border-radius: 33px;
+		margin-top: 6px;
+		margin-left: 6px;
 	}
 	.convo-name {
-		font-size: 50px;
-		margin-top: 25px;
-		margin-left: 25px;
+		font-size: 17px;
+		margin-top: 8px;
+		margin-left: 8px;
 	}
 	.convo-last-message {
-		font-size: 45px;
-		margin-left: 25px;
+		font-size: 15px;
+		margin-left: 8px;
 		color: $gray;
-		width: 650px;
+		width: 210px;
 	}
 	.convo-link {
 		height: 100%;
@@ -66,24 +75,25 @@
 		width: 100%;
 		margin-top: 0px;
 		position: relative;
-		height: calc(100% - 100px);
+		height: calc(100% - 33px);
 		background: white;
 	}
 	.message-history {
 		width: 95%;
 		margin: 0 auto;
-		height: calc(100% - 150px);
+		height: calc(100% - 50px);
 		text-align: center;
 	}
 	.date {
 		float: none;
 		clear: both;
-		font-size: 30px;
+		font-size: 10px;
 	}
 	.message {
-		font-size: 45px;
-		border-radius: 25px;
+		font-size: 15px;
+		border-radius: 8px;
 		max-width: 90%;
+		padding: 3px 5px 3px 5px;
 	}
 	.message-form {
 		background: $super-light-gray;
@@ -91,36 +101,39 @@
 	#message-actions {
 		height: 50%;
 		width: 12%;
-		margin-top: 20px;
+		margin-top: 7px;
 		float: right;
 		margin-right: 3%;
 	}
 	.action-button.mes-action {
 		background: none;
+		width: 34px;
+		padding-top: 0px;
+		margin-top: 0px;
 		.result-action {
 			color: $dark-gray;
-			font-size: 50px;
+			font-size: 17px;
 			font-weight: 400;
-			line-height: 100px;
-			width: 300px;
-			height: 200px;
-			margin-top: -25px;
-			padding-top: 5px;
+			line-height: 33px;
+			width: 100px;
+			height: 65px;
+			margin-top: -8px;
+			padding-top: 2px;
 		}
 	}
 
 	#chat-box {
-		height: 55px;
-		padding-top: 20px;
+		height: 13px;
+		padding-top: 7px;
 		width: 68%;
 		margin-left: 4%;
 		padding-left: 5%;
 		padding-right: 5%;
-		font-size: 45px;
-		border-radius: 100px;
-		line-height: 45px;
-		padding-bottom: 10px;
-		margin-top: 24px; 
+		font-size: 15px;
+		border-radius: 33px;
+		line-height: 15px;
+		padding-bottom: 3px;
+		margin-top: 6px; 
 	}
 }
 
@@ -137,8 +150,8 @@
 		float: none;
 	}
 	.chat-partial.message-history {
-		height: calc(100% - 250px);
-		margin-top: 100px;
+		height: calc(100% - 80px);
+		margin-top: 44px;
 	}
 }
 

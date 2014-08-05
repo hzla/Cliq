@@ -14,11 +14,11 @@
 }
 
 .big-search #query-interests.mobile {
-	padding-bottom: 20px;
+	padding-bottom: 7px;
 }
 
 .mobile .search-term.searched {
-	height: 75px;
+	height: 25px;
 }
 
 
@@ -38,47 +38,47 @@
 
 .mobile .result {
 	width: 95%;
-	height: 400px;
+	height: 130px;
 	margin: 0 auto;
 	float: none;
 	position: relative;
-	margin-bottom: 20px;
+	margin-bottom: 7px;
 }
 
 .mobile .result:nth-child(2n) {
 	margin: 0 auto;
-	margin-bottom: 20px;
+	margin-bottom: 7px;
 }
 
 .mobile .profile-pic-card {
-	border-radius: 100px;
-	height: 150px;
-	width: 150px;
-	margin-left: 30px;
-	margin-top: 30px;
+	border-radius: 33px;
+	height: 50px;
+	width: 50px;
+	margin-left: 10px;
+	margin-top: 10px;
 }
 
 .mobile .card-name {
-	margin-top: 30px;
-	font-size: 60px;
-	width: 600px;
+	margin-top: 10px;
+	font-size: 20px;
+	width: 200px;
 	text-align: left;
 }
 
 .mobile .card-school {
 	clear: none;
 	text-align: left;
-	font-size: 30px;
-	width: 600px;
+	font-size: 10px;
+	width: 200px;
 }
 
 .big-search .mobile .chat {
 	position: absolute;
-	top: 30px;
-	right: 30px;
+	top: 10px;
+	right: 10px;
 	.action-icon {
-		height: 100px;
-		width: 100px;
+		height: 32px;
+		width: 32px;
 	}
 }
 
@@ -86,7 +86,7 @@
 	width: 95%;
 	margin: 0 auto;
 	float: none;
-	max-height: 80px;
+	max-height: px;
 }
 
 .mobile {
@@ -94,50 +94,50 @@
 		position: static;
 	}
 	.mutual {
-		width: 130px;
+		width: 42px;
 		margin-left: 0px;
-		margin-top: 50px;
+		margin-top: 16px;
 	}
 	.similar {
-		width: 130px;
+		width: 42px;
 		margin-left: 30%;
-		margin-top: 50px;
+		margin-top: 16px;
 	}
 	.sug-label {
-		font-size: 30px;
+		font-size: 10px;
 		color: $turq;
 	}
 	.sim-label {
-		height: 70px;
-		width: 70px;
+		height: 22px;
+		width: 22px;
 	}
 	.sim {
-		font-size: 50px;
-		margin-top: 10px;
+		font-size: 16px;
+		margin-top: 4px;
 	}
 	.gender {
-		width:	130px;
-		margin-top: 50px;
+		width:	42px;
+		margin-top: 16px;
 		float: right;
 	}
 }
 
 .sim-info {
-	margin-top: 30px;
+	margin-top: 10px;
 	width: 95%;
 	margin: 0 auto;
 }
 
 .mobile .suggestion {
-	font-size: 30px;
-	height: 40px;
+	font-size: 10px;
+	height: 12px;
 }
 
 .quick-search-button {
-	width: 100px;
+	width: 33px;
 	position: absolute;
-	bottom: 20px;
-	right: 20px;
+	bottom: 7px;
+	right: 7px;
 }
 
 .mobile #no-one-around {
@@ -145,7 +145,7 @@
 }
 
 .big-search #no-one-text {
-	font-size: 60px;
+	font-size: 20px;
 	padding-top: 3%;
 }
 

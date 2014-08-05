@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 		@category = Category.where(name: "Do").first
 		@format = Category.self_format
 		@formatted_interests = @user.formatted_interests
+		@unformatted_interests = current_user.unformatted_interests @formatted_interests
 		respond_to do |format|
   		format.html { render :layout => !request.xhr? }
   		format.json { render :json => @user }

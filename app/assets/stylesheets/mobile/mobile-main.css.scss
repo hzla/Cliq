@@ -13,7 +13,7 @@
 
 .search-top {
 	background-image: image_url("jump_side.png");
-	height: 240px;
+	height: 80px;
 	text-align: center;
 }
 
@@ -36,33 +36,34 @@
 
 #query-1.mobile {
 	float: none;
-	font-size: 60px;
-	padding-top: 30px;
+	font-size: 20px;
+	padding-top: 10px;
 }
 
 #query-location.mobile {
 	float: none;
-	height: 80px;
-	font-size: 60px;
-	width: calc(100% - 70px);
+	height: 27px;
+	font-size: 20px;
+	width: calc(100% - 50px);
 	text-align: center;
-	border-radius: 50px;
+	border-radius: 17px;
 }
 
 #activity.query-interest.search-term.mobile {
 	background-color: $super-light-gray;
-	height: 60px;
-	font-size: 50px;
-	margin-left: 20px;
+	height: 20px;
+	font-size: 17px;
+	margin-left: 7px;
 	float: none;
 	text-align: center;
-	margin-top: 20px;
-	border-radius: 50px;
+	margin-top: 7px;
+	border-radius: 17px;
+	width: 50%;
 }
 
 #query-2.mobile {
 	float: none;
-	font-size: 50px;
+	font-size: 17px;
 }
 
 #search-query.mobile {
@@ -74,7 +75,7 @@
 	background-color: $red;
 	border-radius: 0px;
 	left: 0;
-	font-size: 80px;
+	font-size: 27px;
 }
 
 #query-interests.mobile {
@@ -84,16 +85,21 @@
 
 .mobile .searched {
 	background-color: $super-light-gray;
-	height: 60px;
-	font-size: 50px;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	height: 20px;
+	font-size: 17px;
+	margin-top: 7px;
+	margin-bottom: 7px;
 }
 
 .mobile #search-container input, textarea {
   -webkit-appearance: none;
   -webkit-border-radius: 0;
   -webkit-border-radius: 0px;
+}
+
+.mobile #search-container input#query-location {
+  -webkit-appearance: none;
+  border-radius: 17px;
 }
 
 
@@ -104,14 +110,18 @@
 	width: 100%;
 }
 
-.mobild .swiped-content {
+.mobile #results {
+	margin-top: 10px;
+}
+
+.mobile .swiped-content {
 	border: 1px solid white;
 	margin-bottom: -1px;
 
 }
 
-.mobile .suggestion-container {
-	overflow-y: none;
+.mobile .suggestions-container {
+	margin-top: 10px;
 }
 
 .mobile .swiped-suggestions {
@@ -129,6 +139,7 @@
 .mobile .swiped-school {
 	float: none;
 	width: 100%;
+	margin-top: 5px;
 }
 
 .mobile .swiped-count {
@@ -141,78 +152,80 @@
 }
 
 .mobile .swiped-actions {
-	top: calc(100% - 225px);
+	top: calc(100% - 75px);
 	left: 0;
 	width: 100%;
 }
 
 .mobile .swipe-next {
-	width: 250px;
-	height: 135px;
+	width: 83px;
+	height: 40px;
 	border-radius: 100px;
 }
 
 .mobile .chat.swiped.inv-btn {
-	width: 250px;
-	height: 135px;
+	width: 83px;
+	height: 40px;
 	border-radius: 100px;
 }
 
 .mobile .swipe-info {
-	margin-left: calc(50% - 294px);
-	margin-right: calc(50% - 294px);
-	height: 80px;
-	width: 80px
+	margin-left: calc(50% - 98px);
+	margin-right: calc(50% - 98px);
+	height: 27px;
+	width: 27px;
+	margin-top: 10px;
 }
 
 .mobile .swiped-action-icon {
-	height: 80%;
-	width: 80%;
+	height: 35px;
+	width: 35px;
+	margin-left: 25px;
 }
 
 .mobile .chat-icon {
-	margin-top: 5px;
 }
 
 .mobile .next-icon.swiped-action-icon {
-	margin-left: 30px;
+	margin-left: 25px;
+	margin-top: 3px;
 }
 
 .mobile #no-one-text {
-	font-size: 75px;
+	font-size: 25px;
 	text-align: center;
 }
 
 .mobile #cliq-invite {
-	font-size: 75px;
-	width: 300px;
-	height: 100px;
+	font-size: 25px;
+	width: 100px;
+	height: 27px;
 	margin-top: 3%;
 }
 
 .mobile #send-cliq-invite {
 	width: 100%;
-	height: 100px;
-	font-size: 75px;
+	height: 33px;
+	font-size: 25px;
 	margin: 0 auto;
 	margin-top: 5%;
 }
 
 .mobile #post-invite {
-	font-size: 30px;
+	font-size: 10px;
 }
 
 .mobile #enter-email {
-	font-size: 40px;
+	font-size: 13px;
 }
 
 .mobile #what-send {
-	font-size: 40px;
+	font-size: 13px;
 }
 
 .mobile .swiped-profile-pic-card {
-	width: 150px;
-	height: 150px;
+	width: 50px;
+	height: 50px;
 }
 
 .mobile .card-header {
@@ -226,15 +239,15 @@
 }
 
 .mobile .swiped-card-name {
-	font-size: 50px;
-	width: 380px;
+	font-size: 17px;
+	width: 127px;
 	margin: 0 auto;
 	text-align: center;
 }
 
 .mobile .search-icon {
-	height: 150px;
-	width: 150px;
+	height: 50px;
+	width: 50px;
 	float: right;
 }
 
@@ -249,21 +262,21 @@
 }
 
 .mobile .swiped-sug-name {
-	height: 35px;
-	font-size: 30px;
-	line-height: 30px;
-	border-top-left-radius:	30px;
-	border-top-right-radius: 30px; 
+	height: 12px;
+	font-size: 10px;
+	line-height: 10px;
+	border-top-left-radius:	10px;
+	border-top-right-radius: 10px; 
 }
 
 .mobile .swiped-sug-pic {
-	height: calc(100% - 41px);
-	border-bottom-left-radius:	30px;
-	border-bottom-right-radius: 30px; 
+	height: calc(100% - 13px);
+	border-bottom-left-radius:	10px;
+	border-bottom-right-radius: 10px; 
 }
 
 .mobile .headers .swiped-sug-pic {
-	border-radius:	30px;
+	border-radius:	10px;
 }
 
 .mobile .headers .swiped-sug-pic.mutual {
@@ -272,6 +285,24 @@
 
 
 .mobile .swiped-suggestion {
-	border-radius: 30px;
+	border-radius: 10px;
+}
+
+.mobile {
+	.swiped-school {
+		font-size: 9px;
+	}
+	#no-one-text {
+		width: 200px;
+		font-size: 16px;
+	}
+	#post-invite-content {
+		width: 200px;
+	}
+	#invite-email {
+		height: 13px;
+		width: 150px;
+		font-size: 12px;
+	}
 }
 

@@ -24,12 +24,12 @@ MobileSearch =
 				swipe: (event, direction, distance, duration, fingerCount) ->
 					console.log distance
 					MobileSearch.swipeDownToSearch() if direction == "up"
-				threshold: 400
+				threshold: 130
 		else
 			$(".swiped-actions").swipe 
 	  		swipe: (event, direction, distance, duration, fingerCount) ->
 	    		MobileSearch.swipeDownToSearch() if direction == "up"
-	    	threshold: 50 
+	    	threshold: 16 
 		
 		
 	
