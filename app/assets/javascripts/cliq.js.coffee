@@ -7,7 +7,7 @@ Cliq =
 		@hightlightTab()
 
 	hightlightTab: ->
-		url = location.href.split('/')
+		url = location.href.replace("#_=_", "").split('/')
 		tab = url[url.length - 1]
 		$("##{tab}").children('.side-icon').addClass('active')
 		if url[url.length - 2] == "users"
