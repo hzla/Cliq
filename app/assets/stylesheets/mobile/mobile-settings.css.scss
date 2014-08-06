@@ -14,7 +14,7 @@
 	.faq-question {
 		width: auto;
 		float: left;
-		margin-left: 6px;
+		margin: 0px;
 		font-size: 17px;
 		font-weight: 300;
 	}
@@ -31,18 +31,21 @@
 		width: 100%;
 		background: $super-light-gray;
 		margin-bottom: 8px;
-		padding-top: 5px;
-		height: 31px;
+		padding-top: 6px;
+		height: 45px;
+        line-height: 2;
+        box-sizing: border-box; 
+        padding-left: 10px;
 	}
 	.settings-group.notifications {
-		height: 80px;
+		height: auto;
 	}
 	.settings-input {
-		margin-left: 10px;
-		height: 20px;
+		margin: 0px 10px 0px 0px;
+		height: 31px;
 	}
 	.settings-group label {
-		height: 20px;
+		height: 31px;
 		float: right;
 		clear: right;
 		margin-right: 7px;
@@ -51,11 +54,13 @@
 		background: $light-gray;
 		color: $dark-gray;
 		border-radius: 16px;
-		padding-left: 6px;
-		padding-right: 6px;
-		margin-bottom: 5px;
-		width: 145px;
+		margin-bottom: 6px;
+		width: 60%;
 		text-align: left;
+        box-sizing: border-box;
+        padding-left: 12px;
+        margin-left: 0px;
+        line-height: 1.9;
 	}
 	label.enabled {
 		color: white;
@@ -68,7 +73,7 @@
 		margin-top: 0px;
 	}
 	.settings-label.first {
-		margin-top: -8px;
+		margin-top: 0px;
 	}
 	.notifications .faq-question {
 		margin-bottom: -10px;
@@ -80,14 +85,14 @@
 		}
 	}
 	.settings-group.lgbtq {
-		height: 45px;
+		height: 100%;
 	}
 	#lbgtq-text {
 		float: left;
-		margin-top: -15px;
 		width: calc(100% - 12px);
-		margin-left: 6px;
-		font-size: 10px;
+		font-size: 15px;
+        line-height: 1.2;
+        margin: -6px 0px 8px 0px;
 	}
 	#save-settings {
 		height: 40px;

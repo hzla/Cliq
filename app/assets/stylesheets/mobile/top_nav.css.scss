@@ -64,12 +64,15 @@
 	.mob-nav {
 		height: 64px;
 		border-bottom: 1px solid $super-light-gray;
+        box-sizing: border-box;
+        padding: 20px;
 		.svg path {
 			fill: $light-turq;
 		}
 		.nav-icon {
-			height: 27px;
-			width: 27px;
+			height: 24px;
+			width: 24px;
+            margin: 0px;
 		}
 		.icon-label.main {
 			width: 80%;
@@ -77,6 +80,7 @@
 			font-family: $generic-font;
 			left: 55px;
 			top: 4px;
+            margin-right: 6px;
 		}
 	}
 	.settings.side-icon {
