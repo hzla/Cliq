@@ -17,8 +17,8 @@
 .landing-logo.mobile {
 	text-align: center;
 	font-size: 70px;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin-top: 10%px;
+	margin-bottom: 15%px;
 }
 
 .landing-desc.mobile {
@@ -31,10 +31,10 @@
 
 .mobile.sign-up-box {
 	background: none;
-	width: 80%;
+	width: calc(100% - 20px);
 	margin: 0 auto;
 	float: none;
-	margin-top: 20%;
+	margin-top: 25%;
 	height: 50px;
 }
 
@@ -43,6 +43,8 @@
 	border-radius: 100px;
 	margin-left: 0px;
 	height: 62px;
+    box-sizing: border-box;
+    padding: 15px 15px 15px 28px;
 }
 
 .fb-logo .mobile.fb-letter {
@@ -53,16 +55,19 @@
 .mobile.fb-logo {
 	height: 32px;
 	width: 32px;
-	margin-left: 20px;
-	margin-top: 15px;
+    margin: 0px;
 }
 
 .fb-sign-up-btn .mobile.sign-up-text {
-	margin-right: 3%;
-	margin-top: 8%;
+	margin: 0px;
 	font-size: 17px;
+    float: left;
+    line-height: 1.9;
+    padding-left: 20px;
 }
 
 .mobile.conditions {
-	font-size: 10px;
+	font-size: 12px;
+    font-weight: 300px;
+    margin: 8px 0px;
 }
