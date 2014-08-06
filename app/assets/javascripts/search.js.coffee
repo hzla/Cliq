@@ -58,7 +58,7 @@ Search =
 						$('.content-container').css 'opacity', ''
 						$('.content-container').css 'background', '#f1f1f1'
 						$('.menu-title').text 'Cliq'
-			threshold: 400 
+			threshold: 150 
 			allowPageScroll: "vertical"
 
 	checkTab: () ->
@@ -89,7 +89,7 @@ Search =
 							$('.content-container').css 'opacity', ''
 							$('.content-container').css 'background', '#f1f1f1'
 							$('.menu-title').text 'Cliq'
-					threshold: 400 
+					threshold: 150 
 				
 
 	collapseChat: ->

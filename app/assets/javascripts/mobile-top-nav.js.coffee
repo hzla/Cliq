@@ -23,6 +23,7 @@ TopNav =
 					threshold: 100 
 
 	closeNav: ->
+		$('.menu-title').text('Cliq')
 		$('.top-nav-content').hide()
 		$('top-nav').css 'background', 'white'
 		$('.top-nav').css 'opacity', '1'
