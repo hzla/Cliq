@@ -8,6 +8,8 @@ Cliq::Application.routes.draw do
   end
 
   get '/categories/:id/select', to: 'categories#select', as: 'choose_cat'
+  get '/tutorial', to: 'categories#tutorial', as: 'tutorial'
+  post '/tutorial_select', to: 'categories#tutorial_select', as: 'tutorial_select'
 
   resources :categories, only: [:index, :show] do 
     get '/choose', to: 'activities#choose', as: 'choose_activity'

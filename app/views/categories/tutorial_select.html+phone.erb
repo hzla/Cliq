@@ -1,0 +1,64 @@
+<script>
+	$('.menu-icon').remove()
+	$('.menu-title').remove()
+	$('.top-nav').append("<div class='tut-header unfinished'>Pick <span id='int-number'></span> More</div>")
+	$('.top-nav').append("<a href='/main'><div class='tut-header finished hidden'>Tap to Finish</div></a>")
+	$('.top-nav').append("<a href='/tutorial'><span class='back-tut'>Back</span><a>")
+</script>
+
+
+
+<div class="interests-self tut">
+		<div class="cat-collection">
+			<% @categories.each do |cat| %>
+					<div class="scroll-cat">
+						<div class="scroll-cat-name"><%= cat.mobile_name %></div>
+						<%= image_tag cat.image_url, :class => "scroll-cat-pic" %>
+						<div class="overlay hidden"></div>
+					</div>
+					<div class="scroll-acts hidden">
+						<% cat.activities.each do |act| %>
+							
+								<div class="scroll-act <%= 'chosen' if @act_list.include?(act.id) %>">
+									<%= link_to interests_path(act_id: act.id, nothing: true), remote: true, method: :post, class: 'add-other-act' do %>
+										<div class="scroll-act-name"><%= act.super_short_name %></div>
+									<% end %>
+								</div>
+						<% end %>
+					</div>
+			<% end %>
+		</div>
+
+
+	<div class="all-scroll-acts tut">
+	</div>
+	<div class="profile-actions green tut">
+			<%= form_for @act, remote: true do |f| %>
+				<%= f.text_field :name, :class => "act-name-input head-4", placeholder: "Suggest"%>
+				<%= f.hidden_field :category_id, value: @category.id %>
+				<%= f.hidden_field :suggested_by, value: current_user.id %>
+				<%= f.submit "Suggest", id: "submit-act", :class => "head-4 hidden" %>
+			<% end %>
+
+			<%= form_tag quick_create_path, id: "quick-search", remote: true do %>
+				<%= text_field_tag :activities, nil, id: "self-search", :class => "head-4 quick-search-acts", placeholder: "Quick Search" %>
+				<div class="hidden interest-info"></div>
+				<%= hidden_field_tag :act_id %>
+				<%= submit_tag "Add", id: "submit-quick-search", :class => "head-4 hidden" %>
+			<% end %>
+		</div>
+</div>
+
+<script>
+	$(document).ready(function(){
+		$($('.scroll-cat-pic')[1]).click()
+		var intCount = 8 - $('.cat-collection .chosen').length
+		$('#int-number').text( intCount )
+		if (intCount < 1) {
+			$('.unfinished').hide()
+			$('.finished').show()
+		}
+	})
+
+</script>
+

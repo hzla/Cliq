@@ -1,0 +1,171 @@
+@import '../variables';
+
+.next-tut {
+	font-family: $generic-font;
+	color: $light-turq;
+	font-size: 15px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 10px;
+	padding-top: 13px;
+}
+
+.back-tut {
+	font-family: $generic-font;
+	color: $light-turq;
+	font-size: 15px;
+	position: absolute;
+	padding: 10px;
+	padding-top: 13px;
+	left: 0;
+	top: 0;
+}
+
+
+
+.tutorial-container {
+	width: 100%;
+	height: 100%;
+	float: left;
+	background: white;
+}
+
+#tutorial-form {
+	margin-left: 20px;
+	float: left;
+}
+
+.tut-question {
+	font-size: 15px;
+	font-weight: 500;
+	margin-top: 15px;
+	margin-bottom: 10px;
+	color: $dark-gray;
+	float: left;
+	clear: left;
+}
+
+#tut-school {
+	height: 30px;
+	font-size: 15px;
+	padding-left: 15px;
+	padding-right: 15px;
+	width: 250px;
+	background-color: $super-light-gray;
+	color: $dark-gray;
+	float: left;
+	clear: left;
+	border: none;
+	border-radius: 50px;
+}
+
+.tut-instructions {
+	color: $light-gray;
+	float: left;
+	clear: left;
+}
+
+
+.characters-box {
+	width: 300px;
+	height: 300px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	float: left;
+	background: white;
+}
+
+.char {
+	width: 92px;
+	height: 92px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	float: left;
+	border-radius: 5px;
+}
+
+.char.highlighted {
+	background-color: $light-turq;
+}
+
+.char.highlighted .svg path {
+	fill: white;
+}
+
+.char.highlighted .svg polygon {
+	fill: white;
+}
+
+.char.highlighted .char-label {
+	color: white;
+}
+
+
+.char-button {
+	background: $orange;
+	color: white;
+	text-align: center;
+}
+
+.char-text {
+	margin-top: 17px;
+	width: 90px;
+}
+
+.char-label {
+	color: $dark-gray;
+	text-align: center;
+	line-height: .9;
+}
+
+.char-image {
+	width: 45px;
+	height: 45px;
+	margin-left: 22px;
+	margin-top: 10px;
+}
+
+.char:nth-child(3n) {
+	margin-right: 0px;
+}
+
+////////////////////////
+
+.interests-self.tut {
+	margin-top: 0px;
+}
+
+.all-scroll-acts.tut {
+	max-height: calc(100% - 134px);
+}
+
+.profile-actions.tut {
+	bottom: 0px;
+}
+
+.tut-header {
+	color: $orange;
+	font-family: $generic-font;
+	font-size: 15px;
+	margin-top: 13px;
+}
+
+.tut-header.finished {
+	color: white;
+	background-color: $light-turq;
+	width: 100px;
+	margin: 0 auto;
+	margin-top: 13px;
+	border-radius: 100px;
+}
+
+#int-number {
+	width: 25px;
+	height: 25px;
+	color: white;
+	background-color: $orange;
+	padding: 5px 10px;
+	border-radius: 100px; 
+}

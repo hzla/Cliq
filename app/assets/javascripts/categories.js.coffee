@@ -113,6 +113,9 @@ Categories =
 			$('#cat-footer-content').hide()
 			$('#next-cat').show()
 			$('#finish').show()
+		if $('.tut').length > 0
+			intCount = parseInt($('#int-number').text()) - 1
+			$('#int-number').text intCount
 
 ready = ->
 	Categories.init()

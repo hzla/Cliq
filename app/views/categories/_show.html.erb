@@ -1,4 +1,4 @@
-<% if category.activities.where(suggested_by: nil).empty? %>
+<% if category.has_children? %>
 	<div id="categories-content-container">
 		<div id="cat-content">
 			<div id="cat-question" class="head-2 dark-gray">

@@ -1,0 +1,69 @@
+<script>
+	$('.menu-icon').remove()
+	$('.top-nav').append("<span class='next-tut hidden proceed'>Next</span>")
+</script>
+
+<div class="tutorial-container">
+	<%= form_tag tutorial_select_path, id: "tutorial-form" do %>
+		<div class="tut-question">
+		  What school do you go to?
+		</div>
+		  <%= text_field_tag :school, nil, id: "tut-school", value: current_user.school %>
+		<div class="tut-question">
+		  Pick 2 characters that describe you best
+		</div>
+		<div class="tut-instructions">
+			Then add 8 interests from any category<br>
+			Don't worry, you can always edit your<br>
+			interests or explore more categories later.
+		</div>
+		<%= hidden_field_tag :characters %>
+		  <%= submit_tag "Submit", :class =>  "hidden" %>
+	<% end %>
+
+	<div class="characters-box">
+		<% @characters[0..3].each do |char| %>
+			<div class="char">
+				<%= image_tag "#{char}.svg", :class => "char-image svg" %>
+				<div class="char-label"><%= char.gsub("_", " ") %></div>
+			</div>
+		<% end %>
+		<div class="char char-button">
+			<div class="char-text">Pick at least 1 character</div>
+		</div>
+		<% @characters[4..7].each do |char| %>
+			<div class="char">
+				<%= image_tag "#{char}.svg", :class => "char-image svg" %>
+				<div class="char-label"><%= char.gsub("_", " ") %></div>
+			</div>
+		<% end %>
+	</div>
+</div>
+
+
+<script>
+  $('img.svg').each(function(){
+    var $img = $(this);
+    var imgID = $img.attr('id');
+    var imgClass = $img.attr('class');
+    var imgURL = $img.attr('src');
+
+    $.get(imgURL, function(data) {
+        // Get the SVG tag, ignore the rest
+        var $svg = $(data).find('svg');
+
+        // Add replaced image's ID to the new SVG
+        if(typeof imgID !== 'undefined') {
+            $svg = $svg.attr('id', imgID);
+        }
+        // Add replaced image's classes to the new SVG
+        if(typeof imgClass !== 'undefined') {
+            $svg = $svg.attr('class', imgClass+' replaced-svg');
+        }
+        // Remove any invalid XML tags as per http://validator.w3.org
+        $svg = $svg.removeAttr('xmlns:a');
+        // Replace image with new SVG
+        $img.replaceWith($svg);
+    }, 'xml');
+  });
+</script>

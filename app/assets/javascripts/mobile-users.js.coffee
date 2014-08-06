@@ -53,8 +53,8 @@ MobileUsers =
 		$(@).parent().find('.overlay').show()
 
 	addChosen: -> 
-		$(@).parent().addClass('chosen')
-		$(@).parent().css 'background', '#14a29d' if $('.user-other-container:visible')
+		$(@).parent().toggleClass('chosen') if $('.tut').length < 1
+		$(@).parent().css 'background', '#14a29d' if $('.user-other-container:visible').length > 0
 			
 
 

@@ -1496,7 +1496,7 @@ q: What do you like to watch?
 			CNBC
 			CNN
 			Fox News
-			HLN
+			H
 			MSNBC
 			Nancy Grace
 			Rachel Maddow
@@ -1553,7 +1553,7 @@ q: What do you like to watch?
 			The Lion King
 			Toy Story
 			WALL-E
-		Category: Comedy
+		Category: Comedic
 			American Pie
 			Anchorman
 			Animal House

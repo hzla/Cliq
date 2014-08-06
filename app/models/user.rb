@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 	has_many :messages, dependent: :destroy 
 
 	validates :name, :presence => true
-	attr_accessible :name, :email, :school, :bio, :profile_pic_url, :fb_token, :activation, :address, :sex, :sexual_preference, :latitude, :longitude, :active, :message_count, :invite_count, :updated_at, :event_count,:notify_messages, :notify_news, :notify_events, :timezone, :lbgtq, :blacklist 
+	attr_accessible :name, :email, :school, :bio, :profile_pic_url, :fb_token, :activation, :address, :sex, :sexual_preference, :latitude, :longitude, :active, :message_count, :invite_count, :updated_at, :event_count,:notify_messages, :notify_news, :notify_events, :timezone, :lbgtq, :blacklist, :characters 
 
 	geocoded_by :address
 	after_validation :geocode      
@@ -200,4 +200,75 @@ class User < ActiveRecord::Base
 	def obscured_pic
 		lbgtq ? 'Rainbow.svg' : 'cliq.png'
 	end
+
+	def char_categories
+		chars = characters.split(",")
+		cat_list = []
+		cat_list << "Eating Out"
+		
+		if sex == "male"
+			if chars.include? "Athlete"
+				cat_list += ["Go outside or play sports", "Racing and Sports", "Shooter", "Electronic", "Rap and Hip Hop", "Action and Adventure"]
+			end
+			if chars.include? "Partier"
+				cat_list += ["Party", "Electronic", "Pop", "Rap and Hip Hop", "Rock", "Action and Adventure"]
+			end
+			if chars.include? "Intellectual"
+				cat_list += ["Visit Places", "Board and Card", "Strategy and Puzzle", "Indie", "Academic", "Documentaries", "Misc"]
+			end
+			if chars.include? "Gamer"
+				cat_list += ["Action, Adventure, and Fighting", "RPG", "Shooter", "Strategy and Puzzle", "Indie", "Rock", "Sci-Fi & Fantasy"]
+			end
+			if chars.include? "Creative"
+				cat_list += ["Visit Places", "Board and Card", "Drama", "Musical", "Misc Topics", "Indie"]
+			end
+			if chars.include? "Maverick"
+				cat_list += ["Visit Places", "Indie", "Documentaries", "Foreign", "Academic", "Misc Topics"]
+			end
+			if chars.include? "Shaman"
+				cat_list += ["Party", "Electronic", "Indie", "Rock", "Comedic", "Sci-Fi & Fantasy"]
+			end
+			if chars.include? "Corporate Baller"
+				cat_list += ["Visit Places", "News", "Action and Adventure", "Documentaries", "Dramatic", "Misc"]
+			end
+		else
+			if chars.include? "Athlete"
+			end
+			if chars.include? "Partier"
+				cat_list += ["Go outside or play sports", "Visit Places", "Electronic", "Pop", "Action and Adventure", "Comedic", "Drama"]
+			end
+			if chars.include? "Intellectual"
+				cat_list += ["Visit Places", "Board and Card", "Indie", "Foreign", "Documentaries", "Academic", "Misc"]
+			end
+			if chars.include? "Gamer"
+				cat_list += ["Action, Adventure, and Fighting", "RPG", "Shooter", "Strategy and Puzzle", "Indie", "Rock", "Sci-Fi & Fantasy"]
+			end
+			if chars.include? "Creative"
+				cat_list += ["Visit Places", "Indie", "Documentaries", "Foreign", "Romance", "Academic", "Misc Topics"]
+			end
+			if chars.include? "Maverick"
+				cat_list += ["Visit Places", "Indie", "Documentaries", "Foreign", "Romance", "Academic", "Misc Topics", "Indie"]
+			end
+			if chars.include? "Shaman"
+				cat_list += ["Party", "Electronic", "Indie", "Rock", "Comedic", "Sci-Fi & Fantasy", "Mobile"]
+			end
+			if chars.include? "Corporate Baller"
+				cat_list += ["Visit Places", "News", "Action and Adventure", "Documentaries", "Dramatic", "Romance", "Misc"]
+			end
+		end
+		cat_list = cat_list.uniq.map do |cat|
+				Category.find_by_name cat
+		end
+		cat_list
+	end
+
+	private
+
+	def add_cats_to cat_list
+
+	end
 end
+
+
+
+
