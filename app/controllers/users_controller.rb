@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 		@format = Category.self_format
 		@formatted_interests = @user.formatted_interests
 		@unformatted_interests = current_user.unformatted_interests @formatted_interests
-		@sug_cat = Category.where(name: @unformatted_interests[1].first[0]).first
+		@sug_cat = Category.where(name: @unformatted_interests[1].first[0]).first if !@unformatted_interests.empty?
 		@act = Activity.new
 		respond_to do |format|
   		format.html { render :layout => !request.xhr? }

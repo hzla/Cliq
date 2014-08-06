@@ -46,7 +46,7 @@
 	float: none;
 	height: 31px;
 	font-size: 17px;
-	width: calc(100% - 50px);
+	width: 60%;
 	text-align: center;
 	border-radius: 16px;
 }
@@ -55,19 +55,22 @@
 	background-color: $super-light-gray;
 	height: 31px;
 	font-size: 17px;
-	margin-left: 7px;
 	float: none;
 	text-align: center;
-	margin-top: 7px;
 	border-radius: 17px;
 	width: 50%;
     font-weight: 300;
+    padding: 0px;
+    line-height: 1.8;
+    display: block;
+    margin: 0 auto;
 }
 
 #query-2.mobile {
 	float: none;
 	font-size: 17px;
-  margin-bottom: 2px;
+    margin-bottom: 7px;
+    margin-top: 7px;
 }
 
 #search-query.mobile {
@@ -105,6 +108,7 @@
 .mobile #search-container input#query-location {
   -webkit-appearance: none;
   border-radius: 17px;
+    padding: 0px;
 }
 
 
@@ -202,9 +206,10 @@
 }
 
 .mobile #cliq-invite {
-	font-size: 25px;
+	font-size: 17px;
+    line-height: 1.8;
 	width: 100px;
-	height: 27px;
+	height: 31px;
 	margin-top: 3%;
 }
 

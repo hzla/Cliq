@@ -121,8 +121,8 @@ class User < ActiveRecord::Base
 		user.blacklist.split(",").include? id.to_s
 	end
 
-	def conversated_with? user #do their conversations have at least one message from each person?
-		conversations.each do |convo|
+	def conversated_with? user #do their conversations have at least one message from each person
+        conversations.each do |convo|
 			ids = convo.name.split("-").map(&:to_i)
 			if convo.connected && ids.include?(id) && ids.include?(user.id) 
 				return true

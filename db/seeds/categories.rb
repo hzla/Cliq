@@ -53,7 +53,7 @@ contents.each do |line|
 end
 
 
- # puts "creating users..."
- # (1..10).each {|n| User.create name: Faker::Name.name }
+  puts "creating users..."
+  (1..10).each {|n| User.create name: Faker::Name.name }
 
 
