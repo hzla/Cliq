@@ -18,7 +18,7 @@ Tutorial =
 		$('#characters').val labels
 
 		if $('.highlighted').length == 1
-			$('.char-text').text "Pick at 1 more"
+			$('.char-text').text "Pick 1 more or tap next to move on"
 			$('.next-tut').show()
 			$('.char-button').removeClass('proceed')
 		if $('.highlighted').length == 2
