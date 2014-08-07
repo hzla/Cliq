@@ -117,7 +117,7 @@
 		color: white;
 	}
 	.overlay {
-		background-color: rgba(255,137,32,.3);
+		background-color: rgba(255,137,32,.5);
 		color: white;
 		text-align: center;
 		height: 90px;
@@ -127,13 +127,12 @@
 		left: 0;
 	}
 	.scroll-cat-name {
-		width: 110px;
-		margin: 0 auto;
+		width: 100%;
+		margin: 0px;
 		position: absolute;
 		color: white;
 		top: -35px;
 		text-align: center;
-		left: 5px;
 		z-index: 10;
 	}
 	.scroll-act.chosen {
@@ -150,22 +149,26 @@
 		background-color: $light-turq;
 	}
 	#self-search {
-		height: 27px;
 		width: 35%;
-		margin-top: 4px;
 		float: right;
 		font-family: $generic-font;
-		margin-right: 10px;
-		font-weight: 400;
-		font-size: 20px;
+        margin: 5px 10px 5px 0px;
+        height: 32px;
+        padding-right: 15px;
+        font-size: 17px;
+        line-height: 1.2;
+        font-weight: 300;
 	}
 	#activity_name {
 		width: 35%;
 		float: left;
-		margin-left: 10px;
-		margin-top: 4px;
-		height: 27px;
-		padding-right: 15px;
+        margin: 5px 0px 5px 10px;
+        height: 32px;
+        padding-right: 15px;
+        font-family: proxima nova;
+        font-size: 17px;
+        line-height: 1.2;
+        font-weight: 300;
 	}
 }
 

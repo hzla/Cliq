@@ -58,12 +58,15 @@
 	clear: left;
 	border: none;
 	border-radius: 50px;
+    font-family: "proxima nova";
 }
 
 .tut-instructions {
 	color: $light-gray;
 	float: left;
 	clear: left;
+    font-size: 15px;
+    font-weight: 300;
 }
 
 
@@ -83,7 +86,9 @@
 	margin-right: 10px;
 	margin-bottom: 10px;
 	float: left;
-	border-radius: 5px;
+	border-radius: 10px;
+    box-sizing: border-box;
+    padding: 10px;
 }
 
 .char.highlighted {
@@ -110,21 +115,24 @@
 }
 
 .char-text {
-	margin-top: 17px;
-	width: 90px;
+	width: 100%;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.2;
 }
 
 .char-label {
 	color: $dark-gray;
 	text-align: center;
-	line-height: .9;
+	line-height: 1.2;
+    font-size: 15px;
+    font-weight: 300;
 }
 
 .char-image {
-	width: 45px;
-	height: 45px;
-	margin-left: 22px;
-	margin-top: 10px;
+	width: 35px;
+	height: 35px;
+    margin: 0px 18px;
 }
 
 .char:nth-child(3n) {
@@ -153,12 +161,15 @@
 }
 
 .tut-header.finished {
-	color: white;
-	background-color: $light-turq;
-	width: 100px;
-	margin: 0 auto;
-	margin-top: 13px;
-	border-radius: 100px;
+    color: white;
+    background-color: #1dcfac;
+    width: 40%;
+    margin: 7px auto;
+    border-radius: 100px;
+    height: 32px;
+    padding: 5px 5px;
+    box-sizing: border-box;
+    line-height: 1.4;
 }
 
 #int-number {
