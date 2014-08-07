@@ -22,13 +22,13 @@ TopNav =
 				if direction == "left"
 					TopNav.closeNav()
 				threshold: 100 
+		TopNav.state = "open"
 
 	closeNav: ->
 		$('.menu-title').text('Cliq')
-		$('.top-nav-content').removeClass('animated fadeOutLeftBig').addClass('animated fadeOutLeftBig')
-		$('.top-nav-content').one 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', ->
-			$(@).hide()
+		$('.top-nav-content').removeClass('animated fadeOutLeftBig').addClass('animated fadeOutLeftBig')		
 		$('.chat-partial').remove()
+		$('.user-other-container').remove()
 		$('top-nav').css 'background', 'white'
 		$('.top-nav').css 'opacity', '1'
 		$('.content-container').css 'opacity', ''
