@@ -36,17 +36,6 @@ TopNav =
 		$('.content-container').css 'position', 'relative'
 
 
-
-		
-
-
-
-
-
-
-
-
-
 ready = ->
 	TopNav.init()
 $(document).ready ready

@@ -4,14 +4,17 @@ MobileMessages =
 		$('body').on 'ajax:success', '.mobile .convo-link', @appendConvo
 		$('body').on 'ajax:success', '.mobile #new_message', @obscureDate
 		$('body')	.on 'click', '.mobile .reply', @submitMessage
-
 		$('body').on 'click', '.mobile .content-container', @removeChat
 		$('body').on 'click', '.mobile .results-container', @removeChat
+		$('body').on 'click', '.back-tut.close-chat', @removeChat  
 
 	removeChat: ->
 		$('.chat-partial').remove()
 		$('.content-container').css 'opacity', ''
 		$('.content-container').css 'background', '#f1f1f1'
+		$('.menu-icon').show()
+		$('.menu-title').text 'Cliq'
+		$('.close-chat').remove()
 
 
 	submitMessage: ->
