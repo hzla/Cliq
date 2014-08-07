@@ -1,7 +1,7 @@
 <div class="top-nav">
 	<%= image_tag "mobile-menu.svg", :class => "menu-icon left" %>
 	<span class="menu-title">Cliq</span>
-	<%= link_to messages_path do %>
+	<%= link_to messages_path, :class => "messages-top-nav" do %>
 		<%= image_tag "mobile-messages.svg", :class => "menu-icon right" %>
 	<% end %>
 </div>
@@ -38,11 +38,6 @@
 						<%= current_user.message_count %>
 					</div>
 				<% end %>
-			</div>
-		<% end %>
-		<%= link_to logout_path, :class => 'tab', id: "logout" do%>
-			<div class="mob-nav side-icon <%= 'active' if active == :settings %>" id="mob-nav-settings" >
-				<div class="icon-label main">Logout</div>
 			</div>
 		<% end %>
 		<%= link_to settings_path(current_user), remote: true, :class => 'tab', id: "settings" do%>

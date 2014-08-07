@@ -49,6 +49,11 @@ Search =
 		
 		name = $('.swiped-card-name:visible').text()
 		$('.menu-title').text name
+		
+
+
+
+
 		$(".chat-partial").swipe 
 			swipe: (event, direction, distance, duration, fingerCount) ->
 				if direction == "right"
@@ -206,7 +211,7 @@ Search =
 			$('.swiped-result').first().show().addClass 'animated fadeIn'
 			if $('#empty').length > 0
 				$('#no-one-around').show()
-			$('#found').text "Please enter a valid location." if $('#invalid').length > 0
+			$('body').scrollTo($('.mobile .result'))
 
 	displaySearching: ->
 		$('#search-results').html "<div id='searching'>SEARCHING...</div>"

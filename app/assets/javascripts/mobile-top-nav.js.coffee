@@ -26,6 +26,8 @@ TopNav =
 
 	closeNav: ->
 		$('.menu-title').text('Cliq')
+		$('.menu-icon').show()
+		$('.extra').remove()
 		$('.top-nav-content').removeClass('animated fadeOutLeftBig').addClass('animated fadeOutLeftBig')		
 		$('.chat-partial').remove()
 		$('.user-other-container').remove()

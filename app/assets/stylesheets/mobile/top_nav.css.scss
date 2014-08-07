@@ -30,12 +30,17 @@
 
 
 .menu-icon.left {
-	float: left;
+	position: absolute;
+	left: 0;
 	margin-left: 10px;
 }
 
+.messages-top-nav {
+	position: absolute;
+	right: 0;
+}
+
 .menu-icon.right {
-	float: right;
 	margin-right: 10px;
 }
 

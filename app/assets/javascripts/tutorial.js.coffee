@@ -37,7 +37,7 @@ Tutorial =
 	updateInterestCount: ->
 		
 		oldCount = $('.all-scroll-acts .chosen').length 
-		$(@).parent().toggleClass('chosen')
+		$(@).parent().toggleClass('chosen') if $('.tut').length > 0
 		newCount = $('.all-scroll-acts .chosen').length 
 		difference = newCount - oldCount
 		intCount = parseInt($('#int-number').text())

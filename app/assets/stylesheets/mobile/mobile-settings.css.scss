@@ -5,8 +5,10 @@
 		width: 100%;
 		float: left;
 		background:	white;
-		height: calc(100% - 44px);
-		position: relative;
+		height: calc(100% - 84px);
+		position: fixed;
+		overflow-y: scroll;
+		 
 	} //  6 + 3*(36) + 85 + 8 + 50 + 5 40
 	#faq-questions {
 	}
@@ -136,5 +138,19 @@
 	#save-settings:hover {
 		background: $light-turq;
 		color: white;
+	}
+	#save-settings-button {
+		position: fixed;
+		bottom: 0;
+		height: 40px;
+		border-radius: 0px;
+		font-size: 23px;
+		text-align: center;
+		background-color: $light-turq;
+		color: white;
+		width: 100%;
+	}
+	.save-text {
+		margin-top: 7px;
 	}
 }

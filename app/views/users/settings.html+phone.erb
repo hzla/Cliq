@@ -1,3 +1,8 @@
+<script>
+	$('.menu-icon.right').hide()
+	$('.top-nav').append("<a href='/logout'><span class='next-tut proceed extra'>Logout</span></a>")
+</script>
+
 
  <div id="faq-container">
 
@@ -66,7 +71,7 @@
 					</div>
 				</div>
 
-				<%= f.submit "Save Settings", id: "save-settings" %>
+				<%= f.submit "Save Settings", id: "save-settings", :class => "hidden" %>
 			</div>
 
 			<% end %>
@@ -75,6 +80,7 @@
 				Delete Account
 			</div>
 	</div>
+	<div id="save-settings-button"><div class="save-text">Save Settings</div></div>
 </div>
 
 <div id="delete-modal" class="modal">
@@ -86,9 +92,6 @@
 </div>
 
 <script>
-	marginTop = $('.content-container').height() - 307 + "px"
-	$('#save-settings').css('margin-top', marginTop)
-
 	$('.hidden-box').each(function(){
 		if ($(this).attr("checked") == "checked") {
 			$(this).next().addClass("enabled");

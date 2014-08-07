@@ -1,7 +1,6 @@
 MobileSearch = 
 	init: ->
 		$('body').on 'ajax:success', '#search-form.mobile:not(.big-search)', @swipeUpToResults
-		$('body').on 'ajax:succss', '#search-form.mobile.big-search', @displayResults
 		$('body').on 'click', '.search-icon', @swipeDownToSearch
 		$('body').on 'click', '.quick-search-button', @submitSearch
 
@@ -32,8 +31,6 @@ MobileSearch =
 	    	threshold: 16 
 		
 		
-	
-
 	swipeDownToSearch: ->
 		$('#results-container').addClass('animated fadeOutUpBig')
 		$('#search-container').show().removeClass().addClass('mobile animated fadeInUpBig')

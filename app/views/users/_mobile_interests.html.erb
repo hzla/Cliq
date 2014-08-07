@@ -4,7 +4,7 @@
 					<div class="scroll-cat">
 						<div class="scroll-cat-name"><%= cat_acts.first[1].first.category.mobile_name %></div>
 						<%= image_tag cat_acts.first[1].first.category.image_url, :class => "scroll-cat-pic" %>
-						<div class="overlay hidden"></div>
+						<div class="overlay"></div>
 					</div>
 					<div class="scroll-acts hidden">
 						<% cat_acts.first[1].first.category.activities.each do |act| %>
@@ -27,5 +27,8 @@
 <script>
 	$(document).ready(function(){
 		$($('.scroll-cat-pic')[1]).click()
+		$('.all-scroll-acts').scroll(function(){
+			$('.user-container')[0].scrollTop = 1000
+		})
 	})
 </script>
