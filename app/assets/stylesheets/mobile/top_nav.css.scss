@@ -8,7 +8,7 @@
 	top: 0;
 	z-index: 100;
 	background-color: white;
-	border: 1px solid white;
+	border-bottom: 1px solid $super-light-gray;
 	margin-top: -1px;
 	border-bottom: 1px solid $super-light-gray;
 }
@@ -63,15 +63,17 @@
 
 .mobile {
 	.mob-nav {
-		height: 44px;
+		height: 64px;
 		border-bottom: 1px solid $super-light-gray;
-		padding-bottom: 10px;
+        box-sizing: border-box;
+        padding: 20px;
 		.svg path {
 			fill: $light-turq;
 		}
 		.nav-icon {
-			height: 27px;
-			width: 27px;
+			height: 24px;
+			width: 24px;
+            margin: 0px;
 		}
 		.icon-label.main {
 			width: 80%;
@@ -79,6 +81,7 @@
 			font-family: $generic-font;
 			left: 55px;
 			top: 4px;
+            margin-right: 6px;
 		}
 	}
 	.settings.side-icon {

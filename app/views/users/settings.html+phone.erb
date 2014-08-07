@@ -16,7 +16,7 @@
 				<div class="settings-group">
 
 					<div class="faq-question head-3 dark-gray">
-						Email:
+						Email
 					</div>
 
 					<%= f.text_field :email, :class => "settings-input head-4", value: current_user.email %>
@@ -25,7 +25,7 @@
 				<div class="settings-group">
 
 					<div class="faq-question head-3 dark-gray">
-						School:
+						School
 					</div>
 
 					<%= f.text_field :school, :class => "settings-input head-4", value: current_user.school %>
@@ -36,7 +36,7 @@
 
 
 					<div class="faq-question head-3 dark-gray">
-						Send Notifications
+						Notifications
 					</div>
 
 					<div class="notification-setting  head-4">
@@ -57,7 +57,7 @@
 				<div class="settings-group lgbtq">
 
 					<div class="lgbtq-container head-3">
-						<div class="faq-question">I am:</div> 
+						<div class="faq-question">I am</div> 
 						<%= f.check_box :lbgtq, value: true, checked: current_user.lbgtq, :class => "hidden-box" %>
 						<%= label "lbgtq",nil, "LGBTQ", :class => "settings-label" %>
 						<p id="lbgtq-text">

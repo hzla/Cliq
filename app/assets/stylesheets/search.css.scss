@@ -30,7 +30,7 @@
 }
 
 #activity {
-	width: 370px;
+	width: 25vw;
   background-size: cover;
   color: $gray;
   font-family: "proxima-nova",sans-serif;
@@ -73,7 +73,7 @@
 	opacity: 1;
 	height: 38px;
   font-family: "proxima-nova",sans-serif;
-  width: calc(100% - 60px);
+  width: 25vw;
   clear: left;
 
 }
@@ -88,7 +88,7 @@
 	float: left;
 	clear: left;
 	margin-top: 6px;
-	width: 85%;
+	width: 94%;
 }
 
 .search-term.searched {

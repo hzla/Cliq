@@ -128,22 +128,22 @@
 .convo-details {
 	float: left;
 	width: 300px;
-	height: 75px;
+	height: 100%;
 	margin-left: 15px;
-	font-family: $generic-font
+	font-family: $generic-font;
+    box-sizing: border-box;
+    padding: 3% 0px;
 }
 
 .convo-name {
 	float:left;
 	font-weight: 600;
-    margin-top: 9px;
 }
 
 .convo-date {
 	float: right;
 	font-weight: 600;
 	margin-right: 15px;
-    margin-top: 9px;
     color:$gray;
 }
 
@@ -151,7 +151,7 @@
 	float: left;
 	clear: left;
     font-weight: 300;
-    margin: 2px 0px;
+    margin: 0px 0px;
 }
 
 .convo-last-message {
@@ -178,7 +178,7 @@
 }
 
 .message.sent {
-	background-color: $turq;
+	background-color: $dark-turq;
 	float: right;
 	padding-right: 15px;
 	text-align: left;
@@ -282,6 +282,7 @@
 
 .conversation {
 	float: left;
+    height: 75px;
 }
 
 .conversation.current:hover {

@@ -35,12 +35,14 @@ class Conversation < ActiveRecord::Base
 
 	def update_notifications user
 		other_user = get_other_user user
-		unseen = messages.where seen: false, user_id: other_user.id
-		new_count = user.message_count - unseen.length
-		user.update_attributes message_count: new_count
-		unseen.update_all seen: true	
-		Connection.where(user_id: user.id, conversation_id: id).first.update_attributes(emailed: false)
-	end
+		if other_user
+            unseen = messages.where seen: false, user_id: other_user.id
+            new_count = user.message_count - unseen.length
+            user.update_attributes message_count: new_count
+            unseen.update_all seen: true	
+            Connection.where(user_id: user.id, conversation_id: id).first.update_attributes(emailed: false)
+        end
+    end
 
 end
 
