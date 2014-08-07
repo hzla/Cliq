@@ -40,20 +40,10 @@
 				<% end %>
 			</div>
 		<% end %>
-		<%= link_to events_path, remote: true, :class => 'tab', id: "events" do %>
-			<div class="mob-nav events <%= 'active' if active == :events %> side-icon" >
-				<%= image_tag "Events.svg", :class => "nav-icon svg" %>
-				<% if current_user.event_count > 0 %>
-						<div class="counter">
-							<%= current_user.event_count%>
-						</div>
-					<% else %>
-						<div class="counter hidden">
-							<%= current_user.event_count %>
-						</div>
-					<% end %>
-				<div class="icon-label main">Events</div>
-			</div> 
+		<%= link_to logout_path, :class => 'tab', id: "logout" do%>
+			<div class="mob-nav side-icon <%= 'active' if active == :settings %>" id="mob-nav-settings" >
+				<div class="icon-label main">Logout</div>
+			</div>
 		<% end %>
 		<%= link_to settings_path(current_user), remote: true, :class => 'tab', id: "settings" do%>
 			<div class="mob-nav settings side-icon <%= 'active' if active == :settings %>" id="mob-nav-settings" >
@@ -73,7 +63,6 @@
     $.get(imgURL, function(data) {
         // Get the SVG tag, ignore the rest
         var $svg = $(data).find('svg');
-
         // Add replaced image's ID to the new SVG
         if(typeof imgID !== 'undefined') {
             $svg = $svg.attr('id', imgID);
@@ -89,3 +78,5 @@
     }, 'xml');
   });
 </script>
+
+

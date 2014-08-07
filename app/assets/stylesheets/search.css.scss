@@ -73,7 +73,7 @@
 	opacity: 1;
 	height: 38px;
   font-family: "proxima-nova",sans-serif;
-  width: 370px;
+  width: calc(100% - 60px);
   clear: left;
 
 }
@@ -117,6 +117,7 @@
 #activity {
 	opacity: 1;
   font-family: "proxima-nova",sans-serif;
+  width: 100%;
 }
 
 .search-term {

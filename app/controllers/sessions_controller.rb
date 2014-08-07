@@ -16,6 +16,9 @@ class SessionsController < ApplicationController
 	    user = User.create_with_facebook auth_hash
 	    session[:user_id] = user.id 
 	    current_user.update_attributes active: true
+	    if browser.mobile?
+	    	redirect_to tutorial_path
+	    end
 	    redirect_to user_path(user,{:welcome => true})
 	  end
 	end

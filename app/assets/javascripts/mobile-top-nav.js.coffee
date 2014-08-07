@@ -5,30 +5,35 @@ TopNav =
 		$('.content-container').click @closeNav
 
 	openNav: ->
-		$('.top-nav-content').show().addClass 'animated fadeInLeftBig'
+		$('.top-nav-content').show().removeClass('animated fadeOutLeftBig').addClass 'animated fadeInLeftBig'
 		$('.content-container').css 'background', '#414141'
 		$('.content-container').css 'opacity', '.3'
+		$('.content-container').css 'position', 'fixed'
 		$('top-nav').css 'background', '#414141'
 		$('.top-nav').css 'opacity', '.3'
 		$('.top-nav-content').swipe	
-				swipe: (event, direction, distance, duration, fingerCount) ->
-					if direction == "left"
-						TopNav.closeNav()
-					threshold: 100 
-		$('.tab').swipe	
-				swipe: (event, direction, distance, duration, fingerCount) ->
-					console.log distance
-					if direction == "left"
-						TopNav.closeNav()
-					threshold: 100 
+			swipe: (event, direction, distance, duration, fingerCount) ->
+				if direction == "left"
+					TopNav.closeNav()
+				threshold: 100 
+		$('.mob-nav').swipe	
+			swipe: (event, direction, distance, duration, fingerCount) ->
+				console.log distance
+				if direction == "left"
+					TopNav.closeNav()
+				threshold: 100 
 
 	closeNav: ->
 		$('.menu-title').text('Cliq')
-		$('.top-nav-content').hide()
+		$('.top-nav-content').removeClass('animated fadeOutLeftBig').addClass('animated fadeOutLeftBig')
+		$('.top-nav-content').one 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', ->
+			$(@).hide()
+		$('.chat-partial').remove()
 		$('top-nav').css 'background', 'white'
 		$('.top-nav').css 'opacity', '1'
 		$('.content-container').css 'opacity', ''
 		$('.content-container').css 'background', '#f1f1f1'
+		$('.content-container').css 'position', 'relative'
 
 
 

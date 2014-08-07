@@ -7,7 +7,7 @@
 						<div id="query-1" class="white">I want to hang out in</div>
 						<%= text_field_tag :location, nil, :class => " dark-gray search-term", id: "query-location", value: current_user.address, placeholder: "City, State" %>
 						<%= hidden_field_tag "location_id" %>
-						<div id="query-2" class=" white">with people interested in</div>
+						<div id="query-2" class=" white">with people interested near</div>
 					</div>
 					<div id="query-interests" class=" dark-gray">
 						<%= text_field_tag :activity, nil, :class => "query-interest search-term", placeholder: 'Stuff I Like' %>

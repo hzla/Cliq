@@ -7,7 +7,7 @@
 				<%= form_tag search_path, id: "search-form", :class => "mobile big-search", remote: true do %>
 					<div class="search-top">
 						<div id="query-row-1">
-							<div id="query-1" class="mobile white">I want to hang out in</div>
+							<div id="query-1" class="mobile white">I want to hang out near</div>
 							<%= text_field_tag :location, nil, :class => "mobile dark-gray search-term", id: "query-location", value: current_user.address %>
 							<%= hidden_field_tag "location_id" %>
 						</div>
