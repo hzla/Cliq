@@ -43,7 +43,7 @@
 				<div class="sim-info">
 					<div class="mutual">
 						<%= image_tag "Mutual.svg", :class => "sim-label svg" %>
-						<div class="sim dark-gray"><%= entry[1].length %></div>
+						<div class="sim dark-gray"><%= current_user.similar_categories_with entry[0] %></div>
 					</div>
 
 					<div class="similar">

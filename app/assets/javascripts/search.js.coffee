@@ -85,7 +85,7 @@ Search =
 			$('body').append data
 			$('.user-other-container').addClass 'animated bounceInRight'
 			$('.content-container').css 'opacity', '.3'
-			$('#profile-container').swipe	
+			$('.user-other-container').swipe	
 				swipe: (event, direction, distance, duration, fingerCount) ->
 					if direction == "right"
 						$('.user-other-container').addClass 'animated fadeOutRightBig'
@@ -95,6 +95,7 @@ Search =
 							$('.content-container').css 'background', '#f1f1f1'
 							$('.menu-title').text 'Cliq'
 					threshold: 150 
+					allowPageScroll: "vertical"
 				
 
 	collapseChat: ->

@@ -139,8 +139,13 @@ class User < ActiveRecord::Base
 	end
 
 	def similarities_with user
-		act_ids = activities.map(&:id)
+		act_ids = interests.pluck(:activity_id)
 		user.interests.where('activity_id in (?)', act_ids).length
+	end
+
+	def similar_categories_with user
+		act_ids = interests.pluck(:activity_id)
+		user.activities.where('activity_id in (?)', act_ids).pluck(:category_id).uniq.length
 	end
 
 	def similar_interests user, results

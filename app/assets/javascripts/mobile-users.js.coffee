@@ -4,7 +4,7 @@ MobileUsers =
 		$('body').on 'click', '.settings-label', @toggleEnabled
 		$('body').on 'ajax:success', '.edit_user', @showSaved
 		$('body').on 'submit', '.edit_user', @showSaving
-		$('body').on 'click', '.scroll-cat-pic', @showScrollActs
+		$('body').on 'click', '.overlay', @showScrollActs
 		$('body').on 'click', '.scroll-cat-name', @showScrollActs
 		$('body').on 'ajax:success', '.mobile .add-other-act', @addChosen
 		$('body').on 'focus', '.mobile .profile-actions input', @tellEnter

@@ -42,7 +42,7 @@
 						</div>
 						<div class="swiped-suggestion dark-gray headers">
 							<%= image_tag ('Similar.svg'), :class => "swiped-sug-pic headers sim svg" %>
-							<div class="swiped-count"><%= entry[1].length %></div>
+							<div class="swiped-count"><%= current_user.similar_categories_with entry[0] %></div>
 						</div>
 
 						<% current_user.similar_interests(entry[0], entry[1]).each do |suggestion| %>
