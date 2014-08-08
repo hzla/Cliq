@@ -137,9 +137,11 @@
 		margin: 0px;
 		position: absolute;
 		color: white;
-		top: -35px;
+		top: -55px;
 		text-align: center;
 		z-index: 10;
+		font-family: $generic-font;
+		line-height: 1;
 	}
 	.scroll-act.chosen {
 		background-color: $orange;

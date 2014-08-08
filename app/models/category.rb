@@ -70,13 +70,18 @@ class Category < ActiveRecord::Base
 	end
 
 	def mobile_name 
-		if full_name.length > 12 
-			name = full_name[0..11]
-			name[5..7] = "..."
-			name[0..7] + full_name[-5..-1]
-		else
-			full_name
+		split_name = name.split(" ")
+		mobile = []
+		split_name.each do |word|
+			if !mobile.last
+				mobile << word
+			elsif mobile[-1].length > 5
+				mobile << word
+			else
+				mobile[-1] += " #{word}"
+			end
 		end
+		mobile
 	end
 
 
