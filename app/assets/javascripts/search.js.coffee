@@ -50,10 +50,6 @@ Search =
 		name = $('.swiped-card-name:visible').text()
 		$('.menu-title').text name
 		
-
-
-
-
 		$(".chat-partial").swipe 
 			swipe: (event, direction, distance, duration, fingerCount) ->
 				if direction == "right"
@@ -62,6 +58,8 @@ Search =
 						$('.chat-partial').remove()
 						$('.content-container').css 'opacity', ''
 						$('.content-container').css 'background', '#f1f1f1'
+						$('.menu-icon').show()
+						$('.extra').remove()
 						$('.menu-title').text 'Cliq'
 			threshold: 150 
 			allowPageScroll: "vertical"
@@ -85,7 +83,7 @@ Search =
 			$('body').append data
 			$('.user-other-container').addClass 'animated bounceInRight'
 			$('.content-container').css 'opacity', '.3'
-			$('.user-other-container').swipe	
+			$('#profile-container, .all-scroll-acts').swipe	
 				swipe: (event, direction, distance, duration, fingerCount) ->
 					if direction == "right"
 						$('.user-other-container').addClass 'animated fadeOutRightBig'

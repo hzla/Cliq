@@ -13,7 +13,7 @@
 			<% @categories.each do |cat| %>
 					<div class="scroll-cat">
 <pre class="scroll-cat-name"><% cat.mobile_name.each do |word| %><%= word %><br><% end %></pre>
-						<%= image_tag cat.image_url, :class => "scroll-cat-pic" %>
+						<%= image_tag cat.thumb_image_url, :class => "scroll-cat-pic" %>
 						<div class="overlay"></div>
 					</div>
 					<div class="scroll-acts hidden">
