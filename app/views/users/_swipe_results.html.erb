@@ -10,9 +10,9 @@
 				<%= link_to other_user_path(entry[0]), :class => "other-user", remote: true do %>
 			
 					<% if current_user.conversated_with? entry[0] %>
-						<%= image_tag entry[0].profile_pic_url || 'cliq.png', :class => "swiped-profile-pic-card" %>
+						<%= image_tag entry[0].profile_pic_url || 'Cliq.svg', :class => "swiped-profile-pic-card #{entry[0].color}" %>
 					<% else %>
-						<%= image_tag entry[0].obscured_pic , :class => "swiped-profile-pic-card" %>
+						<%= image_tag entry[0].obscured_pic , :class => "swiped-profile-pic-card #{entry[0].color}" %>
 					<% end %>
 				<% end %>
 

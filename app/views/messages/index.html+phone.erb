@@ -10,9 +10,9 @@
 					<div class="conversation" id="<%= user.id %>">
 						<%= link_to other_user_path(user), :class => "other-user", remote: true do %>
 							<% if current_user.conversated_with? user %>
-								<%= image_tag user.profile_pic_url || 'cliq.png', :class => "convo-pic" %>
+								<%= image_tag user.profile_pic_url || 'Cliq.svg', :class => "convo-pic #{user.color}" %>
 							<% else %>
-								<%= image_tag 'cliq.png', :class => "convo-pic" %>
+								<%= image_tag 'Cliq.svg', :class => "convo-pic" %>
 							<% end %>
 						<% end %>
 						<%= link_to conversation_path(convo, phone: true), :class => "convo-link", remote: true do %>

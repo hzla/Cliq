@@ -51,6 +51,10 @@ class Category < ActiveRecord::Base
 		'https://s3.amazonaws.com/CliqBucket/Categories/' + url_name
 	end
 
+	def thumb_image_url
+		image_url.gsub(".jpg", "_Thumbnail.jpg")
+	end
+
 	def full_name
 		if depth > 1
 			name + " " + parent.name

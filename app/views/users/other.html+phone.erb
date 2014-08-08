@@ -4,9 +4,13 @@
     <div class="user-container">
         <div id="profile-container"> 
             <div class="profile-info">
-                <%= image_tag @user.profile_pic_url, :class => "profile-pic" %>
-                    <div id="name-self"><%= @user.name %></div>
-                    <div id="school-self"><%= @user.school %></div>
+                <% if current_user.conversated_with? @user %>
+                    <%= image_tag @user.profile_pic_url, :class => "profile-pic" %>
+                <% else %>
+                    <%= image_tag 'Cliq.svg', :class => "profile-pic #{@user.color}" %>
+                <% end %>                   
+                <div id="name-self"><%= @user.name %></div>
+                <div id="school-self"><%= @user.school %></div>
             </div>
 
             <div class="account-stats">

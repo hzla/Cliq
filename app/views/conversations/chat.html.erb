@@ -6,7 +6,7 @@
 			<% if current_user.conversated_with? @other_user %>
 					<%= image_tag @other_user.profile_pic_url, id: "chat-pic" %>
 				<% else %>
-					<%= image_tag 'cliq.png', id: "chat-pic" %>
+					<%= image_tag 'Cliq.svg', id: "chat-pic", :class => "#{@other_user.color}" %>
 				<% end %>
 			<div id="chat-info">
 				<div id="chat-name"><%= @other_user.first_name %></div>

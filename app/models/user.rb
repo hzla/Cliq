@@ -31,6 +31,10 @@ class User < ActiveRecord::Base
 		Time.now - 15.minutes < updated_at 
 	end
 
+	def color
+		sex == "male" ? "blue-card" : "pink-card"
+	end
+
 	def activate
 		self.activation = 'activated'
 		save
@@ -203,7 +207,7 @@ class User < ActiveRecord::Base
 	end
 
 	def obscured_pic
-		lbgtq ? 'Rainbow.svg' : 'cliq.png'
+		lbgtq ? 'Rainbow.svg' : 'Cliq.svg'
 	end
 
 	def char_categories
