@@ -81,6 +81,8 @@
 		overflow-x: scroll;
 		overflow-y: hidden;
 		height: 90px;
+	}
+	.user-container.self .cat-collection {
 		-webkit-overflow-scrolling: touch;
 	}
 	.scroll-cat-pic {
@@ -92,6 +94,7 @@
 		margin: 0 auto;
 		max-height: 280px;
 		overflow-y: scroll;
+		-webkit-overflow-scrolling: touch;
 	}
 	.user-container.self .all-scroll-acts {
 		margin-bottom: 50px;
