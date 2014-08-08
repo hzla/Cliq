@@ -135,6 +135,17 @@ class User < ActiveRecord::Base
 		false
 	end
 
+	def top_shared user
+		act_ids = interests.pluck(:activity_id)
+		cats = user.activities.where('activity_id in (?)', act_ids).group_by(&:category_id).to_a.sort_by do |cat|
+			cat[0]
+		end
+		top_two = cats[0..1].map do |cat|
+			cat[0]
+		end
+		Category.find top_two
+	end
+
 	def talked_to? user #do they any conversations at all?
 		conversations.each do |convo|
 			return convo if convo.users.include? user

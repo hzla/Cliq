@@ -45,10 +45,10 @@
 							<div class="swiped-count"><%= current_user.similar_categories_with entry[0] %></div>
 						</div>
 
-						<% current_user.similar_interests(entry[0], entry[1]).each do |suggestion| %>
+						<% current_user.top_shared(entry[0]).each do |suggestion| %>
 							<div class="swiped-suggestion dark-gray">
 								<div class="swiped-sug-name"><%= suggestion.name %></div>
-								<%= image_tag (suggestion.activity_pic.url || 'cliq.png'), :class => "swiped-sug-pic" %>
+								<%= image_tag (suggestion.image_url || 'cliq.png'), :class => "swiped-sug-pic" %>
 							</div>
 						<% end %>
 					</div>
