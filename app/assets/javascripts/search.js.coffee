@@ -212,7 +212,7 @@ Search =
 			$('.swiped-result').first().show().addClass 'animated fadeIn'
 			if $('#empty').length > 0
 				$('#no-one-around').show()
-			$('body').scrollTo($('.mobile .result'))
+			$('body').scrollTo($('.mobile .result')) if $('.searched').length < 1
 
 	displaySearching: ->
 		$('#search-results').html "<div id='searching'>SEARCHING...</div>"

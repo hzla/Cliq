@@ -12,9 +12,9 @@
 			<%= link_to other_user_path(entry[0]), :class => "other-user", remote: true do %>
 		
 				<% if current_user.conversated_with? entry[0] %>
-					<%= image_tag entry[0].profile_pic_url || 'Cliq.svg', :class => "profile-pic-card" %>
+					<%= image_tag entry[0].profile_pic_url || 'Cliq.svg', :class => "profile-pic-card #{entry[0].color}" %>
 				<% else %>
-					<%= image_tag 'Cliq.svg', :class => "profile-pic-card" %>
+					<%= image_tag 'Cliq.svg', :class => "profile-pic-card #{entry[0].color}" %>
 				<% end %>
 			<% end %>
 			
@@ -51,15 +51,6 @@
 						<div class="sim dark-gray"><%= current_user.similarities_with entry[0] %></div>
 					</div>
 				</div>
-
-				<div class="gender">
-					<% if entry[0].sex == "male" %>
-						<%= image_tag "Dude.svg", :class => "sim-label svg" %>
-					<% else %>
-						<%= image_tag "Female.svg", :class => "sim-label svg" %>
-					<% end %>
-				</div>
-		
 			</div>
 		</div>
 	<% end %>
