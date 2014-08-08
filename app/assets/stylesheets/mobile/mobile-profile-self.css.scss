@@ -81,6 +81,7 @@
 		overflow-x: scroll;
 		overflow-y: hidden;
 		height: 90px;
+		-webkit-overflow-scrolling: touch;
 	}
 	.scroll-cat-pic {
 		width: 120px;
