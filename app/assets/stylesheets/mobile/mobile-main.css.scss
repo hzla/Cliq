@@ -13,7 +13,7 @@
 
 .search-top {
 	background: image_url("mobile-background2.jpg") no-repeat center;
-	height: 88px;
+	height: 80px;
 	text-align: center;
     background-size: cover;
 }
@@ -122,8 +122,9 @@
 }
 
 .mobile #results {
-	margin-top: 10px;
-	border-top: none;
+    margin: 0px;
+    border-top: none;
+    box-sizing: border-box;
 }
 
 .mobile .swiped-content {
@@ -161,6 +162,8 @@
 
 .mobile #friend-invite {
 	padding-top: 0px;
+    width: 80%;
+    margin: 0px auto;
 }
 
 .mobile .swiped-actions {
@@ -221,10 +224,12 @@
 
 .mobile #send-cliq-invite {
 	width: 100%;
-	height: 33px;
-	font-size: 25px;
-	margin: 0 auto;
-	margin-top: 5%;
+    height: 31px;
+    font-size: 17px;
+    margin: 0 auto;
+    margin-top: 5%;
+    font-family: $generic-font;
+    font-weight: 600;
 }
 
 .mobile #post-invite {
@@ -232,11 +237,17 @@
 }
 
 .mobile #enter-email {
-	font-size: 13px;
+	font-size: 15px;
+    font-weight: 400;
+    margin: 2px 0px 0px 0px;
+    line-height: 2;
 }
 
 .mobile #what-send {
-	font-size: 13px;
+	font-size: 15px;
+    font-weight: 400;
+    line-height: 2;
+    margin-top: 2px;
 }
 
 .mobile .swiped-profile-pic-card {
@@ -270,12 +281,10 @@
 
 .mobile #results {
 	margin-bottom: -1px;
-	border: 1px solid white;
 	border-top: none;
 }
 
 .mobile .swiped-result {
-	border: 1px solid white;
 	margin-bottom: -10px;
 }
 
@@ -318,15 +327,22 @@
 		font-size: 16px;
 	}
 	#post-invite-content {
-		width: 200px;
+		width: 100%;
 	}
 	#invite-email {
-		height: 13px;
-		width: 150px;
-		font-size: 12px;
+		height: 31px;
+        width: 150px;
+        font-size: 15px;
+        font-family: "proxima nova";
+        padding: 5px 13px;
+        box-sizing: border-box;
 	}
 	.swiped-actions .chat-user {
 		width: auto;
 	}
 }
 
+.mobile #preview text {
+    font-size: 12px;
+    margin: 0px;
+}
