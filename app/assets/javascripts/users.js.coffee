@@ -31,6 +31,7 @@ Users =
 			</div><div class='activities' id='#{id}'><div class='act-name'>#{$('#self-search').val()} •</div></div></div>"
 
 	closeWelcome: ->
+		console.log $('#activation-container') 
 		$('#activation-container').remove()
 
 	openFeedback: -> 

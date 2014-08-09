@@ -7,7 +7,7 @@ Cliq =
 		@hightlightTab()
 
 	hightlightTab: ->
-		url = location.href.replace("#_=_", "").split('/')
+		url = location.href.replace("#_=_", "").replace("?welcome=true", "").split('/')
 		tab = url[url.length - 1]
 		$("##{tab}").children('.side-icon').addClass('active')
 		if url[url.length - 2] == "users"
@@ -21,9 +21,6 @@ Cliq =
     	$('#profile').click()
     Cliq.nextState = false
     $('.back-link').click()
-
-
-		
 
 	search: (event, data, xhr, status) ->
 		$('.content-container').html data

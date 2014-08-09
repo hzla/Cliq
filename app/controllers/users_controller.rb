@@ -171,7 +171,7 @@ class UsersController < ApplicationController
 	end
 
 	def destroy
-		current_user.messages.map(&:conversation).uniq.each do |convo|
+		current_user.messages.map(&:conversation).uniq.compact.each do |convo|
 			convo.destroy
 		end
 		current_user.destroy
