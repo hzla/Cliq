@@ -14,10 +14,11 @@
             </div>
 
             <div class="account-stats">
-                <div class="stat"><span class="number"><%= @user.activities.length%><br></span> Interests</div>
-                <div class="stat" ><span class="number"><%= @user.attendings%><br></span> Events Attended</div>
-                <div class="stat"><span class="number"><%= @user.conversations.where(connected: true).count %><br></span> People
-                 Met</div>                      
+                <div class="stat"><span class="number"><%= @user.activities.length%><br></span> Shared Interests</div>
+                <div class="stat" >
+                    <%= image_tag "Mutual.svg", :class => "other-mut" %>
+                </div>
+                <div class="stat"><span class="number"><%= @user.conversations.where(connected: true).count %><br></span> Shared Categories</div>                      
             </div>
         </div>
         <%= render partial: 'mobile_interests', locals: {unformatted_interests: @unformatted_interests} %>

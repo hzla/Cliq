@@ -60,6 +60,8 @@ MobileUsers =
 		$('.all-scroll-acts').html acts
 		$('.all-scroll-acts').prepend $('.all-scroll-acts .chosen')
 		$(@).parent().find('.overlay').addClass('orange-overlay')
+		id = $(@).parent().attr('id').slice 2
+		$('#activity_category_id').val id
 
 	addChosen: -> 
 		$(@).parent().toggleClass('chosen') if $('.tut').length < 1

@@ -1,7 +1,7 @@
 <div class="interests-self">
 		<div class="cat-collection">
 			<% @unformatted_interests.each do |cat_acts| %>
-					<div class="scroll-cat">
+					<div class="scroll-cat" id="c-<%= cat_acts.first[1].first.category_id %>">
 <pre class="scroll-cat-name"><% cat_acts.first[1].first.category.mobile_name.each do |word| %><%= word %><br><% end %></pre>
 						<%= image_tag (cat_acts.first[1].first.category.thumb_image_url ), :class => "scroll-cat-pic" %>
 						<div class="overlay"></div>
