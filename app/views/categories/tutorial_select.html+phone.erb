@@ -14,7 +14,7 @@
 						<div class="overlay"></div>
 					</div>
 					<div class="scroll-acts hidden">
-						<% cat.activities.each do |act| %>
+						<% cat.activities.order(:name).each do |act| %>
 							
 								<div class="scroll-act <%= 'chosen' if @act_list.include?(act.id) %>">
 									<%= link_to interests_path(act_id: act.id, nothing: true), remote: true, method: :post, class: 'add-other-act' do %>

@@ -6,7 +6,7 @@ Users =
 		$('#faq-container').on 'click', @hideFeedback
 		$('#feedback-form').on 'ajax:success', @closeFeedback
 		$('#feedback-form').on 'submit', @showSending
-		$('body').on 'ajax:success', 'edit_user', @showSettingsStatus
+		$('body').on 'ajax:success', '.edit_user', @showSettingsStatus
 		$('body').on 'click', '#delete-account', @showDeleteModal
 		$('body').on 'click', '#cancel-delete', @cancelDelete
 		$('body').on 'mouseenter', '.act-name.other', @showPlus if $('.mobile').length < 1
@@ -62,7 +62,7 @@ Users =
 			$('#user_address').css 'border', 'none'
 			setTimeout ->
 				$('#settings-success').remove()
-			, 3000
+			, 2000
 
 	showDeleteModal: ->
 		$('#delete-modal').modal()
