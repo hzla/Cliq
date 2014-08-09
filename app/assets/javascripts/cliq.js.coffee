@@ -39,8 +39,9 @@ Cliq =
 	pushState: ->
 		$('.active').removeClass 'active'
 		$(@).children().addClass 'active'
-		$('.content-container').css 'background', 'white'
-		$('.content-container').css 'opacity', '.3'
+		if $('.mobile').length < 1
+			$('.content-container').css 'background', 'white'
+			$('.content-container').css 'opacity', '.3'
 
 
 	
