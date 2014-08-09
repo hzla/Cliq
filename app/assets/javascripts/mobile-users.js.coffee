@@ -4,8 +4,8 @@ MobileUsers =
 		$('body').on 'click', '.settings-label', @toggleEnabled
 		$('body').on 'ajax:success', '.edit_user', @showSaved
 		$('body').on 'submit', '.edit_user', @showSaving
-		$('body').on 'click', '.overlay', @showScrollActs
-		$('body').on 'click', '.scroll-cat-name', @showScrollActs
+		$('body').on 'touchstart', '.overlay', @showScrollActs
+		$('body').on 'touchstart', '.scroll-cat-name', @showScrollActs
 		$('body').on 'ajax:success', '.mobile .add-other-act', @addChosen
 		$('body').on 'focus', '.mobile .profile-actions input', @tellEnter
 		$('body').on 'focusout', '.mobile .profile-actions input', @revert
@@ -15,7 +15,7 @@ MobileUsers =
 
 
 	scrollDown: ->
-		$('.user-container')[0].scrollTop = 1000
+		# $('.user-container')[0].scrollTop = 1000
 
 	submitSettings: ->
 		$('.edit_user').submit()

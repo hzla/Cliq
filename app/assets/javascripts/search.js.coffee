@@ -46,10 +46,11 @@ Search =
 			$('.chat-partial').removeClass('current-thread')
 			$('.chat-partial').last().addClass 'animated bounceInRight current-thread'
 			$('.chat-partial').addClass('mobile') if $('.mobile').length > 0
-		
+		$('.mobile .message-history').kinetic
+			x: false
+		Search.obscureDate()
 		name = $('.swiped-card-name:visible').text()
 		$('.menu-title').text name
-		
 		$(".chat-partial").swipe 
 			swipe: (event, direction, distance, duration, fingerCount) ->
 				if direction == "right"
@@ -83,7 +84,8 @@ Search =
 			$('body').append data
 			$('.user-other-container').addClass 'animated bounceInRight'
 			$('.content-container').css 'opacity', '.3'
-			$('#profile-container, .all-scroll-acts').swipe	
+			$('.cat-collection').kinetic()
+			$('#profile-container').swipe	
 				swipe: (event, direction, distance, duration, fingerCount) ->
 					if direction == "right"
 						$('.user-other-container').addClass 'animated fadeOutRightBig'
@@ -92,6 +94,8 @@ Search =
 							$('.content-container').css 'opacity', ''
 							$('.content-container').css 'background', '#f1f1f1'
 							$('.menu-title').text 'Cliq'
+							$('.menu-icon').show()
+							$('.extra').hide()
 					threshold: 150 
 					allowPageScroll: "vertical"
 				
@@ -273,6 +277,29 @@ Search =
 		key = event.keyCode || event.charCode
 		if  key == 8 || key == 46 
 			$('#location_id').val ''
+
+	obscureDate: ->
+		dates = $('.date')
+		Search.obscureDates dates
+
+	obscureDates: (dates) ->
+		dates.each (index) ->
+			console.log @
+			if dates[index - 1] == undefined
+				return
+			else 
+				date = $(dates[index - 1]).text()
+				time = date.substr(date.length - 9).trim().slice(0,4)
+				hours = parseInt(time.slice(0,1)) * 60
+				mins = parseInt(time.slice(2,4))
+				totalTime = hours + mins
+				cTime = $(@).text().substr(date.length - 9).trim().slice(0,4)
+				cHours = parseInt(cTime.slice(0,1)) * 60
+				cMins = parseInt(cTime.slice(2,4))
+				cTotalTime = cHours + cMins
+				difference = cTotalTime - totalTime
+				if difference < 30 && difference > -1
+					$(@).hide() 
 
 
 ready = ->

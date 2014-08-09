@@ -1,7 +1,7 @@
 Tutorial = 
 	init: ->
-		$('body').on 'click', '.char', @highlightChar
-		$('body').on 'click', '.proceed', @submitTutorial
+		$('body').on 'touchend', '.char', @highlightChar
+		$('body').on 'touchend', '.proceed', @submitTutorial
 		$('body').on 'ajax:success', '.mobile .add-other-act', @updateInterestCount
 
 	highlightChar: ->

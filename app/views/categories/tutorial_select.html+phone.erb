@@ -51,7 +51,7 @@
 
 <script>
 	$(document).ready(function(){
-		$($('.overlay')[1]).click()
+		$($('.overlay')[1]).trigger('touchstart')
 		var intCount = 8 - $('.cat-collection .chosen').length
 		$('#int-number').text( intCount )
 		if (intCount < 1) {

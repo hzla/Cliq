@@ -4,7 +4,9 @@ if ($('.current-thread').length > 0) {
 	$(".message-history").append("<%= escape_javascript render partial: 'show', locals: {message: @message } %>");
 }
 
-$("#<%= @user.id %> .convo-details .convo-last-message").text("<%= @conversation.last_message.html_safe %>")
+
+<% message = @conversation.last_message.gsub!(/"/, '').html_safe %>
+$("#<%= @user.id %> .convo-details .convo-last-message").text("<%= message %>")
 $('.message-history')[0].scrollTop = $('.message-history')[0].scrollHeight
 $('.sending-progress').text('Done').addClass('animated fadeOut')
 $('.sending-progress').bind('oanimationend animationend webkitAnimationEnd', function(){
