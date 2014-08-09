@@ -73,7 +73,7 @@
 	opacity: 1;
 	height: 38px;
   font-family: "proxima-nova",sans-serif;
-  width: 25vw;
+  width: calc(100% - 30px);
   clear: left;
 
 }
@@ -88,7 +88,7 @@
 	float: left;
 	clear: left;
 	margin-top: 6px;
-	width: 94%;
+	width: calc(100% - 30px);
 }
 
 .search-term.searched {
@@ -152,6 +152,7 @@
   font-family: "proxima-nova",sans-serif;
   position: absolute; 
   bottom: -100px;
+  right: 0;
 }
 
 #searching {
