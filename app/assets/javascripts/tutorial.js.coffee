@@ -3,10 +3,9 @@ Tutorial =
 		$('body').on 'touchend', '.char', @highlightChar
 		$('body').on 'touchend', '.proceed', @submitTutorial
 		$('body').on 'ajax:success', '.mobile .add-other-act', @updateInterestCount
+		$('body').on 'touchend', '.tut-header.finished', @welcome
 
 	highlightChar: ->
-		
-
 		if ($('.highlighted').length < 2 && !$(@).hasClass('highlighted')) && !$(@).hasClass('char-button')
 			$(@).addClass("highlighted")
 		else
@@ -57,6 +56,12 @@ Tutorial =
 		if intCount > 0
 			$('.unfinished').show()
 			$('.finished').hide()
+
+	welcome: ->
+		$('.tut-header, .interests-self.tut, .back-tut').hide()
+		$('.menu-title').show().text('Welcome!')
+		$('#welcome-tut').show()
+
 
 
 	

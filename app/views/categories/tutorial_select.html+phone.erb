@@ -1,13 +1,10 @@
 <script>
 	$('.menu-icon').remove()
-	$('.menu-title').remove()
+	$('.menu-title').hide()
 	$('.top-nav').append("<div class='tut-header unfinished'>Pick <span id='int-number'></span> More</div>")
-	$('.top-nav').append("<a href='/main'><div class='tut-header finished hidden'>Tap to Finish</div></a>")
+	$('.top-nav').append("<div class='tut-header finished hidden'>Tap to Finish</div>")
 	$('.top-nav').append("<a href='/tutorial'><span class='back-tut'>Back</span><a>")
 </script>
-
-
-
 <div class="interests-self tut">
 		<div class="cat-collection">
 			<% @categories.each do |cat| %>
@@ -28,8 +25,6 @@
 					</div>
 			<% end %>
 		</div>
-
-
 	<div class="all-scroll-acts tut">
 	</div>
 	<div class="profile-actions green tut">
@@ -48,7 +43,6 @@
 			<% end %>
 		</div>
 </div>
-
 <script>
 	$(document).ready(function(){
 		$($('.overlay')[1]).trigger('touchstart')
@@ -59,6 +53,69 @@
 			$('.finished').show()
 		}
 	})
+</script>
 
+<div id="welcome-tut" class="hidden">
+	<div class="welcome-text">
+		<div class="instructions-1 wel-text">Just a couple more things to know:</div>
+		<div class="wel-text">Find people with similar interests<br>by using
+			<span class="light-turq">Shuffle</span> or <span class="light-turq">Search</span> 
+		</div>
+	</div>
+	<div class="welcome-similarities">
+		<div class="wel-group">
+			<span class="orange">Shared</span> Interests
+			<div class="welcome-similarity mutual-box">
+				<%= image_tag ('Mutual.svg'), :class => "wel-pic wel-mutual svg" %>
+			</div>
+		</div>
+		<div class="wel-group">
+			<span class="orange">Similar</span> Interests
+			<div class="welcome-similarity sim-box">
+				<%= image_tag ('Similar.svg'), :class => "wel-pic wel-sim svg" %>
+			</div>
+		</div>
+	</div>
+	<div class="welcome-text">
+		<div class="wel-text">Pictures are revealed once both<br>people start messaging each other.</div>
+		<div class="wel-text">And once you start chatting, you can<br>
+			<span class="light-turq">Invite</span> each other to hang out. 
+		</div>
+	</div>
+
+	<%= link_to main_path do %>
+		<div class="wel-gotit">
+			Got it!
+		</div>
+	<% end %>
+</div>
+
+
+
+<script>
+  $('img.svg').each(function(){
+    var $img = $(this);
+    var imgID = $img.attr('id');
+    var imgClass = $img.attr('class');
+    var imgURL = $img.attr('src');
+
+    $.get(imgURL, function(data) {
+        // Get the SVG tag, ignore the rest
+        var $svg = $(data).find('svg');
+
+        // Add replaced image's ID to the new SVG
+        if(typeof imgID !== 'undefined') {
+            $svg = $svg.attr('id', imgID);
+        }
+        // Add replaced image's classes to the new SVG
+        if(typeof imgClass !== 'undefined') {
+            $svg = $svg.attr('class', imgClass+' replaced-svg');
+        }
+        // Remove any invalid XML tags as per http://validator.w3.org
+        $svg = $svg.removeAttr('xmlns:a');
+        // Replace image with new SVG
+        $img.replaceWith($svg);
+    }, 'xml');
+  });
 </script>
 

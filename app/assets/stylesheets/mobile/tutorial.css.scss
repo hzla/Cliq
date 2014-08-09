@@ -137,7 +137,7 @@
 	margin-right: 0px;
 }
 
-////////////////////////
+//////////////////////////////////////////////////////////////////////
 
 .interests-self.tut {
 	margin-top: 0px;
@@ -178,3 +178,89 @@
 	padding: 5px 10px;
 	border-radius: 100px; 
 }
+
+
+/////////////////////////////////////////////////////////
+
+
+#welcome-tut {
+	width: 100%;
+	float: left;
+	background: white;
+	position: relative;
+}
+
+.welcome-text {
+	float: left;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+
+.instructions-1.wel-text {
+	font-weight: 400;
+}
+
+.wel-text {
+	font-size: 17px;
+	float: left;
+	margin-top: 10px;
+	font-weight: 300;
+}
+
+.welcome-similarities {
+	float: left;
+	margin-left: 10px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.wel-group {
+	width: 145px;
+	text-align: center;
+	float: left;
+}
+
+.welcome-similarity {
+	float: left;
+	width: 145px;
+	height: 145px;
+	border-radius: 10px;
+}
+
+.wel-group:nth-child(2n) {
+	margin-left: 10px;
+}
+
+.mutual-box {
+	background: $red;
+}
+
+.sim-box {
+	background: $orange;
+}
+
+.wel-pic {
+	width: 125px;
+	height: 125px;
+	margin: 10px;
+}
+
+.wel-pic path {
+	fill: rgba(255,255,255,.3)
+}
+
+.wel-gotit {
+	background: $light-turq;
+	color: white;
+	width: 100px;
+	height: 30px;
+	border-radius: 50px;
+	width: calc(100% - 200px);
+	margin-left: 100px;
+	text-align: center;
+	float: left;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	line-height: 1.9;
+}
+
