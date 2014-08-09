@@ -15,8 +15,8 @@ Users =
 		$('body').on 'click', '.shared-ints', @showShared
 		$('body').on 'click', '.different-ints', @showDifferent
 		$('body').on 'click', '.all-ints', @showAll
-		$('#quick-add').on 'click', @prepQuickAdd
-		$('#quick-search').submit @addInterest
+		$('body').on 'click', '#quick-add' , @prepQuickAdd
+		$('body').on 'submit', '#quick-search', @addInterest
 
 	addInterest: ->
 		id = "#c-" + $('.interest-info').text().split("@")[0]
