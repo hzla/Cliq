@@ -142,15 +142,18 @@
 	#save-settings-button {
 		position: fixed;
 		bottom: 0;
-		height: 40px;
+		height: 64px;
 		border-radius: 0px;
-		font-size: 23px;
+		font-size: 17px;
+        font-weight: 300;
 		text-align: center;
 		background-color: $light-turq;
 		color: white;
 		width: 100%;
+        line-height: 3.6;
 	}
 	.save-text {
-		margin-top: 7px;
+		margin: 0px;
+        height: 100%;
 	}
 }
