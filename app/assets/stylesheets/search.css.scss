@@ -29,7 +29,7 @@
 	font-size: 28px;
     width: 100%;
     box-sizing: border-box;
-    padding: 20% 10% 20% 15%;
+    padding: 20vh 10% 20% 15%;
 }
 
 #activity {
@@ -178,7 +178,6 @@
 	float: left;
 	background: white;
 	height: 100%;
-	margin-top: 30px;
 }
 
 #search-results {
@@ -236,7 +235,7 @@
 
 .card-header {
 	float: left;
-	margin-left: 14px;
+	margin-left: 3%;
 	margin-top: 10px;
 }
 
@@ -412,15 +411,14 @@
 
 
 #no-one-around {
-	height: 400px;
-	margin-bottom: 50px;
+	height: 100%;
+    padding: 20% 10%;
 }
 
 #no-one-text {
-	padding-top: 100px;
 	font-weight: 400;
-	width: 600px;
-	margin: 0 auto;
+	width: 100%;
+	margin: 0px 0px 10% 0px
 }
 
 #cliq-invite {
