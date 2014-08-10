@@ -70,7 +70,7 @@ class User < ActiveRecord::Base
 
 		users = users.map {|user| [user, interests[user.id]]}
 		blist = "#{blacklist},#{id}".split(',').map(&:to_i)
-		a = users.to_a.sort_by {|user| user[1].length}.reverse[0..14].select {|x| !blist.include?(x[0].id)  }
+		a = users.to_a.sort_by {|user| user[1].length}.reverse[0..49].select {|x| !blist.include?(x[0].id) }.shuffle
 		#sort results
 	end
 
