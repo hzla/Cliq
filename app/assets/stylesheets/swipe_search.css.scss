@@ -8,13 +8,14 @@
 	position: relative;
 	-webkit-animation-duration: .5s;
 	display: none;
+    padding: 4% 8%;
+    box-sizing: border-box;
 }
 
 #swiped-content {
-	width: 80%;
-	margin-top: 37px;
+	width: 100%;
 	height: 100%;
-	margin: 0 auto;
+	margin: 0px;
 }
 
 .swiped-card-name {
@@ -78,17 +79,17 @@
 
 .swiped-suggestions {
 	float: left;
-	width: 90%;
-	margin-left: 5%;
+	width: 100%;
 	height: 100%;
+    overflow-y: hidden;
 }
 
 .swiped-suggestion {
 	float: left;
 	width: 49%;
-	margin-bottom: 5px;
+	margin-bottom: 15px;
 	height: 50%;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
 .swiped-suggestion:nth-child(2n) {
@@ -97,17 +98,18 @@
 }
 
 .swiped-sug-name {
-	height: 23px;
+	height: 30px;
 	text-align: center;
 	background-color: $blue;
-	padding-left: 14px;
-	padding-top: 5px;
-	color: white;
+    line-height: 1.9;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .swiped-sug-pic {
 	width: 100%;
-	height: calc(100% - 31px);
+	height: 100%;
 }
 
 .swiped-suggestion.headers {
@@ -156,7 +158,7 @@
 .swiped-actions {
 	position: absolute;
 	right: 67px;
-	bottom: 55px;
+	bottom: 35px;
 	left: 67px;
 }
 
