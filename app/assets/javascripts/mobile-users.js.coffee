@@ -53,7 +53,12 @@ MobileUsers =
 		$('.save-text').text("Saving...")
 
 	showScrollActs: ->
+		if $('.clone').length > 0
+			$('.clone').html $('.all-scroll-acts').children()
+			$('.clone').removeClass('clone')
+		clone = $(@).parent().next().addClass('clone')
 		acts = $(@).parent().next().children().clone()
+
 		index =  $('.scroll-cat').index($(@).parent()) - 1
 		$('.overlay').removeClass('orange-overlay')
 		$('.cat-collection').scrollLeft (index * 125) + 20
