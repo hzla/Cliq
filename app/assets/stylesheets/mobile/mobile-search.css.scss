@@ -45,7 +45,8 @@
 	margin: 0 auto;
 	float: none;
 	position: relative;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
+	margin-top: 5px;
 }
 
 .mobile .result:nth-child(2n) {
@@ -90,6 +91,7 @@
 	margin: 0 auto;
 	float: none;
 	height: auto;
+	max-height: 52px;
 }
 
 .mobile {
