@@ -29,14 +29,14 @@
 	</div>
 	<div class="profile-actions green tut">
 			<%= form_for @act, remote: true do |f| %>
-				<%= f.text_field :name, :class => "act-name-input head-4", placeholder: "Suggest"%>
+				<%= f.text_field :name, :class => "act-name-input head-4 fb-enabled", placeholder: "Suggest"%>
 				<%= f.hidden_field :category_id, value: @category.id %>
 				<%= f.hidden_field :suggested_by, value: current_user.id %>
 				<%= f.submit "Suggest", id: "submit-act", :class => "head-4 hidden" %>
 			<% end %>
 
 			<%= form_tag quick_create_path, id: "quick-search", remote: true do %>
-				<%= text_field_tag :activities, nil, id: "self-search", :class => "head-4 quick-search-acts", placeholder: "Quick Search" %>
+				<%= text_field_tag :activities, nil, id: "self-search", :class => "head-4 quick-search-acts fb-enabled", placeholder: "Quick Search" %>
 				<div class="hidden interest-info"></div>
 				<%= hidden_field_tag :act_id %>
 				<%= submit_tag "Add", id: "submit-quick-search", :class => "head-4 hidden" %>

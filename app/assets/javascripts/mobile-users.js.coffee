@@ -11,7 +11,19 @@ MobileUsers =
 		$('body').on 'focusout', '.mobile .profile-actions input', @revert
 		$('body').on 'submit', '.mobile .profile-actions form', @focusOut
 		$('body').on 'click', '#save-settings-button', @submitSettings
-		$('.body').on 'scroll', '.all-scroll-acts', @scrollDown
+		$('body').on 'scroll', '.all-scroll-acts', @scrollDown
+		$('body').on 'ajax:success', '.profile-actions form', @feedback
+
+	feedback: ->
+		if $(@).attr('id') == "new_activity"
+			fb = "Thank You!"
+		else
+			fb = "Added!"
+		$(@).find('.fb-enabled').val(fb).css('color', '#1dcfac')
+		setTimeout ->
+				$('.fb-enabled').val('').css('color', '#414141')
+			, 750
+
 
 
 	scrollDown: ->
