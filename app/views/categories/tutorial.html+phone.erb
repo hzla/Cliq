@@ -8,7 +8,7 @@
 		<div class="tut-question">
 		  What school do you go to?
 		</div>
-		  <%= text_field_tag :school, nil, id: "tut-school", value: current_user.school %>
+		  <%= text_field_tag :school, nil, id: "tut-school", value: current_user.school || "University of Central Florida" %>
 		<div class="tut-question">
 		  Pick 2 characters that describe you best
 		</div>

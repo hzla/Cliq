@@ -4,6 +4,7 @@ Tutorial =
 		$('body').on 'touchend', '.proceed', @submitTutorial
 		$('body').on 'ajax:success', '.mobile .add-other-act', @updateInterestCount
 		$('body').on 'touchend', '.tut-header.finished', @welcome
+		$('body').on 'submit', '#tutorial-form', @checkFields
 
 	highlightChar: ->
 		if ($('.highlighted').length < 2 && !$(@).hasClass('highlighted')) && !$(@).hasClass('char-button')
@@ -29,8 +30,11 @@ Tutorial =
 			$('.next-tut').hide() 
 			$('.char-button').removeClass('proceed')
 
+	checkFields: (event) ->
+		console.log "checked"
+		event.preventDefault() if $('#characters').val() == "" || $('#tut-school').val() == ""
+
 	submitTutorial: ->
-		console.log "hihihihi"
 		$('#tutorial-form').submit()
 
 	updateInterestCount: ->
