@@ -20,10 +20,10 @@
 }
 
 #cat-header-profile {
-	margin: 0 auto;
-	width: 320px;
+	width: 100%;
 	height: 100px;
 	margin-top: 20px;
+	margin-left: calc(50% - 160px);
 }
 
 .cat-profile-name {
