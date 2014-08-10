@@ -1,7 +1,8 @@
 @import 'variables';
 
 #faq-container {
-	background: $super-light-gray;
+	background: white;
+    position: absolute;
 }
 
 .faq-question a {
@@ -10,8 +11,10 @@
 
 #faq-content {
 	margin: 0 auto;
-	width: 806px;
+	padding: 0px 25vw;
 	font-family: $generic-font;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 #faq-header {
@@ -22,10 +25,10 @@
 
 .faq-question {
 	margin-bottom: 22px;
-	width: 806px;
+	width: 100%;
 }
 
 .faq-answer {
 	margin-bottom: 44px;
-	width: 806px;
+	width: 100%;
 }
