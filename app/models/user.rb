@@ -70,12 +70,11 @@ class User < ActiveRecord::Base
 
 		users = users.map {|user| [user, interests[user.id]]}
 		
-		clist = conversations.pluck(:name).map do |name|
+		clist = conversations.where(initiated: true).pluck(:name).map do |name|
 			name.split("-")
 		end.flatten.join(",")
 		prelim_blacklist = "#{blacklist},#{clist}" 
 		blist = "#{prelim_blacklist},#{id}".split(',').map(&:to_i)
-
 		a = users.to_a.sort_by {|user| user[1].length}.reverse[0..99].select {|x| !blist.include?(x[0].id) }
 		#sort results
 	end
