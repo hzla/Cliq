@@ -2,6 +2,12 @@
 	<div id="pre-invite">
 		<p id="no-one-text" class="head-2 dark-gray">There seems to be no one around. Try searching for other interests or invite your friends to join Cliq!</p>
 
+		<% if !browser.mobile? %>
+			<p id="no-one-text" class="head-2 dark-gray">You can also<%= link_to "add", choose_cat_path(category), :class => "add light-turq" %>more interests to widen your pool of matches!</p>
+		<% else %>
+			<p id="no-one-text" class="head-2 dark-gray">You can also<%= link_to "add", user_path(current_user), :class => "add light-turq" %>more interests to widen your pool of matches!</p>
+		<% end %>
+
 		<div id="cliq-invite" class="head-2">Invite</div>
 	</div>
 

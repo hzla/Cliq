@@ -72,6 +72,7 @@ class UsersController < ApplicationController
 	end
 
 	def search_results #add support for searching location without ids
+		@category = Category.where(name: "Do").first
 		if params[:ids] == "" 
 			if params[:location_id] == "" && params[:location] == ""
 				results = current_user.search_similar current_user.activities
@@ -96,8 +97,6 @@ class UsersController < ApplicationController
 				end
 				results = current_user.search_similar current_user.activities, location
 			end
-			p params[:type]
-			puts "\n" * 100
 			if params[:type] == "swipe"
 				render partial: "swipe_results", locals: {results: results}
 				return

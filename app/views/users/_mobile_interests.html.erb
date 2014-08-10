@@ -25,10 +25,12 @@
 </div>
 
 <script>
-	$(document).ready(function(){
+	ready = function(){
 		$($('.overlay')[1]).trigger('touchstart')
 		$('.all-scroll-acts').scroll(function(){
 			$('.user-container')[0].scrollTop = 1000
 		})
-	})
+	}
+	$(document).ready(ready)
+	$(document).on('page:load', ready)
 </script>

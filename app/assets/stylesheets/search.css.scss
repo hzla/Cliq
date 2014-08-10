@@ -196,6 +196,19 @@
   color: $dark-gray;
 }
 
+.add {
+	border-radius: 50px;
+	font-weight: 500;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.add:hover {
+	background: $light-turq;
+	color: white;
+}
+
+
 #sort-by {
 	float: right;
     font-weight:400;

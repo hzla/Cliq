@@ -8,6 +8,7 @@ MobileMessages =
 		$('body').on 'click', '.mobile .content-container', @removeChat
 		$('body').on 'click', '.mobile .results-container', @removeChat
 		$('body').on 'touchend', '.back-tut.close-chat', @removeChat  
+		$('body').on 'ajax:success', '.convo-link', @obscureDate
 
 	removeChat: ->
 		$('.chat-partial').remove()
@@ -58,7 +59,7 @@ MobileMessages =
 	obscureDate: ->
 		dates = $('.date')
 		lastDates = dates.slice( dates.length - 2, dates.length)
-		MobileMessages.obscureDates lastDates
+		MobileMessages.obscureDates dates
 
 	obscureDates: (dates) ->
 		dates.each (index) ->
