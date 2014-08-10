@@ -1,6 +1,6 @@
 <% if results != "invalid" && results != nil %>
 	<% if results.empty? %>
-		<%= render partial: "no_one", locals: {} %>
+		<%= render partial: "no_one", locals: {category: @category} %>
 	<% end %> 
 	<% results.each do |entry| %>
 		<div class="result">

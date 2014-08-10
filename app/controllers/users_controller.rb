@@ -98,13 +98,13 @@ class UsersController < ApplicationController
 				results = current_user.search_similar current_user.activities, location
 			end
 			if params[:type] == "swipe"
-				render partial: "swipe_results", locals: {results: results}
+				render partial: "swipe_results", locals: {results: results, category: @category}
 				return
 			elsif params[:type] == "mobile_search"
-				render partial: "mobile_search_results", locals: {results: results}
+				render partial: "mobile_search_results", locals: {results: results, category: @category}
 				return
 			else
-				render partial: "search_results", locals: {results: results}
+				render partial: "search_results", locals: {results: results, category: @category}
 				return
 			end
 		end
@@ -124,13 +124,13 @@ class UsersController < ApplicationController
 		end
 		results = current_user.search_similar(Activity.parse_interests(params[:ids]), location)
 		if params[:type] == "swipe"
-			render partial: "swipe_results", locals: {results: results}
+			render partial: "swipe_results", locals: {results: results, category: @category}
 			return
 		elsif params[:type] == "mobile_search"
-			render partial: "mobile_search_results", locals: {results: results}
+			render partial: "mobile_search_results", locals: {results: results, category: @category}
 			return
 		end
-		render partial: "search_results", locals: {results: results}
+		render partial: "search_results", locals: {results: results, category: @category}
 	end
 
 	def feedback
