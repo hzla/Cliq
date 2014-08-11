@@ -12,9 +12,10 @@ MobileUsers =
 		$('body').on 'submit', '.mobile .profile-actions form', @focusOut
 		$('body').on 'click', '#save-settings-button', @submitSettings
 		$('body').on 'scroll', '.all-scroll-acts', @scrollDown
-		$('body').on 'ajax:success', '.profile-actions form', @feedback
+		$('body').on 'ajax:success', '.profile-actions form, #cat-header-content form', @feedback
 
 	feedback: ->
+		console.log "tried"
 		if $(@).attr('id') == "new_activity"
 			fb = "Thank You!"
 		else

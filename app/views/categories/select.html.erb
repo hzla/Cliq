@@ -31,14 +31,14 @@
 
 			<div class="bubble orange cat-page" id="quick-add"><span id="add-text">Quick Add</span></div>
 			<%= form_tag quick_create_path, id: "quick-search", class: "hidden cat-page", remote: true do %>
-				<%= text_field_tag :activities, nil, id: "self-search", :class => "head-4 quick-search-acts cat-page", placeholder: "Type to Add" %>
+				<%= text_field_tag :activities, nil, id: "self-search", :class => "head-4 quick-search-acts cat-page fb-enabled", placeholder: "Type to Add" %>
 				<div class="hidden interest-info"></div>
 				<%= hidden_field_tag :act_id %>
 				<%= submit_tag "Add", id: "submit-quick-search", :class => "head-4 hidden" %>
 			<% end %>
 
 				<%= form_for @act, remote: true do |f| %>
-					<%= f.text_field :name, :class => "act-name-input head-4 hidden", placeholder: "Suggest an Interest!" %>
+					<%= f.text_field :name, :class => "act-name-input head-4 hidden fb-enabled", placeholder: "Suggest an Interest!" %>
 					<div id="suggest-text" class="head-4">Interest not listed?</div>
 					<%= f.hidden_field :category_id, value: @category.id %>
 					<%= f.hidden_field :suggested_by, value: current_user.id %>
