@@ -36,5 +36,8 @@ class CategoriesController < ApplicationController
 		@categories = current_user.char_categories
 		@act = Activity.new
 		@category = @categories[1]
+		p @categories
+		p @category
+		puts "\n" * 40
 	end
 end

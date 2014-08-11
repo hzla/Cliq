@@ -233,7 +233,7 @@ class User < ActiveRecord::Base
 		
 		if sex == "male"
 			if chars.include? "Athlete"
-				cat_list += ["Go outside or play sports", "Racing and Sports", "Shooter", "Electronic", "Rap and Hip Hop", "Action and Adventure"]
+				cat_list += ["Outdoor Activities", "Visit Places", "Pop", "Electronic", "Comedic", "Action and Adventure", "Drama"]
 			end
 			if chars.include? "Partier"
 				cat_list += ["Party", "Electronic", "Pop", "Rap and Hip Hop", "Rock", "Action and Adventure"]
@@ -258,9 +258,10 @@ class User < ActiveRecord::Base
 			end
 		else
 			if chars.include? "Athlete"
+				cat_list += ["Outdoor Activities", "Racing and Sports", "Shooter", "Electronic", "Rap and Hip Hop", "Action and Adventure"]
 			end
 			if chars.include? "Partier"
-				cat_list += ["Go outside or play sports", "Visit Places", "Electronic", "Pop", "Action and Adventure", "Comedic", "Drama"]
+				cat_list += ["Outdoor Activities", "Visit Places", "Electronic", "Pop", "Action and Adventure", "Comedic", "Drama"]
 			end
 			if chars.include? "Intellectual"
 				cat_list += ["Visit Places", "Board and Card", "Indie", "Foreign", "Documentaries", "Academic", "Misc"]

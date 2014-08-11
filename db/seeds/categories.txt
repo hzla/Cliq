@@ -353,7 +353,7 @@ q: What do you do for fun?
 			Tony Hawk
 			Wii Sports
 			WWE 2K
-	Category: Go outside or play sports
+	Category: Outdoor Activities
 	q: What do you like to do outside?
 		Archery
 		Backpacking
