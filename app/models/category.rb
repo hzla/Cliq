@@ -4,7 +4,7 @@ class Category < ActiveRecord::Base
 	has_many :cat_interests
 	has_ancestry
 
-	attr_accessible :name, :description, :parent_id, :parent, :question, :alt_text, :image, :image_url
+	attr_accessible :name, :description, :parent_id, :parent, :question, :alt_text, :image, :image_url, :popularity
 
 	def user_likes user
 		user.interests.map(&:activity).map(&:category).map(&:root).map(&:id).count id
@@ -86,6 +86,18 @@ class Category < ActiveRecord::Base
 			end
 		end
 		mobile
+	end
+
+	def self.update_top
+		where('ancestry is not null').each do |cat|
+			pop = cat.activities.map(&:interests).count
+			cat.update_attributes popularity: pop
+			p cat.name
+		end
+	end
+
+	def self.top limit
+		order(:popularity).reverse[0..limit]
 	end
 
 
