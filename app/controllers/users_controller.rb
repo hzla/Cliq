@@ -50,6 +50,7 @@ class UsersController < ApplicationController
 	def search
 		loc = Location.where(name: current_user.address).first 
 		loc = loc ? loc : current_user.address 
+		@no_id = true
 		@results = current_user.search_similar current_user.activities, loc
 		@category = Category.where(name: "Do").first
 		@user_empty = current_user.interests.empty?
@@ -74,6 +75,7 @@ class UsersController < ApplicationController
 	def search_results #add support for searching location without ids
 		@category = Category.where(name: "Do").first
 		if params[:ids] == "" 
+			@no_id = true
 			if params[:location_id] == "" && params[:location] == ""
 				results = current_user.search_similar current_user.activities
 			else
