@@ -2,7 +2,9 @@
 
 #faq-container {
 	background: white;
-    position: absolute;
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
 
 .faq-question a {
@@ -13,8 +15,8 @@
 	margin: 0 auto;
 	padding: 0px 25vw;
 	font-family: $generic-font;
-    height: 100%;
-    box-sizing: border-box;
+  height: calc(100% - 25vw);
+  box-sizing: border-box;
 }
 
 #faq-header {

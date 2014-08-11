@@ -322,7 +322,7 @@
 #welcome-form {
 	margin: 0 auto;
 	width: 565px;
-	height: 260px;
+	height: 360px;
 	background-color: white;
 	margin-top: 125px;
 	background: white;
@@ -332,6 +332,25 @@
 	font-size: 22px;
 	font-weight: 400;
 	position: relative;
+}
+
+.welcome-form {
+	width: 300px;
+	color: $dark-gray;
+	margin: 0 auto;
+}
+
+.welcome-form input {
+	width: calc(100% - 30px);
+	border: none;
+	border-radius: 100px;
+	height: 30px;
+	padding-left: 15px;
+	padding-right: 15px;
+	background: $super-light-gray;
+	font-size: 17px;
+	margin-top: 155px;
+
 }
 
 #bottom-welcome {

@@ -149,6 +149,12 @@ class UsersController < ApplicationController
     end
 	end
 
+	def welcome_update
+		p params
+		current_user.update_attributes email: params[:email]
+		render nothing: true
+	end
+
 	def update
 		old_address = current_user.address
 		if old_address != params[:user][:address]

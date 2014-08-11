@@ -35,9 +35,13 @@
 			<div id="welcome-form" class="dark-gray">
 				<p id="top-welcome" class="head-4"><span class="heavy">If you're reading this, it's because you're awesome and someone told you about Cliq's private beta. Good for you. Welcome to Cliq!</p>
 					
-				<p id="bottom-welcome" class="head-5 gray">(If you'd like to change your email and what messages we send you, just click user settings on the bottom of the nav bar)</p>
+				<p id="bottom-welcome" class="head-5 gray">Is this email correct? This is just so that we can let you know about any messages/invites that you recieve. You can also update your email and toggle notifications in User Settings.</p>
 
-				<div id="got-it" class="head-4">Okay, got it</div>
+				<%= form_tag welcome_update_path, :class => "welcome-form", remote: true do %>
+					<%= text_field_tag :email, nil, value: current_user.email, :class=> "welcome-email" %>
+				<% end %>
+
+				<div id="got-it" class="head-4">Okay, got it!</div>
 			</div>
 		</div>
 	<% end %>

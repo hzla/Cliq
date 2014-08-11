@@ -32,7 +32,9 @@ Users =
 
 	closeWelcome: ->
 		console.log $('#activation-container') 
+		$('.welcome-form').submit()
 		$('#activation-container').remove()
+
 
 	openFeedback: -> 
 		$(@).hide()
