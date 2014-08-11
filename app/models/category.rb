@@ -96,8 +96,15 @@ class Category < ActiveRecord::Base
 		end
 	end
 
-	def self.top limit
-		order(:popularity).reverse[0..limit]
+	def self.top cats, limit
+		cats.order(:popularity).reverse[0..limit]
+	end
+
+	def self.partitioned_top limit
+		cats = where(ancestry: nil).map do |cat|
+			top cat.children, limit
+		end
+		cats.flatten
 	end
 
 
