@@ -30,8 +30,14 @@ class MessagesController < ApplicationController
 			@user.save
 			broadcast user_path(@user)+ "/messages", @message.to_json
 			other_connection = Connection.where(conversation_id: params[:conversation_id], user_id: @user.id).first
+			p @user.notify_messages
+			p (!@user.active || !@user.using)
+			p !other_connection.emailed
+			puts "\n%" * 50
 			if @user.notify_messages && (!@user.active || !@user.using) && !other_connection.emailed
 				other_connection.update_attributes emailed: true
+				puts "emailed" * 100
+				puts "\n" * 20
 				MessageMailerWorker.perform_async @user.id, current_user.id
 				#NotificationMailer.notification(@user, current_user).deliver if @user.email
 			end
