@@ -7,25 +7,26 @@
 				<% current_user.ordered_conversations.each do |convo| %>
 
 					<% user = convo.get_other_user current_user %>
-
-					<div class="conversation" id="<%= user.id %>">
-						<%= link_to other_user_path(user), :class => "other-user", remote: true do %>
-							<% if current_user.conversated_with? user %>
-								<%= image_tag user.profile_pic_url || 'Cliq.svg', :class => "convo-pic #{user.color}" %>
-							<% else %>
-								<%= image_tag 'Cliq.svg', :class => "convo-pic #{user.color}" %>
+					<% if user %>
+						<div class="conversation" id="<%= user.id %>">
+							<%= link_to other_user_path(user), :class => "other-user", remote: true do %>
+								<% if current_user.conversated_with? user %>
+									<%= image_tag user.profile_pic_url || 'Cliq.svg', :class => "convo-pic #{user.color}" %>
+								<% else %>
+									<%= image_tag 'Cliq.svg', :class => "convo-pic #{user.color}" %>
+								<% end %>
 							<% end %>
-						<% end %>
-						<%= link_to conversation_path(convo), :class => "convo-link", remote: true do %>
-							<div class="convo-details">
-								<div class="convo-name head-5"><%= user.first_name %></div>
-								<div class="convo-date head-5"><%= convo.date current_user %></div>
-								<div class="convo-school head-6 light-gray"><%= user.school %><%= "Random School" if !user.school %></div>
-								<div class="convo-last-message head-5 gray"><%= convo.last_message %></div>
-							</div>
-						<% end %>
-						<div class="convo-block head-5"><a class="block" data-confirm="This user will no longer be able to send you messages or invites. Are you sure you want to block <%= user.first_name %>?" data-remote="true" href="<%= block_user_path user %>">Block</a></div>
-					</div>
+							<%= link_to conversation_path(convo), :class => "convo-link", remote: true do %>
+								<div class="convo-details">
+									<div class="convo-name head-5"><%= user.first_name %></div>
+									<div class="convo-date head-5"><%= convo.date current_user %></div>
+									<div class="convo-school head-6 light-gray"><%= user.school %><%= "Random School" if !user.school %></div>
+									<div class="convo-last-message head-5 gray"><%= convo.last_message %></div>
+								</div>
+							<% end %>
+							<div class="convo-block head-5"><a class="block" data-confirm="This user will no longer be able to send you messages or invites. Are you sure you want to block <%= user.first_name %>?" data-remote="true" href="<%= block_user_path user %>">Block</a></div>
+						</div>
+					<% end %>
 				<% end %>
 			</div>
 		</div>

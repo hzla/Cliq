@@ -8,7 +8,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'nokogiri'
 gem 'protected_attributes', '~> 1.0.5'
 gem 'turbolinks'
-# gem "thin"
+gem "thin"
 gem 'faker'
 gem 'faye'
 gem 'wikipedia-client'
