@@ -10,7 +10,7 @@ Categories =
 		$('body').on 'ajax:success', '#new_activity', @suggestActivity
 		$('body').on 'ajax:success', '#quick-search', @quickAdd 
 		$('body').on 'click', '#suggest-text', @prepSuggest
-		$('body').on 'ajax:success', '.top-nav-content a', @autocompleteQS
+		$('body').on 'ajax:success', '.top-nav-content a, .extended-side-nav a', @autocompleteQS
 
 	prepSuggest: ->
 		$(@).hide()
