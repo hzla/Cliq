@@ -75,7 +75,7 @@ class User < ActiveRecord::Base
 		end.flatten.join(",")
 		prelim_blacklist = "#{blacklist},#{clist}" 
 		blist = "#{prelim_blacklist},#{id}".split(',').map(&:to_i)
-		a = users.to_a.sort_by {|user| user[1].length}.reverse[0..99].select {|x| !blist.include?(x[0].id) }
+		a = users.to_a.sort_by {|user| user[1].length}.reverse[0..99].select {|x| !blist.include?(x[0].id) }.shuffle[0..39].sort_by {|user| user[1].length}.reverse
 		#sort results
 	end
 
