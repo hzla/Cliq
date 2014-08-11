@@ -191,6 +191,16 @@ class User < ActiveRecord::Base
 		end
 	end
 
+	def self.add_cats
+		all.each do |user|
+			cat_ids = user.activities.pluck(:category_id).uniq
+			cat_ids.each do |cat_id|
+				CatInterest.find_or_create_by user_id: user.id, category_id: cat_id
+			end
+			user.cat_interests.where('category_id not in (?)', cat_ids).destroy_all
+		end
+	end
+
 	def current_loc
 		address ? address : school
 	end
