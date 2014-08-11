@@ -51,7 +51,7 @@ class UsersController < ApplicationController
 		loc = Location.where(name: current_user.address).first 
 		loc = loc ? loc : current_user.address 
 		@no_id = true
-		@results = current_user.search_similar current_user.activities, loc
+		#results = current_user.search_similar current_user.activities, loc
 		@category = Category.where(name: "Do").first
 		@user_empty = current_user.interests.empty?
 		respond_to do |format|
@@ -63,7 +63,7 @@ class UsersController < ApplicationController
 	def main
 		loc = Location.where(name: current_user.address).first 
 		loc = loc ? loc : current_user.address 
-		@results = current_user.search_similar current_user.activities, loc
+		#@results = current_user.search_similar current_user.activities, loc
 		@category = Category.where(name: "Do").first
 		@user_empty = current_user.interests.empty?
 		respond_to do |format|
@@ -133,6 +133,13 @@ class UsersController < ApplicationController
 			return
 		end
 		render partial: "search_results", locals: {results: results, category: @category}
+	end
+
+	def result_info
+		result_user = User.find params[:id]
+		mut = current_user.similarities_with result_user
+		sim = current_user.similar_categories_with result_user
+		render json: {mut: mut, sim: sim}
 	end
 
 	def feedback

@@ -3,7 +3,7 @@
 		<%= render partial: "no_one", locals: {category: @category} %>
 	<% end %> 
 	<% results.each do |entry| %>
-		<div class="result">
+		<div class="result" id="u-<%= entry[0].id %>">
 			
 			<%= link_to other_user_path(entry[0]), :class => "other-user", remote: true do %>
 				<%= image_tag 'Cliq.svg', :class => "profile-pic-card #{entry[0].color}" %>
@@ -19,12 +19,12 @@
 			<div class="similarities">
 				<div class="mutual">
 					<%= image_tag "Mutual.svg", :class => "sim-label svg" %>
-					<div class="sim dark-gray"><%= @no_id ? entry[1].length : current_user.similarities_with(entry[0]) %></div>
+					<div class="sim dark-gray mut-stat"></div>
 				</div>
 
 				<div class="similar">
 					<%= image_tag "Similar.svg", :class => "sim-label svg" %>
-					<div class="sim dark-gray"><%= current_user.similar_categories_with entry[0] %></div>
+					<div class="sim dark-gray sim-stat"></div>
 				</div>
 
 				<div class="suggestions">
@@ -33,7 +33,6 @@
 						<div class="suggestion white"><%= suggestion.shortened_name %></div>
 					<% end %>
 				</div>
-
 				<div class="result-actions">
 					<div class="action-button invite-btn white inv-btn">
 						

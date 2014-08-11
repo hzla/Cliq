@@ -40,6 +40,7 @@ Cliq::Application.routes.draw do
   get '/users/:id/settings', to: 'users#settings', as: "settings"
   post '/users/invite_friends', to: 'users#invite_friends', as: "invite_friends"
   post '/users/welcome', to: 'users#welcome_update', as: 'welcome_update'
+  get '/users/:id/result_info', to: 'users#result_info', as: 'result_info'
 
   
   resources :activities, only: [:index, :create]

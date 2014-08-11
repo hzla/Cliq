@@ -12,6 +12,7 @@ Search =
 		$('body').on 'click', '.collapsed-chat', @addChat
 		$('body').on 'click', '.close', @closeChat
 		$('body').on 'ajax:success', '#search-form', @displayResults
+		$('body').on 'ajax:success', '#search-form', @getResultInfo
 		$('body').on 'submit', '#search-form', @displaySearching
 		$('.content-container').click @collapseAllChat if $('.mobile').length < 1
 		$('.results-container').click @collapseAllChat if $('.mobile').length < 1
@@ -214,7 +215,19 @@ Search =
 			$('.swiped-result').first().show().addClass 'animated fadeIn'
 			if $('#empty').length > 0
 				$('#no-one-around').show()
-			$('body').scrollTo($('.mobile .result')) if $('.searched').length < 1
+			$('body').scrollTo($('.mobile .result')) if $('.searched').length < 1 && $('.mobile').length > 0
+
+
+	getResultInfo: ->
+		console.log "here"
+		$('.result, .swiped-result').each ->
+			if !$(@).hasClass('no-complete')
+				id = $(@).attr('id').slice(2)
+				result = $(@)
+				$.get "users/#{id}/result_info", (data) ->
+					result.find('.mut-stat').text data.mut
+					result.find('.sim-stat').text data.sim
+
 
 	displaySearching: ->
 		$('#search-results').html "<div id='searching'>SEARCHING...</div>"

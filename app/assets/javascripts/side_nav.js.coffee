@@ -1,6 +1,6 @@
 Animations = 
 	init: ->
-		$('.extended-side-nav').hoverIntent @extendSideNav, @revertSideNav
+		#$('.extended-side-nav').hoverIntent @extendSideNav, @revertSideNav
 		$('.side-icon').hoverIntent 
 			over: @showLabel 
 			out: @hideLabel

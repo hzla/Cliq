@@ -24,6 +24,11 @@
 						<%= image_tag "mobile-search.svg", :class => "quick-search-button" %>
 					</div>
 				<% end %>
+				<script>
+					$(document).ready(function(){
+						$('#search-form').submit()
+					})
+				</script>
 				<div class="hidden enable-auto-search"></div>
 			</div>
 		</div>
