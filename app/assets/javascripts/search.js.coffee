@@ -219,7 +219,6 @@ Search =
 
 
 	getResultInfo: ->
-		console.log "here"
 		$('.result, .swiped-result').each ->
 			if !$(@).hasClass('no-complete')
 				id = $(@).attr('id').slice(2)
