@@ -534,7 +534,7 @@ q: What kind of music do you listen to?
 		Wes Montgomery
 		Woody Herman
 		Wynton Marsalis
-	Category: R & B
+	Category: R&B
 		Al Green
 		Alicia Keys
 		Amos Milburn
