@@ -434,6 +434,208 @@ q: What do you do for fun?
 		Yachting
 Category: Music 
 q: What kind of music do you listen to?
+	Category: Jazz
+		Alberts Ayler
+		Anthony Braxton
+		Art Blakey
+		Art Pepper
+		Art Tatum
+		Artie Shaw
+		Bennie Golson
+		Bennie Moten
+		Benny Carter
+		Benny Goodman
+		Bill Evans
+		Billy Holiday
+		Billy Strayhorn
+		Bix Beiderbecke
+		Bud Powell
+		Cannonball Adderley
+		Carla Bley
+		Cecil Taylor
+		Charles Mingus
+		Charlie Christian
+		Charlie Haden
+		Charlie Parker
+		Chet Baker
+		Chick Corea
+		Chick Webb
+		Clifford Brown
+		Coleman Hawkins
+		Count Basie
+		Dave Brubeck
+		David Murray
+		Dexter Gordon
+		Dizzy Gillespie
+		Django Reinhardt
+		Donald Byrd
+		Duke Ellington
+		Earl Hines
+		Ella Fitzgerald
+		Elvin Jones
+		Eric Dolphy
+		Erroll Garner
+		Evan Parker
+		Fats Navarro
+		Fats Waller
+		Fletcher Henderson
+		Freddie Hubbard
+		George Russell
+		Gerry Mulligan
+		Gil Evans
+		Glenn Miller
+		Hank Mobley
+		Herbie Hancock
+		J.J. Johnson
+		Jack Teagarden
+		Jaco Pastorius
+		James Carter
+		Jelly Roll Morton
+		Jimmie Lunceford
+		Jimmy Giuffre
+		Jimmy Smith
+		Joe Henderson
+		John Coltrane
+		John McLaughlin
+		Johnny Dodds
+		Johnny Hodges
+		Keith Jarrett
+		Kenny G
+		King Oliver
+		Lee Konitz
+		Lee Morgan
+		Lennie Tristano
+		Lester Young
+		Lionel Hampton
+		Louis Armstrong
+		Mary Lou Williams
+		Max Roach
+		McCoy Tuner
+		Meade Lux Lewis
+		Miles Davis
+		Modern Jazz Quartet
+		Ornette Coleman
+		Oscar Peterson
+		Pat Metheny
+		Paul Chambers
+		Philly Joe Jones
+		Rahsaan Roland Kirk
+		Ron Carter
+		Roy Eldrige
+		Sarah Vaughan
+		Sidney Becet
+		Sonny Rollins
+		Stan Getz
+		Stan Kenton
+		Sun Ra
+		Teddy Wilson
+		Thelonious Monk
+		Wayne Shorter
+		Wes Montgomery
+		Woody Herman
+		Wynton Marsalis
+	Category: R & B
+		Al Green
+		Alicia Keys
+		Amos Milburn
+		Aretha Franklin
+		Babyface
+		Barry White
+		Ben E. King
+		Beyonce
+		Big Joe Turner
+		Bill Withers
+		Billy Ward & the Dominoes
+		Bo Diddley
+		Bobby "Blue" Bland
+		Bobby Womack
+		Boyz II Nen
+		Cameo
+		Chaka Khan
+		Chic
+		Chuck Berry
+		Chuck Willis
+		Curtis Mayfield
+		D'Angelo
+		Diana Ross & the Supremes
+		Donna Summer
+		Earth, Wind & Fire
+		En Vogue
+		Eryka Badu
+		Etta James
+		Fats Domino
+		Frankie Lymon & the Teenagers
+		Gladys Knight & the Pips
+		Guy
+		Hank Ballard
+		Hank Ballard & the Midnighters
+		Harold Melvin & the Blue Notes
+		Isaac Hayes
+		Ivory Joe Hunter
+		Jackie Wilson
+		James Brown
+		Janet Jackson
+		Joe Tex
+		Keith Sweat
+		Kool & the Gang
+		LaVern Baker
+		Lionel Richie
+		Little Richard
+		Little Willie John
+		Lou Rawls
+		Louis Jordan
+		Luther Vandross
+		Mariah Carey
+		Martha & the Vandellas
+		Marvin Gaye
+		Mary J. Blige
+		Michael Jackson
+		New Edition
+		Otis Redding
+		Parliament-Funkadelic
+		Patti LaBelle
+		Prince
+		R. Kelly
+		Ray Charles
+		Rick James
+		Roy Brown
+		Ruth Brown
+		Sade
+		Sam & Dave
+		Sam Cooke
+		Sly & the Family Stone
+		Smokey Robinson & the Miracles
+		Solomon Burke
+		Sonny Til & the Orioles
+		Stevie Wonder
+		Teddy Pendergrass
+		The "5" Royales
+		The Chi-Lites
+		The Clovers
+		The Coasters
+		The Delfonics
+		The Dells
+		The Drifters
+		The Flamingos
+		The Four Tops
+		The Isley Brothers
+		The Jackson 5
+		The Marvelettes
+		The Moonglows
+		The O'Jays
+		The Ohio Players
+		The Platters
+		The Ravens
+		The Shirelles
+		The Spinners
+		The Temptations
+		Tina Turner
+		TLC
+		Usher
+		War
+		Whitney Houston
+		Wilson Pickett
+		Wyonie Harris
 	Category: Rock
 		AC/DC
 		Aerosmith
