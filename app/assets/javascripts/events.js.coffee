@@ -16,7 +16,7 @@ Events =
   	$('#event_image').click()
 
 	removeInvite: ->
-    invite = $(this).parents().eq(2)
+    invite = $(this).parents('.upcoming-event')
     invite.addClass 'animated bounceOutLeft'
     invite.one 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', ->
       invite.animate {

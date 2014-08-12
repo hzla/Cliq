@@ -78,14 +78,42 @@
 	padding-right: 15px; 
 }
 
+
+
+#event-open {
+	float: right;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
 #invites {
 	width: 383px;
 	margin: 0 auto;
 	font-family: $generic-font
 }
 
+#new-open-event {
+	width: 224px;
+	border-radius: 100px;
+	background: white;
+	height: 45px;
+	margin: 0 auto;
+	font-size: 25px;
+	text-align: center;
+	line-height: 1.8;
+	font-weight: 300;
+	color: red;
+	cursor: pointer;
+}
+
+#new-open-event:hover {
+	background: $red;
+	color: white;
+}
+
 #invites-collection {
-	float: left;
+	margin: 0 auto;
+	width: 224px;
 }
 
 #invites-header {
@@ -105,11 +133,13 @@
 	height: 378px;
 	width: 224px;
 	background-color: white;
-	margin-left: 70px;
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
 
+.people-going {
+	margin-top: 5px;
+}
 .invite-header {
 	height: 50px;
 	width: 100%;
@@ -164,6 +194,7 @@
 	clear: left;
 	float: left;
 	margin-left: 20px;
+	margin-right: 20px;
 }
 
 .invite-title {
@@ -172,7 +203,13 @@
 }
 
 .invite-time {
-	font-weight: 600
+	font-weight: 600;
+	width: 80%;
+	margin-left: 10%;
+	text-align: center;
+	color: white;
+	background: $orange;
+	border-radius: 30px;
 }
 
 .invite-actions {
@@ -183,19 +220,28 @@
 
 .invite-action {
 	float: left;
+	width: 37.5%;
+}
+
+.invite-action:nth-child(2n) {
+	margin-left: 5%;
 }
 
 .accept {
-	padding-left: 15px;
-	padding-right: 15px;
 	border-radius: 50px;
 	background-color: $light-turq;
-	float: left;
-	margin-right: 15px;
+	text-align: center;
+	width: 100%;
+	font-weight: 600;
 }
 
 .pass {
-	float: left;
+	text-align: center;
+	font-weight: 600;
+	width: 100%;
+	background: $red;
+	color: white;
+	border-radius: 50px;
 }
 
 #upcoming {
@@ -218,6 +264,11 @@
 	margin-top: 20px;
 }
 
+.upcoming-event-description {
+	max-height: 75px;
+	overflow-y: scroll;
+}
+
 .upcoming-event:nth-child(3n) {
 	margin-right: 0px;
 }
@@ -228,10 +279,10 @@
 }
 
 .upcoming-event-time {
-	padding-left: 15px;
-	padding-right: 15px;
 	border-radius: 50px;
-	background-color: $light-turq;
+	background-color: $orange;
+	width: calc(100% - 40px);
+	text-align: center;
 }
 
 .upcoming-event-picture {
@@ -240,6 +291,12 @@
 
 .upcoming-event-info {
 	height: 210px;
+	position: relative;
+}
+
+.invite-row.invite-actions {
+	width: 100%;
+	margin-left: 0px;
 }
 
 .attendee {

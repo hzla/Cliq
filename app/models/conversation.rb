@@ -3,7 +3,8 @@ class Conversation < ActiveRecord::Base
 	has_many :connections, dependent: :destroy 
 	has_many :messages, dependent: :destroy 
 
-	attr_accessible :name, :connected, :initiated
+
+	attr_accessible :name, :connected, :initiated, :event_id
 
 	def ordered_messages
 		messages.order('created_at DESC').limit(20).reverse 

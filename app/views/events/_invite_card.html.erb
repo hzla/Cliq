@@ -1,20 +1,8 @@
 <div class="invite">
-	<%= link_to other_user_path(invite.creator), :class => "other-user", remote: true do %>
-		<div class="invite-header"> 
-			<%= image_tag invite.creator.profile_pic_url, :class => "invite-creator" %>
-			<div class="invitation-creator-info">
-				<div class="head-5 invite-creator-name dark-gray">
-					<%= invite.creator.first_name %>
-				</div>
-				<div class="head-6 light-gray invitation">
-					invited you to:
-				</div>
-		</div>
-	<% end %>
-	</div>
+		
 <!-- change user.last to invite.creator later -->
 	<div class="invite-pic">
-		<%= image_tag "Cliq.svg", :class => "event-picture" %>
+		<%= image_tag invite.image_url || "Cliq.svg", :class => "event-picture" %>
 	</div>
 
 	<div class="invite-info">
@@ -23,26 +11,20 @@
 		</div>
 
 
-		<div class="head-5 light-gray invite-time invite-row">
-			<%= invite.time current_user %>
-		</div>
+		
 
 		<div class="light-gray invite-location invite-row">
 			<%= invite.location %>
 		</div>
 
-		<div class="head-6 invite-quantity invite-row">
-			with <%= invite.quantity %> others
+		<div class="head-5 invite-time invite-row">
+			<%= invite.time current_user %>
 		</div>
 
-		<div class="invite-row invite-actions">
-			<%= link_to user_accept_path(current_user, invite), remote: true, :class => "invite-action", confirm: "Accept Invitation from #{invite.creator.first_name} ?" do %>
-				<div class="accept white">Accept</div>
-			<% end %>
-
-			<%= link_to user_pass_path(current_user, invite), remote: true, :class => "invite-action", confirm: "Decline Invitation from #{invite.creator.first_name} ?" do %>
-			<div class="pass red">Pass</div>
-			<% end %>
+		<div class="head-5 invite-quantity invite-row people-going">
+			<%= invite.people_count %> going
 		</div>
+
+		
 	</div>
 </div>

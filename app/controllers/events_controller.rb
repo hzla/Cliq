@@ -5,11 +5,10 @@ class EventsController < ApplicationController
 
 	def index
 		excursions = current_user.excursions 
-		invite_excursions = excursions.where(accepted: false).where(passed: false)
-		@invitations = invite_excursions.where(created: false).map(&:event).compact.select { |event| event.start_time > Time.now }.sort_by(&:start_time)
-		
-		upcoming_excursions = excursions.where accepted: true
-		@events = upcoming_excursions.map(&:event).compact.select { |event| event.start_time > Time.now }.select {|event| event.accepted? }.sort_by(&:start_time)
+		invite_excursions = excursions.where(created: true)
+		@invitations = invite_excursions.map(&:event).compact.select { |event| event.start_time > Time.now && event.closed == "public" }.sort_by(&:start_time)
+		@open = true
+		@events = Event.where(closed: "public").select { |event| event.start_time > Time.now && event.untouched_by?(current_user) }.sort_by(&:start_time)
 		
 		excursions.update_all seen: true
 		current_user.update_attributes event_count: 0
@@ -32,14 +31,41 @@ class EventsController < ApplicationController
 
 	def going
 		@events = current_user.excursions.where(accepted: true).map(&:event).select { |event| event.start_time > Time.now }.sort_by(&:start_time)
-		render partial: 'events', locals: {events: @events}
+		@open = false
+		render partial: 'events', locals: {events: @events, open: @open}
+	end
+
+	def open
+		@events = Event.where(closed: "public").select { |event| event.start_time > Time.now && event.untouched_by?(current_user) }.sort_by(&:start_time)
+		@open = true
+		render partial: 'events', locals: {events: @events, open: @open}
+	
 	end
 
 	def new
 		@event = Event.new
 		@user = User.find params[:user_id] 
-		@partners = Partner.local_options
+		@partners = Partner.local_options.sort_by {|n| n[0]}
 		render layout: false
+	end
+
+	def public_new
+		@event = Event.new
+		@user = current_user
+		@partners = Partner.local_options.sort_by {|n| n[0]}
+		render layout: false
+	end
+
+	def public_create
+		event = Event.new params[:event]
+		if event.save
+			event.users << [current_user]
+			excursion = Excursion.where(event_id: event.id, user_id: current_user.id)[0]
+			excursion.update_attributes created: true, accepted: true
+			redirect_to events_path
+		else
+			render json: event.errors
+		end
 	end
 
 	def create
@@ -83,13 +109,13 @@ class EventsController < ApplicationController
 	end
 
 	def accept
-		excursion = Excursion.where(event_id: params[:id], user_id: current_user.id)[0]
+		excursion = Excursion.find_or_create_by(event_id: params[:id], user_id: current_user.id)
 		excursion.update_attributes accepted: true
 		render :nothing => true, :status => 200, :content_type => 'text/html'
 	end
 
 	def pass
-		excursion = Excursion.where(event_id: params[:id], user_id: current_user.id)[0]
+		excursion = Excursion.find_or_create_by(event_id: params[:id], user_id: current_user.id)
 		excursion.update_attributes passed: true
 		render :nothing => true, :status => 200, :content_type => 'text/html'
 	end

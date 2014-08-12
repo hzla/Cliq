@@ -1,5 +1,5 @@
 <div class="message-block">
-	<% if message.user != current_user %>
+	<% if message.user_id != current_user.id %>
 		<div class="date sent head-6 light-gray">
 			<%= message.date %>
 		</div>

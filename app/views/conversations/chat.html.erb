@@ -33,19 +33,12 @@
 		<%= image_tag current_user.profile_pic_url, id: "chat-box-pic" %>
 
 		<div id="message-actions">
-				<%= link_to new_user_event_path(@other_user), :class => "white invite-user", remote: true do %>
-					<div class="action-button white message-invite inv-btn mes-action">
-							<%= image_tag "Events.svg", :class => "action-icon svg" %>
-							<div class="result-action">INVITE</div>
-						
-					</div>
-					<div class="sending-progress gray head-3 hidden">
-						Sending...
-					</div>
-					<% end %>
-				<div class="action-button white message-reply inv-btn mes-action reply">
-					<div class="result-action hit-reply">REPLY</div>
-				</div>
+			<div class="sending-progress gray head-3 hidden">
+				Sending...
+			</div>
+			<div class="action-button white message-reply inv-btn mes-action reply">
+				<div class="result-action hit-reply">REPLY</div>
+			</div>
 
 
 		</div>

@@ -8,7 +8,7 @@ class Event < ActiveRecord::Base
 	validates :location, presence: true
 	validates :start_time, presence: true
 
-	attr_accessible :title, :description, :location, :start_time, :end_time, :image, :attended, :partner_id, :quantity, :remote_image_url
+	attr_accessible :title, :description, :location, :start_time, :end_time, :image, :attended, :partner_id, :quantity, :remote_image_url, :closed
 
 
 	def creator
@@ -35,4 +35,14 @@ class Event < ActiveRecord::Base
 	def accepted?
 		excursions.where(accepted: false).empty?
 	end
+
+	def untouched_by? user
+		Excursion.where(user_id: user.id, event_id: id).empty?
+	end
+
+	def people_count
+		excursions.where(accepted: true).count
+	end
+
+
 end

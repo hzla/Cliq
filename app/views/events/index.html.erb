@@ -2,7 +2,12 @@
 
 		<div id="invite-container">
 			<div id="invites">
-				<div id="invites-header" class="head-4 dark-gray">Invites</div>
+				<div id="invites-header" class="head-4 white">Your Open Events</div>
+				<%= link_to public_events_path, :class => "invite-user", remote: true do %>
+					<div id="new-open-event">
+						New Event
+					</div>
+				<% end %>
 
 				<div id="invites-collection">
 					<% @invitations.each do |invite| %>
@@ -19,24 +24,21 @@
 
 
 		<div id="events-header-actions">
-			<div id="upcoming-header" class="head-4 dark-gray">Upcoming Events:</div>
-			<%= link_to upcoming_events_path, :class => "event-sort", remote: true do %>
-				<div class="head-4 dark-gray selected" id="event-upcoming">Upcoming</div>
-			<% end %>
+			<div id="upcoming-header" class="head-4 dark-gray">Open Events:</div>
 			
-			<%= link_to past_events_path, :class => "event-sort", remote: true do %>
-				<div class="head-4 dark-gray" id="event-past">Past</div>
+			<%= link_to open_events_path, :class => "event-sort", remote: true do %>
+				<div class="head-4 dark-gray selected" id="event-open">Open</div>
 			<% end %>
 
 			<%= link_to going_events_path, :class => "event-sort", remote: true do %>
-				<div class="head-4 dark-gray" id="event-going">Accepted</div>
+				<div class="head-4 dark-gray" id="event-going">Joined</div>
 			<% end %>
 
 		</div>
 
 			<div id="upcoming">
 				<div id="events-box">
-					<%= render partial: 'events', locals: {events: @events} %>
+					<%= render partial: 'events', locals: {events: @events, open: @open} %>
 				</div>
 			</div>
 		</div>

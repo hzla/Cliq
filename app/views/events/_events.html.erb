@@ -19,20 +19,24 @@
 				<%= event.location %>
 			</div>
 
-			<div class="upcoming-event-others invite-row">
-				<% event.users.take(2).each do |user| %>
-					<%= link_to other_user_path(user), :class => "other-user", remote: true do %>
-						<%= image_tag (user.profile_pic_url || 'Cliq.svg'), :class => "attendee" %>
-						<div class="attendee-name"><%= user.first_name %></div>
-					<% end %>
-				<% end %>
+			<div class="gray upcoming-event-description invite-row">
+				<%= event.description %>
 			</div>
 
-			<div class="upcoming-event-quantity invite-row">
-				<% if event.attendees.length < 0 %>
-					and <%= event.attendees.length %> others
-				<% end %>
-			</div>
+			<% if open && event.creator != current_user %>
+				<div class="upcoming-event-others invite-row event-actions">
+					<div class="invite-row invite-actions">
+						<%= link_to user_accept_path(current_user, event), data: {confirm: "Join #{event.title} ?"}, remote: true, :class => "invite-action" do %>
+							<div class="accept white">Join</div>
+						<% end %>
+
+						<%= link_to user_pass_path(current_user, event), data: {confirm: "Pass #{event.title} ?"}, remote: true, :class => "invite-action" do %>
+						<div class="pass">Pass</div>
+						<% end %>
+					</div>
+				</div>
+			<% end %>
+
 		</div>
 	</div>
 <% end %>

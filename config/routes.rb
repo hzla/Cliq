@@ -26,8 +26,10 @@ Cliq::Application.routes.draw do
   get '/events/upcoming', to: 'events#upcoming', as: 'upcoming_events'
   get '/events/going', to: 'events#going', as: 'going_events'
   get '/events/past', to: 'events#past', as: 'past_events'
+  get '/events/open', to: 'events#open', as: 'open_events'
+  get '/events/public/new', to: 'events#public_new', as: 'public_events'
+  post '/events', to: 'events#public_create', as: 'public_events_create'
   resources :events, only: [:index, :show]
-  
   resources :users do 
     resources :events, only: [:new, :create]
     get '/events/:id/accept', to: 'events#accept', as: 'accept'
