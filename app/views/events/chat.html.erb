@@ -1,0 +1,89 @@
+<div class="chat-partial chat-events">
+	<div id="<%= @event.id %>"></div>
+	<div id="chat-header">
+		<div id="chat-info" class="white">
+			<div id="chat-name"><%= @event.title %></div>
+			<div class="chat-row white">
+				<div class="row-item"><%= @event.location %></div>
+				<div class="row-item"><%= @event.time current_user %></div>
+				<div class="row-item">Hosted By: <%= @event.creator.first_name %></div>
+			</div>
+
+			<div class="chat-row white">
+				<div class="row-item"><%= @event.description %></div>
+			</div>
+		</div>
+	</div>
+	<div id="chat-partial-content">
+
+		
+
+
+		<div class="message-history chat">
+			<% @conversation.ordered_messages.each do |message| %>
+				<%= render partial: 'messages/show', locals: {message: message, event_image: true} %>
+			<% end %>
+		</div>
+	<div class="chat-window-footer">	
+		<%= form_for [@conversation, @message], remote: true do |f| %>
+			<%= f.text_area :body, id: 'chat-box', :class => "chat-box" %>
+			<%= hidden_field_tag :event ,"true" %>
+		<% end %>
+		<%= image_tag current_user.profile_pic_url, id: "chat-box-pic" %>
+
+		<div id="message-actions">
+			<div class="sending-progress gray head-3 hidden">
+				Sending...
+			</div>
+			<div class="action-button white message-reply inv-btn mes-action reply">
+				<div class="result-action hit-reply">Post</div>
+			</div>
+
+
+		</div>
+	</div>
+	</div>
+</div>
+
+<div class="collapsed-chat hidden" id="u-<%= @event.id %>">
+	<div class="collapsed-name">
+		<- <%= @event.title %>
+	</div>
+	<div class="x-tag">
+  	<%= image_tag 'XClose.svg', class: 'close' %>
+ 	</div>
+</div>
+
+
+<script>
+$(document).ready(function(){
+	$('.message-history')[0].scrollTop = $('.message-history')[0].scrollHeight
+})
+</script>
+<script>
+  $('img.svg').each(function(){
+    var $img = $(this);
+    var imgID = $img.attr('id');
+    var imgClass = $img.attr('class');
+    var imgURL = $img.attr('src');
+
+    $.get(imgURL, function(data) {
+        // Get the SVG tag, ignore the rest
+        var $svg = $(data).find('svg');
+
+        // Add replaced image's ID to the new SVG
+        if(typeof imgID !== 'undefined') {
+            $svg = $svg.attr('id', imgID);
+        }
+        // Add replaced image's classes to the new SVG
+        if(typeof imgClass !== 'undefined') {
+            $svg = $svg.attr('class', imgClass+' replaced-svg');
+        }
+        // Remove any invalid XML tags as per http://validator.w3.org
+        $svg = $svg.removeAttr('xmlns:a');
+        // Replace image with new SVG
+        $img.replaceWith($svg);
+    }, 'xml');
+  });
+</script>
+

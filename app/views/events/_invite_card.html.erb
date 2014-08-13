@@ -3,6 +3,11 @@
 <!-- change user.last to invite.creator later -->
 	<div class="invite-pic">
 		<%= image_tag invite.image_url || "Cliq.svg", :class => "event-picture" %>
+		<div class="invite-overlay">
+			<div class="invite-count"><%= invite.people_count %> Going</div>
+			<div class="invite-overlay-action">Edit</div>
+			<div class="invite-overlay-action">Delete</div>
+		</div>
 	</div>
 
 	<div class="invite-info">
@@ -21,10 +26,9 @@
 			<%= invite.time current_user %>
 		</div>
 
-		<div class="head-5 invite-quantity invite-row people-going">
-			<%= invite.people_count %> going
+		<div class="gray upcoming-event-description invite-row">
+			<%= invite.description %>
 		</div>
-
 		
 	</div>
 </div>

@@ -9,7 +9,6 @@ Events =
     $('body').on $.modal.BEFORE_CLOSE, '#invite-modal-container', @restoreOpacity
 
   send: ->
-    console.log "tried"
     $('#new_event').submit()
 
 	browseFiles: ->
@@ -33,7 +32,8 @@ Events =
     $.get '/partners/' + partnerId + '.json', (data) ->
       $('#event_location')[0].value = data.location
       $('#hour-labels').parent().show()
-      $('.event-modal').css "height", "615px"
+      $('.event-modal').css "height", "640px"
+      $('#invite-modal-container').css "margin-top", "-340px"
       $('#mon').text data.mon
       $('#tues').text data.tues
       $('#wed').text data.wed
@@ -44,7 +44,6 @@ Events =
       $('#invite-modal-container').css "margin-top", parseInt($('#invite-modal-container').css('margin-top').slice(0, -2)) - 30 + "px"
 
   sortEvents: (event, data, xhr, status) ->
-    console.log data
     eventType = $(@).children().text()
     $('.event-sort').children().removeClass 'selected'
     $(@).children().addClass 'selected'
@@ -52,8 +51,6 @@ Events =
     $('#upcoming-header').text "#{eventType} Events:"
 
   closeModal: (event, data, xhr, status) ->
-    console.log data
-    console.log data.ok
     if data.ok == true
       $.modal.close()
     else

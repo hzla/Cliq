@@ -1,6 +1,9 @@
-<div class="message-block" id="message-<%= message.id %>">
+<div class="message-block <%= 'event-message' if event_image %>" id="message-<%= message.id %>">
 	<% if message.user_id == current_user.id %>
 		<div class="date sent head-6 light-gray">
+			<% if event_image %>
+				<div class="message-name sent"><%= message.user.first_name %></div>
+			<% end %>
 			<%= message.date current_user %>
 		</div>
 		<div class="message sent head-5">
@@ -11,6 +14,9 @@
 			<%= message.body %>
 		</div>
 		<div class="date recieved head-6 light-gray">
+			<% if event_image %>
+				<div class="message-name received"><%= message.user.first_name %></div>
+			<% end %>
 			<%= message.date current_user %>
 		</div>
 	<% end %>

@@ -28,6 +28,7 @@ Cliq::Application.routes.draw do
   get '/events/past', to: 'events#past', as: 'past_events'
   get '/events/open', to: 'events#open', as: 'open_events'
   get '/events/public/new', to: 'events#public_new', as: 'public_events'
+  get '/events/:id/chat', to: 'events#chat', as: 'event_chat'
   post '/events', to: 'events#public_create', as: 'public_events_create'
   resources :events, only: [:index, :show]
   resources :users do 
@@ -37,6 +38,7 @@ Cliq::Application.routes.draw do
     get '/conversations/:id/searched', to: 'conversations#searched_show', as: 'searched_convo'
     get '/chat', to: 'conversations#chat', as: 'chat'
   end
+
   get '/users/:id/block', to: 'users#block', as: 'block_user'
   get '/users/:id/other', to: 'users#other', as: 'other_user'
   get '/users/:id/settings', to: 'users#settings', as: "settings"

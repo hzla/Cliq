@@ -178,6 +178,59 @@
 
 .invite-pic {
 	height: 168px;
+	position: relative;
+}
+
+.invite-pic:hover .invite-overlay {
+	display: block;
+}
+
+.upcoming-event-picture:hover .invite-overlay {
+	display: block;
+}
+
+.invite-overlay {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background: rgba(0,0,0,.7);
+	color: white;
+	display: none;
+	top: 0;
+	left: 0;
+}
+
+.invite-count {
+	width: 100%;
+	text-align: center;
+	font-size: 30px;
+	margin-top: 20px;
+}
+
+.invite-thread {
+	width: 100%;
+	margin-top: 20px;
+	text-align: center;
+	cursor: pointer;
+	color: white;
+}
+
+.invite-thread:hover {
+	color: $light-turq;
+	text-decoration: underline;
+}
+
+.invite-overlay-action {
+	float: left;
+	width: 50%;
+	text-align: center;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+.invite-overlay-action:hover {
+	color: $light-turq;
+	text-decoration: underline;
 }
 
 .event-picture {
@@ -210,6 +263,8 @@
 	color: white;
 	background: $orange;
 	border-radius: 30px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 .invite-actions {
@@ -287,6 +342,7 @@
 
 .upcoming-event-picture {
 	height: 168px;
+	position: relative;
 }
 
 .upcoming-event-info {

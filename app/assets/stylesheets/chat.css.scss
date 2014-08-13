@@ -11,6 +11,10 @@
 	-webkit-box-shadow: -1px 3px 28px -0px rgba(136, 136, 136, 0.2);
 }
 
+.chat-partial.chat-events {
+	width: 60%;
+}
+
 .close g {
 	fill: white;
 }
@@ -23,7 +27,7 @@
 }
 
 .message-history.chat .message {
-	width: 72%;
+	max-width: 72%;
 }
 
 #chat-partial-content {
@@ -40,10 +44,13 @@
 	margin-bottom: 10px;
 }
 
+
 #chat-info {
 	float: left;
 	width: 425px;
 }
+
+
 
 #chat-pic {
 	float: left;
@@ -57,6 +64,105 @@
 	font-size: 16pt;
 	font-weight: 600;
 	color: $dark-gray;
+}
+
+.chat-events {
+	#chat-info {
+	width: 85%;
+	margin-left: 15%;
+	margin-top: 20px;
+	}
+	#chat-name {
+		color: white;
+		font-size: 30px;
+	}
+	.chat-row {
+		float: left;
+		clear: left;
+		width: 100%;
+		margin-top: 10px;
+	}
+	.row-item {
+		float :left;
+		margin-right: 30px;
+		font-size: 15px;
+		font-weight: 300;
+	}
+	#chat-header {
+	margin-top: 0px;
+	height: 150px;
+	background-image: image_url("event-back.jpg");
+	}
+	#chat-partial-content {
+		margin-left: 15%;
+		width: 70%;
+		margin-right: 15%;
+	}
+	.message-history.chat {
+		width: 100%;
+		height: calc(100% - 300px);
+	}
+	.message-block {
+		width: 100%;
+	}
+	#chat-box {
+		width: calc(70% - 85px);
+	}
+	.action-button.mes-action {
+		border-radius: 100px;
+	}
+	.message {
+		margin-top: 0px;
+		padding: 0px;
+		padding-top: 5px;
+	}
+	.message.sent {
+		background: none;
+		color: $dark-gray;
+		padding-right: 0px;
+	}
+	.message.received {
+		background: none;
+		color: $dark-turq;
+		padding: 0px;
+		padding-top: 5px;
+	}
+	.message-name {
+		font-weight: 700;
+		color: $dark-gray;
+		float: left;
+		
+	}
+	.message-name.received {
+		float: left;
+		margin-right: 10px;
+	}
+	.message-name.sent {
+		float: right;
+	}
+	.date {
+		margin-top: 0px;
+		width: 23%
+	}
+	.new .date.recieved {
+		position: absolute;
+		margin-left: 0px;
+		left: 0;
+	}
+	.new .date.sent {
+		position: absolute;
+		margin-left: 0px;
+		margin-right: 0px;
+		right: 0;
+		padding-right: 0px;
+	}
+	.new .date {
+		top: -20px;
+	}
+	.message-block.new {
+		margin-top: 30px;
+		position: relative;
+	}
 }
 
 #chat-school {

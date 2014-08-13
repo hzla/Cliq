@@ -2,8 +2,8 @@ MobileMessages =
 	init: ->
 		$('body').on 'click', '.mobile .convo-link', @swipeToConvo
 		$('body').on 'ajax:success', '.mobile .convo-link', @appendConvo
-		$('body').on 'ajax:success', '.mobile #new_message', @obscureDate
-		$('body').on 'ajax:success', '.mobile .chat-user', @obscureDate
+		$('body').on 'ajax:success', '#new_message', @obscurelastDates
+		$('body').on 'ajax:success', '.chat-user', @obscureDate
 		$('body')	.on 'click', '.mobile .reply', @submitMessage
 		$('body').on 'click', '.mobile .content-container', @removeChat
 		$('body').on 'click', '.mobile .results-container', @removeChat
@@ -56,10 +56,18 @@ MobileMessages =
     	threshold: 150 
     	allowPageScroll: "vertical"
 
+	obscurelastDates: ->
+		dates = $('.date')
+		lastDates = dates.slice( dates.length - 2, dates.length)
+		MobileMessages.obscureDates lastDates
+		$('.date:visible').parents('.message-block').addClass('new')
+
 	obscureDate: ->
 		dates = $('.date')
 		lastDates = dates.slice( dates.length - 2, dates.length)
 		MobileMessages.obscureDates dates
+		
+	
 
 	obscureDates: (dates) ->
 		dates.each (index) ->
@@ -78,6 +86,7 @@ MobileMessages =
 				difference = cTotalTime - totalTime
 				if difference < 30 && difference > -1
 					$(@).hide() 
+				
 
 
 

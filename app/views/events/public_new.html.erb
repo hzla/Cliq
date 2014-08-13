@@ -1,22 +1,22 @@
 <div class="event-modal">
 	<div class="event-form-header">
 			<div class="header-profile">
-				<div class="head-3 dark-gray" id="sending">New Open Event</div>
+				<div class="head-3 white" id="sending">Open Event Setup</div>
 			</div>
 	</div>
 
 	<%= form_for [@event], :class => 'event-form' do |f| %>
 		
 		<div class="form-row first">
-			<div class="event-form-label head-3 dark-gray">What:</div> 
-			<%= f.text_field :title, :class => "form-input", placeholder: 'ex. Potluck of the Ages' %>
+			<!-- <div class="event-form-label head-3 dark-gray">What:</div>  -->
+			<%= f.text_field :title, :class => "form-input", placeholder: "What's happening?" %>
 		</div>
 		
 		<div class="form-row">
-			<div class="event-form-label head-3 dark-gray">Where:</div> 
-			<%= f.text_field :location, :class => "form-input", placeholder: '34 Sharefood Rd. Tampa California' %>
+			<!-- <div class="event-form-label head-3 dark-gray">Where:</div>  -->
+			<%= f.text_field :location, :class => "form-input", placeholder: 'Where?' %>
 		</div>
-		<div id="or" class="head-4 dark-gray">
+		<div id="or" class="head-4 white">
 			or
 		</div>
 		<%= f.hidden_field :closed, value: "public" %> 
@@ -24,58 +24,57 @@
 			 <%= f.select :partner_id, options_for_select([["Pick a place near your school", 0, {:class => "light-gray"}]] + @partners), :class => "form-input" %>
 		</div>
 
-		<div class="form-row hidden">
+		<div class="form-row hidden white">
 			<div id="hour-labels">
-				<div class="day head-6 gray">Mon</div>
-				<div class="day head-6 gray">Tues</div>
-				<div class="day head-6 gray">Wed</div>
-				<div class="day head-6 gray">Thurs</div>
-				<div class="day head-6 gray">Fri</div>
-				<div class="day head-6 gray">Sat</div>
-				<div class="day head-6 gray">Sun</div>
+				<div class="day head-6">Mon</div>
+				<div class="day head-6">Tues</div>
+				<div class="day head-6">Wed</div>
+				<div class="day head-6">Thurs</div>
+				<div class="day head-6">Fri</div>
+				<div class="day head-6">Sat</div>
+				<div class="day head-6">Sun</div>
 			</div>
 
 			<div id="hours">
-				<div id="mon" class="hour head-6 gray"></div>
-				<div id="tues" class="hour head-6 gray"></div>
-				<div id="wed" class="hour head-6 gray"></div>
-				<div id="thurs" class="hour head-6 gray"></div>
-				<div id="fri" class="hour head-6 gray"></div>
-				<div id="sat" class="hour head-6 gray"></div>
-				<div id="sun" class="hour head-6 gray"></div>
+				<div id="mon" class="hour head-6"></div>
+				<div id="tues" class="hour head-6"></div>
+				<div id="wed" class="hour head-6"></div>
+				<div id="thurs" class="hour head-6"></div>
+				<div id="fri" class="hour head-6"></div>
+				<div id="sat" class="hour head-6"></div>
+				<div id="sun" class="hour head-6"></div>
 			</div>
 		</div>
 		
 		<div class="form-row">
-			<div class="event-form-label head-3 dark-gray">When:</div> 
-			<%= f.text_field :start_time, :class => "form-input", placeholder: 'Click to select from calendar' %> 
+			<!-- <div class="event-form-label head-3 dark-gray">When:</div>  -->
+			<%= f.text_field :start_time, :class => "form-input", placeholder: 'When?' %> 
 		</div>
 		
 		<div class="form-row">
-			<div class="event-form-label head-3 dark-gray">More Info:</div> 
+			<!-- <div class="event-form-label head-3 dark-gray">More Info:</div>  -->
 			<div id="quantity-select"> 
-				<%= f.text_area :description, :class => 'form-input' %>
+				<%= f.text_area :description, :class => 'form-input', placeholder: "Any Details?" %>
 			</div>
 		</div>
 		
 		<div class="form-row">
-			<div class="event-form-label head-3 dark-gray">Upload Image:</div>
+			<div class="event-form-label head-3 white">Upload Image:</div>
 			  <%= f.file_field :image, :class => 'form-input-upload', id: "imgInp" %> 
 			  <div id="upload-button"><div class="btn-text">Browse Files...</div></div>
 		</div>
 
 		<div class="form-row optional">
-			<div class="event-form-label head-3 dark-gray">(Optional)</div>
+			<div class="event-form-label head-3 white">(Optional)</div>
 			
 		</div>
 
 
 		
 
-		<div class="form-row submit">	
+		<div class="form-row">	
 			<div id="send-invite">
-				<%= image_tag "events-white.svg", :class => "invite-icon" %>
-				<%= f.submit "CREATE", id: "invite-submit" %>
+				<%= f.submit "SET IT LOOSE", id: "invite-submit" %>
 			</div>
 			<img id="preview" src="#" alt="preview failed to load" class="hidden" /> 
 		</div>

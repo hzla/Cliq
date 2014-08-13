@@ -74,7 +74,6 @@ Search =
 
 	switchChat: ->
 		if $('.conversation').length > 0
-			console.log '#' + $(@).attr('href').split('/')[2]
 			$('.user-other-container').remove()
 			$('#' + $(@).attr('href').split('/')[2]).children('.convo-link').click()
 			$('.content-container').css 'opacity', ''
@@ -293,6 +292,7 @@ Search =
 	obscureDate: ->
 		dates = $('.date')
 		Search.obscureDates dates
+		$('.date:visible').parents('.message-block').addClass('new')
 
 	obscureDates: (dates) ->
 		dates.each (index) ->
@@ -302,6 +302,7 @@ Search =
 			else 
 				date = $(dates[index - 1]).text()
 				time = date.substr(date.length - 9).trim().slice(0,4)
+				console.log time
 				hours = parseInt(time.slice(0,1)) * 60
 				mins = parseInt(time.slice(2,4))
 				totalTime = hours + mins
