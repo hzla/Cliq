@@ -24,24 +24,24 @@
 				<%= render partial: 'messages/show', locals: {message: message, event_image: true} %>
 			<% end %>
 		</div>
-	<div class="chat-window-footer">	
-		<%= form_for [@conversation, @message], remote: true do |f| %>
-			<%= f.text_area :body, id: 'chat-box', :class => "chat-box" %>
-			<%= hidden_field_tag :event ,"true" %>
-		<% end %>
-		<%= image_tag current_user.profile_pic_url, id: "chat-box-pic" %>
+	<% if !@locked %>
+		<div class="chat-window-footer">	
+			<%= form_for [@conversation, @message], remote: true do |f| %>
+				<%= f.text_area :body, id: 'chat-box', :class => "chat-box" %>
+				<%= hidden_field_tag :event ,"true" %>
+			<% end %>
+			<%= image_tag current_user.profile_pic_url, id: "chat-box-pic" %>
 
-		<div id="message-actions">
-			<div class="sending-progress gray head-3 hidden">
-				Sending...
+			<div id="message-actions">
+				<div class="sending-progress gray head-3 hidden">
+					Sending...
+				</div>
+				<div class="action-button white message-reply inv-btn mes-action reply">
+					<div class="result-action hit-reply">Post</div>
+				</div>
 			</div>
-			<div class="action-button white message-reply inv-btn mes-action reply">
-				<div class="result-action hit-reply">Post</div>
-			</div>
-
-
 		</div>
-	</div>
+	<% end %>
 	</div>
 </div>
 

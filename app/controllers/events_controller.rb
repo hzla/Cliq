@@ -121,9 +121,12 @@ class EventsController < ApplicationController
 	end
 
 	def chat
+		p params
+		puts "\n" * 30
 		@event = Event.find params[:id]
 		@conversation = Conversation.find_or_create_by(event_id: @event.id)
 		@message = Message.new
+		@locked = (params[:locked] == "true")
 		render layout: false
 	end
 end

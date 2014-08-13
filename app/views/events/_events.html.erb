@@ -5,7 +5,8 @@
 			<%= image_tag event.image_url || "Cliq.svg", :class => "event-picture" %>
 			<div class="invite-overlay">
 				<div class="invite-count"><%= event.people_count %> Going</div>
-				<%= link_to event_chat_path(event), :class => "chat-user", remote: true do %>
+				
+				<%= link_to event_chat_path(event, locked: open), :class => "chat-user", remote: true do %>
 					<div class="invite-thread">Click to view thread</div>
 				<% end %>
 			</div>
