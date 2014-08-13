@@ -2,7 +2,7 @@
 <% if conversation %>
 	<div class="message-history">
 		<% conversation.ordered_messages.each do |message| %>
-			<%= render partial: 'show', locals: {message: message} %>
+			<%= render partial: 'show', locals: {message: message, event_image: false} %>
 		<% end %>
 	</div>
 	<div class="message-form">

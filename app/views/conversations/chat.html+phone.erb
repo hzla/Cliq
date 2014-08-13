@@ -12,7 +12,7 @@
 
 <div class="message-history mobile">
 	<% @conversation.ordered_messages.each do |message| %>
-		<%= render partial: 'messages/show', locals: {message: message} %>
+		<%= render partial: 'messages/show', locals: {message: message, event_image: false} %>
 	<% end %>
 </div>
 
