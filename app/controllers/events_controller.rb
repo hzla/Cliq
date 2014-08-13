@@ -6,9 +6,9 @@ class EventsController < ApplicationController
 	def index
 		excursions = current_user.excursions 
 		invite_excursions = excursions.where(created: true)
-		@invitations = invite_excursions.map(&:event).compact.select { |event| event.start_time > (Time.now - 2.hours) && event.closed == "public" }.sort_by(&:start_time)
+		@invitations = invite_excursions.map(&:event).compact.select { |event| event.start_time > (Time.now - 6.hours) && event.closed == "public" }.sort_by(&:start_time)
 		@open = true
-		@events = Event.where(closed: "public").select { |event| event.start_time > (Time.now - 2.hours) && event.untouched_by?(current_user) }.sort_by(&:start_time)
+		@events = Event.where(closed: "public").select { |event| event.start_time > (Time.now - 6.hours) && event.untouched_by?(current_user) }.sort_by(&:start_time)
 		
 		excursions.update_all seen: true
 		current_user.update_attributes event_count: 0
@@ -20,23 +20,23 @@ class EventsController < ApplicationController
 
 	def upcoming
 		excursions = current_user.excursions.where(accepted: true)
-		@events = excursions.map(&:event).compact.select { |event| event.start_time > (Time.now - 2.hours) }.select {|event| event.accepted? }.sort_by(&:start_time)
+		@events = excursions.map(&:event).compact.select { |event| event.start_time > (Time.now - 6.hours) }.select {|event| event.accepted? }.sort_by(&:start_time)
 		render partial: 'events', locals: {events: @events}
 	end
 
 	def past
-		@events = current_user.excursions.where(accepted: true).map(&:event).select { |event| event.start_time < (Time.now - 2.hours) }.sort_by(&:start_time).reverse
+		@events = current_user.excursions.where(accepted: true).map(&:event).select { |event| event.start_time < (Time.now - 6.hours) }.sort_by(&:start_time).reverse
 		render partial: 'events', locals: {events: @events}
 	end
 
 	def going
-		@events = current_user.excursions.where(accepted: true).map(&:event).select { |event| event.start_time > (Time.now - 2.hours) }.sort_by(&:start_time)
+		@events = current_user.excursions.where(accepted: true).map(&:event).select { |event| event.start_time > (Time.now - 6.hours) }.sort_by(&:start_time)
 		@open = false
 		render partial: 'events', locals: {events: @events, open: @open}
 	end
 
 	def open
-		@events = Event.where(closed: "public").select { |event| event.start_time > (Time.now - 2.hours) && event.untouched_by?(current_user) }.sort_by(&:start_time)
+		@events = Event.where(closed: "public").select { |event| event.start_time > (Time.now - 6.hours) && event.untouched_by?(current_user) }.sort_by(&:start_time)
 		@open = true
 		render partial: 'events', locals: {events: @events, open: @open}
 	
@@ -57,6 +57,8 @@ class EventsController < ApplicationController
 	end
 
 	def public_create
+		p params[:event]
+		puts "\n" * 40
 		event = Event.new params[:event]
 		if event.save
 			event.users << [current_user]
@@ -69,6 +71,8 @@ class EventsController < ApplicationController
 	end
 
 	def create
+		p params[:event]
+		puts "\n" * 30
 		event = Event.new params[:event]
 		invited_user = User.find params[:user_id]
 		if event.save
@@ -121,8 +125,6 @@ class EventsController < ApplicationController
 	end
 
 	def chat
-		p params
-		puts "\n" * 30
 		@event = Event.find params[:id]
 		@conversation = Conversation.find_or_create_by(event_id: @event.id)
 		@message = Message.new
