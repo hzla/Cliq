@@ -87,10 +87,12 @@
 		margin-right: 30px;
 		font-size: 15px;
 		font-weight: 300;
+		max-height: 68px;
+		overflow-y: scroll;
 	}
 	#chat-header {
 	margin-top: 0px;
-	height: 150px;
+	height: 200px;
 	background-image: image_url("event-back.jpg");
 	}
 	#chat-partial-content {
@@ -100,10 +102,10 @@
 	}
 	.message-history.chat {
 		width: 100%;
-		height: calc(100% - 300px);
+		height: calc(100% - 350px);
 	}
 	.message-history.chat.locked {
-		height: calc(100% - 180px);	
+		height: calc(100% - 230px);	
 	}
 	.message-block {
 		width: 100%;

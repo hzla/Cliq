@@ -130,11 +130,16 @@
 }
 
 .invite {
-	height: 378px;
+	height: 440px;
 	width: 224px;
 	background-color: white;
 	margin-top: 20px;
 	margin-bottom: 20px;
+}
+
+.upcoming-event-location {
+	max-height: 40px;
+	overflow-y: scroll;
 }
 
 .people-going {
@@ -312,7 +317,7 @@
 
 .upcoming-event {
 	width: 31%;
-	height: 378px;
+	height: 440px;
 	float: left;
 	margin-right: 2%;
 	background-color: white;
@@ -350,9 +355,15 @@
 	position: relative;
 }
 
+.upcoming-event-title {
+	overflow-y: scroll;
+	max-height: 45px;
+}
+
 .invite-row.invite-actions {
 	width: 100%;
 	margin-left: 0px;
+	bottom: -18px;
 }
 
 .attendee {
