@@ -102,6 +102,9 @@
 		width: 100%;
 		height: calc(100% - 300px);
 	}
+	.message-history.chat.locked {
+		height: calc(100% - 180px);	
+	}
 	.message-block {
 		width: 100%;
 	}

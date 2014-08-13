@@ -6,7 +6,6 @@
 			<div class="chat-row white">
 				<div class="row-item"><%= @event.location %></div>
 				<div class="row-item"><%= @event.time current_user %></div>
-				<div class="row-item">Hosted By: <%= @event.creator.first_name %></div>
 			</div>
 
 			<div class="chat-row white">
@@ -19,7 +18,7 @@
 		
 
 
-		<div class="message-history chat">
+		<div class="message-history chat <%= 'locked' if @locked %>">
 			<% @conversation.ordered_messages.each do |message| %>
 				<%= render partial: 'messages/show', locals: {message: message, event_image: true} %>
 			<% end %>
