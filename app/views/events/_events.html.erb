@@ -15,7 +15,9 @@
 		<div class="upcoming-event-info">
 			
 			<div class="upcoming-event-title invite-row">
-				<%= event.title %>
+				<%= link_to event_chat_path(event, locked: open), :class => "chat-user", remote: true do %>
+					<%= event.title %>
+				<% end %>
 			</div>
 
 			<div class="white upcoming-event-time invite-row">

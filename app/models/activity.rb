@@ -34,7 +34,8 @@ class Activity < ActiveRecord::Base
 			user = User.find suggested_by
 			user.activities << self
 			user.save
-			update_attributes suggested_by: nil
+			cap_name = name.split.map(&:capitalize).join(" ")
+			update_attributes suggested_by: nil, name: cap_name
 		end
 	end
 

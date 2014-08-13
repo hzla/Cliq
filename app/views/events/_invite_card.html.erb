@@ -13,7 +13,9 @@
 
 	<div class="invite-info">
 		<div class="invite-title invite-row">
-			<%= invite.title %>
+			<%= link_to event_chat_path(invite, locked: "false"), :class => "chat-user", remote: true do %>
+				<%= invite.title %>
+			<% end %>
 		</div>
 
 
