@@ -130,7 +130,7 @@
 }
 
 .invite {
-	height: 440px;
+	height: 410px;
 	width: 224px;
 	background-color: white;
 	margin-top: 20px;
@@ -317,7 +317,7 @@
 
 .upcoming-event {
 	width: 31%;
-	height: 440px;
+	height: 410px;
 	float: left;
 	margin-right: 2%;
 	background-color: white;
@@ -327,6 +327,7 @@
 .upcoming-event-description {
 	max-height: 75px;
 	overflow-y: scroll;
+	width: 180px;
 }
 
 .upcoming-event:nth-child(3n) {
