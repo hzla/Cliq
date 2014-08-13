@@ -5,8 +5,9 @@
 		<%= image_tag invite.image_url || "Cliq.svg", :class => "event-picture" %>
 		<div class="invite-overlay">
 			<div class="invite-count"><%= invite.people_count %> Going</div>
-			<div class="invite-overlay-action">Edit</div>
-			<div class="invite-overlay-action">Delete</div>
+			<%= link_to event_chat_path(invite, locked: false), :class => "chat-user", remote: true do %>
+				<div class="invite-thread">Click to view thread</div>
+			<% end %>
 		</div>
 	</div>
 
@@ -31,4 +32,7 @@
 		</div>
 		
 	</div>
+
 </div>
+
+
