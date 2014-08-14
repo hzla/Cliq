@@ -1,6 +1,6 @@
 <% if results != "invalid" && results != nil %>
 	<% if results.empty? %>
-		<%= render partial: "no_one", locals: {category: @category} %>
+		<%= render partial: "no_one", locals: {category: @category, results: false} %>
 	<% end %> 
 	<% results.each do |entry| %>
 		<div class="result" id="u-<%= entry[0].id %>">
@@ -48,7 +48,7 @@
 	<% end %>
 <% else  %>
 <div class="hidden" id="invalid">invalid</div>
-<%= render partial: 'no_one', locals: {category: @category} %>
+<%= render partial: 'no_one', locals: {category: @category, results: false} %>
 <% end %>
 
 

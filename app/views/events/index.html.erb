@@ -44,3 +44,20 @@
 		</div>
 		<div id="invite-modal-container" class="modal"></div>
 	</div>
+
+	<script>
+			var intId = 0
+			var row = 0
+			var count = 0
+			$(".invite-row").bind("mouseover", function(event) {
+		    row = $(this)
+		    intId = setInterval(function(){
+		    	row[0].scrollTop = count
+		    	count += 1
+		    }, 10)
+		}).bind("mouseout", function() {
+		    clearInterval(intId)
+		    count = 0
+		    row[0].scrollTop = 0
+		});
+	</script>

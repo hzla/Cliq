@@ -19,8 +19,8 @@ Search =
 		$('.send-activation').on 'submit', @thankUser
 		$('body').on 'click', '.searched', @removeTerm
 		$('body').on 'keypress', '#activity', @selectInterestOnEnter
-		$('body').on 'click', '#cliq-invite', @inviteFriends
-		$('body').on 'submit', '#friend-invite', @sendCliqInvite
+		$('body').on 'click', '.cliq-invite', @inviteFriends
+		$('body').on 'ajax:success', '#friend-invite', @sendCliqInvite
 		$('body').on 'keydown', '#query-location' , @deleteLocID
 		
 
@@ -211,7 +211,11 @@ Search =
 			$('.result').addClass 'animated fadeIn'
 			$('#results').html data
 			$('.swiped-result').hide()
-			$('.swiped-result').first().show().addClass 'animated fadeIn'
+			$('.swiped-result').each (index) ->
+				if index != 0 && index % 10 == 0
+					empty = $('#empty').clone()
+					$(@).replaceWith empty
+			$('#results').children().first().show().removeClass('hidden').addClass 'animated fadeIn'
 			if $('#empty').length > 0
 				$('#no-one-around').show()
 			$('body').scrollTo($('.mobile .result')) if $('.searched').length < 1 && $('.mobile').length > 0
@@ -273,15 +277,16 @@ Search =
 			$('.ui-menu-item:visible').first().click()
 
 	inviteFriends: ->
-		$('#pre-invite').hide()
-		$('#post-invite').show()
-		$('#no-one-around').css 'height', '570px'
+		box = $(@).parents('.no-one-around')
+		box.find('.pre-invite').hide()
+		box.find('.post-invite').show()
+		box.css 'height', '570px'
 
 	sendCliqInvite: ->
-		@.reset()
-		$('#sent-invite').show().addClass 'animated fadeIn'
+		$(@)[0].reset()
+		$('.sent-invite').show().addClass 'animated fadeIn'
 		setTimeout ->
-			$('#sent-invite').hide()
+			$('.sent-invite').hide()
 		, 1000
 
 	deleteLocID: ->

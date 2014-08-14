@@ -430,7 +430,7 @@
 
 #no-one-around {
 	height: 100%;
-    padding: 20% 10%;
+  padding: 15% 10%;
 }
 
 #no-one-text {
@@ -449,6 +449,29 @@
 	cursor: pointer;
 }
 
+.cliq-skip {
+	margin: 0 auto;
+	width: 125px;
+	background-color: $light-turq;
+	color: white;
+	border-radius: 50px;
+	text-align: center;
+	cursor: pointer;
+	margin-top: 20px;
+}
+
+.cliq-skip.post {
+	position: absolute;
+	right: 0;
+	top: -25px;
+}
+
+.cliq-skip:hover {
+	color: $light-turq;
+	background: white;
+	border: 1px solid $light-turq;
+}
+
 #cliq-invite:hover {
 	color: $light-turq;
 	background: white;
@@ -458,6 +481,7 @@
 #post-invite-content {
 	width: 600px;
 	margin: 0 auto;
+	position: relative;
 }
 
 #preview-text {

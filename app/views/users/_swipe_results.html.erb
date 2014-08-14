@@ -1,7 +1,7 @@
 <% if results != "invalid" && results != nil %>
 	<% if results.empty? %>
 		<div id='empty'>
-			<%= render partial: "no_one", locals: {category: @category} %>
+			<%= render partial: "no_one", locals: {category: @category, results: false} %>
 		</div>
 	<% end %> 
 	<% results.shuffle.each do |entry| %>
@@ -109,10 +109,10 @@
 	//})
 	$('.swiped-result').first().show()
 </script>
-<div class="hidden" id='no-one'>There seems to be no one else.</div>
+
 <% else  %>
 <div class="hidden" id="invalid">invalid</div>
 <% end %>
-<div id='empty' class="hidden">
-	<%= render partial: "no_one", locals: {category: @category} %>
+<div id='empty' class="hidden empty">
+	<%= render partial: "no_one", locals: {category: @category, results: true} %>
 </div>

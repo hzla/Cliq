@@ -195,6 +195,8 @@ class UsersController < ApplicationController
 
 	def invite_friends
 		UserMailer.invite_email(current_user, params[:email]).deliver
+		p params
+		puts "\n stupid" * 50
 		render nothing: true
 	end
 
