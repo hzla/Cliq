@@ -23,12 +23,10 @@ class Event < ActiveRecord::Base
 		# 	tzone.time(start_time).strftime("%m/%d/%g at %I:%M%p") 
 		# end
 		if start_time - Time.now < 24.hours
-			stime = (start_time).strftime("%m/%d/%g at %I:%M%p")
+			stime = (start_time).strftime("Today at %I:%M%p")
 		else
 			stime = (start_time).strftime("%m/%d/%g at %I:%M%p") 
 		end
-		stime = stime.include?("AM") ? stime.gsub("AM", "PM") : stime.gsub("PM", "AM")
-		stime
 	end
 
 	def attendees

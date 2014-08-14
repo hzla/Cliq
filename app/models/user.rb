@@ -50,6 +50,10 @@ class User < ActiveRecord::Base
 		code = characters.map {|c| characters.sample}
 		code.join
 	end
+
+	def user_time
+		Time.now.utc + timezone.hours
+	end
 	
 	#maps cat/act to users_ids, parse and count user_ids
 	def search_similar interest_type, location = nil #accepts a list of interests/categories
