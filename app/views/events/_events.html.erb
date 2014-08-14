@@ -35,11 +35,10 @@
 			<% if open && event.creator != current_user %>
 				<div class="upcoming-event-others invite-row event-actions">
 					<div class="invite-row invite-actions">
-						<%= link_to user_accept_path(current_user, event), data: {confirm: "Join #{event.title} ?"}, remote: true, :class => "invite-action" do %>
+						<%= link_to user_accept_path(current_user, event), remote: true, :class => "invite-action" do %>
 							<div class="accept white">Join</div>
 						<% end %>
-
-						<%= link_to user_pass_path(current_user, event), data: {confirm: "Pass #{event.title} ?"}, remote: true, :class => "invite-action" do %>
+						<%= link_to user_pass_path(current_user, event), remote: true, :class => "invite-action" do %>
 						<div class="pass">Pass</div>
 						<% end %>
 					</div>
