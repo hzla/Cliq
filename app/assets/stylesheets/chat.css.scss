@@ -119,7 +119,6 @@
 	.message {
 		margin-top: 0px;
 		padding: 0px;
-		padding-top: 5px;
 	}
 	.message.sent {
 		background: none;
@@ -128,9 +127,8 @@
 	}
 	.message.received {
 		background: none;
-		color: $dark-turq;
+		color: $turq;
 		padding: 0px;
-		padding-top: 5px;
 	}
 	.message-name {
 		font-weight: 700;
@@ -141,9 +139,12 @@
 	.message-name.received {
 		float: left;
 		margin-right: 10px;
+        font-size: 15px;
 	}
 	.message-name.sent {
 		float: right;
+        margin-left: 9px;
+        font-size: 15px;
 	}
 	.date {
 		margin-top: 0px;
@@ -153,6 +154,7 @@
 		position: absolute;
 		margin-left: 0px;
 		left: 0;
+        width: auto;
 	}
 	.new .date.sent {
 		position: absolute;
@@ -160,6 +162,7 @@
 		margin-right: 0px;
 		right: 0;
 		padding-right: 0px;
+        width: auto;
 	}
 	.new .date {
 		top: -20px;

@@ -73,17 +73,19 @@
 }
 
 #event-going {
-	float: right;
-	padding-left: 15px;
-	padding-right: 15px; 
+    float: right;
+    padding: 0px 30px;
+    height: 26px;
+    line-height: 1.3;
 }
 
 
 
 #event-open {
 	float: right;
-	padding-left: 15px;
-	padding-right: 15px;
+    padding: 0px 30px;
+    height: 26px;
+    line-height: 1.3;
 }
 
 #invites {
@@ -100,10 +102,11 @@
 	margin: 0 auto;
 	font-size: 25px;
 	text-align: center;
-	line-height: 1.8;
+	line-height: 2.2;
 	font-weight: 300;
-	color: red;
+	color: $red;
 	cursor: pointer;
+    font-size: 20px;
 }
 
 #new-open-event:hover {
@@ -119,13 +122,15 @@
 #invites-header {
 	margin-left: 70px;
 	margin-top: 50px;
-	margin-bottom: 30px;
-	font-size: 30px;
+	margin-bottom: 15px;
+	font-size: 28px;
+    font-weight: 400;
 }
 
 #upcoming-header {
 	float: left;
-	font-size: 30px;
+	font-size: 28px;
+    font-weight: 400;
 
 }
 
@@ -178,7 +183,8 @@
 }
 
 .invite-location {
-	font-size: 12pt;
+	font-size: 15px;
+    
 }
 
 .invite-pic {
@@ -208,16 +214,19 @@
 .invite-count {
 	width: 100%;
 	text-align: center;
-	font-size: 30px;
-	margin-top: 20px;
+	font-size: 22px;
+	margin-top: 45px;
+    font-weight: 700;
 }
 
 .invite-thread {
 	width: 100%;
-	margin-top: 20px;
-	text-align: center;
-	cursor: pointer;
-	color: white;
+    margin-top: 30px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    font-size: 15px;
+    font-weight: 300;
 }
 
 .invite-thread:hover {
@@ -244,20 +253,21 @@
 }
 
 .invite-info {
-	height: 160px;
-	position: relative;
+	height: 210px;
+    padding: 10px 15px;
+    position: relative;
+    box-sizing: border-box;
 }
 
 .invite-row {
 	clear: left;
 	float: left;
-	margin-left: 20px;
-	margin-right: 20px;
 }
 
 .invite-title {
-	font-size: 15pt;
-	font-weight: 800;
+	margin: 2px 0px;
+    font-size: 15px;
+    font-weight: 700;
 }
 
 .invite-time {
@@ -270,6 +280,8 @@
 	border-radius: 30px;
 	margin-top: 5px;
 	margin-bottom: 5px;
+    height: 20px;
+    line-height: 1.4;
 }
 
 .invite-actions {
@@ -312,12 +324,22 @@
 }
 
 .upcoming-event-info .invite-row {
-	margin-top: 5px;
+	margin: 2px 0px;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.upcoming-event-info .invite-title2 {
+	margin: 2px 0px;
+    font-size: 15px;
+    font-weight: 700;
 }
 
 .upcoming-event {
-	width: 31%;
+	width: 224px;
 	height: 410px;
+	width: 224px;
+	height: 378px;
 	float: left;
 	margin-right: 2%;
 	background-color: white;
@@ -327,7 +349,7 @@
 .upcoming-event-description {
 	max-height: 75px;
 	overflow-y: scroll;
-	width: 180px;
+	width: 100%;
 }
 
 .upcoming-event:nth-child(3n) {
@@ -335,8 +357,8 @@
 }
 
 .upcoming-event-title {
-	font-size: 15pt;
-	font-weight: 800;
+	font-size: 15px;
+	font-weight: 700;
 }
 
 .upcoming-event-time {
@@ -353,7 +375,9 @@
 
 .upcoming-event-info {
 	height: 210px;
-	position: relative;
+    position: relative;
+	padding: 10px 15px;
+    box-sizing: border-box;
 }
 
 .upcoming-event-title {
@@ -363,8 +387,8 @@
 
 .invite-row.invite-actions {
 	width: 100%;
-	margin-left: 0px;
-	bottom: -18px;
+	margin-left: 8px;
+  margin-bottom: 10px;
 }
 
 .attendee {
