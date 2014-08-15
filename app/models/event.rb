@@ -54,7 +54,7 @@ class Event < ActiveRecord::Base
 	end
 
 	def self.open user
-		where(closed: "public").select { |event| event.start_time > (user.user_time - 6.hours) && !event.passed_by?(user) }.sort_by(&:start_time)
+		where('start_time > (?)', (user.user_time - 6.hours) ).order(:start_time).select { |event| !event.passed_by?(user) }
 	end
 
 	def self.hosted_by user

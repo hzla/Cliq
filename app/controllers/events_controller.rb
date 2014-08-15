@@ -70,19 +70,22 @@ class EventsController < ApplicationController #in severe need of refactoring
 	def public_create
 		print params
 		puts "\n" * 30
-		if params[:event][:start_time].include? "pm"
-			pm = true
-		end
 		event = Event.new params[:event]
-		pm ? event.start_time += 12.hours : event.start_time -= 12.hours 
 		if event.save
+			if params[:event][:start_time].include? "pm"
+				pm = true
+			end
+			pm ? event.start_time += 12.hours : event.start_time -= 12.hours 
 			event.users << [current_user]
 			excursion = Excursion.where(event_id: event.id, user_id: current_user.id)[0]
 			excursion.update_attributes created: true, accepted: true
+			if event.image_url != nil
+				redirect_to(:back) and return
+			end
 			if request.variant == [:phone]
 				render json: {ok: true} and return
 			end
-			render json: {ok: true} and return
+			render json: {ok: true} and return	
 		else
 			render json: event.errors and return
 		end
