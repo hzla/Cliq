@@ -21,8 +21,6 @@
 	<div id="post-invite" class="hidden post-invite">
 		<div id="post-invite-content">
 			<%= form_tag invite_friends_path, id: "friend-invite", remote: true do %>
-				<div id="enter-email" class="head-3 dark-gray">Enter a friend's email here: </div>
-				<%= text_field_tag :email, nil, id: "invite-email", placeholder: "email@email.com", :class => "head-3 dark-gray" %>
 				<div id="what-send" class="head-3 dark-gray">Here's what we'll send:</div>
 
 				<p id="preview-text">
@@ -34,10 +32,12 @@
 
 					With Cliq, you can discreetly meet people in your area who love the same cool things as you. No one can ever see your last name and your picture only shows up to the specific people you're chatting with. So, you're just a first name to most and an added picture the size of a nickel to the few talking to you. Totally discreet.<br><br>
 
-					Not interested in meeting people? You can still sign up to find out about cool events in your area.<br><br>
+					Not interested in meeting people? You can still sign up to find out about cool events at UCF.<br><br>
 
 					What are you waiting for? Sign up now at www.cliqwith.me
 				</p>
+				<div id="enter-email" class="head-3 dark-gray">Enter a friend's email here: </div>
+				<%= text_field_tag :email, nil, id: "invite-email", placeholder: "email@email.com", :class => "head-3 dark-gray" %>
 				<%= submit_tag "Send Invite", id: "send-cliq-invite", :class => "head-3" %>
 				<div id="sent-invite" class="head-3 dark-gray hidden sent-invite">Sent</div>
 			<% end %>
