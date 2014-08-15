@@ -8,6 +8,21 @@
 				<% end %>
 			</div>
 		<% end %>
+		<%= link_to events_path, remote: true, :class => 'tab', id: "events" do %>
+			<div class="extended events <%= 'active' if active == :events %> side-icon" >
+				<%= image_tag "Events.svg", :class => "nav-icon svg" %>
+				<% if current_user.event_count > 0 %>
+						<div class="counter">
+							<%= current_user.event_count%>
+						</div>
+					<% else %>
+						<div class="counter hidden">
+							<%= current_user.event_count %>
+						</div>
+					<% end %>
+				<div class="icon-label main">Events</div>
+			</div> 
+		<% end %>
 		<% if current_user %>
 		<%= link_to search_path, remote: true, :class => 'tab', id: "search" do %>
 			<div class="extended search side-icon <%= 'active' if active == :critiq %>">
@@ -35,21 +50,6 @@
 					</div>
 				<% end %>
 			</div>
-		<% end %>
-		<%= link_to events_path, remote: true, :class => 'tab', id: "events" do %>
-			<div class="extended events <%= 'active' if active == :events %> side-icon" >
-				<%= image_tag "Events.svg", :class => "nav-icon svg" %>
-				<% if current_user.event_count > 0 %>
-						<div class="counter">
-							<%= current_user.event_count%>
-						</div>
-					<% else %>
-						<div class="counter hidden">
-							<%= current_user.event_count %>
-						</div>
-					<% end %>
-				<div class="icon-label main">Events</div>
-			</div> 
 		<% end %>
 		<%= link_to settings_path(current_user), remote: true, :class => 'tab', id: "settings" do%>
 			<div class="extended settings side-icon <%= 'active' if active == :settings %>" id="extended-settings" >
