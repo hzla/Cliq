@@ -22,11 +22,12 @@ Cliq::Application.routes.draw do
   resources :locations, only: [:index]
   
   resources :messages, only: [:index, :show]
-  
-  get '/events/upcoming', to: 'events#upcoming', as: 'upcoming_events'
-  get '/events/going', to: 'events#going', as: 'going_events'
-  get '/events/past', to: 'events#past', as: 'past_events'
-  get '/events/open', to: 'events#open', as: 'open_events'
+
+  ["upcoming", "going", "past", "open", "hosted"].each do |type|
+    get "events/#{type}", to: "events##{type}", as: "#{type}_events"
+  end
+
+
   get '/events/public/new', to: 'events#public_new', as: 'public_events'
   get '/events/:id/chat', to: 'events#chat', as: 'event_chat'
   post '/events', to: 'events#public_create', as: 'public_events_create'

@@ -37,6 +37,10 @@ class Event < ActiveRecord::Base
 		excursions.where(accepted: false).empty?
 	end
 
+	def passed_by? user
+		!Excursion.where(user_id: user.id, event_id: id, passed: true ).empty?
+	end
+
 	def untouched_by? user
 		Excursion.where(user_id: user.id, event_id: id).empty?
 	end
@@ -45,5 +49,29 @@ class Event < ActiveRecord::Base
 		excursions.where(accepted: true).count
 	end
 
+	def short_location
+		location.length > 24 ? location[0..23] + ".." : location
+	end
+
+	def self.open user
+		where(closed: "public").select { |event| event.start_time > (user.user_time - 6.hours) && !event.passed_by?(user) }.sort_by(&:start_time)
+	end
+
+	def self.hosted_by user
+		invite_excursions = user.excursions.where(created: true)
+		invite_excursions.map(&:event).compact.select { |event| event.start_time > (user.user_time - 6.hours) }.sort_by(&:start_time)
+	end
+
+	def self.past user
+		user.excursions.where(accepted: true).map(&:event).select { |event| event.start_time < (user.user_time - 6.hours) }.sort_by(&:start_time).reverse
+	end
+
+	def self.joined_by user
+		user.excursions.where(accepted: true).map(&:event).select { |event| event.start_time > (user.user_time - 6.hours) }.sort_by(&:start_time)
+	end 
+
+	def joined_by user
+		!excursions.where(accepted: true, user_id: user.id).empty?
+	end
 
 end

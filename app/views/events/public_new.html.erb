@@ -5,7 +5,7 @@
 			</div>
 	</div>
 
-	<%= form_for [@event], :class => 'event-form' do |f| %>
+	<%= form_for [@event], :class => 'event-form', remote: true do |f| %>
 		
 		<div class="form-row first">
 			<!-- <div class="event-form-label head-3 dark-gray">What:</div>  -->
@@ -16,39 +16,10 @@
 			<!-- <div class="event-form-label head-3 dark-gray">Where:</div>  -->
 			<%= f.text_field :location, :class => "form-input", placeholder: 'Where?' %>
 		</div>
-		<div id="or" class="head-4 white">
-			or
-		</div>
-		<%= f.hidden_field :closed, value: "public" %> 
-		<div class="form-row">
-			 <%= f.select :partner_id, options_for_select([["Pick a place near your school", 0, {:class => "light-gray"}]] + @partners), :class => "form-input" %>
-		</div>
-
-		<div class="form-row hidden white">
-			<div id="hour-labels">
-				<div class="day head-6">Mon</div>
-				<div class="day head-6">Tues</div>
-				<div class="day head-6">Wed</div>
-				<div class="day head-6">Thurs</div>
-				<div class="day head-6">Fri</div>
-				<div class="day head-6">Sat</div>
-				<div class="day head-6">Sun</div>
-			</div>
-
-			<div id="hours">
-				<div id="mon" class="hour head-6"></div>
-				<div id="tues" class="hour head-6"></div>
-				<div id="wed" class="hour head-6"></div>
-				<div id="thurs" class="hour head-6"></div>
-				<div id="fri" class="hour head-6"></div>
-				<div id="sat" class="hour head-6"></div>
-				<div id="sun" class="hour head-6"></div>
-			</div>
-		</div>
 		
 		<div class="form-row">
 			<!-- <div class="event-form-label head-3 dark-gray">When:</div>  -->
-			<%= f.text_field :start_time, :class => "form-input", placeholder: 'When?' %> 
+			<%= f.datetime_select("start_time", discard_year: true, default: Time.now) %> 
 		</div>
 		
 		<div class="form-row">
@@ -72,7 +43,7 @@
 
 		
 
-		<div class="form-row">	
+		<div class="form-row last">	
 			<div id="send-invite">
 				<%= f.submit "SET IT LOOSE", id: "invite-submit" %>
 			</div>
@@ -83,10 +54,7 @@
 
 
 <script>
-	$('#event_start_time').datetimepicker({
-		dateFormat: 'yy-mm-dd',
-    timeFormat: 'hh:mm:tt'
-	})
+
 	function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
@@ -94,6 +62,7 @@
         reader.onload = function (e) {
             $('#preview').show()
             $('#preview').attr('src', e.target.result);
+            $('#invite-submit').val('SET IT LOOSE')
         }
         
         reader.readAsDataURL(input.files[0]);
@@ -101,6 +70,7 @@
   }
     
   $("#imgInp").change(function(){
+      $('#invite-submit').val('Uploading...')
       readURL(this);
   });
 </script>

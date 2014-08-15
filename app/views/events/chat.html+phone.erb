@@ -1,0 +1,64 @@
+<div class="chat-partial chat-events">
+	<div id="<%= @event.id %>"></div>
+	<div id="chat-header">
+		<div id="chat-info" class="white">
+			<div id="chat-name"><%= @event.title %></div>
+		</div>
+	</div>
+	<% untouched = @event.untouched_by? current_user %>
+	<div id="chat-partial-content">
+		<div class="event-box">
+			<% if untouched %>
+				<%= link_to user_accept_path(current_user, @event), id: "e-#{@event.id}", remote: true, :class => "event-action join" do %>
+					<div class="event-action-bar">
+						<%= image_tag 'Join.svg', :class => "event-action-pic" %>
+						<div class="event-action-text">Join</div>
+					</div>
+				<% end %>
+			<% end %>
+			<div class="event-action-bar <%= 'touched' if !untouched %>">
+				<div class="event-action-text-going">
+					<%= @event.people_count %><br><span class="light-gray going-text">Going</span>
+				</div>
+			</div>
+			<% if untouched %>
+				<%= link_to user_pass_path(current_user, @event), id: "e-#{@event.id}", remote: true, :class => "event-action pass" do %>
+					<div class="event-action-bar">
+						<%= image_tag 'Pass.svg', :class => "event-action-pic" %>
+						<div class="event-action-text">Pass</div>
+					</div>
+				<% end %>
+			<% end %>
+		</div>
+		<div class="event-box">
+			<div class="event-desc light-turq m2"><%= @event.time current_user %></div>
+			<div class="event-desc light-gray m2"><%= @event.location %></div>
+		</div>
+		<div class="event-box">
+			<div class="event-desc long m2"><%= @event.description %></div>
+		</div>
+		<div class="message-history chat <%= 'locked' if @locked %>">
+			<% @conversation.ordered_messages.each do |message| %>
+				<%= render partial: 'messages/show', locals: {message: message, event_image: true} %>
+			<% end %>
+	
+		</div>
+	
+	</div>
+	<% if @event.joined_by current_user %>
+		<div class="chat-window-footer">	
+			<%= form_for [@conversation, @message], remote: true do |f| %>
+				<%= f.text_area :body, id: 'chat-box', :class => "chat-box" %>
+				<%= hidden_field_tag :event ,"true" %>
+			<% end %>
+			<div id="message-actions">
+				<div class="action-button white message-reply inv-btn mes-action reply">
+					<div class="result-action hit-reply">Post</div>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</div>
+
+
+

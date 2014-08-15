@@ -4,8 +4,9 @@ class Partner < ActiveRecord::Base
 	attr_accessible :name, :description, :location, :start_time, :end_time, :location, :mon, :tues, :wed, :thurs, :fri, :sat, :sun, :id
 
 	def self.local_options
-		self.all.map do |partner|
+		options = self.all.map do |partner|
 			[partner.name, partner.id, {id: partner.id}]
 		end
+		options.sort_by {|n| n[0]}
 	end
 end

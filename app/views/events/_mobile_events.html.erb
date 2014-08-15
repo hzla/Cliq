@@ -1,0 +1,31 @@
+<% if open == "create" %>
+	<%= link_to public_events_path, :class => "public-event-create", remote: true do %>
+		<div class="create-event">
+			<div class="create-event-text">
+				Create Event
+			</div>
+		</div>
+	<% end %>
+
+<% end %>
+
+<% events.each do |event| %>
+	<%= link_to event_chat_path(event, locked: open), :class => "chat-user", remote: true do %>
+		<div class="conversation">
+			<%= image_tag event.image_url || 'Cliq.svg', :class => "convo-pic" %>
+			<div class="convo-details">
+				<div class="convo-name m1"><%= event.title %></div>
+				<div class="event-line m1 light-turq"><%= event.time current_user %></div>
+				<div class="event-line m1 gray"><%= event.location %></div>
+			</div>
+			
+				<div id="e-<%= event.id %>" class="ev-overlay <%= 'hidden' if !(event.joined_by(current_user) && (open == true)) %>">
+					<div class="ev-overlay-text">Joined</div>
+				</div>
+		</div>
+	<% end %>	
+<% end %>
+
+<% if events.empty? %>
+	<div class="no-events">No events to show.</div>
+<% end %>

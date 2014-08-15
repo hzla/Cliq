@@ -1,0 +1,35 @@
+<script>
+	$('.top-nav').append("<span class='back-tut event-back hidden'>Back</span>")
+</script>
+	<div id="messages-container" class="mobile ev">
+		<div class="message-content-container">
+			<div class="message-content">
+				
+				<div id="event-list">
+					<%= render partial: 'mobile_events', locals: {events: @events, open: @open} %>
+				</div>
+
+				<div id="events-footer">
+					<%= link_to hosted_events_path, :class => "event-bar-link", remote: true do %>
+						<div class="event-bar">
+							<div class="event-bar-text m1">Hosting</div>
+						</div>
+					<% end %>
+					<%= link_to open_events_path, :class => "event-bar-link", remote: true do %>
+						<div class="event-bar selected">
+							<div class="event-bar-text m1">Open</div>
+						</div>
+					<% end %>
+					<%= link_to going_events_path, :class => "event-bar-link", remote: true do %>
+						<div class="event-bar">
+							<div class="event-bar-text m1">Joined</div>
+						</div>
+					<% end %>
+				</div>
+			</div>	
+		</div>
+	</div>
+
+
+
+

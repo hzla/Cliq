@@ -1,71 +1,81 @@
-class EventsController < ApplicationController
+class EventsController < ApplicationController #in severe need of refactoring
 	include SessionsHelper
 	include ApplicationHelper
 	skip_before_filter  :verify_authenticity_token
 
 	def index
 		excursions = current_user.excursions 
-		invite_excursions = excursions.where(created: true)
-		@invitations = invite_excursions.map(&:event).compact.select { |event| event.start_time > (current_user.user_time - 6.hours) && event.closed == "public" }.sort_by(&:start_time)
+		@invitations = Event.hosted_by current_user
 		@open = true
-		@events = Event.where(closed: "public").select { |event| event.start_time > (current_user.user_time - 6.hours) && event.untouched_by?(current_user) }.sort_by(&:start_time)
-		
+		@events = Event.open current_user
 		excursions.update_all seen: true
 		current_user.update_attributes event_count: 0
 		respond_to do |format|
         format.html { render :layout => !request.xhr? }
-        # other formats
     end
 	end
 
-	def upcoming
-		excursions = current_user.excursions.where(accepted: true)
-		@events = excursions.map(&:event).compact.select { |event| event.start_time > (current_user.user_time - 6.hours) }.select {|event| event.accepted? }.sort_by(&:start_time)
-		render partial: 'events', locals: {events: @events}
+	def hosted
+		@events = Event.hosted_by current_user
+		if request.variant == [:phone]
+			render partial: 'mobile_events', locals: {events: @events, open: "create"}
+		else
+			render partial: 'events', locals: {events: @events}
+		end
 	end
 
 	def past
-		@events = current_user.excursions.where(accepted: true).map(&:event).select { |event| event.start_time < (current_user.user_time - 6.hours) }.sort_by(&:start_time).reverse
-		render partial: 'events', locals: {events: @events}
+		@events = Event.past current_user
+		if request.variant == [:phone]
+			render partial: 'mobile_events', locals: {events: @events}
+		else
+			render partial: 'events', locals: {events: @events}
+		end
 	end
 
 	def going
-		@events = current_user.excursions.where(accepted: true).map(&:event).select { |event| event.start_time > (current_user.user_time - 6.hours) }.sort_by(&:start_time)
+		@events = Event.joined_by current_user
 		@open = false
-		render partial: 'events', locals: {events: @events, open: @open}
+		if request.variant == [:phone]
+			render partial: 'mobile_events', locals: {events: @events, open: @open}
+		else
+			render partial: 'events', locals: {events: @events, open: @open}
+		end
 	end
 
 	def open
-		@events = Event.where(closed: "public").select { |event| event.start_time > (current_user.user_time - 6.hours) && event.untouched_by?(current_user) }.sort_by(&:start_time)
+		@events = Event.open current_user
 		@open = true
-		render partial: 'events', locals: {events: @events, open: @open}
-	
+		if request.variant == [:phone]
+			render partial: 'mobile_events', locals: {events: @events, open: @open}
+		else
+			render partial: 'events', locals: {events: @events, open: @open}
+		end
 	end
 
 	def new
 		@event = Event.new
 		@user = User.find params[:user_id] 
-		@partners = Partner.local_options.sort_by {|n| n[0]}
+		@partners = Partner.local_options
 		render layout: false
 	end
 
 	def public_new
 		@event = Event.new
 		@user = current_user
-		@partners = Partner.local_options.sort_by {|n| n[0]}
+		@partners = Partner.local_options
 		render layout: false
 	end
 
 	def public_create
-		if params[:event][:start_time].include? "pm"
-			pm = true
-		end
 		event = Event.new params[:event]
-		event.start_time += 12.hours if pm 
 		if event.save
 			event.users << [current_user]
 			excursion = Excursion.where(event_id: event.id, user_id: current_user.id)[0]
 			excursion.update_attributes created: true, accepted: true
+			if request.variant == [:phone]
+				render json: {ok: true} and return
+			end
 			redirect_to events_path
 		else
 			render json: event.errors
@@ -103,8 +113,9 @@ class EventsController < ApplicationController
 				end
 			end
 		else
-			render json: event.errors
+			render json: event.errors and return
 		end
+		redirect_to events_path
 	end
 
 	def show
