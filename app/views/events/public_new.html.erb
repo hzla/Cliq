@@ -17,10 +17,22 @@
 			<%= f.text_field :location, :class => "form-input", placeholder: 'Where?' %>
 		</div>
 		
-		<div class="form-row">
-			<!-- <div class="event-form-label head-3 dark-gray">When:</div>  -->
-			<%= f.datetime_select("start_time", discard_year: true, default: Time.now) %> 
-		</div>
+		<% if browser.mobile? %>
+			<div class="form-row">
+				<%= f.datetime_select("start_time", discard_year: true, default: Time.now) %> 
+			</div>
+		<% else %>
+			<div class="form-row">
+				<div class="event-form-label head-3 dark-gray">When:</div> 
+				<%= f.text_field :start_time, :class => "form-input", placeholder: 'Click to select from calendar' %> 
+			</div>
+			<script>
+				$('#event_start_time').datetimepicker({
+					dateFormat: 'yy-mm-dd',
+			    timeFormat: 'hh:mm:tt'
+				})
+			</script>
+		<% end %>
 		
 		<div class="form-row">
 			<!-- <div class="event-form-label head-3 dark-gray">More Info:</div>  -->

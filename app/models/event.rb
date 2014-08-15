@@ -22,7 +22,7 @@ class Event < ActiveRecord::Base
 		# else
 		# 	tzone.time(start_time).strftime("%m/%d/%g at %I:%M%p") 
 		# end
-		if start_time - Time.now < 24.hours
+		if start_time - Time.now < 24.hours && start_time.beginning_of_day.day == user.user_time.beginning_of_day.day
 			stime = (start_time).strftime("Today at %I:%M%p")
 		else
 			stime = (start_time).strftime("%m/%d/%g at %I:%M%p") 

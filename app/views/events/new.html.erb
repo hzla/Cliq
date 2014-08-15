@@ -53,10 +53,7 @@
 			</div>
 		</div>
 		
-		<div class="form-row">
-			<div class="event-form-label head-3 dark-gray">When:</div> 
-			<%= f.date_select :start_time, :class => "form-input", placeholder: 'Click to select from calendar' %> 
-		</div>
+		
 		
 		<div class="form-row">
 			<div class="event-form-label head-3 dark-gray">How many?</div> 
@@ -64,6 +61,7 @@
 				<%= f.select :quantity, (2..50), :class => 'small-form-input' %>
 			</div>
 		</div>
+
 		
 		<div class="form-row">
 			<div class="event-form-label head-3 dark-gray">Upload Image:</div>
@@ -95,6 +93,8 @@
 		dateFormat: 'yy-mm-dd',
     timeFormat: 'hh:mm:tt'
 	})
+</script>
+<script>
 	function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();

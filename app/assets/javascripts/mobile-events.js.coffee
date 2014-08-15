@@ -25,6 +25,7 @@ MobileEvents =
 
 	closeForm: (event, data, xhr, status) ->
 		if data.ok == true
+			$.modal.close()
 			$('#event-form').addClass('animated bounceOutUp')
 			$('#event-form').one 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', ->
 				$(@).remove()
