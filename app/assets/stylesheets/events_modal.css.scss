@@ -2,10 +2,19 @@
 
 .event-modal {
 	float: left;
-	width: 530px;
+	width: 1000px;
 	height: 575px;
 	font-family: $generic-font;
+	background: $orange;
 }
+
+.event-form-left {
+	float: left;
+	width: 500px;
+	background: blue;
+}
+
+
 
 .event-form-header {
 	float: left;
@@ -222,4 +231,103 @@
 .invite-icon path {
 	fill: white;
 }
+
+/////////////////////////////////////////
+
+.event-form-right {
+	float: right;
+	width: 500px;
+	background: green;
+	height: 100%;
+}
+
+.event-form-right .form-row {
+	margin-left: 0px;
+}
+
+.event-types {
+	height: 50px;
+	color: $gray;
+	cursor: pointer;
+	border-radius: 100px;
+}
+
+.event-type {
+	height: 100%;
+	float: left;
+	width: 33.3%;
+	background: none;
+	text-align: center;
+	line-height: 50px;
+	background: white;
+}
+
+.round-left {
+	border-bottom-left-radius: 100px;
+	border-top-left-radius: 100px; 
+}
+
+.round-right {
+	border-bottom-right-radius: 100px;
+	border-top-right-radius: 100px; 	
+}
+
+.event-type.selected {
+	background: $dark-gray;
+	color: white;
+}
+
+.event-quest {
+	text-align: center;
+	color: white;
+	margin: 10px 0px;
+}
+
+.event-attrs-1 {
+	width: 270px;
+	height: 60px;
+	margin: 0 auto;
+}
+
+.event-attr.no-left {
+	margin-left: 0px;
+}
+
+.event-attrs-2 {
+	width: 200px;
+	height: 60px;
+	margin: 0 auto;
+}
+
+.event-attr {
+	width: 60px;
+	height: 60px;
+	border-radius: 60px;
+	float: left;
+	margin-left: 10px;
+	background: white;
+	position: relative;
+}
+
+.event-attr:hover .attr-text {
+	color: white;
+}
+
+
+
+.attr-text {
+	position: absolute;
+	bottom: 10px;
+	font-size: 11px;
+	width: 100%;
+	text-align: center;
+}
+
+.attr-pic {
+	height: 30px;
+	width: 30px;
+	margin-left: 15px;
+	margin-top: 7px;
+}
+
 

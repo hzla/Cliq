@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140812201802) do
+ActiveRecord::Schema.define(version: 20140815215410) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,6 +88,16 @@ ActiveRecord::Schema.define(version: 20140812201802) do
     t.integer  "quantity",    default: 2
     t.string   "image"
     t.string   "closed",      default: "closed"
+    t.string   "event_type"
+    t.boolean  "music"
+    t.boolean  "discussion"
+    t.boolean  "activity"
+    t.boolean  "party"
+    t.boolean  "food"
+    t.boolean  "games"
+    t.boolean  "show"
+    t.boolean  "twenty_one"
+    t.boolean  "paid"
   end
 
   create_table "excursions", force: true do |t|

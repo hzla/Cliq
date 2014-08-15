@@ -5,51 +5,99 @@
 			</div>
 	</div>
 
+
 	<%= form_for [@event], :class => 'event-form', remote: true do |f| %>
-		
-		<div class="form-row first">
-			<!-- <div class="event-form-label head-3 dark-gray">What:</div>  -->
-			<%= f.text_field :title, :class => "form-input", placeholder: "What's happening?" %>
-		</div>
-		
-		<div class="form-row">
-			<!-- <div class="event-form-label head-3 dark-gray">Where:</div>  -->
-			<%= f.text_field :location, :class => "form-input", placeholder: 'Where?' %>
-		</div>
-		
-		<% if browser.mobile? %>
+		<div class="event-form-left">
+
+			<div class="form-row first">
+				<%= f.text_field :title, :class => "form-input", placeholder: "What's happening?" %>
+			</div>
+			
 			<div class="form-row">
-				<%= f.datetime_select("start_time", discard_year: true, default: Time.now) %> 
+				<%= f.text_field :location, :class => "form-input", placeholder: 'Where?' %>
 			</div>
-		<% else %>
+			
+			<% if browser.mobile? %>
+				<div class="form-row">
+					<%= f.datetime_select("start_time", discard_year: true, default: Time.now) %> 
+				</div>
+			<% else %>
+				<div class="form-row"> 
+					<%= f.text_field :start_time, :class => "form-input", placeholder: 'Click to select from calendar' %> 
+				</div>
+				<script>
+					$('#event_start_time').datetimepicker({
+						dateFormat: 'yy-mm-dd',
+				    timeFormat: 'hh:mm:tt'
+					})
+				</script>
+			<% end %>
+			
 			<div class="form-row">
-				<div class="event-form-label head-3 dark-gray">When:</div> 
-				<%= f.text_field :start_time, :class => "form-input", placeholder: 'Click to select from calendar' %> 
+				<div id="quantity-select"> 
+					<%= f.text_area :description, :class => 'form-input', placeholder: "Any Details?" %>
+				</div>
 			</div>
-			<script>
-				$('#event_start_time').datetimepicker({
-					dateFormat: 'yy-mm-dd',
-			    timeFormat: 'hh:mm:tt'
-				})
-			</script>
-		<% end %>
-		
-		<div class="form-row">
-			<!-- <div class="event-form-label head-3 dark-gray">More Info:</div>  -->
-			<div id="quantity-select"> 
-				<%= f.text_area :description, :class => 'form-input', placeholder: "Any Details?" %>
+			
+			<div class="form-row">
+				<div class="event-form-label event_pic_upload">Upload Image:</div>
+				  <%= f.file_field :image, :class => 'form-input-upload', id: "imgInp" %> 
+				  <div id="upload-button"><div class="btn-text">Browse Files...</div></div>
 			</div>
-		</div>
-		
-		<div class="form-row">
-			<div class="event-form-label event_pic_upload">Upload Image:</div>
-			  <%= f.file_field :image, :class => 'form-input-upload', id: "imgInp" %> 
-			  <div id="upload-button"><div class="btn-text">Browse Files...</div></div>
+
+			<div class="form-row optional">
+				<div class="event-form-label event_pic_upload">(Optional)</div>
+				
+			</div>
 		</div>
 
-		<div class="form-row optional">
-			<div class="event-form-label event_pic_upload">(Optional)</div>
-			
+		<div class="event-form-right">
+			<div class="form-row">
+				<div class="event-quest">Is this?</div>
+				<div class="event-types">
+					<div class="event-type round-left">Work</div>
+					<div class="event-type selected">Play</div>
+					<div class="event-type round-right">Chill</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="event-form-right">
+			<div class="form-row">
+				<div class="event-quest">What'll be there?</div>
+				<div class="event-attrs-1">
+					<div class="event-attr no-left music">
+						<%= image_tag "Mus.svg", :class => "attr-pic svg" %>
+						<div class="attr-text">Music</div>
+					</div>
+					<div class="event-attr discussion">
+						<%= image_tag "Discussion.svg", :class => "attr-pic svg" %>
+						<div class="attr-text">Discussion</div>
+					</div>
+					<div class="event-attr activity">
+						<%= image_tag "Activity.svg", :class => "attr-pic svg" %>
+						<div class="attr-text">Activity</div>
+					</div>
+					<div class="event-attr party">
+						<%= image_tag "Party.svg", :class => "attr-pic svg" %>
+						<div class="attr-text">A Party</div>
+					</div>
+				</div>
+				<div class="event-attrs-2 food">
+					<div class="event-attr no-left">
+						<%= image_tag "Food.svg", :class => "attr-pic svg" %>
+						<div class="attr-text">Food</div>
+					</div>
+					<div class="event-attr games">
+						<%= image_tag "Games.svg", :class => "attr-pic svg" %>
+						<div class="attr-text">Games</div>
+					</div>
+					<div class="event-attr show">
+						<%= image_tag "Show.svg", :class => "attr-pic svg" %>
+						<div class="attr-text">A Show</div>
+					</div>
+				</div>
+			</div>
 		</div>
 
 
