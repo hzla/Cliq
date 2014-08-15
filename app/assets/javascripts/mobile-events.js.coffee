@@ -7,6 +7,7 @@ MobileEvents =
 		$('body').on 'touchend', '.event-back', @closeEventModals
 
 	closeEventModals: ->
+		$('.message-content').show()
 		$('.chat-partial').remove()
 		$('#event-form').remove()
 		$('.back-tut').hide()
@@ -30,9 +31,12 @@ MobileEvents =
 			$('#event-form').one 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', ->
 				$(@).remove()
 				$('.event-bar-link').first().click()
+			('.message-content').show()
+
 
 	showEventForm: (event, data, xhr, status) ->
 		$('.content-container').append 	"<div id='event-form'></div>"
+		$('.message-content').hide()
 		$('#event-form').html(data).addClass 'animated bounceInDown'
 
 
@@ -41,6 +45,7 @@ MobileEvents =
 		$('.conversation').addClass('animated fadeIn')
 		$('.selected').removeClass('selected')
 		$(@).find('.event-bar').addClass('selected')
+		MobileEvents.closeEventModals();
 
 
 
