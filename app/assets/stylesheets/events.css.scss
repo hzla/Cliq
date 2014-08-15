@@ -318,7 +318,7 @@
 
 #upcoming {
 	margin: 0 auto;
-	width: 92%;
+	width: 95%;
 	min-height: 900px;
 	font-family: $generic-font;
 }
@@ -337,9 +337,7 @@
 
 .upcoming-event {
 	width: 224px;
-	height: 410px;
-	width: 224px;
-	height: 378px;
+	height: 400px;
 	float: left;
 	margin-right: 2%;
 	background-color: white;
@@ -350,10 +348,6 @@
 	max-height: 75px;
 	overflow-y: scroll;
 	width: 100%;
-}
-
-.upcoming-event:nth-child(3n) {
-	margin-right: 0px;
 }
 
 .upcoming-event-title {
@@ -388,7 +382,7 @@
 .invite-row.invite-actions {
 	width: 100%;
 	margin-left: 8px;
-  margin-bottom: 10px;
+  margin-bottom: -22px;
 }
 
 .attendee {
