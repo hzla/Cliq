@@ -145,8 +145,9 @@ CliqUi =
 		$('.content-container').css 'background', '#f1f1f1'
 
 	obscureDate: ->
-		dates = $('.date')
-		CliqUi.obscureDates dates
+		if $('.no-obscure').length < 1
+			dates = $('.date')
+			CliqUi.obscureDates dates
 		$('.date:visible').parents('.message-block').addClass('new')
 
 	obscureDates: (dates) ->
