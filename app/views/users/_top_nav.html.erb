@@ -22,7 +22,7 @@
 				<% end %>
 			</div>
 		<% end %>
-		<%= link_to root_path, remote: true, :class => 'tab', id: "main" do %>
+		<%= link_to main_path, remote: true, :class => 'tab', id: "main" do %>
 			<div class="mob-nav search side-icon <%= 'active' if active == :critiq %>">
 				<%= image_tag "shuffle.svg", :class => "nav-icon svg" %> 
 				<div class="icon-label main">Shuffle</div>

@@ -1,6 +1,6 @@
 <div class="extended-side-nav">
 	
-		<%= link_to root_path, remote: true, :class => 'tab', id: "main" do %>
+		<%= link_to main_path, remote: true, :class => 'tab', id: "main" do %>
 			<div class="extended logo side-icon <%= 'active' if active == :main %>">
 				<div id="cliq-logo">Cliq</div> 
 				<% if current_user %>
