@@ -151,7 +151,7 @@ class EventsController < ApplicationController #in severe need of refactoring
 		@message = Message.new
 		@locked = (params[:locked] == "true")
 		decrease_count = @conversation.was_seen_by current_user
-		decrease_count ? current_user.saw_event : nil
+		current_user.update_attributes(invite_count: 0) if decrease_count
 		render layout: false
 	end
 end

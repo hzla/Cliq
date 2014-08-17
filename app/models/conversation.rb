@@ -33,12 +33,14 @@ class Conversation < ActiveRecord::Base
 
 	def email_all_others user
 		list = event.attendees.map(&:user).select { |u| u.id != user.id }
+		p list
+		puts "\n" * 20
 		list.each do |u|
 			u.invite_count += 1
 			if was_seen_by?(u) && !u.using
 				EventMailerWorker.perform_async u.id, event.id
-				u.save
 			end
+			u.save
 		end
 	end
 
