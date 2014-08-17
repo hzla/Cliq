@@ -24,6 +24,12 @@ class User < ActiveRecord::Base
 		save
 	end  
 
+	def event_nots
+		e = Event.joined_by self
+		cs = e.map(&:conversation).compact
+		cs.select {|n| !n.was_seen_by? self}.count
+	end
+
 	def self.create_with_facebook auth_hash
 		timezone = auth_hash.extra.raw_info.timezone
 		profile = auth_hash['info']

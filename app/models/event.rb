@@ -22,6 +22,12 @@ class Event < ActiveRecord::Base
 		Event.new total_params
 	end
 
+	def conversation
+		conversations.first
+	end
+
+
+
 	def self.update_message_counts
 		all.each do |event|
 			next if !event.conversations.first
