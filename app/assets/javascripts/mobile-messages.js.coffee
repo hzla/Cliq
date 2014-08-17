@@ -58,7 +58,7 @@ MobileMessages =
     	allowPageScroll: "vertical"
 
 	obscurelastDates: ->
-		if !$(@).hasClass('.no-obscure')
+		if $('.no-obscure').length < 1
 			dates = $('.date')
 			lastDates = dates.slice( dates.length - 2, dates.length)
 			MobileMessages.obscureDates lastDates
@@ -74,7 +74,7 @@ MobileMessages =
 	
 
 	obscureDates: (dates) ->
-		if $('.no-obscure:visible').length < 1
+		if $('.no-obscure').length < 1
 			dates.each (index) ->
 				if dates[index - 1] == undefined
 					return
