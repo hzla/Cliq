@@ -31,7 +31,7 @@ class Event < ActiveRecord::Base
 
 
 	def creator
-		excursions.where(created: true)[0].user
+		excursions.where(created: true)[0].user if excursions.where(created: true)[0]
 	end
 
 	def time user

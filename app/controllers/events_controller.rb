@@ -67,12 +67,14 @@ class EventsController < ApplicationController #in severe need of refactoring
 	end
 
 	def public_create
-		event = Event.assign_and_return_new params
+		event = Event.new params[:event]
 		if event.save
-			if params[:event][:start_time].include? "pm"
-				pm = true
+			if !browser.mobile?
+				if params[:event][:start_time].include? "pm"
+					pm = true
+				end
+				pm ? event.start_time += 12.hours : event.start_time -= 12.hours 
 			end
-			pm ? event.start_time += 12.hours : event.start_time -= 12.hours 
 			event.users << [current_user]
 			excursion = Excursion.where(event_id: event.id, user_id: current_user.id)[0]
 			excursion.update_attributes created: true, accepted: true

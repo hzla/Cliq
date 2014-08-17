@@ -1,0 +1,53 @@
+<div class="event-modal">
+	<div class="event-form-header">
+			<div class="header-profile">
+				<div class="head-3 white" id="sending">Open Event Setup</div>
+			</div>
+	</div>
+
+	<%= form_for [@event], :class => 'event-form', remote: true do |f| %>
+		
+		<div class="form-row first">
+			<!-- <div class="event-form-label head-3 dark-gray">What:</div>  -->
+			<%= f.text_field :title, :class => "form-input", placeholder: "What's happening?" %>
+		</div>
+		
+		<div class="form-row">
+			<!-- <div class="event-form-label head-3 dark-gray">Where:</div>  -->
+			<%= f.text_field :location, :class => "form-input", placeholder: 'Where?' %>
+		</div>
+		
+		<div class="form-row">
+			<!-- <div class="event-form-label head-3 dark-gray">When:</div>  -->
+			<%= f.datetime_select("start_time", discard_year: true, default: Time.now) %> 
+		</div>
+		
+		<div class="form-row">
+			<!-- <div class="event-form-label head-3 dark-gray">More Info:</div>  -->
+			<div id="quantity-select"> 
+				<%= f.text_area :description, :class => 'form-input', placeholder: "Any Details?" %>
+			</div>
+		</div>
+		
+		<div class="form-row">
+			<div class="event-form-label event_pic_upload">Upload Image:</div>
+			  <%= f.file_field :image, :class => 'form-input-upload', id: "imgInp" %> 
+			  <div id="upload-button"><div class="btn-text">Browse Files...</div></div>
+		</div>
+
+		<div class="form-row optional">
+			<div class="event-form-label event_pic_upload">(Optional)</div>
+			
+		</div>
+
+
+		
+
+		<div class="form-row last">	
+			<div id="send-invite">
+				<%= f.submit "SET IT LOOSE", id: "invite-submit" %>
+			</div>
+			<img id="preview" src="#" alt="preview failed to load" class="hidden" /> 
+		</div>
+	<% end %>
+</div>
