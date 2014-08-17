@@ -58,9 +58,10 @@ MobileMessages =
     	allowPageScroll: "vertical"
 
 	obscurelastDates: ->
-		dates = $('.date')
-		lastDates = dates.slice( dates.length - 2, dates.length)
-		MobileMessages.obscureDates lastDates
+		if !$(@).hasClass('.no-obscure')
+			dates = $('.date')
+			lastDates = dates.slice( dates.length - 2, dates.length)
+			MobileMessages.obscureDates lastDates
 		$('.date:visible').parents('.message-block').addClass('new')
 		$('.message-history')[0].scrollTop = $('.message-history')[0].scrollHeight
 
