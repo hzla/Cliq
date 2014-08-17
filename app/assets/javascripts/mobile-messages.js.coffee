@@ -74,23 +74,24 @@ MobileMessages =
 	
 
 	obscureDates: (dates) ->
-		dates.each (index) ->
-			if dates[index - 1] == undefined
-				return
-			else 
-				date = $(dates[index - 1]).text()
-				time = date.substr(date.length - 9).trim().slice(0,4)
-				hours = parseInt(time.slice(0,1)) * 60
-				mins = parseInt(time.slice(2,4))
-				totalTime = hours + mins
-				cTime = $(@).text().substr(date.length - 9).trim().slice(0,4)
-				cHours = parseInt(cTime.slice(0,1)) * 60
-				cMins = parseInt(cTime.slice(2,4))
-				cTotalTime = cHours + cMins
-				difference = cTotalTime - totalTime
-				if difference < 30 && difference > -1
-					$(@).hide() 
-				
+		if $('.no-obscure:visible').length < 1
+			dates.each (index) ->
+				if dates[index - 1] == undefined
+					return
+				else 
+					date = $(dates[index - 1]).text()
+					time = date.substr(date.length - 9).trim().slice(0,4)
+					hours = parseInt(time.slice(0,1)) * 60
+					mins = parseInt(time.slice(2,4))
+					totalTime = hours + mins
+					cTime = $(@).text().substr(date.length - 9).trim().slice(0,4)
+					cHours = parseInt(cTime.slice(0,1)) * 60
+					cMins = parseInt(cTime.slice(2,4))
+					cTotalTime = cHours + cMins
+					difference = cTotalTime - totalTime
+					if difference < 30 && difference > -1
+						$(@).hide() 
+					
 
 
 
