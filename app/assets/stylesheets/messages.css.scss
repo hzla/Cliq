@@ -212,6 +212,7 @@
 .message-block {
 	float: left;
 	width: 99%;
+	position: relative;
 }
 
 #chat-box {
@@ -324,6 +325,22 @@
 
 .block:hover {
 	color: $red;
+}
+
+.message-pic {
+	width: 30px;
+	height: 30px;
+	border-radius: 50px;
+	top: 5px;
+	position: absolute;
+}
+
+.message-pic.sent {
+	right: -40px;
+}
+
+.message-pic.received {
+	left: -40px;
 }
 
 

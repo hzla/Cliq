@@ -60,9 +60,9 @@
 					<div class="event-type round-right">Chill</div>
 				</div>
 			</div>
-		</div>
 
-		<div class="event-form-right">
+
+
 			<div class="form-row">
 				<div class="event-quest">What'll be there?</div>
 				<div class="event-attrs-1">
@@ -84,7 +84,7 @@
 					</div>
 				</div>
 				<div class="event-attrs-2 food">
-					<div class="event-attr no-left">
+					<div class="event-attr food no-left">
 						<%= image_tag "Food.svg", :class => "attr-pic svg" %>
 						<div class="attr-text">Food</div>
 					</div>
@@ -98,7 +98,26 @@
 					</div>
 				</div>
 			</div>
+
+			<%= f.hidden_field :event_type, value: "Play"%>
+			<%= hidden_field_tag :tags ,nil, :class => "tags"%>
+			<%= hidden_field_tag :requirements ,nil, :class => "requirements"%>
+
+				<div class="form-row">
+					<div class="event-quest requirement-question">Any Requirements?</div>
+					<div class="event-requirements">
+						<div class="event-requirement no-left">
+							<div class="require-text twenty-one">21+ </div>
+						</div>
+						<div class="event-requirement">
+							<div class="require-text paid">Paid</div>
+						</div>
+					</div>
+				</div>
+
 		</div>
+
+
 
 
 		

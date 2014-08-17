@@ -10,7 +10,7 @@
 <% end %>
 
 <% events.each do |event| %>
-	<%= link_to event_chat_path(event, locked: open), :class => "chat-user", remote: true do %>
+	<%= link_to event_chat_path(event, locked: open), :class => "chat-user no-obscure", remote: true do %>
 		<div class="conversation">
 			<%= image_tag event.image_url || 'Cliq.svg', :class => "convo-pic" %>
 			<div class="convo-details">
@@ -21,6 +21,7 @@
 			
 				<div id="e-<%= event.id %>" class="ev-overlay <%= 'hidden' if !(event.joined_by(current_user) && (open == true)) %>">
 					<div class="ev-overlay-text">Joined</div>
+					<div class="ev-overlay-text small"><%= event.messages_count %> Messages</div>
 				</div>
 		</div>
 	<% end %>	

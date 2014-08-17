@@ -193,12 +193,14 @@
 
 .welcome-text {
 	float: left;
-	margin-left: 20px;
+	margin-left: 10px;
+	width: calc(100% - 20px);
 	margin-top: 10px;
 }
 
 .instructions-1.wel-text {
 	font-weight: 400;
+	margin-left: 10px;
 }
 
 .wel-text {
@@ -206,6 +208,10 @@
 	float: left;
 	margin-top: 10px;
 	font-weight: 300;
+}
+
+.wel-text.s-s {
+	margin-left: 10px;
 }
 
 .welcome-similarities {
@@ -223,9 +229,10 @@
 
 .welcome-similarity {
 	float: left;
-	width: 145px;
-	height: 145px;
+	width: 70px;
+	height: 70px;
 	border-radius: 10px;
+	margin-left: 35px;
 }
 
 .wel-group:nth-child(2n) {
@@ -241,8 +248,8 @@
 }
 
 .wel-pic {
-	width: 125px;
-	height: 125px;
+	width: 50px;
+	height: 50px;
 	margin: 10px;
 }
 

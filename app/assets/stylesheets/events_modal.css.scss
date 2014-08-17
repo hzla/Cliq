@@ -5,13 +5,12 @@
 	width: 1000px;
 	height: 575px;
 	font-family: $generic-font;
-	background: $orange;
 }
 
 .event-form-left {
 	float: left;
 	width: 500px;
-	background: blue;
+	margin-left: 240px;
 }
 
 
@@ -134,7 +133,7 @@
 	float: right;
 	margin-right: 150px;
 	position: absolute;
-	left: 227px;
+	left: 443px;
 	border-radius: 100px;
 	cursor: pointer;
     top: 464;
@@ -148,7 +147,7 @@
 #imgInp {
 	float: right;
 	position: absolute;
-	left: 227px;
+	left: 443px;
 	z-index: 2;
 	width: 200px;
 	height: 50px;
@@ -196,6 +195,13 @@
   text-transform: center;
 }
 
+#invite-submit:hover {
+	border: 1px solid $orange;
+	background: white;
+	color: $orange;
+
+}
+
 .invite-icon {
 	height: 30px;
 	width: 30px;
@@ -237,8 +243,8 @@
 .event-form-right {
 	float: right;
 	width: 500px;
-	background: green;
 	height: 100%;
+	display: none;
 }
 
 .event-form-right .form-row {
@@ -272,7 +278,7 @@
 	border-top-right-radius: 100px; 	
 }
 
-.event-type.selected {
+.event-type.selected, .event-type:hover {
 	background: $dark-gray;
 	color: white;
 }
@@ -307,18 +313,58 @@
 	margin-left: 10px;
 	background: white;
 	position: relative;
-}
-
-.event-attr:hover .attr-text {
-	color: white;
+	cursor: pointer;
 }
 
 
+.event-attr:hover svg path, .event-attr.selected svg path {
+	fill: white;
+}
+
+.event-attr.activity {
+	margin-top: 0px;
+}
+
+.event-attr.discussion:hover  { background: $catyellow;}
+.event-attr.activity:hover  { background: $catturq;}
+.event-attr.party:hover  { background: $catpurple;}
+.event-attr.food:hover  { background: $catorange;}
+.event-attr.games:hover  { background: $catgreen;}
+.event-attr.show:hover  { background: $catblue;}
+.event-attr.music:hover  { background: $catred;}
+.event-attr.discussion.selected  { background: $catyellow;}
+.event-attr.activity.selected  { background: $catturq;}
+.event-attr.party.selected  { background: $catpurple;}
+.event-attr.food.selected  { background: $catorange;}
+.event-attr.games.selected  { background: $catgreen;}
+.event-attr.show.selected  { background: $catblue;}
+.event-attr.music.selected  { background: $catred;}
+.event-attr.discussion:hover .attr-text  { color: white; }
+.event-attr.activity:hover .attr-text  { color: white; }
+.event-attr.party:hover .attr-text  { color: white; }
+.event-attr.food:hover .attr-text  { color: white; }
+.event-attr.games:hover .attr-text  { color: white; }
+.event-attr.show:hover .attr-text  { color: white; }
+.event-attr.music:hover .attr-text  { color: white; }
+.event-attr.discussion.selected .attr-text  { color: white; }
+.event-attr.activity.selected .attr-text  { color: white; }
+.event-attr.party.selected .attr-text  { color: white; }
+.event-attr.food.selected .attr-text  { color: white; }
+.event-attr.games.selected .attr-text  { color: white; }
+.event-attr.show.selected .attr-text  { color: white; }
+.event-attr.music.selected .attr-text  { color: white; }
+.event-attr.discussion .attr-text  { color: $catyellow; }
+.event-attr.activity .attr-text  { color: $catturq; }
+.event-attr.party .attr-text  { color: $catpurple; }
+.event-attr.food .attr-text  { color: $catorange; }
+.event-attr.games .attr-text  { color: $catgreen; }
+.event-attr.show .attr-text  { color: $catblue; }
+.event-attr.music .attr-text  { color: $catred; }
 
 .attr-text {
 	position: absolute;
 	bottom: 10px;
-	font-size: 11px;
+	font-size: 10px;
 	width: 100%;
 	text-align: center;
 }
@@ -329,5 +375,49 @@
 	margin-left: 15px;
 	margin-top: 7px;
 }
+
+.event-requirements {
+	width: 130px;
+	height: 60px;
+	margin: 0 auto;
+}
+
+.event-requirement {
+	width: 60px;
+	height: 60px;
+	border-radius: 60px;
+	float: left;
+	margin-left: 10px;
+	cursor: pointer;
+	background: white;
+	position: relative;
+}
+
+.event-requirement.no-left {
+	margin-left: 0px;
+}
+
+.event-requirement:hover, .event-requirement.selected {
+	background: $dark-gray;
+}
+
+.event-requirement:hover .require-text, .event-requirement.selected .require-text {
+	color: white;
+}
+
+.require-text {
+	width: 100%;
+	text-align: center;
+	font-size: 15px;
+	color: gray;
+	line-height: 60px;
+}
+
+.requirement-question {
+	margin-top: 5px;
+	margin-bottom: 8px;
+}
+
+
 
 

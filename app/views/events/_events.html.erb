@@ -1,12 +1,13 @@
 <% events.each do |event| %>
 	<div class="upcoming-event">
 		
+		<% lock_status = !event.joined_by(current_user) %>
 		<div class="upcoming-event-picture">
 			<%= image_tag event.image_url || "Cliq.svg", :class => "event-picture" %>
 			<div class="invite-overlay">
 				<div class="invite-count"><%= event.people_count %> Going</div>
 				
-				<%= link_to event_chat_path(event, locked: open), :class => "chat-user", remote: true do %>
+				<%= link_to event_chat_path(event, locked: lock_status ), :class => "chat-user no-obscure", remote: true do %>
 					<div class="invite-thread">Click to view thread</div>
 				<% end %>
 			</div>
@@ -16,7 +17,7 @@
 			
 
 			<div class="upcoming-event-title invite-title2">
-				<%= link_to event_chat_path(event, locked: open), :class => "chat-user", remote: true do %>
+				<%= link_to event_chat_path(event, locked: lock_status), :class => "chat-user", remote: true do %>
 					<%= event.title %>
 				<% end %>
 			</div>
@@ -33,16 +34,33 @@
 				<%= event.description %>
 			</div>
 
-			<% if open && event.creator != current_user %>
+			<% if open && event.creator != current_user && lock_status  %>
 				<div class="upcoming-event-others invite-row event-actions">
 					<div class="invite-row invite-actions">
-						<%= link_to user_accept_path(current_user, event), remote: true, :class => "invite-action" do %>
-							<div class="accept white">Join</div>
-						<% end %>
-						<%= link_to user_pass_path(current_user, event), remote: true, :class => "invite-action" do %>
-						<div class="pass">Pass</div>
+						<div class="invite-action-buttons">
+							<%= link_to user_accept_path(current_user, event), remote: true, :class => "invite-action accept-action" do %>
+								<div class="accept white">Join</div>
+							<% end %>
+							<%= link_to user_pass_path(current_user, event), remote: true, :class => "invite-action decline-action" do %>
+							<div class="pass">Pass</div>
+							<% end %>
+						</div>
+						<%= link_to event_chat_path(event, locked: false), :class => "chat-user no-obscure", remote: true do %>
+							<div class="invite-thread bottom hidden view-thread">Click to view thread</div>
 						<% end %>
 					</div>
+				</div>
+			<% else %>
+				<div class="invite-row invite-actions">
+					<%= link_to event_chat_path(event, locked: false), :class => "chat-user no-obscure", remote: true do %>
+						<div class="invite-thread bottom">
+							<% if event.messages_count == 0 || event.conversations.first.was_seen_by?(current_user) %> 
+								Click to view thread
+							<% else %>
+								New Messages!
+							<% end %>
+						</div>
+					<% end %>
 				</div>
 			<% end %>
 

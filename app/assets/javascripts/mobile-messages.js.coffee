@@ -4,6 +4,7 @@ MobileMessages =
 		$('body').on 'ajax:success', '.mobile .convo-link', @appendConvo
 		$('body').on 'ajax:success', '#new_message', @obscurelastDates
 		$('body').on 'ajax:success', '.chat-user', @obscureDate
+		$('body').on 'ajax:success', '.chat-user', @obscurelastDates
 		$('body')	.on 'click', '.mobile .reply', @submitMessage
 		$('body').on 'click', '.mobile .content-container', @removeChat
 		$('body').on 'click', '.mobile .results-container', @removeChat
@@ -61,8 +62,10 @@ MobileMessages =
 		lastDates = dates.slice( dates.length - 2, dates.length)
 		MobileMessages.obscureDates lastDates
 		$('.date:visible').parents('.message-block').addClass('new')
+		$('.message-history')[0].scrollTop = $('.message-history')[0].scrollHeight
 
 	obscureDate: ->
+		return if $(@).hasClass('no-obscure')
 		dates = $('.date')
 		lastDates = dates.slice( dates.length - 2, dates.length)
 		MobileMessages.obscureDates dates

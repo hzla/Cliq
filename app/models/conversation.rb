@@ -2,16 +2,48 @@ class Conversation < ActiveRecord::Base
 	has_many :users, through: :connections
 	has_many :connections, dependent: :destroy 
 	has_many :messages, dependent: :destroy 
+	belongs_to :event
 
 
-	attr_accessible :name, :connected, :initiated, :event_id
+	attr_accessible :name, :connected, :initiated, :event_id, :seen_by
 
 	def ordered_messages
 		messages.order('created_at DESC').limit(20).reverse 
 	end
 
+	def was_seen_by user
+		self.seen_by = "" if seen_by == nil
+		if !self.seen_by.split(",").include?(user.id.to_s) 
+			self.seen_by += "#{user.id}," 
+			self.save
+			return true
+		else
+			return false
+		end
+	end
+
+	def was_seen_by? user
+		return false if !seen_by
+		seen_by.split(",").include? user.id.to_s
+	end
+
+	def clear_seen_by user
+		update_attributes seen_by: "#{user.id},"
+	end
+
+	def email_all_others user
+		list = event.attendees.map(&:user).select { |u| u.id != user.id }
+		list.each do |u|
+			u.invite_count += 1
+			if was_seen_by?(u) && !u.using
+				EventMailerWorker.perform_async u.id, event.id
+				u.save
+			end
+		end
+	end
 
 	def get_other_user user
+		return nil if event_id
 		users.where('user_id not in (?)', [user.id])[0]
 	end
 

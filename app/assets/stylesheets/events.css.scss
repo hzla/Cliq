@@ -229,6 +229,16 @@
     font-weight: 300;
 }
 
+.invite-thread.bottom {
+	width: 80%;
+	background-color: $orange;
+	border-radius: 30px;
+}
+
+.invite-thread.bottom:hover {
+	color: white;
+}
+
 .invite-thread:hover {
 	color: $light-turq;
 	text-decoration: underline;

@@ -108,7 +108,13 @@
 		height: calc(100% - 230px);	
 	}
 	.message-block {
-		width: 100%;
+		width: calc(100% - 40px);
+	}
+	.message-block.sent {
+		float: left;
+	}
+	.message-block.received {
+		float: right;
 	}
 	#chat-box {
 		width: calc(70% - 85px);

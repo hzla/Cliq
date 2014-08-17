@@ -9,7 +9,6 @@ class EventsController < ApplicationController #in severe need of refactoring
 		@open = true
 		@events = Event.open current_user
 		excursions.update_all seen: true
-		current_user.update_attributes event_count: 0
 		respond_to do |format|
         format.html { render :layout => !request.xhr? }
     end
@@ -68,9 +67,7 @@ class EventsController < ApplicationController #in severe need of refactoring
 	end
 
 	def public_create
-		print params
-		puts "\n" * 30
-		event = Event.new params[:event]
+		event = Event.assign_and_return_new params
 		if event.save
 			if params[:event][:start_time].include? "pm"
 				pm = true
@@ -79,6 +76,7 @@ class EventsController < ApplicationController #in severe need of refactoring
 			event.users << [current_user]
 			excursion = Excursion.where(event_id: event.id, user_id: current_user.id)[0]
 			excursion.update_attributes created: true, accepted: true
+			event.save
 			if event.image_url != nil
 				redirect_to(:back) and return
 			end
@@ -150,6 +148,8 @@ class EventsController < ApplicationController #in severe need of refactoring
 		@conversation = Conversation.find_or_create_by(event_id: @event.id)
 		@message = Message.new
 		@locked = (params[:locked] == "true")
+		decrease_count = @conversation.was_seen_by current_user
+		decrease_count ? current_user.saw_event : nil
 		render layout: false
 	end
 end

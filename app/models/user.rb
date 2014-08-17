@@ -14,7 +14,15 @@ class User < ActiveRecord::Base
 	attr_accessible :name, :email, :school, :bio, :profile_pic_url, :fb_token, :activation, :address, :sex, :sexual_preference, :latitude, :longitude, :active, :message_count, :invite_count, :updated_at, :event_count,:notify_messages, :notify_news, :notify_events, :timezone, :lbgtq, :blacklist, :characters
 
 	geocoded_by :address
-	after_validation :geocode      
+	after_validation :geocode    
+
+	def saw_event
+		self.invite_count -= 1	
+		if self.invite_count < 0
+			self.invite_count = 0
+		end
+		save
+	end  
 
 	def self.create_with_facebook auth_hash
 		timezone = auth_hash.extra.raw_info.timezone
@@ -131,6 +139,7 @@ class User < ActiveRecord::Base
 	end
 
 	def blocked_by? user
+		return false if !user 
 		user.blacklist.split(",").include? id.to_s
 	end
 

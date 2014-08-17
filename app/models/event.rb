@@ -9,7 +9,25 @@ class Event < ActiveRecord::Base
 	validates :location, presence: true
 	validates :start_time, presence: true
 
-	attr_accessible :title, :description, :location, :start_time, :end_time, :image, :attended, :partner_id, :quantity, :remote_image_url, :closed
+	attr_accessible :title, :description, :location, :start_time, :end_time, :image, :attended, :partner_id, :quantity, :remote_image_url, :closed, :music, :discussion, :activity, :party, :show, :food, :games, :twenty_one, :paid, :event_type, :messages_count
+
+	def self.assign_and_return_new params
+		total_params = params[:event]
+		tags = params[:tags].downcase.split(',').map do |t|
+			{t.to_sym => true}
+		end.inject Hash.new, :merge
+		total_params = total_params.merge tags
+		total_params = total_params.merge({twenty_one: true}) if params[:requirements].include? "21+"
+		total_params = total_params.merge({paid: true}) if params[:requirements].include? "Paid"
+		Event.new total_params
+	end
+
+	def self.update_message_counts
+		all.each do |event|
+			next if !event.conversations.first
+			count = event.conversations.first.messages.count
+		end
+	end
 
 
 	def creator

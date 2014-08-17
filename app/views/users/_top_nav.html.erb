@@ -11,6 +11,15 @@
 			<div class="mob-nav search side-icon <%= 'active' if active == :critiq %>">
 				<%= image_tag "Events.svg", :class => "nav-icon svg" %> 
 				<div class="icon-label main">Events</div>
+				<% if current_user.invite_count > 0 %>
+					<div class="counter">
+						<%= current_user.invite_count%>
+					</div>
+				<% else %>
+					<div class="counter hidden">
+						<%= current_user.invite_count %>
+					</div>
+				<% end %>
 			</div>
 		<% end %>
 		<%= link_to root_path, remote: true, :class => 'tab', id: "main" do %>

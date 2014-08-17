@@ -1,24 +1,29 @@
-<div class="message-block <%= 'event-message' if event_image %>" id="message-<%= message.id %>">
-	<% if message.user_id == current_user.id %>
+<% if message.user_id == current_user.id %>
+	<div class="message-block sent <%= 'event-message' if event_image %>" id="message-<%= message.id %>">
 		<div class="date sent head-6 light-gray">
 			<% if event_image %>
-				<div class="message-name sent"><%= message.user.first_name %></div>
+				<%= image_tag message.user.profile_pic_url, :class => "message-pic sent" %>
+				<div class="message-name sent"><%= message.user.first_name %></div>	
 			<% end %>
 			<%= message.date current_user %>
 		</div>
 		<div class="message sent head-5">
 			<%= message.body %>
 		</div>
-	<% else %>
+	</div>
+<% else %>
+	<div class="message-block received <%= 'event-message' if event_image %>" id="message-<%= message.id %>">
 		<div class="message received head-5">
 			<%= message.body %>
 		</div>
 		<div class="date recieved head-6 light-gray">
 			<% if event_image %>
+				<%= image_tag message.user.profile_pic_url, :class => "message-pic received" %>
 				<div class="message-name received"><%= message.user.first_name %></div>
 			<% end %>
 			<%= message.date current_user %>
 		</div>
-	<% end %>
-</div>
+	</div>
+<% end %>
+
 

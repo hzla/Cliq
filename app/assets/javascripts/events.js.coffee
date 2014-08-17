@@ -15,13 +15,20 @@ Events =
   	$('#event_image').click()
 
 	removeInvite: ->
-    invite = $(this).parents('.upcoming-event')
-    invite.addClass 'animated bounceOutLeft'
-    invite.one 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', ->
-      invite.animate {
-        height: "0px"
-      }, 200, ->
-        invite.hide()
+    invite = $(@).parents('.upcoming-event')
+    if $(@).hasClass 'decline-action'
+      invite.addClass 'animated bounceOutLeft'
+      invite.one 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', ->
+        invite.animate {
+          height: "0px"
+        }, 200, ->
+          invite.hide()
+    else
+      invite.find('.invite-action-buttons').hide()
+      invite.find('.view-thread').show()
+
+
+
 
   restoreOpacity: (event, modal) ->
     if $('.user-other-container:visible').length > 0 || $('.chat-partial:visible').length > 0
