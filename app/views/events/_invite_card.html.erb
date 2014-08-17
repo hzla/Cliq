@@ -34,6 +34,9 @@
 		</div>
 		
 	</div>
+	<%= link_to event_chat_path(invite, locked: false), :class => "chat-user no-obscure", remote: true do %>
+							<div class="invite-thread bottom invite-view view-thread">Click to view thread</div>
+						<% end %>
 
 </div>
 
