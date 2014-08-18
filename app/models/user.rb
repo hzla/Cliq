@@ -25,8 +25,11 @@ class User < ActiveRecord::Base
 	end  
 
 	def event_nots
-		e = Event.joined_by self
+		e = Event.messaged_joined_by self
 		cs = e.map(&:conversation).compact
+		
+		p cs.select {|n| !n.was_seen_by? self}
+		puts "\n" * 50
 		cs.select {|n| !n.was_seen_by? self}.count
 	end
 

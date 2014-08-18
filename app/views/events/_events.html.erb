@@ -60,7 +60,7 @@
 						<% end %>
 					</div>
 					<%= link_to event_chat_path(event, locked: false), :class => "chat-user no-obscure", remote: true do %>
-						<div class="invite-thread bottom hidden view-thread">Click to view thread</div>
+						<div class="invite-thread bottom hidden view-thread">View</div>
 					<% end %>
 				</div>
 			<% end %>
@@ -76,10 +76,9 @@
 							<%= image_tag "#{tag.capitalize}.svg", :class => "event-tag" %>
 					<% end %>
 				<% end %>
-
 			</div>
 			<div class="invite-row invite-actions">
-				<%= link_to event_chat_path(event, locked: false), :class => "chat-user no-obscure", remote: true do %>
+				<%= link_to event_chat_path(event, locked: lock_status), :class => "chat-user no-obscure", remote: true do %>
 					<div class="invite-thread bottom">
 						<% if event.messages_count == 0 || event.conversations.first.was_seen_by?(current_user) %> 
 							<%= image_tag "messages-white.svg", :class => "invite-messages-pic" %>

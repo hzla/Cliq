@@ -36,10 +36,11 @@
 	float: left;
 	margin-top: 50px;
 	width: 100%;
+	margin-left: calc(16.66% - 112px);
 }
 
 #events-header-actions {
-	width: 85%;
+	width: calc(63.3% + 218px);
 	margin: 0 auto;
 	margin-top: 50px;
 	position: relative;
@@ -111,7 +112,7 @@
   font-size: 20px;
   position: absolute;
 	top: 45px;
-	left: 197px;
+	right: 0;
 }
 
 #new-open-event:hover {
@@ -264,6 +265,7 @@
 	width: 15px;
 	height: 15px;
 	float: left;
+	margin-right: 1px;
 }
 
 .invite-thread.bottom {
@@ -298,6 +300,12 @@
 .invite-thread.bottom.invite-view {
 	margin-left: 20px;
 	margin-top: 0px;
+}
+
+.invite-thread.bottom.view-thread {
+	float: left;
+	margin-top: 0px;
+	line-height: 25px;
 }
 
 .invite-thread.bottom:hover {
@@ -418,10 +426,13 @@
 	width: 224px;
 	height: 400px;
 	float: left;
-	margin-right: 2%;
+	margin-right: calc(33.33% - 224px);
 	background-color: white;
 	margin-top: 20px;
+	-webkit-animation-duration: .3s;
 }
+
+
 
 .upcoming-event-description {
 	max-height: 75px;
@@ -557,4 +568,8 @@
 		margin-top: 25px;
 		width: 100%;
 	}
+}
+
+.event-type {
+	cursor: pointer;
 }

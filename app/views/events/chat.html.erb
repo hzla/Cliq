@@ -4,12 +4,27 @@
 		<div id="chat-info" class="white">
 			<div id="chat-name"><%= @event.title %></div>
 			<div class="chat-row white">
-				<div class="row-item"><%= @event.location %></div>
-				<div class="row-item"><%= @event.time current_user %></div>
+				<div class="row-item chat-desc"><%= @event.description %></div>
+			</div>
+		</div>
+		<div class="chat-info-right">
+			<div class="chat-row orange">
+				<div class="row-item chat-time"><%= @event.full_time current_user %></div>
+			</div>
+			<div class="chat-row orange">
+				<div class="row-item chat-location"><%= @event.location %></div>
+			</div>
+			<div class="chat-row white">
+				<div class="row-item chat-count"><%= @event.people_count %> Going</div>
 			</div>
 
-			<div class="chat-row white">
-				<div class="row-item"><%= @event.description %></div>
+			<div class="event-tags">
+				<% ["music", "discussion", "activity", "party", "food", "games", "show"].each do |tag| %>
+					<% if @event.send(tag.to_sym) %>
+							<% tag = "mus" if tag == "music" %>
+							<%= image_tag "#{tag.capitalize}.svg", :class => "event-tag" %>
+					<% end %>
+				<% end %>
 			</div>
 		</div>
 	</div>

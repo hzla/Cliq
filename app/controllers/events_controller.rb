@@ -65,7 +65,13 @@ class EventsController < ApplicationController #in severe need of refactoring
 	end
 
 	def public_create
-		event = Event.assign_and_return_new params
+		p params
+		puts "\n" * 50
+		if browser.mobile?
+			event = Event.new params[:event]
+		else
+			event = Event.assign_and_return_new params
+		end
 		if event.save
 			if !browser.mobile?
 				if params[:event][:start_time].include? "pm"

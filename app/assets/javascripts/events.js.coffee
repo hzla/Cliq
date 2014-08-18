@@ -36,7 +36,8 @@ Events =
 	removeInvite: ->
     invite = $(@).parents('.upcoming-event')
     if $(@).hasClass 'decline-action'
-      invite.addClass 'animated bounceOutLeft'
+      console.log invite
+      invite.removeClass('animated fadeIn').addClass 'animated bounceOutLeft'
       invite.one 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', ->
         invite.animate {
           height: "0px"
@@ -45,9 +46,6 @@ Events =
     else
       invite.find('.invite-action-buttons').hide()
       invite.find('.view-thread').show()
-
-
-
 
   restoreOpacity: (event, modal) ->
     if $('.user-other-container:visible').length > 0 || $('.chat-partial:visible').length > 0

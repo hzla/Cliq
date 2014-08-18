@@ -68,13 +68,38 @@
 
 .chat-events {
 	#chat-info {
-	width: 85%;
-	margin-left: 15%;
+	width: 55%;
+	margin-left: 10%;
 	margin-top: 20px;
+	}
+	.chat-info-right {
+		width: 25%;
+		margin-right: 10%;
+		float: right;
+		text-align: right;
+		background-color: rgba(0,0,0,.4);
+		height: 100%;
+	}
+	.chat-info-right .row-item {
+		float: right;
+		margin-right: 25px;
+	}
+	.chat-info-right .event-tags {
+		position: static;
+		margin-top: 10px;
+		float: right;
+		margin-right: 25px;
 	}
 	#chat-name {
 		color: white;
 		font-size: 30px;
+	}
+	.row-item.chat-time {
+		font-weight: 700;
+		margin-top: 20px;
+	}
+	.chat-count {
+		font-size: 22px;
 	}
 	.chat-row {
 		float: left;
@@ -90,15 +115,18 @@
 		max-height: 68px;
 		overflow-y: scroll;
 	}
+	.row-item.chat-desc {
+		max-height: 115px;
+	}
 	#chat-header {
 	margin-top: 0px;
 	height: 200px;
 	background-image: image_url("event-back.jpg");
 	}
 	#chat-partial-content {
-		margin-left: 15%;
-		width: 70%;
-		margin-right: 15%;
+		margin-left: 10%;
+		width: 80%;
+		margin-right: 10%;
 	}
 	.message-history.chat {
 		width: 100%;
@@ -117,7 +145,7 @@
 		float: right;
 	}
 	#chat-box {
-		width: calc(70% - 85px);
+		width: calc(80% - 85px);
 	}
 	.action-button.mes-action {
 		border-radius: 100px;

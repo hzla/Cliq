@@ -10,6 +10,12 @@ class Event < ActiveRecord::Base
 	validates :start_time, presence: true
 
 	attr_accessible :title, :description, :location, :start_time, :end_time, :image, :attended, :partner_id, :quantity, :remote_image_url, :closed, :music, :discussion, :activity, :party, :show, :food, :games, :twenty_one, :paid, :event_type, :messages_count
+	def self.adjust_time adjustment
+		all.each do |event|
+			event.start_time += adjustment.hours
+			event.save
+		end
+	end
 
 	def self.assign_and_return_new params
 		total_params = params[:event]
@@ -51,6 +57,14 @@ class Event < ActiveRecord::Base
 
 	def creator
 		excursions.where(created: true)[0].user if excursions.where(created: true)[0]
+	end
+
+	def full_time user
+		if !today? user
+			stime = (start_time + user.timezone.hours).strftime("%m/%d/%g at %I:%M %p").downcase 
+		else
+			stime = (start_time + user.timezone.hours).strftime("%m/%d/%g at %I:%M%p") 
+		end
 	end
 
 	def time user
@@ -105,6 +119,10 @@ class Event < ActiveRecord::Base
 	def self.joined_by user
 		user.excursions.where(accepted: true).map(&:event).select { |event| event.start_time > (user.user_time - 6.hours) }.sort_by(&:start_time)
 	end 
+
+	def self.messaged_joined_by user
+		user.excursions.where(accepted: true).map(&:event).select { |event| event.start_time > (user.user_time - 6.hours) && event.messages_count != 0 }.sort_by(&:start_time)
+	end
 
 	def joined_by user
 		!excursions.where(accepted: true, user_id: user.id).empty?

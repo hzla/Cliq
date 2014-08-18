@@ -15,7 +15,7 @@
 			<%= image_tag event.image_url || 'Cliq.svg', :class => "convo-pic" %>
 			<div class="convo-details">
 				<div class="convo-name m1"><%= event.title %></div>
-				<div class="event-line m1 light-turq"><%= event.time current_user %></div>
+				<div class="event-line m1 light-turq"><%= event.full_time current_user %></div>
 				<div class="event-line m1 gray"><%= event.location %></div>
 			</div>
 			
