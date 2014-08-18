@@ -1,9 +1,26 @@
+<div class="today-events event-date-type">
+	<div class="date-header head-2">Today</div>
+</div>
+<div class="tommorow-events event-date-type">
+	<div class="date-header head-2">Tomorrow</div>
+</div>
+
+
 <% events.each do |event| %>
-	<div class="upcoming-event">
+	<div class="upcoming-event<%= ' today' if event.today?(current_user) %><%= ' tommorow' if event.tommorow?(current_user) %> <%= event.date(current_user) %> <%= event.tags %> ">
 		
 		<% lock_status = !event.joined_by(current_user) %>
 		<div class="upcoming-event-picture">
 			<%= image_tag event.image_url || "Cliq.svg", :class => "event-picture" %>
+			<div class="event-title-overlay">
+				<div class="event-title head-3">
+					<%= link_to event_chat_path(event, locked: lock_status), :class => "chat-user", remote: true do %>
+						<%= event.shortened_title %>
+					<% end %>
+				</div>
+			</div>
+
+
 			<div class="invite-overlay">
 				<div class="invite-count"><%= event.people_count %> Going</div>
 				
@@ -16,53 +33,63 @@
 		<div class="upcoming-event-info">
 			
 
-			<div class="upcoming-event-title invite-title2">
-				<%= link_to event_chat_path(event, locked: lock_status), :class => "chat-user", remote: true do %>
-					<%= event.title %>
-				<% end %>
-			</div>
-
-			<div class="white upcoming-event-time invite-row">
+		
+			<div class="white upcoming-event-time invite-row head-4">
 				<%= event.time current_user %>
+			</div>
+			<div class="event-reqs head-4">
+				<% if event.twenty_one %>
+					<div class="req">21+</div>
+				<% end %>
+				<% if event.paid %>
+					<div class="req">$$</div>
+				<% end %>
 			</div>
 
 			<div class="gray upcoming-event-location invite-row">
 				<%= event.location %>
 			</div>
+			<% if open && event.creator != current_user && lock_status %>
+				<div class="invite-row pass-accept">
+					<div class="invite-action-buttons">
+						<%= link_to user_accept_path(current_user, event), remote: true, :class => "invite-action accept-action" do %>
+							<div class="accept white">Join</div>
+						<% end %>
+						<%= link_to user_pass_path(current_user, event), remote: true, :class => "invite-action decline-action" do %>
+						<div class="pass">Pass</div>
+						<% end %>
+					</div>
+					<%= link_to event_chat_path(event, locked: false), :class => "chat-user no-obscure", remote: true do %>
+						<div class="invite-thread bottom hidden view-thread">Click to view thread</div>
+					<% end %>
+				</div>
+			<% end %>
 
 			<div class="gray upcoming-event-description invite-row">
 				<%= event.description %>
 			</div>
 
-			<% if open && event.creator != current_user && lock_status  %>
-				<div class="upcoming-event-others invite-row event-actions">
-					<div class="invite-row invite-actions">
-						<div class="invite-action-buttons">
-							<%= link_to user_accept_path(current_user, event), remote: true, :class => "invite-action accept-action" do %>
-								<div class="accept white">Join</div>
-							<% end %>
-							<%= link_to user_pass_path(current_user, event), remote: true, :class => "invite-action decline-action" do %>
-							<div class="pass">Pass</div>
-							<% end %>
-						</div>
-						<%= link_to event_chat_path(event, locked: false), :class => "chat-user no-obscure", remote: true do %>
-							<div class="invite-thread bottom hidden view-thread">Click to view thread</div>
+			<div class="event-tags">
+				<% ["music", "discussion", "activity", "party", "food", "games", "show"].each do |tag| %>
+					<% if event.send(tag.to_sym) %>
+							<% tag = "mus" if tag == "music" %>
+							<%= image_tag "#{tag.capitalize}.svg", :class => "event-tag" %>
+					<% end %>
+				<% end %>
+
+			</div>
+			<div class="invite-row invite-actions">
+				<%= link_to event_chat_path(event, locked: false), :class => "chat-user no-obscure", remote: true do %>
+					<div class="invite-thread bottom">
+						<% if event.messages_count == 0 || event.conversations.first.was_seen_by?(current_user) %> 
+							<%= image_tag "messages-white.svg", :class => "invite-messages-pic" %>
+						<% else %>
+							<%= image_tag "messages-white.svg", :class => "invite-messages-pic" %>
+							<div class="new-tag <%= 'hidden' if lock_status %>">New!</div>
 						<% end %>
 					</div>
-				</div>
-			<% else %>
-				<div class="invite-row invite-actions">
-					<%= link_to event_chat_path(event, locked: false), :class => "chat-user no-obscure", remote: true do %>
-						<div class="invite-thread bottom">
-							<% if event.messages_count == 0 || event.conversations.first.was_seen_by?(current_user) %> 
-								Click to view thread
-							<% else %>
-								New Messages!
-							<% end %>
-						</div>
-					<% end %>
-				</div>
-			<% end %>
+				<% end %>
+			</div>
 
 		</div>
 	</div>
@@ -70,3 +97,4 @@
 <% if events.empty? %>
 	<div id="empty-events">No Events to Show</div>
 <% end %>
+

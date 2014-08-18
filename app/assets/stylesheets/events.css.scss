@@ -27,13 +27,14 @@
 
 #other-events-container {
 	width: 60%;
-	height: 100%;
+	height: auto;
+	background: $super-light-gray;
 	float: right;
 }
 
 #events-box {
 	float: left;
-	margin-top: 30px;
+	margin-top: 50px;
 	width: 100%;
 }
 
@@ -41,6 +42,7 @@
 	width: 85%;
 	margin: 0 auto;
 	margin-top: 50px;
+	position: relative;
 }
 
 #event-status {
@@ -106,7 +108,10 @@
 	font-weight: 300;
 	color: $red;
 	cursor: pointer;
-    font-size: 20px;
+  font-size: 20px;
+  position: absolute;
+	top: 45px;
+	left: 197px;
 }
 
 #new-open-event:hover {
@@ -143,7 +148,7 @@
 }
 
 .upcoming-event-location {
-	max-height: 40px;
+	max-height: 18px;
 	overflow-y: scroll;
 }
 
@@ -196,6 +201,24 @@
 	display: block;
 }
 
+.event-title-overlay {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background: rgba(0,0,0,.3);
+	top: 0;
+}
+
+.event-title {
+	font-weight: 700;
+	margin-top: 12px;
+	margin-left: 12px;
+}
+
+.event-title a {
+	color: white;
+}
+
 .upcoming-event-picture:hover .invite-overlay {
 	display: block;
 }
@@ -229,10 +252,47 @@
     font-weight: 300;
 }
 
+.event-tags {
+	float: left;
+	width: 120px;
+	height: 15px;
+	position: absolute;
+	bottom: -10px;
+}
+
+.event-tag {
+	width: 15px;
+	height: 15px;
+	float: left;
+}
+
 .invite-thread.bottom {
 	width: 80%;
-	background-color: $orange;
+	background-color: $light-turq;
 	border-radius: 30px;
+	height: 25px;
+	float: right;
+	margin-right: 15px;
+	width: 65px;
+	position: relative;
+}
+
+.invite-messages-pic {
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	top: 2.5px;
+	left: 22.5px;
+}
+
+.new-tag {
+	position: absolute;
+	top: -7px;
+	right: -10px;
+	font-size: 12px;
+	background: $red;
+	border-radius: 20px;
+	padding: 2px;
 }
 
 .invite-thread.bottom.invite-view {
@@ -305,13 +365,17 @@
 	margin-left: 47px;
 }
 
+.invite-row.pass-accept {
+	width: 100%;
+}
+
 .invite-action {
 	float: left;
 	width: 37.5%;
 }
 
 .invite-action:nth-child(2n) {
-	margin-left: 5%;
+	float: right;
 }
 
 .accept {
@@ -370,11 +434,31 @@
 	font-weight: 700;
 }
 
-.upcoming-event-time {
+.upcoming-event-time.invite-row {
 	border-radius: 50px;
 	background-color: $orange;
-	width: calc(100% - 40px);
+	width: 113px;
 	text-align: center;
+	height: 43px;
+	line-height: 45px;
+	font-size: 20px;
+	font-weight: 700;
+	float: left;
+}
+
+.event-reqs {
+	font-weight: 700;
+	float: right;
+	height: 43px;
+	width: 80px;
+	color: $red;
+}
+
+.req {
+	float: right;
+	margin-left: 10px;
+	height: 100%;
+	line-height: 43px;
 }
 
 .upcoming-event-picture {
@@ -395,7 +479,7 @@
 }
 
 .invite-row.invite-actions {
-	width: 100%;
+	width: calc(100% - 15px);
 	margin-left: 8px;
   margin-bottom: -22px;
 }
@@ -429,5 +513,48 @@
 .event-sort > .head-4:hover {
 	background-color: #fff;
 	border-radius: 50px;
-    color: $dark-gray;
+  color: $dark-gray;
+}
+
+////////
+
+
+.event-date-type {
+	width: 100%;
+	float: left;
+}
+
+.date-header {
+	margin-top: 10px;
+}
+
+
+/////////////////
+
+
+#invites .event-form-right {
+	width: 100%;
+	margin-top: 150px;
+}
+
+#events-box .activity {
+	margin-top: 20px;
+}
+
+#invites .event-form-right {
+	.form-row {
+		margin: 0 auto;
+		width: 100%;
+		float: none;
+	}
+	.event-attrs-1 {
+		margin-top: 25px;
+	}
+	.attr-pic {
+		margin-top: 15px;
+	}
+	.form-row.event-dates {
+		margin-top: 25px;
+		width: 100%;
+	}
 }

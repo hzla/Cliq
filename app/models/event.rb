@@ -26,6 +26,19 @@ class Event < ActiveRecord::Base
 		conversations.first
 	end
 
+	def shortened_title
+		title.length > 95 ? title[0..93] + "..." : title
+	end
+
+	def date user
+		(start_time + user.timezone.hours).strftime("%B-%e")
+	end
+
+	def tags
+		types = "#{event_type},#{' show' if show},#{' activity' if activity},#{' music' if music},#{' discussion' if discussion},#{' party' if party},#{' food' if food},#{' games' if games}"
+		(types.split(",") - [""]).join.downcase
+	end
+
 
 
 	def self.update_message_counts
@@ -41,16 +54,15 @@ class Event < ActiveRecord::Base
 	end
 
 	def time user
-		# if start_time - Time.now < 24.hours
-		# 	tzone.time(start_time).strftime("%m/%d/%g at %I:%M%p")
-		# else
-		# 	tzone.time(start_time).strftime("%m/%d/%g at %I:%M%p") 
-		# end
-		if start_time - Time.now < 24.hours && start_time.beginning_of_day.day == user.user_time.beginning_of_day.day
-			stime = (start_time).strftime("Today at %I:%M%p")
-		else
-			stime = (start_time).strftime("%m/%d/%g at %I:%M%p") 
-		end
+		stime = (start_time + user.timezone.hours).strftime("%I:%M %p").downcase 
+	end
+
+	def today? user
+		start_time - Time.now.utc < 24.hours && start_time.beginning_of_day.day == user.user_time.beginning_of_day.day
+	end
+
+	def tommorow? user
+		start_time - Time.now.utc < 48.hours && (start_time.beginning_of_day.day - 1) == user.user_time.beginning_of_day.day
 	end
 
 	def attendees

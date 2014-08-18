@@ -5,15 +5,15 @@ EventForm =
     $('body').on 'click', '.event-requirement', @chooseRequirement
 
   chooseType: ->
-    $('.event-type.selected').removeClass('selected')
+    $(@).parent().find('.event-type.selected').removeClass('selected')
     $(@).addClass('selected')
-    $('#event_event_type').val $(@).text() 
+    $('#event_event_type').val $(@).text() if $('#event_event_type').length > 0
 
   chooseTag: ->
     $(@).toggleClass('selected')
     currentTags = $('.event-attr.selected .attr-text').map ->
       $(@).text().split(' ').pop();
-    $('.tags').val $.makeArray(currentTags).join()
+    $('.tags').val $.makeArray(currentTags).join() if $('.tags').length > 0
 
   chooseRequirement: ->
     $(@).toggleClass('selected')

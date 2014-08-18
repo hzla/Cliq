@@ -7,6 +7,25 @@ Events =
     $('body').on 'ajax:success', '#new_event', @closeModal 
     $('body').on 'click', '#send-invite .invite-icon', @send
     $('body').on $.modal.BEFORE_CLOSE, '#invite-modal-container', @restoreOpacity
+    $('body').on 'click', '#invites .form-row div', @filterEvents
+
+  filterEvents: ->
+    currentTags = $('.event-attr.selected .attr-text').map ->
+      $(@).text().split(' ').pop();
+    tags = $.makeArray(currentTags).join()
+    if $('.event-types .event-type.selected')
+      tags += ("," + $('.event-types .event-type.selected').text())
+    if $('.event-date-types .event-type.selected')
+      tags += ("," + $('.event-date-types .event-type.selected').text())
+    tags = tags.replace('Any Time','').split(",,").join(".").split(",").join(".")
+    tags = tags.slice(0, tags.length - 1) if tags[tags.length - 1] == "."
+    tags = "." + tags if tags != "" && tags[0] != "."
+    $(".upcoming-event").hide()
+    $(".upcoming-event#{tags}".toLowerCase()).show()
+    $('.date-header').hide()
+    $('.date-header').parent().has(":visible").children(".date-header").show()
+
+
 
   send: ->
     $('#new_event').submit()
@@ -56,9 +75,12 @@ Events =
     $(@).children().addClass 'selected'
     $('#events-box').html data
     $('#upcoming-header').text "#{eventType} Events:"
+    Events.allotTimes()
+    $('.upcoming-event').addClass('animated fadeIn')
+    Events.filterEvents()
+    
 
   closeModal: (event, data, xhr, status) ->
-    console.log data
     if data.ok == true
       $.modal.close()
       location.reload();
@@ -66,6 +88,20 @@ Events =
       $('#event_title').css('border', '1px solid red') if data.title
       $('#event_location').css('border', '1px solid red') if data.location
       $('#event_start_time').css('border', '1px solid red') if data.start_time
+
+  allotTimes: ->
+    $('.today-events').append $('.upcoming-event.today')
+    $('.tommorow-events').append $('.upcoming-event.tommorow')
+    dates = $('.upcoming-event:not(.today, .tommorow)').map ->
+      $(@).attr('class').split(' ')[1]
+    dates = $.makeArray($.unique(dates))
+    $.each dates, ->
+      splitDate = @.split("-").join(" ")
+      $('.event-date-type').last().after "<div class='event-date-type #{@}'><div class='date-header head-2'>#{splitDate}</div></div>"
+    $.each dates, ->
+      $(".event-date-type.#{@}").append $(".upcoming-event.#{@}:not(.today, .tommorow)")
+      
+
 
 
 

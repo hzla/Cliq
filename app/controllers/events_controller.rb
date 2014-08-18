@@ -5,9 +5,7 @@ class EventsController < ApplicationController #in severe need of refactoring
 
 	def index
 		excursions = current_user.excursions 
-		@invitations = Event.hosted_by current_user
 		@open = true
-		@events = Event.open current_user
 		excursions.update_all seen: true
 		respond_to do |format|
         format.html { render :layout => !request.xhr? }
@@ -19,7 +17,7 @@ class EventsController < ApplicationController #in severe need of refactoring
 		if request.variant == [:phone]
 			render partial: 'mobile_events', locals: {events: @events, open: "create"}
 		else
-			render partial: 'events', locals: {events: @events}
+			render partial: 'events', locals: {events: @events, open: true}
 		end
 	end
 
@@ -67,14 +65,15 @@ class EventsController < ApplicationController #in severe need of refactoring
 	end
 
 	def public_create
-		event = Event.new params[:event]
+		event = Event.assign_and_return_new params
 		if event.save
 			if !browser.mobile?
 				if params[:event][:start_time].include? "pm"
 					pm = true
 				end
-				pm ? event.start_time += 12.hours : event.start_time -= 12.hours 
+				pm ? event.start_time += 12.hours : nil
 			end
+			event.start_time -= current_user.timezone.hours
 			event.users << [current_user]
 			excursion = Excursion.where(event_id: event.id, user_id: current_user.id)[0]
 			excursion.update_attributes created: true, accepted: true

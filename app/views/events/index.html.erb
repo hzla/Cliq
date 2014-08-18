@@ -2,30 +2,74 @@
 
 		<div id="invite-container">
 			<div id="invites">
-				<div id="invites-header" class="head-4 white">Your Open Events</div>
-				<%= link_to public_events_path, :class => "invite-user", remote: true do %>
-					<div id="new-open-event">
-						New Event
+				<div class="event-form-right">
+					<div class="form-row">
+						<div class="event-quest">I want to?</div>
+						<div class="event-types">
+							<div class="event-type round-left">Work</div>
+							<div class="event-type">Play</div>
+							<div class="event-type round-right">Chill</div>
+						</div>
 					</div>
-				<% end %>
 
-				<div id="invites-collection">
-					<% @invitations.each do |invite| %>
-						<%= render partial: 'invite_card', locals: {invite: invite} %>
-					<% end %>
-					<% if @invitations.empty? %>
-						<div id="empty-invite">No Invites to Show</div>
-					<% end %>
+
+
+					<div class="form-row">
+						<div class="event-attrs-1">
+							<div class="event-attr no-left music">
+								<%= image_tag "Mus.svg", :class => "attr-pic svg" %>
+								<div class="attr-text hidden">Music</div>
+							</div>
+							<div class="event-attr discussion">
+								<%= image_tag "Discussion.svg", :class => "attr-pic svg" %>
+								<div class="attr-text hidden">Discussion</div>
+							</div>
+							<div class="event-attr activity">
+								<%= image_tag "Activity.svg", :class => "attr-pic svg" %>
+								<div class="attr-text hidden">Activity</div>
+							</div>
+							<div class="event-attr party">
+								<%= image_tag "Party.svg", :class => "attr-pic svg" %>
+								<div class="attr-text hidden">A Party</div>
+							</div>
+						</div>
+						<div class="event-attrs-2 food">
+							<div class="event-attr food no-left">
+								<%= image_tag "Food.svg", :class => "attr-pic svg" %>
+								<div class="attr-text hidden">Food</div>
+							</div>
+							<div class="event-attr games">
+								<%= image_tag "Games.svg", :class => "attr-pic svg" %>
+								<div class="attr-text hidden">Games</div>
+							</div>
+							<div class="event-attr show">
+								<%= image_tag "Show.svg", :class => "attr-pic svg" %>
+								<div class="attr-text hidden">A Show</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-row event-dates">
+						<div class="event-date-types">
+							<div class="event-type round-left">Today</div>
+							<div class="event-type selected">Tommorow</div>
+							<div class="event-type round-right">Any Time</div>
+						</div>
+					</div>
 				</div>
+					
 			</div>
 		</div>
+	</div>
 
 		<div id="other-events-container">
-
-
 		<div id="events-header-actions">
 			<div id="upcoming-header" class="head-4 dark-gray">Open Events:</div>
-			
+			<%= link_to public_events_path, :class => "invite-user", remote: true do %>
+				<div id="new-open-event">
+					New Event
+				</div>
+			<% end %>
+		
 			<%= link_to open_events_path, :class => "event-sort", remote: true do %>
 				<div class="head-4 dark-gray selected" id="event-open">Open</div>
 			<% end %>
@@ -33,16 +77,18 @@
 			<%= link_to going_events_path, :class => "event-sort", remote: true do %>
 				<div class="head-4 dark-gray" id="event-going">Joined</div>
 			<% end %>
-
+			<%= link_to hosted_events_path, :class => "event-sort", remote: true do %>
+				<div class="head-4 dark-gray" id="event-going">Hosting</div>
+			<% end %>
 		</div>
-
 			<div id="upcoming">
 				<div id="events-box">
-					<%= render partial: 'events', locals: {events: @events, open: @open} %>
 				</div>
 			</div>
 		</div>
 		<div id="invite-modal-container" class="modal"></div>
 	</div>
 
-
+<script>
+	$('.event-sort').first().click()
+</script>

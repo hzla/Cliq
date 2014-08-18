@@ -43,7 +43,7 @@ CliqUi =
 		$('.mobile .message-history').kinetic
 			x: false
 		CliqUi.obscureDate() if !$(@).hasClass('no-obscure')
-		$(@).find('.invite-thread').text("Click to view thread")
+		$(@).find('.new-tag').hide()
 		name = $('.swiped-card-name:visible').text()
 		$('.menu-title').text name
 		$(".chat-partial").swipe 
