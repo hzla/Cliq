@@ -22,24 +22,7 @@
 				<% end %>
 			</div>
 		<% end %>
-		<%= link_to main_path, remote: true, :class => 'tab', id: "main" do %>
-			<div class="mob-nav search side-icon <%= 'active' if active == :critiq %>">
-				<%= image_tag "shuffle.svg", :class => "nav-icon svg" %> 
-				<div class="icon-label main">Shuffle</div>
-			</div>
-		<% end %>
-		<%= link_to search_path, remote: true, :class => 'tab', id: "search" do %>
-			<div class="mob-nav search side-icon <%= 'active' if active == :critiq %>">
-				<%= image_tag "Search.svg", :class => "nav-icon svg" %> 
-				<div class="icon-label main">Search</div>
-			</div>
-		<% end %>
-		<%= link_to user_path(current_user), remote: true, :class => 'tab', id: "profile" do  %>
-			<div class="mob-nav profile side-icon <%= 'active' if active == :profile %>">
-				<%= image_tag "Profile.svg", :class => "nav-icon svg" %> 
-				<div class="icon-label main">Profile</div>
-			</div>
-		<% end %>
+		
 			<%= link_to messages_path, "data-no-turbolink" => true, remote: true, :class => 'tab', id: "messages" do %>
 			<div class="mob-nav messages <%= 'active' if active == :messages %> side-icon">
 				<%= image_tag "Messages.svg", :class => "nav-icon svg" %>

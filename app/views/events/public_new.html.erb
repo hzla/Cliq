@@ -53,11 +53,11 @@
 
 		<div class="event-form-right">
 			<div class="form-row">
-				<div class="event-quest">Is this?</div>
+				<div class="event-quest">Is this a?</div>
 				<div class="event-types">
-					<div class="event-type round-left">Work</div>
-					<div class="event-type selected">Play</div>
-					<div class="event-type round-right">Chill</div>
+					<div class="event-type round-left selected">Hangout</div>
+					<div class="event-type">Party</div>
+					<div class="event-type round-right">Event</div>
 				</div>
 			</div>
 			<div class="form-row">
@@ -96,7 +96,7 @@
 				</div>
 			</div>
 
-			<%= f.hidden_field :event_type, value: "Play"%>
+			<%= f.hidden_field :event_type, value: "Work"%>
 			<%= hidden_field_tag :tags ,nil, :class => "tags"%>
 			<%= hidden_field_tag :requirements ,nil, :class => "requirements"%>
 

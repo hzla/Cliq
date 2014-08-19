@@ -7,7 +7,8 @@ EventForm =
   chooseType: ->
     $(@).parent().find('.event-type.selected').removeClass('selected')
     $(@).addClass('selected')
-    $('#event_event_type').val $(@).text() if $('#event_event_type').length > 0
+    type = $(@).text().replace("Hangout", "Work").replace("Party", "Play").replace("Event", "Chill")
+    $('#event_event_type').val type if $('#event_event_type').length > 0
 
   chooseTag: ->
     $(@).toggleClass('selected')
