@@ -4,7 +4,6 @@ class Conversation < ActiveRecord::Base
 	has_many :messages, dependent: :destroy 
 	belongs_to :event
 
-
 	attr_accessible :name, :connected, :initiated, :event_id, :seen_by
 
 	def ordered_messages
@@ -33,8 +32,6 @@ class Conversation < ActiveRecord::Base
 
 	def email_all_others user
 		list = event.attendees.map(&:user).select { |u| u.id != user.id }
-		p list
-		puts "\n" * 20
 		list.each do |u|
 			u.invite_count += 1
 			if was_seen_by?(u) && !u.using
@@ -44,6 +41,9 @@ class Conversation < ActiveRecord::Base
 		end
 	end
 
+	def all_others user
+		User.find(event.attendees.map(&:user_id)).select { |u| u.id != user.id }
+	end
 	def get_other_user user
 		return nil if event_id
 		users.where('user_id not in (?)', [user.id])[0]
@@ -51,33 +51,26 @@ class Conversation < ActiveRecord::Base
 
 	def date user
 		time = messages.order(:created_at).pluck(:created_at).last
-		return "no message yet" if !time
-		# tzone = Timezone::Zone.new(:latlon => [user.latitude, user.longitude])
-     if (Time.now - 1.day) < time
-			(time + user.timezone.hours).strftime("%I:%M %p")
-		else
-			(time + user.timezone.hours).strftime("%m/%d/%g")
-		end
+		return "No messages yet" if !time
+		(time + user.timezone.hours).strftime("%m/%d/%g")
 	end
 
 	def last_message 
-		return "no message yet" if messages.empty?
+		return "No message yet" if messages.empty?
 		message = messages.order(:created_at).pluck(:body).last[0..29]
 		message += "..." if message.length == 30
 		message
-
 	end
 
 	def update_notifications user
 		other_user = get_other_user user
 		if other_user
-            unseen = messages.where seen: false, user_id: other_user.id
-            new_count = user.message_count - unseen.length
-            user.update_attributes message_count: new_count
-            unseen.update_all seen: true	
-            Connection.where(user_id: user.id, conversation_id: id).first.update_attributes(emailed: false)
-        end
+      unseen = messages.where seen: false, user_id: other_user.id
+      new_count = user.message_count - unseen.length
+      user.update_attributes message_count: new_count
+      unseen.update_all seen: true	
+      Connection.where(user_id: user.id, conversation_id: id).first.update_attributes(emailed: false)
     end
-
+  end
 end
 

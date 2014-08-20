@@ -25,8 +25,6 @@ MobileUsers =
 				$('.fb-enabled').val('').css('color', '#414141')
 			, 750
 
-
-
 	scrollDown: ->
 		# $('.user-container')[0].scrollTop = 1000
 
@@ -85,15 +83,6 @@ MobileUsers =
 		$(@).parent().toggleClass('chosen') if $('.tut').length < 1
 		$(@).parent().css 'background', '#14a29d' if $('.user-other-container:visible').length > 0
 			
-
-
-
-
-
-
-
-
-
 ready = ->
 	MobileUsers.init()
 $(document).ready ready

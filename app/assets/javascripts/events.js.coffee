@@ -20,7 +20,7 @@ Events =
     tags = tags.replace('Any Time','').split(",,").join(".").split(",").join(".")
     tags = tags.slice(0, tags.length - 1) if tags[tags.length - 1] == "."
     tags = "." + tags if tags != "" && tags[0] != "."
-    tags = tags.replace("Hangout", "Work").replace("Party", "Play").replace("Event", "Chill")
+    tags = tags
     $(".upcoming-event").hide()
     $(".upcoming-event#{tags}".toLowerCase()).show()
     $('.date-header').hide()

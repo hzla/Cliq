@@ -92,7 +92,6 @@ class Category < ActiveRecord::Base
 		where('ancestry is not null').each do |cat|
 			pop = cat.activities.map(&:interests).count
 			cat.update_attributes popularity: pop
-			p cat.name
 		end
 	end
 
@@ -106,6 +105,4 @@ class Category < ActiveRecord::Base
 		end
 		cats.flatten
 	end
-
-
 end

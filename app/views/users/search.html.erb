@@ -7,6 +7,7 @@
 						<div id="query-1" class="white">I want to hang out near</div>
 						<%= text_field_tag :location, nil, :class => " dark-gray search-term", id: "query-location", value: current_user.address, placeholder: "Anywhere" %>
 						<%= hidden_field_tag "location_id" %>
+						<%= hidden_field_tag "type", "search" %>
 						<div id="query-2" class=" white">with people interested in</div>
 					</div>
 					<div id="query-interests" class=" dark-gray">
@@ -44,9 +45,6 @@
 			
 
 			<div id="search-results">
-				<% if !@user_empty %>
-					<%= render partial: 'search_results', locals: {results: @results} %>
-				<% end %>
 			</div>
 		</div>
 		</div>

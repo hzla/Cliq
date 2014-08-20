@@ -5,9 +5,13 @@ EventForm =
     $('body').on 'click', '.event-requirement', @chooseRequirement
 
   chooseType: ->
-    $(@).parent().find('.event-type.selected').removeClass('selected')
+    if $(@).parents('#invites').length > 0
+      selected = $(@).hasClass('selected')
+      $(@).parent().find('.event-type.selected').removeClass('selected')
+      $(@).addClass('selected') if !selected
+      return
     $(@).addClass('selected')
-    type = $(@).text().replace("Hangout", "Work").replace("Party", "Play").replace("Event", "Chill")
+    type = $(@).text()
     $('#event_event_type').val type if $('#event_event_type').length > 0
 
   chooseTag: ->

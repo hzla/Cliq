@@ -6,13 +6,6 @@ class Message < ActiveRecord::Base
 
 
 	def date user
-		# if user.latitude
-		# 	# tzone = Timezone::Zone.new(:latlon => [user.latitude, user.longitude])
-		# 	# tzone.time(created_at).strftime("%m/%d %I:%M%p")
-		# else
-		# 	time(created_at).strftime("%m/%d %I:%M%p")
-		# end
-		p self
 		(created_at + user.timezone.hours).strftime("%m/%d %I:%M%p")
 	end
 end

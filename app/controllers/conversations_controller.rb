@@ -1,11 +1,13 @@
 class ConversationsController < ApplicationController
 include SessionsHelper
 
-	def show
+
+	# Used on messages page for rendering message history
+	def show 
 		@conversation = Conversation.find params[:id]
 		@message = Message.new(user_id: current_user.id, conversation_id: @conversation.id)
 		@user = current_user
-		# @conversation.update_notifications current_user
+		@conversation.update_notifications current_user
 		@other_user = @conversation.get_other_user current_user
 		if params[:phone] == "true"
 			render 'mobile_show', layout: false
@@ -14,7 +16,9 @@ include SessionsHelper
 		render layout: false
 	end
 
-
+	# used to render the slide in message modal
+	# creates a new conversation if the current user has not talked to the other user 
+	# assigns both users to the conversation
 	def chat
 		@other_user = User.find params[:user_id]
 		@message = Message.new

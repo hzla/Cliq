@@ -1,4 +1,3 @@
-<% p current_user; puts "\n" * 50 %>
 <% if current_user.ordered_conversations.length > 0 %>
 <div id="messages-container">
 	<div class="message-content-container">
@@ -32,13 +31,13 @@
 		</div>
 		<div id="thread-container">
 			<div id="messages-box">
-		<%= render partial: 'chat_history', locals: {conversation: @conversation, other_user: @other_user, new_message: @message} %>
 			</div>
 		</div>
 	</div>
 	<div id="invite-modal-container" class="modal"></div>
 	<script>
 		$($('.conversation')[0]).addClass('current')
+		$($('.convo-link')[0]).click()
 	</script>
 </div>
 <% end %>

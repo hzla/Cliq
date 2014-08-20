@@ -27,9 +27,6 @@ class User < ActiveRecord::Base
 	def event_nots
 		e = Event.messaged_joined_by self
 		cs = e.map(&:conversation).compact
-		
-		p cs.select {|n| !n.was_seen_by? self}
-		puts "\n" * 50
 		cs.select {|n| !n.was_seen_by? self}.count
 	end
 
@@ -73,6 +70,41 @@ class User < ActiveRecord::Base
 	end
 	
 	#maps cat/act to users_ids, parse and count user_ids
+	# if no activities are inputed return matches for all user activities
+	# else do it just for the inputted activities
+	# if a location is put in from autocomplete, find the location by id, if a location is put in 
+	# but not from autocomplete, search by name, if not found, geocode it and add to database 
+	# if no location, don't search by location
+	def search_results location_id, location_name, act_ids, no_id
+		results = no_id ? results_from_location(location_id, location_name) : results_from_location_and_acts(location_id, location_name, act_ids) 
+	end
+
+	def results_from_location_and_acts location_id, location_name, act_ids
+		if location_id != "" && location_name != ""
+			location = Location.find location_id
+		elsif location_name != ""
+			location = Location.retrieve_or_create_by_name location_name
+		else
+			location = nil
+		end
+		results = search_similar(Activity.parse_interests(act_ids), location)
+	end
+
+	def results_from_location location_id , location_name
+		if location_id == "" && location_name == ""
+			results = search_similar activities
+		else
+			if location_id != "" && location_name != ""
+				location = Location.find location_id
+			elsif location_name != ""
+				location = Location.retrieve_or_create_by_name location_name
+			else
+				location = nil
+			end
+			results = search_similar activities, location
+		end
+	end
+
 	def search_similar interest_type, location = nil #accepts a list of interests/categories
 		return location if location == "invalid"
 		
@@ -109,6 +141,7 @@ class User < ActiveRecord::Base
 		total ? total : 0
 	end
 
+	# takes all of a users interests and divides them into major categories
 	def formatted_interests
 		results = {"Do" => [], "Watch" => [], "Music" => [], "Discuss" => []}
 		formatted = {}
@@ -132,10 +165,12 @@ class User < ActiveRecord::Base
 		results
 	end
 
+	#takes already formatted interests and puts them back together
 	def unformatted_interests formatted
 		formatted["Do"] + formatted["Watch"] + formatted["Music"] + formatted["Discuss"]
 	end
 
+	#all convesations with non blocked users where a message has been sent
 	def ordered_conversations
 		convos = conversations.where(initiated: true).order(:updated_at).reverse
 		blacklist_ids = blacklist.split(",").map(&:to_i)[1..-1]
@@ -152,6 +187,12 @@ class User < ActiveRecord::Base
 		user.blacklist.split(",").include? id.to_s
 	end
 
+	def update_blacklist user_id
+		current_list = blacklist
+		current_list += ",#{user_id}"
+		update_attributes blacklist: current_list
+	end
+
 	def conversated_with? user #do their conversations have at least one message from each person
         conversations.each do |convo|
 			ids = convo.name.split("-").map(&:to_i)
@@ -162,6 +203,7 @@ class User < ActiveRecord::Base
 		false
 	end
 
+	#top two common categories with another user
 	def top_shared user
 		act_ids = interests.pluck(:activity_id)
 		cats = user.activities.where('activity_id in (?)', act_ids).group_by(&:category_id).to_a.sort_by do |cat|
@@ -173,7 +215,7 @@ class User < ActiveRecord::Base
 		Category.find top_two
 	end
 
-	def talked_to? user #do they any conversations at all?
+	def talked_to? user #do they have any conversations at all?
 		conversations.each do |convo|
 			return convo if convo.users.include? user
 		end
@@ -213,6 +255,8 @@ class User < ActiveRecord::Base
 		end
 	end
 
+	# task to add the catinterest for every interestyou've liked
+	# and destroy any catinterest with no interests
 	def self.add_cats
 		all.each do |user|
 			cat_ids = user.activities.pluck(:category_id).uniq
@@ -227,6 +271,7 @@ class User < ActiveRecord::Base
 		address ? address : school
 	end
 
+	# task to geocode all non seeded users
 	def self.geocode_all
 		users = User.where(latitude: nil).where('profile_pic_url is not null')
 		failures = []
@@ -318,12 +363,6 @@ class User < ActiveRecord::Base
 				Category.find_by_name cat
 		end
 		cat_list
-	end
-
-	private
-
-	def add_cats_to cat_list
-
 	end
 end
 

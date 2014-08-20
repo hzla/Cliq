@@ -10,6 +10,7 @@
 							<div id="query-1" class="mobile white">I want to hang out near</div>
 							<%= text_field_tag :location, nil, :class => "mobile dark-gray search-term", id: "query-location", value: current_user.address %>
 							<%= hidden_field_tag "location_id" %>
+							<%= hidden_field_tag "type", "mobile_search" %>
 						</div>
 					</div>
 					<div class="search-bottom">

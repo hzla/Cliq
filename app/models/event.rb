@@ -17,6 +17,12 @@ class Event < ActiveRecord::Base
 		end
 	end
 
+	def self.change_types
+		Event.where(event_type: "Work").update_all event_type: "Hangout"
+		Event.where(event_type: "Play").update_all event_type: "Party"
+		Event.where(event_type: "Chill").update_all event_type: "Event"
+	end
+
 	def self.assign_and_return_new params
 		total_params = params[:event]
 		tags = params[:tags].downcase.split(',').map do |t|
@@ -45,15 +51,12 @@ class Event < ActiveRecord::Base
 		(types.split(",") - [""]).join.downcase
 	end
 
-
-
 	def self.update_message_counts
 		all.each do |event|
 			next if !event.conversations.first
 			count = event.conversations.first.messages.count
 		end
 	end
-
 
 	def creator
 		excursions.where(created: true)[0].user if excursions.where(created: true)[0]
@@ -127,5 +130,4 @@ class Event < ActiveRecord::Base
 	def joined_by user
 		!excursions.where(accepted: true, user_id: user.id).empty?
 	end
-
 end

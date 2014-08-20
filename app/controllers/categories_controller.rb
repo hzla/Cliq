@@ -17,7 +17,6 @@ class CategoriesController < ApplicationController
 	def show
 		category = Category.find params[:id]
 		act = Activity.new
-
 		activities = category.activities
 		acts = category.liked_not_liked_activities current_user
 		liked = acts[0]
@@ -27,7 +26,6 @@ class CategoriesController < ApplicationController
 
 	def tutorial
 		@characters = ["Athlete", "Corporate_Baller", "Intellectual", "Partier", "Maverick", "Shaman", "Gamer", "Creative"]
-		
 	end
 
 	def tutorial_select
@@ -36,8 +34,5 @@ class CategoriesController < ApplicationController
 		@categories = current_user.char_categories
 		@act = Activity.new
 		@category = @categories[1]
-		p @categories
-		p @category
-		puts "\n" * 40
 	end
 end
