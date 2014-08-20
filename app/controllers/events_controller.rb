@@ -101,6 +101,8 @@ class EventsController < ApplicationController #in severe need of refactoring
 		@locked = (params[:locked] == "true")
 		decrease_count = @conversation.was_seen_by current_user
 		current_user.update_attributes(invite_count: 0) if decrease_count
-		render layout: false
+		respond_to do |format|
+        format.html { render :layout => !request.xhr? }
+    end
 	end
 end

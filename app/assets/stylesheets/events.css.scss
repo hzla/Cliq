@@ -573,3 +573,11 @@
 .event-type {
 	cursor: pointer;
 }
+
+.event-attr:hover .attr-text {
+	display: block;
+}
+
+#invites .event-form-right .event-attr:hover .attr-pic {
+	margin-top: 7px;
+}
