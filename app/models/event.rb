@@ -29,7 +29,6 @@ class Event < ActiveRecord::Base
 			{t.to_sym => true}
 		end.inject Hash.new, :merge
 		total_params = total_params.merge tags
-		total_params = total_params.merge({twenty_one: true}) if params[:requirements].include? "21+"
 		total_params = total_params.merge({paid: true}) if params[:requirements].include? "Paid"
 		Event.new total_params
 	end
