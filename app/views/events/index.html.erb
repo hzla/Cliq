@@ -106,7 +106,7 @@
 		</div>
 	<% end %>
 
-	<% if @welcome != "true" && current_user.email[-7..-1] != "ucf.edu" %>
+	<% if @welcome != "true" && current_user.email[-7..-1] != "ucf.edu" && !current_user.admin? %>
 		<div id="activation-container" class="welcome-container">
 			<div id="welcome-form" class="dark-gray">
 				<p id="top-welcome" class="head-4"><span class="heavy">We're now requiring all users to validate their accounts with valid UCF emails. This helps better ensure your privacy and security. Thanks!</p>
