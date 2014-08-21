@@ -1,6 +1,10 @@
 class InterestsController < ApplicationController
 	include SessionsHelper
 
+	# if a post to create is triggered, destroy the event
+	# this is so that people can click on the interest again to undo the like
+	# like the cat_interest if it hasn't been liked
+	# need to remember to destroy cat_interest if there are no interests liked
 	def create
 		act = Activity.find(params[:act_id])
 		cat = act.category

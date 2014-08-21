@@ -41,3 +41,19 @@
 	</script>
 </div>
 <% end %>
+
+<% if current_user.email[-7..-1] != "ucf.edu" %>
+		<div id="activation-container" class="welcome-container">
+			<div id="welcome-form" class="dark-gray">
+				<p id="top-welcome" class="head-4"><span class="heavy">We're now requiring all users to validate their accounts with valid UCF emails. This helps better ensure your privacy and security. Thanks!</p>
+					
+				<p id="bottom-welcome" class="head-5 gray">Please Enter a valid UCF email to continue.</p>
+
+				<%= form_tag welcome_update_path, :class => "welcome-form", remote: true do %>
+					<%= text_field_tag :email, nil, :class=> "welcome-email" %>
+				<% end %>
+
+				<div id="got-it" class="head-4">Okay, got it!</div>
+			</div>
+		</div>
+	<% end %>
