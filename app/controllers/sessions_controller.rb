@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
 	    if browser.mobile?
 	    	redirect_to events_path and return
 	    end
-	    redirect_to user_path(user,{:welcome => true})
+	    redirect_to events_path({welcome: true})
 	  end
 	end
 

@@ -31,9 +31,11 @@ Users =
 			</div><div class='activities' id='#{id}'><div class='act-name'>#{$('#self-search').val()} •</div></div></div>"
 
 	closeWelcome: ->
-		console.log $('#activation-container') 
-		$('.welcome-form').submit()
-		$('#activation-container').remove()
+		if $('#email').val().slice(-7) == "ucf.edu"
+			$('.welcome-form').submit()
+			$('#activation-container').remove()
+		else
+			$('#email').css('border', '1px solid red')
 
 
 	openFeedback: -> 
