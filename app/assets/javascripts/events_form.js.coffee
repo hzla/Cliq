@@ -10,6 +10,7 @@ EventForm =
       $(@).parent().find('.event-type.selected').removeClass('selected')
       $(@).addClass('selected') if !selected
       return
+    $(@).parent().find('.event-type.selected').removeClass('selected')
     $(@).addClass('selected')
     type = $(@).text()
     $('#event_event_type').val type if $('#event_event_type').length > 0
