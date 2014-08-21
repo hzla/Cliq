@@ -37,6 +37,7 @@
 	margin-top: 50px;
 	width: 100%;
 	margin-left: calc(16.66% - 112px);
+	margin-bottom: 50px;
 }
 
 #events-header-actions {
@@ -76,10 +77,17 @@
 }
 
 #event-going {
-    float: right;
-    padding: 0px 30px;
-    height: 26px;
-    line-height: 1.3;
+  float: right;
+  padding: 0px 30px;
+  height: 26px;
+  line-height: 1.3;  
+}
+
+#event-hosting {
+	float: right;
+  padding: 0px 30px;
+  height: 26px;
+  line-height: 1.3;
 }
 
 
@@ -521,7 +529,11 @@
 	margin-top: 125px;
 }
 
-.event-sort > .head-4:hover {
+.event-filter {
+	cursor: pointer;
+}
+
+.event-filter:hover {
 	background-color: #fff;
 	border-radius: 50px;
   color: $dark-gray;

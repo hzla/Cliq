@@ -66,17 +66,9 @@
 					New Event
 				</div>
 			<% end %>
-		
-			<%= link_to open_events_path, :class => "event-sort", remote: true do %>
-				<div class="head-4 dark-gray selected" id="event-open">Open</div>
-			<% end %>
-
-			<%= link_to going_events_path, :class => "event-sort", remote: true do %>
-				<div class="head-4 dark-gray" id="event-going">Joined</div>
-			<% end %>
-			<%= link_to hosted_events_path, :class => "event-sort", remote: true do %>
-				<div class="head-4 dark-gray" id="event-going">Hosting</div>
-			<% end %>
+				<div class="event-filter head-4 dark-gray selected" id="event-open">Open</div>
+				<div class="event-filter head-4 dark-gray" id="event-going">Joined</div>
+				<div class=" event-filter head-4 dark-gray" id="event-hosting">Hosting</div>
 		</div>
 			<div id="upcoming">
 				<div id="events-box">
@@ -85,6 +77,10 @@
 		</div>
 		<div id="invite-modal-container" class="modal"></div>
 	</div>
+
+<%= link_to open_events_path, :class => "event-sort", remote: true do %>
+	<div class="head-4 dark-gray selected hidden">Open</div>
+<% end %>
 
 <script>
 	$('.event-sort').first().click()

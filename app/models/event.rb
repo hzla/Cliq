@@ -9,7 +9,7 @@ class Event < ActiveRecord::Base
 	validates :location, presence: true
 	validates :start_time, presence: true
 
-	attr_accessible :title, :description, :location, :start_time, :end_time, :image, :attended, :partner_id, :quantity, :remote_image_url, :closed, :music, :discussion, :activity, :party, :show, :food, :games, :twenty_one, :paid, :event_type, :messages_count
+	attr_accessible :creator_id, :title, :description, :location, :start_time, :end_time, :image, :attended, :partner_id, :quantity, :remote_image_url, :closed, :music, :discussion, :activity, :party, :show, :food, :games, :twenty_one, :paid, :event_type, :messages_count
 	def self.adjust_time adjustment
 		all.each do |event|
 			event.start_time += adjustment.hours
@@ -56,6 +56,16 @@ class Event < ActiveRecord::Base
 			next if !event.conversations.first
 			count = event.conversations.first.messages.count
 		end
+	end
+
+	def self.update_creators
+		all.each do |event|
+			event.update_attributes creator_id: event.creator.id
+		end
+	end
+
+	def user
+		User.find creator_id
 	end
 
 	def creator

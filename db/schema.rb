@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140817000239) do
+ActiveRecord::Schema.define(version: 20140821032329) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(version: 20140817000239) do
     t.boolean  "twenty_one"
     t.boolean  "paid"
     t.integer  "messages_count", default: 0
+    t.integer  "creator_id"
   end
 
   create_table "excursions", force: true do |t|

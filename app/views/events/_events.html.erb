@@ -7,9 +7,8 @@
 
 
 <% events.each do |event| %>
-	<div class="upcoming-event<%= ' today' if event.today?(current_user) %><%= ' tommorow' if event.tommorow?(current_user) %> <%= event.date(current_user) %> <%= event.tags %> ">
-		
-		<% lock_status = !event.joined_by(current_user) %>
+	<% lock_status = !event.joined_by(current_user) %>
+	<div class="upcoming-event<%= ' today' if event.today?(current_user) %><%= ' tommorow' if event.tommorow?(current_user) %> <%= event.date(current_user) %> <%= event.tags %><%= ' hosting' if event.user == current_user %><%= ' joined' if !lock_status %> ">
 		<div class="upcoming-event-picture">
 			<%= image_tag event.image_url || "Cliq.svg", :class => "event-picture" %>
 			<div class="event-title-overlay">

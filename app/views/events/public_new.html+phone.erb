@@ -35,6 +35,7 @@
 			  <div id="upload-button"><div class="btn-text">Browse Files...</div></div>
 		</div>
 		<%= f.hidden_field :event_type, value: "Hangout"%>
+		<%= f.hidden_field :creator_id, value: current_user.id %>
 
 		<div class="form-row optional">
 			<div class="event-form-label event_pic_upload">(Optional)</div>
