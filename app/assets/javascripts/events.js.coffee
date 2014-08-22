@@ -47,7 +47,7 @@ Events =
     tags += ".hosting" if $('#event-hosting').hasClass('selected') || $('#event-hosting').parent().hasClass('selected')
     tags += ".joined" if $('#event-going').hasClass('selected') || $('#event-going').parent().hasClass('selected')
     
-    console.log tags
+
     $(".upcoming-event").hide()
     $(".upcoming-event#{tags}".toLowerCase()).show().removeClass('animated fadeIn').addClass('animated fadeIn')
     

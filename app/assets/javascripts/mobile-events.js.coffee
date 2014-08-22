@@ -14,7 +14,6 @@ MobileEvents =
 			$(@).hide()
 
 	showFilters: ->
-		console.log "tried"
 		$('.filter-container').show().removeClass('animated bounceOutUp').addClass('animated bounceInDown')
 
 	closeEventModals: ->

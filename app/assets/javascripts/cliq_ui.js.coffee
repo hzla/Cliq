@@ -22,9 +22,6 @@ CliqUi =
 		else
 			$("##{id}").parents('.conversation').hide()
 		
-
-
-
 	inviteUser: (event, data, xhr, status) ->
 		$('#invite-modal-container').html data
 		$('#invite-modal-container').modal()

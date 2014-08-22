@@ -25,17 +25,18 @@ TopNav =
 		TopNav.state = "open"
 
 	closeNav: ->
-		$('.menu-title').text('Cliq')
-		$('.menu-icon').show()
-		$('.extra').remove()
-		$('.top-nav-content').removeClass('animated fadeOutLeftBig').addClass('animated fadeOutLeftBig')		
-		$('.chat-partial').remove()
-		$('.user-other-container').remove()
-		$('top-nav').css 'background', 'white'
-		$('.top-nav').css 'opacity', '1'
-		$('.content-container').css 'opacity', ''
-		$('.content-container').css 'background', '#f1f1f1'
-		$('.content-container').css 'position', 'relative'
+		if $('.message').length < 1 && $('.event-modal:visible').length < 1
+			$('.menu-title').text('Cliq')
+			$('.menu-icon').show()
+			$('.extra').remove()
+			$('.top-nav-content').removeClass('animated fadeOutLeftBig').addClass('animated fadeOutLeftBig')		
+			$('.chat-partial').remove()
+			$('.user-other-container').remove()
+			$('top-nav').css 'background', 'white'
+			$('.top-nav').css 'opacity', '1'
+			$('.content-container').css 'opacity', ''
+			$('.content-container').css 'background', '#f1f1f1'
+			$('.content-container').css 'position', 'relative'
 
 
 ready = ->
