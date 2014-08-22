@@ -11,6 +11,15 @@ CliqUi =
 		$('.content-container').click @collapseAllChat if $('.mobile').length < 1
 		$('.results-container').click @collapseAllChat if $('.mobile').length < 1
 		$('body').on 'ajax:success', '.mobile .event-action', @closeEvent
+		@bounceFeedback()
+
+	bounceFeedback: ->
+		setTimeout ->
+			setInterval ->
+				$('#send-feedback').css 'background', '#414141'
+				$('#send-feedback').hide().hide().show()
+			, 3000
+		, 30000
 
 	closeEvent: ->
 		id = $(@).attr('id')

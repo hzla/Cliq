@@ -8,7 +8,8 @@
 	height: 100%;
 	float: left;
 	position: fixed;
-	background-size: cover; 
+	background-position: center; 
+	background-size: cover;
 }
 
 #main-info {
@@ -22,8 +23,10 @@
 	font-weight: 400;
 	font-size: 60px;
 	color: white;
-	margin-top: 50px;
-	margin-bottom: 40px;
+	position: absolute;
+	bottom: 5px;
+	margin: 0;
+	left: 80px;
 }
 
 .landing-desc {
@@ -35,9 +38,6 @@
     text-shadow: 1px 1px 5px rgba(0,0,0, 0.3);
 }
 
-.landing-desc.main {
-	margin-top: -25px;
-}
 
 .landing-desc.sub {
 	font-size: 20px;
@@ -45,18 +45,16 @@
 }
 
 .sign-up-box {
-	background-color: white;
 	border-radius: 5px;
 	width: 375px;
 	height: 150px;
-	float: left; 
+	margin: 0 auto;
 }
 
 .fb-sign-up-btn {
 	background-color: #3B5998; 
 	float: left;
 	color: white;
-	border-radius: 5px;
 	margin-left: 10px;
 	margin-top: 10px;
 	height: 65px;
@@ -86,7 +84,7 @@
 
 .login {
 	font-size: 15px;
-	margin-bottom: -4px;
+	margin-top: 0px;
 }
 
 .sign-up-info {
@@ -103,15 +101,15 @@
 
 #bottom-nav {
 	position: absolute;
-	bottom: 15px;
+	bottom: 0;
 	width: 100%;
-	background-color: rgba(24, 195, 189, 0.7);
-	height: 75px;
+	background-color: rgba(0, 0, 0, 0.7);
+	height: 130px;
 	font-size: 20px;
 	font-weight: 400;
 	font-family: $generic-font;
-	opacity: .9;
   color: white;
+  left: 0;
 }
 
 #how-it-works {
@@ -120,10 +118,9 @@
 }
 
 #faq {
-	float: right;
-	margin-left: 65px;
-	margin-right: 65px;
-	margin-top: 25px;
+	position: absolute;
+	right: 80px;
+	bottom: 15px;
 }
 
 .noun-icon {

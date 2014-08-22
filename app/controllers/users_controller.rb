@@ -78,6 +78,7 @@ class UsersController < ApplicationController
 	def feedback
 		content = params[:content]
 		FeedbackMailer.feedback(content, current_user).deliver
+		current_user.update_attributes activation: "feedback"
 		render nothing: true
 	end
 
