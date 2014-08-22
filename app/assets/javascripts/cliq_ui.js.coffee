@@ -18,8 +18,8 @@ CliqUi =
 			setInterval ->
 				$('#send-feedback').css 'background', '#414141'
 				$('#send-feedback').hide().hide().show()
-			, 3000
-		, 30000
+			, 5000
+		, 20000
 
 	closeEvent: ->
 		id = $(@).attr('id')
