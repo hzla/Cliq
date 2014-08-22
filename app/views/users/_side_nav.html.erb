@@ -8,6 +8,7 @@
 				<% end %>
 			</div>
 		<% end %>
+		<% if current_user %>
 		<%= link_to events_path, remote: true, :class => 'tab', id: "events" do %>
 			<div class="extended events <%= 'active' if active == :events %> side-icon" >
 				<%= image_tag "Events.svg", :class => "nav-icon svg" %>
@@ -23,7 +24,7 @@
 				<div class="icon-label main">Events</div>
 			</div> 
 		<% end %>
-		<% if current_user %>
+		
 			<%= link_to messages_path, "data-no-turbolink" => true, remote: true, :class => 'tab', id: "messages" do %>
 			<div class="extended messages <%= 'active' if active == :messages %> side-icon">
 				<%= image_tag "Messages.svg", :class => "nav-icon svg" %>
