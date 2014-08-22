@@ -7,9 +7,15 @@
 	width: 100%;
 	height: 100%;
 	float: left;
-	position: fixed;
-	background-position: center; 
+	position: fixed; 
 	background-size: cover;
+}
+
+#macaphone {
+    position: absolute;
+    width: 73.5%;
+    right: -13%;
+    top: 6vh;
 }
 
 #main-info {
@@ -24,18 +30,19 @@
 	font-size: 60px;
 	color: white;
 	position: absolute;
-	bottom: 5px;
 	margin: 0;
-	left: 80px;
+	left: 5.5%;
+    line-height: 1.6;
 }
 
 .landing-desc {
 	font-family: $generic-font;
 	width: 450px;
 	color: white;
-	font-size: 40px;
+	font-size: 34px;
 	font-weight: 500;
-    text-shadow: 1px 1px 5px rgba(0,0,0, 0.3);
+    text-shadow: 1px 1px 5px rgba(0,0,0, 0.4);
+    position: absolute;
 }
 
 
@@ -47,7 +54,7 @@
 .sign-up-box {
 	border-radius: 5px;
 	width: 375px;
-	height: 150px;
+	height: 100%;
 	margin: 0 auto;
 }
 
@@ -55,36 +62,32 @@
 	background-color: #3B5998; 
 	float: left;
 	color: white;
-	margin-left: 10px;
-	margin-top: 10px;
-	height: 65px;
+	height: 50px;
 	width: 355px;
 	font-family: $generic-font;
+    padding: 8px;
+    box-sizing: border-box;
 	.sign-up-text {
-		float: right;
-		margin-right: 12%;
-		margin-top: 6%;
 		font-size: 18px;
-		font-weight: 400
+		font-weight: 400;
+        margin: 6px 0px 6px 65px;
 	}
 }
 
 .fb-logo {
 	background-color: white;
-	height: 45px;
-	width: 45px;
+	height: 34px;
+	width: 34px;
 	float: left;
-	margin-left: 10px;
-	margin-top: 10px;
 	.fb-letter {
-		width: 45px;
-		height: 45px;
+		width: 100%;
+		height: 100%;
 	}
 }
 
 .login {
-	font-size: 15px;
-	margin-top: 0px;
+	font-size: 13px;
+	margin: 0px;
 }
 
 .sign-up-info {
@@ -93,10 +96,13 @@
 	font-family: $generic-font;
 	width: 100%;
 	text-align: center;
+    font-weight: 300;
 }
 
 .conditions {
 	font-size: 13px;
+    margin: 0px;
+    padding: 4px 0px 2px 0px;
 }
 
 #bottom-nav {
@@ -104,12 +110,14 @@
 	bottom: 0;
 	width: 100%;
 	background-color: rgba(0, 0, 0, 0.7);
-	height: 130px;
+	height: auto;
 	font-size: 20px;
 	font-weight: 400;
 	font-family: $generic-font;
   color: white;
   left: 0;
+    padding: 15px;
+    box-sizing: border-box;
 }
 
 #how-it-works {
@@ -119,8 +127,8 @@
 
 #faq {
 	position: absolute;
-	right: 80px;
-	bottom: 15px;
+    right: 5.5%;
+    margin: 30px 0px;
 }
 
 .noun-icon {
