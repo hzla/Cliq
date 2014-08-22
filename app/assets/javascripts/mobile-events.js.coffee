@@ -24,7 +24,6 @@ MobileEvents =
 		$('.menu-title').text("Cliq")
 		setTimeout ->
 			$('.menu-icon').show()
-
 		, 750
 		
 		$('.content-container').css 
