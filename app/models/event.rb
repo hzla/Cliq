@@ -88,7 +88,7 @@ class Event < ActiveRecord::Base
 	end
 
 	def today? user
-		start_time - Time.now.utc < 24.hours && start_time.beginning_of_day.day == user.user_time.beginning_of_day.day
+		start_time - Time.now.utc < 24.hours && (start_time + (user.timezone.hours)).beginning_of_day.day == user.user_time.beginning_of_day.day
 	end
 
 	def tommorow? user
