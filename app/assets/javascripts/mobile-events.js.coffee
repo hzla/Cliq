@@ -52,7 +52,8 @@ MobileEvents =
 	showEvents: (event, data, xhr, status) ->
 		$('#event-list').html(data)
 		$('.conversation').addClass('animated fadeIn')
-		MobileEvents.closeEventModals();
+		MobileEvents.closeEventModals()
+		MobileEvents.showFilters()
 
 
 

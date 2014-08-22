@@ -300,12 +300,14 @@
 
 .new-tag {
 	position: absolute;
-	top: -7px;
-	right: -10px;
-	font-size: 12px;
+	top: 0;
+	right: 0;
+	font-size: 18px;
 	background: $red;
 	border-radius: 20px;
-	padding: 2px;
+	width: 102%;
+	height: 102%;
+	line-height: 25px;
 }
 
 .invite-thread.bottom.invite-view {

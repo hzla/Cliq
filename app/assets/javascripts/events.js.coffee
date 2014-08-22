@@ -37,18 +37,28 @@ Events =
     currentTags = $('.event-attr.selected .attr-text').map ->
       $(@).text().split(' ').pop();
     tags = $.makeArray(currentTags).join()
+    afterTags = ''
     if $('.event-types .event-type.selected')
-      tags += ("," + $('.event-types .event-type.selected').text())
+      afterTags += ("," + $('.event-types .event-type.selected').text())
     if $('.event-date-types .event-type.selected')
-      tags += ("," + $('.event-date-types .event-type.selected').text())
-    tags = tags.replace('Any Time','').split(",,").join(".").split(",").join(".")
+      afterTags += ("," + $('.event-date-types .event-type.selected').text())
+    tags = tags.split(",,").join(".").split(",").join(".")
     tags = tags.slice(0, tags.length - 1) if tags[tags.length - 1] == "."
     tags = "." + tags if tags != "" && tags[0] != "."
     tags += ".hosting" if $('#event-hosting').hasClass('selected') || $('#event-hosting').parent().hasClass('selected')
     tags += ".joined" if $('#event-going').hasClass('selected') || $('#event-going').parent().hasClass('selected')
-    
+    tags = tags.split('.').join(', .').slice(2)
 
-    $(".upcoming-event").hide()
+    afterTags = afterTags.replace(',Any Time', '').split(',').join('.').replace('..', '.')
+    afterTags = afterTags.slice(0, afterTags.length - 1) if afterTags[afterTags.length - 1] == "."
+    
+    if $('.mobile').length < 1
+      tags =  tags.split('.').join(".upcoming-event#{afterTags}.")
+    else
+      tags = tags.split('.').join(".conversation#{afterTags}.")
+
+
+    $('.upcoming-event').hide()
     $(".upcoming-event#{tags}".toLowerCase()).show().removeClass('animated fadeIn').addClass('animated fadeIn')
     
     $(".conversation").hide()
