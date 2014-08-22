@@ -2,14 +2,14 @@
 
 .event-modal {
 	float: left;
-	width: 1000px;
+	width: 750px;
 	height: 575px;
 	font-family: $generic-font;
 }
 
 .event-form-left {
 	float: left;
-	width: 500px;
+	width: 350px;
 }
 
 
@@ -50,8 +50,7 @@
 	clear: left;
 	float: left;
 	margin-top: 10px;
-	width: 65%;
-	margin-left: 16%;
+	width: 100%;
   font-weight: 400;
 }
 
@@ -132,10 +131,11 @@
 	float: right;
 	margin-right: 150px;
 	position: absolute;
-	left: 203px;
+	left: 150px;
 	border-radius: 100px;
 	cursor: pointer;
     top: 464;
+    font-weight: 300;
 }
 
 .btn-text {
@@ -146,7 +146,7 @@
 #imgInp {
 	float: right;
 	position: absolute;
-	left: 203px;
+	left: 150px;
 	z-index: 2;
 	width: 200px;
 	height: 50px;
@@ -181,15 +181,16 @@
 	cursor: pointer;
 	background-color: $orange;
 	color: white;
-	width: 50%;
+	width: 40%;
 	height: 50px;
 	border-radius: 25px;
 	font-size: 17px;
 	border: none;
 	box-shadow: none;
 	float: left;
-	margin-left: 25%;
+	margin-left: 30%;
 	cursor: pointer;
+    margin-top: 5%;
   font-family: $generic-font;
   text-transform: center;
 }
@@ -241,12 +242,14 @@
 
 .event-form-right {
 	float: right;
-	width: 500px;
+	width: 350px;
 	height: 100%;
 }
 
 .event-form-right .form-row {
 	margin-left: 0px;
+    font-weight: 300;
+    font-size: 15px;
 }
 
 .event-types {
@@ -254,6 +257,8 @@
 	color: $gray;
 	cursor: pointer;
 	border-radius: 100px;
+    font-weight: 300;
+    font-size: 15px;
 }
 
 .event-type {
@@ -363,7 +368,7 @@
 	.event-attr.games:hover  { background: $catgreen;}
 	.event-attr.show:hover  { background: $catblue;}
 	.event-attr.music:hover  { background: $catred;}
-	.event-attr:hover svg path .event-attr.selected svg path {
+	.event-attr:hover svg path, .event-attr.selected svg path {
 		fill: white;
 	}
 }
@@ -377,6 +382,7 @@
 	font-size: 10px;
 	width: 100%;
 	text-align: center;
+    font-weight: 400;
 }
 
 .attr-pic {
@@ -425,6 +431,9 @@
 .requirement-question {
 	margin-top: 5px;
 	margin-bottom: 8px;
+    font-weight: 300;
+    font-size: 15px;
+    padding: 0px 15px;
 }
 
 
