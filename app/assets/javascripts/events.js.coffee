@@ -8,7 +8,7 @@ Events =
     $('body').on 'click', '#send-invite .invite-icon', @send
     $('body').on $.modal.BEFORE_CLOSE, '#invite-modal-container', @restoreOpacity
     $('body').on 'click', '#invites .form-row div', @filterEvents
-    $('body').on 'click', '.filter-container .form-row div', @filterEvents
+    $('body').on 'click', '.filter-container .form-row div:not(#new-open-event)', @filterEvents
     $('body').on 'click', '.event-filter', @bigFilter
 
   bigFilter: ->
