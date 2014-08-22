@@ -57,6 +57,7 @@ Events =
     else
       tags = tags.split('.').join(".conversation#{afterTags}.")
 
+    tags = afterTags if !tags 
 
     $('.upcoming-event').hide()
     $(".upcoming-event#{tags}".toLowerCase()).show().removeClass('animated fadeIn').addClass('animated fadeIn')
