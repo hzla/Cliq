@@ -92,7 +92,7 @@ class Event < ActiveRecord::Base
 	end
 
 	def tommorow? user
-		start_time - Time.now.utc < 48.hours && (start_time.beginning_of_day.day - 1) == user.user_time.beginning_of_day.day
+		start_time - Time.now.utc < 48.hours && ((start_time + (user.timezone.hours)).beginning_of_day.day - 1) == user.user_time.beginning_of_day.day
 	end
 
 	def attendees
