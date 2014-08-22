@@ -420,14 +420,39 @@
 
 .upcoming-event-info .invite-row {
 	margin: 2px 0px;
-    font-size: 15px;
-    font-weight: 300;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.upcoming-event-info {
+	.invite-row.pass-accept {
+	float: right;
+	width: 40%;
+	clear: none;
+	}
+}
+
+.event-action-bar {
+	position: relative;
+	float: left;
+}
+
+.event-action-bar.right {
+	float: right;
+	margin-right: 5px;
+}
+.event-action-text {
+	position: absolute;
+	bottom: -20px;
+	color: $gray;
+	left: 8px;
+	font-weight: 300;
 }
 
 .upcoming-event-info .invite-title2 {
 	margin: 2px 0px;
-    font-size: 15px;
-    font-weight: 700;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 .upcoming-event {
@@ -467,14 +492,15 @@
 
 .event-reqs {
 	font-weight: 700;
-	float: right;
 	height: 43px;
 	width: 80px;
 	color: $red;
+	position: absolute;
+	bottom: 0;
 }
 
 .req {
-	float: right;
+	float: left;
 	margin-left: 10px;
 	height: 100%;
 	line-height: 43px;
@@ -592,4 +618,12 @@
 
 #invites .event-form-right .event-attr:hover .attr-pic {
 	margin-top: 7px;
+}
+
+.event-action-pic {
+	width: 20px;
+	height: 20px;
+	float: right;
+	clear: none;
+	margin-left: 10px;
 }

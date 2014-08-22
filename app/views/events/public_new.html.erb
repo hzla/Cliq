@@ -1,4 +1,4 @@
-<div class="event-modal">
+<div class="event-modal no-mobile">
 	<div class="event-form-header">
 			<div class="header-profile">
 				<div class="head-3 white" id="sending">Open Event Setup</div>
@@ -11,10 +11,6 @@
 
 			<div class="form-row first">
 				<%= f.text_field :title, :class => "form-input", placeholder: "What's happening?" %>
-			</div>
-			
-			<div class="form-row">
-				<%= f.text_field :location, :class => "form-input", placeholder: 'Where?' %>
 			</div>
 			
 			<% if browser.mobile? %>
@@ -102,12 +98,12 @@
 			<%= hidden_field_tag :requirements ,nil, :class => "requirements"%>
 
 				<div class="form-row">
-					<div class="event-quest requirement-question">Any Requirements?</div>
 					<div class="event-requirements">
 						<div class="event-requirement">
 							<div class="require-text paid">Paid</div>
 						</div>
 					</div>
+					<div class="event-quest requirement-question">(If you hangout, party, or event is not free, remember to include pricing info.)</div>
 				</div>
 
 		</div>

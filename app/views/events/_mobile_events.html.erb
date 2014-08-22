@@ -1,24 +1,34 @@
-<% if open == "create" %>
-	<%= link_to public_events_path, :class => "public-event-create", remote: true do %>
-		<div class="create-event">
-			<div class="create-event-text">
-				Create Event
-			</div>
+
+<%= link_to public_events_path, :class => "public-event-create hidden", remote: true do %>
+	<div class="create-event">
+		<div class="create-event-text">
+			Create Event
 		</div>
-	<% end %>
+	</div>
 <% end %>
 
+
 <% events.each do |event| %>
+	<% joined = event.joined_by(current_user) %>
 	<%= link_to event_chat_path(event, locked: open), :class => "chat-user no-obscure", remote: true do %>
-		<div class="conversation">
+		<div class="conversation<%= event.html_classes(current_user) %><%= ' joined' if joined %>">
 			<%= image_tag event.image_url || 'Cliq.svg', :class => "convo-pic" %>
 			<div class="convo-details">
 				<div class="convo-name m1"><%= event.title %></div>
 				<div class="event-line m1 light-turq"><%= event.full_time current_user %></div>
-				<div class="event-line m1 gray"><%= event.location %></div>
+				<div class="event-line m1 gray">
+					<div class="event-tags">
+						<% ["music", "discussion", "activity", "party", "food", "games", "show"].each do |tag| %>
+							<% if event.send(tag.to_sym) %>
+									<% tag = "mus" if tag == "music" %>
+									<%= image_tag "#{tag.capitalize}.svg", :class => "event-tag" %>
+							<% end %>
+						<% end %>
+					</div>
+				</div>
 			</div>
 			
-				<div id="e-<%= event.id %>" class="ev-overlay <%= 'hidden' if !(event.joined_by(current_user) && (open == true)) %>">
+				<div id="e-<%= event.id %>" class="ev-overlay <%= 'hidden' if !(joined && (open == true)) %>">
 					<div class="ev-overlay-text">Joined</div>
 					<div class="ev-overlay-text small"><%= event.messages_count %> Messages</div>
 				</div>

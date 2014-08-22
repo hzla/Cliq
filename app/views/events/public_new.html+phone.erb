@@ -13,11 +13,6 @@
 		</div>
 		
 		<div class="form-row">
-			<!-- <div class="event-form-label head-3 dark-gray">Where:</div>  -->
-			<%= f.text_field :location, :class => "form-input", placeholder: 'Where?' %>
-		</div>
-		
-		<div class="form-row">
 			<!-- <div class="event-form-label head-3 dark-gray">When:</div>  -->
 			<%= f.datetime_select("start_time", discard_year: true, default: Time.now) %> 
 		</div>
@@ -34,14 +29,61 @@
 			  <%= f.file_field :image, :class => 'form-input-upload', id: "imgInp" %> 
 			  <div id="upload-button"><div class="btn-text">Browse Files...</div></div>
 		</div>
-		<%= f.hidden_field :event_type, value: "Hangout"%>
-		<%= f.hidden_field :creator_id, value: current_user.id %>
 
 		<div class="form-row optional">
 			<div class="event-form-label event_pic_upload">(Optional)</div>
-			
 		</div>
 
+		<div class="form-row">
+			<div class="event-quest">Is this a?</div>
+			<div class="event-types">
+				<div class="event-type round-left selected">Hangout</div>
+				<div class="event-type">Party</div>
+				<div class="event-type round-right">Event</div>
+			</div>
+		</div>
+
+		<div class="form-row">
+				<div class="event-quest tag-quest">What'll be there?</div>
+				<div class="event-attrs-1">
+					<div class="event-attr no-left music">
+						<%= image_tag "Mus.svg", :class => "attr-pic svg" %>
+						<div class="attr-text">Music</div>
+					</div>
+					<div class="event-attr discussion">
+						<%= image_tag "Discussion.svg", :class => "attr-pic svg" %>
+						<div class="attr-text">Discussion</div>
+					</div>
+					<div class="event-attr activity">
+						<%= image_tag "Activity.svg", :class => "attr-pic svg" %>
+						<div class="attr-text">Activity</div>
+					</div>
+					<div class="event-attr party">
+						<%= image_tag "Party.svg", :class => "attr-pic svg" %>
+						<div class="attr-text">A Party</div>
+					</div>
+				</div>
+				<div class="event-attrs-2 food">
+					<div class="event-attr food no-left">
+						<%= image_tag "Food.svg", :class => "attr-pic svg" %>
+						<div class="attr-text">Food</div>
+					</div>
+					<div class="event-attr games">
+						<%= image_tag "Games.svg", :class => "attr-pic svg" %>
+						<div class="attr-text">Games</div>
+					</div>
+					<div class="event-attr show">
+						<%= image_tag "Show.svg", :class => "attr-pic svg" %>
+						<div class="attr-text">A Show</div>
+					</div>
+				</div>
+			</div>
+
+		<%= f.hidden_field :event_type, value: "Hangout"%>
+		<%= f.hidden_field :creator_id, value: current_user.id %>
+		<%= hidden_field_tag :tags ,nil, :class => "tags"%>
+
+		
 
 		
 
@@ -53,3 +95,30 @@
 		</div>
 	<% end %>
 </div>
+<script>
+  $('img.svg').each(function(){
+    var $img = $(this);
+    var imgID = $img.attr('id');
+    var imgClass = $img.attr('class');
+    var imgURL = $img.attr('src');
+
+    $.get(imgURL, function(data) {
+        // Get the SVG tag, ignore the rest
+        var $svg = $(data).find('svg');
+
+        // Add replaced image's ID to the new SVG
+        if(typeof imgID !== 'undefined') {
+            $svg = $svg.attr('id', imgID);
+        }
+        // Add replaced image's classes to the new SVG
+        if(typeof imgClass !== 'undefined') {
+            $svg = $svg.attr('class', imgClass+' replaced-svg');
+        }
+        // Remove any invalid XML tags as per http://validator.w3.org
+        $svg = $svg.removeAttr('xmlns:a');
+        // Replace image with new SVG
+        $img.replaceWith($svg);
+    }, 'xml');
+  });
+    $(".invite-modal-container").css({top: "", left: "", marginTop: "", marginLeft: ""})
+</script>

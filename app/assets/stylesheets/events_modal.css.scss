@@ -276,7 +276,12 @@
 	border-top-right-radius: 100px; 	
 }
 
-.event-type.selected, .event-type:hover {
+.event-type.selected {
+	background: $dark-gray;
+	color: white;
+}
+
+.no-mobile .event-type:hover {
 	background: $dark-gray;
 	color: white;
 }
@@ -315,21 +320,12 @@
 }
 
 
-.event-attr:hover svg path, .event-attr.selected svg path {
-	fill: white;
-}
+
 
 .event-attr.activity {
 	margin-top: 0px;
 }
 
-.event-attr.discussion:hover  { background: $catyellow;}
-.event-attr.activity:hover  { background: $catturq;}
-.event-attr.party:hover  { background: $catpurple;}
-.event-attr.food:hover  { background: $catorange;}
-.event-attr.games:hover  { background: $catgreen;}
-.event-attr.show:hover  { background: $catblue;}
-.event-attr.music:hover  { background: $catred;}
 .event-attr.discussion.selected  { background: $catyellow;}
 .event-attr.activity.selected  { background: $catturq;}
 .event-attr.party.selected  { background: $catpurple;}
@@ -337,13 +333,6 @@
 .event-attr.games.selected  { background: $catgreen;}
 .event-attr.show.selected  { background: $catblue;}
 .event-attr.music.selected  { background: $catred;}
-.event-attr.discussion:hover .attr-text  { color: white; }
-.event-attr.activity:hover .attr-text  { color: white; }
-.event-attr.party:hover .attr-text  { color: white; }
-.event-attr.food:hover .attr-text  { color: white; }
-.event-attr.games:hover .attr-text  { color: white; }
-.event-attr.show:hover .attr-text  { color: white; }
-.event-attr.music:hover .attr-text  { color: white; }
 .event-attr.discussion.selected .attr-text  { color: white; }
 .event-attr.activity.selected .attr-text  { color: white; }
 .event-attr.party.selected .attr-text  { color: white; }
@@ -358,6 +347,29 @@
 .event-attr.games .attr-text  { color: $catgreen; }
 .event-attr.show .attr-text  { color: $catblue; }
 .event-attr.music .attr-text  { color: $catred; }
+
+.no-mobile {
+	.event-attr.discussion:hover .attr-text  { color: white; }
+	.event-attr.activity:hover .attr-text  { color: white; }
+	.event-attr.party:hover .attr-text  { color: white; }
+	.event-attr.food:hover .attr-text  { color: white; }
+	.event-attr.games:hover .attr-text  { color: white; }
+	.event-attr.show:hover .attr-text  { color: white; }
+	.event-attr.music:hover .attr-text  { color: white; }
+	.event-attr.discussion:hover  { background: $catyellow;}
+	.event-attr.activity:hover  { background: $catturq;}
+	.event-attr.party:hover  { background: $catpurple;}
+	.event-attr.food:hover  { background: $catorange;}
+	.event-attr.games:hover  { background: $catgreen;}
+	.event-attr.show:hover  { background: $catblue;}
+	.event-attr.music:hover  { background: $catred;}
+	.event-attr:hover svg path .event-attr.selected svg path {
+		fill: white;
+	}
+}
+.event-attr.selected svg path {
+	fill: white;
+}
 
 .attr-text {
 	position: absolute;

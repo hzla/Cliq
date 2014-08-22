@@ -29,6 +29,9 @@
 		padding: 0px;
 		position: relative;
 	}
+	.conversation.activity {
+		margin-top: 0px;
+	}
 	.convo-details {
 		width: 188px;
 		margin-left: 10px;
@@ -50,20 +53,30 @@
 		width: 100%;
 		bottom: 0;
 		height: 44px;
-		color: white;
-		background: $light-gray;
+		background: white;
 	}
 	.event-bar {
-		width: 33.3%;
+		width: calc(25% - 1px);
 		float: left;
 		text-align: center;
 		height: 100%;
+		border-right: 1px solid $super-light-gray;
+		border-top: 1px solid $super-light-gray;
+	}
+	#event-open, #event-going, #event-hosting {
+		float: none;
+		padding: 0px;
 	}
 	.event-bar.selected {
 		background-color: $orange;
 	}
 	.event-bar-text {
 		margin-top: 10px;
+		color: $dark-gray;	
+	}
+	.event-bar.selected .event-bar-text {
+		color: white;
+		background-color: $orange;
 	}
 	.ev-overlay {
 		position: absolute;
@@ -86,6 +99,58 @@
 	}
 	.event-bar-link {
 		color: white;
+	}
+	.event-tags {
+		bottom: 10px;
+	}
+}
+
+.filter-container {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	z-index: 100;
+	background: white;
+	height: 100%;
+	.event-form-right {
+		width: 100%;
+	}
+	.event-types {
+		width: 90%;
+		float: none;
+		margin: 0 auto;
+		height: 30px;
+	}
+	.event-date-types {
+		margin: 0 auto;
+		width: 90%;
+	}
+	.event-type {
+		background: $super-light-gray;
+		line-height: 30px;
+	}
+	.event-type.selected {
+		background: $dark-gray;
+	}
+	.form-row {
+		width: 100%;
+	}
+	.event-attrs-1 {
+	}
+	.event-quest {
+		color: $dark-gray;
+		margin: 0px;
+	}
+	.filter-button {
+		height: 30px;
+		color: white;
+		background: $light-turq;
+		border-radius: 50px;
+		width: 100px;
+		margin: 0 auto;
+		margin-top: 10px;
+		text-align: center;
+		line-height: 30px;
 	}
 }
 
@@ -161,6 +226,7 @@
 		height: 30px;
 		width: 30px;
 		left: calc(50% - 15px);
+		margin-left: 0px;
 	}
 	.event-action-bar:nth-child(2n){
 		border: none;
@@ -170,6 +236,7 @@
 	.event-action-text {
 		margin-top: 30px;
 		color: $light-gray;
+		position: static;
 	}
 	.event-action-text-going {
 		line-height: 1.75;

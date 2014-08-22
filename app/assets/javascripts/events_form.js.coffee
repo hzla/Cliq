@@ -5,7 +5,7 @@ EventForm =
     $('body').on 'click', '.event-requirement', @chooseRequirement
 
   chooseType: ->
-    if $(@).parents('#invites').length > 0
+    if $(@).parents('#invites').length > 0 || $(@).parents('.filter-container').length > 0
       selected = $(@).hasClass('selected')
       $(@).parent().find('.event-type.selected').removeClass('selected')
       $(@).addClass('selected') if !selected
@@ -20,6 +20,7 @@ EventForm =
     currentTags = $('.event-attr.selected .attr-text').map ->
       $(@).text().split(' ').pop();
     $('.tags').val $.makeArray(currentTags).join() if $('.tags').length > 0
+    $(@).addClass("stupid-safari").removeClass("stupid-safari")
 
   chooseRequirement: ->
     $(@).toggleClass('selected')

@@ -49,5 +49,28 @@
 		float: none;
 		margin-left: calc(50% - 40px);
 	}
+	.event-types {
+		height: 30px;
+		width: 70%;
+		float: right;
+		margin-top: 20px;
+	}
+	.event-type {
+		line-height: 30px;
+		color: white;
+		background: $light-gray;
+	}
+	.event-type.selected {
+		background: $dark-gray;
+	}
+	.event-quest {
+		margin-top: 20px;
+		color: $light-gray;
+		float: left;
+	}
+	.event-quest.tag-quest {
+		float: none;
+		margin-top: 65px;
+	}
 
 }

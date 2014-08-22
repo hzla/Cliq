@@ -1,27 +1,37 @@
 Events = 
 	init: ->
     $('#upload-button').click @browseFiles
-    $('body').on 'ajax:success','.invite-action', @removeInvite 
+    $('body').on 'ajax:success','.event-action', @removeInvite 
     $('body').on 'change', '#event_partner_id', @addPartnerInfo
     $('body').on 'ajax:success', '.event-sort', @sortEvents
     $('body').on 'ajax:success', '#new_event', @closeModal 
     $('body').on 'click', '#send-invite .invite-icon', @send
     $('body').on $.modal.BEFORE_CLOSE, '#invite-modal-container', @restoreOpacity
     $('body').on 'click', '#invites .form-row div', @filterEvents
+    $('body').on 'click', '.filter-container .form-row div', @filterEvents
     $('body').on 'click', '.event-filter', @bigFilter
 
   bigFilter: ->
-    $('.event-filter.selected').removeClass 'selected'
-    $(@).addClass('selected')
-    $('.upcoming-event').hide()
-    if $('#event-open').hasClass 'selected'
-      $('.upcoming-event').show()
-    if $('#event-going').hasClass 'selected'
+    if $('.mobile').length > 0
+      $('.event-bar.selected').removeClass 'selected'
+      $(@).parent().addClass('selected')
+    else
+      $('.event-filter.selected').removeClass 'selected'
+      $(@).addClass('selected')
+
+    $('.public-event-create').hide()
+    $('.ev-overlay').css('opacity', '0')
+    $('.public-event-create').show() if $('#event-hosting').parent().hasClass('selected')
+    $('.ev-overlay').css('opacity', '') if $('#event-open').parent().hasClass('selected')
+
+    $('.upcoming-event, .conversation').hide()
+    if $('#event-open').hasClass('selected') || $('#event-open').parent().hasClass('selected')
+      $('.upcoming-event, .conversation').show()
+    if $('#event-going').hasClass('selected') || $('#event-going').parent().hasClass('selected')
       $('.joined').show()
-    if $('#event-hosting').hasClass 'selected'
+    if $('#event-hosting').hasClass('selected') || $('#event-hosting').parent().hasClass('selected')
       $('.hosting').show()
     Events.filterEvents()
-
 
   filterEvents: ->
     currentTags = $('.event-attr.selected .attr-text').map ->
@@ -34,11 +44,16 @@ Events =
     tags = tags.replace('Any Time','').split(",,").join(".").split(",").join(".")
     tags = tags.slice(0, tags.length - 1) if tags[tags.length - 1] == "."
     tags = "." + tags if tags != "" && tags[0] != "."
-    tags += ".hosting" if $('#event-hosting').hasClass('selected')
-    tags += ".joined" if $('#event-going').hasClass('selected')
+    tags += ".hosting" if $('#event-hosting').hasClass('selected') || $('#event-hosting').parent().hasClass('selected')
+    tags += ".joined" if $('#event-going').hasClass('selected') || $('#event-going').parent().hasClass('selected')
+    
     console.log tags
     $(".upcoming-event").hide()
     $(".upcoming-event#{tags}".toLowerCase()).show().removeClass('animated fadeIn').addClass('animated fadeIn')
+    
+    $(".conversation").hide()
+    $(".conversation#{tags}".toLowerCase()).show().removeClass('animated fadeIn').addClass('animated fadeIn')
+    
     $('.date-header').hide()
     $('.date-header').parent().has(":visible").children(".date-header").show()
 
@@ -52,7 +67,7 @@ Events =
 
 	removeInvite: ->
     invite = $(@).parents('.upcoming-event')
-    if $(@).hasClass 'decline-action'
+    if $(@).hasClass 'pass'
       console.log invite
       invite.removeClass('animated fadeIn').addClass 'animated bounceOutLeft'
       invite.one 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', ->

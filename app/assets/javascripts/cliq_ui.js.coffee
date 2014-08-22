@@ -18,6 +18,7 @@ CliqUi =
 		CliqUi.swipeAway()
 		if joined
 			$("##{id}").show()
+			$("##{id}").parents('.conversation').addClass('joined')
 		else
 			$("##{id}").parents('.conversation').hide()
 		
