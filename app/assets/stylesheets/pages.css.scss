@@ -62,7 +62,7 @@
 	position: absolute;
 	width: 400px;
 	text-align: center;
-	left: calc(50% - 240px);
+	left: calc(50% - 285px);
 	font-weight: 600;
 	top: 100px;
 }
@@ -96,9 +96,10 @@
 #bottom-nav .landing-desc {
 	position: absolute;
 	left: 210px;
-	top: 35px;
+	top: 37px;
 	margin: 0;
-	font-size: 20px;
+	font-size: 18px;
+    width: auto;
 }
 
 .parties {

@@ -11,17 +11,13 @@ CliqUi =
 		$('.content-container').click @collapseAllChat if $('.mobile').length < 1
 		$('.results-container').click @collapseAllChat if $('.mobile').length < 1
 		$('body').on 'ajax:success', '.mobile .event-action', @closeEvent
-		#$('#full-page').fullpage ->
-			onLeave: (index, nextIndex, direction) ->
-				console.log nextIndex
-				$('.circle').removeClass('active')
-				$($('.circle')[nextIndex - 1]).addClass('active')
 		@switchText()
 		@bounceFeedback()
 		CliqUi.gameIndex = 0
 
 	switchText: ->
 		games = ["Cards Against Humanity", "League of Legends", "Intramural Sports", "Halo", "Call of Duty", "Ultimate Frisby", "Clubs"]
+		games = ["Cards Against Humanity", "League of Legends", "Intramural Sports", "Halo", "Call of Duty", "Ultimate Frisby", "A club"]
 		setInterval ->
 			CliqUi.gameIndex += 1
 			game = games[CliqUi.gameIndex % 7]
