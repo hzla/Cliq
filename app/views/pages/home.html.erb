@@ -8,26 +8,32 @@
 		</div>	
 	</div>
 	<div class="section landing-section" id="section-2">
-		<%= image_tag "phoneA.png", id: "macaphone"%>
+		<%= image_tag "newphoneA.png", class: "macaphone"%>
 		<div class="main-info">
 			<p class="parties roboto">Sift</p>
 			<p class="landing-desc main">through chill<br>hangouts, parties, and<br>events to find ones<br>you like</p>
 		</div>	
 	</div>
 	<div class="section landing-section" id="section-3">
-		<%= image_tag "phoneB.png", id: "macaphone"%>
+		<%= image_tag "phoneB.png", class: "macaphone"%>
 		<div class="main-info">
 			<p class="parties roboto">Chat</p>
 			<p class="landing-desc main">with others going to the<br>same event to plan<br>share info & hype it up</p>
 		</div>	
 	</div>
 	<div class="section landing-section" id="section-4">
-		<%= image_tag "phoneC.png", id: "macaphone"%>
+		<%= image_tag "newphoneC.png", class: "macaphone"%>
 		<div class="main-info">
 			<p class="parties roboto">Plan</p>
 			<p class="landing-desc main">your own hangout,<br>raging party,<br>or awesome event for<br>your fellow students.</p>
 		</div>	
 	</div>
+</div>
+<div class="side-dots">
+	<div class="circle active"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
 </div>
 <div id="bottom-nav" class="gray">
 	<p class="landing-logo">Cliq</p>
@@ -54,6 +60,16 @@
 <script>
 $(document).ready(function() {
 	$('body').css('padding-left', '0px')
+
+	$('#full-page').fullpage({
+      onLeave: function(index, nextIndex, direction){
+        $('.circle').removeClass('active')
+				$($('.circle')[nextIndex - 1]).addClass('active')
+      }
+  });
+  setTimeout(function(){
+  	$('.macaphone').show()
+  }, 1000)
 })
 </script>
 

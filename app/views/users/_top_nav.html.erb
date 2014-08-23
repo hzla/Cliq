@@ -1,9 +1,10 @@
 <div class="top-nav">
 	<%= image_tag "mobile-menu.svg", :class => "menu-icon left" %>
 	<span class="menu-title">Cliq</span>
-	<%= link_to messages_path, :class => "messages-top-nav" do %>
-		<%= image_tag "mobile-messages.svg", :class => "menu-icon right" %>
+	<%= link_to public_events_path, :class => "public-event-create", remote: true do %>
+		<%= image_tag "newevent.svg", :class => "menu-icon right" %>
 	<% end %>
+	<span class='back-tut event-back hidden'>Back</span>
 </div>
 
 <div class="top-nav-content hidden">
