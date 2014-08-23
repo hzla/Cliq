@@ -16,7 +16,7 @@ CliqUi =
 		@bounceFeedback()
 
 	switchText: ->
-		games = ["Cards Against Humanity", "League of Legends", "Intramural Sports", "Halo", "Call of Duty", "Ultimate Frisby", "Clubs"]
+		games = ["Cards Against Humanity", "League of Legends", "Intramural Sports", "Halo", "Call of Duty", "Ultimate Frisby", "A club"]
 		
 		setInterval ->
 			game = games[Math.floor(Math.random() * games.length)]
