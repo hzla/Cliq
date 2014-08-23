@@ -12,7 +12,17 @@ CliqUi =
 		$('.results-container').click @collapseAllChat if $('.mobile').length < 1
 		$('body').on 'ajax:success', '.mobile .event-action', @closeEvent
 		$('#full-page').fullpage()
+		@switchText()
 		@bounceFeedback()
+
+	switchText: ->
+		games = ["Cards Against Humanity", "League of Legends", "Intramural Sports", "Halo", "Call of Duty", "Ultimate Frisby", "Clubs"]
+		
+		setInterval ->
+			game = games[Math.floor(Math.random() * games.length)]
+			$('#game').text(game)
+			$('#game').hide().hide().show()
+		, 2000
 
 	bounceFeedback: ->
 		setTimeout ->
