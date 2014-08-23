@@ -39,6 +39,12 @@
 				<% end %>
 			</div>
 		<% end %>
+		<%= link_to logout_path, :class => 'tab' do%>
+			<div class="mob-nav side-icon " >
+				<%= image_tag "logout.svg", :class => "nav-icon svg" %>
+				<div class="icon-label main">Logout</div>
+			</div>
+		<% end %>
 		<%= link_to settings_path(current_user), remote: true, :class => 'tab', id: "settings" do%>
 			<div class="mob-nav settings side-icon <%= 'active' if active == :settings %>" id="mob-nav-settings" >
 				<%= image_tag "Settings.svg", :class => "nav-icon svg" %>
