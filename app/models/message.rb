@@ -6,6 +6,6 @@ class Message < ActiveRecord::Base
 
 
 	def date user
-		(created_at + user.timezone.hours).strftime("%m/%d %I:%M%p")
+		(created_at + user.timezone.hours).strftime("%B %d at %I:%M %p")
 	end
 end

@@ -77,9 +77,9 @@ class Event < ActiveRecord::Base
 
 	def full_time user
 		if !today? user
-			stime = (start_time + user.timezone.hours).strftime("%m/%d/%g at %I:%M %p").downcase 
+			stime = (start_time + user.timezone.hours).strftime("%B %d at %I:%M %p")
 		else
-			stime = (start_time + user.timezone.hours).strftime("%m/%d/%g at %I:%M%p") 
+			stime = (start_time + user.timezone.hours).strftime("%B %d at %I:%M %p") 
 		end
 	end
 

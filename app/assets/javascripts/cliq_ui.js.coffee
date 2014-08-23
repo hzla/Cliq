@@ -11,6 +11,7 @@ CliqUi =
 		$('.content-container').click @collapseAllChat if $('.mobile').length < 1
 		$('.results-container').click @collapseAllChat if $('.mobile').length < 1
 		$('body').on 'ajax:success', '.mobile .event-action', @closeEvent
+		$('#full-page').fullpage()
 		@bounceFeedback()
 
 	bounceFeedback: ->

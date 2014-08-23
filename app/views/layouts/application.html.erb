@@ -21,6 +21,7 @@
   <%= javascript_include_tag "http://faye-server-10.herokuapp.com/faye.js" %>
   <%= favicon_link_tag 'cliq-fav.ico' %>
   <script type="text/javascript" src="//use.typekit.net/mdx8vro.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <%= csrf_meta_tags %>
 </head>
@@ -70,6 +71,7 @@ $(document).ready(function(){
   })
 
 </script>
+
 <% if current_user && current_user.activation != "feedback" %>
   <div id="send-feedback" class="animated bounceInUp">
     Send Feedback
