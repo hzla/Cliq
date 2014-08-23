@@ -6,11 +6,33 @@
 	height: 100%;
 }
 
-#macaphone {
+.macaphone {
   position: absolute;
   width: 73.5%;
   right: -13%;
   top: 6vh;
+  display: none;
+}
+
+.side-dots {
+	position: absolute;
+	left: 40px;
+	top: 200px;
+	width: 10px;
+	z-index: 500;
+}
+
+.circle {
+	width: 10px;
+	height: 10px;
+	float: left;
+	border-radius: 10px;
+	background: $gray;
+	margin-top: 5px;
+}
+
+.circle.active {
+	background: white;
 }
 
 #section-1 {

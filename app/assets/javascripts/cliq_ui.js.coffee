@@ -11,15 +11,20 @@ CliqUi =
 		$('.content-container').click @collapseAllChat if $('.mobile').length < 1
 		$('.results-container').click @collapseAllChat if $('.mobile').length < 1
 		$('body').on 'ajax:success', '.mobile .event-action', @closeEvent
-		$('#full-page').fullpage()
+		#$('#full-page').fullpage ->
+			onLeave: (index, nextIndex, direction) ->
+				console.log nextIndex
+				$('.circle').removeClass('active')
+				$($('.circle')[nextIndex - 1]).addClass('active')
 		@switchText()
 		@bounceFeedback()
+		CliqUi.gameIndex = 0
 
 	switchText: ->
 		games = ["Cards Against Humanity", "League of Legends", "Intramural Sports", "Halo", "Call of Duty", "Ultimate Frisby", "Clubs"]
-		
 		setInterval ->
-			game = games[Math.floor(Math.random() * games.length)]
+			CliqUi.gameIndex += 1
+			game = games[CliqUi.gameIndex % 7]
 			$('#game').text(game)
 			$('#game').hide().hide().show()
 		, 2000
@@ -29,8 +34,8 @@ CliqUi =
 			setInterval ->
 				$('#send-feedback').css 'background', '#414141'
 				$('#send-feedback').hide().hide().show()
-			, 30000
-		, 30000
+			, 5000
+		, 20000
 
 	closeEvent: ->
 		id = $(@).attr('id')
