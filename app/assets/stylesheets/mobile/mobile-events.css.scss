@@ -37,10 +37,11 @@
 		margin-left: 10px;
 	}
 	.event-line {
-		font-weight: 600;
+		font-weight: 300;
 		float: left;
 		clear: left;
 		width: 100%;
+        font-size: 15px;
 	}
 	.convo-name {
 		font-weight: 600;
@@ -71,8 +72,10 @@
 		background-color: $orange;
 	}
 	.event-bar-text {
-		margin-top: 10px;
-		color: $dark-gray;	
+		margin-top: 16%;
+        color: #414141;
+        font-size: 12px;
+        font-weight: 300;	
 	}
 	.event-bar.selected .event-bar-text {
 		color: white;
@@ -87,9 +90,10 @@
 		color: white;
 	}
 	.ev-overlay-text {
-		font-size: 30px;
+		font-size: 17px;
 		width: 95%;
 		text-align: right;
+        margin-top: 3.6%;
 	}
 	.no-events {
 		margin-top: 40px;
