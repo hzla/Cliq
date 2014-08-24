@@ -2,24 +2,40 @@
 
 .mobile.container {
 	background-image: image_url("mobile-background.jpg");
+	position: fixed;
+	overflow-y: scroll;
 }
-
-
-
-// .touch-scroll {
-// 	-webkit-overflow-scrolling: touch;
-// 	overflow: scroll;
-// }
 
 .mobile {
 	.main-info {
 	margin-left: 0px;
 	width: 100%;
 	position: static;
+	height: 100%;
 	}
 	.content-container.mobile.home {
 		height: 100%;
 	}
+	.landing-desc {
+		width: 100%;
+		font-size: 25px;
+		text-align: center;
+		margin-top: 20px;
+		margin-bottom: -20px;
+	  position: static;
+	}
+	.mobile-title {
+		font-size: 50px;
+		text-align: center;
+		color: white;
+		font-weight: 500;
+  	text-shadow: 1px 1px 5px rgba(0,0,0, 0.4);
+	}
+	.phone-pic {
+		width: 100%;
+		float: left;
+	}
+
 }
 
 
@@ -31,14 +47,6 @@
   position: static;
 }
 
-.landing-desc.mobile {
-	width: 100%;
-	font-size: 25px;
-	text-align: center;
-	margin-top: 20px;
-	margin-bottom: -20px;
-    position: static;
-}
 
 .mobile.sign-up-box {
 	background: none;
@@ -54,8 +62,12 @@
 	border-radius: 100px;
 	margin-left: 0px;
 	height: 62px;
-    box-sizing: border-box;
-    padding: 15px 15px 15px 28px;
+  box-sizing: border-box;
+  padding: 15px 15px 15px 28px;
+}
+
+.mobile.fb-sign-up-btn.bottom {
+	margin-top: 40px;
 }
 
 .fb-logo .mobile.fb-letter {
@@ -66,15 +78,15 @@
 .mobile.fb-logo {
 	height: 32px;
 	width: 32px;
-    margin: 0px;
+  margin: 0px;
 }
 
 .fb-sign-up-btn .mobile.sign-up-text {
 	margin: 0px;
 	font-size: 17px;
-    float: left;
-    line-height: 1.9;
-    padding-left: 20px;
+  float: left;
+  line-height: 1.9;
+  padding-left: 20px;
 }
 
 .mobile.conditions {
