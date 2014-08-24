@@ -4,22 +4,31 @@
 	background-image: image_url("mobile-background.jpg");
 }
 
+
+
 // .touch-scroll {
 // 	-webkit-overflow-scrolling: touch;
 // 	overflow: scroll;
 // }
 
-#main-info.mobile {
+.mobile {
+	.main-info {
 	margin-left: 0px;
 	width: 100%;
+	position: static;
+	}
+	.content-container.mobile.home {
+		height: 100%;
+	}
 }
+
 
 .landing-logo.mobile {
 	text-align: center;
 	font-size: 70px;
-	margin-top: 10%;
+	padding-top: 10%;
 	margin-bottom: 10%;
-    position: static;
+  position: static;
 }
 
 .landing-desc.mobile {
