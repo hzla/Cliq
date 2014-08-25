@@ -39,7 +39,8 @@ CliqUi =
                 "netflix with fellow homebodies",
                 "going a cappella",
                 "Laying down improv",
-                "joining a car club"]
+                "joining a car club",
+                "Ultimate Frisbee"]
 		setInterval ->
 			CliqUi.gameIndex += 1
 			game = games[CliqUi.gameIndex % 7]
