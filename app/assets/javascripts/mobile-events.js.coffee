@@ -12,17 +12,18 @@ MobileEvents =
 		$('.filter-container').removeClass('animated bounceInDown').addClass('animated bounceOutUp')
 		$('.filter-container').one 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', ->
 			$(@).hide()
+		$('.menu-title').text('Cliq').css('font-family', 'kari-pro').css('font-style', 'italic').css('font-size', '25px')
 
 	showFilters: ->
 		$('.filter-container').show().removeClass('animated bounceOutUp').addClass('animated bounceInDown')
-
+		$('.menu-title').text('Sift').css('font-family', 'proxima-nova').css('font-style', 'normal').css('font-size', '17px')
 	closeEventModals: ->
 		$('.message-content').show()
 		$('.chat-partial').remove()
 		$('#event-form').remove()
 		$('.back-tut').hide()
 		$('.menu-title').text("Cliq")
-		$('.menu-title').css('font-family','kari-pro').css('font-style', 'italic')
+		$('.menu-title').css('font-family','kari-pro').css('font-style', 'italic').css('font-size', '25px')
 		setTimeout ->
 			$('.menu-icon').show()
 		, 750
@@ -47,7 +48,7 @@ MobileEvents =
 	showEventForm: (event, data, xhr, status) ->
 		$('.content-container').append 	"<div id='event-form'></div>"
 		$('.message-content').hide()
-		$('.menu-title').text('New Open Invite').css('font-family','proxima-nova').css('font-style', 'normal')
+		$('.menu-title').text('New Open Invite').css('font-family','proxima-nova').css('font-style', 'normal').css('font-size', '17px')
 		$('#event-form').html(data).addClass 'animated bounceInDown'
 
 

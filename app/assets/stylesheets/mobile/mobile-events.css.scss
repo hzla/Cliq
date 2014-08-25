@@ -107,6 +107,14 @@
 	.event-tags {
 		position: static;
 	}
+	.event-bar-pic {
+		width: 30px;
+		height: 30px;
+		margin-top: -5px;
+	}
+	.event-bar-pic.svg g path {
+		fill: $dark-gray;
+	}
 }
 
 .filter-container {
