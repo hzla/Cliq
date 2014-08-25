@@ -9,7 +9,6 @@ Messages =
 		$('body').on 'ajax:success', '.block', @blockUser
 		$('.conversation').hover @showBlock, @hideBlock
 
-
 	showBlock: ->
 		$(@).find('.convo-block').show()
 
@@ -22,7 +21,6 @@ Messages =
 			$('.sending-progress').text('Sending...').show() if $('#chat-box').val().replace(/^\s+|\s+$/g, "") != ""
 			$('.chat-box').val ''
 		
-
 	prepConversation: ->
 		$('.conversation').removeClass 'current'
 		$(@).parent().addClass 'current'
@@ -30,7 +28,6 @@ Messages =
 
 	appendConversation: (event, data, xhr, status) ->
 		if $('.mobile').length < 1
-			console.log "stupid"
 			$('#messages-box').html(data)
 			$('.message-history')[0].scrollTop = $('.message-history')[0].scrollHeight
 			$('.convo-link').find('.convo-last-message').each ->
@@ -42,7 +39,6 @@ Messages =
 		if (e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)
 			e.preventDefault()
 			form = $(@).parent()
-			console.log form
 			form.submit()
 			$('.sending-progress').text('Sending...').show() if $(@).val().replace(/^\s+|\s+$/g, "") != ""			
 			$(@).val ''
@@ -50,10 +46,6 @@ Messages =
 	blockUser: ->
 		$(@).parents('.conversation').remove()
 		$('#messages-box').html ''
-
-
-
-
 
 ready = ->
 	Messages.init()

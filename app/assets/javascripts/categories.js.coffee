@@ -78,7 +78,6 @@ Categories =
 				$(@).val ui.item.label
 				$('#act_id').val ui.item.value
 				$(@).css 'color', '#414141'
-				console.log ui.item
 				$('.interest-info').text ui.item.id + "@" + ui.item.root_id + "@" + ui.item.cat_name
 			focus: (event, ui) ->
 				event.preventDefault()

@@ -30,22 +30,12 @@ Cliq =
 		history.pushState(null, document.title, @.href) if Cliq.nextState
 		Cliq.nextState = true
 
-		# $('.content-container').children().addClass 'animated fadeIn'
-		# $(@).children().removeClass 'fadeIn'
-
 	pushState: ->
 		$('.active').removeClass 'active'
 		$(@).children().addClass 'active'
 		if $('.mobile').length < 1
 			$('.content-container').css 'background', 'white'
 			$('.content-container').css 'opacity', '.3'
-
-
-	
-
-
-
-
 
 ready = ->
 	Cliq.init()

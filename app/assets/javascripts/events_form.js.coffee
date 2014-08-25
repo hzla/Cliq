@@ -3,6 +3,14 @@ EventForm =
     $('body').on 'click', '.event-type', @chooseType
     $('body').on 'click', '.event-attr', @chooseTag
     $('body').on 'click', '.event-requirement', @chooseRequirement
+    $('body').on 'submit', '#new_event', @checkFields
+
+  checkFields: (event) ->
+    emptyTitle = ($('#event_title').val() == "")
+    emptyTime = ($('#event_start_time').val() == "")
+    event.preventDefault() if emptyTime || emptyTitle
+    $('#event_title').css('border', '1px solid red') if emptyTitle
+    $('#event_start_time').css('border', '1px solid red') if emptyTime
 
   chooseType: ->
     if $(@).parents('#invites').length > 0 || $(@).parents('.filter-container').length > 0
@@ -27,12 +35,6 @@ EventForm =
     currentReqs = $('.event-requirement.selected .require-text').map ->
       $(@).text()
     $('.requirements').val $.makeArray(currentReqs).join()
-
-
-
-
-
-
 
 ready = ->
 	EventForm.init()

@@ -31,20 +31,17 @@ Tutorial =
 			$('.char-button').removeClass('proceed')
 
 	checkFields: (event) ->
-		console.log "checked"
 		event.preventDefault() if $('#characters').val() == "" || $('#tut-school').val() == ""
 
 	submitTutorial: ->
 		$('#tutorial-form').submit()
 
-	updateInterestCount: ->
-		
+	updateInterestCount: ->	
 		oldCount = $('.all-scroll-acts .chosen').length 
 		$(@).parent().toggleClass('chosen') if $('.tut').length > 0
 		newCount = $('.all-scroll-acts .chosen').length 
 		difference = newCount - oldCount
 		intCount = parseInt($('#int-number').text())
-		console.log difference
 		
 		if difference > 0
 			intCount -= 1
@@ -52,7 +49,6 @@ Tutorial =
 			intCount += 1
 		$('#int-number').text(intCount)
 
-		console.log intCount
 		if intCount < 1
 			$('.unfinished').hide()
 			$('.finished').removeClass('animated fadeIn').show().addClass('animated fadeIn')
@@ -65,13 +61,6 @@ Tutorial =
 		$('.tut-header, .interests-self.tut, .back-tut').hide()
 		$('.menu-title').show().text('Welcome!')
 		$('#welcome-tut').show()
-
-
-
-	
-
-
-
 
 ready = ->
 	Tutorial.init()

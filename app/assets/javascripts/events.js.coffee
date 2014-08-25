@@ -68,8 +68,6 @@ Events =
     $('.date-header').hide()
     $('.date-header').parent().has(":visible").children(".date-header").show()
 
-
-
   send: ->
     $('#new_event').submit()
 
@@ -79,7 +77,6 @@ Events =
 	removeInvite: ->
     invite = $(@).parents('.upcoming-event')
     if $(@).hasClass 'pass'
-      console.log invite
       invite.removeClass('animated fadeIn').addClass 'animated bounceOutLeft'
       invite.one 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', ->
         invite.animate {
@@ -143,18 +140,6 @@ Events =
     $.each dates, ->
       $(".event-date-type.#{@}").append $(".upcoming-event.#{@}:not(.today, .tommorow)")
       
-
-
-
-
-
-    
-
-
-
-
-
-
 ready = ->
 	Events.init()
 $(document).ready ready

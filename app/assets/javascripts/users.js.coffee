@@ -24,7 +24,6 @@ Users =
 			$(id).append "<div class='activity'><div class='act-name'>#{$('#self-search').val()} •</div></div>"
 		else
 			root_id = "#c-" + $('.interest-info').text().split("@")[1]
-			console.log root_id
 
 			catName = $('.interest-info').text().split("@")[2]
 			$(root_id).append "<div class='cat-group-self'><div class='category dark-gray'><div class='cat-name'>#{catName}</div>
@@ -82,7 +81,6 @@ Users =
 		$(@).text newText
 
 	addAct: ->
-		console.log @
 		$(@).find('.act-name').addClass('orange shared').removeClass('different')
 
 	showShared: ->
@@ -115,11 +113,6 @@ Users =
 		$(@).hide()
 		$('#quick-search').show()
 		$('#new_activity').css 'margin-top', '195px'
-
-
-
-
-
 
 ready = ->
 	Users.init()
