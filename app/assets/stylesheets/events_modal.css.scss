@@ -301,6 +301,7 @@
 	width: 270px;
 	height: 60px;
 	margin: 0 auto;
+	margin-left: calc(50% - 147px)
 }
 
 .event-attr.no-left {
@@ -308,9 +309,16 @@
 }
 
 .event-attrs-2 {
-	width: 200px;
+	width: 270px;
 	height: 60px;
 	margin: 0 auto;
+	margin-left: 80px;
+}
+
+.event-modal {
+	.event-attrs-2 {
+		margin-left: 63px;
+	}
 }
 
 .event-attr {
@@ -338,6 +346,7 @@
 .event-attr.games.selected  { background: $catgreen;}
 .event-attr.show.selected  { background: $catblue;}
 .event-attr.music.selected  { background: $catred;}
+.event-attr.shaman.selected  { background: $catdarkblue;}
 .event-attr.discussion.selected .attr-text  { color: white; }
 .event-attr.activity.selected .attr-text  { color: white; }
 .event-attr.party.selected .attr-text  { color: white; }
@@ -345,6 +354,7 @@
 .event-attr.games.selected .attr-text  { color: white; }
 .event-attr.show.selected .attr-text  { color: white; }
 .event-attr.music.selected .attr-text  { color: white; }
+.event-attr.shaman.selected .attr-text  { color: white; }
 .event-attr.discussion .attr-text  { color: $catyellow; }
 .event-attr.activity .attr-text  { color: $catturq; }
 .event-attr.party .attr-text  { color: $catpurple; }
@@ -352,7 +362,7 @@
 .event-attr.games .attr-text  { color: $catgreen; }
 .event-attr.show .attr-text  { color: $catblue; }
 .event-attr.music .attr-text  { color: $catred; }
-
+.event-attr.shaman .attr-text  { color: $catdarkblue; }
 .no-mobile {
 	.event-attr.discussion:hover .attr-text  { color: white; }
 	.event-attr.activity:hover .attr-text  { color: white; }
@@ -361,6 +371,7 @@
 	.event-attr.games:hover .attr-text  { color: white; }
 	.event-attr.show:hover .attr-text  { color: white; }
 	.event-attr.music:hover .attr-text  { color: white; }
+	.event-attr.shaman:hover .attr-text  { color: white; }
 	.event-attr.discussion:hover  { background: $catyellow;}
 	.event-attr.activity:hover  { background: $catturq;}
 	.event-attr.party:hover  { background: $catpurple;}
@@ -368,6 +379,7 @@
 	.event-attr.games:hover  { background: $catgreen;}
 	.event-attr.show:hover  { background: $catblue;}
 	.event-attr.music:hover  { background: $catred;}
+	.event-attr.shman:hover  { background: $catdarkblue;}
 	.event-attr:hover svg path, .event-attr.selected svg path {
 		fill: white;
 	}

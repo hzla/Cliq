@@ -22,6 +22,7 @@ MobileEvents =
 		$('#event-form').remove()
 		$('.back-tut').hide()
 		$('.menu-title').text("Cliq")
+		$('.menu-title').css('font-family','kari-pro').css('font-style', 'italic')
 		setTimeout ->
 			$('.menu-icon').show()
 		, 750
@@ -46,6 +47,7 @@ MobileEvents =
 	showEventForm: (event, data, xhr, status) ->
 		$('.content-container').append 	"<div id='event-form'></div>"
 		$('.message-content').hide()
+		$('.menu-title').text('New Open Invite').css('font-family','proxima-nova').css('font-style', 'normal')
 		$('#event-form').html(data).addClass 'animated bounceInDown'
 
 

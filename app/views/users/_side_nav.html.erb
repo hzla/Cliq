@@ -1,13 +1,6 @@
 <div class="extended-side-nav">
 	
-		<%= link_to events_path, remote: true, :class => 'tab', id: "main" do %>
-			<div class="extended logo side-icon <%= 'active' if active == :main %>">
-				<div id="cliq-logo">Cliq</div> 
-				<% if current_user %>
-					<div class="icon-label main" id="shuffle">Cliq</div>
-				<% end %>
-			</div>
-		<% end %>
+
 		<% if current_user %>
 		<%= link_to events_path, remote: true, :class => 'tab', id: "events" do %>
 			<div class="extended events <%= 'active' if active == :events %> side-icon" >

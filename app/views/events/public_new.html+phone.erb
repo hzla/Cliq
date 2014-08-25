@@ -5,7 +5,7 @@
 			</div>
 	</div>
 
-	<%= form_for [@event], :class => 'event-form', remote: true do |f| %>
+	<%= form_for [@event], :class => 'event-form' do |f| %>
 		
 		<div class="form-row first">
 			<!-- <div class="event-form-label head-3 dark-gray">What:</div>  -->
@@ -75,6 +75,10 @@
 					<div class="event-attr show">
 						<%= image_tag "Show.svg", :class => "attr-pic svg" %>
 						<div class="attr-text">A Show</div>
+					</div>
+					<div class="event-attr shaman">
+						<%= image_tag "Hookah.svg", :class => "attr-pic svg" %>
+						<div class="attr-text">A Shaman</div>
 					</div>
 				</div>
 			</div>

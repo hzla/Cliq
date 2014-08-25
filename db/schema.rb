@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140821032329) do
+ActiveRecord::Schema.define(version: 20140825033819) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 20140821032329) do
     t.boolean  "paid"
     t.integer  "messages_count", default: 0
     t.integer  "creator_id"
+    t.boolean  "shaman"
   end
 
   create_table "excursions", force: true do |t|

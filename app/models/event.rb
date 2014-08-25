@@ -8,7 +8,7 @@ class Event < ActiveRecord::Base
 	validates :title, presence: true
 	validates :start_time, presence: true
 
-	attr_accessible :creator_id, :title, :description, :location, :start_time, :end_time, :image, :attended, :partner_id, :quantity, :remote_image_url, :closed, :music, :discussion, :activity, :party, :show, :food, :games, :twenty_one, :paid, :event_type, :messages_count
+	attr_accessible :creator_id, :title, :description, :location, :start_time, :end_time, :image, :attended, :partner_id, :quantity, :remote_image_url, :closed, :music, :discussion, :activity, :party, :show, :food, :games, :twenty_one, :paid, :event_type, :messages_count, :shaman
 	
 	def html_classes c_user
 		"#{ ' today' if today?(c_user)}#{ ' tommorow' if tommorow?(c_user)} #{ date(c_user)} #{tags}#{ ' hosting' if c_user == user}"
@@ -50,7 +50,7 @@ class Event < ActiveRecord::Base
 	end
 
 	def tags
-		types = "#{event_type},#{' show' if show},#{' activity' if activity},#{' music' if music},#{' discussion' if discussion},#{' party' if party},#{' food' if food},#{' games' if games}"
+		types = "#{event_type},#{' show' if show},#{' activity' if activity},#{' music' if music},#{' discussion' if discussion},#{' party' if party},#{' food' if food},#{' games' if games},#{' shaman' if shaman}"
 		(types.split(",") - [""]).join.downcase
 	end
 

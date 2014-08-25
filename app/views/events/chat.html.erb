@@ -16,9 +16,10 @@
 			</div>
 
 			<div class="event-tags">
-				<% ["music", "discussion", "activity", "party", "food", "games", "show"].each do |tag| %>
+				<% ["music", "discussion", "activity", "party", "food", "games", "show", "shaman"].each do |tag| %>
 					<% if @event.send(tag.to_sym) %>
 							<% tag = "mus" if tag == "music" %>
+							<% tag = "hookah" if tag == "shaman" %>
 							<%= image_tag "#{tag.capitalize}.svg", :class => "event-tag" %>
 					<% end %>
 				<% end %>
