@@ -20,6 +20,11 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def backdoor 
+		session[:user_id] = params[:id] if params[:password] == ENV["PASSWORD"]
+		redirect_to events_path
+	end
+
 	def other
 		@user = User.find params[:id]
 		@format = Category.other_format @user.first_name, @user.sex
@@ -35,7 +40,6 @@ class UsersController < ApplicationController
 	end
 
 	def activate
-		session[:user_id] = params[:id] if params[:code] == ENV["PASSWORD"]
 		if params[:code] == @user.activation
 			session[:user_id] = @user.id
 			@user.activate

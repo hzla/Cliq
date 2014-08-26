@@ -45,17 +45,14 @@ class EventsController < ApplicationController #in severe need of refactoring
 	def public_new
 		@event = Event.new
 		@user = current_user
-		@partners = Partner.local_options
 		render layout: false
 	end
 
-	# mobile currently doesn't support tags so create regular new event if on mobile
 	# creates new event using custom assign_and_return_new event method if on desktop
 	# desktop ui widget doesn't distinguish between am and pm so if on desktop, adjust time by 12 hours 
 	# if time is pm, time is then converted to utc time by adjusting by user timezone
 	# if there's an image, refresh is inevitable so redirect to back
 	# render ok true if ok, and errors if not
-
 	def public_create
 		event = Event.assign_and_return_new params
 		if event.save
@@ -72,7 +69,7 @@ class EventsController < ApplicationController #in severe need of refactoring
 			event.save
 			redirect_to events_path and return	
 		else
-			render json: event.errors and return
+			render json: event.errors
 		end
 	end
 
@@ -96,7 +93,7 @@ class EventsController < ApplicationController #in severe need of refactoring
 		decrease_count = @conversation.was_seen_by current_user
 		current_user.update_attributes(invite_count: 0) if decrease_count
 		respond_to do |format|
-        format.html { render :layout => !request.xhr? }
+      format.html { render :layout => !request.xhr? }
     end
 	end
 end
