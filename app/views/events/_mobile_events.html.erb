@@ -10,7 +10,7 @@
 
 <% events.each do |event| %>
 	<% joined = event.joined_by(current_user) %>
-	<%= link_to event_chat_path(event, locked: open), :class => "chat-user no-obscure", remote: true do %>
+	<%= link_to event_chat_path(event, locked: false), :class => "chat-user no-obscure", remote: true do %>
 		<div class="conversation<%= event.html_classes(current_user) %><%= ' joined' if joined %>">
 			<%= image_tag event.image_url || 'Cliq.svg', :class => "convo-pic" %>
 			<div class="convo-details">
@@ -21,7 +21,7 @@
 						<% ["music", "discussion", "activity", "party", "food", "games", "show", "shaman"].each do |tag| %>
 							<% if event.send(tag.to_sym) %>
 									<% tag = "mus" if tag == "music" %>
-									<% tag = "hookah" if tag == "shaman" %>
+									<% tag = "Hookah" if tag == "shaman" %>
 									<%= image_tag "#{tag.capitalize}.svg", :class => "event-tag" %>
 							<% end %>
 						<% end %>

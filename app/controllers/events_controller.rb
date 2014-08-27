@@ -45,6 +45,8 @@ class EventsController < ApplicationController #in severe need of refactoring
 	def public_new
 		@event = Event.new
 		@user = current_user
+		@user.create_click_count += 1
+		@user.save
 		render layout: false
 	end
 
@@ -88,6 +90,14 @@ class EventsController < ApplicationController #in severe need of refactoring
 	def chat
 		@event = Event.find params[:id]
 		@conversation = Conversation.find_or_create_by(event_id: @event.id)
+		
+		if current_user.role != "admin"
+			@event.views += 1
+			@event.save
+			new_count = current_user.event_view_count + 1
+			current_user.update_attributes event_view_count: new_count
+		end
+		
 		@message = Message.new
 		@locked = (params[:locked] == "true")
 		decrease_count = @conversation.was_seen_by current_user
@@ -95,5 +105,18 @@ class EventsController < ApplicationController #in severe need of refactoring
 		respond_to do |format|
       format.html { render :layout => !request.xhr? }
     end
+	end
+
+	def toggle
+		new_count = current_user.toggle_count + 1
+		current_user.update_attributes toggle_count: new_count
+		render nothing: true
+	end
+
+	def discuss_time
+		time = current_user.discuss_time + params[:elapsedTime].to_i
+		time /= current_user.event_view_count
+		current_user.update_attributes discuss_time: time 
+		render nothing: true
 	end
 end

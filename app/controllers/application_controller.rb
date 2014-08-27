@@ -31,12 +31,21 @@ class ApplicationController < ActionController::Base
   private
 
   def require_login
-    unless current_user
+    user = current_user
+    unless user
       flash[:error] = "You must be logged in to access this section"
       redirect_to root_path and return
     end
-    if current_user
-      current_user.update_attributes updated_at: Time.now, active: true
+    if user
+      returning = (Time.now.utc - user.updated_at.utc > 3.hours)
+      if returning
+        user.visit_count += 1
+        user.updated_at = Time.now
+        user.active = true
+        user.save
+      else
+        user.update_attributes updated_at: Time.now, active: true
+      end
     end
   end
 

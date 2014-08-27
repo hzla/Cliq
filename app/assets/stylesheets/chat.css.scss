@@ -4,7 +4,7 @@
 	float: left;
 	width: 630px;
 	position: fixed;
-	right: 0;
+	left: 0;
 	height: 100%;
 	font-family: $generic-font;
 	background: white;
@@ -13,6 +13,7 @@
 
 .chat-partial.chat-events {
 	width: 60%;
+	z-index: 2;
 }
 
 .close g {

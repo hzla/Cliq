@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140825033819) do
+ActiveRecord::Schema.define(version: 20140827044327) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,6 +102,7 @@ ActiveRecord::Schema.define(version: 20140825033819) do
     t.integer  "messages_count", default: 0
     t.integer  "creator_id"
     t.boolean  "shaman"
+    t.integer  "views",          default: 0
   end
 
   create_table "excursions", force: true do |t|
@@ -188,19 +189,24 @@ ActiveRecord::Schema.define(version: 20140825033819) do
     t.float    "longitude"
     t.string   "address"
     t.string   "sex"
-    t.string   "sexual_preference", default: "hetero"
+    t.string   "sexual_preference",  default: "hetero"
     t.boolean  "active"
-    t.integer  "message_count",     default: 0
-    t.integer  "event_count",       default: 0
-    t.integer  "invite_count",      default: 0
-    t.boolean  "notify_messages",   default: true
-    t.boolean  "notify_events",     default: true
-    t.boolean  "notify_news",       default: true
+    t.integer  "message_count",      default: 0
+    t.integer  "event_count",        default: 0
+    t.integer  "invite_count",       default: 0
+    t.boolean  "notify_messages",    default: true
+    t.boolean  "notify_events",      default: true
+    t.boolean  "notify_news",        default: true
     t.integer  "timezone"
-    t.string   "role",              default: "normal"
-    t.boolean  "lbgtq",             default: false
-    t.text     "blacklist",         default: "0"
+    t.string   "role",               default: "normal"
+    t.boolean  "lbgtq",              default: false
+    t.text     "blacklist",          default: "0"
     t.string   "characters"
+    t.integer  "visit_count",        default: 1
+    t.integer  "event_view_count",   default: 0
+    t.integer  "create_click_count", default: 0
+    t.integer  "toggle_count",       default: 0
+    t.integer  "discuss_time",       default: 0
   end
 
 end

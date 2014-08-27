@@ -39,6 +39,8 @@ Cliq::Application.routes.draw do
     get '/conversations/:id/searched', to: 'conversations#searched_show', as: 'searched_convo'
     get '/chat', to: 'conversations#chat', as: 'chat'
   end
+  post '/events/toggle', to: 'events#toggle'
+  post '/events/discuss_time', to: 'events#discuss_time'
 
   get '/users/:id/block', to: 'users#block', as: 'block_user'
   get '/users/:id/other', to: 'users#other', as: 'other_user'

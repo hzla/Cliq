@@ -13,7 +13,7 @@
 			<%= image_tag event.image_url || "Cliq.svg", :class => "event-picture" %>
 			<div class="event-title-overlay">
 				<div class="event-title head-3">
-					<%= link_to event_chat_path(event, locked: lock_status), :class => "chat-user", remote: true do %>
+					<%= link_to event_chat_path(event, locked: false), :class => "chat-user", remote: true do %>
 						<%= event.shortened_title %>
 					<% end %>
 				</div>
@@ -28,7 +28,7 @@
 			<div class="invite-overlay">
 				<div class="invite-count"><%= event.people_count %> Going</div>
 				
-				<%= link_to event_chat_path(event, locked: lock_status ), :class => "chat-user no-obscure", remote: true do %>
+				<%= link_to event_chat_path(event, locked: false ), :class => "chat-user no-obscure", remote: true do %>
 					<div class="invite-thread">Click to view thread</div>
 				<% end %>
 			</div>
@@ -77,7 +77,7 @@
 				<% end %>
 			</div>
 			<div class="invite-row invite-actions">
-				<%= link_to event_chat_path(event, locked: lock_status), :class => "chat-user no-obscure", remote: true do %>
+				<%= link_to event_chat_path(event, locked: false), :class => "chat-user no-obscure", remote: true do %>
 					<div class="invite-thread bottom">
 						<% if event.messages_count == 0 || event.conversations.first.was_seen_by?(current_user) %> 
 							<%= image_tag "messages-white.svg", :class => "invite-messages-pic" %>

@@ -33,17 +33,19 @@ MobileMessages =
 
 	swipeToConvo: ->
 		$('.message-content').removeClass().addClass('animated fadeOutLeftBig message-content')
-		$('#thread-container').removeClass().addClass('animated fadeInRightBig')
+		#$('#thread-container').removeClass().addClass('animated fadeInRightBig')
 
 	swipeToMessages: ->
 		$('.message-content').removeClass('animated fadeOutLeftBig').addClass('animated fadeInLeftBig')
-		$('#thread-container').removeClass().addClass('animated fadeOutRightBig')
+		$('#thread-container').removeClass().addClass('animated fadeOutRightBig').one 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', ->
+			$(@).hide()
 		$('.menu-title').text "Cliq"
 
 	appendConvo: (event, data, xhr, status) ->
 		pic = $(@).prev().find('.convo-pic').clone()
 		$('.menu-title').html pic
 		$('.top-nav .convo-pic').addClass('top-pic')
+		$('#thread-container').attr('class', 'hidden animated fadeInRightBig').show()
 		$('#messages-box').html(data)
 		$('.message-history')[0].scrollTop = $('.message-history')[0].scrollHeight
 		$('.message-history').kinetic();

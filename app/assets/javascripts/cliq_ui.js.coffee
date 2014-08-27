@@ -74,13 +74,12 @@ CliqUi =
 
 	chatUser: (event, data, xhr, status) ->
 		event.preventDefault()
-		if $('.user-other-container').length < 1
-			$('.content-container').css 'background', 'white'
-			$('.content-container').css 'opacity', '.3'
+		CliqUi.counting = true
+		CliqUi.time = Date.now()
 		if $('#' + $(@).attr('href').split('/')[2]).length < 1
 			$('body').append data
 			$('.chat-partial').removeClass('current-thread')
-			$('.chat-partial').last().addClass 'animated bounceInRight current-thread'
+			$('.chat-partial').last().addClass 'animated bounceInLeft current-thread'
 			$('.chat-partial').addClass('mobile') if $('.mobile').length > 0
 		$('.mobile .message-history').kinetic
 			x: false
@@ -165,6 +164,12 @@ CliqUi =
 		$('.user-other-container').hide()
 		$('.content-container').css 'opacity', ''
 		$('.content-container').css 'background', '#f1f1f1'
+		if CliqUi.counting
+			elapsedTime = Math.round((Date.now() - CliqUi.time)/1000)
+			CliqUi.counting = false
+			$.post '/events/discuss_time', 
+				elapsedTime: elapsedTime
+				
 
 	addChat: ->
 		$(@).addClass 'animated bounceOutLeft'

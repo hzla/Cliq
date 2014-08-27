@@ -17,6 +17,7 @@ MobileEvents =
 	showFilters: ->
 		$('.filter-container').show().removeClass('animated bounceOutUp').addClass('animated bounceInDown')
 		$('.menu-title').text('Sift').css('font-family', 'proxima-nova').css('font-style', 'normal').css('font-size', '17px')
+	
 	closeEventModals: ->
 		$('.message-content').show()
 		$('.chat-partial').remove()

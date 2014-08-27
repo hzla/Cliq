@@ -1,5 +1,10 @@
-<div id="events-container">
 
+<div id="events-container" class="no-mobile">
+<%= link_to public_events_path, :class => "invite-user", remote: true do %>
+	<div id="new-open-event">
+		<div class="plus">+</div><div class="create-event-text">Create<br>Event</div>
+	</div>
+<% end %>
 		<div id="invite-container">
 			<div id="invites">
 				<div class="event-form-right">
@@ -15,37 +20,37 @@
 						<div class="event-attrs-1">
 							<div class="event-attr no-left music">
 								<%= image_tag "Mus.svg", :class => "attr-pic svg" %>
-								<div class="attr-text hidden">Music</div>
+								<div class="attr-text">Music</div>
 							</div>
 							<div class="event-attr discussion">
 								<%= image_tag "Discussion.svg", :class => "attr-pic svg" %>
-								<div class="attr-text hidden">Discussion</div>
+								<div class="attr-text">Discussion</div>
 							</div>
 							<div class="event-attr activity">
 								<%= image_tag "Activity.svg", :class => "attr-pic svg" %>
-								<div class="attr-text hidden">Activity</div>
+								<div class="attr-text">Activity</div>
 							</div>
 							<div class="event-attr party">
 								<%= image_tag "Party.svg", :class => "attr-pic svg" %>
-								<div class="attr-text hidden">A Party</div>
+								<div class="attr-text">A Party</div>
 							</div>
 						</div>
 						<div class="event-attrs-2 food">
 							<div class="event-attr food no-left">
 								<%= image_tag "Food.svg", :class => "attr-pic svg" %>
-								<div class="attr-text hidden">Food</div>
+								<div class="attr-text">Food</div>
 							</div>
 							<div class="event-attr games">
 								<%= image_tag "Games.svg", :class => "attr-pic svg" %>
-								<div class="attr-text hidden">Games</div>
+								<div class="attr-text">Games</div>
 							</div>
 							<div class="event-attr show">
 								<%= image_tag "Show.svg", :class => "attr-pic svg" %>
-								<div class="attr-text hidden">A Show</div>
+								<div class="attr-text">A Show</div>
 							</div>
 							<div class="event-attr shaman">
 								<%= image_tag "Hookah.svg", :class => "attr-pic svg" %>
-								<div class="attr-text hidden">A Shaman</div>
+								<div class="attr-text">A Shaman</div>
 							</div>
 						</div>
 					</div>
@@ -56,13 +61,6 @@
 							<div class="event-type round-right">Any Time</div>
 						</div>
 					</div>
-
-		
-						<%= link_to public_events_path, :class => "invite-user", remote: true do %>
-							<div id="new-open-event">
-								New Event
-							</div>
-						<% end %>
 
 				</div>
 					

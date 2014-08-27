@@ -106,29 +106,42 @@
 }
 
 #new-open-event {
-	width: 224px;
-	border-radius: 100px;
-	background: white;
-	height: 45px;
-	margin: 0 auto;
-	font-size: 25px;
+	width: 140px;
+	height: 140px;
+	border-radius: 150px;
 	text-align: center;
-	line-height: 2.2;
 	font-weight: 300;
 	color: white;
-	background: $catpurple;
+	background: $orange;
 	cursor: pointer;
 	font-size: 20px;
-	position: absolute;
-	margin-top: 66px;
-	bottom: 10vh;
-	left: calc(50% - 112px);
+	position: fixed;
+	top: -75px;
+	left: calc(40% - 70px);
+	z-index: 1;
+	box-shadow: 0px 3px 7px #888888;
 }
+
+.create-event-text {
+	position: absolute;
+	top: 75px;
+	right: 28px;
+	font-size: 18px
+}
+
+.plus {
+	font-size: 50px;
+	font-weight: 200;
+	position: absolute;
+	top: 65px;
+	left: 28px;
+}
+
 
 #new-open-event:hover {
 	background: white;
-	color: $catpurple;
-	border: 1px solid $catpurple;
+	color: $orange;
+	border: 1px solid $orange;
 }
 
 #invites-collection {
@@ -609,8 +622,11 @@
 	.event-attrs-1 {
 		margin-top: 25px;
 	}
+	.event-attr {
+		box-shadow: 0px 3px 7px $dark-turq;
+	}
 	.attr-pic {
-		margin-top: 15px;
+		margin-top: 7px;
 	}
 	.form-row.event-dates {
 		margin-top: 25px;
@@ -626,9 +642,6 @@
 	display: block;
 }
 
-#invites .event-form-right .event-attr:hover .attr-pic {
-	margin-top: 7px;
-}
 
 .event-action-pic {
 	width: 20px;

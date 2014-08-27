@@ -7,9 +7,12 @@ Events =
     $('body').on 'ajax:success', '#new_event', @closeModal 
     $('body').on 'click', '#send-invite .invite-icon', @send
     $('body').on $.modal.BEFORE_CLOSE, '#invite-modal-container', @restoreOpacity
-    $('body').on 'click', '#invites .form-row div', @filterEvents
-    $('body').on 'click', '.filter-container .form-row div:not(#new-open-event)', @filterEvents
+    $('body').on 'click', '#invites .form-row .event-type', @filterEvents
+    $('body').on 'click', '.filter-container .form-row .event-type', @filterEvents
+    $('body').on 'click', '#invites .form-row .event-attr', @filterEvents
+    $('body').on 'click', '.filter-container .form-row .event-attr', @filterEvents
     $('body').on 'click', '.event-filter', @bigFilter
+
 
   bigFilter: ->
     if $('.mobile').length > 0
@@ -67,6 +70,9 @@ Events =
     
     $('.date-header').hide()
     $('.date-header').parent().has(":visible").children(".date-header").show()
+    $.post '/events/toggle', (data) ->
+      console.log "posted"
+      return
 
   send: ->
     $('#new_event').submit()
