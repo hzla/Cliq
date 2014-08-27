@@ -7,11 +7,10 @@ Events =
     $('body').on 'ajax:success', '#new_event', @closeModal 
     $('body').on 'click', '#send-invite .invite-icon', @send
     $('body').on $.modal.BEFORE_CLOSE, '#invite-modal-container', @restoreOpacity
-    $('body').on 'click', '#invites .form-row .event-type', @filterEvents
-    $('body').on 'click', '.filter-container .form-row .event-type', @filterEvents
-    $('body').on 'click', '#invites .form-row .event-attr', @filterEvents
-    $('body').on 'click', '.filter-container .form-row .event-attr', @filterEvents
+    $('body').on 'click', '#invites .form-row div', @filterEvents
+    $('body').on 'click', '.filter-container .form-row div', @filterEvents
     $('body').on 'click', '.event-filter', @bigFilter
+    Events.posting = 0
 
 
   bigFilter: ->
@@ -61,6 +60,7 @@ Events =
       tags = tags.split('.').join(".conversation#{afterTags}.")
 
     tags = afterTags if !tags 
+    console.log tags
 
     $('.upcoming-event').hide()
     $(".upcoming-event#{tags}".toLowerCase()).show().removeClass('animated fadeIn').addClass('animated fadeIn')
@@ -70,9 +70,11 @@ Events =
     
     $('.date-header').hide()
     $('.date-header').parent().has(":visible").children(".date-header").show()
-    $.post '/events/toggle', (data) ->
-      console.log "posted"
-      return
+    Events.posting += 1
+    
+    if Events.posting % 2 == 1
+      $.post '/events/toggle', (data) ->
+        console.log "posted"
 
   send: ->
     $('#new_event').submit()
