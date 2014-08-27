@@ -12,7 +12,6 @@ Events =
     $('body').on 'click', '.event-filter', @bigFilter
     Events.posting = 0
 
-
   bigFilter: ->
     if $('.mobile').length > 0
       $('.event-bar.selected').removeClass 'selected'
@@ -126,7 +125,6 @@ Events =
     $('.upcoming-event').addClass('animated fadeIn')
     Events.filterEvents()
     
-
   closeModal: (event, data, xhr, status) ->
     if data.ok == true
       $.modal.close()
