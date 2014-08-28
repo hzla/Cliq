@@ -86,6 +86,10 @@ class UsersController < ApplicationController
 		render nothing: true
 	end
 
+	def send_feedback
+		
+	end
+
 	def settings
 		redirect_to settings_path(current_user) if current_user.id != params[:id].to_i
 		respond_to do |format|

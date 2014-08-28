@@ -94,3 +94,39 @@
     font-weight: 300px;
     margin: 8px 0px;
 }
+
+///////////////////
+
+.mobile {
+	.baby-animal {
+		margin-top: 10px;
+		width: 100%;
+	}
+	.joke {
+		color: $dark-gray;
+		text-align: center;
+	}
+	#feedback-form {
+		background: white;
+		width: 100%;
+	}
+	#fb-content {
+		border-radius: 20px;
+		background: $super-light-gray;
+		width: 80%;
+		padding-left: 5%;
+		padding-right: 5%;
+		margin-left: 5%;
+	}
+	#send-fb {
+		width: 100%;
+		background: $orange;
+		border-radius: 0;
+		height: 44px;
+		font-size: 20px;
+	}
+	#send-fb:hover {
+		border: none;
+		color: white;
+	}
+}

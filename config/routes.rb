@@ -57,6 +57,7 @@ Cliq::Application.routes.draw do
   get '/main', to: 'users#main', as: 'main'
   post '/search', to: 'users#search_results'
   post '/feedback', to: 'users#feedback', as: 'feedback'
+  get '/send_feedback', to: 'users#send_feedback', as: 'send_feedback'
   resources :partners, only: [:show]
   resources :conversations, only: [:show] do 
     resources :messages, only: [:create]

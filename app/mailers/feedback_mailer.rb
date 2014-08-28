@@ -1,5 +1,5 @@
 class FeedbackMailer < ActionMailer::Base
-  default to: ['hsia.kenneth@gmail.com', 'andylee.hzl@gmail.com', 'romeo@cliqwith.me']
+  default to: [ 'andylee.hzl@gmail.com', 'hsia.kenneth@gmail.com', 'romeo@cliqwith.me']
   default from: 'feedback@cliqwith.me'
 
   def feedback content, user

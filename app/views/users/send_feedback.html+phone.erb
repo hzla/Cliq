@@ -1,0 +1,25 @@
+<div id="welcome-tut" >
+	<%= form_tag feedback_path, id: "feedback-form", remote: true do %>
+		<div class="welcome-text">		
+			<div class="welcome-text">
+				<div class="wel-text"> 
+					Hey there, thanks for checking out Cliq. We’re just three guys trying to build something 
+	      	cool, and we’d appreciate feedback on how we can do better.
+	    	</div>
+			  
+			  <div class="wel-text">
+			  	In return, please accept this picture of a baby animal and a joke
+				</div>
+			</div>
+			<%= image_tag random_animal, :class => "baby-animal" %>
+		 	<% joke = random_joke %>
+		  <div class="joke"> 
+		    <%= joke.body %><br>
+		    <%= joke.punchline if joke.punchline %>
+	  	</div>	
+		</div>
+	
+		<%= text_area_tag :content, nil, id: "fb-content" , placeholder: "Write your feedback here. Scroll down to submit" %>
+    <%= submit_tag "Send", id: "send-fb" %>
+	<% end %>
+</div>

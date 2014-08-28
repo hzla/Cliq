@@ -193,6 +193,7 @@ textarea:focus {outline: none; }
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 	display: none;
+	z-index: 3;
 }
 
 #fb-content {

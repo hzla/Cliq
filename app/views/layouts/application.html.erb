@@ -83,14 +83,15 @@ $(document).ready(function(){
     <div id="feedback-message">
       Hey there, thanks for checking out Cliq. We’re just three guys trying to build something 
       cool, and we’d appreciate feedback on how we can do better.<br><br>
-      In return, please accept this picture of a baby animal and a joke.<br><br>
-      <%= image_tag random_animal, :class => "baby-animal" %>
+      In return, please accept this joke and a picture of a baby animal.<br><br>
+      
 
       <% joke = random_joke %>
       <div class="joke"> 
         <%= joke.body %><br>
         <%= joke.punchline if joke.punchline %>
       </div>
+      <%= image_tag random_animal, :class => "baby-animal" %>
     </div>
       <%= text_area_tag :content, nil, id: "fb-content" %>
       <%= submit_tag "Send Feedback", id: "send-fb" %>

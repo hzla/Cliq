@@ -13,9 +13,15 @@ MobileUsers =
 		$('body').on 'click', '#save-settings-button', @submitSettings
 		$('body').on 'scroll', '.all-scroll-acts', @scrollDown
 		$('body').on 'ajax:success', '.profile-actions form, #cat-header-content form', @feedback
+		$('body').on 'submit', '#feedback-form', @thankUser
+
+	thankUser: ->
+		$('#send-fb').val("Thank you!!")
+		setTimeout ->
+			$('#send-fb').val("Send")
+		, 2000
 
 	feedback: ->
-		console.log "tried"
 		if $(@).attr('id') == "new_activity"
 			fb = "Thank You!"
 		else
