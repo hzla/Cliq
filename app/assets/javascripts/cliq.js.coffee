@@ -14,7 +14,7 @@ Cliq =
 			$('#profile').children('.side-icon').addClass('active')
 
 	popState: -> 
-    url = location.href.split('/')
+    url = location.href.replace("#_=_", "").replace("?welcome=true", "").split('/')
     tab = url[url.length - 1]
     $("##{tab}").click()
     if url[url.length - 2] == "users"

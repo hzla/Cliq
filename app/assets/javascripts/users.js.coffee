@@ -30,9 +30,10 @@ Users =
 			</div><div class='activities' id='#{id}'><div class='act-name'>#{$('#self-search').val()} •</div></div></div>"
 
 	closeWelcome: ->
+		console.log "asdf"
 		if $('#email').val().slice(-7) == "ucf.edu"
 			$('.welcome-form').submit()
-			$('#activation-container').remove()
+			$('#activation-container').hide()
 		else
 			$('#email').css('border', '1px solid red')
 
