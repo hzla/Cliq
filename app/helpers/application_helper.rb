@@ -8,6 +8,15 @@ module ApplicationHelper
 	def doing? name
 		Category.find(request.original_url.split("/")[-2]).name == name ? "doing" : ""  
 	end
+
+	def random_joke
+		Joke.random
+	end
+
+	def random_animal
+		url_name = "a" + (rand(20) + 1).to_s + ".jpg"
+		'https://s3.amazonaws.com/CliqBucket/Jokes/' + url_name
+	end
 end
 
 

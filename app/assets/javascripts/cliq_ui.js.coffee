@@ -12,7 +12,7 @@ CliqUi =
 		$('.results-container').click @collapseAllChat if $('.mobile').length < 1
 		$('body').on 'ajax:success', '.mobile .event-action', @closeEvent
 		@switchText()
-		@bounceFeedback()
+		@bounceFeedback() if $('#given-feedback').length < 1
 		CliqUi.gameIndex = 0
 
 	switchText: ->

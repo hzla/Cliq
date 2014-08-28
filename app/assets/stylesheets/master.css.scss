@@ -182,8 +182,8 @@ textarea:focus {outline: none; }
 
 #feedback {
 	position: fixed;
-	height: 276px;
-	width: 300px;
+	height: 575px;
+	width: 600px;
 	bottom: 0;
 	margin-left: 17.5vw;
 	font-family: $generic-font;
@@ -197,8 +197,9 @@ textarea:focus {outline: none; }
 
 #fb-content {
 	border: none;
-	height: 150px;
-	width: 270px;
+	height: 105px;
+	width: 100%;
+	margin: 0 auto;
 	margin-top: 20px;
 	font-size: 18px;
 }
@@ -212,7 +213,7 @@ textarea:focus {outline: none; }
 	margin-top: 10px;
 	border-radius: 15px;
 	cursor: pointer;
-    font-family: $generic-font;
+  font-family: $generic-font;
 }
 
 #send-fb:hover {
@@ -221,11 +222,16 @@ textarea:focus {outline: none; }
 	color: $light-turq
 }
 
+#feedback-form {
+	width: 90%;
+	margin: 0 auto;
+}
+
 #feedback-message {
-	width: 270px;
-	margin-left: 15px;
+	width: 100%;
+	margin: 0 auto;
 	margin-top: 10px;
-	height: 33px;
+	height: auto;
 }
 
 .background-gray {
@@ -249,6 +255,19 @@ textarea:focus {outline: none; }
 	z-index: 1000;
 	width: 100%;
 	text-align: center;
+}
+
+.joke {
+	font-size: 20px;
+	color: $orange;
+	width: 100%;
+	margin-top: 10px;
+}
+
+.baby-animal {
+	width: 250px;
+	height: 200px;
+	margin: 0 auto;
 }
 
 .blue-card {

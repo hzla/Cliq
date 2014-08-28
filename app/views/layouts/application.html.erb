@@ -72,20 +72,31 @@ $(document).ready(function(){
 
 </script>
 
-<% if current_user && current_user.activation != "feedback" %>
+<% if current_user && current_user.activation == "feedback" %>
+  <div id="given-feedback"></div>
+<% end %>
   <div id="send-feedback" class="animated bounceInUp">
     Send Feedback
   </div>
   <div id="feedback">
     <%= form_tag feedback_path, id: "feedback-form", remote: true do %>
     <div id="feedback-message">
-      Have any suggestions for Cliq? Feel free to send us some feedback!
+      Hey there, thanks for checking out Cliq. We’re just three guys trying to build something 
+      cool, and we’d appreciate feedback on how we can do better.<br><br>
+      In return, please accept this picture of a baby animal and a joke.<br><br>
+      <%= image_tag random_animal, :class => "baby-animal" %>
+
+      <% joke = random_joke %>
+      <div class="joke"> 
+        <%= joke.body %><br>
+        <%= joke.punchline if joke.punchline %>
+      </div>
     </div>
       <%= text_area_tag :content, nil, id: "fb-content" %>
       <%= submit_tag "Send Feedback", id: "send-fb" %>
     <% end %>
   </div>
-<% end %>
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
