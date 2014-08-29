@@ -120,22 +120,23 @@
 	top: -75px;
 	left: calc(40% - 70px);
 	z-index: 1;
-	box-shadow: 0px 3px 7px #888888;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
 }
 
 .create-event-text {
 	position: absolute;
-	top: 75px;
-	right: 28px;
-	font-size: 18px
+	top: 82px;
+	right: 25px;
+	font-size: 16px;
+    text-align: left;
 }
 
 .plus {
 	font-size: 50px;
 	font-weight: 200;
 	position: absolute;
-	top: 65px;
-	left: 28px;
+	top: 75px;
+	left: 32px;
 }
 
 
@@ -533,6 +534,7 @@
 .upcoming-event-picture {
 	height: 168px;
 	position: relative;
+    background-color: #414141;
 }
 
 .upcoming-event-info {
@@ -624,10 +626,10 @@
 		margin-top: 25px;
 	}
 	.event-attr {
-		box-shadow: 0px 3px 7px $dark-turq;
+		box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
 	}
 	.attr-pic {
-		margin-top: 7px;
+		margin-top: 10px;
 	}
 	.form-row.event-dates {
 		margin-top: 25px;
