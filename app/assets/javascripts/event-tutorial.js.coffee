@@ -21,6 +21,8 @@ EventTutorial =
 		$('#tut-3').show().addClass("animated fadeIn")
 		$('.tut-overlay').remove()
 		$('.extended-side-nav').show()
+		# console.log $(window)[0].href.replace(/\?.*=true/g, "")
+		history.pushState(null, document.title, $(window)[0].location.href.replace(/\?.*=true/g, ""))
 
 	extendcreate: ->
 		$('.event-sort').first().click()
