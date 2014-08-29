@@ -20,6 +20,7 @@ EventTutorial =
 		$('#tut-2').hide()
 		$('#tut-3').show().addClass("animated fadeIn")
 		$('.tut-overlay').remove()
+		$('.extended-side-nav').show()
 
 	extendcreate: ->
 		$('.event-sort').first().click()

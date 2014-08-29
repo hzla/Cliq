@@ -9,7 +9,7 @@ class EventsController < ApplicationController #in severe need of refactoring
 		@open = true
 		@event = Event.new
 		@verified = params[:verified]
-		@welcome = params[:welcome]
+		@welcome = params[:welcome] || (!current_user.activated?)
 		excursions.update_all seen: true
 		respond_to do |format|
         format.html { render :layout => !request.xhr? }
