@@ -224,7 +224,7 @@
 	height: 100%;
 	width: 100%;
 	position: absolute;
-	background: rgba(0,0,0,.3);
+	background: rgba(0,0,0,.5);
 	top: 0;
 }
 
@@ -276,7 +276,7 @@
 	width: 120px;
 	height: 15px;
 	position: absolute;
-	bottom: -10px;
+	bottom: -3px;
 }
 
 .event-tag {
@@ -485,7 +485,7 @@
 
 
 .upcoming-event-description {
-	max-height: 75px;
+	max-height: 110px;
 	overflow-y: scroll;
 	width: 100%;
 }
@@ -544,7 +544,7 @@
 .invite-row.invite-actions {
 	width: calc(100% - 15px);
 	margin-left: 0px;
-  margin-bottom: -22px;
+  margin-bottom: -15px;
 }
 
 .attendee {
