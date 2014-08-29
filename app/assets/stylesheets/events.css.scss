@@ -506,6 +506,7 @@
 	width: 224px;
 	height: 400px;
 	float: left;
+	margin-top: 5px;
 	margin-right: calc(33.33% - 224px);
 	background-color: white;
 	-webkit-animation-duration: .3s;
@@ -641,7 +642,7 @@
 }
 
 #events-box .activity {
-	margin-top: 20px;
+	margin-top: 5px;
 }
 
 #invites .event-form-right {
