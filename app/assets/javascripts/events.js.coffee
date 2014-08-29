@@ -7,7 +7,7 @@ Events =
     $('body').on 'ajax:success', '#new_event', @closeModal 
     $('body').on 'click', '#send-invite .invite-icon', @send
     $('body').on $.modal.BEFORE_CLOSE, '#invite-modal-container', @restoreOpacity
-    $('body').on 'click', '#invites .form-row div', @filterEvents
+    $('body').on 'click', '.form-row div', @filterEvents
     $('body').on 'click', '.filter-container .form-row div', @filterEvents
     $('body').on 'click', '.event-filter', @bigFilter
     Events.posting = 0
@@ -35,14 +35,15 @@ Events =
     Events.filterEvents()
 
   filterEvents: ->
-    currentTags = $('.event-attr.selected .attr-text').map ->
+    currentTags = $('.filter-on .event-attr.selected .attr-text').map ->
       $(@).text().split(' ').pop();
     tags = $.makeArray(currentTags).join()
+    console.log tags
     afterTags = ''
-    if $('.event-types .event-type.selected')
-      afterTags += ("," + $('.event-types .event-type.selected').text())
-    if $('.event-date-types .event-type.selected')
-      afterTags += ("," + $('.event-date-types .event-type.selected').text())
+    if $('.filter-on .event-types .event-type.selected')
+      afterTags += ("," + $('.filter-on .event-types .event-type.selected').text())
+    if $('.filter-on .event-date-types .event-type.selected')
+      afterTags += ("," + $('.filter-on .event-date-types .event-type.selected').text())
     tags = tags.split(",,").join(".").split(",").join(".")
     tags = tags.slice(0, tags.length - 1) if tags[tags.length - 1] == "."
     tags = "." + tags if tags != "" && tags[0] != "."

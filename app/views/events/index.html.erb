@@ -1,17 +1,38 @@
 
 <div id="events-container" class="no-mobile">
-<%= link_to public_events_path, :class => "invite-user", remote: true do %>
-	<div id="new-open-event">
-		<div class="plus">+</div><div class="create-event-text">Create<br>Event</div>
+	<div id="new-open-event" class="sift-state <%= 'hidden' if @welcome || @verified %>">
+		<div class="plus">+</div><div class="create-event-text">New Open Invite</div>
+		<div class="sift-text">Sift through Events</div>
+		<%= image_tag "shovel.svg", :class => "sift-pic hidden svg" %>
 	</div>
-<% end %>
 		<div id="invite-container">
-			<div id="invites">
+			
+			<% if @welcome || @verified %>
+				<script>
+					$('.extended-side-nav').hide()
+				</script>
+				<div class="tut-overlay"></div>
+				<div id="tut-container">
+					<div id="sift-option" class="tut-option">
+						<div class="option-question">Looking to join something?</div>
+						<div class="option-title roboto">Sift</div>
+						<%= image_tag "shovel.svg", :class => "tut-sift-pic" %>
+					</div>
+					<div id="create-option" class="tut-option">
+						<div class="option-question">Looking to bring in new people?</div>
+						<div class="option-title roboto">Open Invite<br>+</div>
+					</div>
+				</div>
+			<% end %>
+			<div id="event-create" class="hidden pane inactive">
+				<%= render partial: 'public_new' %>
+			</div>
+			<div id="invites" class="current pane filter-on">
 				<div class="event-form-right">
 					<div class="form-row">
 						<div class="event-quest">I'm looking for a</div>
 						<div class="event-types">
-							<div class="event-type round-left">Hangout</div>
+							<div class="event-type round-left <%= 'selected' if @sign_in %>">Hangout</div>
 							<div class="event-type">Party</div>
 							<div class="event-type round-right">Event</div>
 						</div>
@@ -56,7 +77,7 @@
 					</div>
 					<div class="form-row event-dates">
 						<div class="event-date-types gray">
-							<div class="event-type round-left">Today</div>
+							<div class="event-type round-left <%= 'selected' if @sign_in %>">Today</div>
 							<div class="event-type">Tomorrow</div>
 							<div class="event-type round-right">Any Time</div>
 						</div>
@@ -69,7 +90,7 @@
 	</div>
 
 		<div id="other-events-container">
-		<div id="events-header-actions">
+		<div id="events-header-actions" class="<%= 'hidden' if @welcome || @verified %>">
 			<div id="upcoming-header" class="head-4 dark-gray">Open Events:</div>
 				<div class="event-filter head-5 dark-gray selected" id="event-open">Open</div>
 				<div class="event-filter head-5 dark-gray" id="event-going">Joined</div>
@@ -77,7 +98,50 @@
 		</div>
 			<div id="upcoming">
 				<div id="events-box">
-				</div>
+					<% if @welcome %>
+						<div id="tut-content" class="animated bounceInDown">
+							<div id="tut-1">
+								<div class="tut-text">
+									Welcome to Cliq! We're currently running a pilot at the University of Central Florida. To start using Cliq, we'll need you to enter your ucf.edu email and click the confirmation link we send you. 
+								</div>
+								<div class="sub-text">
+									This is to ensure your safety and privacy. We will NEVER share your personal information with anyone. 
+								</div>
+								<%= form_tag welcome_update_path, :class => "confirmation-form", remote: true do %>
+									<%= text_field_tag :email, nil, :class=> "welcome-email", placeholder: "Enter Valid UCF Email" %>
+									<%= hidden_field :send, true %>
+									<div class="confirmation">Send Confirmation</div>
+								<% end %>
+							</div>
+						</div>
+					<% end %>
+					<% if @verified %>
+						<div id="tut-content" class="animated bounceInDown">
+							<div id="tut-2">
+								<div class="tut-text">
+									Cliq is for meeting new people through open invites and having a good time. Anyone can host hangouts which show up to people from <span class="yellow">UCF</span>. 
+								</div>
+								<div class="tut-text">
+									You can sift through hangouts and events to find the ones relevent to your interests and chat with people about plans.
+								</div>
+								<div class="tut-text">
+									Or if you have a car, party, idea, Xbox, or playing cards, you can put up an <span class="red">Open Invite</span> for people to come hang out.  
+								</div>
+								<div class="confirmation got-it">Sweet, got it.</div>
+							</div>
+							<div id="tut-3" class="hidden">
+								<div class="tut-text">
+									Awesome you're all set!
+								</div>
+								<div class="tut-text">
+									Remember to keep an eye out for cliq hosted hangouts every week. We'll have brownie giveaways, gaming sessions, water balloon fights, and a ton of cool events.
+								</div>
+								<div class="tut-text">
+									Pick one of the two options on the left to get started  
+								</div>
+							</div>
+						</div>
+					<% end %>
 			</div>
 		</div>
 		<div id="invite-modal-container" class="modal"></div>
@@ -87,27 +151,13 @@
 	<div class="head-4 dark-gray selected hidden">Open</div>
 <% end %>
 
-<script>
-	$('.event-sort').first().click()
-</script>
+<% if !@welcome && !@verified %>
+	<script>
+		$('.event-sort').first().click()
+	</script>
+<% end %>
 
-<% if @welcome == "true" %>
-		<div id="activation-container" class="welcome-container">
-			<div id="welcome-form" class="dark-gray">
-				<p id="top-welcome" class="head-4"><span class="heavy">If you're reading this, it's because you're awesome and someone told you about Cliq's private beta. Good for you. Welcome to Cliq!</p>
-					
-				<p id="bottom-welcome" class="head-5 gray">Please Enter a valid UCF email to continue.</p>
-
-				<%= form_tag welcome_update_path, :class => "welcome-form", remote: true do %>
-					<%= text_field_tag :email, nil, :class=> "welcome-email" %>
-				<% end %>
-
-				<div id="got-it" class="head-4">Okay, got it!</div>
-			</div>
-		</div>
-	<% end %>
-
-	<% if @welcome != "true" && current_user.email && current_user.email[-7..-1] != "ucf.edu" && !current_user.admin? %>
+	<% if (!current_user.email || current_user.email[-7..-1] != "ucf.edu") && !current_user.admin? && !@welcome && !@verified %>
 		<div id="activation-container" class="welcome-container">
 			<div id="welcome-form" class="dark-gray">
 				<p id="top-welcome" class="head-4"><span class="heavy">We're now requiring all users to validate their accounts with valid UCF emails. This helps better ensure your privacy and security. Thanks!</p>

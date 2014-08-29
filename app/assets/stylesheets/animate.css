@@ -1086,8 +1086,8 @@ Copyright (c) 2013 Daniel Eden
 @-webkit-keyframes fadeInLeft {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(-20px);
-    transform: translateX(-20px);
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px);
   }
 
   100% {
@@ -1100,9 +1100,9 @@ Copyright (c) 2013 Daniel Eden
 @keyframes fadeInLeft {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(-20px);
-    -ms-transform: translateX(-20px);
-    transform: translateX(-20px);
+    -webkit-transform: translateX(-100px);
+    -ms-transform: translateX(-100px);
+    transform: translateX(-100px);
   }
 
   100% {

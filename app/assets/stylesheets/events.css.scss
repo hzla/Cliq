@@ -94,48 +94,81 @@
 
 #invites {
 	width: 383px;
-	margin: 0 auto;
+	position: absolute;
+	left: calc(50% - 191px);
 	font-family: $generic-font
 }
 
 #new-open-event {
-	width: 140px;
-	height: 140px;
-	border-radius: 150px;
+	width: 250px;
+	height: 250px;
+	border-radius: 200px;
 	text-align: center;
 	font-weight: 300;
 	color: white;
-	background: $orange;
+	background: $light-turq;
 	cursor: pointer;
 	font-size: 20px;
 	position: fixed;
-	top: -75px;
-	left: calc(40% - 70px);
+	top: -160px;
+	left: calc(20% - 125px);
 	z-index: 1;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
 }
 
+#new-open-event.sift-state {
+	background: $red;
+}
+
 .create-event-text {
 	position: absolute;
-	top: 82px;
-	right: 25px;
-	font-size: 16px;
-    text-align: left;
+	top: 175px;
+	width: 100%;
+	text-align: center;
+	font-size: 18px
 }
 
 .plus {
 	font-size: 50px;
 	font-weight: 200;
 	position: absolute;
-	top: 75px;
-	left: 32px;
+	top: 185px;
+	width: 100%;
+	text-align: center;
+
+
 }
 
 
 #new-open-event:hover {
-	background: white;
-	color: $orange;
-	border: 1px solid $orange;
+	height: 280px;
+	width: 280px;
+	left: calc(20% - 140px);
+}
+
+.sift-text {
+	display: none;
+	position: absolute;
+	top: 180px;
+	width: 100%;
+}
+
+#new-open-event:hover {
+	.sift-text {
+		display: block;
+	}
+	.sift-pic {
+		top: 210px;
+	}
+}
+
+#new-open-event.sift-state:hover {
+	.sift-text {
+		display: none;
+	}
+	.sift-pic {
+		top: 210px;
+	}
 }
 
 #invites-collection {
@@ -148,14 +181,13 @@
 	margin-top: 50px;
 	margin-bottom: 15px;
 	font-size: 28px;
-    font-weight: 400;
+  font-weight: 400;
 }
 
 #upcoming-header {
 	float: left;
 	font-size: 26px;
     font-weight: 300;
-
 }
 
 .invite {
@@ -478,7 +510,6 @@
 	float: left;
 	margin-right: calc(33.33% - 224px);
 	background-color: white;
-	margin-top: 20px;
 	-webkit-animation-duration: .3s;
 }
 
@@ -581,6 +612,9 @@
     text-align: center;
 }
 
+.event-filter.event-bar-text {
+	width: 60px;
+}
 .event-filter:hover {
 	background-color: #666666;
 	border-radius: 13px;
@@ -605,7 +639,7 @@
 
 #invites .event-form-right {
 	width: 100%;
-	margin-top: 100px;
+	margin-top: 25vh;
 }
 
 #events-box .activity {
@@ -649,4 +683,38 @@
 	float: right;
 	clear: none;
 	margin-left: 13px;
+}
+
+///////////////////////////////////////////
+
+#event-create {
+	position: absolute;
+	left: 0;
+	top: -100%;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+	background-image: image_url("jump_side.png");
+	background: rgba(255,89,89,.7)
+}
+
+.sift-pic {
+	width: 100%;
+	position: absolute;
+	top: 180px;
+	text-align: center;
+	height: 40px;
+	right: 0;
+}
+
+#event-form-title {
+	text-align: center;
+	color: white;
+	font-size: 25px;
+}
+
+#form-section-2 {
+	width: 350px;
+	margin: 0 auto;
+	margin-top: 20vh;
 }

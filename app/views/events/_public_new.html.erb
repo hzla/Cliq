@@ -1,0 +1,103 @@
+<%= form_for [@event], :class => 'event-form' do |f| %>
+	<div id="form-section-1">
+		<div class="event-form-left">
+			<div id="event-form-title">New Open Invite</div>
+			<div class="form-row first">
+				<%= f.text_field :title, :class => "form-input", placeholder: "What's happening?" %>
+			</div>
+			
+	
+			<div class="form-row"> 
+				<%= f.text_field :start_time, :class => "form-input", placeholder: 'Pick a date' %> 
+			</div>
+			<script>
+				$('#event_start_time').datetimepicker({
+					dateFormat: 'yy-mm-dd',
+			    timeFormat: 'hh:mm:tt'
+				})
+			</script>
+
+			
+			<div class="form-row">
+				<div id="quantity-select"> 
+					<%= f.text_area :description, :class => 'form-input', placeholder: "Any Details?" %>
+				</div>
+			</div>
+			<div class="form-row">
+				<div id="next-form">
+					<%= image_tag "Next.svg", :class => "next-form-pic" %>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="form-section-2" class="hidden">
+		<div class="form-row">
+			<div class="event-quest">Is this a:</div>
+			<div class="event-types">
+				<div class="event-type round-left selected">Hangout</div>
+				<div class="event-type">Party</div>
+				<div class="event-type round-right">Event</div>
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="event-quest">What'll be there?</div>
+			<div class="event-attrs-1">
+				<div class="event-attr no-left music">
+					<%= image_tag "Mus.svg", :class => "attr-pic svg" %>
+					<div class="attr-text">Music</div>
+				</div>
+				<div class="event-attr discussion">
+					<%= image_tag "Discussion.svg", :class => "attr-pic svg" %>
+					<div class="attr-text">Discussion</div>
+				</div>
+				<div class="event-attr activity">
+					<%= image_tag "Activity.svg", :class => "attr-pic svg" %>
+					<div class="attr-text">Activity</div>
+				</div>
+				<div class="event-attr party">
+					<%= image_tag "Party.svg", :class => "attr-pic svg" %>
+					<div class="attr-text">Drinks</div>
+				</div>
+			</div>
+			<div class="event-attrs-2 food">
+				<div class="event-attr food no-left">
+					<%= image_tag "Food.svg", :class => "attr-pic svg" %>
+					<div class="attr-text">Food</div>
+				</div>
+				<div class="event-attr games">
+					<%= image_tag "Games.svg", :class => "attr-pic svg" %>
+					<div class="attr-text">Games</div>
+				</div>
+				<div class="event-attr show">
+					<%= image_tag "Show.svg", :class => "attr-pic svg" %>
+					<div class="attr-text">A Show</div>
+				</div>
+				<div class="event-attr shaman">
+					<%= image_tag "Hookah.svg", :class => "attr-pic svg" %>
+					<div class="attr-text">A Shaman</div>
+				</div>
+			</div>
+		</div>
+
+		<%= f.hidden_field :creator_id, value: current_user.id %>
+		<%= f.hidden_field :event_type, value: "Hangout"%>
+		<%= hidden_field_tag :tags ,nil, :class => "tags"%>
+		<%= hidden_field_tag :requirements ,nil, :class => "requirements"%>
+
+		<div class="form-row">
+			<div class="event-requirements">
+				<div class="event-requirement">
+					<div class="require-text paid">Paid</div>
+				</div>
+			</div>
+			<div class="event-quest requirement-question">(If your hangout, party, or event is not free, remember to include pricing info.)</div>
+		</div>
+
+		<div class="form-row last">	
+			<div id="send-invite">
+				<%= f.submit "SET IT LOOSE", id: "invite-submit" %>
+			</div>
+			<img id="preview" src="#" alt="preview failed to load" class="hidden" /> 
+		</div>
+	</div>
+<% end %>
