@@ -24,6 +24,7 @@
 		color: white;
 		position: static;
 		line-height: 44px;
+		display: block;
 	}
 	.conversation {
 		height: auto;
@@ -222,7 +223,7 @@
 	}
 	.chat-window-footer {
 		background: $super-light-gray;
-		bottom: -190px;
+		bottom: -105px;
 	}
 	.event-box {
 		width: 100%;
