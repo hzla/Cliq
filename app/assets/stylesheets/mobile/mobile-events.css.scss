@@ -48,6 +48,7 @@
 	.convo-name {
 		font-weight: 600;
 	}
+
 	.event-line.gray {
 		font-weight: 400;
 	}
@@ -263,4 +264,8 @@
 		line-height: 1.75;
 	}
 }
+
+.mobile .form-row.event-dates {
+		margin-top: 0px;
+	}
 
