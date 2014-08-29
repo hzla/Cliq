@@ -7,7 +7,7 @@ EventTutorial =
 		$('body').on 'click', '#tut-1 .confirmation', @checkUCF
 
 	checkUCF: ->
-		if true #$('#email').slice(-7) == "ucf.edu"
+		if $('#email').slice(-7) == "ucf.edu"
 			$('.confirmation-form').submit() 
 		else
 			$('#email').css('border', '1px solid red')
