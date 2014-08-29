@@ -99,31 +99,43 @@
 
 .mobile {
 	.baby-animal {
-		margin-top: 10px;
+		margin-top: 5px;
 		width: 100%;
 	}
 	.joke {
 		color: $dark-gray;
 		text-align: center;
+        padding: 5px 10px;
+        box-sizing: border-box;
+        margin-top: 0px;
 	}
 	#feedback-form {
 		background: white;
 		width: 100%;
+        padding: 50x 0px;
+        box-sizing: border-box;
 	}
 	#fb-content {
 		border-radius: 20px;
-		background: $super-light-gray;
-		width: 80%;
-		padding-left: 5%;
-		padding-right: 5%;
-		margin-left: 5%;
+        background: $super-light-gray;
+        padding: 10px 15px;
+        box-sizing: border-box;
+        margin: 0px 10px;
+        margin-top: 5px;
+        width: 93.5%;
+        font-family: proxima-nova;
+        font-size: 17px;
+        font-weight: 300;
+        line-height: 1.2;
 	}
 	#send-fb {
 		width: 100%;
 		background: $orange;
 		border-radius: 0;
-		height: 44px;
+		height: 64px;
 		font-size: 20px;
+        margin: 0px;
+        margin-top: 10px;
 	}
 	#send-fb:hover {
 		border: none;
