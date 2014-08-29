@@ -193,9 +193,7 @@
 
 .welcome-text {
 	float: left;
-	margin-left: 10px;
-	width: calc(100% - 20px);
-	margin-top: 10px;
+	width: 100%;
 }
 
 .instructions-1.wel-text {
@@ -206,8 +204,8 @@
 .wel-text {
 	font-size: 17px;
 	float: left;
-	margin-top: 10px;
 	font-weight: 300;
+    margin: 5px 10px;
 }
 
 .wel-text.s-s {
