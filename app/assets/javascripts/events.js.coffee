@@ -143,7 +143,8 @@ Events =
     dates = $.makeArray($.unique(dates))
     $.each dates, ->
       splitDate = @.split("-").join(" ")
-      $('.event-date-type').last().after "<div class='event-date-type #{@}'><div class='date-header head-2'>#{splitDate}</div></div>"
+      date = @.charAt(0).toUpperCase() + @.slice(1)
+      $('.event-date-type').last().after "<div class='event-date-type #{date}'><div class='date-header head-2'>#{splitDate}</div></div>"
     $.each dates, ->
       $(".event-date-type.#{@}").append $(".upcoming-event.#{@}:not(.today, .tommorow)")
       

@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 	has_many :categories, through: :cat_interests
 	has_many :activities, through: :interests
-	has_many :events, through: :excursions
+	has_many :events, through: :excursions, dependent: :destroy
 	has_many :conversations, through: :connections
 	has_many :cat_interests, dependent: :destroy 
 	has_many :interests, dependent: :destroy 
