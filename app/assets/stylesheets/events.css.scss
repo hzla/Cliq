@@ -34,15 +34,13 @@
 }
 
 #events-box {
-	float: left;
 	width: 100%;
-	margin-left: calc(16.66% - 112px);
 	margin-bottom: 50px;
     margin-top: 0px;
 }
 
 #events-header-actions {
-	width: calc(63.3% + 218px);
+	width: calc(63.3% + 185px);
 	margin: 0 auto;
 	margin-top: 50px;
 	position: relative;
@@ -256,14 +254,12 @@
 	position: absolute;
 	background: rgba(0,0,0,.5);
 	top: 0;
-    padding: 10px 13px;
+    padding: 10px 15px;
     box-sizing: border-box;
 }
 
 .event-title {
 	font-weight: 700;
-	margin-top: 12px;
-	margin-left: 12px;
 }
 
 .event-title a {
@@ -457,10 +453,10 @@
 }
 
 #upcoming {
-	margin: 0 auto;
-	width: 95%;
+	width: 100%;
 	min-height: 900px;
 	font-family: $generic-font;
+    margin-left: calc(50% - 365px);
 }
 
 .upcoming-event-info .invite-row {
@@ -509,10 +505,10 @@
 	height: 400px;
 	float: left;
 	margin-top: 5px;
-	margin-right: calc(33.33% - 224px);
+	margin-right: 25px;
 	background-color: white;
 	-webkit-animation-duration: .3s;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 
@@ -645,7 +641,7 @@
 }
 
 #events-box .activity {
-	margin-top: 10px;
+	margin-top: 25px;
 }
 
 #invites .event-form-right {
