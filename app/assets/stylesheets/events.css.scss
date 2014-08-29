@@ -79,25 +79,17 @@
 
 #event-going {
   float: right;
-  padding: 0px 30px;
-  height: 26px;
-  line-height: 1.3;  
+  height: 26px; 
 }
 
 #event-hosting {
 	float: right;
-  padding: 0px 30px;
   height: 26px;
-  line-height: 1.3;
 }
-
-
 
 #event-open {
 	float: right;
-    padding: 0px 30px;
     height: 26px;
-    line-height: 1.3;
 }
 
 #invites {
@@ -161,8 +153,8 @@
 
 #upcoming-header {
 	float: left;
-	font-size: 28px;
-    font-weight: 400;
+	font-size: 26px;
+    font-weight: 300;
 
 }
 
@@ -583,12 +575,16 @@
 
 .event-filter {
 	cursor: pointer;
+    margin: 0px 10px;
+    line-height: 1.8;
+    width: 100px;
+    text-align: center;
 }
 
 .event-filter:hover {
-	background-color: #fff;
-	border-radius: 50px;
-  color: $dark-gray;
+	background-color: #666666;
+	border-radius: 13px;
+    color: #fff;
 }
 
 ////////
@@ -630,6 +626,7 @@
 	}
 	.attr-pic {
 		margin-top: 10px;
+
 	}
 	.form-row.event-dates {
 		margin-top: 25px;
