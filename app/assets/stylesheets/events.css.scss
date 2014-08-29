@@ -35,10 +35,10 @@
 
 #events-box {
 	float: left;
-	margin-top: 50px;
 	width: 100%;
 	margin-left: calc(16.66% - 112px);
 	margin-bottom: 50px;
+    margin-top: 0px;
 }
 
 #events-header-actions {
@@ -79,25 +79,17 @@
 
 #event-going {
   float: right;
-  padding: 0px 30px;
-  height: 26px;
-  line-height: 1.3;  
+  height: 26px; 
 }
 
 #event-hosting {
 	float: right;
-  padding: 0px 30px;
   height: 26px;
-  line-height: 1.3;
 }
-
-
 
 #event-open {
 	float: right;
-    padding: 0px 30px;
     height: 26px;
-    line-height: 1.3;
 }
 
 #invites {
@@ -121,7 +113,7 @@
 	top: -160px;
 	left: calc(20% - 125px);
 	z-index: 1;
-	box-shadow: 0px 3px 7px #888888;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
 }
 
 #new-open-event.sift-state {
@@ -173,8 +165,8 @@
 
 #upcoming-header {
 	float: left;
-	font-size: 28px;
-    font-weight: 400;
+	font-size: 26px;
+    font-weight: 300;
 
 }
 
@@ -244,7 +236,7 @@
 	height: 100%;
 	width: 100%;
 	position: absolute;
-	background: rgba(0,0,0,.3);
+	background: rgba(0,0,0,.5);
 	top: 0;
 }
 
@@ -296,7 +288,7 @@
 	width: 120px;
 	height: 15px;
 	position: absolute;
-	bottom: -10px;
+	bottom: -3px;
 }
 
 .event-tag {
@@ -452,9 +444,9 @@
 }
 
 .upcoming-event-info .invite-row {
-	margin: 2px 0px;
-  font-size: 15px;
-  font-weight: 300;
+	margin: 5px 0px;
+    font-size: 15px;
+    font-weight: 300;
 }
 
 .upcoming-event-info {
@@ -505,7 +497,7 @@
 
 
 .upcoming-event-description {
-	max-height: 75px;
+	max-height: 110px;
 	overflow-y: scroll;
 	width: 100%;
 }
@@ -546,12 +538,13 @@
 .upcoming-event-picture {
 	height: 168px;
 	position: relative;
+    background-color: #414141;
 }
 
 .upcoming-event-info {
 	height: 210px;
     position: relative;
-	padding: 10px 15px;
+	padding: 8px 15px;
     box-sizing: border-box;
 }
 
@@ -563,7 +556,7 @@
 .invite-row.invite-actions {
 	width: calc(100% - 15px);
 	margin-left: 0px;
-  margin-bottom: -22px;
+  margin-bottom: -15px;
 }
 
 .attendee {
@@ -594,12 +587,16 @@
 
 .event-filter {
 	cursor: pointer;
+    margin: 0px 10px;
+    line-height: 1.8;
+    width: 100px;
+    text-align: center;
 }
 
 .event-filter:hover {
-	background-color: #fff;
-	border-radius: 50px;
-  color: $dark-gray;
+	background-color: #666666;
+	border-radius: 13px;
+    color: #fff;
 }
 
 ////////
@@ -611,7 +608,7 @@
 }
 
 .date-header {
-	margin-top: 10px;
+	margin-top: 40px;
 }
 
 
@@ -624,7 +621,7 @@
 }
 
 #events-box .activity {
-	margin-top: 20px;
+	margin-top: 0px;
 }
 
 #invites .event-form-right {
@@ -637,10 +634,11 @@
 		margin-top: 25px;
 	}
 	.event-attr {
-		box-shadow: 0px 3px 7px $dark-turq;
+		box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
 	}
 	.attr-pic {
-		margin-top: 7px;
+		margin-top: 10px;
+
 	}
 	.form-row.event-dates {
 		margin-top: 25px;
