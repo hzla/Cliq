@@ -53,11 +53,11 @@
 #tut-content {
 	width: 66%;
 	margin: 0 auto;
-	margin-top: 10vh;
+	margin-top: 15vh;
 }
 
 .tut-text {
-	font-weight: 300;
+	font-weight: 400;
 	color: $dark-gray;
 	font-size: 28px;
 	margin-bottom: 20px;
@@ -65,7 +65,7 @@
 
 .sub-text {
 	margin-top: 10px;
-	color: $light-gray;
+	color: $gray;
 	font-size: 20px;
 }
 
@@ -85,6 +85,7 @@
 	border-radius: 100px;
 	text-align: center;
 	font-size: 20px;
+    font-family: $generic-font;
 }
 
 .confirmation {
