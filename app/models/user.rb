@@ -55,7 +55,7 @@ class User < ActiveRecord::Base
 	end
 
 	def activated?
-		activation == 'activated'
+		activation == 'activated' || activation == 'feedback'
 	end
 
 	def generate_code

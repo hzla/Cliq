@@ -5,9 +5,11 @@ class EventsController < ApplicationController #in severe need of refactoring
 
 	def index
 		excursions = current_user.excursions 
+		@sign_in = params[:sign_in]
 		@open = true
 		@event = Event.new
-		@welcome = params[:welcome]
+		@verified = params[:verified]
+		@welcome = params[:welcome] || (!current_user.activated?)
 		excursions.update_all seen: true
 		respond_to do |format|
         format.html { render :layout => !request.xhr? }

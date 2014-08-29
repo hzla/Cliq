@@ -44,7 +44,7 @@ class UsersController < ApplicationController
 			session[:user_id] = @user.id
 			@user.activate
 			@message = "You have been activated"
-			redirect_to search_path and return
+			redirect_to events_path(verified: true) and return
 		else
 			@message = "Activation Failed"
 			redirect_to search_path
@@ -98,7 +98,10 @@ class UsersController < ApplicationController
 	end
 
 	def welcome_update
+		p params
+		puts "\n"
 		current_user.update_attributes email: params[:email]
+		ActivationMailerWorker.perform_async current_user.id, params[:email] if params[:send]
 		render nothing: true
 	end
 

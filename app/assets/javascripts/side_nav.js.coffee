@@ -1,6 +1,6 @@
 Animations = 
 	init: ->
-		$('.side-icon').hoverIntent 
+		$('.side-icon#extended-settings').hoverIntent 
 			over: @showLabel 
 			out: @hideLabel
 			sensitivity: 10000
@@ -15,10 +15,6 @@ Animations =
 		}, 200
 
 	showLabel:  (e) ->
-		$(@).find('.icon-label').css 'opacity', '1'
-		$(@).stop().animate {
-			width: "210px"
-		}, 200
 		if $(e.currentTarget).attr('id') == "extended-settings"
 			$('.extended-options').show().find('.icon-label').css 'opacity', '1'
 			$('.extended-options').stop().animate {

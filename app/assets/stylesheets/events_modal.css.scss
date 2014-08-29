@@ -8,10 +8,30 @@
 }
 
 .event-form-left {
-	float: left;
 	width: 350px;
+	position: absolute;
+	top: 25vh;
+	margin-left: calc(50% - 175px);
 }
 
+#next-form {
+	width: 60px;
+	height: 60px;
+	border-radius: 100px;
+	background: white;
+	margin: 0 auto;
+	cursor: pointer;
+}
+
+#next-form:hover {
+	border: 1px solid black;
+}
+
+.next-form-pic {
+	height: 40px;
+	width: 100%;
+	margin-top: 10px;
+}
 
 
 .event-form-header {
@@ -177,18 +197,18 @@
 	border: none;
 	color: white;
 	font-size: 15px;
-    font-weight: 600;
+  font-weight: 600;
 	cursor: pointer;
 	background-color: $orange;
 	color: white;
-	width: 40%;
+	width: 80%;
 	height: 50px;
 	border-radius: 25px;
 	font-size: 17px;
 	border: none;
 	box-shadow: none;
 	float: left;
-	margin-left: 30%;
+	margin-left: 10%;
 	cursor: pointer;
     margin-top: 5%;
   font-family: $generic-font;
@@ -407,7 +427,7 @@
 .event-requirements {
 	width: 60px;
 	height: 60px;
-	margin: 0 auto;
+	float: left;
 }
 
 .event-requirement {
@@ -441,11 +461,12 @@
 }
 
 .requirement-question {
-	margin-top: 5px;
 	margin-bottom: 8px;
-    font-weight: 300;
-    font-size: 15px;
-    padding: 0px 15px;
+  font-weight: 300;
+  font-size: 15px;
+  padding: 0px 15px;
+  margin-left: 60px;
+	margin-top: 20px;
 }
 
 

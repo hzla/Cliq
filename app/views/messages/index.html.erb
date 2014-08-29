@@ -1,7 +1,8 @@
-<% if current_user.ordered_conversations.length > 0 %>
+
 <div id="messages-container">
 	<div class="message-content-container">
 		<div class="message-content">
+			<% if current_user.ordered_conversations.length > 0 %>
 			<div id="conversations">
 				<% current_user.ordered_conversations.each do |convo| %>
 
@@ -28,6 +29,7 @@
 					<% end %>
 				<% end %>
 			</div>
+			<% end %>
 		</div>
 		<div id="thread-container">
 			<div id="messages-box">
@@ -40,7 +42,7 @@
 		$($('.convo-link')[0]).click()
 	</script>
 </div>
-<% end %>
+
 
 <% if current_user.email[-7..-1] != "ucf.edu" && !current_user.admin?  %>
 		<div id="activation-container" class="welcome-container">

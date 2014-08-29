@@ -7,14 +7,14 @@ Cliq =
 		@hightlightTab()
 
 	hightlightTab: ->
-		url = location.href.replace("#_=_", "").replace("?welcome=true", "").split('/')
+		url = location.href.replace("#_=_", "").replace(/\?.*=true/g, "").split('/')
 		tab = url[url.length - 1]
 		$("##{tab}").children('.side-icon').addClass('active')
 		if url[url.length - 2] == "users"
 			$('#profile').children('.side-icon').addClass('active')
 
 	popState: -> 
-    url = location.href.replace("#_=_", "").replace("?welcome=true", "").split('/')
+    url = location.href.replace("#_=_", "").replace(/\?.*=true/g, "").split('/')
     tab = url[url.length - 1]
     $("##{tab}").click()
     if url[url.length - 2] == "users"

@@ -80,6 +80,10 @@ a {
 	color: $light-gray;
 }
 
+.yellow {
+	color: $catyellow;
+}
+
 .gray {
 	color: $gray;
 }
@@ -124,10 +128,7 @@ a {
 	color: $light-turq;
 }
 
-.active svg path {
-	fill: white;
-    opacity: 0.8;
-}
+
 
 .active #cliq-logo {
 	color: white;

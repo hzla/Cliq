@@ -1,8 +1,52 @@
 EventTutorial = 
 	init: ->
 		$('body').on 'click', '#sift-option', @extendSift
+		$('body').on 'click', '#create-option', @extendcreate
+		$('body').on 'click', '.confirmation.got-it', @finishTut
+		$('body').on 'ajax:success', '.confirmation-form', @checkEmail
+		$('body').on 'click', '#tut-1 .confirmation', @checkUCF
+
+	checkUCF: ->
+		if true #$('#email').slice(-7) == "ucf.edu"
+			$('.confirmation-form').submit() 
+		else
+			$('#email').css('border', '1px solid red')
+
+	checkEmail: ->
+		$(@)[0].reset()
+		$('#email').attr("placeholder", "Thank you! Please check your email.")
+
+	finishTut: ->
+		$('#tut-2').hide()
+		$('#tut-3').show().addClass("animated fadeIn")
+		$('.tut-overlay').remove()
+		$('.extended-side-nav').show()
+
+	extendcreate: ->
+		$('.event-sort').first().click()
+		$('#events-header-actions').show()
+		$(@).find('.option-title, .tut-sift-pic, .option-question').addClass('animated fadeOut')
+		create = $('.pane.inactive')
+		sift = $('.pane.current')
+		create.removeClass('inactive').addClass('current').animate 
+			top: '0'
+		, 500
+		sift.css('top', '100%').addClass('inactive').removeClass('current')
+		$('#event-create').show()
+		$('#create-option').css('height', '100%')
+		$('#create-option').animate 
+			opacity: 0
+		, 500
+		$('#sift-option').animate 
+			height: '0px'
+		, 500, ->
+			$('#tut-container').remove()
+			$('#new-open-event').toggleClass('sift-state').children(':not(.sift-text)').toggle()
+			$('#new-open-event').show().addClass('animated fadeInDown')
 
 	extendSift: ->
+		$('.event-sort').first().click()
+		$('#events-header-actions').show()
 		$(@).find('.option-title, .tut-sift-pic, .option-question').addClass('animated fadeOut')
 		$(@).animate
 			height: '100%'
@@ -10,6 +54,7 @@ EventTutorial =
 		, 500, ->
 			$('#tut-container').remove()
 			$('.event-form-right').addClass('animated fadeInLeft')
+			$('#new-open-event').show().addClass('animated fadeInDown')
 
 
 

@@ -20,7 +20,7 @@
 	height: 100%;
 	position: fixed;
 	top: 0;
-	overflow-y: hidden;
+	overflow-y: scroll;
 	background-image: image_url("jump_side.png");
   background-size: cover;
 }
@@ -138,16 +138,35 @@
 }
 
 
-#new-open-event.sift-state:hover {
-	background: white;
-	color: $red;
-	border: 1px solid $red;
+#new-open-event:hover {
+	height: 280px;
+	width: 280px;
+	left: calc(20% - 140px);
+}
+
+.sift-text {
+	display: none;
+	position: absolute;
+	top: 180px;
+	width: 100%;
 }
 
 #new-open-event:hover {
-	background: white;
-	color: $light-turq;
-	border: 1px solid $light-turq;
+	.sift-text {
+		display: block;
+	}
+	.sift-pic {
+		top: 210px;
+	}
+}
+
+#new-open-event.sift-state:hover {
+	.sift-text {
+		display: none;
+	}
+	.sift-pic {
+		top: 210px;
+	}
 }
 
 #invites-collection {
@@ -160,14 +179,13 @@
 	margin-top: 50px;
 	margin-bottom: 15px;
 	font-size: 28px;
-    font-weight: 400;
+  font-weight: 400;
 }
 
 #upcoming-header {
 	float: left;
 	font-size: 26px;
     font-weight: 300;
-
 }
 
 .invite {
@@ -490,7 +508,6 @@
 	float: left;
 	margin-right: calc(33.33% - 224px);
 	background-color: white;
-	margin-top: 20px;
 	-webkit-animation-duration: .3s;
 }
 
@@ -593,6 +610,9 @@
     text-align: center;
 }
 
+.event-filter.event-bar-text {
+	width: 60px;
+}
 .event-filter:hover {
 	background-color: #666666;
 	border-radius: 13px;
@@ -617,7 +637,7 @@
 
 #invites .event-form-right {
 	width: 100%;
-	margin-top: 100px;
+	margin-top: 25vh;
 }
 
 #events-box .activity {
@@ -683,4 +703,16 @@
 	text-align: center;
 	height: 40px;
 	right: 0;
+}
+
+#event-form-title {
+	text-align: center;
+	color: white;
+	font-size: 25px;
+}
+
+#form-section-2 {
+	width: 350px;
+	margin: 0 auto;
+	margin-top: 20vh;
 }
