@@ -5,8 +5,10 @@ class EventsController < ApplicationController #in severe need of refactoring
 
 	def index
 		excursions = current_user.excursions 
+		@sign_in = params[:sign_in]
 		@open = true
 		@event = Event.new
+		@verified = params[:verified]
 		@welcome = params[:welcome]
 		excursions.update_all seen: true
 		respond_to do |format|
