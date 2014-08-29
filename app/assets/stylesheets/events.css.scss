@@ -258,6 +258,8 @@
 	position: absolute;
 	background: rgba(0,0,0,.5);
 	top: 0;
+    padding: 10px 13px;
+    box-sizing: border-box;
 }
 
 .event-title {
@@ -511,6 +513,7 @@
 	margin-right: calc(33.33% - 224px);
 	background-color: white;
 	-webkit-animation-duration: .3s;
+    margin-top: 20px;
 }
 
 
@@ -643,7 +646,7 @@
 }
 
 #events-box .activity {
-	margin-top: 0px;
+	margin-top: 10px;
 }
 
 #invites .event-form-right {
