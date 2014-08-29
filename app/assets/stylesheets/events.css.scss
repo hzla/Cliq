@@ -35,10 +35,10 @@
 
 #events-box {
 	float: left;
-	margin-top: 50px;
 	width: 100%;
 	margin-left: calc(16.66% - 112px);
 	margin-bottom: 50px;
+    margin-top: 0px;
 }
 
 #events-header-actions {
@@ -432,9 +432,9 @@
 }
 
 .upcoming-event-info .invite-row {
-	margin: 2px 0px;
-  font-size: 15px;
-  font-weight: 300;
+	margin: 5px 0px;
+    font-size: 15px;
+    font-weight: 300;
 }
 
 .upcoming-event-info {
@@ -532,7 +532,7 @@
 .upcoming-event-info {
 	height: 210px;
     position: relative;
-	padding: 10px 15px;
+	padding: 8px 15px;
     box-sizing: border-box;
 }
 
@@ -596,7 +596,7 @@
 }
 
 .date-header {
-	margin-top: 10px;
+	margin-top: 40px;
 }
 
 
@@ -609,7 +609,7 @@
 }
 
 #events-box .activity {
-	margin-top: 20px;
+	margin-top: 50px;
 }
 
 #invites .event-form-right {
