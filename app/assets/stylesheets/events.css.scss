@@ -120,6 +120,7 @@
 
 .create-event-text {
 	position: absolute;
+	display: none;
 	top: 175px;
 	width: 100%;
 	text-align: center;
@@ -130,7 +131,7 @@
 	font-size: 50px;
 	font-weight: 200;
 	position: absolute;
-	top: 185px;
+	top: 165px;
 	width: 100%;
 	text-align: center;
 }
@@ -162,6 +163,13 @@
 	.sift-text {
 		display: none;
 	}
+	.plus {
+		top: 185px;
+	}
+	.create-event-text {
+		display: block;
+	}
+
 	.sift-pic {
 		top: 210px;
 	}

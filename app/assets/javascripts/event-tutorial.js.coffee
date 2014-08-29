@@ -5,12 +5,18 @@ EventTutorial =
 		$('body').on 'click', '.confirmation.got-it', @finishTut
 		$('body').on 'ajax:success', '.confirmation-form', @checkEmail
 		$('body').on 'click', '#tut-1 .confirmation', @checkUCF
+		$('body').on 'focus', '#email', @hidePlaceholder
+
+	hidePlaceholder: ->
+		$(@).attr('placeholder', '')
 
 	checkUCF: ->
 		if $('#email').slice(-7) == "ucf.edu" || $('#email') == "andylee.hzl@gmail.com"
 			$('.confirmation-form').submit() 
 		else
 			$('#email').css('border', '1px solid red')
+			$('#email').attr('placeholder', 'Please enter a valid UCF email')
+			$('.confirmation-form')[0].reset()
 
 	checkEmail: ->
 		$(@)[0].reset()

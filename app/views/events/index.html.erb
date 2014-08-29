@@ -114,6 +114,15 @@
 								<% end %>
 							</div>
 						</div>
+						<script>
+			        $(document).ready(function() {
+			           $(".confirmation-form").bind("keypress", function(e) {
+			              if (e.keyCode == 13) {
+			                 return false;
+			              }
+			           });
+			        });
+						</script>
 					<% end %>
 					<% if @verified %>
 						<div id="tut-content" class="animated bounceInDown">

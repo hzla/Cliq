@@ -132,6 +132,7 @@ class UsersController < ApplicationController
 		current_user.messages.map(&:conversation).uniq.compact.each do |convo|
 			convo.destroy
 		end
+		Event.where(creator_id: current_user.id).destroy_all
 		current_user.destroy
 		redirect_to root_path
 	end
