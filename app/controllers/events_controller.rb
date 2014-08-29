@@ -6,6 +6,7 @@ class EventsController < ApplicationController #in severe need of refactoring
 	def index
 		excursions = current_user.excursions 
 		@open = true
+		@event = Event.new
 		@welcome = params[:welcome]
 		excursions.update_all seen: true
 		respond_to do |format|

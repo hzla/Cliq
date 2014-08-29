@@ -1,12 +1,37 @@
 
 <div id="events-container" class="no-mobile">
-<%= link_to public_events_path, :class => "invite-user", remote: true do %>
-	<div id="new-open-event">
-		<div class="plus">+</div><div class="create-event-text">Create<br>Event</div>
+	<div id="new-open-event" class="sift-state">
+		<div class="plus">+</div><div class="create-event-text">New Open Invite</div>
+		<%= image_tag "shovel.svg", :class => "sift-pic hidden" %>
 	</div>
-<% end %>
 		<div id="invite-container">
-			<div id="invites">
+			<% if @welcome %>
+				<div id="tut-container">
+					<div id="sift-option" class="tut-option">
+						<div class="option-question">Looking to join something?</div>
+						<div class="option-title roboto">Sift</div>
+						<%= image_tag "shovel.svg", :class => "tut-sift-pic" %>
+					</div>
+					<div id="create-option" class="tut-option">
+						<div class="option-question">Looking to bring in new people?</div>
+						<div class="option-title roboto">Open Invite<br>+</div>
+					</div>
+				</div>
+
+
+
+
+
+
+
+
+
+
+			<% end %>
+			<div id="event-create" class="hidden pane inactive">
+
+			</div>
+			<div id="invites" class="current pane">
 				<div class="event-form-right">
 					<div class="form-row">
 						<div class="event-quest">I'm looking for a</div>
@@ -91,26 +116,10 @@
 	$('.event-sort').first().click()
 </script>
 
-<% if @welcome == "true" %>
+	<% if !current_user.email || current_user.email[-7..-1] != "ucf.edu" && !current_user.admin? && !@welcome %>
 		<div id="activation-container" class="welcome-container">
 			<div id="welcome-form" class="dark-gray">
-				<p id="top-welcome" class="head-4"><span class="heavy">If you're reading this, it's because you're awesome and someone told you about Cliq's private beta. Good for you. Welcome to Cliq!</p>
-					
-				<p id="bottom-welcome" class="head-5 gray">Please Enter a valid UCF email to continue.</p>
-
-				<%= form_tag welcome_update_path, :class => "welcome-form", remote: true do %>
-					<%= text_field_tag :email, nil, :class=> "welcome-email" %>
-				<% end %>
-
-				<div id="got-it" class="head-4">Okay, got it!</div>
-			</div>
-		</div>
-	<% end %>
-
-	<% if @welcome != "true" && current_user.email && current_user.email[-7..-1] != "ucf.edu" && !current_user.admin? %>
-		<div id="activation-container" class="welcome-container">
-			<div id="welcome-form" class="dark-gray">
-				<p id="top-welcome" class="head-4"><span class="heavy">We're now requiring all users to validate their accounts with valid UCF emails. This helps better ensure your privacy and security. Thanks!</p>
+				<p id="top-welcome" class="head-4"><span class="heavy">asdfWe're now requiring all users to validate their accounts with valid UCF emails. This helps better ensure your privacy and security. Thanks!</p>
 					
 				<p id="bottom-welcome" class="head-5 gray">Please Enter a valid UCF email to continue.</p>
 

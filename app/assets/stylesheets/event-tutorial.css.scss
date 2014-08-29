@@ -1,0 +1,43 @@
+@import 'variables';
+
+#tut-container {
+	height: 100%;
+	width: 100%;
+	z-index: 5;
+}
+
+.tut-option {
+	width: 100%;
+	height: 50%;
+	float: left;
+	position: relative;
+	text-align: center;
+	cursor: pointer;
+}
+
+#sift-option {
+	background-image: image_url("jump_side.png");
+  background-size: cover;
+	background: $light-turq;
+}
+
+.tut-sift-pic {
+	width: 40px;
+	margin-top: 20px;
+}
+
+#create-option {
+	background: $red;
+}
+
+.option-question {
+	margin-top: 35px;
+	font-size: 26px;
+	color: rgba(0,0,0,.5)
+}
+
+.option-title {
+	margin-top: 11vh;
+	font-size: 30px;
+	color: white;
+}
