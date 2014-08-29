@@ -198,11 +198,14 @@ textarea:focus {outline: none; }
 
 #fb-content {
 	border: none;
-	height: 60px;
-	width: 350px;
-	margin: 0 auto;
-	margin-top: 15px;
-	font-size: 18px;
+    height: 110px;
+    width: 350px;
+    margin: 0 auto;
+    margin-top: 15px;
+    font-size: 15px;
+    font-family: $generic-font;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 #send-fb {
