@@ -75,6 +75,7 @@ $(document).ready(function(){
 <% if current_user && current_user.activation == "feedback" %>
   <div id="given-feedback"></div>
 <% end %>
+<% if current_user && current_user.activation != "feedback" %>
   <div id="send-feedback" class="animated bounceInUp">
     Send Feedback
   </div>
@@ -96,6 +97,7 @@ $(document).ready(function(){
       <%= submit_tag "Send Feedback", id: "send-fb" %>
     <% end %>
   </div>
+<% end %>
 
 
 <script>
