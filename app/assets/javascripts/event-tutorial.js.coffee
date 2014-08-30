@@ -11,7 +11,7 @@ EventTutorial =
 		$(@).attr('placeholder', '')
 
 	checkUCF: ->
-		if $('#email').slice(-7) == "ucf.edu" || $('#email') == "andylee.hzl@gmail.com"
+		if $('#email').val().slice(-7) == "ucf.edu" || $('#email').val() == "andylee.hzl@gmail.com"
 			$('.confirmation-form').submit() 
 		else
 			$('#email').css('border', '1px solid red')
