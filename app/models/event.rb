@@ -50,7 +50,7 @@ class Event < ActiveRecord::Base
 	end
 
 	def tags
-		types = "#{event_type},#{' show' if show},#{' activity' if activity},#{' music' if music},#{' discussion' if discussion},#{' party' if party},#{' food' if food},#{' games' if games},#{' shaman' if shaman}"
+		types = "#{event_type},#{' show' if show},#{' activity' if activity},#{' music' if music},#{' discussion' if discussion},#{' drinks' if party},#{' food' if food},#{' games' if games},#{' shaman' if shaman}"
 		(types.split(",") - [""]).join.downcase
 	end
 
