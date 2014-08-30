@@ -137,8 +137,8 @@ Events =
 
   allotTimes: ->
     $('.today-events').append $('.upcoming-event.today')
-    $('.tommorow-events').append $('.upcoming-event.tommorow')
-    dates = $('.upcoming-event:not(.today, .tommorow)').map ->
+    $('.tommorow-events').append $('.upcoming-event.tomorrow')
+    dates = $('.upcoming-event:not(.today, .tomorrow)').map ->
       $(@).attr('class').split(' ')[1]
     dates = $.makeArray($.unique(dates))
     $.each dates, ->
