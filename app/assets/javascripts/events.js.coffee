@@ -72,7 +72,7 @@ Events =
     $('.date-header').parent().has(":visible").children(".date-header").show()
     Events.posting += 1
     
-    if Events.posting % 2 == 1
+    if Events.posting % 2 == 1 && $('.mobile').length < 1
       $.post '/events/toggle', (data) ->
         console.log "posted"
 
