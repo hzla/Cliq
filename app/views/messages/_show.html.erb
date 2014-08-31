@@ -8,13 +8,13 @@
 			<%= message.date current_user %>
 		</div>
 		<div class="message sent head-5">
-			<%= message.body %>
+			<%= message.html_body.html_safe %>
 		</div>
 	</div>
 <% else %>
 	<div class="message-block received <%= 'event-message' if event_image %> new" id="message-<%= message.id %>">
 		<div class="message received head-5">
-			<%= message.body %>
+			<%= message.html_body.html_safe %>
 		</div>
 		<div class="date recieved head-6 light-gray">
 			<% if event_image %>
