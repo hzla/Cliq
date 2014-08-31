@@ -26,7 +26,7 @@ EventForm =
   chooseTag: ->
     $(@).toggleClass('selected')
     currentTags = $('.event-attr.selected .attr-text').map ->
-      $(@).text().split(' ').pop();
+      $(@).text().replace("Drinks", "Party").split(' ').pop();
     $('.tags').val $.makeArray(currentTags).join() if $('.tags').length > 0
     $(@).addClass("stupid-safari").removeClass("stupid-safari")
 
