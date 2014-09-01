@@ -1531,7 +1531,11 @@
 		var now = new Date();
 		this._setTime(inst, now);
 		$('.ui-datepicker-today', $dp).click();
-		$('#event_start_time').datepicker('hide')
+		setTimeout(function(){
+			$('.ui-datepicker-close').click()
+			$('#event_start_time').blur()
+		}, 500)
+
 	};
 
 	/*

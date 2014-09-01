@@ -20,7 +20,7 @@
 	height: 100%;
 	position: fixed;
 	top: 0;
-	overflow-y: scroll;
+	overflow-y: hidden;
 	background-image: image_url("jump_side.png");
   background-size: cover;
 }
@@ -675,6 +675,12 @@
 	}
 }
 
+#form-section-2 {
+	.event-attrs-2 {
+		margin-right: calc(50% - 147px);
+		margin-left: auto;
+	}
+}
 .event-type {
 	cursor: pointer;
 }
