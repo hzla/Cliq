@@ -17,7 +17,7 @@ Messages =
 
 	submitMessage: ->
 		if $('.mobile').length < 1
-			$(@).parent().parent().prev().prev().submit()
+			$(@).parents('.chat-window-footer').find('form').submit()
 			$('.sending-progress').text('Sending...').show() if $('#chat-box').val().replace(/^\s+|\s+$/g, "") != ""
 			$('.chat-box').val ''
 		
