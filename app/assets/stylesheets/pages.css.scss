@@ -18,7 +18,7 @@
 	position: absolute;
 	left: 40px;
 	top: 200px;
-	width: 10px;
+	width: 15px;
 	z-index: 500;
 }
 
@@ -28,7 +28,15 @@
 	float: left;
 	border-radius: 10px;
 	background: $gray;
-	margin-top: 5px;
+	margin-top: 10px;
+	cursor: pointer;
+	margin-left: 5px;
+}
+
+.circle:hover {
+	width: 20px;
+	height: 20px;
+	margin-left: 0px;
 }
 
 .circle.active {

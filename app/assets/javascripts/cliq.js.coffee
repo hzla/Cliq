@@ -3,8 +3,14 @@ Cliq =
 		Cliq.nextState = true
 		$('.tab').on 'ajax:success', @search
 		$('.tab').on 'click', @pushState
+		$('.circle').on 'click', @changeSlide
 		$(window).bind 'popstate', @popState
 		@hightlightTab()
+
+
+	changeSlide: ->
+		slide = $(@).attr('id').slice(-1)
+		$.fn.fullpage.moveTo(slide)
 
 	hightlightTab: ->
 		url = location.href.replace("#_=_", "").replace(/\?.*=true/g, "").split('/')
