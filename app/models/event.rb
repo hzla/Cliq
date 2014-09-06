@@ -14,6 +14,23 @@ class Event < ActiveRecord::Base
 		"#{ ' today' if today?(c_user)}#{ ' tomorrow' if tommorow?(c_user)} #{ date(c_user)} #{tags}#{ ' hosting' if c_user == user}"
 	end
 
+	def html_description
+		text = body.gsub(/(<.*>).*(<.*>)/, "")
+		text = text.gsub(/(<.*>)/, "")
+		other_text = text.gsub(/\[link\]\((.*)\)/, "")
+		match = Regexp.last_match(1)
+		if match
+			if match[0..6] != 'http://'
+				url_match = 'http://' + match
+			else
+				url_match = match
+			end
+			text.gsub(/\[link\]\((.*)\)/, "<a href='#{url_match}'>#{match}</a>")
+		else
+			text
+		end
+	end
+
 	def self.adjust_time adjustment
 		all.each do |event|
 			event.start_time += adjustment.hours
