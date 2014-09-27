@@ -65,8 +65,9 @@ Game =
 				answer = eval(wholeArray)
 				$('.answer').text eval(wholeArray)
 				$('.winner').show()
-				$.get('/won') if answer == 24
-				$('body').append ("<h1>You Won Shitty 24!</h1>")
+				if answer == 24
+					$('body').append ("<h1>You Won Shitty 24!</h1>")
+					$.get('/won') 
 		, 10
 
 
