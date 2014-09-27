@@ -11,7 +11,7 @@ module Cliq
   class Application < Rails::Application
     Dotenv.load
     config.action_mailer.default_url_options = { host: 'localhost:3000' }
-    
+    config.autoload_paths += %W(#{config.root}/app/workers)
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
