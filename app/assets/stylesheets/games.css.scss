@@ -1,0 +1,294 @@
+@import 'variables';
+
+
+.numbers-container {
+	width: 280px;
+	margin: 0 auto;
+	margin-top: 50px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.start-overlay {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,.8);
+	top: 0;
+}
+
+.start {
+	position: fixed;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	width: 400px;
+	height: 100px;
+	font-size: 100px;
+	line-height: 100px;
+	background: $green;
+	border-radius: 5px;
+	color: white;
+	left: calc(50% - 200px);
+	top: 200px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.start:hover {
+	width: 450px;
+	height: 125px;
+	line-height: 125px;
+	left: calc(50% - 225px);
+
+}
+
+
+.timer {
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	font-size: 50px;
+	top: 50px;
+	left: 50px;
+}
+
+.number {
+	float: left;
+	margin-left: 20px;
+	width: 50px;
+	height: 50px;
+	font-size: 50px;
+	text-align: center;
+	color: $red;
+	cursor: pointer;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+
+.inputs-container {
+	width: 730px;
+	margin: 0 auto;
+	margin-top: 155px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.input {
+	height: 100px;
+	width: 100px;
+	float: left;
+	border-radius: 100px;
+	border: none;
+	font-size: 50px;
+	text-align: center;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.ops-container {
+	width: 280px;
+	margin: 0 auto;
+	margin-top: 350px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	.op {
+		width: 50px;
+		height: 50px;
+		text-align: center;
+		color: $blue;
+		float: left;
+		font-size: 50px;
+		margin-left: 20px;
+		margin-bottom: 20px;
+		cursor: pointer;
+	}
+	.op:nth-child(5n) {
+		margin-left: 50px;
+	}
+}
+
+.equals-container {
+	width: calc(50% - 395px);
+	font-size: 50px;
+	float: right;
+	margin-top: 50px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	margin-left: 30px;
+	.equals, .answer {
+		width: 50px;
+		height: 50px;
+		float: left;
+	}
+
+}
+
+
+.number-input {
+	border: 1px solid $red;
+}
+
+.op-input {
+	margin-top: 50px;
+	border: 1px solid $blue;
+}
+
+
+
+////////////////////////////////////
+
+
+.store-left {
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	height: calc(100% - 100px);
+	position: absolute;
+	left: 100px;
+	top: 50px;
+	width: 250px;
+	.store-header {
+		width: 100%;
+		font-size: 20px;
+		text-align: center;
+	}
+	.store-img {
+		width: 100%;
+		height: auto;
+		margin-top: 20px;
+		margin-bottom: 50px;
+	}
+	.store-sub-header {
+		width: 100%;
+		font-size: 20px;
+		text-align: center;
+		color: $green;
+		cursor: pointer;
+	}
+	.back-btn {
+		color: $green;
+		font-size: 30px;
+		cursor: pointer;
+	}
+}
+
+.store-middle {
+		font-family: "Comic Sans MS", cursive, sans-serif;
+	height: calc(100% - 100px);
+	position: absolute;
+	left: calc(50% - 200px);
+	top: 50px;
+	width: 500px;
+	.middle-header {
+		width: 100%;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	.item-block {
+		float: left;
+        height: 190px;
+        width: 160px;
+        cursor: pointer;
+        box-sizing: border-box;
+        padding: 20px;
+        position: relative;
+	}
+	.item-img {
+		width: 70px;
+		height: auto;
+		margin: 0 auto;
+        position: relative;
+        display: block;
+	}
+    .item-info-container {
+        position: absolute;
+        bottom: 20px;
+        width: calc(100% - 40px);
+        .item-name {
+            float: right;
+            width: 100%;
+            text-align: center;
+            clear: right;
+
+        }
+        .item-price {
+            float: right;
+            width: 100%;
+            text-align: center;
+            clear: right;
+        }
+    }
+	.item-container {
+		float: left;
+		margin-bottom: 50px;
+	}
+	.buy {
+		text-align: center;
+		margin-top: 80px;
+		font-size: 60px;
+		cursor: pointer;
+		color: $green;
+	}
+	.arrow {
+		width: 100px;
+		height: 50px;
+		cursor: pointer;
+	}
+	.left-arrow {
+		float: left;
+	}
+	.right-arrow {
+		float: right;
+	}
+
+
+}
+
+.store-right {
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	height: calc(100% - 100px);
+	position: absolute;
+	right: 100px;
+	top: 50px;
+	width: 250px;
+	.avatar {
+		margin-top: 60px;
+		position: relative;
+	}
+	.avatar-png {
+		z-index: 3;
+	}
+	.add-img.better-png {
+		left: -40px;
+		z-index: 4;
+	}
+	.add-img.ramen-png {
+		width: 50px;
+		height: 50px;
+		top: 104px;
+		z-index: 4;
+	}
+	.add-img.color-png {
+		z-index: 2;
+		top: -48px;
+		left: -47px;
+	}
+	.add-img {
+		position: absolute;
+		left: 20px;
+	}
+	.money-box {
+		position: absolute;
+		top: 325px;
+		.Money, .coins {
+			float: left;
+			width: 50px;
+			margin-left: 30px;
+			margin-right: 30px;
+			font-size: 30px; 
+		}
+		.Money {
+			color: $blue;
+		}
+		.coins {
+			color: $green;
+		}
+	}
+}
+
+
+
+
+

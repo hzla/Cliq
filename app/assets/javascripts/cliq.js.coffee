@@ -3,10 +3,12 @@ Cliq =
 		Cliq.nextState = true
 		$('.tab').on 'ajax:success', @search
 		$('.tab').on 'click', @pushState
-		$('.circle').on 'click', @changeSlide
+		$('.scroll-down').click @scrollDown
 		$(window).bind 'popstate', @popState
 		@hightlightTab()
 
+	scrollDown: ->
+		$('.content-container').scrollTo($(window).height())
 
 	changeSlide: ->
 		slide = $(@).attr('id').slice(-1)

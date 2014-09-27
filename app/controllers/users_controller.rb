@@ -1,6 +1,58 @@
 class UsersController < ApplicationController
 	before_filter :get_user
 
+	skip_before_action :require_login
+
+	include ApplicationHelper
+
+
+	def games
+		if Game.last && !Game.all.last.won
+			@game = Game.last
+			@numbers = @game.numbers.split(",")
+		else
+			@numbers = [rand(9) + 1, rand(9) + 1, rand(9) + 1, rand(9) + 1]
+			until @numbers.uniq.length == 4
+				@numbers = [rand(9) + 1, rand(9) + 1, rand(9) + 1, rand(9) + 1]
+			end
+			@game = Game.create numbers: @numbers.join(",")
+		end
+		@ops = ["+", "-", "*", "/", "^", "!", "%"]
+	end
+
+	def store
+		@list = "cat,hand,nose,eyes,wings".split(",")
+		@names = {cat: "cat", hand: "hand", nose: "nose", eyes: "real eyes", wings: "wings"}
+		@prices = {cat: "cat", hand: "hand", nose: "nose", eyes: "real eyes", wings: "wings"}
+	end
+
+	def strange_store
+		@list = "color,better,ramen".split(",")
+		@names = {color: "Add color", better: "better graphics", ramen: "The Ramen thingy"}
+		@prices = {color: "Add color", better: "better graphics", ramen: "The Ramen thingy"}
+	end
+
+	def start
+		broadcast "/games", {go: true}.to_json
+		render nothing: true
+	end
+
+	def won
+		@game = Game.last
+		new_money = current_user.money + 100
+		user.update_attributes money: new_money 
+		Game.last.update_attributes won: true
+		broadcast "/games", {won: true}.to_json
+		render nothing: true
+	end
+
+	def lost
+		@game = Game.last
+		Game.last.update_attributes won: true
+		broadcast "/games", {won: false}.to_json
+		render nothing: true
+	end
+
 	def show
 		if params[:id].to_i != current_user.id
 			redirect_to user_path current_user 

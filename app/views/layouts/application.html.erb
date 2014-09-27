@@ -26,10 +26,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if current_user %>
-   <%= render partial: "users/side_nav", locals: {active: :none} %>
 
-<% end %>
 <div class="content-container">
 <%= yield %>
 </div>
@@ -72,32 +69,7 @@ $(document).ready(function(){
 
 </script>
 
-<% if current_user && current_user.activation == "feedback" %>
-  <div id="given-feedback"></div>
-<% end %>
-<% if current_user && current_user.activation != "feedback" %>
-  <div id="send-feedback" class="animated bounceInUp">
-    Send Feedback
-  </div>
-  <div id="feedback">
-    <%= form_tag feedback_path, id: "feedback-form", remote: true do %>
-    <div id="feedback-message">
-      Hey there, thanks for checking out Cliq. We’re just three guys trying to build something 
-      cool, and we’d appreciate feedback on how we can do better.<br><br>
-      In return, please accept this joke and a picture of a baby animal.<br><br>
-      <%= image_tag random_animal, :class => "baby-animal" %>
-      <% joke = random_joke %>
-      <div class="joke"> 
-        <%= joke.body %><br>
-        <%= joke.punchline if joke.punchline %>
-      </div>
 
-    </div>
-      <%= text_area_tag :content, nil, id: "fb-content", placeholder: "Let us know what we can improve or what what we should do more of. Thanks!" %>
-      <%= submit_tag "Send Feedback", id: "send-fb" %>
-    <% end %>
-  </div>
-<% end %>
 
 
 <script>
