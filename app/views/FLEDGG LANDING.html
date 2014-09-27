@@ -1,0 +1,113 @@
+<header id="bottom-nav" class="gray">
+	<p class="gearup">GEAR Up</p>
+	<p class="signin">SIGN UP</p>
+	<div class="sign-up-box">
+		<a href="/auth/facebook" %>
+			<div class="fb-sign-up-btn">
+				<div class="fb-logo">
+					<%= image_tag "fb_logo.png", :class => "fb-letter" %>
+				</div>
+				<div class="sign-up-text">Sign up with Facebook</div>
+			</div>
+		</a>
+		<div class="sign-up-info">
+              <p class="conditions gray">By signing up, you agree to our <font color="#BEBEBE">terms and conditions</font></p>
+			<p class="login gray">Don't worry, we will never post to your Facebook</p>
+		</div>
+	</div>
+	<%= link_to faq_path do %>
+		<p id="faq">FAQ</p>
+	<% end %>
+</header>
+
+<div id="globalcontainer">
+	<div class="section splash" id="section-1">
+		<div class="main-info">
+			<div class="sign-up-box">
+		      <a href="/auth/facebook" %>
+			     <div class="fb-sign-up-btn">
+				    <div class="fb-logo">
+					   <%= image_tag "fb_logo.png", :class => "fb-letter" %>
+				    </div>
+				    <div class="sign-up-text">Sign up with Facebook</div>
+			     </div>
+		      </a>
+		<div class="sign-up-info">
+              <p class="conditions gray">By signing up, you agree to our <font color="#BEBEBE">terms and conditions</font></p>
+		</div>
+	         </div>
+		</div>	
+	</div>
+	<div class="section intro" id="section-2">
+		<div class="main-intro">
+            <div class="intro card">
+                <h2>MATCH</h2>
+                <%= image_tag "phoneB.png", class: "macaphone"%>
+                <p>Find  or become a mentor, give back to the entrepreneurial community</p>
+            </div>
+			<div class="intro card">
+                <h2>CONNECT</h2>
+                <%= image_tag "phoneB.png", class: "macaphone"%>
+                <p>Stay connected with people you have mentored and beenmentored by, grow together</p>
+            </div>
+            <div class="intro card">
+                <h2>SHARE</h2>
+                <%= image_tag "phoneB.png", class: "macaphone"%>
+                <p>keep people updated, share your idea, knowledge, passion, inspiration, and progress </p>
+            </div>
+		</div>	
+	</div>
+	<div class="section tagline" id="section-3">
+			<p class="tagline">THE BEST TOOL FOR CONNECTING WITH MENTORS EVER</p>
+	</div>
+	<div class="section whyfledgg" id="section-4">
+		<%= image_tag "newphoneC.png", class: "macaphone"%>
+		<p class="parties roboto">WHY FLEDGG?</p>
+        <div class="main-info">
+			<p class="parties roboto">ACCESSIBILITY anyone can join any time no threshold for entrepreneurs and mentors</p> 
+            <p class="parties roboto">TRANSPARENCY Anyone can contact anyone and knowing the latest information about each other</p>
+            <p class="parties roboto">TRUSTWORTHINESS build trust and credibility over time by rating system, help people stay connected and informed</p>
+		</div>	
+	</div>
+    <div class="section theteam" id="section-5">
+		<div class="memberinfo">
+			<div class="memberpic"></div>
+			<p>Adam Bruce</p>
+            <p>Advisory CTO</p>
+		</div>
+        <div class="memberinfo">
+			<div class="memberpic"></div>
+			<p>Vicky Zhang</p>
+            <p>Founder/CEO</p>
+		</div>
+        <div class="memberinfo">
+			<div class="memberpic"></div>
+			<p>Tim Draper</p>
+            <p>Investor</p>
+		</div>
+        <div class="memberinfo">
+			<div class="memberpic"></div>
+			<p>Tom Kosnik</p>
+            <p>Advisory CMO</p>
+		</div>
+	</div>
+</div>
+
+<script>
+$(document).ready(function() {
+	$('body').css('padding-left', '0px')
+	$('.content-container').addClass('landing')
+	$('#full-page').fullpage({
+      onLeave: function(index, nextIndex, direction){
+        $('.circle').removeClass('active')
+				$($('.circle')[nextIndex - 1]).addClass('active')
+      }
+  });
+  setTimeout(function(){
+  	$('.macaphone').show()
+  }, 1000)
+})
+</script>
+
+
+

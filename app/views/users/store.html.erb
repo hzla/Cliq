@@ -18,17 +18,16 @@
 		<% current_user.available_items.each do |i| %>
 			<div class="item-block">
 				<%= image_tag "#{i}.png", :class => "item-img #{i}-item" %>
-				<div class="item-name"><%= @names[i.to_sym] %></div>
-				<div class="item-price"><%= @prices[i.to_sym] %> Money</div>
+                <div class = "item-info-container">
+                    <div class="item-name"><%= @names[i.to_sym] %></div>
+                    <div class="item-price"><%= @prices[i.to_sym] %> Money</div>
+                </div>
 			</div>
 		<% end %>
 	</div>
-	
+        <%= image_tag 'left-arrow.png', :class => 'arrow left-arrow' %>
+	    <%= image_tag 'right-arrow.png', :class => 'arrow right-arrow' %>
 		<div class="buy">BUY</div>
-
-
-	<%= image_tag 'left-arrow.png', :class => 'arrow left-arrow' %>
-	<%= image_tag 'right-arrow.png', :class => 'arrow right-arrow' %>
 </div>
 
 <div class="store-right">

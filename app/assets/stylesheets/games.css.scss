@@ -141,18 +141,18 @@
 	width: 250px;
 	.store-header {
 		width: 100%;
-		font-size: 30px;
+		font-size: 20px;
 		text-align: center;
 	}
 	.store-img {
 		width: 100%;
-		height: 300px;
+		height: auto;
 		margin-top: 20px;
 		margin-bottom: 50px;
 	}
 	.store-sub-header {
 		width: 100%;
-		font-size: 24px;
+		font-size: 20px;
 		text-align: center;
 		color: $green;
 		cursor: pointer;
@@ -170,7 +170,7 @@
 	position: absolute;
 	left: calc(50% - 200px);
 	top: 50px;
-	width: 400px;
+	width: 500px;
 	.middle-header {
 		width: 100%;
 		text-align: center;
@@ -178,33 +178,41 @@
 	}
 	.item-block {
 		float: left;
-		height: 140px;
-		width: 100px;
-		margin-bottom: 20px;
-		margin-right: 20px;
-		cursor: pointer;
+        height: 190px;
+        width: 160px;
+        cursor: pointer;
+        box-sizing: border-box;
+        padding: 20px;
+        position: relative;
 	}
 	.item-img {
-		width: 100px;
-		height: 100px;
-		float: right;
+		width: 70px;
+		height: auto;
+		margin: 0 auto;
+        position: relative;
+        display: block;
 	}
-	.item-name {
-		float: right;
-		width: 100%;
-		text-align: center;
-		clear: right;
+    .item-info-container {
+        position: absolute;
+        bottom: 20px;
+        width: calc(100% - 40px);
+        .item-name {
+            float: right;
+            width: 100%;
+            text-align: center;
+            clear: right;
 
-	}
-	.item-price {
-		float: right;
-		width: 100%;
-		text-align: center;
-		clear: right;
-	}
+        }
+        .item-price {
+            float: right;
+            width: 100%;
+            text-align: center;
+            clear: right;
+        }
+    }
 	.item-container {
 		float: left;
-		margin-bottom: 100px;
+		margin-bottom: 50px;
 	}
 	.buy {
 		text-align: center;
