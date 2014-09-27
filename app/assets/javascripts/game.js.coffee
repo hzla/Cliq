@@ -7,6 +7,39 @@ Game =
 		$('.number-input').keyup @numbersOnly
 		$('.op-input').keyup @opsOnly
 		@ops = ["+", "-", "*", "/", "^", "%"]
+		$('.start').click @countDown
+		$('.other-start').click @otherCD
+
+	otherCD: ->
+		if !Game.countingDown
+			$('.start-overlay').hide()
+			int = setInterval ->
+				newVal = parseInt($('.timer').text().slice(-2)) - 1
+				newVal = parseInt($('.timer').text().slice(-1)) - 1 if $('.timer').text().length == 2
+				if newVal == 0
+					$.get('/lost')
+					location.reload()
+					clearInterval(int)
+					
+				$('.timer').text ":" + newVal
+			, 1000
+
+
+	countDown: ->
+		$.get('/start')
+		$('.start-overlay').hide()
+		Game.countingDown = true
+
+		int = setInterval ->
+			newVal = parseInt($('.timer').text().slice(-2)) - 1
+			newVal = parseInt($('.timer').text().slice(-1)) - 1 if $('.timer').text().length == 2
+			if newVal == 0
+				$.get('/lost')
+				location.reload()
+				clearInterval(int)
+				
+			$('.timer').text ":" + newVal
+		, 1000
 
 	fact: (n) ->
 		return 0 if n < 0

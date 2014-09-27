@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 	before_filter :get_user
-	
+
 	skip_before_action :require_login
 
 	include ApplicationHelper
@@ -23,11 +23,23 @@ class UsersController < ApplicationController
 		@ops = ["+", "-", "*", "/", "^", "!", "%"]
 	end
 
+	def start
+		broadcast "/games", {go: true}.to_json
+		render nothing: true
+	end
+
 	def won
 		p Game.last
 		@game = Game.last
 		Game.last.update_attributes won: true
-		broadcast "/games", @game.to_json
+		broadcast "/games", {won: true}.to_json
+		render nothing: true
+	end
+
+	def lost
+		@game = Game.last
+		Game.last.update_attributes won: true
+		broadcast "/games", {won: false}.to_json
 		render nothing: true
 	end
 

@@ -5,6 +5,49 @@
 	width: 280px;
 	margin: 0 auto;
 	margin-top: 50px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.start-overlay {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,.8);
+	top: 0;
+}
+
+.start {
+	position: fixed;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	width: 400px;
+	height: 100px;
+	font-size: 100px;
+	line-height: 100px;
+	background: $green;
+	border-radius: 5px;
+	color: white;
+	left: calc(50% - 200px);
+	top: 200px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.start:hover {
+	width: 450px;
+	height: 125px;
+	line-height: 125px;
+	left: calc(50% - 225px);
+
+}
+
+
+.timer {
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	font-size: 50px;
+	top: 50px;
+	left: 50px;
 }
 
 .number {
@@ -16,6 +59,7 @@
 	text-align: center;
 	color: $red;
 	cursor: pointer;
+	font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 
@@ -23,6 +67,7 @@
 	width: 730px;
 	margin: 0 auto;
 	margin-top: 155px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 .input {
@@ -33,12 +78,14 @@
 	border: none;
 	font-size: 50px;
 	text-align: center;
+	font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 .ops-container {
 	width: 280px;
 	margin: 0 auto;
 	margin-top: 350px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
 	.op {
 		width: 50px;
 		height: 50px;
@@ -60,6 +107,7 @@
 	font-size: 50px;
 	float: right;
 	margin-top: 50px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
 	margin-left: 30px;
 	.equals, .answer {
 		width: 50px;

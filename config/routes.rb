@@ -9,6 +9,8 @@ Cliq::Application.routes.draw do
 
   get '/games', to: 'users#games', as: 'games'
   get '/won', to: 'users#won', as: 'won'
+  get '/lost', to: 'users#lost', as: 'lost'
+  get '/start', to: 'users#start', as: 'start'
 
   get '/categories/:id/select', to: 'categories#select', as: 'choose_cat'
   get '/tutorial', to: 'categories#tutorial', as: 'tutorial'

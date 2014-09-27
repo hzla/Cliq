@@ -5,6 +5,13 @@
 	<% end %>
 </div>
 
+<div class="start-overlay">
+	<div class="start">START</div>
+</div>
+
+<div class="other-start"></div>
+
+<div class="timer">:60</div>
 
 <div class="winner hidden"></div>
 <div class="inputs-container">
@@ -66,9 +73,21 @@
 	  	sub = faye.subscribe("/games", function(data) {
 	    var message = $.parseJSON(data)
 	    	console.log(message)
-	    	if ($('.winner:visible').length < 1) {
+	    	console.log(data)
+	    	console.log(data.go)
+	    	if (message.go) {
+	    		$('.other-start').click()
+	    		return
+	    	}
+	    	if (data.won == false) {
+	    		document.location.reload()
+	    	}
+	    	if ($('.winner:visible').length < 1 && message.won) {
 	    		$('.content-container').append("<h1>You Lost Shitty 24!</h1>")
-	    	} 
+	    	} else {
+	 
+	    	
+	    	}
 	  	});
 		} 
 	});
