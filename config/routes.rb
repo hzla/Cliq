@@ -11,6 +11,8 @@ Cliq::Application.routes.draw do
   get '/won', to: 'users#won', as: 'won'
   get '/lost', to: 'users#lost', as: 'lost'
   get '/start', to: 'users#start', as: 'start'
+  get '/store', to: 'users#store', as: 'store'
+  get '/strange_store', to: 'users#strange_store', as: 'strange_store'
 
   get '/categories/:id/select', to: 'categories#select', as: 'choose_cat'
   get '/tutorial', to: 'categories#tutorial', as: 'tutorial'

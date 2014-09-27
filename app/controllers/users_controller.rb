@@ -17,10 +17,19 @@ class UsersController < ApplicationController
 			end
 			@game = Game.create numbers: @numbers.join(",")
 		end
-
-
-
 		@ops = ["+", "-", "*", "/", "^", "!", "%"]
+	end
+
+	def store
+		@list = "cat,hand,nose,eyes,wings".split(",")
+		@names = {cat: "cat", hand: "hand", nose: "nose", eyes: "real eyes", wings: "wings"}
+		@prices = {cat: "cat", hand: "hand", nose: "nose", eyes: "real eyes", wings: "wings"}
+	end
+
+	def strange_store
+		@list = "color,better,ramen".split(",")
+		@names = {color: "Add color", better: "better graphics", ramen: "The Ramen thingy"}
+		@prices = {color: "Add color", better: "better graphics", ramen: "The Ramen thingy"}
 	end
 
 	def start
@@ -29,8 +38,9 @@ class UsersController < ApplicationController
 	end
 
 	def won
-		p Game.last
 		@game = Game.last
+		new_money = current_user.money + 100
+		user.update_attributes money: new_money 
 		Game.last.update_attributes won: true
 		broadcast "/games", {won: true}.to_json
 		render nothing: true

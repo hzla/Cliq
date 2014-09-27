@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140927192613) do
+ActiveRecord::Schema.define(version: 20140927224551) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -227,6 +227,9 @@ ActiveRecord::Schema.define(version: 20140927192613) do
     t.string   "wins",               default: "0"
     t.string   "losses",             default: "0"
     t.integer  "points",             default: 0
+    t.text     "additions",          default: ""
+    t.integer  "money",              default: 0
+    t.integer  "coins",              default: 0
   end
 
 end

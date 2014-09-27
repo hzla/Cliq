@@ -8,7 +8,14 @@ Game =
 		$('.op-input').keyup @opsOnly
 		@ops = ["+", "-", "*", "/", "^", "%"]
 		$('.start').click @countDown
+		$('.item-img').click @addImg
 		$('.other-start').click @otherCD
+
+	addImg: ->
+		id = $(@).attr('id').slice(0, -5)
+		newId = ".#{id}-png"
+		$('.avatar-png').toggle() if newId == ".better-png"
+		$(newId).toggle()
 
 	otherCD: ->
 		if !Game.countingDown

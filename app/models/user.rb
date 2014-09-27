@@ -11,10 +11,33 @@ class User < ActiveRecord::Base
 	has_many :messages, dependent: :destroy 
 
 	validates :name, :presence => true
-	attr_accessible :wins, :losses, :points, :discuss_time, :toggle_count, :create_click_count, :event_view_count, :visit_count, :name, :email, :school, :bio, :profile_pic_url, :fb_token, :activation, :address, :sex, :sexual_preference, :latitude, :longitude, :active, :message_count, :invite_count, :updated_at, :event_count,:notify_messages, :notify_news, :notify_events, :timezone, :lbgtq, :blacklist, :characters
+	attr_accessible :money, :coins, :additions, :wins, :losses, :points, :discuss_time, :toggle_count, :create_click_count, :event_view_count, :visit_count, :name, :email, :school, :bio, :profile_pic_url, :fb_token, :activation, :address, :sex, :sexual_preference, :latitude, :longitude, :active, :message_count, :invite_count, :updated_at, :event_count,:notify_messages, :notify_news, :notify_events, :timezone, :lbgtq, :blacklist, :characters
 
 	geocoded_by :address
-	after_validation :geocode    
+	after_validation :geocode   
+
+
+	def additions_list
+		additions.split(",")	
+	end 
+
+	def available_items
+		items = "cat,hand,nose,eyes,wings".split(",")
+		items.map do |item|
+			additions_list.include?(item) ? nil : item
+		end
+		items.compact.uniq 
+	end
+
+	def available_strange_items
+		items = "ramen,better,color".split(",")
+		items.map do |item|
+			additions_list.include?(item) ? nil : item
+		end
+		items.compact.uniq 
+	end
+
+
 
 
 
