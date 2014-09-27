@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140828014404) do
+ActiveRecord::Schema.define(version: 20140927192613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -117,6 +117,18 @@ ActiveRecord::Schema.define(version: 20140828014404) do
 
   add_index "excursions", ["user_id", "event_id"], name: "index_excursions_on_user_id_and_event_id", using: :btree
 
+  create_table "games", force: true do |t|
+    t.string   "name"
+    t.integer  "creator_id"
+    t.boolean  "won",        default: false
+    t.integer  "winner_id"
+    t.integer  "loser_id"
+    t.integer  "points",     default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "numbers"
+  end
+
   create_table "interest_suggestions", force: true do |t|
     t.string  "term"
     t.integer "popularity"
@@ -212,6 +224,9 @@ ActiveRecord::Schema.define(version: 20140828014404) do
     t.integer  "create_click_count", default: 0
     t.integer  "toggle_count",       default: 0
     t.integer  "discuss_time",       default: 0
+    t.string   "wins",               default: "0"
+    t.string   "losses",             default: "0"
+    t.integer  "points",             default: 0
   end
 
 end

@@ -1,0 +1,78 @@
+
+<div class="numbers-container">
+	<% @numbers.each do |n| %>
+		<div class="number"><%= n %></div>
+	<% end %>
+</div>
+
+
+<div class="winner hidden"></div>
+<div class="inputs-container">
+	<%= text_field_tag nil,nil, :class => "number-input input" %>
+	<%= text_field_tag nil,nil, :class => "op-input input" %>
+	<%= text_field_tag nil,nil, :class => "number-input input" %>
+	<%= text_field_tag nil,nil, :class => "op-input input" %>
+	<%= text_field_tag nil,nil, :class => "number-input input" %>
+	<%= text_field_tag nil,nil, :class => "op-input input" %>
+	<%= text_field_tag nil,nil, :class => "number-input input" %>
+</div>
+
+<div class="equals-container">
+	<div class="equals">=</div>
+	<div class="answer">24</div>
+</div>
+
+
+<div class="ops-container">
+	<% @ops.each do |op| %>
+		<div class="op"><%= op %></div>
+	<% end %>
+
+</div>
+
+
+<% if current_user %>
+<script>
+
+
+	var Notification = {
+    Vars:{
+        OriginalTitle: document.title,
+        Interval: null
+    },    
+    On: function(notification, intervalSpeed){
+        var _this = this;
+        _this.Vars.Interval = setInterval(function(){
+             document.title = (_this.Vars.OriginalTitle == document.title)
+                                 ? notification
+                                 : _this.Vars.OriginalTitle;
+        }, (intervalSpeed) ? intervalSpeed : 1000);
+    },
+    Off: function(){
+        clearInterval(this.Vars.Interval);
+        document.title = this.Vars.OriginalTitle;   
+    }
+	}
+
+
+
+
+
+	$(function() {
+		Faye.Transport.WebSocket.isUsable = function($, _, c) { c(false) };
+	  var faye = new Faye.Client('http://faye-server-10.herokuapp.com/faye');
+	  faye.unsubscribe("/games")
+	  if (typeof sub === "undefined") { 
+	  	sub = faye.subscribe("/games", function(data) {
+	    var message = $.parseJSON(data)
+	    	console.log(message)
+	    	if ($('.winner:visible').length < 1) {
+	    		$('body').append("<h1>You Lost Shitty 24!</h1>")
+	    	} 
+	  	});
+		} 
+	});
+</script>
+<% end %>
+
+

@@ -7,6 +7,9 @@ Cliq::Application.routes.draw do
     get "/#{page}", to: ("pages#" + "#{page}"), as: page 
   end
 
+  get '/games', to: 'users#games', as: 'games'
+  get '/won', to: 'users#won', as: 'won'
+
   get '/categories/:id/select', to: 'categories#select', as: 'choose_cat'
   get '/tutorial', to: 'categories#tutorial', as: 'tutorial'
   post '/tutorial_select', to: 'categories#tutorial_select', as: 'tutorial_select'

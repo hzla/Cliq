@@ -13,8 +13,7 @@
 //= require jquery
 //= require jquery.ui.autocomplete
 //= require jquery_ujs
-//= require jquery.ui.datepicker
-//= require jquery.ui.slider
+//= require jquery.ui.all
 //= require turbolinks
 //= require_tree .
 

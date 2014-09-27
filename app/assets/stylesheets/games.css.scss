@@ -1,0 +1,80 @@
+@import 'variables';
+
+
+.numbers-container {
+	width: 280px;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+.number {
+	float: left;
+	margin-left: 20px;
+	width: 50px;
+	height: 50px;
+	font-size: 50px;
+	text-align: center;
+	color: $red;
+	cursor: pointer;
+}
+
+
+.inputs-container {
+	width: 730px;
+	margin: 0 auto;
+	margin-top: 155px;
+}
+
+.input {
+	height: 100px;
+	width: 100px;
+	float: left;
+	border-radius: 100px;
+	border: none;
+	font-size: 50px;
+	text-align: center;
+}
+
+.ops-container {
+	width: 280px;
+	margin: 0 auto;
+	margin-top: 350px;
+	.op {
+		width: 50px;
+		height: 50px;
+		text-align: center;
+		color: $blue;
+		float: left;
+		font-size: 50px;
+		margin-left: 20px;
+		margin-bottom: 20px;
+		cursor: pointer;
+	}
+	.op:nth-child(5n) {
+		margin-left: 50px;
+	}
+}
+
+.equals-container {
+	width: calc(50% - 395px);
+	font-size: 50px;
+	float: right;
+	margin-top: 50px;
+	margin-left: 30px;
+	.equals, .answer {
+		width: 50px;
+		height: 50px;
+		float: left;
+	}
+
+}
+
+
+.number-input {
+	border: 1px solid $red;
+}
+
+.op-input {
+	margin-top: 50px;
+	border: 1px solid $blue;
+}

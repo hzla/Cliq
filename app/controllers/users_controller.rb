@@ -1,5 +1,34 @@
 class UsersController < ApplicationController
 	before_filter :get_user
+	skip_before_action :require_login
+
+	include ApplicationHelper
+
+
+	def games
+		if Game.last && !Game.all.last.won
+			@game = Game.last
+			@numbers = @game.numbers.split(",")
+		else
+			@numbers = [rand(9) + 1, rand(9) + 1, rand(9) + 1, rand(9) + 1]
+			until @numbers.uniq.length == 4
+				@numbers = [rand(9) + 1, rand(9) + 1, rand(9) + 1, rand(9) + 1]
+			end
+			@game = Game.create numbers: @numbers.join(",")
+		end
+
+
+
+		@ops = ["+", "-", "*", "/", "^", "!", "%"]
+	end
+
+	def won
+		p Game.last
+		@game = Game.last
+		Game.last.update_attributes won: true
+		broadcast "/games", @game.to_json
+		render nothing: true
+	end
 
 	def show
 		if params[:id].to_i != current_user.id
