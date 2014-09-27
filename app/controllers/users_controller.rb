@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 	before_filter :get_user
+	
 	skip_before_action :require_login
 
 	include ApplicationHelper
