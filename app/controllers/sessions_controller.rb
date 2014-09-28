@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
 
 	def create
-	  redirect_to events_path and return if current_user
+	  redirect_to games_path and return if current_user
 	  auth_hash = request.env['omniauth.auth']
 	  auth = Authorization.find_by_uid auth_hash['uid']
 	  #redirect to user page if they've already authorized
