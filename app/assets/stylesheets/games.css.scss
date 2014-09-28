@@ -277,19 +277,25 @@
 		z-index: 3;
 	}
 	.add-img.better-png {
-		left: -40px;
+		width: 127px;
+		height: auto;
+		top: 90px;
+        left: 50px;
 		z-index: 4;
 	}
 	.add-img.ramen-png {
-		width: 50px;
-		height: 50px;
-		top: 104px;
+		width: 100px;
+		height: auto;
+		top: 70px;
+        left: -40px;
 		z-index: 4;
 	}
 	.add-img.color-png {
 		z-index: 2;
-		top: -48px;
-		left: -47px;
+		width: 100px;
+		height: auto;
+		top: 20px;
+        left: 55px;
 	}
 	.add-img {
 		position: absolute;
