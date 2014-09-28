@@ -4,6 +4,7 @@ class EventsController < ApplicationController #in severe need of refactoring
 	skip_before_filter  :verify_authenticity_token
 
 	def index
+		redirect_to games_path and return
 		excursions = current_user.excursions 
 		@sign_in = params[:sign_in]
 		@open = true

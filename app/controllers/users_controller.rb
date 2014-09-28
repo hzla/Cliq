@@ -20,11 +20,13 @@ class UsersController < ApplicationController
 
 	def store
 		@list = "cat,hand,nose,eyes,wings".split(",")
+		@full_list = "cat,hand,nose,eyes,wings,color,better,ramen".split(",")
 		@names = {cat: "Cat", hand: "Extra hand", nose: "Nose", eyes: "Real eyes", wings: "buffalo wings"}
 		@prices = {cat: 100, hand: 60, nose: 50, eyes: 150, wings: 400}
 	end
 
 	def strange_store
+		@full_list = "cat,hand,nose,eyes,wings,color,better,ramen".split(",")
 		@list = "color,better,ramen".split(",")
 		@names = {color: "Add color", better: "better graphics", ramen: "The Ramen Profitable Startup"}
 		@prices = {color: 50, better: 150, ramen: 2000}
@@ -36,6 +38,7 @@ class UsersController < ApplicationController
 	end
 
 	def buy
+		p params
 		if params[:type] == "strange"
 			current_user.update_attributes coins: params[:amount].to_i
 		else
@@ -46,9 +49,10 @@ class UsersController < ApplicationController
 	end
 
 	def won
-		@game = Game.last
-		new_money = current_user.money + 1000
-		user.update_attributes money: new_money 
+		@game = Game.update_all won: true
+		new_money = current_user.money + 100
+		new_coins = current_user.coins + 50
+		current_user.update_attributes money: new_money, coins: new_coins 
 		Game.last.update_attributes won: true
 		broadcast "/games", {won: true}.to_json
 		render nothing: true

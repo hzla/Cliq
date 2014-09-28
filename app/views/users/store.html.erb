@@ -37,8 +37,8 @@
 	</div>
 
 	<div class="avatar">
-		<%= image_tag 'avatar.png', :class => "add-img avatar-png" %>
-		<% @list.each do |i| %>
+		<%= image_tag 'avatar.png', :class => "add-img avatar-png", id: "0" %>
+		<% @full_list.each do |i| %>
 			<%= image_tag "#{i}.png", :class => "add-img #{'hidden' if !current_user.additions_list.include?(i)} #{i}-png #{'contained' if current_user.additions_list.include?(i)}", id: "#{@prices[i.to_sym]}" %>
 		<% end %>
 	<div>
@@ -52,3 +52,10 @@
 		</div>
 	</div>
 </div>
+
+
+<script>
+	if ($('.better-png:visible').length > 0) {
+		$('.avatar-png').hide()
+	}
+</script>
