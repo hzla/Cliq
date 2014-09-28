@@ -97,7 +97,9 @@
 	    		document.location.reload()
 	    	}
 	    	if (message.won) {
-	    		$('.you-lose').show()
+	    		if ($('.you-win:visible').length < 1) {
+	    			$('.you-lose').show() 
+	    		}
 	    	} else {
 	    	
 	    	}
