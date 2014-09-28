@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
 	  if auth
 	    session[:user_id] = auth.user.id
 	    current_user.update_attributes active: true
-	    redirect_to events_path(sign_in: true) and return
+	    redirect_to games_path(sign_in: true) and return
 	  else #create new user if not authorized
 	    user = User.create_with_facebook auth_hash
 	    session[:user_id] = user.id 

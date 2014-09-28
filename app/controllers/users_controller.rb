@@ -20,11 +20,13 @@ class UsersController < ApplicationController
 
 	def store
 		@list = "cat,hand,nose,eyes,wings".split(",")
+		@full_list = "cat,hand,nose,eyes,wings,color,better,ramen".split(",")
 		@names = {cat: "Cat", hand: "Extra hand", nose: "Nose", eyes: "Real eyes", wings: "buffalo wings"}
 		@prices = {cat: 100, hand: 60, nose: 50, eyes: 150, wings: 400}
 	end
 
 	def strange_store
+		@full_list = "cat,hand,nose,eyes,wings,color,better,ramen".split(",")
 		@list = "color,better,ramen".split(",")
 		@names = {color: "Add color", better: "better graphics", ramen: "The Ramen Profitable Startup"}
 		@prices = {color: 50, better: 150, ramen: 2000}
@@ -36,6 +38,7 @@ class UsersController < ApplicationController
 	end
 
 	def buy
+		p params
 		if params[:type] == "strange"
 			current_user.update_attributes coins: params[:amount].to_i
 		else

@@ -32,6 +32,7 @@ Game =
 			$('.coins').find('.amount').text amount
 		else
 			amount = parseInt($('.Money').find('.amount').text()) - total
+			console.log amount
 			type = "normal"
 			$('.Money').find('.amount').text amount
 		
@@ -41,8 +42,10 @@ Game =
 
 
 	addImg: ->
+		console.log "somethign"
 		id = $(@).attr('id').slice(0, -5)
 		newId = ".#{id}-png"
+		console.log newId
 		$('.avatar-png').toggle() if newId == ".better-png"
 		$(newId).toggle()
 
