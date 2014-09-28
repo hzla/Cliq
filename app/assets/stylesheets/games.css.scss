@@ -1,8 +1,10 @@
 @import 'variables';
 
-
+.body .content-container {
+	background: white;
+}
 .numbers-container {
-	width: 280px;
+	width: 580px;
 	margin: 0 auto;
 	margin-top: 50px;
 	font-family: "Comic Sans MS", cursive, sans-serif;
@@ -46,6 +48,7 @@
 	width: 50px;
 	position: absolute;
 	font-size: 50px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
 	top: 50px;
 	left: 50px;
 }
@@ -53,21 +56,28 @@
 .number {
 	float: left;
 	margin-left: 20px;
-	width: 50px;
-	height: 50px;
+	width: 125px;
+	height: 130px;
 	font-size: 50px;
 	text-align: center;
 	color: $red;
 	cursor: pointer;
 	font-family: "Comic Sans MS", cursive, sans-serif;
+	background-image: image-url('grey-blotch.png');
+	line-height: 100px;
+
 }
 
 
 .inputs-container {
 	width: 730px;
 	margin: 0 auto;
-	margin-top: 155px;
+	margin-top: 200px;
 	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.input-box {
+
 }
 
 .input {
@@ -79,6 +89,7 @@
 	font-size: 50px;
 	text-align: center;
 	font-family: "Comic Sans MS", cursive, sans-serif;
+	background: none;
 }
 
 .ops-container {
@@ -187,10 +198,25 @@
 	}
 	.item-img {
 		width: 70px;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+	}
+	.item-name {
+		float: right;
+		width: 100%;
+		text-align: center;
+		clear: right;
+
+	}
+	.item-price {
+		text-align: center;
+		color: $green;
+		width: 70px;
 		height: auto;
 		margin: 0 auto;
-        position: relative;
-        display: block;
+    position: relative;
+    display: block;
 	}
     .item-info-container {
         position: absolute;
@@ -214,6 +240,7 @@
 		float: left;
 		margin-bottom: 30px;
 	}
+
 	.buy {
 		text-align: center;
 		margin-top: 80px;
@@ -285,6 +312,14 @@
 			color: $green;
 		}
 	}
+}
+
+.homepageshit {
+width: 800px;
+height: calc(100% - 200px);
+margin-top: 100px;
+margin-left: calc(50% - 400px);
+
 }
 
 
