@@ -49,7 +49,7 @@ class UsersController < ApplicationController
 	end
 
 	def won
-		@game = Game.last
+		@game = Game.update_all won: true
 		new_money = current_user.money + 100
 		new_coins = current_user.coins + 50
 		user.update_attributes money: new_money, coins: new_coins 
