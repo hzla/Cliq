@@ -38,7 +38,18 @@
 </div>
 
 
+<div class="give-up">
+	GIVE UP
+</div>
 
+
+<div class="you-win hidden end">
+	YOU WIN :)
+</div>
+
+<div class="you-lose hidden end">
+	YOU LOSE :(
+</div>
 <script>
 
 
@@ -83,7 +94,7 @@
 	    		document.location.reload()
 	    	}
 	    	if ($('.winner:visible').length < 1 && message.won) {
-	    		$('.content-container').append("<h1>You Lost Shitty 24!</h1>")
+	    		$('.you-lose').show()
 	    	} else {
 	 
 	    	

@@ -50,8 +50,9 @@ class UsersController < ApplicationController
 
 	def won
 		@game = Game.last
-		new_money = current_user.money + 1000
-		user.update_attributes money: new_money 
+		new_money = current_user.money + 100
+		new_coins = current_user.coins + 50
+		user.update_attributes money: new_money, coins: new_coins 
 		Game.last.update_attributes won: true
 		broadcast "/games", {won: true}.to_json
 		render nothing: true

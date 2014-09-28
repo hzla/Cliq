@@ -12,6 +12,10 @@ Game =
 		$('.item-img').click @addImg
 		$('.other-start').click @otherCD
 		$('.buy').click @calc
+		$('.give-up').click @giveUp
+
+	giveUp: ->
+		$('.timer').text(':1')
 
 	calc: ->
 		total = 0
@@ -52,13 +56,13 @@ Game =
 	otherCD: ->
 		if !Game.countingDown
 			$('.start-overlay').hide()
-			int = setInterval ->
+			Game.int = setInterval ->
 				newVal = parseInt($('.timer').text().slice(-2)) - 1
 				newVal = parseInt($('.timer').text().slice(-1)) - 1 if $('.timer').text().length == 2
 				if newVal == 0
 					$.get('/lost')
 					location.reload()
-					clearInterval(int)
+					clearInterval(Game.int)
 					
 				$('.timer').text ":" + newVal
 			, 1000
@@ -69,13 +73,13 @@ Game =
 		$('.start-overlay').hide()
 		Game.countingDown = true
 
-		int = setInterval ->
+		Game.int = setInterval ->
 			newVal = parseInt($('.timer').text().slice(-2)) - 1
 			newVal = parseInt($('.timer').text().slice(-1)) - 1 if $('.timer').text().length == 2
 			if newVal == 0
 				$.get('/lost')
 				location.reload()
-				clearInterval(int)
+				clearInterval(Game.int)
 				
 			$('.timer').text ":" + newVal
 		, 1000
@@ -138,7 +142,8 @@ Game =
 				$('.answer').text eval(wholeArray)
 				$('.winner').show()
 				if answer == 24
-					$('.content-container').append ("<h1>You Won Shitty 24!</h1>")
+					clearInterval(Game.int)
+					$('.you-win').show()
 					$.get('/won')
 
 		, 10

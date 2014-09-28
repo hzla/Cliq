@@ -42,6 +42,44 @@
 
 }
 
+.end {
+	position: fixed;
+	height: 100px;
+	width: 300px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	text-align: center;
+	font-size: 50px;
+	line-height: 100px;
+	color: white;
+	background: $green;
+	z-index: 10;
+	border-radius: 10px;
+	left: calc(50% - 150px);
+	top: 100px;
+}
+
+
+.give-up {
+	width: 225px;
+	margin: 0 auto;
+	height: 50px;
+	font-size: 50px;
+	color: white;
+	background: $green;
+	text-align: center;
+	border-radius: 5px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	margin-top: 550px;
+	line-height: 50px;
+	cursor: pointer;
+}
+
+.give-up:hover {
+	width: 250px;
+	height: 60px;
+	line-height: 60px;
+
+}
 
 .timer {
 	height: 50px;
