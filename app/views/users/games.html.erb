@@ -7,6 +7,9 @@
 
 <div class="start-overlay">
 	<div class="start">START</div>
+	<%= link_to store_path do %>
+		<div class="start to-store">TO STORE</div>
+	<% end %>
 </div>
 
 <div class="other-start"></div>
@@ -38,7 +41,18 @@
 </div>
 
 
+<div class="give-up">
+	GIVE UP
+</div>
 
+
+<div class="you-win hidden end">
+	YOU WIN :)
+</div>
+
+<div class="you-lose hidden end">
+	YOU LOSE :(
+</div>
 <script>
 
 
@@ -82,10 +96,11 @@
 	    	if (message.won == false) {
 	    		document.location.reload()
 	    	}
-	    	if ($('.winner:visible').length < 1 && message.won) {
-	    		$('.content-container').append("<h1>You Lost Shitty 24!</h1>")
+	    	if (message.won) {
+	    		if ($('.you-win:visible').length < 1) {
+	    			$('.you-lose').show() 
+	    		}
 	    	} else {
-	 
 	    	
 	    	}
 	  	});
