@@ -197,9 +197,10 @@
         position: relative;
 	}
 	.item-img {
-		width: 100px;
-		height: 100px;
-		float: right;
+		width: 70px;
+        height: auto;
+        margin: 0 auto;
+        display: block;
 	}
 	.item-name {
 		float: right;
