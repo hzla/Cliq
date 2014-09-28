@@ -179,7 +179,7 @@
 		font-family: "Comic Sans MS", cursive, sans-serif;
 	height: calc(100% - 100px);
 	position: absolute;
-	left: calc(50% - 200px);
+	left: calc(50% - 250px);
 	top: 50px;
 	width: 500px;
 	.middle-header {
@@ -237,7 +237,7 @@
     }
 	.item-container {
 		float: left;
-		margin-bottom: 50px;
+		margin-bottom: 30px;
 	}
 
 	.buy {
@@ -270,7 +270,6 @@
 	top: 50px;
 	width: 250px;
 	.avatar {
-		margin-top: 60px;
 		position: relative;
 	}
 	.avatar-png {
@@ -323,6 +322,51 @@ margin-left: calc(50% - 400px);
 }
 
 
+.store-right {
 
+
+    .add-img.avatar-png {
+        width: 90px;
+        height: auto;
+        left: 70px;
+        top: 90px;
+
+    }
+
+    .add-img.cat-png {
+        width: 70px;
+        height: auto;
+        left: 170px;
+        top: 170px;
+    }
+
+    .add-img.hand-png {
+        width: 50px;
+        height: auto;
+        left: 75px;
+        top: 25px;
+    }
+
+    .add-img.nose-png {
+        width: 13px;
+        height: auto;
+        left: 100px;
+        top: 115px;
+    }
+
+    .add-img.eyes-png {
+        width: 50px;
+        height: auto;
+        left: 82px;
+        top: 105px;
+    }
+
+    .add-img.wings-png {
+        width: 200px;
+        height: auto;
+        left: 12px;
+        top: 120px;
+    }
+}
 
 
