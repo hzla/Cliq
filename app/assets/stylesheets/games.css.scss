@@ -24,7 +24,7 @@
 	width: 400px;
 	height: 100px;
 	font-size: 100px;
-	line-height: 100px;
+	line-height: 92px;
 	background: $green;
 	border-radius: 5px;
 	color: white;
@@ -39,10 +39,17 @@
 	font-size: 60px;
 }
 
+.to-store:hover {
+    width: 450px;
+	height: 125px;
+	line-height: 125px;
+	left: calc(50% - 225px);
+}
+
 .start:hover {
 	width: 450px;
 	height: 125px;
-	line-height: 125px;
+	line-height: 115px;
 	left: calc(50% - 225px);
 
 }
@@ -67,7 +74,7 @@
 .give-up {
 	width: 225px;
 	margin: 0 auto;
-	height: 50px;
+	height: 55px;
 	font-size: 50px;
 	color: white;
 	background: $green;
@@ -77,12 +84,13 @@
 	margin-top: 550px;
 	line-height: 50px;
 	cursor: pointer;
+    background: $red;
 }
 
 .give-up:hover {
 	width: 250px;
-	height: 60px;
-	line-height: 60px;
+	height: 65px;
+	line-height: 65px;
 
 }
 
@@ -103,11 +111,11 @@
 	height: 130px;
 	font-size: 50px;
 	text-align: center;
-	color: $red;
+	color: red;
 	cursor: pointer;
 	font-family: "Comic Sans MS", cursive, sans-serif;
 	background-image: image-url('grey-blotch.png');
-	line-height: 100px;
+	line-height: 2.6;
 
 }
 
@@ -144,13 +152,16 @@
 		width: 50px;
 		height: 50px;
 		text-align: center;
-		color: $blue;
+		color: blue;
 		float: left;
 		font-size: 50px;
 		margin-left: 20px;
 		margin-bottom: 20px;
 		cursor: pointer;
 	}
+    .op {
+    
+    }
 	.op:nth-child(5n) {
 		margin-left: 50px;
 	}
@@ -173,12 +184,14 @@
 
 
 .number-input {
-	border: 1px solid $red;
+	border: 8px solid red;
+    box-sizing: border-box;
 }
 
 .op-input {
 	margin-top: 50px;
-	border: 1px solid $blue;
+	border: 8px solid blue;
+    box-sizing: border-box;
 }
 
 
@@ -254,14 +267,19 @@
 	}
 	.item-price {
 		text-align: center;
-		color: $green;
+		color: $red;
 		width: 70px;
 		height: auto;
 		margin: 0 auto;
-    position: relative;
-    display: block;
-    z-index: -1;
+        position: relative;
+        display: block;
+        z-index: -1;
 	}
+    
+   .strange.item-price{
+        color: blue;   
+   }
+
     .item-info-container {
         position: absolute;
         bottom: 20px;
@@ -356,10 +374,10 @@
 			font-size: 30px; 
 		}
 		.Money {
-			color: $blue;
+			color: red;
 		}
 		.coins {
-			color: $green;
+			color: blue;
 		}
 	}
 }
