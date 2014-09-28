@@ -3,6 +3,7 @@
 
 Game = 
 	init: ->
+		$('.content-container').css('background', 'white')
 		$('input').keypress @evaluate
 		$('.number-input').keyup @numbersOnly
 		$('.op-input').keyup @opsOnly
