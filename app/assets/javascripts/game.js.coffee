@@ -10,6 +10,34 @@ Game =
 		$('.start').click @countDown
 		$('.item-img').click @addImg
 		$('.other-start').click @otherCD
+		$('.buy').click @calc
+
+	calc: ->
+		total = 0
+		shit = ""
+		bought = $('.add-img:visible:not(.contained)')
+		have = $('.add-img:visible')
+		bought.each ->
+			val = parseInt $(@).attr('id')
+			total += val
+		have.each ->
+			val = $(@).attr('alt')
+			shit += val + ","
+		amount = 0
+		console.log total
+		if $('.strange').length > 0
+			amount = parseInt($('.coins').find('.amount').text()) - total
+			type = "strange"
+			$('.coins').find('.amount').text amount
+		else
+			amount = parseInt($('.Money').find('.amount').text()) - total
+			type = "normal"
+			$('.Money').find('.amount').text amount
+		
+		$.get("/buy?amount=#{amount}&type=#{type}&shit=#{shit}")
+		document.location.reload()
+
+
 
 	addImg: ->
 		id = $(@).attr('id').slice(0, -5)

@@ -40,16 +40,16 @@
 	<div class="avatar">
 		<%= image_tag 'avatar.png', :class => "add-img avatar-png" %>
 		<% @list.each do |i| %>
-			<%= image_tag "#{i}.png", :class => "add-img #{'not-hidden' if !current_user.additions_list.include?(i)} #{i}-png" %>
+			<%= image_tag "#{i}.png", :class => "add-img #{'not-hidden' if !current_user.additions_list.include?(i)} #{i}-png #{'contained' if current_user.additions_list.include?(i)}", id: "#{@prices[i.to_sym]}" %>
 		<% end %>
 	<div>
 
 	<div class="money-box">
 		<div class="Money">
-			<%= current_user.money %><br><br>money
+			<span class="amount"><%= current_user.money %></span><br><br>money
 		</div>
 		<div class="coins">
-			<%= current_user.coins %><br><br>coins
+			<span class="amount"><%= current_user.coins %></span><br><br>coins
 		</div>
 	</div>
 </div>

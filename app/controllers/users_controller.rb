@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
 	before_filter :get_user
-
 	skip_before_action :require_login
-
 	include ApplicationHelper
 
 
@@ -22,14 +20,14 @@ class UsersController < ApplicationController
 
 	def store
 		@list = "cat,hand,nose,eyes,wings".split(",")
-		@names = {cat: "cat", hand: "hand", nose: "nose", eyes: "real eyes", wings: "wings"}
-		@prices = {cat: "cat", hand: "hand", nose: "nose", eyes: "real eyes", wings: "wings"}
+		@names = {cat: "Cat", hand: "Extra hand", nose: "Nose", eyes: "Real eyes", wings: "buffalo wings"}
+		@prices = {cat: 100, hand: 60, nose: 50, eyes: 150, wings: 400}
 	end
 
 	def strange_store
 		@list = "color,better,ramen".split(",")
-		@names = {color: "Add color", better: "better graphics", ramen: "The Ramen thingy"}
-		@prices = {color: "Add color", better: "better graphics", ramen: "The Ramen thingy"}
+		@names = {color: "Add color", better: "better graphics", ramen: "The Ramen Profitable Startup"}
+		@prices = {color: 50, better: 150, ramen: 2000}
 	end
 
 	def start
@@ -37,9 +35,19 @@ class UsersController < ApplicationController
 		render nothing: true
 	end
 
+	def buy
+		if params[:type] == "strange"
+			current_user.update_attributes coins: params[:amount].to_i
+		else
+			current_user.update_attributes money: params[:amount].to_i
+		end
+		current_user.update_attributes additions: params[:shit].downcase.split(",").join(",")
+		render nothing: true
+	end
+
 	def won
 		@game = Game.last
-		new_money = current_user.money + 100
+		new_money = current_user.money + 1000
 		user.update_attributes money: new_money 
 		Game.last.update_attributes won: true
 		broadcast "/games", {won: true}.to_json

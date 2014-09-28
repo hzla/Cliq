@@ -201,11 +201,13 @@
 		width: 100%;
 		text-align: center;
 		clear: right;
+		color: $green;
 	}
 	.item-container {
 		float: left;
 		margin-bottom: 100px;
 	}
+
 	.buy {
 		text-align: center;
 		margin-top: 80px;
@@ -278,6 +280,14 @@
 			color: $green;
 		}
 	}
+}
+
+.homepageshit {
+width: 800px;
+height: calc(100% - 200px);
+margin-top: 100px;
+margin-left: calc(50% - 400px);
+
 }
 
 
