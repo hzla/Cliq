@@ -2,21 +2,21 @@
 	
 
 		<% if current_user %>
-		<%= link_to events_path, remote: true, :class => 'tab', id: "events" do %>
-			<div class="extended events <%= 'active' if active == :events %> side-icon" >
-				<%= image_tag "Events.svg", :class => "nav-icon svg" %>
-				<% if current_user.event_nots > 0 %>
-						<div class="counter">
-							<%= current_user.event_nots %>
-						</div>
-					<% else %>
-						<div class="counter hidden">
-							<%= current_user.event_nots %>
-						</div>
-					<% end %>
-				<div class="icon-label main">Events</div>
-			</div> 
-		<% end %>
+			<%= link_to events_path, remote: true, :class => 'tab', id: "events" do %>
+				<div class="extended events <%= 'active' if active == :events %> side-icon" >
+					<%= image_tag "Events.svg", :class => "nav-icon svg" %>
+					<% if current_user.event_nots > 0 %>
+							<div class="counter">
+								<%= current_user.event_nots %>
+							</div>
+						<% else %>
+							<div class="counter hidden">
+								<%= current_user.event_nots %>
+							</div>
+						<% end %>
+					<div class="icon-label main">Events</div>
+				</div> 
+			<% end %>
 		
 			<%= link_to messages_path, "data-no-turbolink" => true, remote: true, :class => 'tab', id: "messages" do %>
 			<div class="extended messages <%= 'active' if active == :messages %> side-icon">
@@ -33,6 +33,22 @@
 				<% end %>
 			</div>
 		<% end %>
+
+		<%= link_to search_path, "data-no-turbolink" => true, remote: true, :class => 'tab', id: "search" do %>
+			<div class="extended search <%= 'active' if active == :search %> side-icon">
+				<%= image_tag "Search.svg", :class => "nav-icon svg" %>
+				<div class="icon-label main">Search</div>
+			</div>
+		<% end %>
+
+		<%= link_to user_path(current_user), "data-no-turbolink" => true, remote: true, :class => 'tab', id: "profile" do %>
+			<div class="extended search <%= 'active' if active == :profile %> side-icon">
+				<%= image_tag "Profile.svg", :class => "nav-icon svg" %>
+				<div class="icon-label main">Profile</div>
+			</div>
+		<% end %>
+
+
 		<%= link_to settings_path(current_user), remote: true, :class => 'tab', id: "settings" do%>
 			<div class="extended settings side-icon <%= 'active' if active == :settings %>" id="extended-settings" >
 				<%= image_tag "Settings.svg", :class => "nav-icon svg" %>
