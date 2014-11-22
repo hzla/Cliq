@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 	before_filter :get_user
+	skip_before_filter :require_login, only: [:backdoor]
 
 	def show
 		if params[:id].to_i != current_user.id
