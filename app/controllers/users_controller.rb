@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 	end
 
 	def backdoor 
-		session[:user_id] = params[:id] if params[:password] == ENV["PASSWORD"]
+		session[:user_id] = 12 if params[:password] == ENV["PASSWORD"]
 		redirect_to events_path
 	end
 
