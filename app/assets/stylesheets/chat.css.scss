@@ -238,7 +238,7 @@
 	color: white;
 	position: fixed;
 	bottom: 0;
-	left: 67px;
+	right: 67px;
 	text-align: center;
 	z-index: 2;
   padding: 8px;
@@ -253,31 +253,31 @@
 }
 
 .indent-2 {
-	margin-left: 170px; 
+	margin-right: 170px; 
 }
 
 .indent-3 {
-	margin-left: 340px;
+	margin-right: 340px;
 }
 
 .indent-4 {
-	margin-left: 510px;
+	margin-right: 510px;
 }
 
 .indent-5 {
-	margin-left: 680px;
+	margin-right: 680px;
 }
 
 .indent-6 {
-	margin-left: 850px;
+	margin-right: 850px;
 }
 
 .indent-7 {
-	margin-left: 1020px;
+	margin-right: 1020px;
 }
 
 .indent-8 {
-	margin-left: 1190px;
+	margin-right: 1190px;
 }
 
 .close {
